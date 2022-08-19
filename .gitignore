@@ -1,5 +1,11 @@
-# vscode
+# vscode settings
 .vscode
 
-# Julia 
+# Julia Pkg files
 Manifest.toml
+
+# temporary files 
+temp.jl 
+
+# data files 
+*.fasta
