@@ -9,3 +9,7 @@ temp.jl
 
 # data files 
 *.fasta
+*.tsv
+*.docx
+*.xlsx
+*.pdf
