@@ -8,6 +8,13 @@ import BiGGReactions as br
 import RheaReactions as rr
 import MetaNetXReactions as mnr
 
+const Notes = Dict{String, Vector{String}}
+
+export Notes, add_reaction_from_rhea!
+
+# Add module functions
+include(joinpath("metabolic_modules", "carbohydrate.jl"))
+
 """
 $(TYPEDSIGNATURES)
 
@@ -16,6 +23,11 @@ Entry point function to build the entire curated model.
 function build_model()
     model = StandardModel("Vibrio_Natriegens")
 
+    # add pathways 
+    carbohydrate!(model)
+
+    # make model human readable
+    
     return model
 end
 
@@ -32,10 +44,10 @@ function add_reaction_from_rhea!(
     name=nothing, 
     grrs=nothing,
     subsystem=nothing,
+    notes=Notes(),
 )
-    rhea_id in reactions(model) && throw(error("Reaction with ID $rhea_id already in model."))
-
     rxn = rr.get_reaction(rhea_id)
+    rxn.accession in reactions(model) && throw(error("Reaction with ID $rhea_id already in model."))
     !rxn.isbalanced && @warn("Reaction not balanced.")
     coeff_mets = rr.get_reaction_metabolites(rhea_id)
     metabolite_dict = Dict(m.accession => s for (s, m) in coeff_mets)
@@ -56,6 +68,7 @@ function add_reaction_from_rhea!(
             metabolites=metabolite_dict,
             grr=grrs,
             subsystem,
+            notes,
         ),
     )
 
@@ -84,6 +97,13 @@ $(TYPEDSIGNATURES)
 Get all the EC numbers associated with KEGG module `mnum`.
 """
 get_ecs(mnum) = last.(split.(kp.get_module_ECs(mnum),":"))
+
+"""
+$(TYPEDSIGNATURES)
+
+Return a dictionary noting the complex stoichiometry.
+"""
+note_complex(grrstoichs) = Dict("stoichiometry" => [grrstoichs])
 
 """
 $(TYPEDSIGNATURES)
