@@ -30,7 +30,6 @@ function build_model()
     # add pathways 
     for rxn in Glycolysis_Gluconeogenesis.rxns
         add_reaction_from_rhea!(model; rxn...)
-        println("hello")
     end
     
     return model

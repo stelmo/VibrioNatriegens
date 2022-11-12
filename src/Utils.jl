@@ -7,6 +7,7 @@ using HTTP
 using COBREXA
 using COBREXA.Types
 using COBREXA.Reconstruction
+using COBREXA.Accessors
 import RheaReactions as rr
 
 """
@@ -32,14 +33,14 @@ function add_reaction_from_rhea!(
     # add gene to model
     if !isnothing(isozymes)
         for isozyme in isozymes 
-            for (gid, _) in isozyme
+            for (_, gid) in isozyme
                 gid ∉ genes(model) && add_gene!(model, Gene(gid))
             end
         end    
     end
     
     # add reaction to model 
-    isos = isnothing(isozymes) ?  nothing : [Isozyme(stoichiometry = Dict(k => v for (k, v) in iso)) for iso in isozymes]
+    isos = isnothing(isozymes) ?  nothing : [Isozyme(stoichiometry = Dict(gid => num for (num, gid) in iso)) for iso in isozymes]
     add_reaction!(
         model, 
         Reaction(
