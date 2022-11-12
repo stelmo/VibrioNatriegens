@@ -1,3 +1,8 @@
+name = "VibrioNatriegens"
+uuid = "77bc8a8b-a793-4fc4-98ef-9bd1d8b8270c"
+authors = ["St. Elmo Wilken <stelmozors@gmail.com>"]
+version = "0.1.0"
+
 [deps]
 BiGGReactions = "0f8c7381-4745-4de4-ab54-b92c670edbdd"
 COBREXA = "babc4406-5200-4a30-9033-bf5ae714c842"
