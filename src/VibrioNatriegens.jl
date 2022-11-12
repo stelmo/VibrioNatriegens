@@ -18,6 +18,7 @@ using COBREXA.Types
 
 using .Utils
 using .Glycolysis_Gluconeogenesis
+using .Ala_Asp_Glu
 
 """
 $(TYPEDSIGNATURES)
@@ -29,6 +30,10 @@ function build_model()
 
     # add pathways 
     for rxn in Glycolysis_Gluconeogenesis.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+    
+    for rxn in Ala_Asp_Glu.rxns
         add_reaction_from_rhea!(model; rxn...)
     end
     
