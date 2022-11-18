@@ -18,6 +18,8 @@ using COBREXA.Types
 
 using .Utils
 using .Glycolysis_Gluconeogenesis
+using .Citrate_Cycle
+using .Pyruvate_Metabolism
 using .Ala_Asp_Glu
 
 """
