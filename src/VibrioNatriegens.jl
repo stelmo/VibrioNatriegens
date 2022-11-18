@@ -37,6 +37,10 @@ function build_model()
         add_reaction_from_rhea!(model; rxn...)
     end
 
+    for rxn in Pyruvate_Metabolism.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+
     for rxn in Ala_Asp_Glu.rxns
         add_reaction_from_rhea!(model; rxn...)
     end
