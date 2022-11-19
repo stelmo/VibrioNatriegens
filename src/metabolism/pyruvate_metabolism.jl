@@ -17,15 +17,9 @@ rxns = (
     (rhea_id = 18157, name = "Pyruvate kinase", isozymes = [[(1, "A0A1B1E9J8"),], [(1, "A0A1B1EDE7"),],], subsystem = subsystem,), #2.7.1.40
     (rhea_id = 11364, name = "PEP synthase", isozymes = [[(1, "A0A1B1EHZ4"),], [(1, "A0A1B1EK98"),],], subsystem = subsystem,), #2.7.9.2
     (rhea_id = 28370, name = "Phosphoenolpyruvate carboxylase", isozymes = [[(4, "A0A1B1EFF8"),],], subsystem = subsystem,), #4.1.1.31
-    (rhea_id = 18617, name = "PEP carboxykinase", isozymes = [[(1, "A0A1B1E8K2"),],], subsystem = subsystem,), #4.1.1.49
     (rhea_id = 15641, name = "Oxaloacetate decarboxylase", isozymes = [[(3, "A0A1B1E9M1"),],], subsystem = subsystem,), #4.1.1.112 - isozyme is also associated with another enzyme (EC4.1.3.17, RHEA:22748, 4-hydroxy-4-methyl-2-oxoglutarate, not present in pyruvate_met but present in vn)?
     (rhea_id = 12653, name = "NAD-dependent malic enzyme", isozymes = [[(4, "A0A1B1ECB3"),],], subsystem = subsystem,), #1.1.1.38
-    (rhea_id = 15045, name = "Dihydrolipoyl dehydrogenase", isozymes = [[(1, "A0A1B1EET9"),],], subsystem = subsystem,), #1.8.1.4
     (rhea_id = 11844, name = "Formate acetyltransferase", isozymes = [[(2, "A0A1B1EB20"),],], subsystem = subsystem,), #2.3.1.54
-    (rhea_id = 21432, name = "Malate dehydrogenase", isozymes = [[(2, "A0A1B1E9A0"),],], subsystem = subsystem,), #1.1.1.37
-    (rhea_id = 46012, name = "malate:quinone oxidoreductase", isozymes = [[(1, "A0A1B1EBX5"),],], subsystem = subsystem,), #1.1.5.4
-    (rhea_id = 12460, name = "Fumarate hydratase", isozymes = [[(4, "A0A1B1EFM8"),], [(2, "A0A1B1ED17"),],], subsystem = subsystem,), #4.2.1.2
-    (rhea_id = 40523, name = "Succinate dehydrogenase", isozymes = [[(1, "A0A1B1EAJ6"),], [(1, "A0A1B1EAM6"),],], subsystem = subsystem,), #1.3.5.1
     (rhea_id = 18181, name = "Malate synthase", isozymes = [[(1, "A0A1B1E9U9"),],], subsystem = subsystem,), #2.3.3.9
     (rhea_id = 11352, name = "Acetate kinase", isozymes = [[(2, "A0A1B1ECS6"),], [(2, "A0A1B1EDJ3"),], [(2, "A0A1B1EJM9"),],], subsystem = subsystem,), #2.7.2.1
     (rhea_id = 19521, name = "Phosphate acetyltransferase", isozymes = [[(6, "A0A1B1EDI1"),], [(1, "A0A1B1EJI5"),],], subsystem = subsystem,), #2.3.1.8
