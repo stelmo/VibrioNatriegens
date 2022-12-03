@@ -1,0 +1,28 @@
+module Gly_Ser_Thr
+
+using ..ModuleTools
+using ..Utils
+
+using COBREXA
+using COBREXA.Types
+
+subsystem = "Glycine_serine_and_threonine"
+
+# (rhea_id = , name = , isozymes = [[(),],], subsystem = subsystem,),
+ 
+rxns = (
+    (rhea_id = 15901, name = "2,3-bisphosphoglycerate-independent phosphoglycerate mutase", isozymes = [[(1, "A0A1B1EFI9"),],], subsystem = subsystem,), #EC 5.4.2.12
+    (rhea_id = 15901, name = "2,3-bisphosphoglycerate-independent phosphoglycerate mutase", isozymes = [[(1, "A0A1B1EFI9"),],], subsystem = subsystem,), #EC 5.4.2.12
+
+
+
+)
+
+
+
+#=
+These ECs were present but not included in rxns:
+
+=#
+
+end # module

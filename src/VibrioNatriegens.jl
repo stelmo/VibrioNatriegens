@@ -21,6 +21,8 @@ using .Glycolysis_Gluconeogenesis
 using .Citrate_Cycle
 using .Pyruvate_Metabolism
 using .Ala_Asp_Glu
+using .Gly_Ser_Thr
+
 
 """
 $(TYPEDSIGNATURES)
@@ -48,6 +50,10 @@ function build_model()
     end
     
     for rxn in Pentose_Phosphate_Pathway.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+
+    for rxn in Gly_Ser_Thr.rxns
         add_reaction_from_rhea!(model; rxn...)
     end
     return model
