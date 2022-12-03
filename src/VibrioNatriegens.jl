@@ -42,12 +42,16 @@ function build_model()
     for rxn in Pyruvate_Metabolism.rxns
         add_reaction_from_rhea!(model; rxn...)
     end
-
-    for rxn in Ala_Asp_Glu.rxns
-        add_reaction_from_rhea!(model; rxn...)
-    end
     
     for rxn in Pentose_Phosphate_Pathway.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+
+    for rxn in Pyrimidine_Metabolism.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+
+    for rxn in Ala_Asp_Glu.rxns
         add_reaction_from_rhea!(model; rxn...)
     end
     return model
