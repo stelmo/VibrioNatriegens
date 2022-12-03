@@ -6,7 +6,7 @@ using ..Utils
 using COBREXA
 using COBREXA.Types
 
-subsystem = "Glycine_serine_and_threonine"
+subsystem = "Glycine, Serine and Threonine Metabolism"
 
 # (rhea_id = , name = , isozymes = [[(),],], subsystem = subsystem,),
  
