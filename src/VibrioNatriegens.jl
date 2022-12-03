@@ -47,6 +47,9 @@ function build_model()
         add_reaction_from_rhea!(model; rxn...)
     end
     
+    for rxn in Pentose_Phosphate_Pathway.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
     return model
 end
 
