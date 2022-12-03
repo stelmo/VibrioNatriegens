@@ -20,6 +20,8 @@ using .Utils
 using .Glycolysis_Gluconeogenesis
 using .Citrate_Cycle
 using .Pyruvate_Metabolism
+using .Pentose_Phosphate_Pathway
+using .Pyrimidine_Metabolism
 using .Ala_Asp_Glu
 
 """
