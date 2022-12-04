@@ -33,19 +33,13 @@ rxns = (
 #=
 These ECs were present but not included in rxns:
 
-EC 7.2.4.2 - includes a heterotrimer
+EC 7.2.4.2 - transporter and includes a heterotrimer
     (rhea_id = 57724, name = "Oxaloacetate decarboxylase", isozymes = [[(),],], subsystem = subsystem,),
     A0A1B1EEW0  SUBUNIT: Heterotrimer of an alpha, a beta and a gamma subunit. {ECO:0000256|ARBA:ARBA00011869, ECO:0000256|HAMAP-Rule:MF_00404}
     A0A1B1EEU7  SUBUNIT: Heterotrimer of an alpha, a beta and a gamma subunit. {ECO:0000256|ARBA:ARBA00011869, ECO:0000256|PIRNR:PIRNR015658}
 
-EC 1.2.4.1 -includes a heterodimer
-    (rhea_id = 19189, name = "Pyruvate dehydrogenase E1", isozymes = [[(),],], subsystem = subsystem,),
-    A0A1B1EFH4  SUBUNIT: Homodimer. Part of the PDH complex, consisting of multiple copies of pyruvate dehydrogenase (E1), dihydrolipoamide acetyltransferase (E2) and lipoamide dehydrogenase (E3). {ECO:0000256|ARBA:ARBA00011739}
-    A0A1B1EK05  SUBUNIT: Heterodimer of an alpha and a beta chain. {ECO:0000256|ARBA:ARBA00011870, ECO:0000256|RuleBase:RU361139}
-    A0A1B1EK16  SUBUNIT: Heterodimer of an alpha and a beta chain. {ECO:0000256|RuleBase:RU366007}
-
-EC 2.3.1.12
-    (rhea_id = 17017, name = "Acetyltransferase component of pyruvate dehydrogenase complex", isozymes = [[(),],], subsystem = subsystem,),
+EC 2.3.1.12 - complicated subunit_structure
+    (rhea_id = 17017, name = "Acetyltransferase component of pyruvate dehydrogenase complex", isozymes = [[(),],], subsystem = "$subsystem / Citrate Cycle",),
     A0A1B1EES8  SUBUNIT: Forms a 24-polypeptide structural core with octahedral symmetry. {ECO:0000256|ARBA:ARBA00011484, ECO:0000256|RuleBase:RU361137}
 
 =#

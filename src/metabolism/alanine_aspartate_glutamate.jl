@@ -6,7 +6,7 @@ using ..Utils
 using COBREXA
 using COBREXA.Types
 
-subsystem = "Glycolysis/Gluconeogenesis"
+subsystem = ""
 
 # (rhea_id = , name = , isozymes = [[(),],], subsystem = subsystem,),
  

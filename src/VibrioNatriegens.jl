@@ -20,6 +20,8 @@ using .Utils
 using .Glycolysis_Gluconeogenesis
 using .Citrate_Cycle
 using .Pyruvate_Metabolism
+using .Pentose_Phosphate_Pathway
+using .Pyrimidine_Metabolism
 using .Ala_Asp_Glu
 
 """
@@ -42,12 +44,16 @@ function build_model()
     for rxn in Pyruvate_Metabolism.rxns
         add_reaction_from_rhea!(model; rxn...)
     end
-
-    for rxn in Ala_Asp_Glu.rxns
-        add_reaction_from_rhea!(model; rxn...)
-    end
     
     for rxn in Pentose_Phosphate_Pathway.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+
+    for rxn in Pyrimidine_Metabolism.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+
+    for rxn in Ala_Asp_Glu.rxns
         add_reaction_from_rhea!(model; rxn...)
     end
     return model
