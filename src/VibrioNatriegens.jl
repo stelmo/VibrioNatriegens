@@ -23,6 +23,7 @@ using .Pyruvate_Metabolism
 using .Pentose_Phosphate_Pathway
 using .Pyrimidine_Metabolism
 using .Ala_Asp_Glu
+using .Cys_Met
 
 """
 $(TYPEDSIGNATURES)
@@ -56,6 +57,11 @@ function build_model()
     for rxn in Ala_Asp_Glu.rxns
         add_reaction_from_rhea!(model; rxn...)
     end
+
+    for rxn in Cys_Met.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+
     return model
 end
 
