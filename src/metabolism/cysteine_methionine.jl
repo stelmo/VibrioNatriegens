@@ -32,7 +32,7 @@ EC 2.6.1.52 - 2 rhea ids: RHEA:16573 and RHEA:14329
     (rhea_id = , name = "Phosphoserine aminotransferase", isozymes = [[(2, "A0A1B1ECA5"),],], subsystem = subsystem,),
 
 EC 2.6.1.42 - 3 rhea ids: RHEA:24801, RHEA:18321 and RHEA:24813
-    (rhea_id = , name = "Branched-chain-amino-acid aminotransferase", isozymes = [[(1, "A0A1B1EK75"),],], subsystem = "$subsystem , Valine, Leucine and Isoleucine Degradation and Biosynthesis,",),
+    (rhea_id = , name = "Branched-chain-amino-acid aminotransferase", isozymes = [[(1, "A0A1B1EK75"),],], subsystem = "$subsystem, Valine, Leucine and Isoleucine Degradation and Biosynthesis",),
 
 EC 1.1.1.3 - 2 rhea ids: RHEA:15757 and RHEA:15761
     (rhea_id = , name = "Homoserine dehydrogenase", isozymes = [[(4, "A0A1B1E9N6"),], [(4, "A0A1B1EFF7"),],], subsystem = subsystem,),

@@ -25,8 +25,8 @@ rxns = (
     (rhea_id = 19521, name = "Phosphate acetyltransferase", isozymes = [[(6, "A0A1B1EDI1"),], [(1, "A0A1B1EJI5"),],], subsystem = subsystem,), #2.3.1.8
     (rhea_id = 14965, name = "Acylphosphatase", isozymes = [[(1, "A0A1B1EGF9"),],], subsystem = subsystem,), #3.6.1.7
     (rhea_id = 23176, name = "AcCoA synthetase", isozymes = [[(1, "A0A1B1EFQ7"),],], subsystem = subsystem,), #6.2.1.1
-    (rhea_id = 23288, name = "Acetaldehyde dehydrogenase", isozymes = [[(1, "A0A1B1ECS0"),],], subsystem = subsystem,), #1.2.1.10
-    (rhea_id = 21524, name = "2-isopropylmalate synthase", isozymes = [[(4, "A0A1B1E9B6"),], [(4, "A0A1B1EE83"),],], subsystem = subsystem,), #2.3.3.13
+    (rhea_id = 23288, name = "Acetaldehyde dehydrogenase", isozymes = [[(1, "A0A1B1ECS0"),],], subsystem = "$subsystem, Phenylalanine Metabolism",), #1.2.1.10
+    (rhea_id = 21524, name = "2-isopropylmalate synthase", isozymes = [[(4, "A0A1B1E9B6"),], [(4, "A0A1B1EE83"),],], subsystem = "$subsystem, Valine, Leucine and Isoleucine Degradation",), #2.3.3.13
     (rhea_id = 12929, name = "Homocitrate synthase", isozymes = [[(1, "A0A1B1EL49"),],], subsystem = subsystem,), #2.3.3.14
 )
 

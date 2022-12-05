@@ -17,7 +17,7 @@ rxns = (
 #=
 These ECs were present but not included in rxns:
 
-
+already recorded in other subsystems: EC1.14.16.1
 =#
 
 end # module
