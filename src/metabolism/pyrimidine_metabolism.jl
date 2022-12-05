@@ -27,7 +27,7 @@ rxns = (
     (rhea_id = 36167, name = "5'-deoxynucleotidase", isozymes = [[(2, "A0A1B1EAF9"),],], subsystem = subsystem,), #3.1.3.89
     (rhea_id = 19129, name = "Thymidine kinase", isozymes = [[(4, "A0A1B1EBF7"),],], subsystem = subsystem,), #2.7.1.21
     (rhea_id = 16069, name = "Cytidine deaminase", isozymes = [[(2, "A0A1B1EBR9"),],], subsystem = subsystem,), #3.5.4.5
-    (rhea_id = 52540, name = "Pyrimidine nucleoside phosphorylase", isozymes = [[(),],], subsystem = subsystem,), #2.4.2.2
+    (rhea_id = 52540, name = "Pyrimidine nucleoside phosphorylase", isozymes = [[(1, "A0A1B1EHW8"),],], subsystem = subsystem,), #2.4.2.2
     (rhea_id = 24388, name = "Uridine phosphorylase", isozymes = [[(1, "A0A1B1EAY8"),],], subsystem = subsystem,), #2.4.2.3
     (rhea_id = 16037, name = "Thymidine phosphorylase", isozymes = [[(2, "A0A1B1EEL8"),],], subsystem = subsystem,), #2.4.2.4
 )

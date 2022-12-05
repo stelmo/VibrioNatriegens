@@ -18,7 +18,7 @@ rxns = (
     (rhea_id = 40523, name = "Succinate dehydrogenase", isozymes = [[(1, "A0A1B1EAJ6"),], [(1, "A0A1B1EAM6"),],], subsystem = "$subsystem / Pyruvate Metabolism",), #1.3.5.1
     (rhea_id = 12460, name = "Fumarate hydratase", isozymes = [[(4, "A0A1B1EFM8"),], [(2, "A0A1B1ED17"),],], subsystem = "$subsystem / Pyruvate Metabolism",), #4.2.1.2
     (rhea_id = 46012, name = "Malate dehydrogenase [quinone]", isozymes = [[(1, "A0A1B1EBX5"),],], subsystem = "$subsystem / Pyruvate Metabolism",), #1.1.5.4
-    (rhea_id = 21432, name = "Malate dehydrogenase", isozymes = [[(2, "A0A1B1E9A0"),],], subsystem = "$subsystem / Pyruvate Metabolism",), #1.1.1.37
+    (rhea_id = 21432, name = "Malate dehydrogenase", isozymes = [[(2, "A0A1B1E9A0"),],], subsystem = "$subsystem , Pyruvate Metabolism , Cysteine and Methionine Metabolism",), #1.1.1.37
 )
 
 #=
