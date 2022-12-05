@@ -22,7 +22,9 @@ using .Citrate_Cycle
 using .Pyruvate_Metabolism
 using .Ala_Asp_Glu
 using .Gly_Ser_Thr
-
+using .Lysine_Biosynthesis
+using .Lysine_Degradation
+using .Arigine_biosynthesis
 
 """
 $(TYPEDSIGNATURES)
@@ -56,6 +58,19 @@ function build_model()
     for rxn in Gly_Ser_Thr.rxns
         add_reaction_from_rhea!(model; rxn...)
     end
+
+    for rxn in Lysine_Biosynthesis.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+
+    for rxn in Lysine_Degradation.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+
+    for rxn in Arigine_biosynthesis.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+
     return model
 end
 

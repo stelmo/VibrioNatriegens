@@ -14,10 +14,10 @@ rxns = (
     (rhea_id = 19433, name = "Gluconokinase", isozymes = [[(1, "A0A1B1E8C0"),], [(1, "A0A1B1EL04"),],], subsystem = subsystem,), #EC 2.7.1.12
     (rhea_id = 17277, name = "MurNAc-6-P etherase", isozymes = [[(1, "A0A1B1E888"),],], subsystem = subsystem,), #4.2.1.12
     (rhea_id = 17089, name = "2-dehydro-3-deoxy-phosphogluconate aldolase", isozymes = [[(1, "A0A1B1E8D0"),], [(1, "A0A1B1EGV6"),], [(1, "A0A1B1EHS6"),],], subsystem = subsystem,), #EC 4.1.2.14
-    (rhea_id = 12556, name = "6-phosphogluconolactonase", isozymes = [[(1, "A0A1B1ECI2"),],], subsystem = subsystem,), #3.1.131
+    (rhea_id = 12556, name = "6-phosphogluconolactonase", isozymes = [[(1, "A0A1B1ECI2"),],], subsystem = subsystem,), #3.1.1.31
     (rhea_id = 15841, name = "Glucose-6-phosphate 1-dehydrogenase", isozymes = [[(1, "A0A1B1ECJ9"),],], subsystem = subsystem,), #1.1.1.49
     #(rhea_id = 11816, name = "Glucose-6-phosphate isomerase", isozymes = [[(1, "A0A1B1EFC4"),],], subsystem = subsystem,), #5.3.1.9
-    (rhea_id = 10116, name = "6-phosphogluconate dehydrogenase", isozymes = [[(2, "A0A1B1ECK0"),],], subsystem = subsystem,), #5.3.1.9
+    (rhea_id = 10116, name = "6-phosphogluconate dehydrogenase", isozymes = [[(2, "A0A1B1ECK0"),],], subsystem = subsystem,), #1.1.1.44
     (rhea_id = 13677, name = "Ribulose-phosphate 3-epimerase", isozymes = [[(1, "A0A1B1EFE9"),],], subsystem = subsystem,), #5.1.3.1
     (rhea_id = 10508, name = "Transketolase", isozymes = [[(2, "A0A1B1EEZ3"),], [(2, "A0A1B1EGZ9"),],], subsystem = subsystem,), #EC 2.2.1.1
     #(rhea_id = 11064, name = "Fructose-1,6-bisphosphatase class 1", isozymes = [[(3, "A0A1B1ELE3"),], [(3, "A0A1B1E9A1"),],], subsystem = subsystem,), #EC 3.1.3.11
