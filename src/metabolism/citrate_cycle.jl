@@ -25,7 +25,7 @@ rxns = (
 These ECs were present but not included in rxns:
 
 EC 1.2.4.1 - contains a heterodimer
-    (rhea_id = 19189, name = "Pyruvate dehydrogenase E1", isozymes = [[(2, "A0A1B1EFH4"),],], subsystem = "$subsystem / Pyruvate Metabolism",),
+    (rhea_id = 19189, name = "Pyruvate dehydrogenase E1", isozymes = [[(2, "A0A1B1EFH4"),],], subsystem = "$subsystem, Lysine Degradation, Tryptophan Metabolism",),
     A0A1B1EFH4  SUBUNIT: Homodimer
     A0A1B1EK05  SUBUNIT: Heterodimer of an alpha and a beta chain. {ECO:0000256|ARBA:ARBA00011870, ECO:0000256|RuleBase:RU361139}
     A0A1B1EK16  SUBUNIT: Heterodimer of an alpha and a beta chain. {ECO:0000256|RuleBase:RU366007}
