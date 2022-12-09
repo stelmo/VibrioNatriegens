@@ -11,13 +11,13 @@ subsystem = "Glycine, Serine and Threonine Metabolism"
 # (rhea_id = , name = , isozymes = [[(),],], subsystem = subsystem,),
  
 rxns = (
-    (rhea_id = 15901, name = "2,3-bisphosphoglycerate-independent phosphoglycerate mutase", isozymes = [[(1, "A0A1B1EFI9"),],], subsystem = subsystem,), #EC 5.4.2.12
+    #(rhea_id = 15901, name = "2,3-bisphosphoglycerate-independent phosphoglycerate mutase", isozymes = [[(1, "A0A1B1EFI9"),],], subsystem = subsystem,), #EC 5.4.2.12
     (rhea_id = 12641, name = "D-3-phosphoglycerate dehydrogenase", isozymes = [[(1, "A0A1B1EF12"),],], subsystem = subsystem,), #EC 1.1.1.95 cen
     (rhea_id = 19169, name = "L-serine dehydratase", isozymes = [[(1, "A0A1B1ED13"),], [(1, "A0A1B1EHL2"),], [(1, "A0A1B1EHL2"),],], subsystem = subsystem,), #EC 4.3.1.17
     (rhea_id = 13977, name = "Probable D-serine dehydratase", isozymes = [[(1, "A0A1B1EBV8"),],], subsystem = subsystem,), #EC 4.3.1.18
     (rhea_id = 22108, name = "L-threonine dehydratase", isozymes = [[(4, "A0A1B1EG77"),],], subsystem = subsystem,), #EC 4.3.1.19
     (rhea_id = 15481, name = "Serine hydroxymethyltransferase", isozymes = [[(2, "A0A1B1EAE3"),], [(2, "A0A1B1EJR1"),], [(2, "A0A1B1EJZ7"),],], subsystem = subsystem,), #EC 2.1.2.1
-    (rhea_id = 22108, name = "Aminomethyltransferase", isozymes = [[(1, "A0A1B1EK07"),],], subsystem = subsystem,), #EC 2.1.2.10
+    (rhea_id = 16945, name = "Aminomethyltransferase", isozymes = [[(1, "A0A1B1EK07"),],], subsystem = subsystem,), #EC 2.1.2.10
     (rhea_id = 15045, name = "Dihydrolipoyl dehydrogenase", isozymes = [[(1, "A0A1B1EET9"),],], subsystem = subsystem,), #EC 1.8.1.4
     (rhea_id = 17433, name = "Oxygen-dependent choline dehydrogenase", isozymes = [[(1, "A0A1B1ELG7"),],], subsystem = subsystem,), #EC 1.1.99.1
     (rhea_id = 20736, name = "2-amino-3-ketobutyrate coenzyme A ligase", isozymes = [[(2, "A0A1B1EID3"),],], subsystem = subsystem,), #EC 2.3.1.29

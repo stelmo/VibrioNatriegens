@@ -12,7 +12,7 @@ subsystem = "Citrate Cycle"
  
 rxns = (
     (rhea_id = 17017, name = "pyruvate dehydrogenase E2", isozymes = [[(1, "A0A1B1EES8"),],], subsystem = subsystem,), #2.3.1.12
-    (rhea_id = 15045, name = "Dihydrolipoyl dehydrogenase", isozymes = [[(1, "A0A1B1EET9"),],], subsystem = subsystem,), #1.8.1.4
+    #(rhea_id = 15045, name = "Dihydrolipoyl dehydrogenase", isozymes = [[(1, "A0A1B1EET9"),],], subsystem = subsystem,), #1.8.1.4
     (rhea_id = 18617, name = "Phosphoenolpyruvate carboxykinase", isozymes = [[(1, "A0A1B1E8K2"),],], subsystem = subsystem,), #4.1.1.49
     (rhea_id = 19629, name = "Isocitrate dehydrogenase", isozymes = [[(1, "A0A1B1EB33"),],], subsystem = subsystem,), #1.1.1.42
     (rhea_id = 15213, name = "2-oxoglutarate dehydrogenase E2", isozymes = [[(1, "A0A1B1EAS6"),],], subsystem = subsystem,), #2.3.1.61

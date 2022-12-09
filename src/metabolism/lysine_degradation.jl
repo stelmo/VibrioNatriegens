@@ -9,8 +9,9 @@ using COBREXA.Types
 subsystem = "Lysine_Degradation"
 
 # (rhea_id = , name = "", isozymes = [[(),],], subsystem = subsystem,), #
- 
+
 rxns = (
+    
     
 )
 

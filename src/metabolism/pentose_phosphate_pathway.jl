@@ -9,7 +9,7 @@ using COBREXA.Types
 subsystem = "Pentose Phosphate Pathway"
 
 # (rhea_id = , name = , isozymes = [[(),],], subsystem = subsystem,),
- 
+
 rxns = (
     (rhea_id = 19433, name = "Gluconokinase", isozymes = [[(1, "A0A1B1E8C0"),], [(1, "A0A1B1EL04"),],], subsystem = subsystem,), #EC 2.7.1.12
     (rhea_id = 17277, name = "MurNAc-6-P etherase", isozymes = [[(1, "A0A1B1E888"),],], subsystem = subsystem,), #4.2.1.12
@@ -25,17 +25,15 @@ rxns = (
     #(rhea_id = 14729, name = "Fructose-bisphosphate aldolase", isozymes = [[(1, "A0A1B1EEZ8"),],], subsystem = subsystem,), #4.1.2.13
     (rhea_id = 17053, name = "Transaldolase", isozymes = [[(1, "A0A1B1EGX7"),],], subsystem = subsystem,), #2.2.1.2
     (rhea_id = 14657, name = "Ribose-5-phosphate isomerase A", isozymes = [[(2, "A0A1B1EF17"),],], subsystem = subsystem,), #5.3.1.6
-    (rhea_id = 15609, name = "Ribose-phosphate pyrophosphokinase", isozymes = [[(6, "A0A1B1EA88"),],], subsystem = subsystem,), #2.7.6.1
+    (rhea_id = 15609, name = "Ribose-phosphate pyrophosphokinase", isozymes = [[(6, "A0A1B1EA88"),],], subsystem = "§subsystem, Purine Metabolism"), #2.7.6.1
     (rhea_id = 13697, name = "Ribokinase", isozymes = [[(2, "A0A1B1EAH9"),], [(2, "A0A1B1EJU7"),], [(2, "A0A1B1ELP3"),],], subsystem = subsystem,), #EC 2.7.1.15
-    #(rhea_id = 23536, name = "Phosphoglucomutase", isozymes = [[(1, "A0A1B1EB72"),], [(1, "A0A1B1EER5"),],], subsystem = subsystem,), #EC 5.4.2.2
+    (rhea_id = 23536, name = "Phosphoglucomutase", isozymes = [[(1, "A0A1B1EB72"),], [(1, "A0A1B1EER5"),],], subsystem = "$subsystem, Purine Metabolism, Glycolysis/Gluconeogenesis" ), #EC 5.4.2.2
     (rhea_id = 12821, name = "Deoxyribose-phosphate aldolase", isozymes = [[(1, "A0A1B1EEJ0"),],], subsystem = subsystem,), #4.1.2.4
-
-
 )
 
 #=
 These ECs were present but not included in rxns:
-(rhea_id = 27658/18793, name = "Phosphopentomutase", isozymes = [[(1, "A0A1B1EEL4"),],], subsystem = subsystem,), #5.4.2.7
+(rhea_id = 27658/18793, name = "Phosphopentomutase", isozymes = [[(1, "A0A1B1EEL4"),],], subsystem = "$subsystem, pentose_phosphate_pathway",), #5.4.2.7
 =#
 
 end # module
