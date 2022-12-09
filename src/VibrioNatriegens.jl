@@ -31,6 +31,15 @@ using .Phe_Metabolism
 using .Try_Metabolism
 using .Phe_Tyr_Try
 
+using .Purine_Metabolism
+using .Gly_Ser_Thr
+using .Lysine_Biosynthesis
+using .Lysine_Degradation
+using .Arigine_Biosynthesis
+using .Arg_Pro_Meta
+using .Histidine_Meta
+
+
 """
 $(TYPEDSIGNATURES)
 
@@ -59,6 +68,11 @@ function build_model()
     for rxn in Pyrimidine_Metabolism.rxns
         add_reaction_from_rhea!(model; rxn...)
     end
+
+    for rxn in Purine_Metabolism.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+    #flo ^
 
     for rxn in Ala_Asp_Glu.rxns
         add_reaction_from_rhea!(model; rxn...)
@@ -92,6 +106,30 @@ function build_model()
         add_reaction_from_rhea!(model; rxn...)
     end
 
+
+    for rxn in Gly_Ser_Thr.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+
+    for rxn in Lysine_Biosynthesis.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+
+    for rxn in Lysine_Degradation.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+
+    for rxn in Arigine_Biosynthesis.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+
+    for rxn in Arg_Pro_Meta.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
+
+    for rxn in Histidine_Meta.rxns
+        add_reaction_from_rhea!(model; rxn...)
+    end
     return model
 end
 
