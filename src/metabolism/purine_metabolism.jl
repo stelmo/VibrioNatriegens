@@ -53,9 +53,3 @@ These ECs were present but not included in rxns:
 =#
 
 end # module
-
-
-
-
-
-
