@@ -6,7 +6,7 @@ using ..Utils
 using COBREXA
 using COBREXA.Types
 
-subsystem = "Histidine_Metabolism"
+subsystem = "Histidine Metabolism"
 
 # (rhea_id = , name = "", isozymes = [[(),],], subsystem = subsystem,), #
 
