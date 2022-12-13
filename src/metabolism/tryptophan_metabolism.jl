@@ -32,7 +32,7 @@ EC 6.3.2.- missing rhea id
     (rhea_id = , name = "Alpha-L-glutamate ligase", isozymes = [[(1, "A0A1B1ED93"),], [(1, "A0A1B1EHM5"),],], subsystem = subsystem,),
 
 
-These ECs were already recorded in other subsystems: EC2.1.1.-, EC1.11.1.21, EC1.1.1.35, EC4.2.1.7 and EC1.2.4.2
+These ECs were already recorded in other subsystem files: EC2.1.1.-, EC1.11.1.21, EC1.1.1.35, EC4.2.1.7 and EC1.2.4.2
 =#
 
 end # module

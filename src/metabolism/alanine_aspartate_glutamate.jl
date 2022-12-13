@@ -19,7 +19,6 @@ rxns = (
     (rhea_id = 25876, name = "L-aspartate oxidase", isozymes = [[(1, "A0A1B1EF02"),],], subsystem = subsystem,), #1.4.3.16
     (rhea_id = 15133, name = "Glutamate dehydrogenase", isozymes = [[(1, "A0A1B1ECC8"),],], subsystem = "$subsystem, Arigine Biosynthesis",), #1.4.1.2
     (rhea_id = 30235, name = "Delta-1-pyrroline-5-carboxylate dehydrogenase", isozymes = [[(1, "A0A1B1EHY2"),],], subsystem = "$subsystem, Arginine and Proline Metabolism" ), #1.2.1.88 - part of the bifunctional protein PutA
-    
     (rhea_id = 13237, name = "Glutamine--fructose-6-phosphate aminotransferase", isozymes = [[(2, "A0A1B1E9C4"),],], subsystem = subsystem,), #2.6.1.16
     (rhea_id = 14905, name = "Amidophosphoribosyltransferase", isozymes = [[(1, "A0A1B1EDU7"),],], subsystem = "$subsystem, Purine Metabolism",), #2.4.2.14
 )

@@ -12,7 +12,6 @@ subsystem = "Valine, Leucine and Isoleucine Degradation"
  
 rxns = (
     (rhea_id = 32271, name = "3-isopropylmalate dehydrogenase", isozymes = [[(2, "A0A1B1E9B4"),],], subsystem = subsystem,), #1.1.1.85
-
 )
 
 #=

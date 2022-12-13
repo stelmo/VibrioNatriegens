@@ -22,6 +22,7 @@ using .Citrate_Cycle
 using .Pyruvate_Metabolism
 using .Pentose_Phosphate_Pathway
 using .Pyrimidine_Metabolism
+using .Purine_Metabolism
 using .Ala_Asp_Glu
 using .Cys_Met
 using .Val_Leu_Iso_Synthesis
@@ -30,8 +31,6 @@ using .Tyr_Metabolism
 using .Phe_Metabolism
 using .Try_Metabolism
 using .Phe_Tyr_Try
-
-using .Purine_Metabolism
 using .Gly_Ser_Thr
 using .Lysine_Biosynthesis
 using .Lysine_Degradation

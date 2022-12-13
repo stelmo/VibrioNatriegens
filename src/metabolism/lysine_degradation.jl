@@ -6,7 +6,7 @@ using ..Utils
 using COBREXA
 using COBREXA.Types
 
-subsystem = "Lysine_Degradation"
+subsystem = "Lysine Degradation"
 
 # (rhea_id = , name = "", isozymes = [[(),],], subsystem = subsystem,), #
 

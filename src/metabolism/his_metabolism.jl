@@ -22,7 +22,6 @@ rxns = (
     (rhea_id = 13101, name = "Urocanate hydratase", isozymes = [[(1, "A0A1B1EH77"),],], subsystem = subsystem,), #4.2.1.49
     (rhea_id = 23660, name = "Imidazolonepropionase", isozymes = [[(1, "A0A1B1EBS0"),],], subsystem = subsystem,), #3.5.2.7
     (rhea_id = 22492, name = "Formimidoylglutamase", isozymes = [[(1, "A0A1B1EBP9"),],], subsystem = subsystem,), #3.5.3.8
-
 )
 
 
