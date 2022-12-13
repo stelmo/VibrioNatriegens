@@ -9,7 +9,7 @@ using COBREXA.Types
 subsystem = "Pentose Phosphate Pathway"
 
 # (rhea_id = , name = , isozymes = [[(),],], subsystem = subsystem,),
- 
+
 rxns = (
     (rhea_id = 19433, name = "Gluconokinase", isozymes = [[(1, "A0A1B1E8C0"),], [(1, "A0A1B1EL04"),],], subsystem = subsystem,), #EC 2.7.1.12
     (rhea_id = 17277, name = "MurNAc-6-P etherase", isozymes = [[(1, "A0A1B1E888"),],], subsystem = subsystem,), #4.2.1.12

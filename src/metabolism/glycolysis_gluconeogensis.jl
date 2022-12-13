@@ -9,7 +9,7 @@ using COBREXA.Types
 subsystem = "Glycolysis/Gluconeogenesis"
 
 # (rhea_id = , name = , isozymes = [[(),],], subsystem = subsystem,),
- 
+
 rxns = (
     (rhea_id = 11816, name = "Glucose-6-phosphate isomerase", isozymes = [ [(1, "A0A1B1EFC4"),], ], subsystem = "$subsystem, Pentose Phosphate Pathway",), #EC 5.3.1.9
     (rhea_id = 11064, name = "Fructose-1,6-bisphosphatase", isozymes = [[(4, "A0A1B1ELE3"),], [(4, "A0A1B1E9A1"),],], subsystem = "$subsystem, Pentose Phosphate Pathway",), #EC 3.1.3.11
