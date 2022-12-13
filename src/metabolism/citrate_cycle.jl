@@ -11,7 +11,6 @@ subsystem = "Citrate Cycle"
 # (rhea_id = , name = "", isozymes = [[(),],], subsystem = subsystem,), #
 
 rxns = (
-    (rhea_id = 15045, name = "Dihydrolipoyl dehydrogenase", isozymes = [[(1, "A0A1B1EET9"),],], subsystem = "$subsystem, Glycolysis/Gluconeogenesis, Pyruvate Metabolism, gly_ser_thr, Valine, Leucine and Isoleucine Biosynthesis",), #1.8.1.4
     (rhea_id = 18617, name = "Phosphoenolpyruvate carboxykinase", isozymes = [[(1, "A0A1B1E8K2"),],], subsystem = "$subsystem, Pyruvate Metabolism", ), #4.1.1.49
     (rhea_id = 19629, name = "Isocitrate dehydrogenase", isozymes = [[(1, "A0A1B1EB33"),],], subsystem = subsystem,), #1.1.1.42
     (rhea_id = 15213, name = "2-oxoglutarate dehydrogenase E2", isozymes = [[(1, "A0A1B1EAS6"),],], subsystem = subsystem,), #2.3.1.61
@@ -40,6 +39,9 @@ EC 6.2.1.5 - contains a heterotetramer
     (rhea_id = 17661, name = "Succinyl-CoA synthetase subunit beta", isozymes = [[(),],], subsystem = subsystem,),
     A0A1B1EAJ2  SUBUNIT: Heterotetramer of two alpha and two beta subunits. {ECO:0000256|HAMAP-Rule:MF_00558}
     A0A1B1EAK1  SUBUNIT: Heterotetramer of two alpha and two beta subunits. {ECO:0000256|HAMAP-Rule:MF_01988, ECO:0000256|RuleBase:RU000699}
+
+
+These ECs were already recorded in other subsystems: EC 1.8.1.4
 =#
 
 end # module

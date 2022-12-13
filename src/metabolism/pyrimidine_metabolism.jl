@@ -11,7 +11,7 @@ subsystem = "Pyrimidine Metabolism"
 # (rhea_id = , name = "", isozymes = [[(),],], subsystem = subsystem,), #
  
 rxns = (
-    (rhea_id = 20013, name = "Aspartate transcarbamylase", isozymes = [[(1, "A0A1B1EF32"),],], subsystem = subsystem,), #2.1.3.2
+    (rhea_id = 20013, name = "Aspartate transcarbamylase", isozymes = [[(1, "A0A1B1EF32"),],], subsystem = "$subsystem, Alanine, Aspartate and Glutamate Metabolism",), #2.1.3.2
     (rhea_id = 24296, name = "Dihydroorotase", isozymes = [[(2, "A0A1B1EJI4"),],], subsystem = subsystem,), #3.5.2.3
     (rhea_id = 30187, name = "Dihydroorotate dehydrogenase", isozymes = [[(1, "A0A1B1ECC1"),],], subsystem = subsystem,), #1.3.5.2
     (rhea_id = 10380, name = "Orotate phosphoribosyltransferase", isozymes = [[(2, "A0A1B1E8U0"),],], subsystem = subsystem,), #2.4.2.10

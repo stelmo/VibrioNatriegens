@@ -8,7 +8,6 @@ using COBREXA.Types
 
 subsystem = "Purine Metabolism"
 
-
 rxns = (
     (rhea_id = 17453, name = "Phosphoribosylamine--glycine ligase", isozymes = [[(1, "A0A1B1EFN9" ),],], subsystem = subsystem,),#6.3.4.13
     (rhea_id = 15053, name = "Phosphoribosylglycinamide formyltransferase", isozymes = [[(1, "A0A1B1EE84" ),],], subsystem = subsystem,),#2.1.2.2

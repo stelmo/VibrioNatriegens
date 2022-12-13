@@ -42,6 +42,8 @@ EC 2.3.1.12 - complicated subunit_structure
     (rhea_id = 17017, name = "Acetyltransferase component of pyruvate dehydrogenase complex", isozymes = [[(),],], subsystem = "$subsystem / Citrate Cycle",),
     A0A1B1EES8  SUBUNIT: Forms a 24-polypeptide structural core with octahedral symmetry. {ECO:0000256|ARBA:ARBA00011484, ECO:0000256|RuleBase:RU361137}
 
+
+These ECs were already recorded in other subsystems: EC1.8.1.4
 =#
 
 end # module
