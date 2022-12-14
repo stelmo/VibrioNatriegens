@@ -17,7 +17,7 @@ rxns = (
     (rhea_id = 15393, name = "Diaminopimelate epimerase", isozymes = [[(2, "A0A1B1EFY4"),],], subsystem = subsystem,), #5.1.1.7
     (rhea_id = 23676, name = "UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--2,6-diaminopimelate ligase", isozymes = [[(1, "A0A1B1E9I1"),],], subsystem = subsystem,), #6.3.2.13
     (rhea_id = 28374, name = "UDP-N-acetylmuramoyl-tripeptide--D-alanyl-D-alanine ligase", isozymes = [[(1, "A0A1B1E9K0"),],], subsystem = subsystem,), #6.3.2.10
-    (rhea_id = 15101, name = "Diaminopimelate decarboxylase", isozymes = [[(4, "A0A1B1EGM8"),],], subsystem = subsystem,), #4.1.1.20 
+    (rhea_id = 15101, name = "Diaminopimelate decarboxylase", isozymes = [[(2, "A0A1B1EGM8"),],], subsystem = subsystem,), #4.1.1.20 
 )
 
 #=
