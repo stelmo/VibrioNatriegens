@@ -17,8 +17,8 @@ rxns = (
     (rhea_id = 19541 , name = "Gamma-glutamyl phosphate reductase", isozymes = [[(1, "A0A1B1EA60"),],], subsystem = subsystem,), #1.2.1.41
     (rhea_id = 17641 , name = "Biosynthetic arginine decarboxylase", isozymes = [[(1, "A0A1B1ELE0"),],], subsystem = subsystem,), #4.1.1.19
     (rhea_id = 18037 , name = "Putative agmatine deiminase", isozymes = [[(1, "A0A1B1ECY6"),],], subsystem = subsystem,), #3.5.3.12
-    (rhea_id = 23784 , name = "Bifunctional protein PutA", isozymes = [[(1, "A0A1B1EHY2"),],], subsystem = subsystem,), #1.5.5.2 ?
-    (rhea_id = 23784 , name = "Bifunctional protein PutA", isozymes = [[(1, "A0A1B1EHY2"),],], subsystem = subsystem,), #1.5.5.2 ?
+    (rhea_id = 23784 , name = "Proline dehydrogenase", isozymes = [[(1, "A0A1B1EHY2"),],], subsystem = subsystem,), #1.5.5.2 part of Bifunctional protein PutA
+    (rhea_id = 30235 , name = "P5C dehydrogenase", isozymes = [[(1, "A0A1B1EHY2"),],], subsystem = subsystem,), #1.2.1.88 part of Bifunctional protein PutA
 )
 
 
