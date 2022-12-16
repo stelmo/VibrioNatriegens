@@ -29,7 +29,7 @@ rxns = (
 These ECs were present but not included in rxns:
 
 EC 2.6.1.52 - 2 rhea ids: RHEA:16573 and RHEA:14329
-    (rhea_id = , name = "Phosphoserine aminotransferase", isozymes = [[(2, "A0A1B1ECA5"),],], subsystem = subsystem,),
+    (rhea_id = , name = "Phosphoserine aminotransferase", isozymes = [[(2, "A0A1B1ECA5"),],], subsystem = "$subsystem, Glycine, Serine and Threonine Metabolism",),
 
 EC 2.6.1.42 - 3 rhea ids: RHEA:24801, RHEA:18321 and RHEA:24813
     (rhea_id = , name = "Branched-chain-amino-acid aminotransferase", isozymes = [[(1, "A0A1B1EK75"),],], subsystem = "$subsystem, Valine, Leucine and Isoleucine Degradation and Biosynthesis",),
@@ -42,6 +42,9 @@ EC 2.7.2.4 - unclear subunit information (unsure which of 2 enzymes the subunit 
 
 EC 3.2.2.9 - 3 rhea ids: RHEA:29859, RHEA:17805 and RHEA:13617
     (rhea_id = , name = "MTA/SAH nucleosidase", isozymes = [[(1, "A0A1B1E9M0"),],], subsystem = subsystem,),
+
+    
+These ECs were already recorded in other subsystem files: EC1.1.1.37
 =#
 
 end # module

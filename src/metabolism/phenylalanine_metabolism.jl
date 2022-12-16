@@ -26,9 +26,10 @@ EC 1.13.11.16 - 2 rhea ids: RHEA:25054 and RHEA:23840
     (rhea_id = , name = "3-carboxyethylcatechol 2,3-dioxygenase", isozymes = [[(4, "A0A1B1EC11"),],], subsystem = subsystem,),
 
 EC 3.7.1.14 - 2 rhea ids: RHEA:34187 and RHEA:34191
-(rhea_id = , name = "2-hydroxy-6-oxononatrienedioate hydrolase", isozymes = [[(2, "A0A1B1EC31"),],], subsystem = subsystem,),
+    (rhea_id = , name = "2-hydroxy-6-oxononatrienedioate hydrolase", isozymes = [[(2, "A0A1B1EC31"),],], subsystem = subsystem,),
 
-already recorded in other subsystems: EC2.6.1.9, EC4.2.1.17, EC1.2.1.10
+
+already recorded in other subsystem files: EC2.6.1.9, EC4.2.1.17, EC1.2.1.10
 =#
 
 end # module

@@ -23,10 +23,10 @@ rxns = (
 
 #=
 These ECs were present but not included in rxns:
-(rhea_id = 14105/14109 , name = "Pyrroline-5-carboxylate reductase", isozymes = [[(1, "A0A1B1EF33"),],], subsystem = subsystem,), #1.5.1.2 unknown rhea
-(rhea_id = 34099/34095 , name = "Carboxynorspermidine/carboxyspermidine decarboxylase", isozymes = [[(2, "A0A1B1ED48"),],], subsystem = subsystem,), #4.1.1.96 unknown rhea
+    (rhea_id = 14105/14109 , name = "Pyrroline-5-carboxylate reductase", isozymes = [[(1, "A0A1B1EF33"),],], subsystem = subsystem,), #1.5.1.2 unknown rhea
+    (rhea_id = 34099/34095 , name = "Carboxynorspermidine/carboxyspermidine decarboxylase", isozymes = [[(2, "A0A1B1ED48"),],], subsystem = subsystem,), #4.1.1.96 unknown rhea
 
-These ECs were already recorded in other subsystems: EC1.2.1.88
+These ECs were already recorded in other subsystem files: EC1.2.1.88
 =#
 
 end # module

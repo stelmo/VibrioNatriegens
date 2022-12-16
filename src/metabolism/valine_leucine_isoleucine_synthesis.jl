@@ -23,7 +23,7 @@ EC 2.3.1.16 - Heterotetramer
     (rhea_id = 21564, name = "3-ketoacyl-CoA thiolase", isozymes = [[(),],], subsystem = subsystem,),
     A0A1B1E8F4   SUBUNIT: Heterotetramer of two alpha chains (FadB) and two beta chains (FadA). {ECO:0000256|HAMAP-Rule:MF_01620}
 
-already recorded in other subsystems: EC2.6.1.42, EC1.8.1.4, EC4.2.1.7 and EC1.1.1.35
+already recorded in other subsystem files: EC2.6.1.42, EC1.8.1.4, EC4.2.1.17 and EC1.1.1.35
 =#
 
 end # module

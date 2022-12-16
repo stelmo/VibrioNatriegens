@@ -32,7 +32,7 @@ EC 4.2.1.33 - 2 Heterodimers
     A0A1B1E9C0  SUBUNIT: Heterodimer of LeuC and LeuD. {ECO:0000256|HAMAP-Rule:MF_01026}
     A0A1B1E9I9  SUBUNIT: Heterodimer of LeuC and LeuD. {ECO:0000256|ARBA:ARBA00011271, ECO:0000256|HAMAP-Rule:MF_01031}
 
-already recorded in other subsystems: EC2.6.1.42, EC4.3.1.19, EC2.3.3.13
+already recorded in other subsystem files: EC2.6.1.42, EC4.3.1.19, EC2.3.3.13
 =#
 
 end # module

@@ -22,11 +22,8 @@ rxns = (
 
 #=
 These ECs were present but not included in rxns:
-(rhea_id = 16169, name = "Formate-dependent phosphoribosylglycinamide formyltransferase", isozymes = [[(?, "A0A1B1E8Q4"),],], subsystem = subsystem,), #EC 6.3.1.2 unknown subunit information
-(rhea_id = 15889, name = "Imidazole glycerol phosphate synthase subunit HisH", isozymes = [[(4, "A0A1B1EF16"),],], subsystem = subsystem,), #3.5.1.2 unknown information
-(rhea_id = 20557, name = Urease subunit alpha isozymes = [[(?),],], subsystem = subsystem,), #EC 3.5.1.5 Heterotrimer
 
-These ECs were already recorded in other subsystems: EC6.3.4.5, EC4.3.2.1, EC3.5.1.2 and EC1.4.1.2
+These ECs were already recorded in other subsystem files: EC6.3.4.5, EC4.3.2.1, EC3.5.1.2, EC6.3.1.2, EC1.4.1.2 and EC3.5.1.5
 =#
 
 end # module
