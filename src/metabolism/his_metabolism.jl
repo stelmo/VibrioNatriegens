@@ -27,8 +27,13 @@ rxns = (
 
 #=
 These ECs were present but not included in rxns:
-#strange information for 4.3.2.10
-strange information for 2.1.1.-
+EC 4.3.2.10 - contains a heterodimer?
+    (rhea_id = 24793, name = "Imidazole glycerol phosphate synthase subunit HisH", isozymes = [[(),],], subsystem = subsystem,),
+    A0A1B1EBD7      SUBUNIT: Heterodimer of HisH and HisF. {ECO:0000256|ARBA:ARBA00011152, ECO:0000256|HAMAP-Rule:MF_00278}
+    A0A1B1EBF9      SUBUNIT: Heterodimer of HisH and HisF. {ECO:0000256|ARBA:ARBA00011152, ECO:0000256|HAMAP-Rule:MF_01013}
+
+
+These ECs were already recorded in other subsystem files: EC 2.1.1.-, EC 2.6.1.9, EC 2.3.1.-
 =#
 
 end # module

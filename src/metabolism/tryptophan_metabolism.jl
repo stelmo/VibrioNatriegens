@@ -13,7 +13,6 @@ subsystem = "Tryptophan Metabolism"
 rxns = (
     (rhea_id = 19553, name = "Tryptophanase", isozymes = [[(4, "A0A1B1EI58"),],], subsystem = subsystem,), #4.1.99.1
     (rhea_id = 52848, name = "tRNA U34 carboxymethyltransferase", isozymes = [[(4, "A0A1B1EBE5"),],], subsystem = subsystem,), #2.5.1.-
-
 )
 
 #=
@@ -32,7 +31,7 @@ EC 6.3.2.- missing rhea id
     (rhea_id = , name = "Alpha-L-glutamate ligase", isozymes = [[(1, "A0A1B1ED93"),], [(1, "A0A1B1EHM5"),],], subsystem = subsystem,),
 
 
-These ECs were already recorded in other subsystem files: EC2.1.1.-, EC1.11.1.21, EC1.1.1.35, EC4.2.1.7 and EC1.2.4.2
+These ECs were already recorded in other subsystem files: EC2.1.1.-, EC1.11.1.21, EC1.1.1.35, EC4.2.1.17, EC1.2.4.2
 =#
 
 end # module

@@ -26,12 +26,11 @@ rxns = (
 #=
 These ECs were present but not included in rxns:
 (rhea_id = unknown, name = "UDP-3-O-acyl-GlcNAc deacetylase", isozymes = [[(1, "A0A1B1EDT5"),],], subsystem = subsystem,), #3.5.1.1
-(rhea_id = #23920, #16853, name = "Adenylosuccinate lyase", isozymes = [[(1, "A0A1B1EBC6"),],], subsystem = "$subsystem, Purine Metabolism"), #4.3.2.2
-(rhea_id = #16169, name = "Formate-dependent phosphoribosylglycinamide formyltransferase", isozymes = [[(?, "A0A1B1E8Q4"),],], subsystem = subsystem,), #6.3.1.2 unknown information
-(rhea_id = 18633, name = "Carbamoyl-phosphate synthase large chain", isozymes = [[(1, "A0A1B1E9K5"),[(1, "A0A1B1E9L6"),],], subsystem = subsystem,), #6.3.5.5 strange subunit information
+(rhea_id = 23920 or 16853, name = "Adenylosuccinate lyase", isozymes = [[(1, "A0A1B1EBC6"),],], subsystem = "$subsystem, Purine Metabolism"), #4.3.2.2
+(rhea_id = 16169, name = "Formate-dependent phosphoribosylglycinamide formyltransferase", isozymes = [[(?, "A0A1B1E8Q4"),],], subsystem = "$subsystem, Arigine Biosynthesis",), #6.3.1.2 unknown information
 (rhea_id = 15889, name = "Glutaminase", isozymes = [[(4, "A0A1B1EF16"),],], subsystem = "$subsystem, Arigine Biosynthesis",), #3.5.1.2 - weird info because it can be part of a complex
 
-These ECs were already recorded in other subsystems: EC2.1.3.2
+These ECs were already recorded in other subsystem files: EC2.1.3.2, EC6.3.5.5
 =#
 
 end # module
