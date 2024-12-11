@@ -8,9 +8,20 @@ clear_cache!() = begin
         rm(joinpath(CACHE_LOCATION, dir), recursive = true)
         dir != "version.txt" && mkdir(joinpath(CACHE_LOCATION, dir)) # add back the empty dir
     end
-    write(joinpath(CACHE_LOCATION, "version.txt"), string(Base.VERSION))    
-    @info("Cache cleared")
+    write(joinpath(CACHE_LOCATION, "version.txt"), string(Base.VERSION))
+    @info("Cache cleared.")
 end
+
+"""
+$(TYPEDSIGNATURES)
+Clear a specific cache `dir`.
+"""
+clear_cache!(dir) = begin
+    rm(joinpath(CACHE_LOCATION, dir), recursive = true)
+    mkdir(joinpath(CACHE_LOCATION, dir)) # add back the empty dir
+    @info("$dir cache cleared.")
+end
+
 
 """
 $(TYPEDSIGNATURES)
@@ -24,11 +35,13 @@ $(TYPEDSIGNATURES)
 
 Return the cached object.
 """
-_get_cache(database::String, id) = deserialize(joinpath(CACHE_LOCATION, database, string(id)))
+_get_cache(database::String, id) =
+    deserialize(joinpath(CACHE_LOCATION, database, string(id)))
 
 """
 $(TYPEDSIGNATURES)
 
 Cache the object.
 """
-_cache(database::String, id, item) = serialize(joinpath(CACHE_LOCATION, database, string(id)), item)
+_cache(database::String, id, item) =
+    serialize(joinpath(CACHE_LOCATION, database, string(id)), item)

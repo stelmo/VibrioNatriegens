@@ -1,0 +1,6 @@
+function curate!(model)
+
+
+
+
+end
