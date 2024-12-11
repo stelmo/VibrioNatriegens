@@ -16,7 +16,7 @@ function extend_model!(model, dfs)
             push!(model.reactions[rid].gene_association, iso)
 
         else # first time seeing this reaction
-            kegg_rxn = VibrioNatriegens.get_kegg_reaction(rid)
+            kegg_rxn = get_kegg_reaction(rid)
 
             append!(ms, string.(keys(kegg_rxn.stoichiometry)))
             ecs = isnothing(kegg_rxn.ec) ? [""] : kegg_rxn.ec
@@ -53,6 +53,42 @@ function extend_model!(model, dfs)
 
 end
 
-function build_model()
+function build_model(;pathway_maps=[])
 
+    df = DataFrame(
+        XLSX.readtable(
+            joinpath("data", "curation", "curated", "base_reactions.xlsx"),
+            "Sheet1",
+        ),
+    )
+
+    # this is useful for troubleshooting
+    rxns = String[]
+    for m in pathway_maps
+        append!(rxns, get_kegg_reactions_in_pathway(m))
+    end
+
+    @rsubset!(df, :Reaction in rxns)
+
+    heteros = @rsubset(df, !ismissing(:Subunit))
+    homos = @rsubset(df, ismissing(:Subunit))
+    @select!(homos, :Reaction, :Protein, :Stoichiometry)
+
+    ghomos = groupby(homos, [:Reaction, :Protein])
+    gheteros = groupby(heteros, [:Reaction, :Subunit])
+
+    #! Build model
+
+    model = Model()
+
+    extend_model!(model, ghomos)
+    extend_model!(model, gheteros)
+    reaction_directions!(model)
+    add_exchanges!(model)
+    # add_biomass!(model)
+    # add_atpm!(model)
+
+    printmodel(model)
+    printmodel(model, rxns = [])
+    model
 end

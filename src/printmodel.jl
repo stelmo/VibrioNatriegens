@@ -1,5 +1,5 @@
 
-function printmodel(model, rxns = [])
+function printmodel(model::Model, rxns = [])
 
     df = DataFrame(
         rid = String[],

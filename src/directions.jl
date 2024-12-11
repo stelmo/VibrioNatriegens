@@ -35,7 +35,7 @@ function reaction_directions!(model; excludes = String[], threshold = 3.0)
             model.reactions[rid].lower_bound = -1000
             model.reactions[rid].upper_bound = 0
         else
-            @warn("Directions confusion!")
+            @warn("Direction confusion!")
         end
     end
 
