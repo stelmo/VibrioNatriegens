@@ -53,7 +53,7 @@ function extend_model!(model, dfs)
 
 end
 
-function build_model(;pathway_maps=[])
+function build_model(; pathway_maps = [])
 
     df = DataFrame(
         XLSX.readtable(

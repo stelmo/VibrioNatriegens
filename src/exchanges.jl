@@ -6,7 +6,7 @@ Add exchange reactions for basic metabolites
 function add_exchanges!(model)
 
     substrates = [
-        "C00221" # beta_glucose
+        "C00221", # beta_glucose
         # "C00267" # alpha glucose
         # "C00031", # D-Glucose
     ]
@@ -56,7 +56,7 @@ function add_exchanges!(model)
             upper_bound = 1000,
         )
     end
-    
+
     for mid in bidirs
         mid in A.metabolites(model) || continue
         model.reactions["EX_"*mid] = Reaction(;
@@ -66,5 +66,5 @@ function add_exchanges!(model)
             upper_bound = 1000,
         )
     end
-    
+
 end

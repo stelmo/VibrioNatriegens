@@ -21,7 +21,7 @@ function printmodel(model::Model, rxns = [])
         x = first(model.reactions[rid].annotations["KEGG_REACTION"])
         lb = model.reactions[rid].lower_bound
         ub = model.reactions[rid].upper_bound
-        
+
         if lb == 0 && ub != 0
             replace(x, "<=>" => "->")
         elseif lb != 0 && ub == 0
@@ -30,7 +30,7 @@ function printmodel(model::Model, rxns = [])
             replace(x, "<=>" => "<->")
         end
     end
-    _h(rid) =  begin
+    _h(rid) = begin
         haskey(model.reactions[rid].annotations, "EC") || return ""
         ecs = model.reactions[rid].annotations["EC"]
         isnothing(ecs) && return ""
@@ -43,25 +43,15 @@ function printmodel(model::Model, rxns = [])
         else
             nm = model.reactions[rid].name
         end
-        isnothing(nm) ? "" : nm    
+        isnothing(nm) ? "" : nm
     end
 
     for rid in rxns
-        rid in keys(model.reactions) || continue 
+        rid in keys(model.reactions) || continue
 
-        push!(
-            df, 
-            (
-                rid, 
-                _k(rid),
-                _g(rid),
-                _f(rid),
-                _h(rid),
-            ); 
-            promote=true,
-        )
+        push!(df, (rid, _k(rid), _g(rid), _f(rid), _h(rid)); promote = true)
     end
-    
+
     df
 
     CSV.write("model.csv", df)

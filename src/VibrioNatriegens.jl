@@ -9,8 +9,15 @@ using eQuilibrator, Measurements, Unitful
 using DataFrames, CSV, DataFramesMeta, XLSX
 import ConstraintTrees as C
 
-const CACHE_DIRS =
-    ["reactions", "compounds", "orthologies", "modules", "maps", "directionality","link_path_rn"]
+const CACHE_DIRS = [
+    "reactions",
+    "compounds",
+    "orthologies",
+    "modules",
+    "maps",
+    "directionality",
+    "link_path_rn",
+]
 CACHE_LOCATION = ""
 
 function __init__()

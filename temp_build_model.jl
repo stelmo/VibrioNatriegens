@@ -56,9 +56,14 @@ model
 VibrioNatriegens.printmodel(model)
 
 ct = X.parsimonious_flux_balance_constraints(model)
-sol = X.optimized_values(ct; optimizer=Gurobi.Optimizer, objective=ct.objective.value)
+sol = X.optimized_values(ct; optimizer = Gurobi.Optimizer, objective = ct.objective.value)
 ct.objective.bound = C.EqualTo(sol.objective)
-sol = X.optimized_values(ct; optimizer=Gurobi.Optimizer, objective=ct.parsimonious_objective.value, sense=X.Minimal)
+sol = X.optimized_values(
+    ct;
+    optimizer = Gurobi.Optimizer,
+    objective = ct.parsimonious_objective.value,
+    sense = X.Minimal,
+)
 
 rename_func(r) = begin
     if startswith(r, "EX_")
@@ -77,7 +82,6 @@ Dict(
 
 Dict(
     rename_func(string(k)) => v for
-    (k, v) in C.filter_leaves(x -> abs(x) > 1e-3, sol.fluxes) if
-    startswith(string(k), "R")
+    (k, v) in C.filter_leaves(x -> abs(x) > 1e-3, sol.fluxes) if startswith(string(k), "R")
 )
 
