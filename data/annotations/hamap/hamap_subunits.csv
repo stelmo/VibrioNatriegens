@@ -1,0 +1,463 @@
+Protein,Subunit
+WP_020334567.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_02121}.
+WP_020333840.1,"The complex is composed of six subunits: RnfA, RnfB, RnfC,RnfD, RnfE and RnfG. {ECO:0000256|HAMAP-Rule:MF_00478}."
+WP_014233141.1,"Component of the preprimosomal complex composed of PriA, PriB,PriC, DnaB and DnaT. Upon transient interaction with DnaG it forms theprimosome. {ECO:0000256|HAMAP-Rule:MF_00720}."
+WP_020336322.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00917}.
+WP_014230770.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01603}.
+WP_020333578.1,"Heterotetramer, composed of two GyrA and two GyrB chains. Inthe heterotetramer, GyrA contains the active site tyrosine that forms atransient covalent intermediate with DNA, while GyrB binds cofactorsand catalyzes ATP hydrolysis. {ECO:0000256|HAMAP-Rule:MF_01898}."
+WP_014233117.1,"Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00984}.DR   GO; GO:0003697; F:single-stranded DNA binding; AA:HAMAP.DR   GO; GO:0006310; P:DNA recombination; AA:HAMAP.DR   GO; GO:0006281; P:DNA repair; AA:HAMAP.DR   GO; GO:0006260; P:DNA replication; AA:HAMAP.DR   HAMAP; MF_00984; SSB; 1.KW   DNA damage; DNA recombination; DNA repair; DNA replication; DNA-binding.FT   DNA_BIND        55..61FT                   /evidence=""ECO:0000256|HAMAP-Rule:MF_00984""FT   MOTIF           174..179FT                   /note=""Important for interaction with partner proteins""FT                   /evidence=""ECO:0000256|HAMAP-Rule:MF_00984""****   #################    INTERNAL SECTION    ##################**HA Submitted Name: WP_014233117.1**DR PROSITE; PS50935; SSB; FALSE_NEG.**EV ECO:0000256; HAMAP-Rule:MF_00984; XXX; 16-SEP-2024.**HA FAM; Method MF_00984; SSB; Trusted match; 39.771 (+17.7).**HA SAM; Annotated by HAMAP 3.87.0; MF_00984.5; MF_00984; 16-SEP-2024 13:42:31.SQ   SEQUENCE   179 AA;  19686 MW;  6C7145DD62B13B4F CRC64;     MASRGINKVI LVGNLGNDPE IRYMPNGGAV ANITIATSDS WRDKATGEQR EKTEWHRVVL     FGKLAEVAGE YLRKGSQVYV EGQLQTRKWQ DQSGQDRYST EVVVQGFNGV MQMLGGRAQG     GAPAMGGQAP QQGGWGQPQQ PAQPQYNAPQ QQAPKQSAPQ QPQQQYNEPP MDFDDDIPF"
+WP_000868186.1,//ID   RL36_xxxxx              Unreviewed;        37 AA.AC   3MWC79;DE   RecName: Full=Large ribosomal subunit protein bL36 {ECO:0000256|HAMAP-Rule:MF_00251};GN   Name=rpmJ {ECO:0000256|HAMAP-Rule:MF_00251};OS   Vibrio natriegens NBRC 15636 = ATCC 14048 = DSM 759.OC   Bacteria; Pseudomonadota; Gammaproteobacteria; Vibrionales; Vibrionaceae;OC   Vibrio.OX   NCBI_TaxID=1219067;
+WP_020334601.1,"Alpha(8)-beta(8). The alpha component is a flavoprotein, thebeta component is a hemoprotein. {ECO:0000256|HAMAP-Rule:MF_01541}."
+WP_014231012.1,"Forms an icosahedral capsid composed of 60 subunits, arrangedas a dodecamer of pentamers. {ECO:0000256|HAMAP-Rule:MF_00178}."
+WP_014232994.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00367}.
+WP_014233166.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00744}.
+WP_020335674.1,"The complex is composed of six subunits: RnfA, RnfB, RnfC,RnfD, RnfE and RnfG. {ECO:0000256|HAMAP-Rule:MF_00479}."
+WP_001118870.1,Part of the 30S ribosomal subunit. Interacts with proteins S7and S18. Binds to IF-3. {ECO:0000256|HAMAP-Rule:MF_01310}.
+WP_014231221.1,"Component of the ClpX-ClpP complex. Forms a hexameric ringthat, in the presence of ATP, binds to fourteen ClpP subunits assembledinto a disk-like structure with a central cavity, resembling thestructure of eukaryotic proteasomes. {ECO:0000256|HAMAP-Rule:MF_00175}."
+WP_020333708.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_01551}.
+WP_006075347.1,"Component of the 30S ribosomal translation pre-initiationcomplex which assembles on the 30S ribosome in the order IF-2 and IF-3,IF-1 and N-formylmethionyl-tRNA(fMet); mRNA recruitment can occur atany time during PIC assembly. {ECO:0000256|HAMAP-Rule:MF_00075}."
+WP_020335825.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_01855}.
+WP_020335143.1,Part of the Bam complex. {ECO:0000256|HAMAP-Rule:MF_01430}.
+WP_014230669.1,Part of the 50S ribosomal subunit. {ECO:0000256|HAMAP-Rule:MF_01365}.
+WP_000462885.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00166}.
+WP_014230657.1,A double ring-shaped homohexamer of HslV is capped on eachside by a ring-shaped HslU homohexamer. The assembly of the HslU/HslVcomplex is dependent on binding of ATP. {ECO:0000256|HAMAP-Rule:MF_00249}.
+WP_020334312.1,"Heterotrimer of RecB, RecC and RecD. All subunits contributeto DNA-binding. {ECO:0000256|HAMAP-Rule:MF_01486}."
+WP_020336114.1,Interacts with MinD and FtsZ. {ECO:0000256|HAMAP-Rule:MF_00267}.
+WP_024372767.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_01260}.
+WP_000090472.1,Part of the 30S ribosomal subunit. Forms a tight heterodimerwith protein bS6. {ECO:0000256|HAMAP-Rule:MF_00270}.
+WP_014233157.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00005}.
+WP_014232995.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00104}.
+WP_020333905.1,Monomer. Binds directly to the core enzyme of the DNA-dependent RNA polymerase and to nascent RNA. {ECO:0000256|HAMAP-Rule:MF_00945}.
+WP_020333407.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00089}.
+WP_024372803.1,Interacts with UvrB in an incision complex.{ECO:0000256|HAMAP-Rule:MF_00203}.
+WP_020333793.1,Dimer of dimers. {ECO:0000256|HAMAP-Rule:MF_00804}.
+WP_020335866.1,Probably interacts with PlsX. {ECO:0000256|HAMAP-Rule:MF_01043}.
+WP_014231355.1,Homohexamer. Forms an RuvA(8)-RuvB(12)-Holliday junction (HJ)complex. HJ DNA is sandwiched between 2 RuvA tetramers; dsDNA entersthrough RuvA and exits via RuvB. An RuvB hexamer assembles on each DNAstrand where it exits the tetramer. Each RuvB hexamer is contacted bytwo RuvA subunits (via domain III) on 2 adjacent RuvB subunits; thiscomplex drives branch migration. In the full resolvosome a probableDNA-RuvA(4)-RuvB(12)-RuvC(2) complex forms which resolves the HJ.{ECO:0000256|HAMAP-Rule:MF_00016}.
+WP_014232791.1,"Composed of six subunits; NqrA, NqrB, NqrC, NqrD, NqrE andNqrF. {ECO:0000256|HAMAP-Rule:MF_00428}."
+WP_014231016.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00315}.
+WP_014231320.1,Binds to the N-terminal domain of the chaperone ClpA.{ECO:0000256|HAMAP-Rule:MF_00302}.
+WP_004745888.1,Part of the 30S ribosomal subunit. Contacts proteins S3 andS10. {ECO:0000256|HAMAP-Rule:MF_00537}.
+WP_014233818.1,Homopolymer. {ECO:0000256|HAMAP-Rule:MF_00223}.
+WP_020333678.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01151}.
+WP_020335861.1,Monomer. Interacts with DnaB. {ECO:0000256|HAMAP-Rule:MF_00974}.
+WP_020333370.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00126}.
+WP_020334926.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00624}.
+WP_201765966.1,"Heterodimer composed of CysD, the smaller subunit, and CysN.{ECO:0000256|HAMAP-Rule:MF_00064}."
+WP_014230546.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01637}.
+WP_020335374.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00193}.
+WP_020335898.1,"The complex is composed of two ATP-binding proteins (BtuD),two transmembrane proteins (BtuC) and a solute-binding protein (BtuF).{ECO:0000256|HAMAP-Rule:MF_01000}."
+WP_014232622.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00300}.
+WP_004745894.1,Part of the 30S ribosomal subunit. Contacts proteins S4 andS8. {ECO:0000256|HAMAP-Rule:MF_01307}.
+WP_020333111.1,"The complex is composed of two ATP-binding proteins (BtuD),two transmembrane proteins (BtuC) and a solute-binding protein (BtuF).{ECO:0000256|HAMAP-Rule:MF_01004}."
+WP_020335160.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01569}.
+WP_014233023.1,Homotetramer; dimer of dimers. {ECO:0000256|HAMAP-Rule:MF_00086}.
+WP_014231614.1,Tetramer of two alpha and two beta subunits.{ECO:0000256|HAMAP-Rule:MF_00281}.
+WP_020332930.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00834}.
+WP_004415691.1,"Homodimer; the beta-strands of each monomer intercalate toform a hydrophobic core, while the alpha-helices form wings that extendaway from the core. {ECO:0000256|HAMAP-Rule:MF_00167}."
+WP_014231127.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00235}.
+WP_014231352.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00044}.
+WP_014233442.1,Homohexamer; trimer of disulfide-linked dimers.{ECO:0000256|HAMAP-Rule:MF_01241}.
+WP_014231492.1,Heterodimer of HisH and HisF. {ECO:0000256|HAMAP-Rule:MF_01013}.
+WP_020333900.1,Forms a heterodimer with UbiU. {ECO:0000256|HAMAP-Rule:MF_02233}.
+WP_014230666.1,Part of the 50S ribosomal subunit. {ECO:0000256|HAMAP-Rule:MF_01331}.
+WP_014234563.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00051}.
+WP_014231181.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01576}.
+WP_020333524.1,Homodimer or homotetramer. {ECO:0000256|HAMAP-Rule:MF_01961}.
+WP_014231354.1,Homotetramer. Forms an RuvA(8)-RuvB(12)-Holliday junction (HJ)complex. HJ DNA is sandwiched between 2 RuvA tetramers; dsDNA entersthrough RuvA and exits via RuvB. An RuvB hexamer assembles on each DNAstrand where it exits the tetramer. Each RuvB hexamer is contacted bytwo RuvA subunits (via domain III) on 2 adjacent RuvB subunits; thiscomplex drives branch migration. In the full resolvosome a probableDNA-RuvA(4)-RuvB(12)-RuvC(2) complex forms which resolves the HJ.{ECO:0000256|HAMAP-Rule:MF_00031}.
+WP_005381516.1,Heptamer of 7 subunits arranged in a ring. Interacts with thechaperonin GroEL. {ECO:0000256|HAMAP-Rule:MF_00580}.
+WP_014231461.1,Homodimer. The tRNA molecule binds across the dimer.{ECO:0000256|HAMAP-Rule:MF_00176}.
+WP_020334484.1,"Heterododecamer (2C3:3R2) of six catalytic PyrB chainsorganized as two trimers (C3), and six regulatory PyrI chains organizedas three dimers (R2). {ECO:0000256|HAMAP-Rule:MF_00001}."
+WP_014231543.1,Part of the 50S ribosomal subunit; part of the 5SrRNA/L5/L18/L25 subcomplex. Contacts the 5S rRNA. Binds to the 5S rRNAindependently of L5 and L18. {ECO:0000256|HAMAP-Rule:MF_01336}.
+WP_014233147.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00109}.
+WP_031779173.1,"Homodimerization via its hinge domain. Binds to DNA via its C-terminal region. Interacts, and probably forms a ternary complex, withMukE and MukF via its C-terminal region. The complex formation isstimulated by calcium or magnesium. Interacts with tubulin-relatedprotein FtsZ. {ECO:0000256|HAMAP-Rule:MF_01800}."
+WP_020334705.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00297}.
+WP_005379575.1,Part of the 30S ribosomal subunit. {ECO:0000256|HAMAP-Rule:MF_01345}.
+WP_020335128.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00042}.
+WP_014232822.1,Homotrimer. {ECO:0000256|HAMAP-Rule:MF_02122}.
+WP_020335937.1,"Monomer. Probably contacts ribosomal proteins L1, L5, L33 andS7, the 16S and 23S rRNA and the P-site containing tRNA(fMet).{ECO:0000256|HAMAP-Rule:MF_00847}."
+WP_014232789.1,"Composed of six subunits; NqrA, NqrB, NqrC, NqrD, NqrE andNqrF. {ECO:0000256|HAMAP-Rule:MF_00430}."
+WP_014231334.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01277}.
+WP_014233229.1,"Part of an enzyme complex containing four subunits: aflavoprotein (FrdA), an iron-sulfur protein (FrdB), and two hydrophobicanchor proteins (FrdC and FrdD). {ECO:0000256|HAMAP-Rule:MF_00708}."
+WP_014232962.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00091}.
+WP_020336143.1,Homohexamer. Organized in a ring with a central cavity.{ECO:0000256|HAMAP-Rule:MF_01973}.
+WP_014232903.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01380}.
+WP_020336444.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_01671}.
+WP_020335571.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00211}.
+WP_014232864.1,Homohexamer; trimer of homodimers. {ECO:0000256|HAMAP-Rule:MF_01627}.
+WP_020333836.1,"The complex is composed of six subunits: RnfA, RnfB, RnfC,RnfD, RnfE and RnfG. {ECO:0000256|HAMAP-Rule:MF_00463}."
+WP_014230932.1,Interacts with HscA and stimulates its ATPase activity.{ECO:0000256|HAMAP-Rule:MF_00682}.
+WP_020334842.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01815}.
+WP_014232557.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_02121}.
+WP_014230503.1,"The Tat system comprises two distinct complexes: a TatABCcomplex, containing multiple copies of TatA, TatB and TatC subunits,and a separate TatA complex, containing only TatA subunits. Substratesinitially bind to the TatABC complex, which probably triggersassociation of the separate TatA complex to form the active translocon.{ECO:0000256|HAMAP-Rule:MF_00902}."
+WP_020334398.1,The basic unit is a heterodimer which dimerizes to formtetramers. The heterotetramers trimerize; 6 large subunits form a corering with 6 small subunits projecting outwards. {ECO:0000256|HAMAP-Rule:MF_00601}.
+WP_024372694.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01663}.
+WP_014234915.1,Homotrimer. {ECO:0000256|HAMAP-Rule:MF_00843}.
+WP_020334487.1,Component of the lipopolysaccharide transport and assemblycomplex. Interacts with LptA and the LptBFG transporter complex.{ECO:0000256|HAMAP-Rule:MF_01915}.
+WP_020334520.1,Forms a heterotetramer with UvrB during the search forlesions. {ECO:0000256|HAMAP-Rule:MF_00205}.
+WP_020333213.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01654}.
+WP_014230708.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01516}.
+WP_014233201.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00011}.
+WP_020335738.1,"Heterodimer composed of CysD, the smaller subunit, and CysN.{ECO:0000256|HAMAP-Rule:MF_00062}."
+WP_014234946.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00627}.
+WP_014232793.1,"Composed of six subunits; NqrA, NqrB, NqrC, NqrD, NqrE andNqrF. {ECO:0000256|HAMAP-Rule:MF_00426}."
+WP_020333480.1,"Monomer. Associates with 30S ribosomal subunit, binds 16SrRNA. {ECO:0000256|HAMAP-Rule:MF_01820}."
+WP_020336289.1,Interacts with Der. {ECO:0000256|HAMAP-Rule:MF_01058}.
+WP_014230979.1,Part of the Bam complex. {ECO:0000256|HAMAP-Rule:MF_00925}.
+WP_020333559.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00012}.
+WP_020335139.1,Homotrimer. {ECO:0000256|HAMAP-Rule:MF_00387}.
+WP_020333497.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00544}.
+WP_020334946.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00051}.
+WP_020335672.1,"The complex is composed of six subunits: RnfA, RnfB, RnfC,RnfD, RnfE and RnfG. {ECO:0000256|HAMAP-Rule:MF_00461}."
+WP_020333808.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00533}.
+WP_014230805.1,Self-interacts. Interacts with FtsZ. {ECO:0000256|HAMAP-Rule:MF_02033}.
+WP_014230789.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00067}.
+WP_014232984.1,"Part of a complex composed of FtsB, FtsL and FtsQ.{ECO:0000256|HAMAP-Rule:MF_00599}."
+WP_010446437.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00658}.
+WP_061778639.1,Interacts with the RNA polymerase core enzyme.{ECO:0000256|HAMAP-Rule:MF_00959}.
+WP_020333937.1,Homodecamer; pentamer of dimers. {ECO:0000256|HAMAP-Rule:MF_00156}.
+WP_020334239.1,Homododecamer. {ECO:0000256|HAMAP-Rule:MF_00169}.
+WP_020335939.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00475}.
+WP_020336172.1,Interacts with KefB. {ECO:0000256|HAMAP-Rule:MF_01415}.
+WP_014230681.1,"Heterodimer composed of CysD, the smaller subunit, and CysN.{ECO:0000256|HAMAP-Rule:MF_00064}."
+WP_014230417.1,Interacts with the Sec translocase complex via SecD.Specifically interacts with transmembrane segments of nascent integralmembrane proteins during membrane integration. {ECO:0000256|HAMAP-Rule:MF_01810}.
+WP_020333441.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00985}.
+WP_014230943.1,Part of the Bam complex. {ECO:0000256|HAMAP-Rule:MF_00923}.
+WP_020335989.1,Homodimer or homotetramer. {ECO:0000256|HAMAP-Rule:MF_01961}.
+WP_020334947.1,"The glycine cleavage system is composed of four proteins: P,T, L and H. {ECO:0000256|HAMAP-Rule:MF_00711}."
+WP_014233413.1,"F-type ATPases have 2 components, CF(1) - the catalytic core- and CF(0) - the membrane proton channel. CF(1) has five subunits:alpha(3), beta(3), gamma(1), delta(1), epsilon(1). CF(0) has three mainsubunits: a, b and c. {ECO:0000256|HAMAP-Rule:MF_00815}."
+WP_014232608.1,"Acetyl-CoA carboxylase is a heterohexamer composed of biotincarboxyl carrier protein (AccB), biotin carboxylase (AccC) and twosubunits each of ACCase subunit alpha (AccA) and ACCase subunit beta(AccD). {ECO:0000256|HAMAP-Rule:MF_01395}."
+WP_014231061.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00083}.
+WP_020333903.1,"Component of the RNA degradosome, which is a multiproteincomplex involved in RNA processing and mRNA degradation.{ECO:0000256|HAMAP-Rule:MF_01595}."
+WP_004398471.1,"Part of the 50S ribosomal subunit. Contacts protein L29, andtrigger factor when it is bound to the ribosome. {ECO:0000256|HAMAP-Rule:MF_01369}."
+WP_014233411.1,"F-type ATPases have 2 components, CF(1) - the catalytic core- and CF(0) - the membrane proton channel. CF(1) has five subunits:alpha(3), beta(3), gamma(1), delta(1), epsilon(1). CF(0) has three mainsubunits: a, b and c. {ECO:0000256|HAMAP-Rule:MF_00530}."
+WP_020335892.1,Homodimer. Polymerizes to form a dynamic ring structure in astrictly GTP-dependent manner. Interacts directly with several otherdivision proteins. {ECO:0000256|HAMAP-Rule:MF_00909}.
+WP_020333342.1,"The basal body constitutes a major portion of the flagellarorganelle and consists of four rings (L,P,S, and M) mounted on acentral rod. {ECO:0000256|HAMAP-Rule:MF_00416}."
+WP_020335158.1,Part of the 50S ribosomal subunit. {ECO:0000256|HAMAP-Rule:MF_00502}.
+WP_020333638.1,"Homodimer. Within each dimer, one monomer is responsible forRNA recognition and catalysis, while the other monomer binds to thereplacement base PreQ1. {ECO:0000256|HAMAP-Rule:MF_00168}."
+WP_020333043.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01558}.
+WP_020333481.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01639}.
+WP_014233602.1,Heptamer of 7 subunits arranged in a ring. Interacts with thechaperonin GroEL. {ECO:0000256|HAMAP-Rule:MF_00580}.
+WP_024372622.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_02211}.
+WP_014233793.1,Interacts with the cytoplasmic NapA precursor.{ECO:0000256|HAMAP-Rule:MF_02200}.
+WP_005383155.1,Part of the 50S ribosomal subunit. {ECO:0000256|HAMAP-Rule:MF_01341}.
+WP_020335716.1,Homohexameric ring arranged as a trimer of dimers.{ECO:0000256|HAMAP-Rule:MF_00564}.
+WP_014232508.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00696}.
+WP_020336197.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00174}.
+WP_020334434.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_02006}.
+WP_014231325.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00210}.
+WP_020334560.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00004}.
+WP_014230723.1,Heterodimer of LeuC and LeuD. {ECO:0000256|HAMAP-Rule:MF_01031}.
+WP_020333690.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00419}.
+WP_020333837.1,"The complex is composed of six subunits: RnfA, RnfB, RnfC,RnfD, RnfE and RnfG. {ECO:0000256|HAMAP-Rule:MF_00461}."
+WP_014230655.1,Homotrimer. Binds to both RNA-binding sites in the C-terminalregion of Rne and to RhlB. {ECO:0000256|HAMAP-Rule:MF_00471}.
+WP_014232530.1,Homohexamer; trimer of dimers. {ECO:0000256|HAMAP-Rule:MF_01224}.
+WP_014231162.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00123}.
+WP_005382796.1,Part of the 30S ribosomal subunit. Contacts proteins S9 andS11. {ECO:0000256|HAMAP-Rule:MF_00480}.
+WP_020336193.1,"Homotetramer, a dimer of dimers. One homotetramer interactswith 1 SecA dimer. {ECO:0000256|HAMAP-Rule:MF_00821}."
+WP_014230936.1,Homohexamer. {ECO:0000256|HAMAP-Rule:MF_00504}.
+WP_014231058.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_01864}.
+WP_014232596.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00274}.
+WP_020334368.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01376}.
+WP_014233333.1,Forms a cyclic heterotetrameric complex composed of twomolecules of XerC and two molecules of XerD. {ECO:0000256|HAMAP-Rule:MF_01808}.
+WP_020335130.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_01374}.
+WP_014231096.1,"The basal body constitutes a major portion of the flagellarorganelle and consists of four rings (L,P,S, and M) mounted on acentral rod. {ECO:0000256|HAMAP-Rule:MF_00415}."
+WP_020333282.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01850}.
+WP_014233286.1,Part of the 50S ribosomal subunit. {ECO:0000256|HAMAP-Rule:MF_01318}.
+WP_020333333.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00022}.
+WP_014230809.1,"Monomer and homodimer. Part of the essential Sec proteintranslocation apparatus which comprises SecA, SecYEG and auxiliaryproteins SecDF-YajC and YidC. {ECO:0000256|HAMAP-Rule:MF_01382}."
+WP_014230697.1,Homohexamer. {ECO:0000256|HAMAP-Rule:MF_00209}.
+WP_014233750.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00180}.
+WP_014233259.1,Homododecamer. {ECO:0000256|HAMAP-Rule:MF_00169}.
+WP_014233090.1,Interacts with the RNAP. Has a higher affinity for the coreRNAP than for the holoenzyme. Its ATPase activity is stimulated bybinding to RNAP. {ECO:0000256|HAMAP-Rule:MF_01821}.
+WP_014231152.1,Heterotetramer of two alpha and two beta subunits.{ECO:0000256|HAMAP-Rule:MF_00558}.
+WP_014233160.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01108}.
+WP_014231018.1,Heterooligomer composed of large and small subunits.{ECO:0000256|HAMAP-Rule:MF_00337}.
+WP_020333574.1,Homodimer. Heterotetramer of two MnmE and two MnmG subunits.{ECO:0000256|HAMAP-Rule:MF_00379}.
+WP_005455660.1,Part of the 50S ribosomal subunit; part of the 5SrRNA/L5/L18/L25 subcomplex. Contacts the 5S rRNA and the P site tRNA.Forms a bridge to the 30S subunit in the 70S ribosome.{ECO:0000256|HAMAP-Rule:MF_01333}.
+WP_014231589.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_01619}.
+WP_020335893.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00102}.
+WP_014233012.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00170}.
+WP_024372681.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01073}.
+WP_020336294.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00849}.
+WP_014232877.1,Forms a heterodimer with UbiV. {ECO:0000256|HAMAP-Rule:MF_02232}.
+WP_020335244.1,"F-type ATPases have 2 components, F(1) - the catalytic core- and F(0) - the membrane proton channel. F(1) has five subunits:alpha(3), beta(3), gamma(1), delta(1), epsilon(1). F(0) has three mainsubunits: a(1), b(2) and c(10-14). The alpha and beta chains form analternating ring which encloses part of the gamma chain. F(1) isattached to F(0) by a central stalk formed by the gamma and epsilonchains, while a peripheral stalk is formed by the delta and b chains.{ECO:0000256|HAMAP-Rule:MF_01398}."
+WP_014231363.1,"The Tol-Pal system is composed of five core proteins: theinner membrane proteins TolA, TolQ and TolR, the periplasmic proteinTolB and the outer membrane protein Pal. They form a network linkingthe inner and outer membranes and the peptidoglycan layer.{ECO:0000256|HAMAP-Rule:MF_00671}."
+WP_020335573.1,Tetramer of two alpha and two beta chains. {ECO:0000256|HAMAP-Rule:MF_00133}.
+WP_020332950.1,Heterodimer of HisH and HisF. {ECO:0000256|HAMAP-Rule:MF_00278}.
+WP_031779177.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00160}.
+WP_014232956.1,Interacts with GyrB. {ECO:0000256|HAMAP-Rule:MF_00649}.
+WP_014233303.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00015}.
+WP_014233194.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00140}.
+WP_020335874.1,Heterotetramer composed of ParC and ParE. {ECO:0000256|HAMAP-Rule:MF_00938}.
+WP_014231229.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01100}.
+WP_014231743.1,"Heterotrimer of UreA (gamma), UreB (beta) and UreC (alpha)subunits. Three heterotrimers associate to form the active enzyme.{ECO:0000256|HAMAP-Rule:MF_01954}."
+WP_014230672.1,"Homodimer. The RNAP catalytic core consists of 2 alpha, 1beta, 1 beta' and 1 omega subunit. When a sigma factor is associatedwith the core the holoenzyme is formed, which can initiatetranscription. {ECO:0000256|HAMAP-Rule:MF_00059}."
+WP_020333322.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00087}.
+WP_014230781.1,Interacts with FtsZ. {ECO:0000256|HAMAP-Rule:MF_01919}.
+WP_020333539.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00333}.
+WP_014230662.1,Part of the 50S ribosomal subunit. {ECO:0000256|HAMAP-Rule:MF_00501}.
+WP_014230582.1,Homodimer. Interacts with FtsZ. {ECO:0000256|HAMAP-Rule:MF_01839}.
+WP_014231611.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00184}.
+WP_014232735.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00067}.
+WP_020333541.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01928}.
+WP_014232506.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00098}.
+WP_014230663.1,Part of the 50S ribosomal subunit. Forms a cluster withproteins L14 and L19. {ECO:0000256|HAMAP-Rule:MF_01325}.
+WP_014232411.1,Tetramer of two alpha and two beta chains. {ECO:0000256|HAMAP-Rule:MF_00131}.
+WP_014232982.1,Homotrimer. {ECO:0000256|HAMAP-Rule:MF_00107}.
+WP_005383096.1,Part of the 50S ribosomal subunit. Contacts protein L20.{ECO:0000256|HAMAP-Rule:MF_01363}.
+WP_014233019.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00145}.
+WP_020334438.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00011}.
+WP_014233192.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01107}.
+WP_020333621.1,Homotetramer; dimer of dimers. {ECO:0000256|HAMAP-Rule:MF_00418}.
+WP_020333917.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_01862}.
+WP_020333618.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01690}.
+WP_014230668.1,Part of the 50S ribosomal subunit. {ECO:0000256|HAMAP-Rule:MF_01326}.
+WP_020335880.1,Interacts with PBP1a. {ECO:0000256|HAMAP-Rule:MF_01890}.
+WP_014232884.1,"Monomer. Binds 30S ribosomal subunits, but not 50S ribosomalsubunits or 70S ribosomes. {ECO:0000256|HAMAP-Rule:MF_00003}."
+WP_020332891.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01589}.
+WP_014233020.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_01640}.
+WP_020334599.1,"Alpha(8)-beta(8). The alpha component is a flavoprotein, thebeta component is a hemoprotein. {ECO:0000256|HAMAP-Rule:MF_01540}."
+WP_014231003.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_01903}.
+WP_004399892.1,Part of the 30S ribosomal subunit. Contacts proteins S8 andS17. May interact with IF1 in the 30S initiation complex.{ECO:0000256|HAMAP-Rule:MF_00403}.
+WP_020333572.1,Homodimer. Heterotetramer of two MnmE and two MnmG subunits.{ECO:0000256|HAMAP-Rule:MF_00129}.
+WP_020334366.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01375}.
+WP_020333228.1,"UreD, UreF and UreG form a complex that acts as a GTP-hydrolysis-dependent molecular chaperone, activating the ureaseapoprotein by helping to assemble the nickel containing metallocenterof UreC. The UreE protein probably delivers the nickel.{ECO:0000256|HAMAP-Rule:MF_01385}."
+WP_020335549.1,"Heterotetramer, composed of two GyrA and two GyrB chains. Inthe heterotetramer, GyrA contains the active site tyrosine that forms atransient covalent intermediate with DNA, while GyrB binds cofactorsand catalyzes ATP hydrolysis. {ECO:0000256|HAMAP-Rule:MF_01897}."
+WP_005435088.1,Part of the 50S ribosomal subunit; part of the 5SrRNA/L5/L18/L25 subcomplex. Contacts the 5S and 23S rRNAs.{ECO:0000256|HAMAP-Rule:MF_01337}.
+WP_014233820.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01128}.
+WP_020333682.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01152}.
+WP_020333587.1,Heterotetramer of two alpha chains (FadB) and two beta chains(FadA). {ECO:0000256|HAMAP-Rule:MF_01620}.
+WP_020335923.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00008}.
+WP_014230667.1,Part of the 30S ribosomal subunit. Forms a tight complex withproteins S10 and S14. {ECO:0000256|HAMAP-Rule:MF_01309}.
+WP_014231064.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00233}.
+WP_020335644.1,Homodimer. Probably interacts with PlsY. {ECO:0000256|HAMAP-Rule:MF_00019}.
+WP_014234038.1,"The complex is composed of six subunits: RnfA, RnfB, RnfC,RnfD, RnfE and RnfG. {ECO:0000256|HAMAP-Rule:MF_00459}."
+WP_014230937.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00451}.
+WP_014232532.1,Monomer and homodimer. {ECO:0000256|HAMAP-Rule:MF_01225}.
+WP_020333620.1,Part of the Bam complex. {ECO:0000256|HAMAP-Rule:MF_00924}.
+WP_020333988.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00513}.
+WP_014232466.1,Heterodimer of an alpha and a beta chain. {ECO:0000256|HAMAP-Rule:MF_00381}.
+WP_014231361.1,"The Tol-Pal system is composed of five core proteins: theinner membrane proteins TolA, TolQ and TolR, the periplasmic proteinTolB and the outer membrane protein Pal. They form a network linkingthe inner and outer membranes and the peptidoglycan layer.{ECO:0000256|HAMAP-Rule:MF_02203}."
+WP_020335647.1,"Component of the RNA degradosome, which is a multiproteincomplex involved in RNA processing and mRNA degradation. Within the RNAdegradosome, RNase E assembles into a homotetramer formed by a dimer ofdimers. {ECO:0000256|HAMAP-Rule:MF_00970}."
+WP_020335851.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00164}.
+WP_020333225.1,"UreD, UreF and UreG form a complex that acts as a GTP-hydrolysis-dependent molecular chaperone, activating the ureaseapoprotein by helping to assemble the nickel containing metallocenterof UreC. The UreE protein probably delivers the nickel.{ECO:0000256|HAMAP-Rule:MF_01384}."
+WP_024372656.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_01497}.
+WP_014232354.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00534}.
+WP_020334062.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_02120}.
+WP_020335945.1,Part of the Bam complex. {ECO:0000256|HAMAP-Rule:MF_00922}.
+WP_014232970.1,"Heterotrimer of an alpha, a beta and a gamma subunit.{ECO:0000256|HAMAP-Rule:MF_00404}."
+WP_014233310.1,Interacts with the RNA polymerase core enzyme.{ECO:0000256|HAMAP-Rule:MF_00961}.
+WP_020333042.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01643}.
+WP_014231062.1,Homohexamer. {ECO:0000256|HAMAP-Rule:MF_00583}.
+WP_014233217.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_01038}.
+WP_236614663.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_01113}.
+WP_020336024.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00020}.
+WP_014231327.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00952}.
+WP_020334558.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_01146}.
+WP_014232882.1,"Part of the 30S ribosomal subunit. Forms a bridge to the 50Ssubunit in the 70S ribosome, contacting the 23S rRNA.{ECO:0000256|HAMAP-Rule:MF_01343}."
+WP_014231463.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01694}.
+WP_014230846.1,Forms a cyclic heterotetrameric complex composed of twomolecules of XerC and two molecules of XerD. {ECO:0000256|HAMAP-Rule:MF_01807}.
+WP_020335722.1,Homohexamer. {ECO:0000256|HAMAP-Rule:MF_00151}.
+WP_014231360.1,"The Tol-Pal system is composed of five core proteins: theinner membrane proteins TolA, TolQ and TolR, the periplasmic proteinTolB and the outer membrane protein Pal. They form a network linkingthe inner and outer membranes and the peptidoglycan layer.{ECO:0000256|HAMAP-Rule:MF_02202}."
+WP_020336028.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00987}.
+WP_020335651.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_02040}.
+WP_020336219.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00743}.
+WP_014230751.1,Interacts transiently with the RNA polymerase catalytic core.{ECO:0000256|HAMAP-Rule:MF_00963}.
+WP_014232536.1,Forms a heterotetramer with UvrA during the search forlesions. Interacts with UvrC in an incision complex.{ECO:0000256|HAMAP-Rule:MF_00204}.
+WP_014231340.1,"Interacts, and probably forms a ternary complex, with MukF andMukB. The complex formation is stimulated by calcium or magnesium.{ECO:0000256|HAMAP-Rule:MF_01802}."
+WP_020336199.1,"Part of an enzyme complex containing four subunits: aflavoprotein (FrdA), an iron-sulfur protein (FrdB), and two hydrophobicanchor proteins (FrdC and FrdD). {ECO:0000256|HAMAP-Rule:MF_00709}."
+WP_020333646.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00127}.
+WP_005494271.1,Homohexamer. {ECO:0000256|HAMAP-Rule:MF_01220}.
+WP_014233794.1,Interacts with the cytoplasmic NapA precursor.{ECO:0000256|HAMAP-Rule:MF_02201}.
+WP_020335616.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01200}.
+WP_020333722.1,Interacts with ribosomal protein uL14 (rplN).{ECO:0000256|HAMAP-Rule:MF_01477}.
+WP_020334060.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00197}.
+WP_020335673.1,"The complex is composed of six subunits: RnfA, RnfB, RnfC,RnfD, RnfE and RnfG. {ECO:0000256|HAMAP-Rule:MF_00462}."
+WP_014230449.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01920}.
+WP_014234303.1,"The glycine cleavage system is composed of four proteins: P,T, L and H. {ECO:0000256|HAMAP-Rule:MF_00272}."
+WP_014230842.1,Interacts with the 50S ribosomal subunit. {ECO:0000256|HAMAP-Rule:MF_00967}.
+WP_020336152.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01659}.
+WP_004410492.1,Part of the 30S ribosomal subunit. {ECO:0000256|HAMAP-Rule:MF_00508}.
+WP_014231747.1,"Homodimer. UreD, UreF and UreG form a complex that acts as aGTP-hydrolysis-dependent molecular chaperone, activating the ureaseapoprotein by helping to assemble the nickel containing metallocenterof UreC. The UreE protein probably delivers the nickel.{ECO:0000256|HAMAP-Rule:MF_01389}."
+WP_014230431.1,Tetramer of two alpha and two beta subunits.{ECO:0000256|HAMAP-Rule:MF_00254}.
+WP_014232794.1,"Composed of six subunits; NqrA, NqrB, NqrC, NqrD, NqrE andNqrF. {ECO:0000256|HAMAP-Rule:MF_00425}."
+WP_020333538.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00222}.
+WP_014231742.1,"Heterotrimer of UreA (gamma), UreB (beta) and UreC (alpha)subunits. Three heterotrimers associate to form the active enzyme.{ECO:0000256|HAMAP-Rule:MF_00739}."
+WP_020333971.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_01227}.
+WP_014231776.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01216}.
+WP_014230724.1,Heterodimer of LeuC and LeuD. {ECO:0000256|HAMAP-Rule:MF_01026}.
+WP_014231220.1,"Fourteen ClpP subunits assemble into 2 heptameric rings whichstack back to back to give a disk-like structure with a central cavity,resembling the structure of eukaryotic proteasomes. {ECO:0000256|HAMAP-Rule:MF_00444}."
+WP_014231126.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00505}.
+WP_020333184.1,"This dioxygenase system consists of four proteins: the twosubunits of the hydroxylase component (HcaE and HcaF), a ferredoxin(HcaC) and a ferredoxin reductase (HcaD). {ECO:0000256|HAMAP-Rule:MF_01648}."
+WP_020332934.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00336}.
+WP_020333575.1,Consists of a catalytic RNA component (M1 or rnpB) and aprotein subunit. {ECO:0000256|HAMAP-Rule:MF_00227}.
+WP_014233416.1,"F-type ATPases have 2 components, F(1) - the catalytic core- and F(0) - the membrane proton channel. F(1) has five subunits:alpha(3), beta(3), gamma(1), delta(1), epsilon(1). F(0) has three mainsubunits: a(1), b(2) and c(10-14). The alpha and beta chains form analternating ring which encloses part of the gamma chain. F(1) isattached to F(0) by a central stalk formed by the gamma and epsilonchains, while a peripheral stalk is formed by the delta and b chains.{ECO:0000256|HAMAP-Rule:MF_01398}."
+WP_020336186.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00916}.
+WP_020334711.1,"Component of the Sec protein translocase complex. Heterotrimerconsisting of SecY, SecE and SecG subunits. The heterotrimers can formoligomers, although 1 heterotrimer is thought to be able to translocateproteins. Interacts with the ribosome. Interacts with SecDF, and otherproteins may be involved. Interacts with SecA. {ECO:0000256|HAMAP-Rule:MF_00422}."
+WP_020334385.1,Homooctamer. Dimer of tetramers. {ECO:0000256|HAMAP-Rule:MF_00354}.
+WP_014233207.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00185}.
+WP_005462650.1,Heterodimer of an alpha and a beta chain. {ECO:0000256|HAMAP-Rule:MF_00380}.
+WP_014233282.1,"The RNAP catalytic core consists of 2 alpha, 1 beta, 1 beta'and 1 omega subunit. When a sigma factor is associated with the corethe holoenzyme is formed, which can initiate transcription.{ECO:0000256|HAMAP-Rule:MF_01322}."
+WP_020334568.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01825}.
+WP_024372573.1,Homotetramer. Forms heterodimers with either ThiH or ThiS.{ECO:0000256|HAMAP-Rule:MF_00443}.
+WP_005379577.1,Part of the 50S ribosomal subunit. {ECO:0000256|HAMAP-Rule:MF_01342}.
+WP_014233038.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01405}.
+WP_014230929.1,"Homodimer. Forms a heterotetramer with IscU, interacts withother sulfur acceptors. {ECO:0000256|HAMAP-Rule:MF_00331}."
+WP_014230665.1,Part of the 50S ribosomal subunit. Forms a bridge to the 30Ssubunit in the 70S ribosome. {ECO:0000256|HAMAP-Rule:MF_01320}.
+WP_020333976.1,Homooctamer; tetramer of dimers. {ECO:0000256|HAMAP-Rule:MF_00279}.
+WP_020333909.1,Homohexamer. {ECO:0000256|HAMAP-Rule:MF_01458}.
+WP_014231051.1,Component of the lipopolysaccharide transport and assemblycomplex. Interacts with LptD. {ECO:0000256|HAMAP-Rule:MF_01186}.
+WP_014231498.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00041}.
+WP_020333952.1,Interacts with FtsZ. {ECO:0000256|HAMAP-Rule:MF_01092}.
+WP_005450567.1,Part of the 30S ribosomal subunit. Contacts proteins S5 andS12. {ECO:0000256|HAMAP-Rule:MF_01302}.
+WP_014231880.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00405}.
+WP_020335675.1,"The complex is composed of six subunits: RnfA, RnfB, RnfC,RnfD, RnfE and RnfG. {ECO:0000256|HAMAP-Rule:MF_00478}."
+WP_020333887.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00572}.
+WP_014230850.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00252}.
+WP_014233238.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00339}.
+WP_014230502.1,"The Tat system comprises two distinct complexes: a TatABCcomplex, containing multiple copies of TatA, TatB and TatC subunits,and a separate TatA complex, containing only TatA subunits. Substratesinitially bind to the TatABC complex, which probably triggersassociation of the separate TatA complex to form the active translocon.{ECO:0000256|HAMAP-Rule:MF_00237}."
+WP_014234988.1,Monomer in solution. Oligomerizes to an active state in thepresence of the positive effectors ATP and maltotriose.{ECO:0000256|HAMAP-Rule:MF_01247}.
+WP_020335868.1,Monomer. Can also form homodimers and oligomers.{ECO:0000256|HAMAP-Rule:MF_01261}.
+WP_014230580.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01208}.
+WP_014233060.1,Interacts with the C-terminal region of Rne.{ECO:0000256|HAMAP-Rule:MF_01888}.
+WP_014231349.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_01590}.
+WP_020335266.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00417}.
+WP_014232790.1,"Composed of six subunits; NqrA, NqrB, NqrC, NqrD, NqrE andNqrF. {ECO:0000256|HAMAP-Rule:MF_00429}."
+WP_020334390.1,Forms a cylinder of 14 subunits composed of two heptamericrings stacked back-to-back. Interacts with the co-chaperonin GroES.{ECO:0000256|HAMAP-Rule:MF_00600}.
+WP_020335933.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00068}.
+WP_005383154.1,Part of the 30S ribosomal subunit. Forms a loose heterodimerwith protein S19. Forms two bridges to the 50S subunit in the 70Sribosome. {ECO:0000256|HAMAP-Rule:MF_01315}.
+WP_014235106.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01629}.
+WP_014233243.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01885}.
+WP_014234745.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00219}.
+WP_020334310.1,"Heterotrimer of RecB, RecC and RecD. All subunits contributeto DNA-binding. {ECO:0000256|HAMAP-Rule:MF_01487}."
+WP_014230949.1,"Homodimer. {ECO:0000256|HAMAP-Rule:MF_00344}.DR   UniPathway; UPA00189; UER00296.DR   GO; GO:0005524; F:ATP binding; AA:HAMAP.DR   GO; GO:0003922; F:GMP synthase (glutamine-hydrolyzing) activity; AA:HAMAP.DR   GO; GO:0006177; P:GMP biosynthetic process; AA:HAMAP.DR   HAMAP; MF_00344; GMP_synthase; 1.KW   ATP-binding; Glutamine amidotransferase; GMP biosynthesis; Ligase;KW   Nucleotide-binding; Purine biosynthesis.FT   ACT_SITE        86FT                   /note=""Nucleophile""FT                   /evidence=""ECO:0000256|HAMAP-Rule:MF_00344""FT   ACT_SITE        173FT                   /evidence=""ECO:0000256|HAMAP-Rule:MF_00344""FT   ACT_SITE        175FT                   /evidence=""ECO:0000256|HAMAP-Rule:MF_00344""****   #################    INTERNAL SECTION    ##################**HA Submitted Name: WP_014230949.1**DR PROSITE; PS51273; GATASE_TYPE_1; FALSE_NEG.**DR PROSITE; PS51553; GMPS_ATP_PPASE; FALSE_NEG.**EV ECO:0000256; HAMAP-Rule:MF_00344; XXX; 16-SEP-2024.**HA FAM; Method MF_00344; GUAA; Trusted match; 56.532 (+12.1).**HA FAM; Method MF_00345; GUAAB; Shadowed; 38.138 (-4.6).**HA FAM; Method MF_01510; GUAAA; Shadowed; 30.198 (-7.2).**HA FAM; Method MF_00193; NADE; Weak match; 10.71 (-31.2).**HA FAM; Method MF_00278; HIS5; Weak match; 10.602 (-18.2).**HA SAM; Annotated by HAMAP 3.87.0; MF_00344.44; MF_00344; 16-SEP-2024 13:42:36.SQ   SEQUENCE   517 AA;  57625 MW;  110EB42594DC82DE CRC64;     MTKNIHDQRI LILDFGSQYT QLVARRVREI GVYCELWSWD VEEADIREFN PDGIILSGGP     ESVTEENSPR APQYVFDSGV PVLGVCYGMQ TMAEQLGGKV AGSNEREFGY AQVKVSGESA     LFKDLEATQD VWMSHGDKVV EIPADFVKVG ETDTCPYAAM ANEEKKYYGV QFHPEVTHTK     QGLQILENFV LGVCGCERLW TSESIIEDAV ARIKEQVGDD EVILGLSGGV DSSVVAMLVH     RAIGDKLTCV FVDNGLLRLN EGQQVMDMFG DKFGLNIIKV DAEDRFLDAL KGKSDPEDKR     KTIGHVFVDV FDEESKKLAN AKWLAQGTIY PDVIESAASK TGKAHVIKSH HNVGGLPEDM     EMGLVEPLRE LFKDEVRKIG LELGLPYNML YRHPFPGPGL GVRVLGEIKK EYCDLLRRAD     AIFIEELHAA DLYNKVSQAF TVFLPVRSVG VMGDGRKYDW VVSLRAVETI DFMTAHWAHL     PYDFLGKVSN RIINEVDGIS RVVYDISGKP PATIEWE"
+WP_014233810.1,//ID   TAL_xxxxx               Unreviewed;       316 AA.AC   3MWC3311;DE   RecName: Full=Transaldolase {ECO:0000256|HAMAP-Rule:MF_00492};DE            EC=2.2.1.2 {ECO:0000256|HAMAP-Rule:MF_00492};GN   Name=tal {ECO:0000256|HAMAP-Rule:MF_00492};OS   Vibrio natriegens NBRC 15636 = ATCC 14048 = DSM 759.OC   Bacteria; Pseudomonadota; Gammaproteobacteria; Vibrionales; Vibrionaceae;OC   Vibrio.OX   NCBI_TaxID=1219067;
+WP_020333212.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_01653}.
+WP_014230812.1,"Composed of two chains; the small (or glutamine) chainpromotes the hydrolysis of glutamine to ammonia, which is used by thelarge (or ammonia) chain to synthesize carbamoyl phosphate. Tetramer ofheterodimers (alpha,beta)4. {ECO:0000256|HAMAP-Rule:MF_01209}."
+WP_020335269.1,Tetramer of two alpha and two beta chains. {ECO:0000256|HAMAP-Rule:MF_00133}.
+WP_020332949.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01023}.
+WP_014233206.1,Homohexamer. {ECO:0000256|HAMAP-Rule:MF_00436}.
+WP_014230664.1,Part of the 50S ribosomal subunit. {ECO:0000256|HAMAP-Rule:MF_01328}.
+WP_014233064.1,Contains catalytic and regulatory chains. {ECO:0000256|HAMAP-Rule:MF_00002}.
+WP_020333226.1,"Heterotrimer of UreA (gamma), UreB (beta) and UreC (alpha)subunits. Three heterotrimers associate to form the active enzyme.{ECO:0000256|HAMAP-Rule:MF_01953}."
+WP_014230992.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00972}.
+WP_020333718.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00051}.
+WP_014233182.1,Interacts with the regulatory subunit KefG.{ECO:0000256|HAMAP-Rule:MF_01412}.
+WP_020334896.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_01838}.
+WP_020333582.1,Tetramer of two alpha and two beta subunits.{ECO:0000256|HAMAP-Rule:MF_00255}.
+WP_020336189.1,"Monomer. Associates with 30S ribosomal subunit, binds 16SrRNA. {ECO:0000256|HAMAP-Rule:MF_01820}."
+WP_005396465.1,Part of the 50S ribosomal subunit. {ECO:0000256|HAMAP-Rule:MF_01366}.
+WP_014230671.1,Part of the 30S ribosomal subunit. Contacts protein S5. Theinteraction surface between S4 and S5 is involved in control oftranslational fidelity. {ECO:0000256|HAMAP-Rule:MF_01306}.
+WP_020333838.1,"The complex is composed of six subunits: RnfA, RnfB, RnfC,RnfD, RnfE and RnfG. {ECO:0000256|HAMAP-Rule:MF_00462}."
+WP_014233099.1,Forms polymers. {ECO:0000256|HAMAP-Rule:MF_02207}.
+WP_014230867.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_02002}.
+WP_014233039.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00313}.
+WP_014232932.1,Interacts directly with the RNA polymerase.{ECO:0000256|HAMAP-Rule:MF_00926}.
+WP_050571930.1,"Heterotrimer of RecB, RecC and RecD. All subunits contributeto DNA-binding. Interacts with RecA. {ECO:0000256|HAMAP-Rule:MF_01485}."
+WP_029791807.1,"The complex is composed of two ATP-binding proteins (BtuD),two transmembrane proteins (BtuC) and a solute-binding protein (BtuF).{ECO:0000256|HAMAP-Rule:MF_01005}."
+WP_020333384.1,"Component of the RNA degradosome, which is a multiproteincomplex involved in RNA processing and mRNA degradation.{ECO:0000256|HAMAP-Rule:MF_00661}."
+WP_020334708.1,"The RNAP catalytic core consists of 2 alpha, 1 beta, 1 beta'and 1 omega subunit. When a sigma factor is associated with the corethe holoenzyme is formed, which can initiate transcription.{ECO:0000256|HAMAP-Rule:MF_01321}."
+WP_020333260.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00316}.
+WP_020333002.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_01838}.
+WP_020335875.1,Heterotetramer composed of ParC and ParE. {ECO:0000256|HAMAP-Rule:MF_00936}.
+WP_020332931.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01693}.
+WP_014231937.1,Homotetramer; dimer of dimers. {ECO:0000256|HAMAP-Rule:MF_01939}.
+WP_014230439.1,Heterotetramer of two alpha chains (FadB) and two beta chains(FadA). {ECO:0000256|HAMAP-Rule:MF_01621}.
+WP_020334065.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00260}.
+WP_020335721.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00103}.
+WP_020336190.1,Heterodimer of a large membrane-associated beta subunit and asmall pyruvoyl-containing alpha subunit. {ECO:0000256|HAMAP-Rule:MF_00662}.
+WP_020335844.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01033}.
+WP_020335799.1,A double ring-shaped homohexamer of HslV is capped on eachside by a ring-shaped HslU homohexamer. The assembly of the HslU/HslVcomplex is dependent on binding of ATP. {ECO:0000256|HAMAP-Rule:MF_00248}.
+WP_000201159.1,Part of the 50S ribosomal subunit. {ECO:0000256|HAMAP-Rule:MF_01371}.
+WP_014232537.1,"The complex is composed of six subunits: RnfA, RnfB, RnfC,RnfD, RnfE and RnfG. {ECO:0000256|HAMAP-Rule:MF_00459}."
+WP_020334780.1,Homodimer or homotetramer. {ECO:0000256|HAMAP-Rule:MF_01961}.
+WP_024372697.1,Heterooligomer composed of large and small subunits.{ECO:0000256|HAMAP-Rule:MF_00378}.
+WP_014233825.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00596}.
+WP_014230529.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00453}.
+WP_020334736.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01987}.
+WP_014232519.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00020}.
+WP_014232609.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00171}.
+WP_020335833.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_01454}.
+WP_014232985.1,"Component of the RNA degradosome, a multiprotein complexinvolved in RNA processing and mRNA degradation. {ECO:0000256|HAMAP-Rule:MF_00318}."
+WP_020335136.1,"Acetyl-CoA carboxylase is a heterohexamer composed of biotincarboxyl carrier protein (AccB), biotin carboxylase (AccC) and twosubunits each of ACCase subunit alpha (AccA) and ACCase subunit beta(AccD). {ECO:0000256|HAMAP-Rule:MF_00823}."
+WP_014233608.1,The basic unit is a heterodimer which dimerizes to formtetramers. The heterotetramers trimerize; 6 large subunits form a corering with 6 small subunits projecting outwards. {ECO:0000256|HAMAP-Rule:MF_00861}.
+WP_014232959.1,"Part of the signal recognition particle protein translocationsystem, which is composed of SRP and FtsY. SRP is a ribonucleoproteincomposed of Ffh and a 4.5S RNA molecule. {ECO:0000256|HAMAP-Rule:MF_00306}."
+WP_008078231.1,Part of the ribosomal stalk of the 50S ribosomal subunit.Interacts with L10 and the large rRNA to form the base of the stalk.L10 forms an elongated spine to which L12 dimers bind in a sequentialfashion forming a multimeric L10(L12)X complex. {ECO:0000256|HAMAP-Rule:MF_00736}.
+WP_020334579.1,Heterotetramer of two alpha chains (FadJ) and two beta chains(FadI). {ECO:0000256|HAMAP-Rule:MF_01617}.
+WP_020334889.1,"Forms a complex composed of PxpA, PxpB and PxpC.{ECO:0000256|HAMAP-Rule:MF_00691}."
+WP_014230925.1,"Forms a complex with SecD. Part of the essential Sec proteintranslocation apparatus which comprises SecA, SecYEG and auxiliaryproteins SecDF-YajC and YidC. {ECO:0000256|HAMAP-Rule:MF_01464}."
+WP_014233410.1,Homotrimer. {ECO:0000256|HAMAP-Rule:MF_01631}.
+WP_014231011.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00180}.
+WP_014231364.1,"The Tol-Pal system is composed of five core proteins: theinner membrane proteins TolA, TolQ and TolR, the periplasmic proteinTolB and the outer membrane protein Pal. They form a network linkingthe inner and outer membranes and the peptidoglycan layer.{ECO:0000256|HAMAP-Rule:MF_02204}."
+WP_014230682.1,"Heterodimer composed of CysD, the smaller subunit, and CysN.{ECO:0000256|HAMAP-Rule:MF_00062}."
+WP_020334043.1,"Part of the signal recognition particle protein translocationsystem, which is composed of SRP and FtsY. SRP is a ribonucleoproteincomposed of Ffh and a 4.5S RNA molecule. {ECO:0000256|HAMAP-Rule:MF_00920}."
+WP_014231887.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00225}.
+WP_020333839.1,"The complex is composed of six subunits: RnfA, RnfB, RnfC,RnfD, RnfE and RnfG. {ECO:0000256|HAMAP-Rule:MF_00479}."
+WP_014232765.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_01974}.
+WP_014230726.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01025}.
+WP_020335166.1,"Composed of six subunits; NqrA, NqrB, NqrC, NqrD, NqrE andNqrF. {ECO:0000256|HAMAP-Rule:MF_00427}."
+WP_020332927.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00240}.
+WP_014230922.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00113}.
+WP_014232958.1,Binds ribosomal protein uS19. {ECO:0000256|HAMAP-Rule:MF_00014}.
+WP_020335883.1,"Part of a complex composed of FtsB, FtsL and FtsQ.{ECO:0000256|HAMAP-Rule:MF_00910}."
+WP_014233161.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00595}.
+WP_020335840.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00536}.
+WP_020334163.1,Component of the periplasmic nitrate reductase NapAB complexcomposed of NapA and NapB. {ECO:0000256|HAMAP-Rule:MF_01630}.
+WP_020335731.1,Homopentamer. {ECO:0000256|HAMAP-Rule:MF_01601}.
+WP_014230654.1,"Homodimer. The ends of the coiled-coil dimer bind to eachother, forming polymers. Interacts with FtsZ. {ECO:0000256|HAMAP-Rule:MF_01196}."
+WP_014231328.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00624}.
+WP_014232761.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01139}.
+WP_014232538.1,"The complex is composed of six subunits: RnfA, RnfB, RnfC,RnfD, RnfE and RnfG. {ECO:0000256|HAMAP-Rule:MF_00463}."
+WP_014233170.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00118}.
+WP_020335842.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01153}.
+WP_020336206.1,Forms a cylinder of 14 subunits composed of two heptamericrings stacked back-to-back. Interacts with the co-chaperonin GroES.{ECO:0000256|HAMAP-Rule:MF_00600}.
+WP_020335643.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01815}.
+WP_020333712.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00817}.
+WP_020333938.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00158}.
+WP_014231886.1,Interacts directly with FtsZ. {ECO:0000256|HAMAP-Rule:MF_00906}.
+WP_020334160.1,"Forms a complex with SecD. Part of the essential Sec proteintranslocation apparatus which comprises SecA, SecYEG and auxiliaryproteins SecDF-YajC and YidC. {ECO:0000256|HAMAP-Rule:MF_01464}."
+WP_020334704.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00218}.
+WP_020334478.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_02004}.
+WP_014234920.1,Homohexamer; trimer of homodimers. {ECO:0000256|HAMAP-Rule:MF_01627}.
+WP_020335854.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00068}.
+WP_014231153.1,Heterotetramer of two alpha and two beta subunits.{ECO:0000256|HAMAP-Rule:MF_01988}.
+WP_024372778.1,"Part of a complex composed of FtsB, FtsL and FtsQ.{ECO:0000256|HAMAP-Rule:MF_00911}."
+WP_014233205.1,Monomer. Associates with the 50S ribosomal subunit.{ECO:0000256|HAMAP-Rule:MF_00900}.
+WP_014230670.1,"Component of the Sec protein translocase complex. Heterotrimerconsisting of SecY, SecE and SecG subunits. The heterotrimers can formoligomers, although 1 heterotrimer is thought to be able to translocateproteins. Interacts with the ribosome. Interacts with SecDF, and otherproteins may be involved. Interacts with SecA. {ECO:0000256|HAMAP-Rule:MF_01465}."
+WP_014231353.1,Homodimer which binds Holliday junction (HJ) DNA. The HJbecomes 2-fold symmetrical on binding to RuvC with unstacked arms; ithas a different conformation from HJ DNA in complex with RuvA. In thefull resolvosome a probable DNA-RuvA(4)-RuvB(12)-RuvC(2) complex formswhich resolves the HJ. {ECO:0000256|HAMAP-Rule:MF_00034}.
+WP_020334159.1,"Forms a complex with SecF. Part of the essential Sec proteintranslocation apparatus which comprises SecA, SecYEG and auxiliaryproteins SecDF-YajC and YidC. {ECO:0000256|HAMAP-Rule:MF_01463}."
+WP_014232904.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00375}.
+WP_020335678.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00157}.
+WP_005379346.1,"The RNAP catalytic core consists of 2 alpha, 1 beta, 1 beta'and 1 omega subunit. When a sigma factor is associated with the corethe holoenzyme is formed, which can initiate transcription.{ECO:0000256|HAMAP-Rule:MF_00366}."
+WP_014230501.1,"The Tat system comprises two distinct complexes: a TatABCcomplex, containing multiple copies of TatA, TatB and TatC subunits,and a separate TatA complex, containing only TatA subunits. Substratesinitially bind to the TatABC complex, which probably triggersassociation of the separate TatA complex to form the active translocon.{ECO:0000256|HAMAP-Rule:MF_00236}."
+WP_014231130.1,Interacts with both the nontemplate DNA and the RNA polymerase(RNAP). {ECO:0000256|HAMAP-Rule:MF_00951}.
+WP_004410450.1,"Part of the 50S ribosomal subunit. Forms a cluster withproteins L3 and L19. In the 70S ribosome, L14 and L19 interact andtogether make contacts with the 16S rRNA in bridges B5 and B8.{ECO:0000256|HAMAP-Rule:MF_01367}."
+WP_020334710.1,Part of the ribosomal stalk of the 50S ribosomal subunit. TheN-terminus interacts with L11 and the large rRNA to form the base ofthe stalk. The C-terminus forms an elongated spine to which L12 dimersbind in a sequential fashion forming a multimeric L10(L12)X complex.{ECO:0000256|HAMAP-Rule:MF_00362}.
+WP_020335841.1,Component of the lipopolysaccharide transport and assemblycomplex. Interacts with LptE and LptA. {ECO:0000256|HAMAP-Rule:MF_01411}.
+WP_020336252.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00934}.
+WP_020335141.1,Homotrimer. {ECO:0000256|HAMAP-Rule:MF_00523}.
+WP_061778638.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00118}.
+WP_014232957.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00605}.
+WP_014230885.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00648}.
+WP_014233284.1,"Homodimer. Part of the ribosomal stalk of the 50S ribosomalsubunit. Forms a multimeric L10(L12)X complex, where L10 forms anelongated spine to which 2 to 4 L12 dimers bind in a sequentialfashion. Binds GTP-bound translation factors. {ECO:0000256|HAMAP-Rule:MF_00368}."
+WP_014231499.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_00124}.
+WP_014230944.1,Associates with the 50S ribosomal subunit. {ECO:0000256|HAMAP-Rule:MF_00195}.
+WP_005383141.1,Part of the 50S ribosomal subunit. Contacts protein L32.{ECO:0000256|HAMAP-Rule:MF_01368}.
+WP_308507400.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00080}.
+WP_020333373.1,Homodimer. Polymerizes to form helical filaments.{ECO:0000256|HAMAP-Rule:MF_00908}.
+WP_005378757.1,Homohexamer. The homohexamer assembles into an open ringstructure. {ECO:0000256|HAMAP-Rule:MF_01884}.
+WP_020332880.1,"Interacts, and probably forms a ternary complex, with MukE andMukB via its C-terminal region. The complex formation is stimulated bycalcium or magnesium. It is required for an interaction between MukEand MukB. {ECO:0000256|HAMAP-Rule:MF_01803}."
+WP_014235001.1,"Homotrimer formed of three 18-stranded antiparallel beta-barrels, containing three independent channels. {ECO:0000256|HAMAP-Rule:MF_01301}."
+WP_076633417.1,"Forms a complex with SecF. Part of the essential Sec proteintranslocation apparatus which comprises SecA, SecYEG and auxiliaryproteins SecDF-YajC and YidC. {ECO:0000256|HAMAP-Rule:MF_01463}."
+WP_020335478.1,Interacts (via N-terminus) with the terminase small subunit(via C-terminus); the active complex is probably heterooligomeric.Interacts (via C-terminus) with the portal protein; this interactionallows the packaging of viral DNA. {ECO:0000256|HAMAP-Rule:MF_04144}.
+WP_020333473.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_00685}.
+WP_014233077.1,Component of the lipopolysaccharide transport and assemblycomplex. {ECO:0000256|HAMAP-Rule:MF_01914}.
+WP_014232899.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_02007}.
+WP_020335801.1,Component of the primosome. {ECO:0000256|HAMAP-Rule:MF_00983}.
+WP_020334732.1,Homodecamer. {ECO:0000256|HAMAP-Rule:MF_01661}.
+WP_014230526.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_00518}.
+WP_020334469.1,Homodimer. {ECO:0000256|HAMAP-Rule:MF_01628}.
+WP_020333033.1,Tetramer of two alpha and two beta subunits.{ECO:0000256|HAMAP-Rule:MF_00283}.
+WP_020333650.1,Homotetramer. {ECO:0000256|HAMAP-Rule:MF_01964}.
+WP_020333352.1,Interacts with FtsZ via their C-terminal domains.{ECO:0000256|HAMAP-Rule:MF_00509}.
+WP_024372723.1,Monomer. {ECO:0000256|HAMAP-Rule:MF_01660}.

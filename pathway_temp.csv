@@ -1,0 +1,14 @@
+Reaction,Protein,EN_EC,EN_KO,KEGG_KO,HAMAP_Subunit,Uniprot_Subunit,EN_Symbol,KEGG_Description,RefSeq_Description,KEGG_Reaction_Definition
+
+
+
+
+
+
+,,1.1.1.100,K00059,K00059,,"Homotetramer. {ECO:0000269|PubMed:11669613, ECO:0000269|PubMed:15016358}.",fabG,"fabG, OAR1; 3-oxoacyl-[acyl-carrier protein] reductase [EC:1.1.1.100]",3-oxoacyl-ACP reductase FabG,3-Ketopimeloyl-[acp] methyl ester + NADPH + H+ <=> 3-Hydroxypimeloyl-[acp] methyl ester + NADP+
+R10120,,1.1.1.100,K00059,K00059,,,,"fabG, OAR1; 3-oxoacyl-[acyl-carrier protein] reductase [EC:1.1.1.100]",beta-ketoacyl-ACP reductase,3-Ketopimeloyl-[acp] methyl ester + NADPH + H+ <=> 3-Hydroxypimeloyl-[acp] methyl ester + NADP+
+R10120,,1.1.1.100,K00059,K00059,,,,"fabG, OAR1; 3-oxoacyl-[acyl-carrier protein] reductase [EC:1.1.1.100]",SDR family oxidoreductase,3-Ketopimeloyl-[acp] methyl ester + NADPH + H+ <=> 3-Hydroxypimeloyl-[acp] methyl ester + NADP+
+R10120,,1.1.1.100,K00059,K00059,,,,"fabG, OAR1; 3-oxoacyl-[acyl-carrier protein] reductase [EC:1.1.1.100]",beta-ketoacyl-ACP reductase,3-Ketopimeloyl-[acp] methyl ester + NADPH + H+ <=> 3-Hydroxypimeloyl-[acp] methyl ester + NADP+
+R10120,,1.1.1.100,K00059,K00059,,,,"fabG, OAR1; 3-oxoacyl-[acyl-carrier protein] reductase [EC:1.1.1.100]",SDR family oxidoreductase,3-Ketopimeloyl-[acp] methyl ester + NADPH + H+ <=> 3-Hydroxypimeloyl-[acp] methyl ester + NADP+
+,,4.2.1.59,K02372,K02372,,Oligomer.,fabZ,fabZ; 3-hydroxyacyl-[acyl-carrier-protein] dehydratase [EC:4.2.1.59],3-hydroxyacyl-ACP dehydratase FabZ,3-Hydroxypimeloyl-[acp] methyl ester <=> Enoylpimeloyl-[acp] methyl ester + H2O
+

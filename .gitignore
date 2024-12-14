@@ -11,6 +11,5 @@ temp.jl
 *.fasta
 *.tsv
 *.docx
-*.xlsx
 *.pdf
-*.csv
+
