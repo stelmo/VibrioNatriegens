@@ -36,6 +36,7 @@ include("build.jl")
 include("biomass.jl")
 include("exchanges.jl")
 include("directions.jl")
+include("curate.jl")
 
 
 end

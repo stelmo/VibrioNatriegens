@@ -11,14 +11,18 @@ function printmodel(model::Model, rxns = [])
 
     isempty(rxns) && (rxns = collect(keys(model.reactions)))
 
-    _f(rid) = begin
+    _dg(rid) = begin
         x = model.reactions[rid].dg
         isnothing(x) ? missing : x
     end
-    _g(rid) = begin
-        haskey(model.reactions[rid].annotations, "KEGG_REACTION") || return ""
+    _stoichiometry(rid) = begin
 
-        x = first(model.reactions[rid].annotations["KEGG_REACTION"])
+        ss = model.reactions[rid].stoichiometry
+
+        s1 = join([A.metabolite_name(model, k) for (k, v) in ss if v < 0], " + ")
+        s2 = join([A.metabolite_name(model, k) for (k, v) in ss if v > 0], " + ")
+        x = s1 * " <=> " * s2
+
         lb = model.reactions[rid].lower_bound
         ub = model.reactions[rid].upper_bound
 
@@ -30,13 +34,13 @@ function printmodel(model::Model, rxns = [])
             replace(x, "<=>" => "<->")
         end
     end
-    _h(rid) = begin
+    _ec(rid) = begin
         haskey(model.reactions[rid].annotations, "EC") || return ""
         ecs = model.reactions[rid].annotations["EC"]
         isnothing(ecs) && return ""
         join(ecs, "/")
     end
-    _k(rid) = begin
+    _name(rid) = begin
         if startswith(rid, "EX_")
             cid = last(split(rid, "_"))
             nm = model.metabolites[cid].name
@@ -49,7 +53,11 @@ function printmodel(model::Model, rxns = [])
     for rid in rxns
         rid in keys(model.reactions) || continue
 
-        push!(df, (rid, _k(rid), _g(rid), _f(rid), _h(rid)); promote = true)
+        push!(
+            df,
+            (rid, _name(rid), _stoichiometry(rid), _dg(rid), _ec(rid));
+            promote = true,
+        )
     end
 
     df

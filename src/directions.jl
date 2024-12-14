@@ -12,11 +12,16 @@ function reaction_directions!(model; excludes = String[], threshold = 3.0)
             substrates = [string(abs(Int(v))) * " " * k for (k, v) in rxnstoich if v < 0]
             products = [string(abs(Int(v))) * " " * k for (k, v) in rxnstoich if v > 0]
             rxn_string = kegg(join(substrates, " + ") * " = " * join(products, " + "))
-            _d = ln_reversibility_index(eq, rxn_string; skip_unbalanced = true)
-            _pdg = physiological_dg_prime(eq, rxn_string; skip_unbalanced = true)
-            pdg = isnothing(_pdg) ? nothing : Measurements.value(ustrip(u"kJ/mol", _pdg))
-            d = isnothing(_d) ? nothing : Measurements.value(ustrip(u"kJ/mol", _d))
-            _cache("directionality", rid, (d, pdg))
+            try
+                _d = ln_reversibility_index(eq, rxn_string; skip_unbalanced = true)
+                _pdg = physiological_dg_prime(eq, rxn_string; skip_unbalanced = true)
+                pdg =
+                    isnothing(_pdg) ? nothing : Measurements.value(ustrip(u"kJ/mol", _pdg))
+                d = isnothing(_d) ? nothing : Measurements.value(_d)
+                _cache("directionality", rid, (d, pdg))
+            catch
+                _cache("directionality", rid, (nothing, nothing))
+            end
         end
     end
 

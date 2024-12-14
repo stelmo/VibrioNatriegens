@@ -53,7 +53,7 @@ function extend_model!(model, dfs)
 
 end
 
-function build_model(; pathway_maps = [])
+function build_model(; pathway_maps = [], add_rxns = [])
 
     df = DataFrame(
         XLSX.readtable(
@@ -67,8 +67,9 @@ function build_model(; pathway_maps = [])
     for m in pathway_maps
         append!(rxns, get_kegg_reactions_in_pathway(m))
     end
+    append!(rxns, add_rxns)
 
-    @rsubset!(df, :Reaction in rxns)
+    !isempty(rxns) && @rsubset!(df, :Reaction in rxns)
 
     heteros = @rsubset(df, !ismissing(:Subunit))
     homos = @rsubset(df, ismissing(:Subunit))
@@ -85,10 +86,10 @@ function build_model(; pathway_maps = [])
     extend_model!(model, gheteros)
     reaction_directions!(model)
     add_exchanges!(model)
-    # add_biomass!(model)
-    # add_atpm!(model)
+    add_atpm!(model)
+    add_biomass!(model)
+    curate!(model)
 
     printmodel(model)
-    printmodel(model, rxns = [])
     model
 end

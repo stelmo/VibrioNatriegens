@@ -7,10 +7,11 @@ function add_biomass!(model)
     model.reactions["biomass"] = Reaction(
         name = "Biomass reaction",
         stoichiometry = Dict(
+            "C00186" => -1, # lactate
             # "C00469" => -1, # ethanol
             # "C00033" => -1, # acetate
             # "C00058" => -1, # formate
-            "C00022" => -1, # pyruvate
+            # "C00022" => -1, # pyruvate
             # "C00122" => -1, # fumarate
             # "C00042" => -1, # succinate
             # "C00119" => -1, # PRPP
@@ -87,7 +88,7 @@ function add_atpm!(model)
             "C00080" => 1,  # h+
         ),
         objective_coefficient = 0.0,
-        lower_bound = 1,
+        lower_bound = 0,
         upper_bound = 1000,
     )
 end
