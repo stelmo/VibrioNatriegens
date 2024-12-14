@@ -58,7 +58,7 @@ function build_model(; pathway_maps = [], add_rxns = [])
     df = DataFrame(
         XLSX.readtable(
             joinpath("data", "curation", "curated", "base_reactions.xlsx"),
-            "Sheet1",
+            "metabolism",
         ),
     )
 
