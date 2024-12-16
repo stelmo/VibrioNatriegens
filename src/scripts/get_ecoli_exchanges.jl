@@ -15,9 +15,7 @@ get_kegg_compound_id(mid) = begin
     )
     isnothing(k) && return nothing
     # println(k)
-    length(k) > 1 && @info("Multiple compound IDs for $mid")
-
-    first(sort(k)) # return smallest index
+    k
 end
 
 d = Dict(
@@ -25,8 +23,14 @@ d = Dict(
     exrid in exchange_rids if !isnothing(get_kegg_compound_id(exrid))
 )
 
-open(joinpath("data", "sources", "ecoli_exchange_rids.json"), "w") do io
-    JSON.print(io, d)
+open(joinpath("e_coli_exchanges.csv"), "w") do io
+    write(io, join(["Metabolite", "KeGG"], ";"), "\n")
+    for (k, vs) in d
+        for v in vs
+
+            v in mids && write(io, join([k, v], ";"), "\n")
+        end
+    end
 end
 
 

@@ -13,6 +13,7 @@ end
 rename(model, rid, nm) = begin
     model.reactions[rid].name = nm
 end
+
 function curate!(model)
     rename(
         model,
@@ -104,5 +105,15 @@ function curate!(model)
     rename(model, "R07891", "OPC6-coa acetyl-CoA acyltransferase")
     rename(model, "R07895", "OPC4-coa acetyl-CoA acyltransferase")
     rename(model, "R07899", "Isojasmonic acid transferase")
+
+    # add these specially
+    for m in ["C01330"] # Na+,
+        kegg_met = get_kegg_compound(m)
+        model.metabolites[m] = Metabolite(
+            name = kegg_met.name,
+            formula = parse_formula(kegg_met.formula),
+            compartment = "Cytosol",
+        )
+    end
 
 end

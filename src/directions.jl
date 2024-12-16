@@ -1,13 +1,17 @@
 
-function reaction_directions!(model; excludes = String[], threshold = 3.0)
+"""
+$(TYPEDSIGNATURES)
 
-    rxns = filter(x -> x ∉ excludes, collect(keys(model.reactions)))
+Fix directions of metabolic reactions.
+"""
+function reaction_directions!(model; threshold = 3.0)
+
+    rxns = collect(keys(model.reactions))
     filter!(x -> !_is_cached("directionality", x), rxns)
 
     if !isempty(rxns)
         eq = eQuilibrator.Equilibrator() # slow, only do if necessary
         for rid in rxns
-            println(rid)
             rxnstoich = model.reactions[rid].stoichiometry
             substrates = [string(abs(Int(v))) * " " * k for (k, v) in rxnstoich if v < 0]
             products = [string(abs(Int(v))) * " " * k for (k, v) in rxnstoich if v > 0]
@@ -20,6 +24,7 @@ function reaction_directions!(model; excludes = String[], threshold = 3.0)
                 d = isnothing(_d) ? nothing : Measurements.value(_d)
                 _cache("directionality", rid, (d, pdg))
             catch
+                @error "ΔG of $rid is problematic..."
                 _cache("directionality", rid, (nothing, nothing))
             end
         end

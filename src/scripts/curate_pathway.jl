@@ -6,20 +6,17 @@ df = DataFrame(
         "metabolism",
     ),
 )
-rxns = filter(
-    x -> x ∉ unique(df.Reaction),
-    VibrioNatriegens.get_kegg_reactions_in_pathway("map02010"),
-)
-find_transport(x) = begin
+
+find_transport(x, y, port) = begin
     ismissing(x) && return false
-    occursin("transport", x)
+    occursin(port, x) || occursin(port, y)
 end
 
-
 anno = DataFrame(CSV.File(joinpath("data", "curation", "all_annotations.csv")))
-transporters = @rsubset(anno, find_transport(:KEGG_Description))
+transporters = @rsubset(anno, find_transport(:KEGG_Description, :RefSeq_Description, "Na+"))
 @select!(
     transporters,
+    :EN_Reaction,
     :Protein,
     :KEGG_Description,
     :HAMAP_Subunit,
@@ -28,12 +25,12 @@ transporters = @rsubset(anno, find_transport(:KEGG_Description))
     :RefSeq_Description,
     :EN_TC,
 )
-CSV.write(
-    "downselected_transporters.csv",
-    @orderby(transporters, :EN_TC, :KEGG_Description)
+CSV.write("salt.csv", @orderby(transporters, :EN_TC, :KEGG_Description))
+
+rxns = filter(
+    x -> x ∉ unique(df.Reaction),
+    VibrioNatriegens.get_kegg_reactions_in_pathway("map02010"),
 )
-
-
 @rsubset!(anno, !ismissing(:KEGG_Reaction_Definition))
 @rsubset!(anno, !ismissing(:EN_KO), !ismissing(:EN_Reaction))
 @rename!(anno, :Reaction = :EN_Reaction)

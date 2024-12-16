@@ -10,6 +10,8 @@ label(r) = begin
 end
 
 model = VibrioNatriegens.build_model(;)
+mids = A.metabolites(model)
+
 for r in A.reactions(model)
     isnothing(A.reaction_name(model, r)) && @info r
 end

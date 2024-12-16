@@ -34,9 +34,8 @@ include("model.jl")
 include("printmodel.jl")
 include("build.jl")
 include("biomass.jl")
-include("exchanges.jl")
+include("transporters.jl")
 include("directions.jl")
 include("curate.jl")
-
 
 end

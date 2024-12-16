@@ -1,3 +1,8 @@
+"""
+$(TYPEDSIGNATURES)
+
+Add metabolic reactions to the model.
+"""
 function extend_model!(model, dfs)
 
     gs = String[]
@@ -18,7 +23,12 @@ function extend_model!(model, dfs)
         else # first time seeing this reaction
             kegg_rxn = get_kegg_reaction(rid)
 
-            append!(ms, string.(keys(kegg_rxn.stoichiometry)))
+            _ms = string.(keys(kegg_rxn.stoichiometry))
+            for m in _ms
+                occursin("(", m) && println(rid)
+            end
+
+            append!(ms, _ms)
             ecs = isnothing(kegg_rxn.ec) ? [""] : kegg_rxn.ec
 
             model.reactions[rid] = Reaction(;
@@ -42,18 +52,22 @@ function extend_model!(model, dfs)
 
     # add metabolites
     for m in unique(ms)
-        if occursin("(", m)
-            println(m)
-        else
-            kegg_met = get_kegg_compound(m)
-            model.metabolites[m] =
-                Metabolite(name = kegg_met.name, formula = parse_formula(kegg_met.formula))
-        end
+        kegg_met = get_kegg_compound(m)
+        model.metabolites[m] = Metabolite(
+            name = kegg_met.name,
+            formula = parse_formula(kegg_met.formula),
+            compartment = "Cytosol",
+        )
     end
 
 end
 
-function build_model(; pathway_maps = [], add_rxns = [])
+"""
+$(TYPEDSIGNATURES)
+
+Build the model.
+"""
+function build_model()
 
     df = DataFrame(
         XLSX.readtable(
@@ -61,15 +75,6 @@ function build_model(; pathway_maps = [], add_rxns = [])
             "metabolism",
         ),
     )
-
-    # this is useful for troubleshooting
-    rxns = String[]
-    for m in pathway_maps
-        append!(rxns, get_kegg_reactions_in_pathway(m))
-    end
-    append!(rxns, add_rxns)
-
-    !isempty(rxns) && @rsubset!(df, :Reaction in rxns)
 
     heteros = @rsubset(df, !ismissing(:Subunit))
     homos = @rsubset(df, ismissing(:Subunit))
@@ -80,16 +85,20 @@ function build_model(; pathway_maps = [], add_rxns = [])
 
     #! Build model
 
-    model = Model()
+    model = VibrioNatriegens.Model()
 
-    extend_model!(model, ghomos)
-    extend_model!(model, gheteros)
-    reaction_directions!(model)
-    add_exchanges!(model)
-    add_atpm!(model)
-    add_biomass!(model)
+    VibrioNatriegens.extend_model!(model, ghomos)
+    VibrioNatriegens.extend_model!(model, gheteros)
+    VibrioNatriegens.reaction_directions!(model) # only metabolic reactions
     curate!(model)
 
-    printmodel(model)
+    VibrioNatriegens.add_exchanges!(model)
+    VibrioNatriegens.add_periplasm_transporters!(model)
+    VibrioNatriegens.add_membrane_transporters!(model)
+
+    add_atpm!(model)
+    add_biomass!(model)
+
+    VibrioNatriegens.printmodel(model)
     model
 end
