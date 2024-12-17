@@ -90,14 +90,16 @@ function build_model()
     VibrioNatriegens.extend_model!(model, ghomos)
     VibrioNatriegens.extend_model!(model, gheteros)
     VibrioNatriegens.reaction_directions!(model) # only metabolic reactions
-    curate!(model)
+    VibrioNatriegens.curate!(model)
 
     VibrioNatriegens.add_exchanges!(model)
     VibrioNatriegens.add_periplasm_transporters!(model)
     VibrioNatriegens.add_membrane_transporters!(model)
+    VibrioNatriegens.add_electron_transport_chain!(model)
+    VibrioNatriegens.add_salt_transducers!(model)
 
-    add_atpm!(model)
-    add_biomass!(model)
+    VibrioNatriegens.add_atpm!(model)
+    VibrioNatriegens.add_biomass!(model)
 
     VibrioNatriegens.printmodel(model)
     model

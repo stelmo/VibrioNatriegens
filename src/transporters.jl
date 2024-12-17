@@ -178,8 +178,13 @@ function add_periplasm_transporters!(model)
         ),
     )
 
+    # add salt here, should not have an exchange 
+    nm = A.metabolite_name(model, "C01330")
+    model.metabolites["C01330_p"] = deepcopy(model.metabolites["C01330"])
+    model.metabolites["C01330_p"].compartment = "Periplasm"
+
     all_exchange_metabolites = df.KeGG
-    for mid in all_exchange_metabolites
+    for mid in all_exchange_metabolites # Na+
         mid in A.metabolites(model) || (@warn "Metabolite $mid not in model!"; continue)
 
         nm = A.metabolite_name(model, mid)
@@ -345,7 +350,6 @@ function add_membrane_transporters!(model)
     for mid in missing_transporters
         if mid in A.metabolites(model)
             rid = "Permease_$mid"
-            append!(gs, iso)
             add_permease!(model, rid, mid, ["Missing"], [1.0])
         else
             @warn "$mid not in model (missing permease)"
@@ -457,11 +461,308 @@ function add_permease!(model, rid, mid, iso, ss)
     end
 end
 
-function add_proton_transducers!(model)
+function add_electron_transport_chain!(model)
+
+    model.reactions["R-nfn"] = Reaction(; # this is speculative
+        name = "NAD(P)+ transhydrogenase (ferredoxin)",
+        stoichiometry = Dict(
+            "C00138" => -2.0, # Reduced ferredoxin
+            "C00004" => -1.0,  # nadh
+            "C00006" => -2.0, # NADP+
+            "C00080" => -1.0, # H+
+            "C00139" => 2.0, # Oxidized ferredoxin
+            "C00003" => 1.0, # NAD
+            "C00005" => 2.0, # NADPH
+        ),
+        lower_bound = -1000.0,
+        upper_bound = 1000.0,
+        gene_association = [
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020336371.1" => 1.0)),
+        ], # nfnB, missing nfnA...
+        annotations = Dict(
+            "KEGG_REACTION" => [
+                "2 reduced [2Fe-2S]-[ferredoxin] + NADH + 2 NADP(+) + H(+) = 2 oxidized [2Fe-2S]-[ferredoxin] + NAD(+) + 2 NADPH",
+            ],
+            "EC" => ["1.6.1.4"],
+        ),
+    )
+
+    model.reactions["R-H-ATPsynthase"] = Reaction(;
+        name = "F-type H+-transporting ATPase",
+        stoichiometry = Dict(
+            "C00002" => 1, # atp
+            "C00001" => 1, # water
+            "C00009" => -1, # pi
+            "C00008" => -1, # adp
+            "C00080" => 3.0,  # h+
+            "C00080_p" => -4.0,  # h+
+        ),
+        lower_bound = -1000.0,
+        upper_bound = 1000.0,
+        gene_association = [
+            X.Isozyme(;
+                gene_product_stoichiometry = Dict(
+                    "WP_020333565.1" => 1.0,
+                    "WP_014233411.1" => 1.0,
+                    "WP_014233417.1" => 1.0,
+                    "WP_014233414.1" => 3.0,
+                    "WP_014233413.1" => 1.0,
+                    "WP_014233416.1" => 2.0,
+                    "WP_002540812.1" => 10.0,
+                    "WP_014233412.1" => 1.0,
+                    "WP_014233418.1" => 1.0,
+                ),
+            ),
+            X.Isozyme(;
+                gene_product_stoichiometry = Dict(
+                    "WP_020333565.1" => 1.0,
+                    "WP_020335248.1" => 1.0,
+                    "WP_020335246.1" => 1.0,
+                    "WP_020335243.1" => 3.0,
+                    "WP_020335242.1" => 1.0,
+                    "WP_020335244.1" => 2.0,
+                    "WP_014234581.1" => 10.0,
+                    "WP_020335249.1" => 3.0,
+                    "WP_020335247.1" => 1.0,
+                ),
+            ),
+        ],
+        annotations = Dict(
+            "KEGG_REACTION" =>
+                ["ATP + H2O + 4 H(+)(in) = ADP + phosphate + 5 H(+)(out)"],
+            "EC" => ["7.1.2.2"],
+        ),
+    )
+
+    model.reactions["R-cyt-bc1"] = Reaction(;
+        name = "Cytochrome c oxidase",
+        stoichiometry = Dict(
+            "C15602" => 1.0, # Quinone
+            "C15603" => -1.0, # Hydroquinone
+            "C00126" => 2.0, # Ferrocytochrome c
+            "C00125" => -2.0, # Ferricytochrome c
+        ),
+        lower_bound = -1000.0,
+        upper_bound = 1000.0,
+        gene_association = [
+            X.Isozyme(;
+                gene_product_stoichiometry = Dict(
+                    "WP_014230785.1" => 1.0,
+                    "WP_014230784.1" => 1.0,
+                    "WP_014230783.1" => 1.0,
+                ),
+            ),
+        ],
+        annotations = Dict(
+            "KEGG_REACTION" => [
+                "Hydroquinone + 2 Ferricytochrome c <=> Quinone + 2 Ferrocytochrome c + 2 H+",
+            ],
+            "EC" => ["7.1.1.8"],
+        ),
+    )
+
+    model.reactions["R-cyt-c"] = Reaction(;
+        name = "Cytochrome c oxidase",
+        stoichiometry = Dict(
+            "C00007" => -1, # o2
+            "C00126" => 4.0, # Ferrocytochrome c
+            "C00080" => -8.0, # H+
+            "C00125" => 4.0, # Ferricytochrome c
+            "C00001" => 2.0, # h2o
+            "C00080_p" => 4.0, # H+
+        ),
+        lower_bound = -1000.0,
+        upper_bound = 1000.0,
+        gene_association = [
+            X.Isozyme(;
+                gene_product_stoichiometry = Dict(
+                    "WP_020333285.1" => 1.0,
+                    "WP_020333287.1" => 1.0,
+                    "WP_020333286.1" => 1.0,
+                    "WP_014231840.1" => 1.0,
+                ),
+            ),
+            X.Isozyme(;
+                gene_product_stoichiometry = Dict(
+                    "WP_020335300.1" => 1.0,
+                    "WP_020335301.1" => 1.0,
+                    "WP_020335302.1" => 1.0,
+                ),
+            ),
+        ],
+        annotations = Dict(
+            "KEGG_REACTION" => [
+                "Oxygen + 4 Ferrocytochrome c + 8 H+ <=> 4 Ferricytochrome c + 2 H2O + 4 H+",
+            ],
+            "EC" => ["7.1.1.9"],
+        ),
+    )
+
+    model.reactions["R-cyt-c-cbb3"] = Reaction(;
+        name = "Cytochrome c oxidase, cbb3-type",
+        stoichiometry = Dict(
+            "C00007" => -1, # o2
+            "C00126" => 4.0, # Ferrocytochrome c
+            "C00080" => -8.0, # H+
+            "C00125" => 4.0, # Ferricytochrome c
+            "C00001" => 2.0, # h2o
+            "C00080_p" => 4.0, # H+
+        ),
+        lower_bound = -1000.0,
+        upper_bound = 1000.0,
+        gene_association = [
+            X.Isozyme(;
+                gene_product_stoichiometry = Dict(
+                    "WP_020333285.1" => 1.0,
+                    "WP_020333287.1" => 1.0,
+                    "WP_020333286.1" => 1.0,
+                    "WP_014231840.1" => 1.0,
+                ),
+            ),
+        ],
+        annotations = Dict(
+            "KEGG_REACTION" => [
+                "Oxygen + 4 Ferrocytochrome c + 8 H+ <=> 4 Ferricytochrome c + 2 H2O + 4 H+",
+            ],
+            "EC" => ["7.1.1.9"],
+        ),
+    )
+
+    model.reactions["R-cyt-bd"] = Reaction(;
+        name = "Cytochrome BD-I",
+        stoichiometry = Dict(
+            "C00001" => 1.0, # h2o
+            "C00080" => -2.0, # H+
+            "C00080_p" => 2.0, # H+
+            "C00007" => -0.5, # o2
+            "C15602" => 1.0, # Quinone
+            "C15603" => -1.0, # Hydroquinone
+        ),
+        lower_bound = -1000.0,
+        upper_bound = 1000.0,
+        gene_association = [
+            X.Isozyme(;
+                gene_product_stoichiometry = Dict(
+                    "WP_000270284.1" => 1.0, # cydX
+                    "WP_020332892.1" => 1.0, # cydA
+                    "WP_014231356.1" => 1.0, # cydB
+                ),
+            ),
+        ],
+        annotations = Dict(
+            "KEGG_REACTION" =>
+                ["2 Ubiquinol + Oxygen + 4 H+ <=> 2 Ubiquinone + 2 H2O + 4 H+"],
+            "EC" => ["7.1.1.7"],
+        ),
+    )
+
+    model.reactions["R-cyt-bo"] = Reaction(;
+        name = "Cytochrome oxidase bo3 (ubiquinol: 4 protons) (periplasm)",
+        stoichiometry = Dict(
+            "C00001" => -1.0, # h2o
+            "C00080" => -4.0, # H+
+            "C00080_p" => 4.0, # H+
+            "C00007" => -0.5, # o2
+            "C15602" => 1.0, # Quinone
+            "C15603" => -1.0, # Hydroquinone
+        ),
+        lower_bound = 0.0,
+        upper_bound = 1000.0,
+        gene_association = [
+            X.Isozyme(;
+                gene_product_stoichiometry = Dict(
+                    "WP_024372973.1" => 1.0, # cyoA
+                    "WP_014234376.1" => 1.0, # cyoB
+                    "WP_014234375.1" => 1.0, # cyoC
+                    "WP_014234374.1" => 1.0, # cyoD
+                ),
+            ),
+        ],
+        annotations = Dict(
+            "KEGG_REACTION" => ["h2o + 4 h_c + 0.5 o2 + quinol -> quinone + 4 h_p"],
+        ),
+    )
+
+    model.reactions["R-pnt"] = Reaction(;
+        name = "NADPH:NAD+ oxidoreductase H translocase",
+        stoichiometry = Dict(
+            "C00003" => -1.0, # NAD
+            "C00005" => -1.0, # NADPH
+            "C00080" => -1.0, # H+
+            "C00004" => 1.0, # nadh
+            "C00006" => 1.0, # NADP+
+            "C00080_p" => 1.0, # H+
+        ),
+        lower_bound = 0.0,
+        upper_bound = 1000.0,
+        gene_association = [
+            X.Isozyme(;
+                gene_product_stoichiometry = Dict(
+                    "WP_020334871.1" => 1.0, # pntA
+                    "WP_014234219.1" => 1.0, # pntB
+                ),
+            ),
+        ],
+        annotations = Dict(
+            "KEGG_REACTION" =>
+                ["NAD(+) + NADPH + H(+)(in) = NADH + NADP(+) + H(+)(out)"],
+            "EC" => ["7.1.1.1"],
+            "EXPASY" => ["https://enzyme.expasy.org/EC/7.1.1.1"],
+        ),
+    )
+
 
 end
 
 function add_salt_transducers!(model)
+
+    model.reactions["R-Na-ATPsynthase"] = Reaction(;
+        name = "F-type Na+-transporting ATPase",
+        stoichiometry = Dict(
+            "C00002" => 1, # atp
+            "C00001" => 1, # water
+            "C00009" => -1, # pi
+            "C00008" => -1, # adp
+            "C00080" => -1.0,  # h+
+            "C01330_p" => -4.0, # Na+
+            "C01330" => 4.0, # Na+
+        ),
+        lower_bound = -1000.0,
+        upper_bound = 1000.0,
+        gene_association = [
+            X.Isozyme(;
+                gene_product_stoichiometry = Dict(
+                    "WP_020333565.1" => 1.0,
+                    "WP_014233411.1" => 1.0,
+                    "WP_014233417.1" => 1.0,
+                    "WP_014233414.1" => 3.0,
+                    "WP_014233413.1" => 1.0,
+                    "WP_014233416.1" => 2.0,
+                    "WP_002540812.1" => 10.0,
+                    "WP_014233412.1" => 1.0,
+                    "WP_014233418.1" => 1.0,
+                ),
+            ),
+            X.Isozyme(;
+                gene_product_stoichiometry = Dict(
+                    "WP_020333565.1" => 1.0,
+                    "WP_020335248.1" => 1.0,
+                    "WP_020335246.1" => 1.0,
+                    "WP_020335243.1" => 3.0,
+                    "WP_020335242.1" => 1.0,
+                    "WP_020335244.1" => 2.0,
+                    "WP_014234581.1" => 10.0,
+                    "WP_020335249.1" => 3.0,
+                    "WP_020335247.1" => 1.0,
+                ),
+            ),
+        ],
+        annotations = Dict(
+            "KEGG_REACTION" =>
+                ["4 Na(+)(out) + ADP + phosphate + H(+) = 4 Na(+)(in) + ATP + H2O"],
+            "EC" => ["7.2.2.1"],
+        ),
+    )
 
     model.reactions["R-oad"] = Reaction(;
         name = "oxaloacetate decarboxylase (Na(+) extruding)",
@@ -494,13 +795,13 @@ function add_salt_transducers!(model)
     model.reactions["R-nqr"] = Reaction(;
         name = "Na+-transporting NADH:ubiquinone oxidoreductase",
         stoichiometry = Dict(
-            "a ubiquinone" => -1.0,
-            "C01330" => -1.0, # Na+ (n?)
-            "C00004" => -1.0,
+            "C01330" => 1.0, # Na+ (n?)
+            "C00003" => 1.0, # nad
+            "C15603" => 1.0, # Hydroquinone
+            "C15602" => -1.0, # Quinone
+            "C01330_p" => -1.0, # Na+ (n?)
+            "C00004" => -1.0, # nadh
             "C00080" => -1.0, # h+
-            "a ubiquinol" => 1.0,
-            "C01330_p" => 1.0, # Na+ (n?)
-            "C00003" => 1.0,
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
@@ -534,7 +835,7 @@ function add_salt_transducers!(model)
             "C00080" => -1, # H+
             "C00139" => 2, # Oxidized ferredoxin
             "C01330_p" => 1.0, # Na+
-            "C00004" => 1.0,
+            "C00004" => 1.0,  # nadh
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
@@ -570,4 +871,6 @@ function add_salt_transducers!(model)
     )
 
 end
+
+
 
