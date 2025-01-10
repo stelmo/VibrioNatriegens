@@ -27,15 +27,19 @@ function __init__()
     end
 end
 
-include("cache.jl")
-include("kegg.jl")
+include("database/cache.jl")
+include("database/kegg.jl")
+include("database/utils.jl")
+include("database/rhea.jl")
+include("database/chebi.jl")
 
-include("model.jl")
-include("printmodel.jl")
-include("build.jl")
-include("biomass.jl")
-include("transporters.jl")
-include("directions.jl")
-include("curate.jl")
+
+include("model/model.jl")
+include("model/printmodel.jl")
+include("model/build.jl")
+include("model/biomass.jl")
+include("model/transporters.jl")
+include("model/directions.jl")
+include("model/curate.jl")
 
 end
