@@ -133,10 +133,10 @@ function add_exchanges!(model)
     all_exchange_metabolites = df.KeGG
 
     substrates = [ # allowed to be imported
-        "15903" # beta_glucose
+        "4167" # glucose
         "16189" # so4
         "15379" # o2
-        "28938" # nh4
+        "28938" # nh4(+)
         "43474" # pi
     ]
 

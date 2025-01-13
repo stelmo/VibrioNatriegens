@@ -40,7 +40,7 @@ function printmodel(model::Model, rxns = [])
         haskey(model.reactions[rid].annotations, "EC") || return ""
         ecs = model.reactions[rid].annotations["EC"]
         isnothing(ecs) && return ""
-        join(ecs, "/")
+        join(last.(split.(ecs, "/")), "/")
     end
 
     _name(rid) = begin
