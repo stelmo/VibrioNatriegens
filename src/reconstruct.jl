@@ -68,7 +68,7 @@ function extend_model!(model, dfs)
 
             coeff_mets = get_reaction_metabolites(rid)
             stoichiometry = Dict(
-                string(v.id) => s
+                string(v.accession) => s
                 for (s, v) in coeff_mets
             )
 
@@ -98,8 +98,8 @@ function extend_model!(model, dfs)
 
     # add metabolites
     for m in ms
-        haskey(model.metabolites, string(m.id)) || begin
-                model.metabolites[string(m.id)] = Metabolite(;
+        haskey(model.metabolites, m.accession) || begin
+                model.metabolites[m.accession] = Metabolite(;
                 name = m.name,
                 formula = parse_formula(m.formula),
                 charge = m.charge,

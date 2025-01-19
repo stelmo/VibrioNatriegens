@@ -64,5 +64,5 @@ function printmodel(model::Model, rxns = [])
 
     df
 
-    CSV.write("model.csv", df)
+    CSV.write("pretty-model.csv", df)
 end
