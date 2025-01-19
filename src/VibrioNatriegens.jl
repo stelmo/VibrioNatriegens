@@ -8,11 +8,12 @@ using DocStringExtensions
 
 include("utils.jl")
 include("model.jl")
-include("pretty.jl")
+include("print.jl")
 
-include("transporters.jl")
 include("reconstruct.jl")
-
+include("curate.jl")
+include("transporters.jl")
+include("biomass.jl")
 
 
 end

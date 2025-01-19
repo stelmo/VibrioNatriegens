@@ -9,10 +9,10 @@ function build_model()
     df = DataFrame(CSV.File(joinpath("data", "model", "metabolic_reactions.csv")))
 
     heteros = @rsubset(df, !ismissing(:Subunit))
-    @select!(heteros, :RHEA_ID, :Protein, :Stoichiometry, :Subunit)
+    @select!(heteros, :RHEA_ID, :Protein, :Stoichiometry, :Subunit, :DeltaG, :RevIndex)
     
     homos = @rsubset(df, ismissing(:Subunit))
-    @select!(homos, :RHEA_ID, :Protein, :Stoichiometry,)
+    @select!(homos, :RHEA_ID, :Protein, :Stoichiometry, :DeltaG, :RevIndex)
 
     ghomos = groupby(homos, [:RHEA_ID, :Protein])
     gheteros = groupby(heteros, [:RHEA_ID, :Subunit])
@@ -23,19 +23,17 @@ function build_model()
 
     VibrioNatriegens.extend_model!(model, ghomos)
     VibrioNatriegens.extend_model!(model, gheteros)
-    # VibrioNatriegens.reaction_directions!(model) # only metabolic reactions
-    # VibrioNatriegens.curate!(model)
+    VibrioNatriegens.curate!(model)
 
-    # VibrioNatriegens.add_exchanges!(model)
-    # VibrioNatriegens.add_periplasm_transporters!(model)
+    VibrioNatriegens.add_exchanges!(model)
+    VibrioNatriegens.add_periplasm_transporters!(model)
     # VibrioNatriegens.add_membrane_transporters!(model)
     # VibrioNatriegens.add_electron_transport_chain!(model)
     # VibrioNatriegens.add_salt_transducers!(model)
 
-    # VibrioNatriegens.add_atpm!(model)
+    VibrioNatriegens.add_atpm!(model)
     # VibrioNatriegens.add_biomass!(model)
 
-    # VibrioNatriegens.printmodel(model)
     model
 end
 
@@ -77,10 +75,28 @@ function extend_model!(model, dfs)
             ecs = isnothing(rxn.ec) ? [""] : rxn.ec
             name = isnothing(rxn.name) ? "" : rxn.name
 
+            # direction
+            reversibility_index_threshold = 3.0
+            rev_ind = ismissing(first(df.RevIndex)) ? nothing : first(df.RevIndex) 
+            dg = ismissing(first(df.DeltaG)) ? nothing : first(df.DeltaG) 
+
+
+            if isnothing(rev_ind) || (abs(rev_ind) <= reversibility_index_threshold)
+                lb = -1000
+                ub = 1000
+            elseif rev_ind < -reversibility_index_threshold # forward
+                lb = 0
+                ub = 1000
+            elseif rev_ind > reversibility_index_threshold # reverse
+                lb = -1000
+                ub = 0
+            end
+
             model.reactions[string(rid)] = Reaction(;
                 name = name,
-                lower_bound = -1000,
-                upper_bound = 1000,
+                lower_bound = lb,
+                upper_bound = ub,
+                dg = dg,
                 gene_association = [iso],
                 stoichiometry = stoichiometry,
                 annotations = Dict(

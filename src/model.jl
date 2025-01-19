@@ -74,7 +74,12 @@ Base.@kwdef mutable struct Model <: A.AbstractFBCModel
     couplings::Dict{String,A.CanonicalModel.Coupling} = Dict()
 end
 
-Base.show(io::Base.IO, ::MIME"text/plain", x::Model) = A.pretty_print_kwdef(io, x)
+Base.show(io::Base.IO, ::MIME"text/plain", model::Model) = println("""
+    Vibrio natriegens
+    $(A.n_reactions(model)) reactions
+    $(A.n_metabolites(model)) metabolites
+    $(A.n_genes(model)) genes
+""")
 
 A.reactions(m::Model) = sort(collect(keys(m.reactions)))
 A.metabolites(m::Model) = sort(collect(keys(m.metabolites)))

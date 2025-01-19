@@ -4,13 +4,10 @@
 # Julia Pkg files
 Manifest.toml
 
-# temporary files 
-temp.jl 
-
 # data files 
 *.fasta
 *.docx
 *.pdf
 
-*.xlsx
-model.csv
+reactions-model.csv
+metabolites-model.csv

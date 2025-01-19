@@ -9,7 +9,7 @@ pdgs = Union{Missing, Float64}[]
 
 for r in eachrow(df)
     println(r)
-
+    
     rid = r.RHEA_ID
     coeff_mets = get_reaction_metabolites(rid)
 

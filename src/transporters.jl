@@ -126,28 +126,32 @@ function add_exchanges!(model)
 
     df = DataFrame(
         CSV.File(
-            joinpath("data", "model", "exchange_reactions.csv"),
+            joinpath("data", "model", "exchange_metabolites.csv"),
         ),
     )
 
-    all_exchange_metabolites = df.KeGG
-
     substrates = [ # allowed to be imported
-        "4167" # glucose
-        "16189" # so4
-        "15379" # o2
-        "28938" # nh4(+)
-        "43474" # pi
+        "CHEBI:4167" # glucose
+        "CHEBI:16189" # so4
+        "CHEBI:15379" # o2
+        "CHEBI:28938" # nh4(+)
+        "CHEBI:43474" # pi
+        "CHEBI:29101" # Na+
     ]
 
-    for mid in all_exchange_metabolites
-        mid in A.metabolites(model) || (@warn "Metabolite $mid not in model!"; continue)
+    bidirs = [
+        "CHEBI:15377" # H2O
+    ]
 
-        if mid == "15903" # default carbon source
+    for mid in String.(df.CHEBI)
+
+        if mid == "CHEBI:4167" # default carbon source
             lb, ub = (-22.0, 0.0)
         elseif mid in substrates
             lb, ub = (-1000.0, 0.0)
-        else # product
+        elseif min in bidirs
+            lb, ub = (-1000.0, 1000.0)
+        else
             lb, ub = (0.0, 1000.0)
         end
         nm = A.metabolite_name(model, mid)
@@ -169,22 +173,13 @@ end
 function add_periplasm_transporters!(model)
 
     # all extracellular move with diffusion into periplasm
-
     df = DataFrame(
-        XLSX.readtable(
-            joinpath("data", "curation", "curated", "base_reactions.xlsx"),
-            "exchanges",
+        CSV.File(
+            joinpath("data", "model", "exchange_metabolites.csv"),
         ),
     )
 
-    # add salt here, should not have an exchange 
-    nm = A.metabolite_name(model, "C01330")
-    model.metabolites["C01330_p"] = deepcopy(model.metabolites["C01330"])
-    model.metabolites["C01330_p"].compartment = "Periplasm"
-
-    all_exchange_metabolites = df.KeGG
-    for mid in all_exchange_metabolites # Na+
-        mid in A.metabolites(model) || (@warn "Metabolite $mid not in model!"; continue)
+    for mid in String.(df.CHEBI)
 
         nm = A.metabolite_name(model, mid)
 
@@ -197,9 +192,6 @@ function add_periplasm_transporters!(model)
             stoichiometry = Dict(mid * "_e" => -1, mid * "_p" => 1),
             lower_bound = -1000.0,
             upper_bound = 1000.0,
-            gene_association = [
-                X.Isozyme(; gene_product_stoichiometry = Dict(["Missing"] .=> [1.0])),
-            ],
         )
     end
 
