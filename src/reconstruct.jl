@@ -27,9 +27,9 @@ function build_model()
 
     VibrioNatriegens.add_exchanges!(model)
     VibrioNatriegens.add_periplasm_transporters!(model)
-    # VibrioNatriegens.add_membrane_transporters!(model)
-    # VibrioNatriegens.add_electron_transport_chain!(model)
-    # VibrioNatriegens.add_salt_transducers!(model)
+    VibrioNatriegens.add_membrane_transporters!(model)
+    VibrioNatriegens.add_electron_transport_chain!(model)
+    VibrioNatriegens.add_salt_transducers!(model)
 
     VibrioNatriegens.add_atpm!(model)
     # VibrioNatriegens.add_biomass!(model)

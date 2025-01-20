@@ -66,8 +66,7 @@ function add_membrane_transporters!(model)
             joinpath("data", "model", "transporters.csv"),
         ),
     )
-    @transform!(df, :CHEBI = "CHEBI:".*:CHEBI)
-    CSV.write("tran.csv", df)
+
     gs = String[]
     ms = String[]
 
@@ -278,11 +277,11 @@ function add_electron_transport_chain!(model)
     model.reactions["R-nfn"] = Reaction(; # this is speculative
         name = "NAD(P)+ transhydrogenase (ferredoxin)",
         stoichiometry = Dict(
-            "C00138" => -2.0, # Reduced ferredoxin
+            "CHEBI:33738" => -2.0, # Reduced ferredoxin
             "CHEBI:57945" => -1.0,  # nadh
             "CHEBI:58349" => -2.0, # NADP+
             "CHEBI:15378" => -1.0, # H+
-            "C00139" => 2.0, # Oxidized ferredoxin
+            "CHEBI:33737" => 2.0, # Oxidized ferredoxin
             "CHEBI:57540" => 1.0, # NAD
             "CHEBI:57783" => 2.0, # NADPH
         ),
@@ -304,7 +303,7 @@ function add_electron_transport_chain!(model)
         stoichiometry = Dict(
             "CHEBI:30616" => 1, # atp
             "CHEBI:15377" => 1, # water
-            "C00009" => -1, # pi
+            "CHEBI:43474" => -1, # pi
             "CHEBI:456216" => -1, # adp
             "CHEBI:15378" => 3.0,  # h+
             "CHEBI:15378_p" => -4.0,  # h+
@@ -349,10 +348,10 @@ function add_electron_transport_chain!(model)
     model.reactions["R-cyt-bc1"] = Reaction(;
         name = "Cytochrome c oxidase",
         stoichiometry = Dict(
-            "C15602" => 1.0, # Quinone
-            "C15603" => -1.0, # Hydroquinone
-            "C00126" => 2.0, # Ferrocytochrome c
-            "C00125" => -2.0, # Ferricytochrome c
+            "CHEBI:132124" => 1.0, # a ubiquinone
+            "CHEBI:24646" => -1.0, # a ubiquinol
+            "CHEBI:15983" => 2.0, # Ferrocytochrome c
+            "CHEBI:15719" => -2.0, # Ferricytochrome c
         ),
         lower_bound = -1000.0,
         upper_bound = 1000.0,
@@ -376,10 +375,10 @@ function add_electron_transport_chain!(model)
     model.reactions["R-cyt-c"] = Reaction(;
         name = "Cytochrome c oxidase",
         stoichiometry = Dict(
-            "C00007" => -1, # o2
-            "C00126" => 4.0, # Ferrocytochrome c
+            "CHEBI:15379" => -1, # o2
+            "CHEBI:15983" => 4.0, # Ferrocytochrome c
             "CHEBI:15378" => -8.0, # H+
-            "C00125" => 4.0, # Ferricytochrome c
+            "CHEBI:15719" => 4.0, # Ferricytochrome c
             "CHEBI:15377" => 2.0, # h2o
             "CHEBI:15378_p" => 4.0, # H+
         ),
@@ -413,10 +412,10 @@ function add_electron_transport_chain!(model)
     model.reactions["R-cyt-c-cbb3"] = Reaction(;
         name = "Cytochrome c oxidase, cbb3-type",
         stoichiometry = Dict(
-            "C00007" => -1, # o2
-            "C00126" => 4.0, # Ferrocytochrome c
+            "CHEBI:15379" => -1, # o2
+            "CHEBI:15983" => 4.0, # Ferrocytochrome c
             "CHEBI:15378" => -8.0, # H+
-            "C00125" => 4.0, # Ferricytochrome c
+            "CHEBI:15719" => 4.0, # Ferricytochrome c
             "CHEBI:15377" => 2.0, # h2o
             "CHEBI:15378_p" => 4.0, # H+
         ),
@@ -446,9 +445,9 @@ function add_electron_transport_chain!(model)
             "CHEBI:15377" => 1.0, # h2o
             "CHEBI:15378" => -2.0, # H+
             "CHEBI:15378_p" => 2.0, # H+
-            "C00007" => -0.5, # o2
-            "C15602" => 1.0, # Quinone
-            "C15603" => -1.0, # Hydroquinone
+            "CHEBI:15379" => -0.5, # o2
+            "CHEBI:132124" => 1.0, # a ubiquinone
+            "CHEBI:24646" => -1.0, # a ubiquinol
         ),
         lower_bound = -1000.0,
         upper_bound = 1000.0,
@@ -474,9 +473,9 @@ function add_electron_transport_chain!(model)
             "CHEBI:15377" => -1.0, # h2o
             "CHEBI:15378" => -4.0, # H+
             "CHEBI:15378_p" => 4.0, # H+
-            "C00007" => -0.5, # o2
-            "C15602" => 1.0, # Quinone
-            "C15603" => -1.0, # Hydroquinone
+            "CHEBI:15379" => -0.5, # o2
+            "CHEBI:132124" => 1.0, # a ubiquinone
+            "CHEBI:24646" => -1.0, # a ubiquinol
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
@@ -533,7 +532,7 @@ function add_salt_transducers!(model)
         stoichiometry = Dict(
             "CHEBI:30616" => 1, # atp
             "CHEBI:15377" => 1, # water
-            "C00009" => -1, # pi
+            "CHEBI:43474" => -1, # pi
             "CHEBI:456216" => -1, # adp
             "CHEBI:15378" => -1.0,  # h+
             "CHEBI:29101_p" => -4.0, # Na+
@@ -609,8 +608,8 @@ function add_salt_transducers!(model)
         stoichiometry = Dict(
             "CHEBI:29101" => 1.0, # Na+ (n?)
             "CHEBI:57540" => 1.0, # nad
-            "C15603" => 1.0, # Hydroquinone
-            "C15602" => -1.0, # Quinone
+            "CHEBI:24646" => 1.0, # a ubiquinol
+            "CHEBI:132124" => -1.0, # a ubiquinone
             "CHEBI:29101_p" => -1.0, # Na+ (n?)
             "CHEBI:57945" => -1.0, # nadh
             "CHEBI:15378" => -1.0, # h+
@@ -641,11 +640,11 @@ function add_salt_transducers!(model)
     model.reactions["R-rnf"] = Reaction(;
         name = "H+/Na+-translocating ferredoxin:NAD+ oxidoreductase",
         stoichiometry = Dict(
-            "C00138" => -2, # Reduced ferredoxin
+            "CHEBI:33738" => -2, # Reduced ferredoxin
             "CHEBI:29101" => -1, # Na+
             "CHEBI:57540" => -1, # NAD
             "CHEBI:15378" => -1, # H+
-            "C00139" => 2, # Oxidized ferredoxin
+            "CHEBI:33737" => 2, # Oxidized ferredoxin
             "CHEBI:29101_p" => 1.0, # Na+
             "CHEBI:57945" => 1.0,  # nadh
         ),

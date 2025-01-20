@@ -14,6 +14,7 @@ include("reconstruct.jl")
 include("curate.jl")
 include("transporters.jl")
 include("biomass.jl")
+include("finalize.jl")
 
 
 end
