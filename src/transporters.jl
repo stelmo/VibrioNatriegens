@@ -12,30 +12,9 @@ function add_exchanges!(model)
         ),
     )
 
-    substrates = [ # allowed to be imported
-        "CHEBI:4167" # glucose
-        "CHEBI:16189" # so4
-        "CHEBI:15379" # o2
-        "CHEBI:28938" # nh4(+)
-        "CHEBI:43474" # pi
-        "CHEBI:29101" # Na+
-    ]
-
-    bidirs = [
-        "CHEBI:15377" # H2O
-    ]
-
+    # by default, exchanges can only export metabolites
     for mid in String.(df.CHEBI)
 
-        if mid == "CHEBI:4167" # default carbon source
-            lb, ub = (-22.0, 0.0)
-        elseif mid in substrates
-            lb, ub = (-1000.0, 0.0)
-        elseif min in bidirs
-            lb, ub = (-1000.0, 1000.0)
-        else
-            lb, ub = (0.0, 1000.0)
-        end
         nm = A.metabolite_name(model, mid)
 
         model.metabolites[mid*"_e"] = deepcopy(model.metabolites[mid])
@@ -45,8 +24,8 @@ function add_exchanges!(model)
         model.reactions["EX_"*mid] = Reaction(;
             name = "Exchange $nm",
             stoichiometry = Dict(mid * "_e" => -1),
-            lower_bound = lb,
-            upper_bound = ub,
+            lower_bound = 0,
+            upper_bound = 1000,
         )
     end
 
@@ -61,6 +40,7 @@ function add_periplasm_transporters!(model)
         ),
     )
 
+    # bidirectional by default
     for mid in String.(df.CHEBI)
 
         nm = A.metabolite_name(model, mid)
@@ -86,42 +66,15 @@ function add_membrane_transporters!(model)
             joinpath("data", "model", "transporters.csv"),
         ),
     )
-    @select!(df, :Type, :Metabolite, :KeggID, :Protein, :Stoichiometry, :Subunit)
+    @transform!(df, :CHEBI = "CHEBI:".*:CHEBI)
+    CSV.write("tran.csv", df)
     gs = String[]
     ms = String[]
 
-    # these amino acids ABS are a special cases
-    abc_aa = @subset(df, ismissing.(:KeggID))
-    general_aa = @subset(abc_aa, :Metabolite .== "AminoAcid")
-    branched_aa = @subset(abc_aa, :Metabolite .== "BranchedAminoAcid") # L, I, V
-
-    for g in groupby(general_aa, :Subunit)
-        for mid in amino_acids
-            push!(ms, mid)
-            rid = "ABC_$mid"
-            iso = string.(g.Protein)
-            ss = parse.(Float64, string.(g.Stoichiometry))
-            append!(gs, iso)
-            add_abc!(model, rid, mid, iso, ss)
-        end
-    end
-
-    for g in groupby(branched_aa, :Subunit)
-        for mid in ["C00183", "C00407", "C00123"]
-            rid = "ABC_$mid"
-            push!(ms, mid)
-            iso = string.(g.Protein)
-            ss = parse.(Float64, string.(g.Stoichiometry))
-            append!(gs, iso)
-            add_abc!(model, rid, mid, iso, ss)
-        end
-    end
-
-    # other abc transporters (conventionally added to source)
-    dropmissing!(df)
+    # abc transporters
     abcs = @subset(df, :Type .== "ABC")
-    for g in groupby(abcs, [:KeggID, :Subunit])
-        mid = first(g.KeggID)
+    for g in groupby(abcs, [:CHEBI, :Subunit])
+        mid = first(g.CHEBI)
         if mid in A.metabolites(model)
             push!(ms, mid)
             rid = "ABC_$mid"
@@ -136,8 +89,8 @@ function add_membrane_transporters!(model)
 
     # PTS transporters
     pts = @subset(df, :Type .== "PTS")
-    for g in groupby(pts, [:KeggID, :Subunit])
-        mid = first(g.KeggID)
+    for g in groupby(pts, [:CHEBI, :Subunit])
+        mid = first(g.CHEBI)
         if mid in A.metabolites(model)
             push!(ms, mid)
             rid = "PTS_$mid"
@@ -152,8 +105,8 @@ function add_membrane_transporters!(model)
 
     # symport
     symport = @subset(df, :Type .== "Symport")
-    for g in groupby(symport, [:KeggID, :Subunit])
-        mid1, mid2 = sort(split(first(g.KeggID), "/")) # to make rid unique
+    for g in groupby(symport, [:CHEBI, :Subunit])
+        mid1, mid2 = sort(split(first(g.CHEBI), "/")) # to make rid unique
         if mid1 in A.metabolites(model) && mid2 in A.metabolites(model)
             push!(ms, mid1)
             push!(ms, mid2)
@@ -169,8 +122,8 @@ function add_membrane_transporters!(model)
 
     # antiport
     antiport = @subset(df, :Type .== "Antiport")
-    for g in groupby(antiport, [:KeggID, :Subunit])
-        mid1, mid2 = sort(split(first(g.KeggID), "/")) # to make rid unique
+    for g in groupby(antiport, [:CHEBI, :Subunit])
+        mid1, mid2 = sort(split(first(g.CHEBI), "/")) # to make rid unique
         if mid1 in A.metabolites(model) && mid2 in A.metabolites(model)
             rid = "Antiport_$(mid1)_$mid2"
             push!(ms, mid1)
@@ -186,10 +139,11 @@ function add_membrane_transporters!(model)
 
     # permease (the default as well)
     permease = @subset(df, :Type .== "Permease")
-    for g in groupby(permease, [:KeggID, :Subunit])
-        mid = first(g.KeggID)
+    for g in groupby(permease, [:CHEBI, :Subunit])
+        mid = first(g.CHEBI)
         if mid in A.metabolites(model)
             rid = "Permease_$mid"
+            push!(ms, mid)
             iso = string.(g.Protein)
             append!(gs, iso)
             ss = parse.(Float64, string.(g.Stoichiometry))
@@ -200,22 +154,17 @@ function add_membrane_transporters!(model)
     end
 
     # add default permeases
-    all_exchange_metabolites =
-        string.(
-            DataFrame(
-                XLSX.readtable(
-                    joinpath("data", "curation", "curated", "base_reactions.xlsx"),
-                    "exchanges",
-                ),
-            ).KeGG
-        )
+    all_exchange_metabolites =  DataFrame(
+        CSV.File(
+            joinpath("data", "model", "exchange_metabolites.csv"),
+        ),
+    ).CHEBI
+    # note: Pi, Na, and H will not get a permease here, due to them being involved in the other porters
     missing_transporters = setdiff(all_exchange_metabolites, unique(ms))
     for mid in missing_transporters
         if mid in A.metabolites(model)
             rid = "Permease_$mid"
             add_permease!(model, rid, mid, ["Missing"], [1.0])
-        else
-            @warn "$mid not in model (missing permease)"
         end
     end
 end
@@ -228,16 +177,16 @@ function add_abc!(model, rid, mid, iso, ss)
         model.reactions[rid] = Reaction(
             name = "Transport $mid ABC",
             stoichiometry = Dict(
-                "C00002" => -1, # atp
-                "C00001" => -1, # water
-                "C00009" => 1, # pi
-                "C00008" => 1, # adp
-                "C00080" => 1,  # h+ # uncharged reaction
+                "CHEBI:30616" => -1, # atp
+                "CHEBI:15377" => -1, # water
+                "CHEBI:43474" => 1, # pi
+                "CHEBI:456216" => 1, # adp
+                "CHEBI:15378" => 1,  # h+ 
                 mid * "_p" => -1.0,
                 mid => 1.0, # cytosol
             ),
             objective_coefficient = 0.0,
-            lower_bound = -1000, # can secrete at a cost
+            lower_bound = 0,
             upper_bound = 1000,
             gene_association = [isoz],
         )
@@ -253,8 +202,8 @@ function add_pts!(model, rid, mid, iso, ss)
         model.reactions[rid] = Reaction(
             name = "Transport $mid PTS",
             stoichiometry = Dict(
-                "C00074" => -1.0, # pep
-                "C00022" => 1.0, # pyr
+                "CHEBI:58702" => -1.0, # pep
+                "CHEBI:15361" => 1.0, # pyr
                 mid * "_p" => -1.0,
                 mid => 1.0, # cytosol
             ),
@@ -330,12 +279,12 @@ function add_electron_transport_chain!(model)
         name = "NAD(P)+ transhydrogenase (ferredoxin)",
         stoichiometry = Dict(
             "C00138" => -2.0, # Reduced ferredoxin
-            "C00004" => -1.0,  # nadh
-            "C00006" => -2.0, # NADP+
-            "C00080" => -1.0, # H+
+            "CHEBI:57945" => -1.0,  # nadh
+            "CHEBI:58349" => -2.0, # NADP+
+            "CHEBI:15378" => -1.0, # H+
             "C00139" => 2.0, # Oxidized ferredoxin
-            "C00003" => 1.0, # NAD
-            "C00005" => 2.0, # NADPH
+            "CHEBI:57540" => 1.0, # NAD
+            "CHEBI:57783" => 2.0, # NADPH
         ),
         lower_bound = -1000.0,
         upper_bound = 1000.0,
@@ -353,12 +302,12 @@ function add_electron_transport_chain!(model)
     model.reactions["R-H-ATPsynthase"] = Reaction(;
         name = "F-type H+-transporting ATPase",
         stoichiometry = Dict(
-            "C00002" => 1, # atp
-            "C00001" => 1, # water
+            "CHEBI:30616" => 1, # atp
+            "CHEBI:15377" => 1, # water
             "C00009" => -1, # pi
-            "C00008" => -1, # adp
-            "C00080" => 3.0,  # h+
-            "C00080_p" => -4.0,  # h+
+            "CHEBI:456216" => -1, # adp
+            "CHEBI:15378" => 3.0,  # h+
+            "CHEBI:15378_p" => -4.0,  # h+
         ),
         lower_bound = -1000.0,
         upper_bound = 1000.0,
@@ -429,10 +378,10 @@ function add_electron_transport_chain!(model)
         stoichiometry = Dict(
             "C00007" => -1, # o2
             "C00126" => 4.0, # Ferrocytochrome c
-            "C00080" => -8.0, # H+
+            "CHEBI:15378" => -8.0, # H+
             "C00125" => 4.0, # Ferricytochrome c
-            "C00001" => 2.0, # h2o
-            "C00080_p" => 4.0, # H+
+            "CHEBI:15377" => 2.0, # h2o
+            "CHEBI:15378_p" => 4.0, # H+
         ),
         lower_bound = -1000.0,
         upper_bound = 1000.0,
@@ -466,10 +415,10 @@ function add_electron_transport_chain!(model)
         stoichiometry = Dict(
             "C00007" => -1, # o2
             "C00126" => 4.0, # Ferrocytochrome c
-            "C00080" => -8.0, # H+
+            "CHEBI:15378" => -8.0, # H+
             "C00125" => 4.0, # Ferricytochrome c
-            "C00001" => 2.0, # h2o
-            "C00080_p" => 4.0, # H+
+            "CHEBI:15377" => 2.0, # h2o
+            "CHEBI:15378_p" => 4.0, # H+
         ),
         lower_bound = -1000.0,
         upper_bound = 1000.0,
@@ -494,9 +443,9 @@ function add_electron_transport_chain!(model)
     model.reactions["R-cyt-bd"] = Reaction(;
         name = "Cytochrome BD-I",
         stoichiometry = Dict(
-            "C00001" => 1.0, # h2o
-            "C00080" => -2.0, # H+
-            "C00080_p" => 2.0, # H+
+            "CHEBI:15377" => 1.0, # h2o
+            "CHEBI:15378" => -2.0, # H+
+            "CHEBI:15378_p" => 2.0, # H+
             "C00007" => -0.5, # o2
             "C15602" => 1.0, # Quinone
             "C15603" => -1.0, # Hydroquinone
@@ -522,9 +471,9 @@ function add_electron_transport_chain!(model)
     model.reactions["R-cyt-bo"] = Reaction(;
         name = "Cytochrome oxidase bo3 (ubiquinol: 4 protons) (periplasm)",
         stoichiometry = Dict(
-            "C00001" => -1.0, # h2o
-            "C00080" => -4.0, # H+
-            "C00080_p" => 4.0, # H+
+            "CHEBI:15377" => -1.0, # h2o
+            "CHEBI:15378" => -4.0, # H+
+            "CHEBI:15378_p" => 4.0, # H+
             "C00007" => -0.5, # o2
             "C15602" => 1.0, # Quinone
             "C15603" => -1.0, # Hydroquinone
@@ -549,12 +498,12 @@ function add_electron_transport_chain!(model)
     model.reactions["R-pnt"] = Reaction(;
         name = "NADPH:NAD+ oxidoreductase H translocase",
         stoichiometry = Dict(
-            "C00003" => -1.0, # NAD
-            "C00005" => -1.0, # NADPH
-            "C00080" => -1.0, # H+
-            "C00004" => 1.0, # nadh
-            "C00006" => 1.0, # NADP+
-            "C00080_p" => 1.0, # H+
+            "CHEBI:57540" => -1.0, # NAD
+            "CHEBI:57783" => -1.0, # NADPH
+            "CHEBI:15378" => -1.0, # H+
+            "CHEBI:57945" => 1.0, # nadh
+            "CHEBI:58349" => 1.0, # NADP+
+            "CHEBI:15378_p" => 1.0, # H+
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
@@ -582,13 +531,13 @@ function add_salt_transducers!(model)
     model.reactions["R-Na-ATPsynthase"] = Reaction(;
         name = "F-type Na+-transporting ATPase",
         stoichiometry = Dict(
-            "C00002" => 1, # atp
-            "C00001" => 1, # water
+            "CHEBI:30616" => 1, # atp
+            "CHEBI:15377" => 1, # water
             "C00009" => -1, # pi
-            "C00008" => -1, # adp
-            "C00080" => -1.0,  # h+
-            "C01330_p" => -4.0, # Na+
-            "C01330" => 4.0, # Na+
+            "CHEBI:456216" => -1, # adp
+            "CHEBI:15378" => -1.0,  # h+
+            "CHEBI:29101_p" => -4.0, # Na+
+            "CHEBI:29101" => 4.0, # Na+
         ),
         lower_bound = -1000.0,
         upper_bound = 1000.0,
@@ -630,12 +579,12 @@ function add_salt_transducers!(model)
     model.reactions["R-oad"] = Reaction(;
         name = "oxaloacetate decarboxylase (Na(+) extruding)",
         stoichiometry = Dict(
-            "C00036" => -1.0, # oxaloacetate
-            "C01330" => -2.0, # Na+
-            "C00080" => -1.0, # H+
-            "C00022" => 1.0, # pyruvate
-            "C01330_p" => 2.0, # Na+
-            "C00011" => 1.0, # CO2
+            "CHEBI:16452" => -1.0, # oxaloacetate
+            "CHEBI:29101" => -2.0, # Na+
+            "CHEBI:15378" => -1.0, # H+
+            "CHEBI:15361" => 1.0, # pyruvate
+            "CHEBI:29101_p" => 2.0, # Na+
+            "CHEBI:16526" => 1.0, # CO2
         ),
         lower_bound = -1000.0,
         upper_bound = 1000.0,
@@ -658,13 +607,13 @@ function add_salt_transducers!(model)
     model.reactions["R-nqr"] = Reaction(;
         name = "Na+-transporting NADH:ubiquinone oxidoreductase",
         stoichiometry = Dict(
-            "C01330" => 1.0, # Na+ (n?)
-            "C00003" => 1.0, # nad
+            "CHEBI:29101" => 1.0, # Na+ (n?)
+            "CHEBI:57540" => 1.0, # nad
             "C15603" => 1.0, # Hydroquinone
             "C15602" => -1.0, # Quinone
-            "C01330_p" => -1.0, # Na+ (n?)
-            "C00004" => -1.0, # nadh
-            "C00080" => -1.0, # h+
+            "CHEBI:29101_p" => -1.0, # Na+ (n?)
+            "CHEBI:57945" => -1.0, # nadh
+            "CHEBI:15378" => -1.0, # h+
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
@@ -693,12 +642,12 @@ function add_salt_transducers!(model)
         name = "H+/Na+-translocating ferredoxin:NAD+ oxidoreductase",
         stoichiometry = Dict(
             "C00138" => -2, # Reduced ferredoxin
-            "C01330" => -1, # Na+
-            "C00003" => -1, # NAD
-            "C00080" => -1, # H+
+            "CHEBI:29101" => -1, # Na+
+            "CHEBI:57540" => -1, # NAD
+            "CHEBI:15378" => -1, # H+
             "C00139" => 2, # Oxidized ferredoxin
-            "C01330_p" => 1.0, # Na+
-            "C00004" => 1.0,  # nadh
+            "CHEBI:29101_p" => 1.0, # Na+
+            "CHEBI:57945" => 1.0,  # nadh
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
