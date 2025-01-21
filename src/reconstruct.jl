@@ -23,7 +23,7 @@ function build_model()
 
     VibrioNatriegens.extend_model!(model, ghomos)
     VibrioNatriegens.extend_model!(model, gheteros)
-    VibrioNatriegens.curate!(model)
+    VibrioNatriegens.curate!(model) # needs to happen here, as metabolites get added that are necessary later
 
     VibrioNatriegens.add_exchanges!(model)
     VibrioNatriegens.add_periplasm_transporters!(model)
@@ -33,6 +33,8 @@ function build_model()
 
     VibrioNatriegens.add_atpm!(model)
     # VibrioNatriegens.add_biomass!(model)
+
+    VibrioNatriegens.set_default_exchanges!(model)
 
     model
 end
