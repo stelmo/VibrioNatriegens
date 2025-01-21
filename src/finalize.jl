@@ -2,7 +2,7 @@
 
 function set_default_exchanges!(model)
 
-    carbon_source = "CHEBI:4167" # glucose
+    carbon_source = "CHEBI:15903" # glucose
     
     substrates = [
         "CHEBI:16189" # so4
@@ -30,4 +30,15 @@ function set_default_exchanges!(model)
         model.reactions["EX_$mid"].upper_bound = ub
     end
 
+end
+
+function name_reactions!(model)
+    df = DataFrame(CSV.File(joinpath("data", "model", "reaction_names.csv")))
+    dropmissing!(df)
+    lu = Dict(string.(df.RHEA_ID) .=> String.(df.Name))
+    for rid in A.reactions(model)
+        if isnothing(model.reactions[rid].name) && haskey(lu, rid)
+            model.reactions[rid].name = lu[rid]
+        end
+    end
 end

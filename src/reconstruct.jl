@@ -35,7 +35,8 @@ function build_model()
     # VibrioNatriegens.add_biomass!(model)
 
     VibrioNatriegens.set_default_exchanges!(model)
-
+    VibrioNatriegens.name_reactions!(model)
+    
     model
 end
 
@@ -75,7 +76,7 @@ function extend_model!(model, dfs)
             append!(ms, last.(coeff_mets))
             
             ecs = isnothing(rxn.ec) ? [""] : rxn.ec
-            name = isnothing(rxn.name) ? "" : rxn.name
+            name = isnothing(rxn.name) ? nothing : rxn.name
 
             # direction
             reversibility_index_threshold = 3.0

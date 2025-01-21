@@ -56,6 +56,18 @@ function curate!(model)
         compartment = "Cytosol",
         charge = 0,
     )
+
+    # modify rhea reactions
+#     model.reactions["38215"].stoichiometry[]
+
+#     delete!(model.metabolites)
+#     38215,"-1.0*NAD(+) + -1.0*D-glucose 6-phosphate <-> 1.0*H(+) + 1.0*NADH + 1.0*6-phospho-D-glucono-1,5-lactone"
+
+# 15841,"-1.0*D-glucose 6-phosphate + -1.0*NADP(+) <-> 1.0*H(+) + 1.0*NADPH + 1.0*6-phospho-D-glucono-1,5-lactone"
+
+# 17825,-1.0*ATP + -1.0*D-glucose -> 1.0*H(+) + 1.0*D-glucose 6-phosphate + 1.0*ADP
+
+
     
 end
 

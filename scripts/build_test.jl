@@ -12,6 +12,7 @@ VibrioNatriegens.print_metabolites(model)
 m = convert(JSONFBCModels.JSONFBCModel, model)
 AbstractFBCModels.save(m,"vnat.json")
 
+# MASS BALANCE
 # only the [thioredoxin]-disulfide metabolites give unbalanced reactions
 rids = filter(x -> isdigit(first(x)), unique(A.reactions(model)))
 unbal_rids = String[]
@@ -26,3 +27,8 @@ for rid in rids
     end
     all(values(m) .== 0) || push!(unbal_rids, rid)    
 end
+
+df = DataFrame(CSV.File("reactions-model.csv"))
+@select!(df, :rid, :Stoichiometry)
+@rsubset!(df, occursin("D-glucose",:Stoichiometry))
+CSV.write("glucose.csv", df)
