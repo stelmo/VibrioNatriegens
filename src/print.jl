@@ -1,5 +1,5 @@
 
-function print_reactions(model::Model, rxns = [])
+function print_reactions(model::Model)
 
     df = DataFrame(
         rid = String[],
@@ -8,8 +8,6 @@ function print_reactions(model::Model, rxns = [])
         dG = Float64[],
         EC = String[],
     )
-
-    isempty(rxns) && (rxns = collect(keys(model.reactions)))
 
     _dg(rid) = begin
         x = model.reactions[rid].dg
@@ -54,8 +52,8 @@ function print_reactions(model::Model, rxns = [])
         isnothing(nm) ? "" : nm
     end
 
-    for rid in rxns
-        rid in keys(model.reactions) || continue
+    for rid in A.reactions(model)
+        println(rid)
         push!(
             df,
             (rid, _name(rid), _stoichiometry(rid), _dg(rid), _ec(rid));

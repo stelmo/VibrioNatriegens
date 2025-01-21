@@ -57,17 +57,21 @@ function curate!(model)
         charge = 0,
     )
 
-    # modify rhea reactions
-#     model.reactions["38215"].stoichiometry[]
+    # modify rhea reactions to exchange D- with the beta-D isomer
+    delete!(model.metabolites, "CHEBI:4167") # D-glucose
+    delete!(model.metabolites, "CHEBI:61548") # D-glucopyranose 6-phosphate
 
-#     delete!(model.metabolites)
-#     38215,"-1.0*NAD(+) + -1.0*D-glucose 6-phosphate <-> 1.0*H(+) + 1.0*NADH + 1.0*6-phospho-D-glucono-1,5-lactone"
+    model.reactions["38215"].stoichiometry["CHEBI:58247"] = model.reactions["38215"].stoichiometry["CHEBI:61548"] # D-glucopyranose 6-phosphate -> 	β-D-glucose 6-phosphate
+    delete!(model.reactions["38215"].stoichiometry, "CHEBI:61548")
 
-# 15841,"-1.0*D-glucose 6-phosphate + -1.0*NADP(+) <-> 1.0*H(+) + 1.0*NADPH + 1.0*6-phospho-D-glucono-1,5-lactone"
+    model.reactions["15841"].stoichiometry["CHEBI:58247"] = model.reactions["15841"].stoichiometry["CHEBI:61548"] # D-glucopyranose 6-phosphate -> 	β-D-glucose 6-phosphate
+    delete!(model.reactions["15841"].stoichiometry, "CHEBI:61548")
 
-# 17825,-1.0*ATP + -1.0*D-glucose -> 1.0*H(+) + 1.0*D-glucose 6-phosphate + 1.0*ADP
+    model.reactions["17825"].stoichiometry["CHEBI:15903"] = model.reactions["17825"].stoichiometry["CHEBI:4167"] # D-glucose -> beta-D-glucose
+    delete!(model.reactions["17825"].stoichiometry, "CHEBI:4167")
 
-
+    model.reactions["17825"].stoichiometry["CHEBI:58247"] = model.reactions["17825"].stoichiometry["CHEBI:61548"] # D-glucopyranose 6-phosphate -> β-D-glucose 6-phosphate
+    delete!(model.reactions["17825"].stoichiometry, "CHEBI:61548")
     
 end
 
