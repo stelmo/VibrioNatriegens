@@ -5,6 +5,7 @@ using AbstractFBCModels
 import AbstractFBCModels as A
 import COBREXA as X
 using DocStringExtensions
+import SparseArrays as S
 
 include("utils.jl")
 include("model.jl")

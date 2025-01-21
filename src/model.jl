@@ -114,7 +114,7 @@ function A.stoichiometry(m::Model)
             push!(V, v)
         end
     end
-    sparse(I, J, V, A.n_metabolites(m), A.n_reactions(m))
+    S.sparse(I, J, V, A.n_metabolites(m), A.n_reactions(m))
 end
 
 function A.coupling(m::Model)
@@ -129,7 +129,7 @@ function A.coupling(m::Model)
             push!(V, v)
         end
     end
-    sparse(I, J, V, A.n_couplings(m), A.n_reactions(m))
+    S.sparse(I, J, V, A.n_couplings(m), A.n_reactions(m))
 end
 
 A.bounds(m::Model) = (
@@ -143,14 +143,14 @@ A.coupling_bounds(m::Model) = (
 )
 
 A.balance(m::Model) =
-    sparse(Float64[m.metabolites[mid].balance for mid in A.metabolites(m)])
+    S.sparse(Float64[m.metabolites[mid].balance for mid in A.metabolites(m)])
 A.objective(m::Model) =
-    sparse(Float64[m.reactions[rid].objective_coefficient for rid in A.reactions(m)])
+    S.sparse(Float64[m.reactions[rid].objective_coefficient for rid in A.reactions(m)])
 
 A.reaction_gene_association_dnf(m::Model, id::String) = begin
     grrs = m.reactions[id].gene_association
     isnothing(grrs) && return nothing
-    [collect(keys(iso)) for iso in grrs.gene_product_stoichiometry]
+    [collect(keys(iso.gene_product_stoichiometry)) for iso in grrs]
 end
 
 A.reaction_gene_products_available(m::Model, id::String, fn::Function) =

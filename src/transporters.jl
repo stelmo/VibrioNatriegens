@@ -76,11 +76,10 @@ function add_membrane_transporters!(model)
         mid = first(g.CHEBI)
         if mid in A.metabolites(model)
             push!(ms, mid)
-            rid = "ABC_$mid"
             iso = string.(g.Protein)
             ss = parse.(Float64, string.(g.Stoichiometry))
             append!(gs, iso)
-            add_abc!(model, rid, mid, iso, ss)
+            add_abc!(model, mid, iso, ss)
         else
             @warn "$mid not in model (ABC)"
         end
@@ -92,11 +91,10 @@ function add_membrane_transporters!(model)
         mid = first(g.CHEBI)
         if mid in A.metabolites(model)
             push!(ms, mid)
-            rid = "PTS_$mid"
             iso = string.(g.Protein)
             append!(gs, iso)
             ss = parse.(Float64, string.(g.Stoichiometry))
-            add_pts!(model, rid, mid, iso, ss)
+            add_pts!(model, mid, iso, ss)
         else
             @warn "$mid not in model (PTS)"
         end
@@ -109,11 +107,10 @@ function add_membrane_transporters!(model)
         if mid1 in A.metabolites(model) && mid2 in A.metabolites(model)
             push!(ms, mid1)
             push!(ms, mid2)
-            rid = "Symport_$(mid1)_$mid2"
             iso = string.(g.Protein)
             append!(gs, iso)
             ss = parse.(Float64, string.(g.Stoichiometry))
-            add_symport!(model, rid, mid1, mid2, iso, ss)
+            add_symport!(model, mid1, mid2, iso, ss)
         else
             @warn "$mid1 or $mid2 not in model (symport)"
         end
@@ -124,13 +121,12 @@ function add_membrane_transporters!(model)
     for g in groupby(antiport, [:CHEBI, :Subunit])
         mid1, mid2 = sort(split(first(g.CHEBI), "/")) # to make rid unique
         if mid1 in A.metabolites(model) && mid2 in A.metabolites(model)
-            rid = "Antiport_$(mid1)_$mid2"
             push!(ms, mid1)
             push!(ms, mid2)
             iso = string.(g.Protein)
             append!(gs, iso)
             ss = parse.(Float64, string.(g.Stoichiometry))
-            add_antiport!(model, rid, mid1, mid2, iso, ss)
+            add_antiport!(model, mid1, mid2, iso, ss)
         else
             @warn "$mid1 or $mid2 not in model (antiport)"
         end
@@ -141,12 +137,11 @@ function add_membrane_transporters!(model)
     for g in groupby(permease, [:CHEBI, :Subunit])
         mid = first(g.CHEBI)
         if mid in A.metabolites(model)
-            rid = "Permease_$mid"
             push!(ms, mid)
             iso = string.(g.Protein)
             append!(gs, iso)
             ss = parse.(Float64, string.(g.Stoichiometry))
-            add_permease!(model, rid, mid, iso, ss)
+            add_permease!(model, mid, iso, ss)
         else
             @warn "$mid not in model (permease)"
         end
@@ -162,19 +157,19 @@ function add_membrane_transporters!(model)
     missing_transporters = setdiff(all_exchange_metabolites, unique(ms))
     for mid in missing_transporters
         if mid in A.metabolites(model)
-            rid = "Permease_$mid"
-            add_permease!(model, rid, mid, ["Missing"], [1.0])
+            add_permease!(model, mid, ["Missing"], [1.0])
         end
     end
 end
 
-function add_abc!(model, rid, mid, iso, ss)
+function add_abc!(model, mid, iso, ss)
+    rid = "ABC_$mid"
     isoz = X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
         push!(model.reactions[rid].gene_association, isoz)
     else
         model.reactions[rid] = Reaction(
-            name = "Transport $mid ABC",
+            name = "Transport $(A.metabolite_name(model, String(mid))) ABC",
             stoichiometry = Dict(
                 "CHEBI:30616" => -1, # atp
                 "CHEBI:15377" => -1, # water
@@ -192,14 +187,14 @@ function add_abc!(model, rid, mid, iso, ss)
     end
 end
 
-
-function add_pts!(model, rid, mid, iso, ss)
+function add_pts!(model, mid, iso, ss)
+    rid = "PTS_$mid"
     isoz = X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
         push!(model.reactions[rid].gene_association, isoz)
     else
         model.reactions[rid] = Reaction(
-            name = "Transport $mid PTS",
+            name = "Transport $(A.metabolite_name(model, String(mid))) PTS",
             stoichiometry = Dict(
                 "CHEBI:58702" => -1.0, # pep
                 "CHEBI:15361" => 1.0, # pyr
@@ -214,13 +209,14 @@ function add_pts!(model, rid, mid, iso, ss)
     end
 end
 
-function add_symport!(model, rid, mid1, mid2, iso, ss)
+function add_symport!(model, mid1, mid2, iso, ss)
+    rid = "SYM_$(mid1)_$mid2"
     isoz = X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
         push!(model.reactions[rid].gene_association, isoz)
     else
         model.reactions[rid] = Reaction(
-            name = "Transport $mid1, $mid2 Symport",
+            name = "Symport $(A.metabolite_name(model, String(mid1)))::$(A.metabolite_name(model, String(mid2)))",
             stoichiometry = Dict(
                 mid1 * "_p" => -1.0,
                 mid1 => 1.0,
@@ -235,13 +231,14 @@ function add_symport!(model, rid, mid1, mid2, iso, ss)
     end
 end
 
-function add_antiport!(model, rid, mid1, mid2, iso, ss)
+function add_antiport!(model, mid1, mid2, iso, ss)
+    rid = "ANTI_$(mid1)_$mid2"
     isoz = X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
         push!(model.reactions[rid].gene_association, isoz)
     else
         model.reactions[rid] = Reaction(
-            name = "Transport $mid1, $mid2 Antiport",
+            name = "Antiport $(A.metabolite_name(model, String(mid1)))::$(A.metabolite_name(model, String(mid2)))",
             stoichiometry = Dict(
                 mid1 * "_p" => 1.0,
                 mid1 => -1.0,
@@ -256,13 +253,14 @@ function add_antiport!(model, rid, mid1, mid2, iso, ss)
     end
 end
 
-function add_permease!(model, rid, mid, iso, ss)
+function add_permease!(model, mid, iso, ss)
+    rid = "PERM_$mid"
     isoz = X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
         push!(model.reactions[rid].gene_association, isoz)
     else
         model.reactions[rid] = Reaction(
-            name = "Transport $mid Permease",
+            name = "Permease $(A.metabolite_name(model, String(mid)))",
             stoichiometry = Dict(mid * "_p" => -1.0, mid => 1.0),
             objective_coefficient = 0.0,
             lower_bound = -1000,

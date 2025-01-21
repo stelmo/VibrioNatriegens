@@ -22,7 +22,7 @@ function curate!(model)
 
     bi_dir(model, "10231")
     bi_dir(model, "18796")
-    for_dir(model, "18136")
+    for_dir(model, "18133")
     for_dir(model, "30734")
     for_dir(model, "31210")
     for_dir(model, "30946")

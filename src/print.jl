@@ -20,8 +20,8 @@ function print_reactions(model::Model, rxns = [])
 
         ss = model.reactions[rid].stoichiometry
 
-        s1 = join([A.metabolite_name(model, k) for (k, v) in ss if v < 0], " + ")
-        s2 = join([A.metabolite_name(model, k) for (k, v) in ss if v > 0], " + ")
+        s1 = join([string(v)*"*"*A.metabolite_name(model, k) for (k, v) in ss if v < 0], " + ")
+        s2 = join([string(v)*"*"*A.metabolite_name(model, k) for (k, v) in ss if v > 0], " + ")
         
         lb = model.reactions[rid].lower_bound
         ub = model.reactions[rid].upper_bound
@@ -69,7 +69,6 @@ function print_reactions(model::Model, rxns = [])
 end
 
 function print_metabolites(model)
-    
 
     mids = A.metabolites(model)
     charges = Union{Missing, Int}[]
@@ -90,3 +89,4 @@ function print_metabolites(model)
     df = DataFrame(Metabolite=mids, Name=names, Charge=charges, Formula=formulas)    
     CSV.write("metabolites-model.csv", df)
 end
+
