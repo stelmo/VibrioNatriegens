@@ -160,6 +160,10 @@ function add_membrane_transporters!(model)
             add_permease!(model, mid, ["Missing"], [1.0])
         end
     end
+
+    add_genes!(model, gs)
+    # no need to add metabolites, because they should all already be in the model
+    @assert all(in.(ms, Ref(A.metabolites(model))))
 end
 
 function add_abc!(model, mid, iso, ss)
@@ -281,6 +285,9 @@ end
 
 function add_electron_transport_chain!(model)
 
+    gs = String[]
+    ms = String[]
+
     model.reactions["R-nfn"] = Reaction(; # this is speculative
         name = "NAD(P)+ transhydrogenase (ferredoxin)",
         stoichiometry = Dict(
@@ -304,6 +311,8 @@ function add_electron_transport_chain!(model)
             "EC" => ["1.6.1.4"],
         ),
     )
+    append!(gs, A.reaction_gene_association_dnf(model, "R-nfn")...)
+    append!(ms, keys(A.reaction_stoichiometry(model,  "R-nfn")))
 
     model.reactions["R-H-ATPsynthase"] = Reaction(;
         name = "F-type H+-transporting ATPase",
@@ -351,6 +360,8 @@ function add_electron_transport_chain!(model)
             "EC" => ["7.1.2.2"],
         ),
     )
+    append!(gs, A.reaction_gene_association_dnf(model, "R-H-ATPsynthase")...)
+    append!(ms, keys(A.reaction_stoichiometry(model,  "R-H-ATPsynthase")))
 
     model.reactions["R-cyt-bc1"] = Reaction(;
         name = "Cytochrome c oxidase",
@@ -378,6 +389,8 @@ function add_electron_transport_chain!(model)
             "EC" => ["7.1.1.8"],
         ),
     )
+    append!(gs, A.reaction_gene_association_dnf(model, "R-cyt-bc1")...)
+    append!(ms, keys(A.reaction_stoichiometry(model,  "R-cyt-bc1")))
 
     model.reactions["R-cyt-c"] = Reaction(;
         name = "Cytochrome c oxidase",
@@ -415,6 +428,8 @@ function add_electron_transport_chain!(model)
             "EC" => ["7.1.1.9"],
         ),
     )
+    append!(gs, A.reaction_gene_association_dnf(model, "R-cyt-c")...)
+    append!(ms, keys(A.reaction_stoichiometry(model,  "R-cyt-c")))
 
     model.reactions["R-cyt-c-cbb3"] = Reaction(;
         name = "Cytochrome c oxidase, cbb3-type",
@@ -445,6 +460,8 @@ function add_electron_transport_chain!(model)
             "EC" => ["7.1.1.9"],
         ),
     )
+    append!(gs, A.reaction_gene_association_dnf(model, "R-cyt-c-cbb3")...)
+    append!(ms, keys(A.reaction_stoichiometry(model,  "R-cyt-c-cbb3")))
 
     model.reactions["R-cyt-bd"] = Reaction(;
         name = "Cytochrome BD-I",
@@ -473,6 +490,8 @@ function add_electron_transport_chain!(model)
             "EC" => ["7.1.1.7"],
         ),
     )
+    append!(gs, A.reaction_gene_association_dnf(model, "R-cyt-bd")...)
+    append!(ms, keys(A.reaction_stoichiometry(model,  "R-cyt-bd")))
 
     model.reactions["R-cyt-bo"] = Reaction(;
         name = "Cytochrome oxidase bo3 (ubiquinol: 4 protons) (periplasm)",
@@ -500,6 +519,8 @@ function add_electron_transport_chain!(model)
             "KEGG_REACTION" => ["h2o + 4 h_c + 0.5 o2 + quinol -> quinone + 4 h_p"],
         ),
     )
+    append!(gs, A.reaction_gene_association_dnf(model, "R-cyt-bo")...)
+    append!(ms, keys(A.reaction_stoichiometry(model,  "R-cyt-bo")))
 
     model.reactions["R-pnt"] = Reaction(;
         name = "NADPH:NAD+ oxidoreductase H translocase",
@@ -528,11 +549,17 @@ function add_electron_transport_chain!(model)
             "EXPASY" => ["https://enzyme.expasy.org/EC/7.1.1.1"],
         ),
     )
+    append!(gs, A.reaction_gene_association_dnf(model, "R-pnt")...)
+    append!(ms, keys(A.reaction_stoichiometry(model,  "R-pnt")))
 
-
+    add_genes!(model, gs)
+    # no need to add metabolites, because they should all already be in the model
+    @assert all(in.(ms, Ref(A.metabolites(model))))
 end
 
 function add_salt_transducers!(model)
+    gs = String[]
+    ms = String[]
 
     model.reactions["R-Na-ATPsynthase"] = Reaction(;
         name = "F-type Na+-transporting ATPase",
@@ -581,6 +608,8 @@ function add_salt_transducers!(model)
             "EC" => ["7.2.2.1"],
         ),
     )
+    append!(gs, A.reaction_gene_association_dnf(model, "R-Na-ATPsynthase")...)
+    append!(ms, keys(A.reaction_stoichiometry(model,  "R-Na-ATPsynthase")))
 
     model.reactions["R-oad"] = Reaction(;
         name = "oxaloacetate decarboxylase (Na(+) extruding)",
@@ -609,6 +638,9 @@ function add_salt_transducers!(model)
             "EC" => ["7.2.4.2"],
         ),
     )
+    append!(gs, A.reaction_gene_association_dnf(model, "R-oad")...)
+    append!(ms, keys(A.reaction_stoichiometry(model,  "R-oad")))
+
 
     model.reactions["R-nqr"] = Reaction(;
         name = "Na+-transporting NADH:ubiquinone oxidoreductase",
@@ -643,6 +675,8 @@ function add_salt_transducers!(model)
             "EXPASY" => ["https://enzyme.expasy.org/EC/7.2.1.1"],
         ),
     )
+    append!(gs, A.reaction_gene_association_dnf(model, "R-nqr")...)
+    append!(ms, keys(A.reaction_stoichiometry(model,  "R-nqr")))
 
     model.reactions["R-rnf"] = Reaction(;
         name = "H+/Na+-translocating ferredoxin:NAD+ oxidoreductase",
@@ -687,7 +721,12 @@ function add_salt_transducers!(model)
             "EXPASY" => ["https://enzyme.expasy.org/EC/7.2.1.2"],
         ),
     )
+    append!(gs, A.reaction_gene_association_dnf(model, "R-rnf")...)
+    append!(ms, keys(A.reaction_stoichiometry(model,  "R-rnf")))
 
+    add_genes!(model, gs)
+    # no need to add metabolites, because they should all already be in the model
+    @assert all(in.(ms, Ref(A.metabolites(model))))
 end
 
 

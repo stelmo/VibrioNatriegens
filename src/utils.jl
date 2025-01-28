@@ -81,14 +81,40 @@ function extend_model!(model, dfs)
         end
     end
 
+
+    add_genes!(model, gs)
+    add_metabolites!(model, ms)
+
+end
+
+function add_genes!(model, gs)
+    # gs :: String[]
+    
+    gene_df = DataFrame(CSV.File(joinpath("data", "annotations", "ncbi", "refseq_annotations.tsv")))
+    @rename!(gene_df, :ProteinAccession = $"Protein accession")
+    @select!(gene_df, :Name, :ProteinAccession, :Symbol)
+    lu_acc_sym = Dict(k => ismissing(v) ? nothing : v for (k, v) in zip(gene_df.ProteinAccession, gene_df.Symbol) if !ismissing(k) && !ismissing(v))
+    lu_acc_name = Dict(k => ismissing(v) ? nothing : v for (k, v) in zip(gene_df.ProteinAccession, gene_df.Name) if !ismissing(k) && !ismissing(v))
+
+    gene_df = DataFrame(CSV.File(joinpath("data", "annotations", "eggnog", "out.emapper.annotations")))
+    @select!(gene_df, :query, :Preferred_name)
+    lu_acc_sym2 = Dict(k => v for (k, v) in zip(gene_df.query, gene_df.Preferred_name) if v != "-")
+    
     # add genes
     for g in unique(gs)
         haskey(model.genes, g) || begin
-            model.genes[g] = Gene(name = g)            
+            model.genes[g] = Gene(;
+                name = get(lu_acc_name, g, nothing),
+                symbol = get(lu_acc_sym, g, get(lu_acc_sym2, g, nothing)),
+            )            
         end
     end
 
-    # add metabolites
+end
+
+function add_metabolites!(model, ms)
+    # ms :: RheaReactions.RheaMetabolite[]
+
     for m in ms
         haskey(model.metabolites, m.accession) || begin
                 model.metabolites[m.accession] = Metabolite(;
@@ -100,5 +126,3 @@ function extend_model!(model, dfs)
         end
     end
 end
-
-

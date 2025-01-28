@@ -37,8 +37,21 @@ function name_reactions!(model)
     dropmissing!(df)
     lu = Dict(string.(df.RHEA_ID) .=> String.(df.Name))
     for rid in A.reactions(model)
-        if isnothing(model.reactions[rid].name) && haskey(lu, rid)
-            model.reactions[rid].name = lu[rid]
+        grrs = A.reaction_gene_association_dnf(model, rid)
+        rname = A.reaction_name(model, rid)
+
+        # option 1
+        if !isnothing(grrs)
+            grr = vcat(grrs...)
+            rs = [VibrioNatriegens.gene_symbol(model, g) for g in grr if !isnothing(VibrioNatriegens.gene_symbol(model, g))]
+            rname = isempty(rs) ? nothing : join(unique(rs))
         end
+        
+        # option 2
+        if isnothing(rname) && haskey(lu, rid)
+            rname = lu[rid]
+        end
+
+        model.reactions[rid].name = rname
     end
 end

@@ -52,6 +52,7 @@ $(TYPEDFIELDS)
 """
 Base.@kwdef mutable struct Gene
     name::A.Maybe{String} = nothing
+    symbol::A.Maybe{String} = nothing
     molarmass::A.Maybe{Float64} = nothing
     annotations::A.Annotations = A.Annotations()
     notes::A.Notes = A.Notes()
@@ -101,6 +102,8 @@ A.reaction_notes(m::Model, id::String) = m.reactions[id].notes
 A.metabolite_notes(m::Model, id::String) = m.metabolites[id].notes
 A.gene_notes(m::Model, id::String) = m.genes[id].notes
 A.coupling_notes(m::Model, id::String) = m.couplings[id].notes
+
+gene_symbol(m::Model, id::String) = m.genes[id].symbol
 
 function A.stoichiometry(m::Model)
     midxs = Dict(mid => idx for (idx, mid) in enumerate(A.metabolites(m)))

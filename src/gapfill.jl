@@ -2,7 +2,7 @@
 function gapfill!(model)
 
     rhea_rids = [
-        54528 # aldehydo-D-ribose 5-phosphate = D-ribose 5-phosphate
+        54528 # aldehydo-D-ribose 5-phosphate <-> D-ribose 5-phosphate
         21387
         41935
         50947
@@ -19,8 +19,10 @@ function gapfill!(model)
         31462
         45139
         22564
-        22564
+        15652 # Spontaneous
+        28237 # Spontaneous
     ]
+
     n = length(rhea_rids)
     df = DataFrame(
         RHEA_ID = rhea_rids,
