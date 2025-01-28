@@ -188,6 +188,15 @@ function add_abc!(model, mid, iso, ss)
 end
 
 function add_pts!(model, mid, iso, ss)
+    lu_phospho = Dict(
+        "CHEBI:506227" => "CHEBI:57513", # n-acetyl-glucosamine -> N-acetyl-D-glucosamine 6-phosphate
+        "CHEBI:15903" => "CHEBI:58247", # glucose -> glucose 6 phosphate
+        "CHEBI:17992" => "", # sucrose -> 
+        "CHEBI:16899" => "CHEBI:61381", # mannitol -> D-mannitol 1-phosphate
+        "CHEBI:17997" => "", # Nitrogen -> 
+
+    )
+
     rid = "PTS_$mid"
     isoz = X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
@@ -199,7 +208,7 @@ function add_pts!(model, mid, iso, ss)
                 "CHEBI:58702" => -1.0, # pep
                 "CHEBI:15361" => 1.0, # pyr
                 mid * "_p" => -1.0,
-                mid => 1.0, # cytosol
+                lu_phospho[mid] => 1.0, # cytosol phospho metabolite
             ),
             objective_coefficient = 0.0,
             lower_bound = 0,

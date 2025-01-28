@@ -12,6 +12,7 @@ include("model.jl")
 include("print.jl")
 
 include("reconstruct.jl")
+include("gapfill.jl")
 include("curate.jl")
 include("transporters.jl")
 include("biomass.jl")

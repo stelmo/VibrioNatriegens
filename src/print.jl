@@ -53,7 +53,7 @@ function print_reactions(model::Model)
     end
 
     for rid in A.reactions(model)
-        println(rid)
+        # println(rid)
         push!(
             df,
             (rid, _name(rid), _stoichiometry(rid), _dg(rid), _ec(rid));

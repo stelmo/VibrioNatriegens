@@ -25,7 +25,7 @@ for r in eachrow(df)
     try 
         _d = ln_reversibility_index(eq, rxn_string; skip_unbalanced = true)
         _pdg =  physiological_dg_prime(eq, rxn_string; skip_unbalanced = true)
-        d = isnothing(d) ? missing : Measurements.value(_d)
+        d = isnothing(_d) ? missing : Measurements.value(_d)
         pdg = isnothing(_pdg) ? missing : Measurements.value(ustrip(u"kJ/mol", _pdg))
     catch
         d = missing

@@ -64,13 +64,6 @@ function add_biomass!(model)
             # "C06424" => -1, # tetradecanoic acid
             # "C00249" => -1, # hexadecanoic acid
             # "C01530" => -1, # octadecanoic acid
-            # # "C0" => -1, # 
-            # "C0" => -1, # 
-            # "C0" => -1, # 
-            # "C0" => -1, # 
-            # "C0" => -1, # 
-            # "C0" => -1, # 
-            # "C0" => -1, # 
         ),
         objective_coefficient = 1.0,
         lower_bound = 0,
