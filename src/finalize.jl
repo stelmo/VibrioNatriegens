@@ -67,4 +67,5 @@ function name_reactions!(model)
     model.reactions["28659"].name = "Galactosidases"
     model.reactions["22751"].name = "ligK"
     model.genes["WP_269465656.1"].name = "ligK"
+    model.reactions["23523"].name = "propionate coa transferase"
 end
