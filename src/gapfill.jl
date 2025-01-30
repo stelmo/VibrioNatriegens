@@ -10,7 +10,7 @@ function gapfill!(model)
         30122
         43439
         31254
-        19048
+        19048 # pyruvate to citramalate, c5 branched dibasic metabolism
         30134
         30118
         30126

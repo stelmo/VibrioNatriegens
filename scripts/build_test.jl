@@ -1,6 +1,7 @@
 using VibrioNatriegens
 using AbstractFBCModels
 using JSONFBCModels
+using SBMLFBCModels
 import AbstractFBCModels as A
 using RheaReactions, DataFrames, DataFramesMeta, CSV
 
@@ -11,6 +12,10 @@ VibrioNatriegens.print_metabolites(model)
 
 m = convert(JSONFBCModels.JSONFBCModel, model)
 AbstractFBCModels.save(m,"vnat.json")
+
+m = convert(SBMLFBCModels.SBMLFBCModel, model)
+AbstractFBCModels.save(m,"vnat.sbml")
+
 
 # MASS BALANCE
 # only the [thioredoxin]-disulfide metabolites give unbalanced reactions
@@ -32,3 +37,4 @@ df = DataFrame(CSV.File("reactions-model.csv"))
 @select!(df, :rid, :Stoichiometry)
 @rsubset!(df, occursin("D-glucose",:Stoichiometry))
 CSV.write("glucose.csv", df)
+

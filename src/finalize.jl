@@ -39,19 +39,32 @@ function name_reactions!(model)
     for rid in A.reactions(model)
         grrs = A.reaction_gene_association_dnf(model, rid)
         rname = A.reaction_name(model, rid)
-
-        # option 1
-        if !isnothing(grrs)
-            grr = vcat(grrs...)
-            rs = [VibrioNatriegens.gene_symbol(model, g) for g in grr if !isnothing(VibrioNatriegens.gene_symbol(model, g))]
-            rname = isempty(rs) ? nothing : join(unique(rs))
-        end
-        
-        # option 2
-        if isnothing(rname) && haskey(lu, rid)
-            rname = lu[rid]
+        if isnothing(rname)
+            # option 1
+            if !isnothing(grrs)
+                ns = String[]
+                for grr in grrs
+                    rs = [VibrioNatriegens.gene_symbol(model, g) for g in grr if !isnothing(VibrioNatriegens.gene_symbol(model, g))]
+                    isempty(rs) && continue
+                    u = join(intersect(rs))
+                    x = join(filter(!isempty, ([setdiff(r, u) for r in rs])))
+                    push!(ns, u * x)
+                end
+                rname = isempty(ns) ? nothing : join(unique(ns), "-")
+            end
+            
+            # option 2
+            if isnothing(rname) && haskey(lu, rid)
+                rname = lu[rid]
+            end
         end
 
         model.reactions[rid].name = rname
     end
+
+    # special cases
+    model.reactions["54528"].name = "D-ribose 5 phosphate cyclase"
+    model.reactions["28659"].name = "Galactosidases"
+    model.reactions["22751"].name = "ligK"
+    model.genes["WP_269465656.1"].name = "ligK"
 end
