@@ -396,7 +396,7 @@ function add_electron_transport_chain!(model)
         name = "Cytochrome c oxidase",
         stoichiometry = Dict(
             "CHEBI:15379" => -1, # o2
-            "CHEBI:15983" => 4.0, # Ferrocytochrome c
+            "CHEBI:15983" => -4.0, # Ferrocytochrome c
             "CHEBI:15378" => -8.0, # H+
             "CHEBI:15719" => 4.0, # Ferricytochrome c
             "CHEBI:15377" => 2.0, # h2o
@@ -435,7 +435,7 @@ function add_electron_transport_chain!(model)
         name = "Cytochrome c oxidase, cbb3-type",
         stoichiometry = Dict(
             "CHEBI:15379" => -1, # o2
-            "CHEBI:15983" => 4.0, # Ferrocytochrome c
+            "CHEBI:15983" => -4.0, # Ferrocytochrome c
             "CHEBI:15378" => -8.0, # H+
             "CHEBI:15719" => 4.0, # Ferricytochrome c
             "CHEBI:15377" => 2.0, # h2o

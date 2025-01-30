@@ -69,6 +69,6 @@ function name_reactions!(model)
     model.genes["WP_269465656.1"].name = "ligK"
     model.reactions["23523"].name = "propionate coa transferase"
     model.reactions["32266"].name = "POP2"
-    model.reactions["WP_020336055.1"].name = "POP2"
+    model.genes["WP_020336055.1"].name = "POP2"
     
 end
