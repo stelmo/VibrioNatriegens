@@ -21,6 +21,8 @@ function gapfill!(model)
         22564
         15652 # Spontaneous
         28237 # Spontaneous
+        22491 # formaldehyde detox
+
     ]
 
     n = length(rhea_rids)

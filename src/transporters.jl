@@ -494,7 +494,7 @@ function add_electron_transport_chain!(model)
     append!(ms, keys(A.reaction_stoichiometry(model,  "R-cyt-bd")))
 
     model.reactions["R-cyt-bo"] = Reaction(;
-        name = "Cytochrome oxidase bo3 (ubiquinol: 4 protons) (periplasm)",
+        name = "Cytochrome oxidase bo3",
         stoichiometry = Dict(
             "CHEBI:15377" => -1.0, # h2o
             "CHEBI:15378" => -4.0, # H+
