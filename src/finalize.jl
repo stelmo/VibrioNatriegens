@@ -72,5 +72,12 @@ function name_reactions!(model)
     model.genes["WP_020336055.1"].name = "POP2"
     model.reactions["22491"].name = "gfa"
     model.reactions["20552"].name = "tsdA"
+    model.reactions["27488"].name = "allC"
+    model.reactions["21371"].name = "pucL"
+    model.reactions["10807"].name = "allantoin isomerase"
+    model.reactions["26304"].name = "pucL"
+    model.reactions["17032"].name = "allB"
+    model.reactions["33870"].name = "pucG"
+        
     
 end

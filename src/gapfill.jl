@@ -22,7 +22,8 @@ function gapfill!(model)
         15652 # Spontaneous
         28237 # Spontaneous
         22491 # formaldehyde detox
-
+        21371 # urate to 5-hydroxyisourate
+        17032 # s-allantoin to allantoate
     ]
 
     n = length(rhea_rids)
