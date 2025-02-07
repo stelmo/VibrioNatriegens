@@ -78,6 +78,12 @@ function name_reactions!(model)
     model.reactions["26304"].name = "pucL"
     model.reactions["17032"].name = "allB"
     model.reactions["33870"].name = "pucG"
-        
-    
+
+    model.reactions["63204"].name = "octadecanoate [acyl-carrier-protein] hydrolase"
+    model.reactions["41932"].name = "hexadecanoate [acyl-carrier-protein] hydrolase"
+    model.reactions["30123"].name = "tetradecanoate [acyl-carrier-protein] hydrolase"
+    model.reactions["30119"].name = "dodecanoate [acyl-carrier-protein] hydrolase"
+    model.reactions["30115"].name = "decanoate [acyl-carrier-protein] hydrolase"
+    model.reactions["30131"].name = "octanoate [acyl-carrier-protein] hydrolase"
+
 end
