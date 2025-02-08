@@ -17,6 +17,7 @@ function gapfill!(model)
         30131 #release acp octanoate
         19045 # pyruvate to citramalate in valine, leucine, isoleucine biosynthesis
         25078 # Spontaneous
+        18609 # arginine biosynthesis
         # 30118
         # 30122
         # 30126

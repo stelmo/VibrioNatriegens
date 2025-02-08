@@ -87,6 +87,10 @@ function name_reactions!(model)
     model.reactions["30131"].name = "octanoate [acyl-carrier-protein] hydrolase"
     model.reactions["23592"].name = "yahK"
     model.reactions["19045"].name = "cimA"
-
+    model.reactions["70298"].name = "aspartate aminotransferase"
+    model.reactions["18609"].name = "argF"
+    model.reactions["33054"].name = "betA"
+    model.reactions["45700"].name = "gbcAB"
+    model.reactions["45767"].name = "DoeC"
     
 end
