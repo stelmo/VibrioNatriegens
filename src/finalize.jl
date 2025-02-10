@@ -91,6 +91,20 @@ function name_reactions!(model)
     model.reactions["18609"].name = "argF"
     model.reactions["33054"].name = "betA"
     model.reactions["45700"].name = "gbcAB"
-    model.reactions["45767"].name = "DoeC"
+    model.reactions["45767"].name = "DoeC"    
+    model.reactions["19533"].name = "astB"
+    model.reactions["16953"].name = "astC"
+    model.reactions["19737"].name = "PuuD"
+    model.reactions["13636"].name = "PuuA"
+    model.reactions["28417"].name = "PuuB"
+    model.reactions["42343"].name = "PuuC"
+    model.reactions["30710"].name = "spuC"
+    model.reactions["31238"].name = "asp"
+    model.reactions["31246"].name = "putA"
+    model.reactions["15692"].name = "cansdh"
+    model.reactions["34118"].name = "nspC"
+    
+    
+    
     
 end

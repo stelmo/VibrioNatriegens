@@ -18,6 +18,10 @@ function gapfill!(model)
         19045 # pyruvate to citramalate in valine, leucine, isoleucine biosynthesis
         25078 # Spontaneous
         18609 # arginine biosynthesis
+        19533 # arginine & proline metabolism
+        16953 # arginine & proline metabolism
+        19737 # arginine & proline metabolism
+        28237 # Spontaneous
         # 30118
         # 30122
         # 30126
