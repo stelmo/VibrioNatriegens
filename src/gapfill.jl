@@ -10,11 +10,11 @@ function gapfill!(model)
         21371 # urate to 5-hydroxyisourate
         17032 # s-allantoin to allantoate
         63204 # release acp octadecanoate
-        41932 #release acp hexadecanoate
-        30123 #release acp tetradecanoate
-        30119 #release acp dodecanoate
-        30115 #release acp decanoate
-        30131 #release acp octanoate
+        41932 # release acp hexadecanoate
+        30123 # release acp tetradecanoate
+        30119 # release acp dodecanoate
+        30115 # release acp decanoate
+        30131 # release acp octanoate
         19045 # pyruvate to citramalate in valine, leucine, isoleucine biosynthesis
         25078 # Spontaneous
         18609 # arginine biosynthesis
@@ -22,21 +22,8 @@ function gapfill!(model)
         16953 # arginine & proline metabolism
         19737 # arginine & proline metabolism
         28237 # Spontaneous
-        # 30118
-        # 30122
-        # 30126
-        # 30134
-        # 41935
-        # 21387
-        # 50947
-        # 17972
-        # 43439
-        # 31254
-        # 19740
-        # 32630
-        # 31462
-        # 45139
-        # 42703 look at this one, gene yes, should be gone?
+        13389 # tryptophan metabolism
+        21384 # phenylalanine metabolism
     ]
 
 

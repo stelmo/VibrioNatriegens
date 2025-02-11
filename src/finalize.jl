@@ -103,8 +103,11 @@ function name_reactions!(model)
     model.reactions["31246"].name = "putA"
     model.reactions["15692"].name = "cansdh"
     model.reactions["34118"].name = "nspC"
-    
-    
+    model.reactions["13389"].name = "GCDH"
+    model.reactions["21384"].name = "PAL"    
+    model.reactions["64823"].name = "amidase"
+    model.reactions["15449"].name = "HGD"
+    model.reactions["16833"].name = "GSR"    
     
     
 end

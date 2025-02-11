@@ -78,8 +78,12 @@ function curate!(model)
 
     model.reactions["14109"].stoichiometry["CHEBI:17388"] = model.reactions["14109"].stoichiometry["CHEBI:15893"] # 1-pyrroline-5-carboxylate -> (S)-1-pyrroline-5-carboxylate
     delete!(model.reactions["14109"].stoichiometry, "CHEBI:15893")
-
     delete!(model.metabolites, "CHEBI:15893")
+
+    model.reactions["76650"].stoichiometry["CHEBI:71044"] = model.reactions["76650"].stoichiometry["CHEBI:195329"] # (E) 2,3-didehydroadipoyl-CoA -> 2,3-didehydroadipoyl-CoA
+    delete!(model.reactions["76650"].stoichiometry, "CHEBI:195329")
+    delete!(model.metabolites, "CHEBI:195329")
+
 
 end
 
