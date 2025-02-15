@@ -15,3 +15,5 @@ vnat.json
 removed_reactions.txt
 followup.txt
 transporters-removed.txt
+base_model.csv
+maybe_add.csv

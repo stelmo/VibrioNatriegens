@@ -2,7 +2,7 @@
     {
         "map_name": "new_map",
         "map_id": "ggxpeWmHFKR8",
-        "map_description": "\nLast Modified Tue Feb 11 2025 16:53:16 GMT+0100 (Central European Standard Time)",
+        "map_description": "\nLast Modified Sat Feb 15 2025 21:37:27 GMT+0100 (Central European Standard Time)",
         "homepage": "https://escher.github.io",
         "schema": "https://escher.github.io/escher/jsonschema/1-0-0#"
     },
@@ -26023,6 +26023,286 @@
                         }
                     }
                 }
+            },
+            "279": {
+                "name": "Permease N2",
+                "bigg_id": "PERM_CHEBI:17997",
+                "reversibility": true,
+                "label_x": 7410.54638671875,
+                "label_y": 4397.20361328125,
+                "gene_reaction_rule": "(WP_020335921.1 && WP_014233081.1 && WP_014233083.1)",
+                "genes": [
+                    {
+                        "name": "phosphoenolpyruvate--protein phosphotransferase",
+                        "notes": {},
+                        "annotation": {},
+                        "bigg_id": "WP_020335921.1"
+                    },
+                    {
+                        "name": "PTS IIA-like nitrogen regulatory protein PtsN",
+                        "notes": {},
+                        "annotation": {},
+                        "bigg_id": "WP_014233081.1"
+                    },
+                    {
+                        "name": "HPr family phosphocarrier protein",
+                        "notes": {},
+                        "annotation": {},
+                        "bigg_id": "WP_014233083.1"
+                    }
+                ],
+                "metabolites": [
+                    {
+                        "bigg_id": "CHEBI:17997",
+                        "coefficient": 1
+                    },
+                    {
+                        "bigg_id": "CHEBI:17997_p",
+                        "coefficient": -1
+                    }
+                ],
+                "segments": {
+                    "1852": {
+                        "from_node_id": "1893",
+                        "to_node_id": "1892",
+                        "b1": null,
+                        "b2": null
+                    },
+                    "1853": {
+                        "from_node_id": "1894",
+                        "to_node_id": "1893",
+                        "b1": null,
+                        "b2": null
+                    },
+                    "1854": {
+                        "from_node_id": "1894",
+                        "to_node_id": "1895",
+                        "b1": {
+                            "x": 7395.54638671875,
+                            "y": 4449.20361328125
+                        },
+                        "b2": {
+                            "x": 7395.54638671875,
+                            "y": 4503.45361328125
+                        }
+                    },
+                    "1855": {
+                        "from_node_id": "1891",
+                        "to_node_id": "1892",
+                        "b1": {
+                            "x": 7395.54638671875,
+                            "y": 4325.20361328125
+                        },
+                        "b2": {
+                            "x": 7395.54638671875,
+                            "y": 4270.95361328125
+                        }
+                    }
+                }
+            },
+            "280": {
+                "name": "nifHnifDnifK",
+                "bigg_id": "21451",
+                "reversibility": false,
+                "label_x": 7410.54638671875,
+                "label_y": 4747.20361328125,
+                "gene_reaction_rule": "(WP_020333808.1 && WP_014234003.1 && WP_014234004.1)",
+                "genes": [
+                    {
+                        "name": "nitrogenase iron protein",
+                        "notes": {},
+                        "annotation": {},
+                        "bigg_id": "WP_020333808.1"
+                    },
+                    {
+                        "name": "nitrogenase molybdenum-iron protein alpha chain",
+                        "notes": {},
+                        "annotation": {},
+                        "bigg_id": "WP_014234003.1"
+                    },
+                    {
+                        "name": "nitrogenase molybdenum-iron protein subunit beta",
+                        "notes": {},
+                        "annotation": {},
+                        "bigg_id": "WP_014234004.1"
+                    }
+                ],
+                "metabolites": [
+                    {
+                        "bigg_id": "CHEBI:15378",
+                        "coefficient": 6
+                    },
+                    {
+                        "bigg_id": "CHEBI:17997",
+                        "coefficient": -1
+                    },
+                    {
+                        "bigg_id": "CHEBI:30616",
+                        "coefficient": -16
+                    },
+                    {
+                        "bigg_id": "CHEBI:33737",
+                        "coefficient": 8
+                    },
+                    {
+                        "bigg_id": "CHEBI:28938",
+                        "coefficient": 2
+                    },
+                    {
+                        "bigg_id": "CHEBI:43474",
+                        "coefficient": 16
+                    },
+                    {
+                        "bigg_id": "CHEBI:33738",
+                        "coefficient": -8
+                    },
+                    {
+                        "bigg_id": "CHEBI:15377",
+                        "coefficient": -16
+                    },
+                    {
+                        "bigg_id": "CHEBI:18276",
+                        "coefficient": 1
+                    },
+                    {
+                        "bigg_id": "CHEBI:456216",
+                        "coefficient": 16
+                    }
+                ],
+                "segments": {
+                    "1856": {
+                        "from_node_id": "1897",
+                        "to_node_id": "1896",
+                        "b1": null,
+                        "b2": null
+                    },
+                    "1857": {
+                        "from_node_id": "1898",
+                        "to_node_id": "1897",
+                        "b1": null,
+                        "b2": null
+                    },
+                    "1858": {
+                        "from_node_id": "1898",
+                        "to_node_id": "1899",
+                        "b1": {
+                            "x": 7395.54638671875,
+                            "y": 4803.20361328125
+                        },
+                        "b2": {
+                            "x": 7431.54638671875,
+                            "y": 4793.45361328125
+                        }
+                    },
+                    "1859": {
+                        "from_node_id": "1895",
+                        "to_node_id": "1896",
+                        "b1": {
+                            "x": 7395.54638671875,
+                            "y": 4675.20361328125
+                        },
+                        "b2": {
+                            "x": 7395.54638671875,
+                            "y": 4620.95361328125
+                        }
+                    },
+                    "1860": {
+                        "from_node_id": "1900",
+                        "to_node_id": "1896",
+                        "b1": {
+                            "x": 7395.54638671875,
+                            "y": 4671.20361328125
+                        },
+                        "b2": {
+                            "x": 7413.54638671875,
+                            "y": 4665.95361328125
+                        }
+                    },
+                    "1861": {
+                        "from_node_id": "1898",
+                        "to_node_id": "1901",
+                        "b1": {
+                            "x": 7395.54638671875,
+                            "y": 4803.20361328125
+                        },
+                        "b2": {
+                            "x": 7413.54638671875,
+                            "y": 4808.45361328125
+                        }
+                    },
+                    "1862": {
+                        "from_node_id": "1898",
+                        "to_node_id": "1902",
+                        "b1": {
+                            "x": 7395.54638671875,
+                            "y": 4799.20361328125
+                        },
+                        "b2": {
+                            "x": 7395.54638671875,
+                            "y": 4853.45361328125
+                        }
+                    },
+                    "1863": {
+                        "from_node_id": "1898",
+                        "to_node_id": "1903",
+                        "b1": {
+                            "x": 7395.54638671875,
+                            "y": 4803.20361328125
+                        },
+                        "b2": {
+                            "x": 7377.54638671875,
+                            "y": 4808.45361328125
+                        }
+                    },
+                    "1864": {
+                        "from_node_id": "1904",
+                        "to_node_id": "1896",
+                        "b1": {
+                            "x": 7395.54638671875,
+                            "y": 4671.20361328125
+                        },
+                        "b2": {
+                            "x": 7377.54638671875,
+                            "y": 4665.95361328125
+                        }
+                    },
+                    "1865": {
+                        "from_node_id": "1905",
+                        "to_node_id": "1896",
+                        "b1": {
+                            "x": 7395.54638671875,
+                            "y": 4671.20361328125
+                        },
+                        "b2": {
+                            "x": 7359.54638671875,
+                            "y": 4680.95361328125
+                        }
+                    },
+                    "1866": {
+                        "from_node_id": "1898",
+                        "to_node_id": "1906",
+                        "b1": {
+                            "x": 7395.54638671875,
+                            "y": 4803.20361328125
+                        },
+                        "b2": {
+                            "x": 7359.54638671875,
+                            "y": 4793.45361328125
+                        }
+                    },
+                    "1867": {
+                        "from_node_id": "1898",
+                        "to_node_id": "1907",
+                        "b1": {
+                            "x": 7395.54638671875,
+                            "y": 4803.20361328125
+                        },
+                        "b2": {
+                            "x": 7341.54638671875,
+                            "y": 4778.45361328125
+                        }
+                    }
+                }
             }
         },
         "nodes": {
@@ -38564,6 +38844,146 @@
                 "name": "H2O",
                 "label_x": 6343.42080078125,
                 "label_y": 3719.95263671875,
+                "node_is_primary": false
+            },
+            "1891": {
+                "node_type": "metabolite",
+                "x": 7395.54638671875,
+                "y": 4212.20361328125,
+                "bigg_id": "CHEBI:17997_p",
+                "name": "N2",
+                "label_x": 7420.54638671875,
+                "label_y": 4212.20361328125,
+                "node_is_primary": true
+            },
+            "1892": {
+                "node_type": "multimarker",
+                "x": 7395.54638671875,
+                "y": 4367.20361328125
+            },
+            "1893": {
+                "node_type": "midmarker",
+                "x": 7395.54638671875,
+                "y": 4387.20361328125
+            },
+            "1894": {
+                "node_type": "multimarker",
+                "x": 7395.54638671875,
+                "y": 4407.20361328125
+            },
+            "1895": {
+                "node_type": "metabolite",
+                "x": 7395.54638671875,
+                "y": 4562.20361328125,
+                "bigg_id": "CHEBI:17997",
+                "name": "N2",
+                "label_x": 7420.54638671875,
+                "label_y": 4562.20361328125,
+                "node_is_primary": true
+            },
+            "1896": {
+                "node_type": "multimarker",
+                "x": 7395.54638671875,
+                "y": 4717.20361328125
+            },
+            "1897": {
+                "node_type": "midmarker",
+                "x": 7395.54638671875,
+                "y": 4737.20361328125
+            },
+            "1898": {
+                "node_type": "multimarker",
+                "x": 7395.54638671875,
+                "y": 4757.20361328125
+            },
+            "1899": {
+                "node_type": "metabolite",
+                "x": 7555.54638671875,
+                "y": 4822.20361328125,
+                "bigg_id": "CHEBI:15378",
+                "name": "H(+)",
+                "label_x": 7570.54638671875,
+                "label_y": 4822.20361328125,
+                "node_is_primary": false
+            },
+            "1900": {
+                "node_type": "metabolite",
+                "x": 7475.54638671875,
+                "y": 4632.20361328125,
+                "bigg_id": "CHEBI:30616",
+                "name": "ATP",
+                "label_x": 7490.54638671875,
+                "label_y": 4632.20361328125,
+                "node_is_primary": false
+            },
+            "1901": {
+                "node_type": "metabolite",
+                "x": 7475.54638671875,
+                "y": 4842.20361328125,
+                "bigg_id": "CHEBI:33737",
+                "name": "oxidized [2Fe-2S]-[ferredoxin]",
+                "label_x": 7490.54638671875,
+                "label_y": 4842.20361328125,
+                "node_is_primary": false
+            },
+            "1902": {
+                "node_type": "metabolite",
+                "x": 7395.54638671875,
+                "y": 4912.20361328125,
+                "bigg_id": "CHEBI:28938",
+                "name": "NH4(+)",
+                "label_x": 7420.54638671875,
+                "label_y": 4912.20361328125,
+                "node_is_primary": true
+            },
+            "1903": {
+                "node_type": "metabolite",
+                "x": 7315.54638671875,
+                "y": 4842.20361328125,
+                "bigg_id": "CHEBI:43474",
+                "name": "phosphate",
+                "label_x": 7216.54638671875,
+                "label_y": 4872.20361328125,
+                "node_is_primary": false
+            },
+            "1904": {
+                "node_type": "metabolite",
+                "x": 7315.54638671875,
+                "y": 4632.20361328125,
+                "bigg_id": "CHEBI:33738",
+                "name": "reduced [2Fe-2S]-[ferredoxin]",
+                "label_x": 7216.54638671875,
+                "label_y": 4662.20361328125,
+                "node_is_primary": false
+            },
+            "1905": {
+                "node_type": "metabolite",
+                "x": 7235.54638671875,
+                "y": 4652.20361328125,
+                "bigg_id": "CHEBI:15377",
+                "name": "H2O",
+                "label_x": 7136.54638671875,
+                "label_y": 4682.20361328125,
+                "node_is_primary": false
+            },
+            "1906": {
+                "node_type": "metabolite",
+                "x": 7235.54638671875,
+                "y": 4822.20361328125,
+                "bigg_id": "CHEBI:18276",
+                "name": "H2",
+                "label_x": 7136.54638671875,
+                "label_y": 4852.20361328125,
+                "node_is_primary": false
+            },
+            "1907": {
+                "node_type": "metabolite",
+                "x": 7155.54638671875,
+                "y": 4802.20361328125,
+                "bigg_id": "CHEBI:456216",
+                "name": "ADP",
+                "label_x": 7056.54638671875,
+                "label_y": 4832.20361328125,
                 "node_is_primary": false
             }
         },

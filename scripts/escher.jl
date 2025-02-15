@@ -1,6 +1,7 @@
 using JSON, AbstractFBCModels
 using JSONFBCModels
 import AbstractFBCModels as A
+using VibrioNatriegens
 
 escher_maps = [
     "amino_acids.json"
@@ -37,6 +38,11 @@ may_as_well_add = String[]
 for rid in missing_rids
     mids = collect(keys(A.reaction_stoichiometry(model, rid)))
     (length(mids) - count(in.(mids, Ref(included_mids))) <= 1) && push!(may_as_well_add, rid)
+    # (length(mids) - count(in.(mids, Ref(included_mids))) <= 0) && push!(may_as_well_add, rid)
 end
 may_as_well_add
+
+VibrioNatriegens.print_reactions(convert(VibrioNatriegens.Model, model), may_as_well_add, "maybe_add.csv")
+
+VibrioNatriegens.print_reactions(convert(VibrioNatriegens.Model, model), escher_rids, "base_model.csv")
 

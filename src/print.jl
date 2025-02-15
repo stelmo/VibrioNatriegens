@@ -1,6 +1,5 @@
 
-function print_reactions(model::Model)
-
+function print_reactions(model::Model, rids::Vector{String}, file_name)
     df = DataFrame(
         rid = String[],
         Name = String[],
@@ -52,7 +51,7 @@ function print_reactions(model::Model)
         isnothing(nm) ? "" : nm
     end
 
-    for rid in A.reactions(model)
+    for rid in rids
         # println(rid)
         push!(
             df,
@@ -63,8 +62,10 @@ function print_reactions(model::Model)
 
     df
 
-    CSV.write("reactions-model.csv", df)
+    CSV.write(file_name, df)
 end
+
+print_reactions(model::Model) = print_reactions(model, A.reactions(model), "reactions-model.csv")
 
 function print_metabolites(model)
 

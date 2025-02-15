@@ -182,7 +182,6 @@ function Base.convert(::Type{Model}, x::A.AbstractFBCModel)
                 upper_bound = ub,
                 stoichiometry = A.reaction_stoichiometry(x, r),
                 objective_coefficient = o,
-                gene_association_dnf = A.reaction_gene_association_dnf(x, r),
                 annotations = A.reaction_annotations(x, r),
                 notes = A.reaction_notes(x, r),
             ) for (r, o, lb, ub) in zip(A.reactions(x), A.objective(x), lbs, ubs)

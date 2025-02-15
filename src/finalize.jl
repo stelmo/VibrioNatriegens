@@ -107,7 +107,7 @@ function name_reactions!(model)
     model.reactions["21384"].name = "PAL"    
     model.reactions["64823"].name = "amidase"
     model.reactions["15449"].name = "HGD"
-    model.reactions["16833"].name = "GSR"    
-    
+    model.reactions["16833"].name = "GSR"  
+    model.reactions["33791"].name = "sucrose hydrolase"  
     
 end
