@@ -14,26 +14,22 @@ rev_dir(model, rid) = begin
     model.reactions[rid].upper_bound = 0.0
 end
 
-rename(model, rid, nm) = begin
-    model.reactions[rid].name = nm
-end
-
 function curate!(model)
 
-    bi_dir(model, "10231")
-    bi_dir(model, "18796")
-    for_dir(model, "18133")
-    for_dir(model, "30734")
-    for_dir(model, "31210")
-    for_dir(model, "30946")
-    for_dir(model, "28357")
-    for_dir(model, "31042")
-    for_dir(model, "28361")
-    for_dir(model, "30750")
+    # bi_dir(model, "10231")
+    # bi_dir(model, "18796")
+    # for_dir(model, "18133")
+    # for_dir(model, "30734")
+    # for_dir(model, "31210")
+    # for_dir(model, "30946")
+    # for_dir(model, "28357")
+    # for_dir(model, "31042")
+    # for_dir(model, "28361")
+    # for_dir(model, "30750")
 
     # add these metabolites manually
 
-    id = "CHEBI:29101" # Na+
+    id = "CHEBI:29101" # Na+ this is needed since the salt reactions only get added in the transporter section
     model.metabolites[id] = Metabolite(
         name = "Na+",
         formula = Dict("Na" => 1),

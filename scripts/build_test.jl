@@ -22,7 +22,7 @@ AbstractFBCModels.save(m,"vnat.sbml")
 rids = filter(x -> isdigit(first(x)), unique(A.reactions(model)))
 unbal_rids = String[]
 for rid in rids
-    println(rid)
+    # println(rid)
     s = A.reaction_stoichiometry(model, rid)
     m = Dict()
     for (k, v) in s
@@ -32,6 +32,7 @@ for rid in rids
     end
     all(values(m) .== 0) || push!(unbal_rids, rid)    
 end
+unbal_rids
 
 df = DataFrame(CSV.File("reactions-model.csv"))
 @select!(df, :rid, :Stoichiometry)

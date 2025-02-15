@@ -51,7 +51,7 @@ function extend_model!(model, dfs)
             name = isnothing(rxn.name) ? nothing : rxn.name
 
             # direction
-            reversibility_index_threshold = 3.0
+            reversibility_index_threshold = 5.0
             rev_ind = ismissing(first(df.RevIndex)) ? nothing : first(df.RevIndex) 
             dg = ismissing(first(df.DeltaG)) ? nothing : first(df.DeltaG) 
 
@@ -80,7 +80,6 @@ function extend_model!(model, dfs)
             )
         end
     end
-
 
     add_genes!(model, gs)
     add_metabolites!(model, ms)
