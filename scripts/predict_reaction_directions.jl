@@ -7,10 +7,13 @@ eq = eQuilibrator.Equilibrator() # slow, only do if necessary
 ds = Union{Missing, Float64}[]
 pdgs = Union{Missing, Float64}[]
 
+problem_rids = Int64[]
+
 for r in eachrow(df)
-    println(r)
-    
+        
     rid = r.RHEA_ID
+    println(rid)
+
     coeff_mets = get_reaction_metabolites(rid)
 
     stoichiometry = Dict(
@@ -22,20 +25,24 @@ for r in eachrow(df)
     products = [string(abs(Int(v))) * " chebi:" * k for (k, v) in stoichiometry if v > 0]
     rxn_string = join(substrates, " + ") * " = " * join(products, " + ")
     
+    d = missing
+    pdg = missing
     try 
         _d = ln_reversibility_index(eq, rxn_string; skip_unbalanced = true)
         _pdg =  physiological_dg_prime(eq, rxn_string; skip_unbalanced = true)
         d = isnothing(_d) ? missing : Measurements.value(_d)
         pdg = isnothing(_pdg) ? missing : Measurements.value(ustrip(u"kJ/mol", _pdg))
     catch
-        d = missing
-        pdg = missing
+        
     end
+    
+    ismissing(d) && push!(problem_rids, rid)
 
     push!(ds, d)
     push!(pdgs, pdg)
 end
 
+# overwrite
 df.DeltaG = pdgs
 df.RevIndex = ds
 df
