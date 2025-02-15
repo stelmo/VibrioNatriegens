@@ -36,11 +36,7 @@ included_mids = unique(vcat([collect(keys(A.reaction_stoichiometry(model, rid)))
 may_as_well_add = String[]
 for rid in missing_rids
     mids = collect(keys(A.reaction_stoichiometry(model, rid)))
-    all(in.(mids, Ref(included_mids))) && push!(may_as_well_add, rid)
+    (length(mids) - count(in.(mids, Ref(included_mids))) <= 1) && push!(may_as_well_add, rid)
 end
 may_as_well_add
 
-x = Dict()
-for (emap, rids) in escher_map_rids
-
-end
