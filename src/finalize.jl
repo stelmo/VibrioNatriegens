@@ -109,4 +109,5 @@ function name_reactions!(model)
     model.reactions["16833"].name = "GSR"  
     model.reactions["33791"].name = "sucrose hydrolase"  
     model.reactions["20517"].name = "UDP-N-acetylglucosamine 4-epimerase"
+    model.reactions["21036"].name = "acetyl-CoA C-acetyltransferase"
 end
