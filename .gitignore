@@ -17,3 +17,7 @@ followup.txt
 transporters-removed.txt
 base_model.csv
 maybe_add.csv
+missing_enzymes.csv
+quantitative_proteome.csv
+missing_enzymes_full_mapped.csv
+missing_enzymes_mapped_kegg.csv

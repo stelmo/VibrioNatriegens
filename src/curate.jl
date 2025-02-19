@@ -68,13 +68,6 @@ function curate!(model)
 
     model.reactions["17825"].stoichiometry["CHEBI:58247"] = model.reactions["17825"].stoichiometry["CHEBI:61548"] # D-glucopyranose 6-phosphate -> β-D-glucose 6-phosphate
     delete!(model.reactions["17825"].stoichiometry, "CHEBI:61548")
-    
-    model.reactions["14105"].stoichiometry["CHEBI:17388"] = model.reactions["14105"].stoichiometry["CHEBI:15893"] # 1-pyrroline-5-carboxylate -> (S)-1-pyrroline-5-carboxylate
-    delete!(model.reactions["14105"].stoichiometry, "CHEBI:15893")
-
-    model.reactions["14109"].stoichiometry["CHEBI:17388"] = model.reactions["14109"].stoichiometry["CHEBI:15893"] # 1-pyrroline-5-carboxylate -> (S)-1-pyrroline-5-carboxylate
-    delete!(model.reactions["14109"].stoichiometry, "CHEBI:15893")
-    delete!(model.metabolites, "CHEBI:15893")
 
     model.reactions["76650"].stoichiometry["CHEBI:71044"] = model.reactions["76650"].stoichiometry["CHEBI:195329"] # (E) 2,3-didehydroadipoyl-CoA -> 2,3-didehydroadipoyl-CoA
     delete!(model.reactions["76650"].stoichiometry, "CHEBI:195329")

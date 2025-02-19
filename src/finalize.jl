@@ -78,7 +78,6 @@ function name_reactions!(model)
     model.reactions["26304"].name = "pucL"
     model.reactions["17032"].name = "allB"
     model.reactions["33870"].name = "pucG"
-
     model.reactions["63204"].name = "octadecanoate [acyl-carrier-protein] hydrolase"
     model.reactions["41932"].name = "hexadecanoate [acyl-carrier-protein] hydrolase"
     model.reactions["30123"].name = "tetradecanoate [acyl-carrier-protein] hydrolase"
@@ -109,5 +108,5 @@ function name_reactions!(model)
     model.reactions["15449"].name = "HGD"
     model.reactions["16833"].name = "GSR"  
     model.reactions["33791"].name = "sucrose hydrolase"  
-    
+    model.reactions["20517"].name = "UDP-N-acetylglucosamine 4-epimerase"
 end
