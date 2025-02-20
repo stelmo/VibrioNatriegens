@@ -33,7 +33,7 @@ function build_model()
     VibrioNatriegens.add_salt_transducers!(model)
 
     VibrioNatriegens.add_atpm!(model)
-    # VibrioNatriegens.add_biomass!(model)
+    VibrioNatriegens.add_biomass!(model)
 
     VibrioNatriegens.set_default_exchanges!(model)
     VibrioNatriegens.name_reactions!(model)
