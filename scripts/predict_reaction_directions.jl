@@ -42,6 +42,8 @@ for r in eachrow(df)
     push!(pdgs, pdg)
 end
 
+unique(problem_rids)
+
 # overwrite
 df.DeltaG = pdgs
 df.RevIndex = ds

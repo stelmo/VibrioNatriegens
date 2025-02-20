@@ -70,7 +70,7 @@ function add_atpm!(model)
             "CHEBI:456216" => 1, # adp
             "CHEBI:15378" => 1,  # h+
         ),
-        objective_coefficient = 0.0,
+        objective_coefficient = 1.0,
         lower_bound = 0,
         upper_bound = 1000,
     )

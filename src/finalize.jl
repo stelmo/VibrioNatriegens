@@ -33,9 +33,7 @@ function set_default_exchanges!(model)
 end
 
 function name_reactions!(model)
-    df = DataFrame(CSV.File(joinpath("data", "model", "reaction_names.csv")))
-    dropmissing!(df)
-    lu = Dict(string.(df.RHEA_ID) .=> String.(df.Name))
+
     for rid in A.reactions(model)
         grrs = A.reaction_gene_association_dnf(model, rid)
         rname = A.reaction_name(model, rid)
@@ -53,10 +51,6 @@ function name_reactions!(model)
                 rname = isempty(ns) ? nothing : join(unique(ns), "-")
             end
             
-            # option 2
-            if isnothing(rname) && haskey(lu, rid)
-                rname = lu[rid]
-            end
         end
 
         model.reactions[rid].name = rname
