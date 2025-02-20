@@ -16,17 +16,6 @@ end
 
 function curate!(model)
 
-    # bi_dir(model, "10231")
-    # bi_dir(model, "18796")
-    # for_dir(model, "18133")
-    # for_dir(model, "30734")
-    # for_dir(model, "31210")
-    # for_dir(model, "30946")
-    # for_dir(model, "28357")
-    # for_dir(model, "31042")
-    # for_dir(model, "28361")
-    # for_dir(model, "30750")
-
     # add these metabolites manually
 
     id = "CHEBI:29101" # Na+ this is needed since the salt reactions only get added in the transporter section
@@ -51,6 +40,23 @@ function curate!(model)
         formula = Dict("X" => 1),
         compartment = "Cytosol",
         charge = 0,
+    )
+
+    id = "CHEBI:17992" # sucrose
+    model.metabolites[id] = Metabolite(
+        name = "Sucrose",
+        formula = Dict("C" => 12,"H" => 22,"O" => 11,),
+        compartment = "Cytosol",
+        charge = 0,
+    )
+
+    # adjust the formula of [thioredoxin]-dithiol: S1C3N1H5O1 -> S2C6N2H10O2
+    model.metabolites["CHEBI:29950"].formula = Dict(
+        "S" => 2,
+        "C" => 6,
+        "N" => 2,
+        "H" => 10,
+        "O" => 2,
     )
 
     # modify rhea reactions to exchange D- with the beta-D isomer

@@ -29,12 +29,10 @@ CHEBI:17750,glycine betaine
 CHEBI:16236,ethanol
 CHEBI:17562,cytidine
 CHEBI:16040,cytosine
-CHEBI:4139,D-galactose
 CHEBI:28997,2'-deoxyinosine
 CHEBI:13705,acetoacetate
 CHEBI:47013,D-ribose
 CHEBI:16235,guanine
-CHEBI:18408,adenosylcob(III)alamin
 CHEBI:15903,D-glucose
 CHEBI:16881,indole
 CHEBI:16335,adenosine
@@ -44,7 +42,6 @@ CHEBI:15379,O2
 CHEBI:17712,xanthine
 CHEBI:18107,xanthosine
 CHEBI:17992,sucrose
-CHEBI:18385,thiamine
 CHEBI:17748,thymidine
 CHEBI:17821,thymine
 CHEBI:16301,nitrite
@@ -60,11 +57,9 @@ CHEBI:16189,sulfate
 CHEBI:17310,pyridoxal
 CHEBI:16899,D-mannitol
 CHEBI:28061,alpha-D-galactose
-CHEBI:36264,molybdate
 CHEBI:29033,Fe(2+)
 CHEBI:29034,Fe(3+)
 CHEBI:506227,N-acetyl-D-glucosamine
-CHEBI:78440,5-(methylsulfanyl)-D-ribose
 CHEBI:57972,L-alanine
 CHEBI:33384,L-serine
 CHEBI:58095,L-phenylalanine

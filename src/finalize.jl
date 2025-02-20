@@ -98,8 +98,6 @@ function name_reactions!(model)
     model.reactions["28417"].name = "PuuB"
     model.reactions["42343"].name = "PuuC"
     model.reactions["30710"].name = "spuC"
-    model.reactions["31238"].name = "asp"
-    model.reactions["31246"].name = "putA"
     model.reactions["15692"].name = "cansdh"
     model.reactions["34118"].name = "nspC"
     model.reactions["13389"].name = "GCDH"
