@@ -2,9 +2,10 @@
 
 function set_default_exchanges!(model)
 
-    carbon_source = "CHEBI:15903" # glucose
+    default_carbon_source = "CHEBI:15903" # glucose
     
     substrates = [
+        "CHEBI:15903" # glucose
         "CHEBI:16189" # so4
         "CHEBI:15379" # o2
         "CHEBI:28938" # nh4(+)
@@ -17,8 +18,7 @@ function set_default_exchanges!(model)
     ]
 
     for mid in [substrates; bidirs]
-
-        if mid == carbon_source
+        if mid == default_carbon_source
             lb, ub = (-22.0, 0.0)
         elseif mid in substrates
             lb, ub = (-1000.0, 0.0)

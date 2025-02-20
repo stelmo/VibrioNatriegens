@@ -9,7 +9,7 @@ model = VibrioNatriegens.build_model()
 
 sol = flux_balance_analysis(model, optimizer=Gurobi.Optimizer)
 
-open("fluxes.json", "w") do io
+open("vnat_fluxes.json", "w") do io
     JSON.print(io, sol.fluxes)
 end
 
