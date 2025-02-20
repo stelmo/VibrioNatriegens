@@ -24,6 +24,8 @@ function gapfill!(model)
         28237 # Spontaneous
         13389 # tryptophan metabolism
         21384 # phenylalanine metabolism
+        12921 # cofactors, make 5-aminolevulinate, actually hemL should be active, but requires tRNA reactions
+        54644 # d-amino acid metabolism, connect S)-1-pyrroline-5-carboxylate to make trans-4-hydroxy-L-proline 
     ]
 
 

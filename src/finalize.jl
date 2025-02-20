@@ -110,4 +110,8 @@ function name_reactions!(model)
     model.reactions["33791"].name = "sucrose hydrolase"  
     model.reactions["20517"].name = "UDP-N-acetylglucosamine 4-epimerase"
     model.reactions["21036"].name = "acetyl-CoA C-acetyltransferase"
+    model.reactions["12921"].name = "5-aminolevulinate synthase"
+    model.reactions["54644"].name = "trans-4-hydroxy-L-proline dehydratase"
+    model.reactions["21152"].name = "4-hydroxyproline epimerase"
+    
 end

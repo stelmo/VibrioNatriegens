@@ -37,8 +37,8 @@ included_mids = unique(vcat([collect(keys(A.reaction_stoichiometry(model, rid)))
 may_as_well_add = String[]
 for rid in missing_rids
     mids = collect(keys(A.reaction_stoichiometry(model, rid)))
-    (length(mids) - count(in.(mids, Ref(included_mids))) <= 1) && push!(may_as_well_add, rid)
-    # (length(mids) - count(in.(mids, Ref(included_mids))) <= 0) && push!(may_as_well_add, rid)
+    # (length(mids) - count(in.(mids, Ref(included_mids))) <= 1) && push!(may_as_well_add, rid)
+    (length(mids) - count(in.(mids, Ref(included_mids))) <= 0) && push!(may_as_well_add, rid)
 end
 may_as_well_add
 
