@@ -27,8 +27,10 @@ for (emid, em) in ems
     for rxn in values(emm["reactions"])
         if rxn["bigg_id"] in rxns
             lb, ub = model.reactions[rxn["bigg_id"]].lower_bound, model.reactions[rxn["bigg_id"]].upper_bound
-            if lb < 0 && ub > 0
+            if lb < -0.1 && ub > 0.1
                 rxn["reversibility"] = true
+            else
+                rxn["reversibility"] = false    
             end
             
             dir = 1.0 # correct the direction 

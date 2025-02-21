@@ -34,6 +34,11 @@ function add_biomass!(model)
 
             "CHEBI:58515" => -1, # ectoine
 
+            # "CHEBI:32551" => -1, # lysine
+            # "CHEBI:35235" => -1,
+
+            "CHEBI:57844" => -1, # methionine
+            "CHEBI:35235" => -1, # cysteine
             "CHEBI:57972" => -1, # alanine
             "CHEBI:29991" => -1, # aspartate
             "CHEBI:58048" => -1, # asparagine
@@ -41,15 +46,10 @@ function add_biomass!(model)
             "CHEBI:58359" => -1, # glutamine
             "CHEBI:57926" => -1, # threonine
             "CHEBI:33384" => -1, # serine
-            # "CHEBI:35235" => -1, # cysteine
             "CHEBI:57305" => -1, # glycine
-            # "CHEBI:57844" => -1, # methionine
             "CHEBI:58045" => -1, # isoleucine
             "CHEBI:57762" => -1, # valine
             "CHEBI:57427" => -1, # leucine
-
-            "CHEBI:32551" => -1, # lysine
-           
             "CHEBI:32682" => -1, # arginine
             "CHEBI:57595" => -1, # histidine
             "CHEBI:58315" => -1, # tyrosine

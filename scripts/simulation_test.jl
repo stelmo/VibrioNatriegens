@@ -15,7 +15,7 @@ sol = flux_balance_analysis(model, optimizer=Gurobi.Optimizer)
 
 sol = parsimonious_flux_balance_analysis(model, optimizer=Gurobi.Optimizer)
 
-sol = loopless_flux_balance_analysis(model, optimizer=Gurobi.Optimizer)
+# sol = loopless_flux_balance_analysis(model, optimizer=Gurobi.Optimizer)
 
 open("vnat_fluxes.json", "w") do io
     JSON.print(io, sol.fluxes)

@@ -105,5 +105,6 @@ function name_reactions!(model)
     model.reactions["12921"].name = "5-aminolevulinate synthase"
     model.reactions["54644"].name = "trans-4-hydroxy-L-proline dehydratase"
     model.reactions["21152"].name = "4-hydroxyproline epimerase"
+    model.reactions["13316"].name = "sarcosine oxidase"
     
 end

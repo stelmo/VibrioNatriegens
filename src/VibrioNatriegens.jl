@@ -15,6 +15,7 @@ include("reconstruct.jl")
 include("gapfill.jl")
 include("curate.jl")
 include("transporters.jl")
+include("specials.jl")
 include("biomass.jl")
 include("finalize.jl")
 
