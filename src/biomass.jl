@@ -48,7 +48,7 @@ function add_biomass!(model)
             "CHEBI:57762" => -1, # valine
             "CHEBI:57427" => -1, # leucine
 
-            "CHEBI:16947" => -1, # lysine
+            "CHEBI:32551" => -1, # lysine
            
             "CHEBI:32682" => -1, # arginine
             "CHEBI:57595" => -1, # histidine

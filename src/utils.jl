@@ -58,10 +58,10 @@ function extend_model!(model, dfs)
             if isnothing(rev_ind) || (abs(rev_ind) <= reversibility_index_threshold)
                 lb = -1000
                 ub = 1000
-            elseif rev_ind < -reversibility_index_threshold # forward
+            elseif dg < 0 # forward
                 lb = 0
                 ub = 1000
-            elseif rev_ind > reversibility_index_threshold # reverse
+            elseif dg > 0 # reverse
                 lb = -1000
                 ub = 0
             end
