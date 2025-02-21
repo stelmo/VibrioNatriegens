@@ -34,9 +34,7 @@ function add_biomass!(model)
 
             "CHEBI:58515" => -1, # ectoine
 
-            # "CHEBI:32551" => -1, # lysine
-            # "CHEBI:35235" => -1,
-
+            "CHEBI:32551" => -1, # lysine
             "CHEBI:57844" => -1, # methionine
             "CHEBI:35235" => -1, # cysteine
             "CHEBI:57972" => -1, # alanine

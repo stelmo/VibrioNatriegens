@@ -83,7 +83,7 @@ function curate!(model)
     bi_dir(model, "13196") # make GTP, dATP, dGTP work
     rev_dir(model, "40954") # ectoine, biocyc
     rev_dir(model, "52307") # ectoine, biocyc
-    rev_dir(model, "17328") # lysine, biocyc
+    for_dir(model, "17328") # lysine, biocyc
     bi_dir(model, "18133") # sulfur import - rev in biocyc
     for_dir(model, "20309") # h2o2 -> o2 + h2o
     for_dir(model, "13316") # biocyc h2o2 
@@ -98,7 +98,6 @@ function curate!(model)
     for_dir(model, "30778") # biocyc h2o2
     for_dir(model, "46164") # biocyc  NAD(P)H dehydrogenase (quinone)
     for_dir(model, "46160") # biocyc  NAD(P)H dehydrogenase (quinone)
-    
     
 end
 

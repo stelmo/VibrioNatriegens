@@ -8,8 +8,8 @@ import ConstraintTrees as C
 
 model = VibrioNatriegens.build_model()
 
-# model.reactions["biomass"].objective_coefficient = 0.0
-# model.reactions["27789"].objective_coefficient = 1.0
+model.reactions["biomass"].objective_coefficient = 0.0
+model.reactions["ATPM"].objective_coefficient = 1.0
 
 sol = flux_balance_analysis(model, optimizer=Gurobi.Optimizer)
 
