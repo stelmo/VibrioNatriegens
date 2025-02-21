@@ -30,10 +30,16 @@ for (emid, em) in ems
             if lb < -1 && ub > 1
                 rxn["reversibility"] = true
             end
+            st = A.reaction_stoichiometry(model, rxn["bigg_id"])
+            rxn_mets = [] 
+            for (k, v) in st
+                push!(rxn_mets, Dict("bigg_id" => k, "coefficient" => v))
+            end
+            rxn["metabolites"] = rxn_mets
         end
     end
 
-    open(joinpath("maps", "up_"*emid), "w") do io
+    open(joinpath("maps", emid), "w") do io
         JSON.print(io, [em[1], emm])
     end
 end
