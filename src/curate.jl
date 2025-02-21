@@ -79,6 +79,11 @@ function curate!(model)
     delete!(model.reactions["76650"].stoichiometry, "CHEBI:195329")
     delete!(model.metabolites, "CHEBI:195329")
 
+    # change directions
+    bi_dir(model, "13196") # make GTP, dATP, dGTP work
+    rev_dir(model, "40954") # ectoine
+    rev_dir(model, "52307") # ectoine
+    rev_dir(model, "17328") # lysine
 
 end
 

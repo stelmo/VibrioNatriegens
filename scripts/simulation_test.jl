@@ -5,12 +5,17 @@ using JSON
 using ConstraintTrees
 import ConstraintTrees as C
 
+
 model = VibrioNatriegens.build_model()
+
+model.reactions["biomass"].objective_coefficient = 0.0
+model.reactions["27789"].objective_coefficient = 1.0
 
 sol = flux_balance_analysis(model, optimizer=Gurobi.Optimizer)
 
-
 sol = parsimonious_flux_balance_analysis(model, optimizer=Gurobi.Optimizer)
+
+sol = loopless_flux_balance_analysis(model, optimizer=Gurobi.Optimizer)
 
 open("vnat_fluxes.json", "w") do io
     JSON.print(io, sol.fluxes)

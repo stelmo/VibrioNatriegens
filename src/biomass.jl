@@ -17,7 +17,7 @@ function add_biomass!(model)
             "CHEBI:29806" => -1, # fumarate
             "CHEBI:30031" => -1, # succinate
 
-            # "CHEBI:37565" => -1, # GTP
+            "CHEBI:37565" => -1, # GTP
             "CHEBI:37563" => -1, # CTP
             "CHEBI:46398" => -1, # UTP
 
@@ -27,12 +27,12 @@ function add_biomass!(model)
             "CHEBI:456216" => 1, # adp
             "CHEBI:15378" => 1,  # h+
 
-            # "CHEBI:61429" => -1, # dGTP
-            # "CHEBI:61404" => -1, # dATP
+            "CHEBI:61429" => -1, # dGTP
+            "CHEBI:61404" => -1, # dATP
             "CHEBI:61481" => -1, # dCTP
             "CHEBI:37568" => -1, # dTTP
 
-            # "CHEBI:58515" => -1, # ectoine
+            "CHEBI:58515" => -1, # ectoine
 
             "CHEBI:57972" => -1, # alanine
             "CHEBI:29991" => -1, # aspartate
@@ -47,9 +47,11 @@ function add_biomass!(model)
             "CHEBI:58045" => -1, # isoleucine
             "CHEBI:57762" => -1, # valine
             "CHEBI:57427" => -1, # leucine
-            # "CHEBI:32551" => -1, # lysine
+
+            "CHEBI:16947" => -1, # lysine
+           
             "CHEBI:32682" => -1, # arginine
-            # "CHEBI:57595" => -1, # histidine
+            "CHEBI:57595" => -1, # histidine
             "CHEBI:58315" => -1, # tyrosine
             "CHEBI:58095" => -1, # phenylalanine
             "CHEBI:57912" => -1, # tryptophan

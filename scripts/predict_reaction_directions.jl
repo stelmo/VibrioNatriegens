@@ -30,8 +30,15 @@ for r in eachrow(df)
     try 
         _d = ln_reversibility_index(eq, rxn_string; skip_unbalanced = true)
         _pdg =  physiological_dg_prime(eq, rxn_string; skip_unbalanced = true)
-        d = isnothing(_d) ? missing : Measurements.value(_d)
-        pdg = isnothing(_pdg) ? missing : Measurements.value(ustrip(u"kJ/mol", _pdg))
+        if !isnothing(_pdg)
+            if Measurements.uncertainty(_pdg) > 0.5 * Measurements.value(_pdg) # error too big to be useful
+                d = missing
+                pdg = missing
+            else
+                d = Measurements.value(_d)
+                pdg = Measurements.value(ustrip(u"kJ/mol", _pdg))
+            end
+        end
     catch
         
     end
