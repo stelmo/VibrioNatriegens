@@ -8,7 +8,7 @@ import ConstraintTrees as C
 
 model = VibrioNatriegens.build_model()
 
-model.reactions["biomass"].objective_coefficient = 0.0
+# model.reactions["biomass"].objective_coefficient = 0.0
 model.reactions["ATPM"].objective_coefficient = 1.0
 
 sol = flux_balance_analysis(model, optimizer=Gurobi.Optimizer)
@@ -33,7 +33,7 @@ C.pretty(
     C.ifilter_leaves(sol.fluxes) do ix, x
         abs(x) > 1e-6 && begin
             mets = [A.metabolite_name(model, k) for k in keys(A.reaction_stoichiometry(model, string(last(ix))))]
-            any(in.(mets, Ref(["H2O2"])))
+            any(in.(mets, Ref(["L-2,4-diaminobutanoate"])))
         end 
     end; 
     format_label = x -> A.reaction_name(model, string(last(x))),

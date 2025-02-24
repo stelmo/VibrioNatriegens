@@ -147,7 +147,7 @@ function add_membrane_transporters!(model)
         end
     end
 
-    # add default permeases
+    # add default permeases - only reactions that did not get another transporter
     all_exchange_metabolites =  DataFrame(
         CSV.File(
             joinpath("data", "model", "exchange_metabolites.csv"),
@@ -187,6 +187,7 @@ function add_abc!(model, mid, iso, ss)
             lower_bound = 0,
             upper_bound = 1000,
             gene_association = [isoz],
+            transporter= true,
         )
     end
 end
@@ -217,6 +218,7 @@ function add_pts!(model, mid, iso, ss)
             lower_bound = 0,
             upper_bound = 1000,
             gene_association = [isoz],
+            transporter= true,
         )
     end
 end
@@ -236,9 +238,10 @@ function add_symport!(model, mid1, mid2, iso, ss)
                 mid2 => 1.0,
             ),
             objective_coefficient = 0.0,
-            lower_bound = -1000,
+            lower_bound = 0,
             upper_bound = 1000,
             gene_association = [isoz],
+            transporter= true,
         )
     end
 end
@@ -258,9 +261,10 @@ function add_antiport!(model, mid1, mid2, iso, ss)
                 mid2 => 1.0,
             ),
             objective_coefficient = 0.0,
-            lower_bound = -1000,
+            lower_bound = 0,
             upper_bound = 1000,
             gene_association = [isoz],
+            transporter= true,
         )
     end
 end
@@ -278,6 +282,7 @@ function add_permease!(model, mid, iso, ss)
             lower_bound = -1000,
             upper_bound = 1000,
             gene_association = [isoz],
+            transporter= true,
         )
     end
 end

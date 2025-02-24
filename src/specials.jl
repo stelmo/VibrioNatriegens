@@ -369,8 +369,8 @@ function add_salt_transducers!(model)
             "CHEBI:57945" => -1.0, # nadh
             "CHEBI:15378" => -1.0, # h+
         ),
-        lower_bound = -1000.0,
-        upper_bound = 0.0,
+        lower_bound = 0.0,
+        upper_bound = 1000.0,
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(

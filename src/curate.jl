@@ -14,6 +14,15 @@ rev_dir(model, rid) = begin
     model.reactions[rid].upper_bound = 0.0
 end
 
+rhea_rxn_dir(rxn, qrt) = begin 
+    idx = first(indexin([rxn], qrt))
+    isnothing(idx) && error("Reaction not found...")
+    idx == 1 && return (-1000, 1000)
+    idx == 2 && return (0, 1000)
+    idx == 3 && return (-1000, 0)
+    idx == 4 && return (-1000, 1000)
+end
+
 function curate!(model)
 
     # add these metabolites manually
@@ -79,25 +88,38 @@ function curate!(model)
     delete!(model.reactions["76650"].stoichiometry, "CHEBI:195329")
     delete!(model.metabolites, "CHEBI:195329")
 
-    # change directions
+    # change directions to match what is found in biocyc - manual thermodynamics leaves much to be desired
+    biocyc = DataFrame(CSV.File(joinpath("data", "annotations", "rhea", "biocyc_rxns.csv")))
+    @select!(biocyc, :rheaDir, :metacyc)
+    for rid in A.reactions(model)
+        qrt = RheaReactions.get_reaction_quartet(parse(Int, rid))
+        df = @subset(biocyc, in.(:rheaDir, Ref(qrt)))
+        isempty(df) && continue
+        lb, ub = rhea_rxn_dir(df[1,1], qrt)
+        model.reactions[rid].lower_bound = lb
+        model.reactions[rid].upper_bound = ub    
+    end
+
+    # change directions manually
     bi_dir(model, "13196") # make GTP, dATP, dGTP work
-    rev_dir(model, "40954") # ectoine, biocyc
-    rev_dir(model, "52307") # ectoine, biocyc
-    for_dir(model, "17328") # lysine, biocyc
-    bi_dir(model, "18133") # sulfur import - rev in biocyc
     for_dir(model, "20309") # h2o2 -> o2 + h2o
-    for_dir(model, "13316") # biocyc h2o2 
-    for_dir(model, "15036") # biocyc h2o2
-    for_dir(model, "15152") # biocyc h2o2
-    for_dir(model, "15820") # biocyc h2o2
-    for_dir(model, "16833") # biocyc h2o2
-    for_dir(model, "19028") # biocyc h2o2
-    for_dir(model, "21371") # biocyc h2o2
-    for_dir(model, "25879") # biocyc h2o2
-    for_dir(model, "28417") # biocyc h2o2
-    for_dir(model, "30778") # biocyc h2o2
-    for_dir(model, "46164") # biocyc  NAD(P)H dehydrogenase (quinone)
-    for_dir(model, "46160") # biocyc  NAD(P)H dehydrogenase (quinone)
+    for_dir(model, "19028") # h2o2 producer
+    for_dir(model, "30778") # h2o2 producer
+    for_dir(model, "15056") # prevent loop in nucleotides through 15056 <-> 31134
+    for_dir(model, "31134") # prevent loop in nucleotides through 15056 <-> 31134 
+    for_dir(model, "41812") # prevent loop in lipids through 41812 <-> 54868
+    for_dir(model, "54868") # prevent loop in lipids through 41812 <-> 54868 
+    for_dir(model, "41528") # prevent loop in lipids through 41528 <-> 41848
+    for_dir(model, "41848") # prevent loop in lipids through 41528 <-> 41848 
+    for_dir(model, "54936") # prevent loop in lipids through 54936 <-> 41864
+    for_dir(model, "41864") # prevent loop in lipids through 54936 <-> 41864 
+    for_dir(model, "54900") # prevent loop in lipids through 54900 <-> 41912
+    for_dir(model, "41912") # prevent loop in lipids through 54900 <-> 41912 
+    for_dir(model, "15308") # prevent loop in lipids through 15308 <-> 30070
+    for_dir(model, "30070") # prevent loop in lipids through 15308 <-> 30070 
+    for_dir(model, "38215") # prevent loop in carbohydrates through 38215 <-> 38215
+    for_dir(model, "38215") # prevent loop in carbohydrates through 38215 <-> 38215 
     
+
 end
 

@@ -18,6 +18,7 @@ Base.@kwdef mutable struct Reaction
     dg::A.Maybe{Float64} = nothing
     annotations::A.Annotations = A.Annotations()
     notes::A.Notes = A.Notes()
+    transporter::Bool = false
 end
 
 Base.show(io::Base.IO, ::MIME"text/plain", x::Reaction) = A.pretty_print_kwdef(io, x)
