@@ -35,20 +35,20 @@ function curate!(model)
         charge = 1,
     )
 
-    id = "CHEBI:15983" # Ferrocytochrome
+    id = "RHEA-COMP:14399" # Fe(III)-[cytochrome c]
     model.metabolites[id] = Metabolite(
-        name = "Ferrocytochrome",
-        formula = Dict("X" => 1),
+        name = "Fe(III)-[cytochrome c]",
+        formula = Dict("Fe" => 1),
         compartment = "Cytosol",
-        charge = 0,
+        charge = 3,
     )
 
-    id = "CHEBI:15719" # Ferricytochrome
+    id = "RHEA-COMP:10350" # Fe(II)-[cytochrome c]
     model.metabolites[id] = Metabolite(
-        name = "Ferricytochrome",
-        formula = Dict("X" => 1),
+        name = "Fe(II)-[cytochrome c]",
+        formula = Dict("Fe" => 1),
         compartment = "Cytosol",
-        charge = 0,
+        charge = 2,
     )
 
     id = "CHEBI:17992" # sucrose

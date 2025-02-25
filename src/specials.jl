@@ -25,6 +25,7 @@ function add_electron_transport_chain!(model)
                 "2 reduced [2Fe-2S]-[ferredoxin] + NADH + 2 NADP(+) + H(+) = 2 oxidized [2Fe-2S]-[ferredoxin] + NAD(+) + 2 NADPH",
             ],
             "EC" => ["1.6.1.4"],
+            "RHEA" => ["RHEA:47000"],
         ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "R-nfn")...)
@@ -82,10 +83,11 @@ function add_electron_transport_chain!(model)
     model.reactions["R-cyt-bc1"] = Reaction(;
         name = "Cytochrome c oxidase",
         stoichiometry = Dict(
-            "CHEBI:132124" => 1.0, # a ubiquinone
             "CHEBI:24646" => -1.0, # a ubiquinol
-            "CHEBI:15983" => 2.0, # Ferrocytochrome c
-            "CHEBI:15719" => -2.0, # Ferricytochrome c
+            "RHEA-COMP:14399" => -2.0, # Fe(III)-[cytochrome c]
+            "CHEBI:15378_p" => 2.0,  # h+ out
+            "CHEBI:132124" => 1.0, # a ubiquinone
+            "RHEA-COMP:10350" => 2.0, # Fe(II)-[cytochrome c]
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
@@ -99,10 +101,8 @@ function add_electron_transport_chain!(model)
             ),
         ],
         annotations = Dict(
-            "KEGG_REACTION" => [
-                "Hydroquinone + 2 Ferricytochrome c <=> Quinone + 2 Ferrocytochrome c + 2 H+",
-            ],
             "EC" => ["7.1.1.8"],
+            "RHEA" => ["RHEA:11484"]
         ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "R-cyt-bc1")...)
@@ -112,9 +112,9 @@ function add_electron_transport_chain!(model)
         name = "Cytochrome c oxidase",
         stoichiometry = Dict(
             "CHEBI:15379" => -1, # o2
-            "CHEBI:15983" => -4.0, # Ferrocytochrome c
+            "RHEA-COMP:10350" => -4.0, # Fe(II)-[cytochrome c]
             "CHEBI:15378" => -8.0, # H+
-            "CHEBI:15719" => 4.0, # Ferricytochrome c
+            "RHEA-COMP:14399" => 4.0, # Fe(III)-[cytochrome c]
             "CHEBI:15377" => 2.0, # h2o
             "CHEBI:15378_p" => 4.0, # H+
         ),
@@ -138,10 +138,8 @@ function add_electron_transport_chain!(model)
             ),
         ],
         annotations = Dict(
-            "KEGG_REACTION" => [
-                "Oxygen + 4 Ferrocytochrome c + 8 H+ <=> 4 Ferricytochrome c + 2 H2O + 4 H+",
-            ],
             "EC" => ["7.1.1.9"],
+            "RHEA" => ["RHEA:11436"],
         ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "R-cyt-c")...)
@@ -151,9 +149,9 @@ function add_electron_transport_chain!(model)
         name = "Cytochrome c oxidase, cbb3-type",
         stoichiometry = Dict(
             "CHEBI:15379" => -1, # o2
-            "CHEBI:15983" => -4.0, # Ferrocytochrome c
+            "RHEA-COMP:10350" => -4.0, # Fe(II)-[cytochrome c]
             "CHEBI:15378" => -8.0, # H+
-            "CHEBI:15719" => 4.0, # Ferricytochrome c
+            "RHEA-COMP:14399" => 4.0, # Fe(III)-[cytochrome c]
             "CHEBI:15377" => 2.0, # h2o
             "CHEBI:15378_p" => 4.0, # H+
         ),
@@ -170,9 +168,7 @@ function add_electron_transport_chain!(model)
             ),
         ],
         annotations = Dict(
-            "KEGG_REACTION" => [
-                "Oxygen + 4 Ferrocytochrome c + 8 H+ <=> 4 Ferricytochrome c + 2 H2O + 4 H+",
-            ],
+            "RHEA" => ["RHEA:11436"],
             "EC" => ["7.1.1.9"],
         ),
     )
@@ -180,14 +176,14 @@ function add_electron_transport_chain!(model)
     append!(ms, keys(A.reaction_stoichiometry(model,  "R-cyt-c-cbb3")))
 
     model.reactions["R-cyt-bd"] = Reaction(;
-        name = "Cytochrome BD-I",
+        name = "Cytochrome oxidase BD-I",
         stoichiometry = Dict(
-            "CHEBI:15377" => 1.0, # h2o
-            "CHEBI:15378" => -2.0, # H+
-            "CHEBI:15378_p" => 2.0, # H+
-            "CHEBI:15379" => -0.5, # o2
-            "CHEBI:132124" => 1.0, # a ubiquinone
-            "CHEBI:24646" => -1.0, # a ubiquinol
+            "CHEBI:15377" => 2.0, # h2o
+            "CHEBI:15378" => -4.0, # H+
+            "CHEBI:15378_p" => 4.0, # H+
+            "CHEBI:15379" => -1.0, # o2
+            "CHEBI:132124" => 2.0, # a ubiquinone
+            "CHEBI:24646" => -2.0, # a ubiquinol
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
@@ -201,8 +197,7 @@ function add_electron_transport_chain!(model)
             ),
         ],
         annotations = Dict(
-            "KEGG_REACTION" =>
-                ["2 Ubiquinol + Oxygen + 4 H+ <=> 2 Ubiquinone + 2 H2O + 4 H+"],
+            "RHEA" => ["RHEA:40527"],
             "EC" => ["7.1.1.7"],
         ),
     )
@@ -212,12 +207,12 @@ function add_electron_transport_chain!(model)
     model.reactions["R-cyt-bo"] = Reaction(;
         name = "Cytochrome oxidase bo3",
         stoichiometry = Dict(
-            "CHEBI:15377" => -1.0, # h2o
+            "CHEBI:24646" => -2.0, # a ubiquinol
+            "CHEBI:15379" => -1.0, # o2
             "CHEBI:15378" => -4.0, # H+
+            "CHEBI:15377" => 2.0, # h2o
             "CHEBI:15378_p" => 4.0, # H+
-            "CHEBI:15379" => -0.5, # o2
-            "CHEBI:132124" => 1.0, # a ubiquinone
-            "CHEBI:24646" => -1.0, # a ubiquinol
+            "CHEBI:132124" => 2.0, # a ubiquinone
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
@@ -232,7 +227,8 @@ function add_electron_transport_chain!(model)
             ),
         ],
         annotations = Dict(
-            "KEGG_REACTION" => ["h2o + 4 h_c + 0.5 o2 + quinol -> quinone + 4 h_p"],
+            "EC" => ["7.1.1.3"],
+            "RHEA" => ["RHEA:30251"],
         ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "R-cyt-bo")...)
@@ -263,6 +259,7 @@ function add_electron_transport_chain!(model)
                 ["NAD(+) + NADPH + H(+)(in) = NADH + NADP(+) + H(+)(out)"],
             "EC" => ["7.1.1.1"],
             "EXPASY" => ["https://enzyme.expasy.org/EC/7.1.1.1"],
+            "RHEA" => ["RHEA:47992"]
         ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "R-pnt")...)
@@ -322,6 +319,7 @@ function add_salt_transducers!(model)
             "KEGG_REACTION" =>
                 ["4 Na(+)(out) + ADP + phosphate + H(+) = 4 Na(+)(in) + ATP + H2O"],
             "EC" => ["7.2.2.1"],
+            "RHEA" => ["RHEA:58156"],
         ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "R-Na-ATPsynthase")...)
@@ -358,14 +356,14 @@ function add_salt_transducers!(model)
     append!(ms, keys(A.reaction_stoichiometry(model,  "R-oad")))
 
 
-    model.reactions["R-nqr"] = Reaction(;
+    model.reactions["R-nqr"] = Reaction(; # like complex 1 but for salt, assume also pumps 4 out
         name = "Na+-transporting NADH:ubiquinone oxidoreductase",
         stoichiometry = Dict(
-            "CHEBI:29101" => 1.0, # Na+ (n?)
+            "CHEBI:29101_p" => 4.0, # Na+ (n?)
             "CHEBI:57540" => 1.0, # nad
             "CHEBI:24646" => 1.0, # a ubiquinol
             "CHEBI:132124" => -1.0, # a ubiquinone
-            "CHEBI:29101_p" => -1.0, # Na+ (n?)
+            "CHEBI:29101" => -4.0, # Na+ (n?)
             "CHEBI:57945" => -1.0, # nadh
             "CHEBI:15378" => -1.0, # h+
         ),
@@ -388,6 +386,7 @@ function add_salt_transducers!(model)
                 "a ubiquinone + n Na(+)(in) + NADH + H(+) = a ubiquinol + n Na(+)(out) + NAD(+)",
             ],
             "EC" => ["7.2.1.1"],
+            "RHEA" => ["RHEA:47748"],
             "EXPASY" => ["https://enzyme.expasy.org/EC/7.2.1.1"],
         ),
     )
