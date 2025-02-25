@@ -172,17 +172,18 @@ function add_abc!(model, mid, iso, ss)
     if haskey(model.reactions, rid)
         push!(model.reactions[rid].gene_association, isoz)
     else
+        st = Dict(
+            "CHEBI:30616" => -1, # atp
+            "CHEBI:15377" => -1, # water
+            "CHEBI:43474" => 1, # pi
+            "CHEBI:456216" => 1, # adp
+            "CHEBI:15378" => 1,  # h+ 
+            mid * "_p" => -1.0,
+        )
+        st[mid] = get(st, mid, 0) + 1.0 # handle the case when phosphate is transported
         model.reactions[rid] = Reaction(
             name = "Transport $(A.metabolite_name(model, String(mid))) ABC",
-            stoichiometry = Dict(
-                "CHEBI:30616" => -1, # atp
-                "CHEBI:15377" => -1, # water
-                "CHEBI:43474" => 1, # pi
-                "CHEBI:456216" => 1, # adp
-                "CHEBI:15378" => 1,  # h+ 
-                mid * "_p" => -1.0,
-                mid => 1.0, # cytosol
-            ),
+            stoichiometry = st,
             objective_coefficient = 0.0,
             lower_bound = 0,
             upper_bound = 1000,

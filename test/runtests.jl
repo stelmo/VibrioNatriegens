@@ -1,18 +1,11 @@
 using Test, VibrioNatriegens
-using CSV
-
-using JSON, AbstractFBCModels
-using JSONFBCModels
+using AbstractFBCModels
 import AbstractFBCModels as A
-
-include("utils.jl")
+using Gurobi, COBREXA, ConstraintTrees
+import ConstraintTrees as C
 
 @testset "Vibrio natriegens metabolic model" begin
 
-    @testset "Mass balances" begin
-        for rid in A.reactions(model)
-            @test is_mass_balanced(model, rid)
-        end
-    end
+    include("basics.jl")
 
 end

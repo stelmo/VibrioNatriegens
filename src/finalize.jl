@@ -10,7 +10,6 @@ function set_default_exchanges!(model)
         "CHEBI:15379" # o2
         "CHEBI:28938" # nh4(+)
         "CHEBI:43474" # pi
-        # "CHEBI:29101" # Na+
     ]
 
     bidirs = [

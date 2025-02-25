@@ -68,6 +68,10 @@ function curate!(model)
         "O" => 2,
     )
 
+    # adjust stoichiometry for Rhea 74167 (just increase ferredoxin on each side to balance charge, see https://biocyc.org/reaction?orgid=META&id=RXN-22744)
+    model.reactions["74167"].stoichiometry["CHEBI:33723"] = 2.0
+    model.reactions["74167"].stoichiometry["CHEBI:33722"] = -2.0
+
     # modify rhea reactions to exchange D- with the beta-D isomer
     delete!(model.metabolites, "CHEBI:4167") # D-glucose
     delete!(model.metabolites, "CHEBI:61548") # D-glucopyranose 6-phosphate
@@ -133,6 +137,8 @@ function curate!(model)
     rev_dir(model, "11615") # prevent loop + metacyc GLUTAMATESYN-RXN
     for_dir(model, "11695") # https://www.uniprot.org/uniprotkb/P27306/entry
     for_dir(model, "27761") # https://biocyc.org/reaction?orgid=ECOLI&id=GCVMULTI-RXN
+    for_dir(model, "24796") # histidine biosynthesis blocked, https://biocyc.org/reaction?orgid=META&id=GLUTAMIDOTRANS-RXN (incorrect ref in rhea wrt direction)    
+    rev_dir(model, "17740") # F, Y, W biosynthesis blocked, https://biocyc.org/reaction?orgid=META&id=SHIKIMATE-5-DEHYDROGENASE-RXN (rhea has both directions listed)
     
 end
 

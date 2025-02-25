@@ -36,3 +36,11 @@ RheaReactions = "0.6.1"
 SparseArrays = "1.11.0"
 Unitful = "1.21.1"
 eQuilibrator = "2.1.0"
+
+[extras]
+AbstractFBCModels = "5a4f3dfa-1789-40f8-8221-69268c29937c"
+Gurobi = "2e9cd046-0924-5485-92f1-d5272153d98b"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Gurobi", "Test", "AbstractFBCModels"]
