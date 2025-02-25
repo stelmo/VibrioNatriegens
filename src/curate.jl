@@ -100,6 +100,17 @@ function curate!(model)
         model.reactions[rid].upper_bound = ub    
     end
 
+    ecocyc = DataFrame(CSV.File(joinpath("data", "annotations", "rhea", "ecocyc_rxns.csv")))
+    @select!(ecocyc, :rheaDir, :metacyc)
+    for rid in A.reactions(model)
+        qrt = RheaReactions.get_reaction_quartet(parse(Int, rid))
+        df = @subset(ecocyc, in.(:rheaDir, Ref(qrt)))
+        isempty(df) && continue
+        lb, ub = rhea_rxn_dir(df[1,1], qrt)
+        model.reactions[rid].lower_bound = lb
+        model.reactions[rid].upper_bound = ub    
+    end
+
     # change directions manually
     bi_dir(model, "13196") # make GTP, dATP, dGTP work
     for_dir(model, "20309") # h2o2 -> o2 + h2o
@@ -119,7 +130,9 @@ function curate!(model)
     for_dir(model, "30070") # prevent loop in lipids through 15308 <-> 30070 
     for_dir(model, "38215") # prevent loop in carbohydrates through 38215 <-> 38215
     for_dir(model, "38215") # prevent loop in carbohydrates through 38215 <-> 38215 
+    rev_dir(model, "11615") # prevent loop + metacyc GLUTAMATESYN-RXN
+    for_dir(model, "11695") # https://www.uniprot.org/uniprotkb/P27306/entry
+    for_dir(model, "27761") # https://biocyc.org/reaction?orgid=ECOLI&id=GCVMULTI-RXN
     
-
 end
 

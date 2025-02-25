@@ -33,13 +33,18 @@ C.pretty(
     C.ifilter_leaves(sol.fluxes) do ix, x
         abs(x) > 1e-6 && begin
             mets = [A.metabolite_name(model, k) for k in keys(A.reaction_stoichiometry(model, string(last(ix))))]
-            any(in.(mets, Ref(["L-2,4-diaminobutanoate"])))
+            any(in.(mets, Ref(["NAD(+)"])))
         end 
     end; 
     format_label = x -> A.reaction_name(model, string(last(x))),
 )
 
-
+C.pretty(
+    C.ifilter_leaves(sol.fluxes) do ix, x
+        abs(x) > 100  
+    end; 
+    format_label = x -> A.reaction_name(model, string(last(x))),
+)
 
 
 
