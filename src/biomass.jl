@@ -7,16 +7,8 @@ function add_biomass!(model)
     model.reactions["biomass"] = Reaction(
         name = "Biomass reaction",
         stoichiometry = Dict(
-
-            "CHEBI:16651" => -1, # lactate
-            "CHEBI:16236" => -1, # ethanol
-            "CHEBI:30089" => -1, # acetate
-            "CHEBI:15740" => -1, # formate
+            "glycogen" => -1,
             
-            "CHEBI:15361" => -1, # pyruvate
-            "CHEBI:29806" => -1, # fumarate
-            "CHEBI:30031" => -1, # succinate
-
             "CHEBI:37565" => -1, # GTP
             "CHEBI:37563" => -1, # CTP
             "CHEBI:46398" => -1, # UTP

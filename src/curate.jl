@@ -68,6 +68,19 @@ function curate!(model)
         "O" => 2,
     )
 
+    # glycogen
+    id = "glycogen"
+    model.metabolites[id] = Metabolite(
+        name = "Glycogen",
+        formula = Dict(
+            "C" => 6.0,
+            "H" => 10.0,
+            "O" => 5.0,
+        ),
+        compartment = "Cytosol",
+        charge = 0,
+    )
+
     # adjust stoichiometry for Rhea 74167 (just increase ferredoxin on each side to balance charge, see https://biocyc.org/reaction?orgid=META&id=RXN-22744)
     model.reactions["74167"].stoichiometry["CHEBI:33723"] = 2.0
     model.reactions["74167"].stoichiometry["CHEBI:33722"] = -2.0
@@ -140,5 +153,33 @@ function curate!(model)
     for_dir(model, "24796") # histidine biosynthesis blocked, https://biocyc.org/reaction?orgid=META&id=GLUTAMIDOTRANS-RXN (incorrect ref in rhea wrt direction)    
     rev_dir(model, "17740") # F, Y, W biosynthesis blocked, https://biocyc.org/reaction?orgid=META&id=SHIKIMATE-5-DEHYDROGENASE-RXN (rhea has both directions listed)
     
+    # add custom reactions (needs to happen after direction setting)
+    # add Glycogen synthase (ADPGlc)
+    model.reactions["glycogen_synthase"] = Reaction(
+        name = "Glycogen synthase (ADPGlc)",
+        stoichiometry = Dict(
+            "CHEBI:57498" => -1.0, # ADP-alpha-D-glucose
+            "CHEBI:456216" => 1.0, # adp
+            "glycogen" => 1.0, # 
+            "CHEBI:15378" => 1.0, # h+
+        ),
+        objective_coefficient = 0.0,
+        lower_bound = 0,
+        upper_bound = 1000,
+        gene_association = [X.Isozyme(; gene_product_stoichiometry = Dict("WP_020332873.1" .=> 1.0))],
+    )
+
+    model.reactions["glycogen_phosphorylase"] = Reaction(
+        name = "Glycogen phosphorylase",
+        stoichiometry = Dict(
+            "glycogen" => -1.0,
+            "CHEBI:58601" => 1.0, # alpha-D-glucose 1-phosphate
+            "CHEBI:43474" => -1.0, # phosphate 
+        ),
+        objective_coefficient = 0.0,
+        lower_bound = 0,
+        upper_bound = 1000,
+        gene_association = [X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333475.1" .=> 1.0))],
+    )
 end
 
