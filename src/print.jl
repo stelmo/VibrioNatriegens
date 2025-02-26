@@ -17,20 +17,26 @@ function print_reactions(model::Model, rids::Vector{String}, file_name)
 
         ss = model.reactions[rid].stoichiometry
 
-        s1 = join([string(v)*"*"*A.metabolite_name(model, k) for (k, v) in ss if v < 0], " + ")
-        s2 = join([string(v)*"*"*A.metabolite_name(model, k) for (k, v) in ss if v > 0], " + ")
-        
+        s1 = join(
+            [string(v) * "*" * A.metabolite_name(model, k) for (k, v) in ss if v < 0],
+            " + ",
+        )
+        s2 = join(
+            [string(v) * "*" * A.metabolite_name(model, k) for (k, v) in ss if v > 0],
+            " + ",
+        )
+
         lb = model.reactions[rid].lower_bound
         ub = model.reactions[rid].upper_bound
 
         if lb == 0 && ub != 0
             dir = " -> "
         elseif lb != 0 && ub == 0
-            dir =" <- "
+            dir = " <- "
         else
             dir = " <-> "
         end
-        
+
         s1 * dir * s2
     end
 
@@ -65,27 +71,28 @@ function print_reactions(model::Model, rids::Vector{String}, file_name)
     CSV.write(file_name, df)
 end
 
-print_reactions(model::Model) = print_reactions(model, A.reactions(model), "reactions-model.csv")
+print_reactions(model::Model) =
+    print_reactions(model, A.reactions(model), "reactions-model.csv")
 
 function print_metabolites(model)
 
     mids = A.metabolites(model)
-    charges = Union{Missing, Int}[]
-    formulas = Union{Missing, String}[]
-    names = Union{Missing, String}[]
+    charges = Union{Missing,Int}[]
+    formulas = Union{Missing,String}[]
+    names = Union{Missing,String}[]
 
     getx(x) = isnothing(x) ? missing : x
 
     for mid in mids
         push!(charges, getx(A.metabolite_charge(model, mid)))
         push!(names, getx(A.metabolite_name(model, mid)))
-        
+
         f = A.metabolite_formula(model, mid)
 
-        push!(formulas, isnothing(f) ? missing : join(k*string(v) for (k, v) in f))
+        push!(formulas, isnothing(f) ? missing : join(k * string(v) for (k, v) in f))
     end
 
-    df = DataFrame(Metabolite=mids, Name=names, Charge=charges, Formula=formulas)    
+    df = DataFrame(Metabolite = mids, Name = names, Charge = charges, Formula = formulas)
     CSV.write("metabolites-model.csv", df)
 end
 

@@ -1,5 +1,5 @@
 
-function parse_formula(x::Union{Nothing, String})
+function parse_formula(x::Union{Nothing,String})
     isnothing(x) && return nothing
     x == "" && return nothing
 
@@ -36,24 +36,21 @@ function extend_model!(model, dfs)
             push!(model.reactions[string(rid)].gene_association, iso)
 
         else # first time seeing this reaction
-            
+
             rxn = get_reaction(rid)
 
             coeff_mets = get_reaction_metabolites(rid)
-            stoichiometry = Dict(
-                string(v.accession) => s
-                for (s, v) in coeff_mets
-            )
+            stoichiometry = Dict(string(v.accession) => s for (s, v) in coeff_mets)
 
             append!(ms, last.(coeff_mets))
-            
+
             ecs = isnothing(rxn.ec) ? [""] : rxn.ec
             name = isnothing(rxn.name) ? nothing : rxn.name
 
             # direction
             reversibility_index_threshold = 5.0
-            rev_ind = ismissing(first(df.RevIndex)) ? nothing : first(df.RevIndex) 
-            dg = ismissing(first(df.DeltaG)) ? nothing : first(df.DeltaG) 
+            rev_ind = ismissing(first(df.RevIndex)) ? nothing : first(df.RevIndex)
+            dg = ismissing(first(df.DeltaG)) ? nothing : first(df.DeltaG)
 
             if isnothing(rev_ind) || (abs(rev_ind) <= reversibility_index_threshold)
                 lb = -1000
@@ -73,10 +70,7 @@ function extend_model!(model, dfs)
                 dg = dg,
                 gene_association = [iso],
                 stoichiometry = stoichiometry,
-                annotations = Dict(
-                    "REACTION" => [rxn.equation],
-                    "EC" => ecs,
-                ),
+                annotations = Dict("REACTION" => [rxn.equation], "EC" => ecs),
             )
         end
     end
@@ -88,24 +82,53 @@ end
 
 function add_genes!(model, gs)
     # gs :: String[]
-    
-    gene_df = DataFrame(CSV.File(joinpath("data", "annotations", "ncbi", "refseq_annotations.tsv")))
+
+    gene_df = DataFrame(
+        CSV.File(
+            joinpath(
+                pkgdir(@__MODULE__),
+                "data",
+                "annotations",
+                "ncbi",
+                "refseq_annotations.tsv",
+            ),
+        ),
+    )
     @rename!(gene_df, :ProteinAccession = $"Protein accession")
     @select!(gene_df, :Name, :ProteinAccession, :Symbol)
-    lu_acc_sym = Dict(k => ismissing(v) ? nothing : v for (k, v) in zip(gene_df.ProteinAccession, gene_df.Symbol) if !ismissing(k) && !ismissing(v))
-    lu_acc_name = Dict(k => ismissing(v) ? nothing : v for (k, v) in zip(gene_df.ProteinAccession, gene_df.Name) if !ismissing(k) && !ismissing(v))
+    lu_acc_sym = Dict(
+        k => ismissing(v) ? nothing : v for
+        (k, v) in zip(gene_df.ProteinAccession, gene_df.Symbol) if
+        !ismissing(k) && !ismissing(v)
+    )
+    lu_acc_name = Dict(
+        k => ismissing(v) ? nothing : v for
+        (k, v) in zip(gene_df.ProteinAccession, gene_df.Name) if
+        !ismissing(k) && !ismissing(v)
+    )
 
-    gene_df = DataFrame(CSV.File(joinpath("data", "annotations", "eggnog", "out.emapper.annotations")))
+    gene_df = DataFrame(
+        CSV.File(
+            joinpath(
+                pkgdir(@__MODULE__),
+                "data",
+                "annotations",
+                "eggnog",
+                "out.emapper.annotations",
+            ),
+        ),
+    )
     @select!(gene_df, :query, :Preferred_name)
-    lu_acc_sym2 = Dict(k => v for (k, v) in zip(gene_df.query, gene_df.Preferred_name) if v != "-")
-    
+    lu_acc_sym2 =
+        Dict(k => v for (k, v) in zip(gene_df.query, gene_df.Preferred_name) if v != "-")
+
     # add genes
     for g in unique(gs)
         haskey(model.genes, g) || begin
             model.genes[g] = Gene(;
                 name = get(lu_acc_name, g, nothing),
                 symbol = get(lu_acc_sym, g, get(lu_acc_sym2, g, nothing)),
-            )            
+            )
         end
     end
 
@@ -116,7 +139,7 @@ function add_metabolites!(model, ms)
 
     for m in ms
         haskey(model.metabolites, m.accession) || begin
-                model.metabolites[m.accession] = Metabolite(;
+            model.metabolites[m.accession] = Metabolite(;
                 name = m.name,
                 formula = parse_formula(m.formula),
                 charge = m.charge,

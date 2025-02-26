@@ -16,9 +16,12 @@ escher_rids = Int64[]
 escher_map_rids = Dict()
 for map_id in escher_maps
     m = JSON.parsefile(joinpath("maps", map_id))
-    erids = [parse(Int, v["bigg_id"]) for v in values(m[2]["reactions"]) if isdigit(first(v["bigg_id"]))]
+    erids = [
+        parse(Int, v["bigg_id"]) for
+        v in values(m[2]["reactions"]) if isdigit(first(v["bigg_id"]))
+    ]
     escher_map_rids[map_id] = erids
-    append!(escher_rids, erids)    
+    append!(escher_rids, erids)
 end
 escher_rids = unique(escher_rids)
 

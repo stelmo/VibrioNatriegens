@@ -6,11 +6,13 @@ Build the model.
 """
 function build_model()
 
-    df = DataFrame(CSV.File(joinpath("data", "model", "metabolic_reactions.csv")))
+    df = DataFrame(
+        CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "metabolic_reactions.csv")),
+    )
 
     heteros = @rsubset(df, !ismissing(:Subunit))
     @select!(heteros, :RHEA_ID, :Protein, :Stoichiometry, :Subunit, :DeltaG, :RevIndex)
-    
+
     homos = @rsubset(df, ismissing(:Subunit))
     @select!(homos, :RHEA_ID, :Protein, :Stoichiometry, :DeltaG, :RevIndex)
 
@@ -37,6 +39,6 @@ function build_model()
 
     VibrioNatriegens.set_default_exchanges!(model)
     VibrioNatriegens.name_reactions!(model)
-    
+
     model
 end

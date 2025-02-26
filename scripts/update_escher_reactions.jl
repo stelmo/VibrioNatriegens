@@ -26,21 +26,22 @@ for (emid, em) in ems
     emm = em[2]
     for rxn in values(emm["reactions"])
         if rxn["bigg_id"] in rxns
-            lb, ub = model.reactions[rxn["bigg_id"]].lower_bound, model.reactions[rxn["bigg_id"]].upper_bound
+            lb, ub = model.reactions[rxn["bigg_id"]].lower_bound,
+            model.reactions[rxn["bigg_id"]].upper_bound
             if lb < -0.1 && ub > 0.1
                 rxn["reversibility"] = true
             else
-                rxn["reversibility"] = false    
+                rxn["reversibility"] = false
             end
-            
+
             dir = 1.0 # correct the direction 
             if lb < 0 && ub == 0
                 dir = -1.0
             end
             st = A.reaction_stoichiometry(model, rxn["bigg_id"])
-            rxn_mets = [] 
+            rxn_mets = []
             for (k, v) in st
-                push!(rxn_mets, Dict("bigg_id" => k, "coefficient" => dir*v))
+                push!(rxn_mets, Dict("bigg_id" => k, "coefficient" => dir * v))
             end
             rxn["metabolites"] = rxn_mets
         end

@@ -4,7 +4,7 @@ $(TYPEDSIGNATURES)
 Add a biomass function
 """
 function add_biomass!(model)
-    st = JSON.parsefile(joinpath("data", "model", "biomass.json"))
+    st = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "model", "biomass.json"))
     model.reactions["biomass"] = Reaction(
         name = "Biomass reaction",
         stoichiometry = Dict(keys(st) .=> float.(values(st))),

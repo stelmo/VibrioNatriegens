@@ -6,17 +6,14 @@ biomass = Dict()
 
 chebi_lookup = Dict(
     "glycogen" => "glycogen",
-
     "GTP" => "CHEBI:37565", # GTP
     "CTP" => "CHEBI:37563", # CTP
     "UTP" => "CHEBI:46398", # UTP
     "ATP" => "CHEBI:30616", # atp
-
     "dGTP" => "CHEBI:61429", # dGTP
     "dATP" => "CHEBI:61404", # dATP
     "dCTP" => "CHEBI:61481", # dCTP
     "dTTP" => "CHEBI:37568", # dTTP
-
     "K" => "CHEBI:32551", # lysine
     "M" => "CHEBI:57844", # methionine
     "C" => "CHEBI:35235", # cysteine
@@ -37,7 +34,6 @@ chebi_lookup = Dict(
     "F" => "CHEBI:58095", # phenylalanine
     "W" => "CHEBI:57912", # tryptophan
     "P" => "CHEBI:60039", # proline
-
     "tetra" => "CHEBI:30807", # tetradecanoic acid
     "hexa" => "CHEBI:7896", # hexadecanoic acid
     "octa" => "CHEBI:25629", # octadecanoic acid   
@@ -77,10 +73,10 @@ molar_masses["R"] = 174.2017
 molar_masses["H"] = 155.1552
 molar_masses["A"] = 89.0935
 molar_masses["N"] = 132.1184
-molar_masses["D"] = 133.1032 
-molar_masses["C"] = 121.159 
-molar_masses["E"] = 147.1299 
-molar_masses["Q"] = 146.1451 
+molar_masses["D"] = 133.1032
+molar_masses["C"] = 121.159
+molar_masses["E"] = 147.1299
+molar_masses["Q"] = 146.1451
 molar_masses["G"] = 75.0669
 molar_masses["P"] = 115.131
 molar_masses["S"] = 105.093
@@ -93,18 +89,13 @@ molar_masses["hexa"] = 284.484
 molar_masses["octa"] = 256.430
 
 # DNA
-dna_lookup = Dict(
-   'A' => "dATP",
-   'T' => "dTTP",  
-   'G' => "dGTP",  
-   'C' => "dCTP",  
-)
+dna_lookup = Dict('A' => "dATP", 'T' => "dTTP", 'G' => "dGTP", 'C' => "dCTP")
 dna_bases = Dict()
 FASTAReader(open(joinpath("data", "genome", "genome.fasta"))) do reader
     for record in reader
-    for s in sequence(record)
-        dna_bases[s] = get(dna_bases, s, 0) + 1
-    end
+        for s in sequence(record)
+            dna_bases[s] = get(dna_bases, s, 0) + 1
+        end
     end
 end
 dna_total = sum(values(dna_bases))
@@ -125,13 +116,13 @@ plu = Dict(df.Protein .=> df.MeanMoleFraction)
 protein_bases = Dict()
 FASTAReader(open(joinpath("data", "genome", "proteome.fasta"))) do reader
     for record in reader
-    desc = description(record)
-    if occursin("protein_id=", desc)
-        pid = string(first(split(string(last(split(desc, "protein_id="))),"]"))) 
-        for s in sequence(record)
-        protein_bases[s] = get(protein_bases, s, 0) + 1 * get(plu, pid, 0.0)
+        desc = description(record)
+        if occursin("protein_id=", desc)
+            pid = string(first(split(string(last(split(desc, "protein_id="))), "]")))
+            for s in sequence(record)
+                protein_bases[s] = get(protein_bases, s, 0) + 1 * get(plu, pid, 0.0)
+            end
         end
-    end
     end
 end
 
@@ -144,22 +135,17 @@ for (k, v) in protein_bases
 end
 
 # RNA (assume protein and RNA are directly correlated)
-rna_lookup = Dict(
-    'A' => "ATP",
-    'U' => "UTP",  
-    'G' => "GTP",  
-    'C' => "CTP",
-)
+rna_lookup = Dict('A' => "ATP", 'U' => "UTP", 'G' => "GTP", 'C' => "CTP")
 rna_bases = Dict()
 FASTAReader(open(joinpath("data", "genome", "transcriptome.fasta"))) do reader
     for record in reader
-    desc = description(record)
-    if occursin("protein_id=", desc)
-        pid = string(first(split(string(last(split(desc, "protein_id="))),"]"))) 
-        for s in sequence(record)
-        rna_bases[s] = get(rna_bases, s, 0) + 1 * get(plu, pid, 0.0)
+        desc = description(record)
+        if occursin("protein_id=", desc)
+            pid = string(first(split(string(last(split(desc, "protein_id="))), "]")))
+            for s in sequence(record)
+                rna_bases[s] = get(rna_bases, s, 0) + 1 * get(plu, pid, 0.0)
+            end
         end
-    end
     end
 end
 
@@ -181,11 +167,7 @@ fa_c18_1 = 469
 fa_c18_0 = 91
 
 # group this into c14 (Tetradecanoic acid), c16 (Hexadecanoic acid), and c18 (Octadecanoic acid) FAs, ignore saturation
-fa = Dict(
-    "tetra" => fa_c14_0,
-    "hexa" =>  fa_c16_0 + fa_c16_1,
-    "octa" => fa_c18_0 + fa_c18_1,
-)
+fa = Dict("tetra" => fa_c14_0, "hexa" => fa_c16_0 + fa_c16_1, "octa" => fa_c18_0 + fa_c18_1)
 
 for (k, v) in fa
     biomass[chebi_lookup[k]] = -v * lipid * 0.001 # to mmol/gDW

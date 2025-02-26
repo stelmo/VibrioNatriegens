@@ -3,7 +3,7 @@
 function set_default_exchanges!(model)
 
     default_carbon_source = "CHEBI:15903" # glucose
-    
+
     substrates = [
         "CHEBI:15903" # glucose
         "CHEBI:16189" # so4
@@ -13,7 +13,7 @@ function set_default_exchanges!(model)
     ]
 
     bidirs = [
-        "CHEBI:15377" # H2O
+        "CHEBI:15377", # H2O
     ]
 
     for mid in [substrates; bidirs]
@@ -41,7 +41,10 @@ function name_reactions!(model)
             if !isnothing(grrs)
                 ns = String[]
                 for grr in grrs
-                    rs = [VibrioNatriegens.gene_symbol(model, g) for g in grr if !isnothing(VibrioNatriegens.gene_symbol(model, g))]
+                    rs = [
+                        VibrioNatriegens.gene_symbol(model, g) for
+                        g in grr if !isnothing(VibrioNatriegens.gene_symbol(model, g))
+                    ]
                     isempty(rs) && continue
                     u = join(intersect(rs))
                     x = join(filter(!isempty, ([setdiff(r, u) for r in rs])))
@@ -49,7 +52,7 @@ function name_reactions!(model)
                 end
                 rname = isempty(ns) ? nothing : join(unique(ns), "-")
             end
-            
+
         end
 
         model.reactions[rid].name = rname
@@ -83,7 +86,7 @@ function name_reactions!(model)
     model.reactions["18609"].name = "argF"
     model.reactions["33054"].name = "betA"
     model.reactions["45700"].name = "gbcAB"
-    model.reactions["45767"].name = "DoeC"    
+    model.reactions["45767"].name = "DoeC"
     model.reactions["19533"].name = "astB"
     model.reactions["16953"].name = "astC"
     model.reactions["19737"].name = "PuuD"
@@ -94,16 +97,16 @@ function name_reactions!(model)
     model.reactions["15692"].name = "cansdh"
     model.reactions["34118"].name = "nspC"
     model.reactions["13389"].name = "GCDH"
-    model.reactions["21384"].name = "PAL"    
+    model.reactions["21384"].name = "PAL"
     model.reactions["64823"].name = "amidase"
     model.reactions["15449"].name = "HGD"
-    model.reactions["16833"].name = "GSR"  
-    model.reactions["33791"].name = "sucrose hydrolase"  
+    model.reactions["16833"].name = "GSR"
+    model.reactions["33791"].name = "sucrose hydrolase"
     model.reactions["20517"].name = "UDP-N-acetylglucosamine 4-epimerase"
     model.reactions["21036"].name = "acetyl-CoA C-acetyltransferase"
     model.reactions["12921"].name = "5-aminolevulinate synthase"
     model.reactions["54644"].name = "trans-4-hydroxy-L-proline dehydratase"
     model.reactions["21152"].name = "4-hydroxyproline epimerase"
     model.reactions["13316"].name = "sarcosine oxidase"
-    
+
 end

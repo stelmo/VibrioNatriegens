@@ -16,3 +16,7 @@ followup.txt
 vnat_fluxes.json
 quantitative_proteome.csv
 iML1515.json
+cpds_1.json
+cpds_2.json
+
+data/chebi/*

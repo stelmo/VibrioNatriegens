@@ -8,7 +8,7 @@ function add_exchanges!(model)
 
     df = DataFrame(
         CSV.File(
-            joinpath("data", "model", "exchange_metabolites.csv"),
+            joinpath(pkgdir(@__MODULE__), "data", "model", "exchange_metabolites.csv"),
         ),
     )
 
@@ -36,7 +36,7 @@ function add_periplasm_transporters!(model)
     # all extracellular move with diffusion into periplasm
     df = DataFrame(
         CSV.File(
-            joinpath("data", "model", "exchange_metabolites.csv"),
+            joinpath(pkgdir(@__MODULE__), "data", "model", "exchange_metabolites.csv"),
         ),
     )
 
@@ -60,11 +60,9 @@ function add_periplasm_transporters!(model)
 end
 
 function add_membrane_transporters!(model)
-   
+
     df = DataFrame(
-        CSV.File(
-            joinpath("data", "model", "transporters.csv"),
-        ),
+        CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "transporters.csv")),
     )
 
     gs = String[]
@@ -148,11 +146,12 @@ function add_membrane_transporters!(model)
     end
 
     # add default permeases - only reactions that did not get another transporter
-    all_exchange_metabolites =  DataFrame(
-        CSV.File(
-            joinpath("data", "model", "exchange_metabolites.csv"),
-        ),
-    ).CHEBI
+    all_exchange_metabolites =
+        DataFrame(
+            CSV.File(
+                joinpath(pkgdir(@__MODULE__), "data", "model", "exchange_metabolites.csv"),
+            ),
+        ).CHEBI
     # note: Pi, Na, and H will not get a permease here, due to them being involved in the other porters
     missing_transporters = setdiff(all_exchange_metabolites, unique(ms))
     for mid in missing_transporters
@@ -188,7 +187,7 @@ function add_abc!(model, mid, iso, ss)
             lower_bound = 0,
             upper_bound = 1000,
             gene_association = [isoz],
-            transporter= true,
+            transporter = true,
         )
     end
 end
@@ -199,7 +198,7 @@ function add_pts!(model, mid, iso, ss)
         "CHEBI:15903" => "CHEBI:58247", # glucose -> glucose 6 phosphate
         "CHEBI:17992" => "CHEBI:57723", # sucrose -> sucrose 6 phosphate
         "CHEBI:16899" => "CHEBI:61381", # mannitol -> D-mannitol 1-phosphate
-        "CHEBI:28645" => "CHEBI:57634" #  β-D-fructofuranose -> beta-D-fructose 6-phosphate
+        "CHEBI:28645" => "CHEBI:57634", #  β-D-fructofuranose -> beta-D-fructose 6-phosphate
     )
 
     rid = "PTS_$mid"
@@ -219,7 +218,7 @@ function add_pts!(model, mid, iso, ss)
             lower_bound = 0,
             upper_bound = 1000,
             gene_association = [isoz],
-            transporter= true,
+            transporter = true,
         )
     end
 end
@@ -242,7 +241,7 @@ function add_symport!(model, mid1, mid2, iso, ss)
             lower_bound = 0,
             upper_bound = 1000,
             gene_association = [isoz],
-            transporter= true,
+            transporter = true,
         )
     end
 end
@@ -265,7 +264,7 @@ function add_antiport!(model, mid1, mid2, iso, ss)
             lower_bound = 0,
             upper_bound = 1000,
             gene_association = [isoz],
-            transporter= true,
+            transporter = true,
         )
     end
 end
@@ -283,7 +282,7 @@ function add_permease!(model, mid, iso, ss)
             lower_bound = -1000,
             upper_bound = 1000,
             gene_association = [isoz],
-            transporter= true,
+            transporter = true,
         )
     end
 end

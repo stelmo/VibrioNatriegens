@@ -14,7 +14,7 @@ rev_dir(model, rid) = begin
     model.reactions[rid].upper_bound = 0.0
 end
 
-rhea_rxn_dir(rxn, qrt) = begin 
+rhea_rxn_dir(rxn, qrt) = begin
     idx = first(indexin([rxn], qrt))
     isnothing(idx) && error("Reaction not found...")
     idx == 1 && return (-1000, 1000)
@@ -54,29 +54,20 @@ function curate!(model)
     id = "CHEBI:17992" # sucrose
     model.metabolites[id] = Metabolite(
         name = "Sucrose",
-        formula = Dict("C" => 12,"H" => 22,"O" => 11,),
+        formula = Dict("C" => 12, "H" => 22, "O" => 11),
         compartment = "Cytosol",
         charge = 0,
     )
 
     # adjust the formula of [thioredoxin]-dithiol: S1C3N1H5O1 -> S2C6N2H10O2
-    model.metabolites["CHEBI:29950"].formula = Dict(
-        "S" => 2,
-        "C" => 6,
-        "N" => 2,
-        "H" => 10,
-        "O" => 2,
-    )
+    model.metabolites["CHEBI:29950"].formula =
+        Dict("S" => 2, "C" => 6, "N" => 2, "H" => 10, "O" => 2)
 
     # glycogen
     id = "glycogen"
     model.metabolites[id] = Metabolite(
         name = "Glycogen",
-        formula = Dict(
-            "C" => 6.0,
-            "H" => 10.0,
-            "O" => 5.0,
-        ),
+        formula = Dict("C" => 6.0, "H" => 10.0, "O" => 5.0),
         compartment = "Cytosol",
         charge = 0,
     )
@@ -89,43 +80,56 @@ function curate!(model)
     delete!(model.metabolites, "CHEBI:4167") # D-glucose
     delete!(model.metabolites, "CHEBI:61548") # D-glucopyranose 6-phosphate
 
-    model.reactions["38215"].stoichiometry["CHEBI:58247"] = model.reactions["38215"].stoichiometry["CHEBI:61548"] # D-glucopyranose 6-phosphate -> 	β-D-glucose 6-phosphate
+    model.reactions["38215"].stoichiometry["CHEBI:58247"] =
+        model.reactions["38215"].stoichiometry["CHEBI:61548"] # D-glucopyranose 6-phosphate -> 	β-D-glucose 6-phosphate
     delete!(model.reactions["38215"].stoichiometry, "CHEBI:61548")
 
-    model.reactions["15841"].stoichiometry["CHEBI:58247"] = model.reactions["15841"].stoichiometry["CHEBI:61548"] # D-glucopyranose 6-phosphate -> 	β-D-glucose 6-phosphate
+    model.reactions["15841"].stoichiometry["CHEBI:58247"] =
+        model.reactions["15841"].stoichiometry["CHEBI:61548"] # D-glucopyranose 6-phosphate -> 	β-D-glucose 6-phosphate
     delete!(model.reactions["15841"].stoichiometry, "CHEBI:61548")
 
-    model.reactions["17825"].stoichiometry["CHEBI:15903"] = model.reactions["17825"].stoichiometry["CHEBI:4167"] # D-glucose -> beta-D-glucose
+    model.reactions["17825"].stoichiometry["CHEBI:15903"] =
+        model.reactions["17825"].stoichiometry["CHEBI:4167"] # D-glucose -> beta-D-glucose
     delete!(model.reactions["17825"].stoichiometry, "CHEBI:4167")
 
-    model.reactions["17825"].stoichiometry["CHEBI:58247"] = model.reactions["17825"].stoichiometry["CHEBI:61548"] # D-glucopyranose 6-phosphate -> β-D-glucose 6-phosphate
+    model.reactions["17825"].stoichiometry["CHEBI:58247"] =
+        model.reactions["17825"].stoichiometry["CHEBI:61548"] # D-glucopyranose 6-phosphate -> β-D-glucose 6-phosphate
     delete!(model.reactions["17825"].stoichiometry, "CHEBI:61548")
 
-    model.reactions["76650"].stoichiometry["CHEBI:71044"] = model.reactions["76650"].stoichiometry["CHEBI:195329"] # (E) 2,3-didehydroadipoyl-CoA -> 2,3-didehydroadipoyl-CoA
+    model.reactions["76650"].stoichiometry["CHEBI:71044"] =
+        model.reactions["76650"].stoichiometry["CHEBI:195329"] # (E) 2,3-didehydroadipoyl-CoA -> 2,3-didehydroadipoyl-CoA
     delete!(model.reactions["76650"].stoichiometry, "CHEBI:195329")
     delete!(model.metabolites, "CHEBI:195329")
 
     # change directions to match what is found in biocyc - manual thermodynamics leaves much to be desired
-    biocyc = DataFrame(CSV.File(joinpath("data", "annotations", "rhea", "biocyc_rxns.csv")))
+    biocyc = DataFrame(
+        CSV.File(
+            joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "biocyc_rxns.csv"),
+        ),
+    )
     @select!(biocyc, :rheaDir, :metacyc)
     for rid in A.reactions(model)
         qrt = RheaReactions.get_reaction_quartet(parse(Int, rid))
         df = @subset(biocyc, in.(:rheaDir, Ref(qrt)))
         isempty(df) && continue
-        lb, ub = rhea_rxn_dir(df[1,1], qrt)
+        lb, ub = rhea_rxn_dir(df[1, 1], qrt)
         model.reactions[rid].lower_bound = lb
-        model.reactions[rid].upper_bound = ub    
+        model.reactions[rid].upper_bound = ub
     end
 
-    ecocyc = DataFrame(CSV.File(joinpath("data", "annotations", "rhea", "ecocyc_rxns.csv")))
+    ecocyc = DataFrame(
+        CSV.File(
+            joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "ecocyc_rxns.csv"),
+        ),
+    )
     @select!(ecocyc, :rheaDir, :metacyc)
     for rid in A.reactions(model)
         qrt = RheaReactions.get_reaction_quartet(parse(Int, rid))
         df = @subset(ecocyc, in.(:rheaDir, Ref(qrt)))
         isempty(df) && continue
-        lb, ub = rhea_rxn_dir(df[1,1], qrt)
+        lb, ub = rhea_rxn_dir(df[1, 1], qrt)
         model.reactions[rid].lower_bound = lb
-        model.reactions[rid].upper_bound = ub    
+        model.reactions[rid].upper_bound = ub
     end
 
     # change directions manually
@@ -152,7 +156,7 @@ function curate!(model)
     for_dir(model, "27761") # https://biocyc.org/reaction?orgid=ECOLI&id=GCVMULTI-RXN
     for_dir(model, "24796") # histidine biosynthesis blocked, https://biocyc.org/reaction?orgid=META&id=GLUTAMIDOTRANS-RXN (incorrect ref in rhea wrt direction)    
     rev_dir(model, "17740") # F, Y, W biosynthesis blocked, https://biocyc.org/reaction?orgid=META&id=SHIKIMATE-5-DEHYDROGENASE-RXN (rhea has both directions listed)
-    
+
     # add custom reactions (needs to happen after direction setting)
     # add Glycogen synthase (ADPGlc)
     model.reactions["glycogen_synthase"] = Reaction(
@@ -166,7 +170,9 @@ function curate!(model)
         objective_coefficient = 0.0,
         lower_bound = 0,
         upper_bound = 1000,
-        gene_association = [X.Isozyme(; gene_product_stoichiometry = Dict("WP_020332873.1" .=> 1.0))],
+        gene_association = [
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020332873.1" .=> 1.0)),
+        ],
     )
 
     model.reactions["glycogen_phosphorylase"] = Reaction(
@@ -179,7 +185,9 @@ function curate!(model)
         objective_coefficient = 0.0,
         lower_bound = 0,
         upper_bound = 1000,
-        gene_association = [X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333475.1" .=> 1.0))],
+        gene_association = [
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333475.1" .=> 1.0)),
+        ],
     )
 end
 
