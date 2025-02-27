@@ -9,6 +9,7 @@ Manifest.toml
 *.docx
 *.pdf
 
+vnat.sbml
 reactions-model.csv
 metabolites-model.csv
 vnat.json
