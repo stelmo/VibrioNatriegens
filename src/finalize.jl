@@ -110,3 +110,59 @@ function name_reactions!(model)
     model.reactions["13316"].name = "sarcosine oxidase"
 
 end
+
+function rename_gene_ids!(model) # from protein id to locus tag
+    df = DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "genome", "locustag_proteinid.csv")))
+    lu = Dict(df.ProteinID .=> df.LocusTag)
+    ks = collect(keys(model.genes))
+    for k in ks
+        g = deepcopy(model.genes[k])
+        model.genes[get(lu, k, "Missing")] = g
+        delete!(model.genes, k)
+    end
+
+    for k in keys(model.reactions)
+        isnothing(model.reactions[k].gene_association) && continue
+        for grr in model.reactions[k].gene_association
+            kks = collect(keys(grr.gene_product_stoichiometry))
+            for kk in kks
+                grr.gene_product_stoichiometry[get(lu, kk, "Missing")] = grr.gene_product_stoichiometry[kk]
+                delete!(grr.gene_product_stoichiometry, kk)
+            end
+        end
+    end
+end
+
+metabolite_renamer(s) = occursin("CHEBI:", s) ? replace(s, "CHEBI:" => "") : replace(s, ":" => "_") # fallback just replaces :
+
+function rename_metabolite_ids!(model) # from protein id to locus tag
+    ks = collect(keys(model.metabolites))
+        
+    for k in ks
+        occursin(":", k) || continue # not all ids have : in them
+        m = deepcopy(model.metabolites[k])
+        model.metabolites[metabolite_renamer(k)] = m
+        delete!(model.metabolites, k)
+    end
+
+    for k in keys(model.reactions)
+        st = model.reactions[k].stoichiometry
+        kks = collect(keys(st))
+        for kk in kks
+            occursin(":", kk) || continue # not all ids have : in them
+            st[metabolite_renamer(kk)] = st[kk]
+            delete!(st, kk)
+        end
+    end
+end
+
+function rename_reaction_ids!(model) # from protein id to locus tag
+    ks = collect(keys(model.reactions))
+    for k in ks
+        if occursin("CHEBI:", k) # not all rids have chebi in them, and they get deleted later on if this control is true
+            r = deepcopy(model.reactions[k])
+            model.reactions[metabolite_renamer(k)] = r
+            delete!(model.reactions, k)
+        end
+    end
+end

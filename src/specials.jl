@@ -4,7 +4,7 @@ function add_electron_transport_chain!(model)
     gs = String[]
     ms = String[]
 
-    model.reactions["R-nfn"] = Reaction(; # this is speculative
+    model.reactions["nfn"] = Reaction(; # this is speculative
         name = "NAD(P)+ transhydrogenase (ferredoxin)",
         stoichiometry = Dict(
             "CHEBI:33738" => -2.0, # Reduced ferredoxin
@@ -28,10 +28,10 @@ function add_electron_transport_chain!(model)
             "RHEA" => ["RHEA:47000"],
         ),
     )
-    append!(gs, A.reaction_gene_association_dnf(model, "R-nfn")...)
-    append!(ms, keys(A.reaction_stoichiometry(model, "R-nfn")))
+    append!(gs, A.reaction_gene_association_dnf(model, "nfn")...)
+    append!(ms, keys(A.reaction_stoichiometry(model, "nfn")))
 
-    model.reactions["R-H-ATPsynthase"] = Reaction(;
+    model.reactions["H_ATPsynthase"] = Reaction(;
         name = "F-type H+-transporting ATPase",
         stoichiometry = Dict(
             "CHEBI:30616" => 1, # atp
@@ -77,17 +77,17 @@ function add_electron_transport_chain!(model)
             "EC" => ["7.1.2.2"],
         ),
     )
-    append!(gs, A.reaction_gene_association_dnf(model, "R-H-ATPsynthase")...)
-    append!(ms, keys(A.reaction_stoichiometry(model, "R-H-ATPsynthase")))
+    append!(gs, A.reaction_gene_association_dnf(model, "H_ATPsynthase")...)
+    append!(ms, keys(A.reaction_stoichiometry(model, "H_ATPsynthase")))
 
-    model.reactions["R-cyt-bc1"] = Reaction(;
+    model.reactions["cyt_bc1"] = Reaction(;
         name = "Cytochrome c oxidase",
         stoichiometry = Dict(
             "CHEBI:24646" => -1.0, # a ubiquinol
-            "RHEA-COMP:14399" => -2.0, # Fe(III)-[cytochrome c]
+            "RHEA_COMP:14399" => -2.0, # Fe(III)-[cytochrome c]
             "CHEBI:15378_p" => 2.0,  # h+ out
             "CHEBI:132124" => 1.0, # a ubiquinone
-            "RHEA-COMP:10350" => 2.0, # Fe(II)-[cytochrome c]
+            "RHEA_COMP:10350" => 2.0, # Fe(II)-[cytochrome c]
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
@@ -102,16 +102,16 @@ function add_electron_transport_chain!(model)
         ],
         annotations = Dict("EC" => ["7.1.1.8"], "RHEA" => ["RHEA:11484"]),
     )
-    append!(gs, A.reaction_gene_association_dnf(model, "R-cyt-bc1")...)
-    append!(ms, keys(A.reaction_stoichiometry(model, "R-cyt-bc1")))
+    append!(gs, A.reaction_gene_association_dnf(model, "cyt_bc1")...)
+    append!(ms, keys(A.reaction_stoichiometry(model, "cyt_bc1")))
 
-    model.reactions["R-cyt-c"] = Reaction(;
+    model.reactions["cyt_c"] = Reaction(;
         name = "Cytochrome c oxidase",
         stoichiometry = Dict(
             "CHEBI:15379" => -1, # o2
-            "RHEA-COMP:10350" => -4.0, # Fe(II)-[cytochrome c]
+            "RHEA_COMP:10350" => -4.0, # Fe(II)-[cytochrome c]
             "CHEBI:15378" => -8.0, # H+
-            "RHEA-COMP:14399" => 4.0, # Fe(III)-[cytochrome c]
+            "RHEA_COMP:14399" => 4.0, # Fe(III)-[cytochrome c]
             "CHEBI:15377" => 2.0, # h2o
             "CHEBI:15378_p" => 4.0, # H+
         ),
@@ -136,16 +136,16 @@ function add_electron_transport_chain!(model)
         ],
         annotations = Dict("EC" => ["7.1.1.9"], "RHEA" => ["RHEA:11436"]),
     )
-    append!(gs, A.reaction_gene_association_dnf(model, "R-cyt-c")...)
-    append!(ms, keys(A.reaction_stoichiometry(model, "R-cyt-c")))
+    append!(gs, A.reaction_gene_association_dnf(model, "cyt_c")...)
+    append!(ms, keys(A.reaction_stoichiometry(model, "cyt_c")))
 
-    model.reactions["R-cyt-c-cbb3"] = Reaction(;
+    model.reactions["cyt_c_cbb3"] = Reaction(;
         name = "Cytochrome c oxidase, cbb3-type",
         stoichiometry = Dict(
             "CHEBI:15379" => -1, # o2
-            "RHEA-COMP:10350" => -4.0, # Fe(II)-[cytochrome c]
+            "RHEA_COMP:10350" => -4.0, # Fe(II)-[cytochrome c]
             "CHEBI:15378" => -8.0, # H+
-            "RHEA-COMP:14399" => 4.0, # Fe(III)-[cytochrome c]
+            "RHEA_COMP:14399" => 4.0, # Fe(III)-[cytochrome c]
             "CHEBI:15377" => 2.0, # h2o
             "CHEBI:15378_p" => 4.0, # H+
         ),
@@ -163,10 +163,10 @@ function add_electron_transport_chain!(model)
         ],
         annotations = Dict("RHEA" => ["RHEA:11436"], "EC" => ["7.1.1.9"]),
     )
-    append!(gs, A.reaction_gene_association_dnf(model, "R-cyt-c-cbb3")...)
-    append!(ms, keys(A.reaction_stoichiometry(model, "R-cyt-c-cbb3")))
+    append!(gs, A.reaction_gene_association_dnf(model, "cyt_c_cbb3")...)
+    append!(ms, keys(A.reaction_stoichiometry(model, "cyt_c_cbb3")))
 
-    model.reactions["R-cyt-bd"] = Reaction(;
+    model.reactions["cyt_bd"] = Reaction(;
         name = "Cytochrome oxidase BD-I",
         stoichiometry = Dict(
             "CHEBI:15377" => 2.0, # h2o
@@ -189,10 +189,10 @@ function add_electron_transport_chain!(model)
         ],
         annotations = Dict("RHEA" => ["RHEA:40527"], "EC" => ["7.1.1.7"]),
     )
-    append!(gs, A.reaction_gene_association_dnf(model, "R-cyt-bd")...)
-    append!(ms, keys(A.reaction_stoichiometry(model, "R-cyt-bd")))
+    append!(gs, A.reaction_gene_association_dnf(model, "cyt_bd")...)
+    append!(ms, keys(A.reaction_stoichiometry(model, "cyt_bd")))
 
-    model.reactions["R-cyt-bo"] = Reaction(;
+    model.reactions["cyt_bo"] = Reaction(;
         name = "Cytochrome oxidase bo3",
         stoichiometry = Dict(
             "CHEBI:24646" => -2.0, # a ubiquinol
@@ -216,10 +216,10 @@ function add_electron_transport_chain!(model)
         ],
         annotations = Dict("EC" => ["7.1.1.3"], "RHEA" => ["RHEA:30251"]),
     )
-    append!(gs, A.reaction_gene_association_dnf(model, "R-cyt-bo")...)
-    append!(ms, keys(A.reaction_stoichiometry(model, "R-cyt-bo")))
+    append!(gs, A.reaction_gene_association_dnf(model, "cyt_bo")...)
+    append!(ms, keys(A.reaction_stoichiometry(model, "cyt_bo")))
 
-    model.reactions["R-pnt"] = Reaction(;
+    model.reactions["pnt"] = Reaction(;
         name = "NADPH:NAD+ oxidoreductase H translocase",
         stoichiometry = Dict(
             "CHEBI:57540" => -1.0, # NAD
@@ -247,8 +247,8 @@ function add_electron_transport_chain!(model)
             "RHEA" => ["RHEA:47992"],
         ),
     )
-    append!(gs, A.reaction_gene_association_dnf(model, "R-pnt")...)
-    append!(ms, keys(A.reaction_stoichiometry(model, "R-pnt")))
+    append!(gs, A.reaction_gene_association_dnf(model, "pnt")...)
+    append!(ms, keys(A.reaction_stoichiometry(model, "pnt")))
 
     add_genes!(model, gs)
     # no need to add metabolites, because they should all already be in the model
@@ -259,7 +259,7 @@ function add_salt_transducers!(model)
     gs = String[]
     ms = String[]
 
-    model.reactions["R-Na-ATPsynthase"] = Reaction(;
+    model.reactions["Na_ATPsynthase"] = Reaction(;
         name = "F-type Na+-transporting ATPase",
         stoichiometry = Dict(
             "CHEBI:30616" => 1, # atp
@@ -307,10 +307,10 @@ function add_salt_transducers!(model)
             "RHEA" => ["RHEA:58156"],
         ),
     )
-    append!(gs, A.reaction_gene_association_dnf(model, "R-Na-ATPsynthase")...)
-    append!(ms, keys(A.reaction_stoichiometry(model, "R-Na-ATPsynthase")))
+    append!(gs, A.reaction_gene_association_dnf(model, "Na_ATPsynthase")...)
+    append!(ms, keys(A.reaction_stoichiometry(model, "Na_ATPsynthase")))
 
-    model.reactions["R-oad"] = Reaction(;
+    model.reactions["oad"] = Reaction(;
         name = "oxaloacetate decarboxylase (Na(+) extruding)",
         stoichiometry = Dict(
             "CHEBI:16452" => -1.0, # oxaloacetate
@@ -337,11 +337,11 @@ function add_salt_transducers!(model)
             "EC" => ["7.2.4.2"],
         ),
     )
-    append!(gs, A.reaction_gene_association_dnf(model, "R-oad")...)
-    append!(ms, keys(A.reaction_stoichiometry(model, "R-oad")))
+    append!(gs, A.reaction_gene_association_dnf(model, "oad")...)
+    append!(ms, keys(A.reaction_stoichiometry(model, "oad")))
 
 
-    model.reactions["R-nqr"] = Reaction(; # like complex 1 but for salt, assume also pumps 4 out
+    model.reactions["nqr"] = Reaction(; # like complex 1 but for salt, assume also pumps 4 out
         name = "Na+-transporting NADH:ubiquinone oxidoreductase",
         stoichiometry = Dict(
             "CHEBI:29101_p" => 4.0, # Na+ (n?)
@@ -375,10 +375,10 @@ function add_salt_transducers!(model)
             "EXPASY" => ["https://enzyme.expasy.org/EC/7.2.1.1"],
         ),
     )
-    append!(gs, A.reaction_gene_association_dnf(model, "R-nqr")...)
-    append!(ms, keys(A.reaction_stoichiometry(model, "R-nqr")))
+    append!(gs, A.reaction_gene_association_dnf(model, "nqr")...)
+    append!(ms, keys(A.reaction_stoichiometry(model, "nqr")))
 
-    model.reactions["R-rnf"] = Reaction(;
+    model.reactions["rnf"] = Reaction(;
         name = "H+/Na+-translocating ferredoxin:NAD+ oxidoreductase",
         stoichiometry = Dict(
             "CHEBI:33738" => -2, # Reduced ferredoxin
@@ -421,8 +421,8 @@ function add_salt_transducers!(model)
             "EXPASY" => ["https://enzyme.expasy.org/EC/7.2.1.2"],
         ),
     )
-    append!(gs, A.reaction_gene_association_dnf(model, "R-rnf")...)
-    append!(ms, keys(A.reaction_stoichiometry(model, "R-rnf")))
+    append!(gs, A.reaction_gene_association_dnf(model, "rnf")...)
+    append!(ms, keys(A.reaction_stoichiometry(model, "rnf")))
 
     add_genes!(model, gs)
     # no need to add metabolites, because they should all already be in the model

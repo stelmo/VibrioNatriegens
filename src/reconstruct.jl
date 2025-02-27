@@ -23,22 +23,27 @@ function build_model()
 
     model = Model()
 
-    VibrioNatriegens.extend_model!(model, ghomos)
-    VibrioNatriegens.extend_model!(model, gheteros)
-    VibrioNatriegens.gapfill!(model)
-    VibrioNatriegens.curate!(model) # needs to happen here, as metabolites get added that are necessary later
+    extend_model!(model, ghomos)
+    extend_model!(model, gheteros)
+    gapfill!(model)
+    curate!(model) # needs to happen here, as metabolites get added that are necessary later
 
-    VibrioNatriegens.add_exchanges!(model)
-    VibrioNatriegens.add_periplasm_transporters!(model)
-    VibrioNatriegens.add_membrane_transporters!(model)
-    VibrioNatriegens.add_electron_transport_chain!(model)
-    VibrioNatriegens.add_salt_transducers!(model)
+    add_exchanges!(model)
+    add_periplasm_transporters!(model)
+    add_membrane_transporters!(model)
+    add_electron_transport_chain!(model)
+    add_salt_transducers!(model)
 
-    VibrioNatriegens.add_atpm!(model)
-    VibrioNatriegens.add_biomass!(model)
+    add_atpm!(model)
+    add_biomass!(model)
 
-    VibrioNatriegens.set_default_exchanges!(model)
-    VibrioNatriegens.name_reactions!(model)
+    set_default_exchanges!(model)
+    name_reactions!(model)
+
+    # rename to conform with SBML model rules
+    rename_gene_ids!(model)
+    rename_metabolite_ids!(model)
+    rename_reaction_ids!(model)
 
     model
 end

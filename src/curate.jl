@@ -35,7 +35,7 @@ function curate!(model)
         charge = 1,
     )
 
-    id = "RHEA-COMP:14399" # Fe(III)-[cytochrome c]
+    id = "RHEA_COMP:14399" # Fe(III)-[cytochrome c]
     model.metabolites[id] = Metabolite(
         name = "Fe(III)-[cytochrome c]",
         formula = Dict("Fe" => 1),
@@ -43,7 +43,7 @@ function curate!(model)
         charge = 3,
     )
 
-    id = "RHEA-COMP:10350" # Fe(II)-[cytochrome c]
+    id = "RHEA_COMP:10350" # Fe(II)-[cytochrome c]
     model.metabolites[id] = Metabolite(
         name = "Fe(II)-[cytochrome c]",
         formula = Dict("Fe" => 1),
