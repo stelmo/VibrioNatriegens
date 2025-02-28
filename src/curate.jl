@@ -190,5 +190,6 @@ function curate!(model)
             X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333475.1" .=> 1.0)),
         ],
     )
+    add_genes!(model, ["WP_020333475.1", "WP_020332873.1"])
 end
 

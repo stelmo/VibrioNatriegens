@@ -56,6 +56,7 @@ Base.@kwdef mutable struct Gene
     name::A.Maybe{String} = nothing
     symbol::A.Maybe{String} = nothing
     molarmass::A.Maybe{Float64} = nothing
+    sequence::A.Maybe{String} = nothing
     annotations::A.Annotations = A.Annotations()
     notes::A.Notes = A.Notes()
 end

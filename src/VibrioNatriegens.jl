@@ -7,6 +7,7 @@ import COBREXA as X
 using DocStringExtensions
 import SparseArrays as S
 using JSON
+using FASTX
 
 include("reconstruct_utils.jl")
 include("model.jl")
