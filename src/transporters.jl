@@ -167,7 +167,9 @@ end
 
 function add_abc!(model, mid, iso, ss)
     rid = "ABC_$mid"
-    isoz = isnothing(iso) ? nothing : X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
+    isoz =
+        isnothing(iso) ? nothing :
+        X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
         isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
     else
@@ -202,7 +204,9 @@ function add_pts!(model, mid, iso, ss)
     )
 
     rid = "PTS_$mid"
-    isoz = isnothing(iso) ? nothing : X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
+    isoz =
+        isnothing(iso) ? nothing :
+        X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
         isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
     else
@@ -225,7 +229,9 @@ end
 
 function add_symport!(model, mid1, mid2, iso, ss)
     rid = "SYM_$(mid1)_$mid2"
-    isoz = isnothing(iso) ? nothing : X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
+    isoz =
+        isnothing(iso) ? nothing :
+        X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
         isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
     else
@@ -248,7 +254,9 @@ end
 
 function add_antiport!(model, mid1, mid2, iso, ss)
     rid = "ANTI_$(mid1)_$mid2"
-    isoz = isnothing(iso) ? nothing : X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
+    isoz =
+        isnothing(iso) ? nothing :
+        X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
         isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
     else
@@ -271,7 +279,9 @@ end
 
 function add_permease!(model, mid, iso, ss)
     rid = "PERM_$mid"
-    isoz = isnothing(iso) ? nothing : X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
+    isoz =
+        isnothing(iso) ? nothing :
+        X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
         isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
     else

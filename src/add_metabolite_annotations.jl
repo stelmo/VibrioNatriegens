@@ -1,82 +1,38 @@
 function add_metabolite_annotations!(model)
 
-    names_df = DataFrame(
+    met_df = DataFrame(
         CSV.File(
             joinpath(
-                pkgdir(@__MODULE__),
+                # pkgdir(@__MODULE__),
                 "data",
-                "chebi",
-                "names.tsv",
+                "annotations",
+                "reduced",
+                "metabolite_annotations.csv",
             ),
         ),
-    )
-    @subset!(names_df, :LANGUAGE .== "en")
-    names_dict = Dict(
-        "CHEBI:"*string(first(gdf.COMPOUND_ID)) =>
-            unique(gdf.NAME)
-         for gdf in groupby(names_df, :COMPOUND_ID)
     )
 
-    inchi_df = DataFrame(
-        CSV.File(
-            joinpath(
-                pkgdir(@__MODULE__),
-                "data",
-                "chebi",
-                "chebiId_inchi.tsv",
-            ),
-        ),
-    )
-    inchi_dict = Dict(zip("CHEBI:".*string.(inchi_df.CHEBI_ID), inchi_df.InChI))
-
-    chemical_df = DataFrame(
-        CSV.File(
-            joinpath(
-                pkgdir(@__MODULE__),
-                "data",
-                "chebi",
-                "chemical_data.tsv",
-            ),
-        ),
-    )
-    @subset!(chemical_df, :SOURCE .== "ChEBI", :TYPE .== "MASS")
-    chemical_dict = Dict(
-        "CHEBI:"*string(first(gdf.COMPOUND_ID)) => parse(Float64, first(gdf.CHEMICAL_DATA))
-         for gdf in groupby(chemical_df, :COMPOUND_ID)
+    met_dict = Dict(
+        string(first(gdf.MetaboliteID)) => Dict(
+            k => String(string(v)) for
+            (k, v) in zip(labels(gdf), gdf[1, :]) if !ismissing(v)
+        ) for gdf in groupby(met_df, :MetaboliteID)
     )
 
-    accession_df = DataFrame(
-        CSV.File(
-            joinpath(
-                pkgdir(@__MODULE__),
-                "data",
-                "chebi",
-                "database_accession.tsv",
-            ),
-        ),
-    )
-    kegg_compound = Dict(
-        "CHEBI:"*string(first(gdf.COMPOUND_ID)) => gdf.ACCESSION_NUMBER
-        for gdf in groupby(@subset(accession_df, :TYPE .== "KEGG COMPOUND accession"), :COMPOUND_ID)
-    )
- 
     for mid in A.metabolites(model)
+        _d = get(met_dict, mid, Dict())
         m = model.metabolites[mid] # name, charge, formula, compartment already added
-        m.molarmass = get(chemical_dict, mid, nothing)
+        m.molarmass = parse(Float64, get(_d, "MolarMass", "0"))
         m.annotations = Dict(
-            "Names" => get(names_dict, mid, ["",]),
-            "InChI" => [get(inchi_dict, mid, ""),],
-            "KEGG" => get(kegg_compound, mid, ["",]),
+            "Names" => string.(split(get(_d, "Names", ""), "#")),
+            "InChI" => [get(_d, "InChI", ""),],
+            "KEGG" => string.(split(get(_d, "KeGG", ""),"#")),
         )
     end
 
-
     model.metabolites["glycogen"].molarmass = 162.1406
-    model.metabolites["glycogen"].annotations = Dict(
-        "Names" => ["glycogen",],
-        "InChI" => ["",],
-        "KEGG" => ["C00182",],
-    )
+    model.metabolites["glycogen"].annotations =
+        Dict("Names" => ["glycogen"], "InChI" => [""], "KEGG" => ["C00182"])
 
 end
 

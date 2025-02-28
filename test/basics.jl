@@ -72,6 +72,6 @@ end
         btot = v * model.metabolites[k].molarmass
     end
 
-    
+
     @test isapprox(btot, 1.0, atol = 1e-3)
 end

@@ -112,7 +112,9 @@ function name_reactions!(model)
 end
 
 function rename_gene_ids!(model) # from protein id to locus tag
-    df = DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "genome", "locustag_proteinid.csv")))
+    df = DataFrame(
+        CSV.File(joinpath(pkgdir(@__MODULE__), "data", "genome", "locustag_proteinid.csv")),
+    )
     lu = Dict(df.ProteinID .=> df.LocusTag)
     ks = collect(keys(model.genes))
     for k in ks
@@ -133,11 +135,12 @@ function rename_gene_ids!(model) # from protein id to locus tag
     end
 end
 
-metabolite_renamer(s) = occursin("CHEBI:", s) ? replace(s, "CHEBI:" => "") : replace(s, ":" => "_") # fallback just replaces :
+metabolite_renamer(s) =
+    occursin("CHEBI:", s) ? replace(s, "CHEBI:" => "") : replace(s, ":" => "_") # fallback just replaces :
 
 function rename_metabolite_ids!(model) # from protein id to locus tag
     ks = collect(keys(model.metabolites))
-        
+
     for k in ks
         occursin(":", k) || continue # not all ids have : in them
         m = deepcopy(model.metabolites[k])

@@ -32,9 +32,9 @@ function extend_model!(model, dfs)
             grr = String.(df.Protein[:])
             stoich = Int.(df.Stoichiometry[:])
             append!(gs, grr)
-            iso = X.Isozyme(; gene_product_stoichiometry = Dict(grr .=> stoich))    
+            iso = X.Isozyme(; gene_product_stoichiometry = Dict(grr .=> stoich))
         end
- 
+
         if haskey(model.reactions, string(rid)) # isozyme
 
             push!(model.reactions[string(rid)].gene_association, iso)
