@@ -3,7 +3,7 @@ function add_metabolite_annotations!(model)
     met_df = DataFrame(
         CSV.File(
             joinpath(
-                # pkgdir(@__MODULE__),
+                pkgdir(@__MODULE__),
                 "data",
                 "annotations",
                 "reduced",
