@@ -70,6 +70,14 @@ function add_metabolite_annotations!(model)
         )
     end
 
+
+    model.metabolites["glycogen"].molarmass = 162.1406
+    model.metabolites["glycogen"].annotations = Dict(
+        "Names" => ["glycogen",],
+        "InChI" => ["",],
+        "KEGG" => ["C00182",],
+    )
+
 end
 
 function fix_noncytosolic_metabolite_annotations!(model)

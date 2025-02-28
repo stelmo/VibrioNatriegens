@@ -69,6 +69,7 @@ function curate!(model)
         name = "Glycogen",
         formula = Dict("C" => 6.0, "H" => 10.0, "O" => 5.0),
         compartment = "Cytosol",
+        molarmass = 162.1406,
         charge = 0,
     )
 
