@@ -35,6 +35,7 @@ function add_gene_annotations!(model)
             "Orientation" => [genes_dict[gid]["Orientation"]],
             "ProteinID" => [genes_dict[gid]["ProteinAccession"]],
             "GeneID" => [genes_dict[gid]["GeneID"]],
+            "Symbol" => [get(genes_dict[gid], "Symbol", "")],
         )
     end
 
