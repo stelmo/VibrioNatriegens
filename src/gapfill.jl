@@ -32,7 +32,7 @@ function gapfill!(model)
     n = length(rhea_rids)
     df = DataFrame(
         RHEA_ID = rhea_rids,
-        Protein = fill("Missing", n),
+        Protein = fill(nothing, n),
         Stoichiometry = fill(1),
         Subunit = fill("A", n),
         DeltaG = fill(nothing, n),

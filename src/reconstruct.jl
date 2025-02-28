@@ -28,15 +28,20 @@ function build_model()
     gapfill!(model)
     curate!(model) # needs to happen here, as metabolites get added that are necessary later
 
+    # these are all manually added reactions
     add_exchanges!(model)
     add_periplasm_transporters!(model)
     add_membrane_transporters!(model)
     add_electron_transport_chain!(model)
     add_salt_transducers!(model)
-
     add_atpm!(model)
     add_biomass!(model)
 
+    add_gene_annotations!(model)
+    add_metabolite_annotations!(model)
+    add_reaction_annotations!(model)
+
+    fix_noncytosolic_metabolite_annotations!(model)
     set_default_exchanges!(model)
     name_reactions!(model)
 

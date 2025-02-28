@@ -156,7 +156,7 @@ function add_membrane_transporters!(model)
     missing_transporters = setdiff(all_exchange_metabolites, unique(ms))
     for mid in missing_transporters
         if mid in A.metabolites(model)
-            add_permease!(model, mid, ["Missing"], [1.0])
+            add_permease!(model, mid, nothing, [1.0])
         end
     end
 
@@ -167,9 +167,9 @@ end
 
 function add_abc!(model, mid, iso, ss)
     rid = "ABC_$mid"
-    isoz = X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
+    isoz = isnothing(iso) ? nothing : X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
-        push!(model.reactions[rid].gene_association, isoz)
+        isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
     else
         st = Dict(
             "CHEBI:30616" => -1, # atp
@@ -186,7 +186,7 @@ function add_abc!(model, mid, iso, ss)
             objective_coefficient = 0.0,
             lower_bound = 0,
             upper_bound = 1000,
-            gene_association = [isoz],
+            gene_association = isnothing(isoz) ? nothing : [isoz],
             transporter = true,
         )
     end
@@ -202,9 +202,9 @@ function add_pts!(model, mid, iso, ss)
     )
 
     rid = "PTS_$mid"
-    isoz = X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
+    isoz = isnothing(iso) ? nothing : X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
-        push!(model.reactions[rid].gene_association, isoz)
+        isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
     else
         model.reactions[rid] = Reaction(
             name = "Transport $(A.metabolite_name(model, String(mid))) PTS",
@@ -217,7 +217,7 @@ function add_pts!(model, mid, iso, ss)
             objective_coefficient = 0.0,
             lower_bound = 0,
             upper_bound = 1000,
-            gene_association = [isoz],
+            gene_association = isnothing(isoz) ? nothing : [isoz],
             transporter = true,
         )
     end
@@ -225,9 +225,9 @@ end
 
 function add_symport!(model, mid1, mid2, iso, ss)
     rid = "SYM_$(mid1)_$mid2"
-    isoz = X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
+    isoz = isnothing(iso) ? nothing : X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
-        push!(model.reactions[rid].gene_association, isoz)
+        isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
     else
         model.reactions[rid] = Reaction(
             name = "Symport $(A.metabolite_name(model, String(mid1)))::$(A.metabolite_name(model, String(mid2)))",
@@ -240,7 +240,7 @@ function add_symport!(model, mid1, mid2, iso, ss)
             objective_coefficient = 0.0,
             lower_bound = 0,
             upper_bound = 1000,
-            gene_association = [isoz],
+            gene_association = isnothing(isoz) ? nothing : [isoz],
             transporter = true,
         )
     end
@@ -248,9 +248,9 @@ end
 
 function add_antiport!(model, mid1, mid2, iso, ss)
     rid = "ANTI_$(mid1)_$mid2"
-    isoz = X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
+    isoz = isnothing(iso) ? nothing : X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
-        push!(model.reactions[rid].gene_association, isoz)
+        isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
     else
         model.reactions[rid] = Reaction(
             name = "Antiport $(A.metabolite_name(model, String(mid1)))::$(A.metabolite_name(model, String(mid2)))",
@@ -263,7 +263,7 @@ function add_antiport!(model, mid1, mid2, iso, ss)
             objective_coefficient = 0.0,
             lower_bound = 0,
             upper_bound = 1000,
-            gene_association = [isoz],
+            gene_association = isnothing(isoz) ? nothing : [isoz],
             transporter = true,
         )
     end
@@ -271,9 +271,9 @@ end
 
 function add_permease!(model, mid, iso, ss)
     rid = "PERM_$mid"
-    isoz = X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
+    isoz = isnothing(iso) ? nothing : X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
     if haskey(model.reactions, rid)
-        push!(model.reactions[rid].gene_association, isoz)
+        isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
     else
         model.reactions[rid] = Reaction(
             name = "Permease $(A.metabolite_name(model, String(mid)))",
@@ -281,7 +281,7 @@ function add_permease!(model, mid, iso, ss)
             objective_coefficient = 0.0,
             lower_bound = -1000,
             upper_bound = 1000,
-            gene_association = [isoz],
+            gene_association = isnothing(isoz) ? nothing : [isoz],
             transporter = true,
         )
     end

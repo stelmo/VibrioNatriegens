@@ -117,7 +117,7 @@ function rename_gene_ids!(model) # from protein id to locus tag
     ks = collect(keys(model.genes))
     for k in ks
         g = deepcopy(model.genes[k])
-        model.genes[get(lu, k, "Missing")] = g
+        model.genes[lu[k]] = g
         delete!(model.genes, k)
     end
 
@@ -126,7 +126,7 @@ function rename_gene_ids!(model) # from protein id to locus tag
         for grr in model.reactions[k].gene_association
             kks = collect(keys(grr.gene_product_stoichiometry))
             for kk in kks
-                grr.gene_product_stoichiometry[get(lu, kk, "Missing")] = grr.gene_product_stoichiometry[kk]
+                grr.gene_product_stoichiometry[lu[kk]] = grr.gene_product_stoichiometry[kk]
                 delete!(grr.gene_product_stoichiometry, kk)
             end
         end

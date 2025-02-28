@@ -8,8 +8,11 @@ using DocStringExtensions
 import SparseArrays as S
 using JSON
 
-include("utils.jl")
+include("reconstruct_utils.jl")
 include("model.jl")
+include("add_gene_annotations.jl")
+include("add_metabolite_annotations.jl")
+include("add_reaction_annotations.jl")
 include("print.jl")
 
 include("reconstruct.jl")
@@ -19,5 +22,6 @@ include("transporters.jl")
 include("specials.jl")
 include("biomass.jl")
 include("finalize.jl")
+
 
 end

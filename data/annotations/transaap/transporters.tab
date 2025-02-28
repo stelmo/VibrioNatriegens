@@ -1,651 +1,653 @@
 ORF GenomeID    FID TransporterFamily   TransporterSubfamily    Substrate   AutoAnnotation  IsCurated
-WRS49623.1	vn10843		vn10843	AAE		539	aspartate:alanine antiporter		2.A.81		X
-WRS47215.1	vn10843		vn10843	ABC	binding	570	heme		3.A.1		X
-WRS47231.1	vn10843		vn10843	ABC	binding protein	571	spermidine/putrescine		3.A.1		X
-WRS47232.1	vn10843		vn10843	ABC	binding protein	572	spermidine/putrescine		3.A.1		X
-WRS47233.1	vn10843		vn10843	ABC	membrane	573	spermidine/putrescine		3.A.1		X
-WRS47234.1	vn10843		vn10843	ABC	membrane	574	spermidine/putrescine		3.A.1		X
-WRS47235.1	vn10843		vn10843	ABC	binding	575	polyamine		3.A.1		X
-WRS47265.1	vn10843		vn10843	ABC	binding	576	heme		3.A.1		X
-WRS47276.1	vn10843		vn10843	ABC	binding	577	lipid A		3.A.1		X
-WRS47286.1	vn10843		vn10843	ABC	binding protein	578	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
-WRS47288.1	vn10843		vn10843	ABC	membrane	579	amino acid		3.A.1		X
-WRS47289.1	vn10843		vn10843	ABC	membrane	580	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
-WRS47290.1	vn10843		vn10843	ABC	binding	581	phosphate		3.A.1		X
-WRS47338.1	vn10843		vn10843	ABC	membrane	584	multidrug		3.A.1		X
-WRS47339.1	vn10843		vn10843	ABC	membrane	585	multidrug		3.A.1		X
-WRS47344.1	vn10843		vn10843	ABC	binding	586	glycine betaine		3.A.1		X
-WRS47345.1	vn10843		vn10843	ABC	membrane	587	glycine betaine/L-proline		3.A.1		X
-WRS47346.1	vn10843		vn10843	ABC	binding	588	glycine betaine		3.A.1		X
-WRS47396.1	vn10843		vn10843	ABC	binding	590	phosphate		3.A.1		X
-WRS47397.1	vn10843		vn10843	ABC	membrane	591	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
-WRS47398.1	vn10843		vn10843	ABC	membrane	592	amino acid		3.A.1		X
-WRS47399.1	vn10843		vn10843	ABC	binding protein	593	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
-WRS47452.1	vn10843		vn10843	ABC	binding	595	phosphonates		3.A.1		X
-WRS47579.1	vn10843		vn10843	ABC	binding	183	phosphonates		3.A.1		X
-WRS47593.1	vn10843		vn10843	ABC	binding protein	598	dipeptide/oligopeptide		3.A.1		X
-WRS47646.1	vn10843		vn10843	ABC	binding	600	phosphonate		3.A.1		X
-WRS47647.1	vn10843		vn10843	ABC	membrane	601	unknown substrate		3.A.1		X
-WRS47653.1	vn10843		vn10843	ABC	binding	602	glycine betaine		3.A.1		X
-WRS47654.1	vn10843		vn10843	ABC	binding	603	glycine betaine		3.A.1		X
-WRS47655.1	vn10843		vn10843	ABC	membrane	604	dipeptide/oligopeptide		3.A.1		X
-WRS47656.1	vn10843		vn10843	ABC	membrane	605	dipeptide/oligopeptide		3.A.1		X
-WRS47657.1	vn10843		vn10843	ABC	binding protein	606	oligopeptide		3.A.1		X
-WRS47692.1	vn10843		vn10843	ABC	binding	607	iron-hydroxamate		3.A.1		X
-WRS47694.1	vn10843		vn10843	ABC	membrane	608	cobalamin/Fe3+-siderophores		3.A.1		X
-WRS47695.1	vn10843		vn10843	ABC	membrane	609	cobalamin/Fe3+-siderophores		3.A.1		X
-WRS47696.1	vn10843		vn10843	ABC	binding	610	phosphonate		3.A.1		X
-WRS47699.1	vn10843		vn10843	ABC	binding protein	611	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
-WRS47736.1	vn10843		vn10843	ABC	binding protein	612	dipeptide/oligopeptide		3.A.1		X
-WRS47765.1	vn10843		vn10843	ABC	membrane	1445	heme export		3.A.1		X
-WRS47766.1	vn10843		vn10843	ABC	membrane	616	heme export		3.A.1		X
-WRS47767.1	vn10843		vn10843	ABC	binding	617	heme		3.A.1		X
-WRS47935.1	vn10843		vn10843	ABC	binding	1051	heme		3.A.1		X
-WRS47996.1	vn10843		vn10843	ABC	binding protein	625	dipeptide/oligopeptide		3.A.1		X
-WRS47997.1	vn10843		vn10843	ABC	membrane	626	dipeptide/oligopeptide		3.A.1		X
-WRS47998.1	vn10843		vn10843	ABC	membrane	627	dipeptide/oligopeptide		3.A.1		X
-WRS47999.1	vn10843		vn10843	ABC	binding	628	glycine betaine		3.A.1		X
-WRS48000.1	vn10843		vn10843	ABC	binding	629	phosphate		3.A.1		X
-WRS48006.1	vn10843		vn10843	ABC	binding	630	polyamine		3.A.1		X
-WRS48007.1	vn10843		vn10843	ABC	membrane	631	iron(III)		3.A.1		X
-WRS48008.1	vn10843		vn10843	ABC	binding	632	2-aminoethylphosphonate		3.A.1		X
-WRS48025.1	vn10843		vn10843	ABC	membrane	1512	polysaccharide export		3.A.1		X
-WRS48026.1	vn10843		vn10843	ABC	binding	634	daunorubicin		3.A.1		X
-WRS48118.1	vn10843		vn10843	ABC	binding	1054	phosphonate		3.A.1		X
-WRS48154.1	vn10843		vn10843	ABC	binding	638	toluene tolerance		3.A.1		X
-WRS48155.1	vn10843		vn10843	ABC	binding protein	639	toluene tolerance		3.A.1		X
-WRS48156.1	vn10843		vn10843	ABC	membrane	640	toluene tolerance		3.A.1		X
-WRS48157.1	vn10843		vn10843	ABC	binding	641	glycine betaine		3.A.1		X
-WRS48162.1	vn10843		vn10843	ABC	binding	643	daunorubicin		3.A.1		X
-WRS48402.1	vn10843		vn10843	ABC	membrane	646	cell division		3.A.1		X
-WRS48403.1	vn10843		vn10843	ABC	binding	647	lipoprotein		3.A.1		X
-WRS48496.1	vn10843		vn10843	ABC	binding protein	648	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
-WRS48497.1	vn10843		vn10843	ABC	membrane	649	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
-WRS48518.1	vn10843		vn10843	ABC	binding	650	phosphate		3.A.1		X
-WRS48519.1	vn10843		vn10843	ABC	membrane	651	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
-WRS48553.1	vn10843		vn10843	ABC	binding	653	glycine betaine		3.A.1		X
-WRS48554.1	vn10843		vn10843	ABC	binding protein	654	dipeptide/oligopeptide		3.A.1		X
-WRS48555.1	vn10843		vn10843	ABC	membrane	655	dipeptide/oligopeptide		3.A.1		X
-WRS48556.1	vn10843		vn10843	ABC	membrane	656	dipeptide/oligopeptide		3.A.1		X
-WRS48591.1	vn10843		vn10843	ABC	binding	658	lipid A		3.A.1		X
-WRS48592.1	vn10843		vn10843	ABC	binding	659	lipid A		3.A.1		X
-WRS48666.1	vn10843		vn10843	ABC	membrane	660	dipeptide/oligopeptide		3.A.1		X
-WRS48667.1	vn10843		vn10843	ABC	membrane	661	dipeptide/oligopeptide		3.A.1		X
-WRS48668.1	vn10843		vn10843	ABC	binding protein	662	dipeptide/oligopeptide		3.A.1		X
-WRS48669.1	vn10843		vn10843	ABC	binding	663	D-methionine		3.A.1		X
-WRS48670.1	vn10843		vn10843	ABC	binding	664	glycine betaine		3.A.1		X
-WRS48709.1	vn10843		vn10843	ABC	binding	665	daunorubicin		3.A.1		X
-WRS48729.1	vn10843		vn10843	ABC	membrane	666	polysaccharide export		3.A.1		X
-WRS48809.1	vn10843		vn10843	ABC	membrane	669	lipoprotein releasing		3.A.1		X
-WRS48810.1	vn10843		vn10843	ABC	binding	670	lipoprotein		3.A.1		X
-WRS48822.1	vn10843		vn10843	ABC	binding	672	thiamin		3.A.1		X
-WRS48823.1	vn10843		vn10843	ABC	membrane	673	iron(III)		3.A.1		X
-WRS48824.1	vn10843		vn10843	ABC	binding	674	thiamine		3.A.1		X
-WRS48871.1	vn10843		vn10843	ABC	binding	676	methionine		3.A.1		X
-WRS49002.1	vn10843		vn10843	ABC	binding	678	heme		3.A.1		X
-WRS49008.1	vn10843		vn10843	ABC	binding protein	679	amino acid		3.A.1		X
-WRS49014.1	vn10843		vn10843	ABC	membrane	680	nitrate/sulfonate/taurine		3.A.1		X
-WRS49015.1	vn10843		vn10843	ABC	binding	681	nitrate		3.A.1		X
-WRS49029.1	vn10843		vn10843	ABC	membrane	684	phosphate		3.A.1		X
-WRS49030.1	vn10843		vn10843	ABC	membrane	685	phosphate		3.A.1		X
-WRS49031.1	vn10843		vn10843	ABC	binding	686	phosphate		3.A.1		X
-WRS49068.1	vn10843		vn10843	ABC	binding	316	glycine betaine		3.A.1		X
-WRS49154.1	vn10843		vn10843	ABC	binding	691	methionine		3.A.1		X
-WRS49155.1	vn10843		vn10843	ABC	membrane	692	D-methionine		3.A.1		X
-WRS49156.1	vn10843		vn10843	ABC	binding	693	D-methionine		3.A.1		X
-WRS49276.1	vn10843		vn10843	ABC	membrane	695	manganese/zinc ion		3.A.1		X
-WRS49277.1	vn10843		vn10843	ABC	binding	696	daunorubicin		3.A.1		X
-WRS49278.1	vn10843		vn10843	ABC	binding	697	zinc		3.A.1		X
-WRS49320.1	vn10843		vn10843	ABC	binding protein	698	sugar		3.A.1		X
-WRS49321.1	vn10843		vn10843	ABC	membrane	699	sugar		3.A.1		X
-WRS49322.1	vn10843		vn10843	ABC	membrane	700	sugar		3.A.1		X
-WRS49323.1	vn10843		vn10843	ABC	binding	701	polyamine		3.A.1		X
-WRS49384.1	vn10843		vn10843	ABC	binding protein	703	spermidine/putrescine		3.A.1		X
-WRS49385.1	vn10843		vn10843	ABC	binding	704	polyamine		3.A.1		X
-WRS49386.1	vn10843		vn10843	ABC	membrane	705	spermidine/putrescine		3.A.1		X
-WRS49387.1	vn10843		vn10843	ABC	membrane	706	spermidine/putrescine		3.A.1		X
-WRS49393.1	vn10843		vn10843	ABC	binding	1391	glycine betaine		3.A.1		X
-WRS49409.1	vn10843		vn10843	ABC	membrane	708	lipoprotein releasing		3.A.1		X
-WRS49410.1	vn10843		vn10843	ABC	binding	709	lipoprotein		3.A.1		X
-WRS49411.1	vn10843		vn10843	ABC	membrane	710	lipoprotein releasing		3.A.1		X
-WRS49414.1	vn10843		vn10843	ABC	binding	711	lipid A		3.A.1		X
-WRS49428.1	vn10843		vn10843	ABC	binding	712	phosphate		3.A.1		X
-WRS49429.1	vn10843		vn10843	ABC	binding protein	713	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
-WRS49430.1	vn10843		vn10843	ABC	membrane	714	amino acid (lysine/arginine/ornithine/histidine/octopine)		3.A.1		X
-WRS49431.1	vn10843		vn10843	ABC	membrane	715	amino acid (lysine/arginine/ornithine/histidine/octopine)		3.A.1		X
-WRS49566.1	vn10843		vn10843	ABC	membrane	717	unknown substrate		3.A.1		X
-WRS49574.1	vn10843		vn10843	ABC	binding	718	glycine betaine		3.A.1		X
-WRS49575.1	vn10843		vn10843	ABC	binding	719	phosphonate		3.A.1		X
-WRS49576.1	vn10843		vn10843	ABC	membrane	720	antimicrobial peptide uptake		3.A.1		X
-WRS49577.1	vn10843		vn10843	ABC	membrane	721	antimicrobial peptide uptake		3.A.1		X
-WRS49578.1	vn10843		vn10843	ABC	binding protein	722	dipeptide/oligopeptide		3.A.1		X
-WRS49595.1	vn10843		vn10843	ABC	binding	723	sulfate		3.A.1		X
-WRS49596.1	vn10843		vn10843	ABC	membrane	724	unknown substrate		3.A.1		X
-WRS49597.1	vn10843		vn10843	ABC	binding protein	725	spermidine/putrescine		3.A.1		X
-WRS49617.1	vn10843		vn10843	ABC	binding	726	lipoprotein		3.A.1		X
-WRS49618.1	vn10843		vn10843	ABC	membrane	727	efflux (antimicrobial peptide)		3.A.1		X
-WRS49637.1	vn10843		vn10843	ABC	binding	728	lipid A		3.A.1		X
-WRS49638.1	vn10843		vn10843	ABC	binding	729	lipid A		3.A.1		X
-WRS49698.1	vn10843		vn10843	ABC	membrane	731	Vitamin B12		3.A.1		X
-WRS49699.1	vn10843		vn10843	ABC	binding	732	molybdate		3.A.1		X
-WRS49718.1	vn10843		vn10843	ABC	binding	733	phosphonate		3.A.1		X
-WRS49719.1	vn10843		vn10843	ABC	membrane	734	cobalamin/Fe3+-siderophores		3.A.1		X
-WRS49720.1	vn10843		vn10843	ABC	binding	735	iron-hydroxamate		3.A.1		X
-WRS49744.1	vn10843		vn10843	ABC	ABC	736	sugar (ribose)		3.A.1		X
-WRS49745.1	vn10843		vn10843	ABC	membrane	737	sugar (ribose)		3.A.1		X
-WRS49746.1	vn10843		vn10843	ABC	membrane	738	sugar (ribose)		3.A.1		X
-WRS49747.1	vn10843		vn10843	ABC	binding	739	xylose		3.A.1		X
-WRS49815.1	vn10843		vn10843	ABC	binding	741	urea		3.A.1		X
-WRS49816.1	vn10843		vn10843	ABC	membrane	742	branched-chain amino acid		3.A.1		X
-WRS49817.1	vn10843		vn10843	ABC	membrane	743	branched-chain amino acid		3.A.1		X
-WRS49818.1	vn10843		vn10843	ABC	binding	744	daunorubicin		3.A.1		X
-WRS49819.1	vn10843		vn10843	ABC	binding	745	sulfate		3.A.1		X
-WRS49837.1	vn10843		vn10843	ABC	binding	746	lipid A		3.A.1		X
-WRS49838.1	vn10843		vn10843	ABC	membrane	747	multidrug	*	3.A.1		X
-WRS49871.1	vn10843		vn10843	ABC	binding	749	heme		3.A.1		X
-WRS49872.1	vn10843		vn10843	ABC	membrane	750	tungsten		3.A.1		X
-WRS49885.1	vn10843		vn10843	ABC	binding	752	iron-hydroxamate		3.A.1		X
-WRS49933.1	vn10843		vn10843	ABC	membrane	755	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
-WRS49934.1	vn10843		vn10843	ABC	binding	756	phosphate		3.A.1		X
-WRS49957.1	vn10843		vn10843	ABC	ABC	758	unknown substrate		3.A.1		X
-WRS49962.1	vn10843		vn10843	ABC	binding protein	759	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
-WRS49963.1	vn10843		vn10843	ABC	binding	760	iron-hydroxamate		3.A.1		X
-WRS49968.1	vn10843		vn10843	ABC	binding protein	761	dipeptide/oligopeptide		3.A.1		X
-WRS49969.1	vn10843		vn10843	ABC	membrane	762	dipeptide/oligopeptide		3.A.1		X
-WRS49970.1	vn10843		vn10843	ABC	membrane	763	dipeptide/oligopeptide		3.A.1		X
-WRS49971.1	vn10843		vn10843	ABC	binding	764	glycine betaine		3.A.1		X
-WRS50016.1	vn10843		vn10843	ABC	binding	766	phosphonate		3.A.1		X
-WRS50017.1	vn10843		vn10843	ABC	membrane	767	iron compound		3.A.1		X
-WRS50018.1	vn10843		vn10843	ABC	membrane	768	iron compound		3.A.1		X
-WRS50019.1	vn10843		vn10843	ABC	binding	769	iron-hydroxamate		3.A.1		X
-WRS50034.1	vn10843		vn10843	ABC	binding	771	thiamine		3.A.1		X
-WRS50079.1	vn10843		vn10843	ABC	binding protein	774	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
-WRS50102.1	vn10843		vn10843	ABC	membrane	775	unknown substrate		3.A.1		X
-WRS50115.1	vn10843		vn10843	ABC	binding protein	777	phosphate		3.A.1		X
-WRS50116.1	vn10843		vn10843	ABC	membrane	778	phosphate		3.A.1		X
-WRS50117.1	vn10843		vn10843	ABC	membrane	779	phosphate		3.A.1		X
-WRS50118.1	vn10843		vn10843	ABC	binding	780	phosphate		3.A.1		X
-WRS50128.1	vn10843		vn10843	ABC	membrane	781	protease secretion	*	3.A.1		X
-WRS50131.1	vn10843		vn10843	ABC	membrane	783	cobalamin/Fe3+-siderophores		3.A.1		X
-WRS50132.1	vn10843		vn10843	ABC	binding	784	iron-hydroxamate		3.A.1		X
-WRS50133.1	vn10843		vn10843	ABC	binding	785	phosphonate		3.A.1		X
-WRS50135.1	vn10843		vn10843	ABC	binding	786	lipid A		3.A.1		X
-WRS50158.1	vn10843		vn10843	ABC	binding	787	polyamine		3.A.1		X
-WRS50159.1	vn10843		vn10843	ABC	binding protein	788	sugar (maltose)		3.A.1		X
-WRS50160.1	vn10843		vn10843	ABC	membrane	789	sugar		3.A.1		X
-WRS50161.1	vn10843		vn10843	ABC	membrane	790	sugar (maltose)		3.A.1		X
-WRS50201.1	vn10843		vn10843	ABC	membrane	791	multidrug	*	3.A.1		X
-WRS50237.1	vn10843		vn10843	ABC	membrane	1457	multidrug		3.A.1		X
-WRS50266.1	vn10843		vn10843	ABC	membrane	794	multidrug		3.A.1		X
-WRS50267.1	vn10843		vn10843	ABC	binding	795	daunorubicin		3.A.1		X
-WRS50314.1	vn10843		vn10843	ABC	membrane	798	lipoprotein releasing		3.A.1		X
-WRS50315.1	vn10843		vn10843	ABC	membrane	799	lipoprotein releasing		3.A.1		X
-WRS50316.1	vn10843		vn10843	ABC	binding	800	lipoprotein		3.A.1		X
-WRS50342.1	vn10843		vn10843	ABC	binding	801	daunorubicin		3.A.1		X
-WRS50429.1	vn10843		vn10843	ABC	membrane	803	toluene tolerance		3.A.1		X
-WRS50430.1	vn10843		vn10843	ABC	binding	804	glycine betaine		3.A.1		X
-WRS50431.1	vn10843		vn10843	ABC	binding protein	805	toluene tolerance		3.A.1		X
-WRS50550.1	vn10843		vn10843	ABC	binding	808	phosphonate		3.A.1		X
-WRS50551.1	vn10843		vn10843	ABC	binding protein	809	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
-WRS50552.1	vn10843		vn10843	ABC	membrane	810	amino acid (lysine/arginine/ornithine/histidine/octopine)		3.A.1		X
-WRS50553.1	vn10843		vn10843	ABC	membrane	811	amino acid (lysine/arginine/ornithine/histidine/octopine)		3.A.1		X
-WRS50606.1	vn10843		vn10843	ABC	binding protein	812	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
-WRS50632.1	vn10843		vn10843	ABC	membrane	816	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
-WRS50633.1	vn10843		vn10843	ABC	binding protein	817	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
-WRS50634.1	vn10843		vn10843	ABC	membrane	818	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
-WRS50635.1	vn10843		vn10843	ABC	binding	819	phosphate		3.A.1		X
-WRS50679.1	vn10843		vn10843	ABC	binding	822	lipoprotein		3.A.1		X
-WRS50680.1	vn10843		vn10843	ABC	membrane	823	unknown substrate		3.A.1		X
-WRS50708.1	vn10843		vn10843	ABC	binding	824	molybdate		3.A.1		X
-WRS50709.1	vn10843		vn10843	ABC	membrane	825	molybdate		3.A.1		X
-WRS50710.1	vn10843		vn10843	ABC	binding	826	mobybdenate		3.A.1		X
-WRS50789.1	vn10843		vn10843	ABC	binding	828	lipoprotein		3.A.1		X
-WRS50790.1	vn10843		vn10843	ABC	membrane	829	dipeptide/oligopeptide		3.A.1		X
-WRS50791.1	vn10843		vn10843	ABC	membrane	830	dipeptide/oligopeptide		3.A.1		X
-WRS50792.1	vn10843		vn10843	ABC	binding protein	831	dipeptide/oligopeptide		3.A.1		X
-WRS50793.1	vn10843		vn10843	ABC	binding	832	phosphate		3.A.1		X
-WRS50794.1	vn10843		vn10843	ABC	membrane	833	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
-WRS50795.1	vn10843		vn10843	ABC	membrane	834	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
-WRS50796.1	vn10843		vn10843	ABC	binding protein	835	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
-WRS50851.1	vn10843		vn10843	ABC	binding	837	TMAO inducer		3.A.1		X
-WRS50860.1	vn10843		vn10843	ABC	binding	839	ribose		3.A.1		X
-WRS50861.1	vn10843		vn10843	ABC	membrane	840	sugar (ribose)		3.A.1		X
-WRS50862.1	vn10843		vn10843	ABC	ABC	841	sugar (ribose)		3.A.1		X
-WRS50891.1	vn10843		vn10843	ABC	binding protein	843	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
-WRS50942.1	vn10843		vn10843	ABC	binding	845	molybdate		3.A.1		X
-WRS50943.1	vn10843		vn10843	ABC	membrane	846	molybdate		3.A.1		X
-WRS50944.1	vn10843		vn10843	ABC	binding	847	mobybdenate		3.A.1		X
-WRS50975.1	vn10843		vn10843	ABC	binding	848	glycine betaine		3.A.1		X
-WRS50976.1	vn10843		vn10843	ABC	membrane	849	glycine betaine/L-proline		3.A.1		X
-WRS50977.1	vn10843		vn10843	ABC	binding	850	choline		3.A.1		X
-WRS51000.1	vn10843		vn10843	ABC	membrane	851	amino acid (lysine/arginine/ornithine/histidine/octopine)		3.A.1		X
-WRS51001.1	vn10843		vn10843	ABC	membrane	852	amino acid (lysine/arginine/ornithine/histidine/octopine)		3.A.1		X
-WRS51002.1	vn10843		vn10843	ABC	binding protein	853	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
-WRS51011.1	vn10843		vn10843	ABC	binding	854	phosphonate		3.A.1		X
-WRS51012.1	vn10843		vn10843	ABC	binding	855	urea		3.A.1		X
-WRS51013.1	vn10843		vn10843	ABC	membrane	856	branched-chain amino acid		3.A.1		X
-WRS51014.1	vn10843		vn10843	ABC	membrane	857	branched-chain amino acid		3.A.1		X
-WRS51016.1	vn10843		vn10843	ABC	binding	858	sulfate		3.A.1		X
-WRS51072.1	vn10843		vn10843	ABC	membrane	861	CydC/CydD homolog	*	3.A.1		X
-WRS51073.1	vn10843		vn10843	ABC	membrane	862	toxin secretion	*	3.A.1		X
-WRS51074.1	vn10843		vn10843	ABC	membrane	863	toxin secretion	*	3.A.1		X
-WRS51086.1	vn10843		vn10843	ABC	binding	864	iron-hydroxamate		3.A.1		X
-WRS51107.1	vn10843		vn10843	ABC	binding	865	phosphonates		3.A.1		X
-WRS51158.1	vn10843		vn10843	ABC	binding	866	phosphonates		3.A.1		X
-WRS51277.1	vn10843		vn10843	ABC	binding protein	869	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
-WRS51298.1	vn10843		vn10843	ABC	binding protein	870	spermidine/putrescine		3.A.1		X
-WRS51308.1	vn10843		vn10843	ABC	membrane	874	unknown substrate		3.A.1		X
-WRS51309.1	vn10843		vn10843	ABC	membrane	875	spermidine/putrescine		3.A.1		X
-WRS51310.1	vn10843		vn10843	ABC	binding	876	polyamine		3.A.1		X
-WRS51364.1	vn10843		vn10843	ABC	membrane	878	iron(III)		3.A.1		X
-WRS51365.1	vn10843		vn10843	ABC	binding	879	polyamine		3.A.1		X
-WRS51367.1	vn10843		vn10843	ABC	binding	880	2-aminoethylphosphonate		3.A.1		X
-WRS51375.1	vn10843		vn10843	ABC	binding	882	lipoprotein		3.A.1		X
-WRS51383.1	vn10843		vn10843	ABC	membrane	884	branched-chain amino acid		3.A.1		X
-WRS51384.1	vn10843		vn10843	ABC	binding	885	leucine/valine		3.A.1		X
-WRS51433.1	vn10843		vn10843	ABC	binding	886	glycine betaine		3.A.1		X
-WRS51434.1	vn10843		vn10843	ABC	membrane	887	nitrate/sulfonate/taurine		3.A.1		X
-WRS51435.1	vn10843		vn10843	ABC	binding protein	888	nitrate/sulfonate/taurine		3.A.1		X
-WRS51498.1	vn10843		vn10843	ABC	binding	890	daunorubicin		3.A.1		X
-WRS51507.1	vn10843		vn10843	ABC	membrane	891	lipoprotein releasing		3.A.1		X
-WRS51508.1	vn10843		vn10843	ABC	binding	892	lipoprotein		3.A.1		X
-WRS51513.1	vn10843		vn10843	ABC	binding	893	glycine betaine		3.A.1		X
-WRS51514.1	vn10843		vn10843	ABC	binding	894	glycine betaine		3.A.1		X
-WRS51520.1	vn10843		vn10843	ABC	binding protein	895	oligopeptide		3.A.1		X
-WRS51522.1	vn10843		vn10843	ABC	membrane	896	toxin secretion	*	3.A.1		X
-WRS51544.1	vn10843		vn10843	ABC	membrane	898	lipoprotein releasing		3.A.1		X
-WRS51545.1	vn10843		vn10843	ABC	binding	899	lipoprotein		3.A.1		X
-WRS51550.1	vn10843		vn10843	ABC	binding	900	glycine betaine		3.A.1		X
-WRS51551.1	vn10843		vn10843	ABC	binding	901	nitrate		3.A.1		X
-WRS51552.1	vn10843		vn10843	ABC	membrane	902	nitrate/sulfonate/taurine		3.A.1		X
-WRS51561.1	vn10843		vn10843	ABC	binding	903	ribose		3.A.1		X
-WRS51562.1	vn10843		vn10843	ABC	ABC	904	sugar (ribose)		3.A.1		X
-WRS51563.1	vn10843		vn10843	ABC	membrane	905	sugar (ribose)		3.A.1		X
-WRS51569.1	vn10843		vn10843	ABC	binding	906	molybdate		3.A.1		X
-WRS47867.1	vn10843		vn10843	AbgT		471	aminobenzoyl-glutamate		2.A.68		X
-WRS49111.1	vn10843		vn10843	AbgT		472	aminobenzoyl-glutamate		2.A.68		X
-WRS50270.1	vn10843		vn10843	ACR3		387	arsenite		2.A.59		X
-WRS49515.1	vn10843		vn10843	AEC		474	unknown substrate		2.A.69		X
-WRS49674.1	vn10843		vn10843	AEC		475	unknown substrate		2.A.69		X
-WRS50909.1	vn10843		vn10843	AEC		476	unknown substrate		2.A.69		X
-WRS51095.1	vn10843		vn10843	AEC		477	unknown substrate		2.A.69		X
-WRS47361.1	vn10843		vn10843	AGCS		228	sodium ion:alanine symporter		2.A.25		X
-WRS48959.1	vn10843		vn10843	AGCS		229	sodium ion:alanine symporter		2.A.25		X
-WRS49077.1	vn10843		vn10843	AGCS		230	sodium ion:alanine symporter		2.A.25		X
-WRS50554.1	vn10843		vn10843	AGCS		231	sodium ion:alanine symporter		2.A.25		X
-WRS47817.1	vn10843		vn10843	AI-2E		545	Autoinducer-2 export		2.A.86		X
-WRS47992.1	vn10843		vn10843	AI-2E		546	Autoinducer-2 export		2.A.86		X
-WRS50061.1	vn10843		vn10843	AI-2E		547	Autoinducer-2 export		2.A.86		X
-WRS50439.1	vn10843		vn10843	AI-2E		548	Autoinducer-2 export		2.A.86		X
-WRS47228.1	vn10843		vn10843	Amt		24	ammonium		1.A.11		X
-WRS48009.1	vn10843		vn10843	Amt		25	ammonium		1.A.11		X
-WRS49994.1	vn10843		vn10843	APC		237	amino acid		2.A.3		X
-WRS50472.1	vn10843		vn10843	APC		238	amino acid		2.A.3		X
-WRS50480.1	vn10843		vn10843	APC		239	amino acid		2.A.3		X
-WRS50542.1	vn10843		vn10843	APC		240	arginine:ornithine antiporter		2.A.3		X
-WRS51207.1	vn10843		vn10843	APC		241	amino acid		2.A.3		X
-WRS51336.1	vn10843		vn10843	APC		242	ethanolamine		2.A.3		X
-WRS47368.1	vn10843		vn10843	ArAE		540	fusaric acid efflux		2.A.85		X
-WRS50066.1	vn10843		vn10843	ArAE		541	fusaric acid efflux		2.A.85		X
-WRS50426.1	vn10843		vn10843	ArAE		542	fusaric acid efflux		2.A.85		X
-WRS50854.1	vn10843		vn10843	ArAE		543	fusaric acid efflux		2.A.85		X
-WRS50993.1	vn10843		vn10843	ArAE		544	fusaric acid efflux		2.A.85		X
-WRS48735.1	vn10843		vn10843	ArsAB		1353	arsenite (ArsA)		3.A.4		X
-WRS48134.1	vn10843		vn10843	BASS		235	sodium ion/		2.A.28		X
-WRS47498.1	vn10843		vn10843	BCCT		147	glycine betaine/carnitine/choline		2.A.15		X
-WRS49852.1	vn10843		vn10843	BCCT		148	glycine betaine/carnitine/choline		2.A.15		X
-WRS50137.1	vn10843		vn10843	BCCT		149	glycine betaine/carnitine/choline		2.A.15		X
-WRS50166.1	vn10843		vn10843	BCCT		150	glycine betaine/carnitine/choline		2.A.15		X
-WRS50355.1	vn10843		vn10843	BCCT		151	glycine betaine/carnitine/choline		2.A.15		X
-WRS50537.1	vn10843		vn10843	BCCT		152	glycine betaine/carnitine/choline		2.A.15		X
-WRS51304.1	vn10843		vn10843	BCCT		153	glycine betaine/carnitine/choline		2.A.15		X
-WRS49511.1	vn10843		vn10843	BenE		307	benzoate		2.A.46		X
-WRS48158.1	vn10843		vn10843	CaCA		172	sodium ion:calcium ion antiporter		2.A.19		X
-WRS48327.1	vn10843		vn10843	CDF		284	cation efflux		2.A.4		X
-WRS50324.1	vn10843		vn10843	CDF		285	cation efflux		2.A.4		X
-WRS51227.1	vn10843		vn10843	CDF		286	cation efflux		2.A.4		X
-WRS47926.1	vn10843		vn10843	CHR		319	chromate ion		2.A.51		X
-WRS49801.1	vn10843		vn10843	CHR		320	chromate ion		2.A.51		X
-WRS49802.1	vn10843		vn10843	CHR		321	chromate ion		2.A.51		X
-WRS51150.1	vn10843		vn10843	ClC		318	chloride ion channel		2.A.49		X
-WRS47958.1	vn10843		vn10843	CNT		292	sodium ion:nucleoside symporter		2.A.41		X
-WRS49302.1	vn10843		vn10843	CNT		293	sodium ion:nucleoside symporter		2.A.41		X
-WRS51398.1	vn10843		vn10843	CNT		294	sodium ion:nucleoside symporter		2.A.41		X
-WRS48209.1	vn10843		vn10843	CPA1		256	sodium ion:proton antiporter		2.A.36		X
-WRS48337.1	vn10843		vn10843	CPA1		257	sodium ion:proton antiporter		2.A.36		X
-WRS48603.1	vn10843		vn10843	CPA1		258	sodium ion:proton antiporter		2.A.36		X
-WRS50235.1	vn10843		vn10843	CPA1		259	sodium ion:proton antiporter		2.A.36		X
-WRS48266.1	vn10843		vn10843	CPA2		261	potassium/sodium ion:proton antiporter		2.A.37		X
-WRS49254.1	vn10843		vn10843	CPA2		265	potassium/sodium ion:proton antiporter		2.A.37		X
-WRS50251.1	vn10843		vn10843	CPA2		267	potassium/sodium ion:proton antiporter		2.A.37		X
-WRS50402.1	vn10843		vn10843	CPA2		269	potassium/sodium ion:proton antiporter		2.A.37		X
-WRS51351.1	vn10843		vn10843	CPA2		260	potassium/sodium ion:proton antiporter		2.A.37		X
-WRS50502.1	vn10843		vn10843	CPA3	MnhC	448	multicomponent sodium ion:proton antiporter		2.A.63		X
-WRS50503.1	vn10843		vn10843	CPA3	MnhD	1115	multicomponent sodium ion:proton antiporter		2.A.63		X
-WRS50504.1	vn10843		vn10843	CPA3	MnhE	450	multicomponent sodium ion:proton antiporter		2.A.63		X
-WRS50505.1	vn10843		vn10843	CPA3	MnhF	451	multicomponent sodium ion:proton antiporter		2.A.63		X
-WRS50506.1	vn10843		vn10843	CPA3	MnhG	452	multicomponent sodium ion:proton antiporter		2.A.63		X
-WRS51598.1	vn10843		vn10843	CPA3	MnhA	1124	multicomponent sodium ion:proton antiporter		2.A.63		X
-WRS47548.1	vn10843		vn10843	DAACS		223	proton/sodium ion:glutamate/aspartate symporter		2.A.23		X
-WRS49103.1	vn10843		vn10843	DAACS		224	proton/sodium ion:glutamate/aspartate symporter		2.A.23		X
-WRS49689.1	vn10843		vn10843	DAACS		225	proton/sodium ion:glutamate/aspartate symporter		2.A.23		X
-WRS50033.1	vn10843		vn10843	DAACS		226	sodium ion:serine/threonine symporter		2.A.23		X
-WRS50048.1	vn10843		vn10843	DAACS		227	proton/sodium ion:glutamate/aspartate symporter		2.A.23		X
-WRS48299.1	vn10843		vn10843	DASS		308	sodium ion:dicarboxylate/sulfate		2.A.47		X
-WRS48708.1	vn10843		vn10843	DASS		309	sodium ion:dicarboxylate/sulfate		2.A.47		X
-WRS48805.1	vn10843		vn10843	DASS		310	sodium ion:dicarboxylate/sulfate		2.A.47		X
-WRS49642.1	vn10843		vn10843	DASS		311	sodium ion:dicarboxylate/sulfate		2.A.47		X
-WRS49828.1	vn10843		vn10843	DASS		312	sodium ion:dicarboxylate/sulfate		2.A.47		X
-WRS50816.1	vn10843		vn10843	DASS		313	sodium ion:dicarboxylate/sulfate		2.A.47		X
-WRS48334.1	vn10843		vn10843	Dcu		144	C4-dicarboxylate		2.A.13		X
-WRS50739.1	vn10843		vn10843	Dcu		145	C4-dicarboxylate		2.A.13		X
-WRS50832.1	vn10843		vn10843	DcuC		444	C4-dicarboxylate		2.A.61		X
-WRS51118.1	vn10843		vn10843	DcuC		1507	C4-dicarboxylate		2.A.61		X
-WRS47382.1	vn10843		vn10843	DMT		478	drug/metabolite		2.A.7		X
-WRS47446.1	vn10843		vn10843	DMT		479	drug/metabolite		2.A.7		X
-WRS48300.1	vn10843		vn10843	DMT		480	drug/metabolite		2.A.7		X
-WRS48445.1	vn10843		vn10843	DMT		482	drug/metabolite		2.A.7		X
-WRS48570.1	vn10843		vn10843	DMT		483	drug/metabolite		2.A.7		X
-WRS48595.1	vn10843		vn10843	DMT		484	drug/metabolite		2.A.7		X
-WRS49749.1	vn10843		vn10843	DMT	RarD	485	chloramphenicol (RarD homolog)		2.A.7		X
-WRS50005.1	vn10843		vn10843	DMT	SMR	486	multidrug efflux (SMR)		2.A.7		X
-WRS50067.1	vn10843		vn10843	DMT	DME	487	drug/metabolite		2.A.7		X
-WRS50195.1	vn10843		vn10843	DMT		488	drug/metabolite		2.A.7		X
-WRS50323.1	vn10843		vn10843	DMT		489	drug/metabolite		2.A.7		X
-WRS50516.1	vn10843		vn10843	DMT	RarD	490	chloramphenicol (RarD homolog)		2.A.7		X
-WRS50819.1	vn10843		vn10843	DMT		491	drug/metabolite		2.A.7		X
-WRS50873.1	vn10843		vn10843	DMT	DME	492	drug/metabolite		2.A.7		X
-WRS50879.1	vn10843		vn10843	DMT		493	drug/metabolite		2.A.7		X
-WRS50937.1	vn10843		vn10843	DMT	DME	494	drug/metabolite		2.A.7		X
-WRS50940.1	vn10843		vn10843	DMT		495	drug/metabolite		2.A.7		X
-WRS51021.1	vn10843		vn10843	DMT	DME	496	drug/metabolite		2.A.7		X
-WRS51111.1	vn10843		vn10843	DMT		497	drug/metabolite		2.A.7		X
-WRS51283.1	vn10843		vn10843	DMT	DME	498	drug/metabolite		2.A.7		X
-WRS51328.1	vn10843		vn10843	DMT		499	drug/metabolite		2.A.7		X
-WRS51362.1	vn10843		vn10843	DMT		500	drug/metabolite		2.A.7		X
-WRS51617.1	vn10843		vn10843	DMT		501	drug/metabolite		2.A.7		X
-WRS49413.1	vn10843		vn10843	DNA-T		932	unknown substrate		3.A.11		X
-WRS51500.1	vn10843		vn10843	ESS		234	sodium ion:glutamate symporter		2.A.27		X
-WRS48499.1	vn10843		vn10843	F-ATPase		994	protons		3.A.2		X
-WRS48500.1	vn10843		vn10843	F-ATPase		995	protons		3.A.2		X
-WRS48501.1	vn10843		vn10843	F-ATPase		996	protons		3.A.2		X
-WRS48502.1	vn10843		vn10843	F-ATPase		997	protons		3.A.2		X
-WRS48503.1	vn10843		vn10843	F-ATPase		998	protons		3.A.2		X
-WRS48504.1	vn10843		vn10843	F-ATPase		999	protons		3.A.2		X
-WRS48505.1	vn10843		vn10843	F-ATPase		1000	protons		3.A.2		X
-WRS48506.1	vn10843		vn10843	F-ATPase		1001	protons		3.A.2		X
-WRS48507.1	vn10843		vn10843	F-ATPase		1002	protons		3.A.2		X
-WRS50358.1	vn10843		vn10843	F-ATPase		1003	protons		3.A.2		X
-WRS50361.1	vn10843		vn10843	F-ATPase		1005	protons		3.A.2		X
-WRS50362.1	vn10843		vn10843	F-ATPase		1006	protons		3.A.2		X
-WRS50363.1	vn10843		vn10843	F-ATPase		1007	protons		3.A.2		X
-WRS50364.1	vn10843		vn10843	F-ATPase		1008	protons		3.A.2		X
-WRS48289.1	vn10843		vn10843	FeoB		1420	ferrous ion		9.A.8		X
-WRS49281.1	vn10843		vn10843	FeoB		1430	ferrous ion		9.A.8		X
-WRS49564.1	vn10843		vn10843	FNT		302	formate/nitrite		2.A.44		X
-WRS50655.1	vn10843		vn10843	FNT		303	formate/nitrite		2.A.44		X
-WRS50743.1	vn10843		vn10843	FNT		304	formate/nitrite		2.A.44		X
-WRS48013.1	vn10843		vn10843	GntP		533	gluconate		2.A.8		X
-WRS48561.1	vn10843		vn10843	GntP		534	gluconate		2.A.8		X
-WRS51033.1	vn10843		vn10843	GntP		535	gluconate		2.A.8		X
-WRS51444.1	vn10843		vn10843	GntP		536	gluconate		2.A.8		X
-WRS51554.1	vn10843		vn10843	GPH		176	multidrug efflux		2.A.2		X
-WRS48167.1	vn10843		vn10843	GPTS	HPr	1364	unknown substrate		4.A		X
-WRS48976.1	vn10843		vn10843	GPTS	EnzymeI	1360	unknown substrate		4.A		X
-WRS49224.1	vn10843		vn10843	GPTS	EnzymeI	1361	unknown substrate		4.A		X
-WRS49225.1	vn10843		vn10843	GPTS	HPr	1365	unknown substrate		4.A		X
-WRS47487.1	vn10843		vn10843	HAAAP		295	serine		2.A.42		X
-WRS48993.1	vn10843		vn10843	HAAAP		1509	aromatic amino acid		2.A.42		X
-WRS49833.1	vn10843		vn10843	HAAAP		297	aromatic amino acid		2.A.42		X
-WRS50011.1	vn10843		vn10843	HAAAP		298	aromatic amino acid		2.A.42		X
-WRS50277.1	vn10843		vn10843	HAAAP		299	tryptophan/tyrosine		2.A.42		X
-WRS50604.1	vn10843		vn10843	HAAAP		301	serine		2.A.42		X
-WRS48049.1	vn10843		vn10843	HCC		1398	heavy metal ion		9.A.40		X
-WRS48364.1	vn10843		vn10843	HCC		1399	hemolysin C (HlyC) homolog		9.A.40		X
-WRS49312.1	vn10843		vn10843	HCC		1401	hemolysin C (HlyC) homolog		9.A.40		X
-WRS47778.1	vn10843		vn10843	IIISP		1029	unknown substrate		3.A.6		X
-WRS47779.1	vn10843		vn10843	IIISP		1030	unknown substrate		3.A.6		X
-WRS47780.1	vn10843		vn10843	IIISP		1031	unknown substrate		3.A.6		X
-WRS47781.1	vn10843		vn10843	IIISP		1032	unknown substrate		3.A.6		X
-WRS47782.1	vn10843		vn10843	IIISP		1033	unknown substrate		3.A.6		X
-WRS47792.1	vn10843		vn10843	IIISP		1037	unknown substrate		3.A.6		X
-WRS48119.1	vn10843		vn10843	IISP		1055	signal recognition particle receptor alpha subunit (SR-alpha)		3.A.5		X
-WRS47934.1	vn10843		vn10843	IVSP		1050	unknown substrate		3.A.7		X
-WRS48583.1	vn10843		vn10843	IVSP		1061	unknown substrate		3.A.7		X
-WRS50090.1	vn10843		vn10843	LctP		146	L-lactate		2.A.14		X
-WRS50293.1	vn10843		vn10843	LIV-E	AzlC	527	branched-chain amino acid efflux (AzlC)		2.A.78		X
-WRS50754.1	vn10843		vn10843	LIV-E	AzlC	528	branched-chain amino acid efflux (AzlC)		2.A.78		X
-WRS48963.1	vn10843		vn10843	LIVCS		232	branched-chain amino acid		2.A.26		X
-WRS51402.1	vn10843		vn10843	LIVCS		233	branched-chain amino acid		2.A.26		X
-WRS48105.1	vn10843		vn10843	LysE		506	lysine efflux		2.A.75		X
-WRS47435.1	vn10843		vn10843	MFS		84	sugar		2.A.1		X
-WRS47891.1	vn10843		vn10843	MFS		87	Acetyl-CoA:CoA antiporter		2.A.1		X
-WRS47915.1	vn10843		vn10843	MFS		88	glycerol-3-phosphate		2.A.1		X
-WRS48343.1	vn10843		vn10843	MFS		90	multidrug efflux		2.A.1		X
-WRS48412.1	vn10843		vn10843	MFS		92	multidrug efflux		2.A.1		X
-WRS48454.1	vn10843		vn10843	MFS		93	multidrug efflux		2.A.1		X
-WRS48495.1	vn10843		vn10843	MFS		94	multidrug efflux		2.A.1		X
-WRS49071.1	vn10843		vn10843	MFS		96	multidrug efflux		2.A.1		X
-WRS49074.1	vn10843		vn10843	MFS		97	multidrug efflux		2.A.1		X
-WRS49350.1	vn10843		vn10843	MFS		103	multidrug efflux		2.A.1		X
-WRS49608.1	vn10843		vn10843	MFS		104	multidrug efflux		2.A.1		X
-WRS49702.1	vn10843		vn10843	MFS		105	multidrug efflux		2.A.1		X
-WRS49732.1	vn10843		vn10843	MFS		106	multidrug efflux		2.A.1		X
-WRS49737.1	vn10843		vn10843	MFS		107	multidrug efflux		2.A.1		X
-WRS49809.1	vn10843		vn10843	MFS		108	glycerol-3-phosphate		2.A.1		X
-WRS50014.1	vn10843		vn10843	MFS		112	glycerol-3-phosphate		2.A.1		X
-WRS50021.1	vn10843		vn10843	MFS		113	multidrug efflux		2.A.1		X
-WRS50101.1	vn10843		vn10843	MFS		115	multidrug efflux		2.A.1		X
-WRS50406.1	vn10843		vn10843	MFS		116	metabolite (alpha-ketoglutarate)		2.A.1		X
-WRS50452.1	vn10843		vn10843	MFS		119	cyanate		2.A.1		X
-WRS50462.1	vn10843		vn10843	MFS		120	multidrug efflux		2.A.1		X
-WRS50735.1	vn10843		vn10843	MFS		123	sugar efflux		2.A.1		X
-WRS50836.1	vn10843		vn10843	MFS		124	oxalate:formate antiporter		2.A.1		X
-WRS50880.1	vn10843		vn10843	MFS		125	multidrug efflux		2.A.1		X
-WRS50912.1	vn10843		vn10843	MFS		126	multidrug efflux		2.A.1		X
-WRS50965.1	vn10843		vn10843	MFS		127	nitrate		2.A.1		X
-WRS51022.1	vn10843		vn10843	MFS		128	multidrug efflux		2.A.1		X
-WRS51121.1	vn10843		vn10843	MFS		129	metabolite (benzoate)		2.A.1		X
-WRS51214.1	vn10843		vn10843	MFS		131	multidrug efflux		2.A.1		X
-WRS51286.1	vn10843		vn10843	MFS		132	multidrug efflux		2.A.1		X
-WRS51319.1	vn10843		vn10843	MFS		134	multidrug efflux		2.A.1		X
-WRS51409.1	vn10843		vn10843	MFS		135	multidrug efflux		2.A.1		X
-WRS47986.1	vn10843		vn10843	MgtE		1387	magnesium ion		9.A.19		X
-WRS48168.1	vn10843		vn10843	MgtE		1388	magnesium ion		9.A.19		X
-WRS51211.1	vn10843		vn10843	MgtE		1392	magnesium ion		9.A.19		X
-WRS47719.1	vn10843		vn10843	MIP		70	glycerol uptake		1.A.8		X
-WRS47916.1	vn10843		vn10843	MIP		71	glycerol uptake		1.A.8		X
-WRS47920.1	vn10843		vn10843	MIT		61	magnesium/cobalt ion		1.A.35		X
-WRS47227.1	vn10843		vn10843	MOP	MATE	457	multidrug efflux		2.A.66		X
-WRS47458.1	vn10843		vn10843	MOP	PST	459	polysaccharide export		2.A.66		X
-WRS47968.1	vn10843		vn10843	MOP	MATE	460	multidrug efflux		2.A.66		X
-WRS48325.1	vn10843		vn10843	MOP	MATE	461	multidrug efflux		2.A.66		X
-WRS48392.1	vn10843		vn10843	MOP	MATE	462	multidrug efflux		2.A.66		X
-WRS48739.1	vn10843		vn10843	MOP	PST	463	polysaccharide export		2.A.66		X
-WRS48985.1	vn10843		vn10843	MOP	MVF	464	virulence factor MviN		2.A.66		X
-WRS49616.1	vn10843		vn10843	MOP	MATE	465	multidrug efflux		2.A.66		X
-WRS49856.1	vn10843		vn10843	MOP	MATE	466	multidrug efflux		2.A.66		X
-WRS50149.1	vn10843		vn10843	MOP	PST	467	polysaccharide export		2.A.66		X
-WRS50716.1	vn10843		vn10843	MOP	MATE	468	multidrug efflux		2.A.66		X
-WRS51200.1	vn10843		vn10843	MOP	MATE	469	multidrug efflux		2.A.66		X
-WRS51477.1	vn10843		vn10843	MOP	MATE	470	multidrug efflux		2.A.66		X
-WRS49140.1	vn10843		vn10843	Mot/Exb		42	unknown substrate		1.A.30		X
-WRS49485.1	vn10843		vn10843	Mot/Exb		45	unknown substrate		1.A.30		X
-WRS49486.1	vn10843		vn10843	Mot/Exb		46	unknown substrate		1.A.30		X
-WRS47715.1	vn10843		vn10843	MscS		30	small-conductance mechanosensitive ion channel		1.A.23		X
-WRS48106.1	vn10843		vn10843	MscS		31	small-conductance mechanosensitive ion channel		1.A.23		X
-WRS50087.1	vn10843		vn10843	MscS		32	small-conductance mechanosensitive ion channel		1.A.23		X
-WRS50130.1	vn10843		vn10843	MscS		33	small-conductance mechanosensitive ion channel		1.A.23		X
-WRS50433.1	vn10843		vn10843	MscS		34	small-conductance mechanosensitive ion channel		1.A.23		X
-WRS51005.1	vn10843		vn10843	MscS		35	small-conductance mechanosensitive ion channel		1.A.23		X
-WRS51521.1	vn10843		vn10843	MscS		36	small-conductance mechanosensitive ion channel		1.A.23		X
-WRS51051.1	vn10843		vn10843	MSS		502	sodium ion:malonate symporter		2.A.70		X
-WRS51052.1	vn10843		vn10843	MSS		503	sodium ion:malonate symporter		2.A.70		X
-WRS48036.1	vn10843		vn10843	MTB		946	unknown substrate		3.A.15		X
-WRS48038.1	vn10843		vn10843	MTB		948	unknown substrate		3.A.15		X
-WRS48039.1	vn10843		vn10843	MTB		949	unknown substrate		3.A.15		X
-WRS48192.1	vn10843		vn10843	MTB		953	unknown substrate		3.A.15		X
-WRS48630.1	vn10843		vn10843	MTB		958	unknown substrate		3.A.15		X
-WRS48633.1	vn10843		vn10843	MTB		961	unknown substrate		3.A.15		X
-WRS48634.1	vn10843		vn10843	MTB		962	unknown substrate		3.A.15		X
-WRS48636.1	vn10843		vn10843	MTB		963	unknown substrate		3.A.15		X
-WRS48637.1	vn10843		vn10843	MTB		964	unknown substrate		3.A.15		X
-WRS48638.1	vn10843		vn10843	MTB		965	unknown substrate		3.A.15		X
-WRS48640.1	vn10843		vn10843	MTB		967	unknown substrate		3.A.15		X
-WRS49878.1	vn10843		vn10843	MTB		968	unknown substrate		3.A.15		X
-WRS49089.1	vn10843		vn10843	NCS1		281	cytosine/purines/uracil/thiamine/allantoin		2.A.39		X
-WRS49796.1	vn10843		vn10843	NCS1		282	cytosine/purines/uracil/thiamine/allantoin		2.A.39		X
-WRS50445.1	vn10843		vn10843	NCS1		283	cytosine/purines/uracil/thiamine/allantoin		2.A.39		X
-WRS47823.1	vn10843		vn10843	NCS2		287	xanthine/uracil		2.A.40		X
-WRS48653.1	vn10843		vn10843	NCS2		288	xanthine/uracil		2.A.40		X
-WRS49123.1	vn10843		vn10843	NCS2		98	xanthine/uracil		2.A.40		X
-WRS51276.1	vn10843		vn10843	NCS2		290	xanthine/uracil		2.A.40		X
-WRS51290.1	vn10843		vn10843	NCS2		291	xanthine/uracil		2.A.40		X
-WRS49619.1	vn10843		vn10843	NhaA		243	sodium ion:proton antiporter		2.A.33		X
-WRS47640.1	vn10843		vn10843	NhaB		244	sodium ion:proton antiporter		2.A.34		X
-WRS47391.1	vn10843		vn10843	NhaC		245	sodium ion:proton antiporter		2.A.35		X
-WRS47431.1	vn10843		vn10843	NhaC		1506	sodium ion:proton antiporter		2.A.35		X
-WRS47677.1	vn10843		vn10843	NhaC		247	sodium ion:proton antiporter		2.A.35		X
-WRS47686.1	vn10843		vn10843	NhaC		248	sodium ion:proton antiporter		2.A.35		X
-WRS49083.1	vn10843		vn10843	NhaC		249	sodium ion:proton antiporter		2.A.35		X
-WRS49545.1	vn10843		vn10843	NhaC		250	sodium ion:proton antiporter		2.A.35		X
-WRS50883.1	vn10843		vn10843	NhaC		252	sodium ion:proton antiporter		2.A.35		X
-WRS50888.1	vn10843		vn10843	NhaC		253	sodium ion:proton antiporter		2.A.35		X
-WRS51115.1	vn10843		vn10843	NhaC		254	sodium ion:proton antiporter		2.A.35		X
-WRS51484.1	vn10843		vn10843	NhaD		447	sodium ion:proton antiporter		2.A.62		X
-WRS48173.1	vn10843		vn10843	Nramp		329	manganese/iron ion		2.A.55		X
-WRS47610.1	vn10843		vn10843	NSS		220	sodium ion:solute symporter		2.A.22		X
-WRS47873.1	vn10843		vn10843	NSS		221	sodium ion:solute symporter		2.A.22		X
-WRS49908.1	vn10843		vn10843	NSS		222	sodium ion:solute symporter		2.A.22		X
-WRS49141.1	vn10843		vn10843	OOP		43	unknown substrate		1.B.6		X
-WRS48514.1	vn10843		vn10843	Oxa1		549	60 KD inner membrane protein OxaA homolog		2.A.9		X
-WRS47243.1	vn10843		vn10843	P-ATPase		1015	zinc/cadmium/cobalt ion		3.A.3		X
-WRS49200.1	vn10843		vn10843	P-ATPase		1019	zinc/cadmium/cobalt ion		3.A.3		X
-WRS49394.1	vn10843		vn10843	P-ATPase		1020	zinc/cadmium/cobalt ion		3.A.3		X
-WRS50579.1	vn10843		vn10843	P-ATPase		1021	calcium ion/manganese ion		3.A.3		X
-WRS48886.1	vn10843		vn10843	PiT		177	phosphate		2.A.20		X
-WRS48935.1	vn10843		vn10843	PNaS		138	sodium ion:phosphate symporter		2.A.58		X
-WRS48981.1	vn10843		vn10843	PNaS		385	sodium ion:phosphate symporter		2.A.58		X
-WRS49251.1	vn10843		vn10843	POT		166	proton:dipeptide/tripeptide symporter		2.A.17		X
-WRS47365.1	vn10843		vn10843	RhtB		515	amino acid efflux		2.A.76		X
-WRS47683.1	vn10843		vn10843	RhtB		552	neutral amino acid/multiple antibiotic resistance		2.A.76		X
-WRS48417.1	vn10843		vn10843	RhtB		518	amino acid efflux		2.A.76		X
-WRS48447.1	vn10843		vn10843	RhtB		519	amino acid efflux		2.A.76		X
-WRS49758.1	vn10843		vn10843	RhtB		520	amino acid efflux		2.A.76		X
-WRS50295.1	vn10843		vn10843	RhtB		521	amino acid efflux		2.A.76		X
-WRS50933.1	vn10843		vn10843	RhtB		522	amino acid efflux		2.A.76		X
-WRS51184.1	vn10843		vn10843	RhtB		523	amino acid efflux		2.A.76		X
-WRS51204.1	vn10843		vn10843	RhtB		524	amino acid efflux		2.A.76		X
-WRS51342.1	vn10843		vn10843	RhtB		525	amino acid efflux		2.A.76		X
-WRS51459.1	vn10843		vn10843	RhtB		526	amino acid efflux		2.A.76		X
-WRS47369.1	vn10843		vn10843	RND		390	multidrug efflux		2.A.6		X
-WRS47566.1	vn10843		vn10843	RND		391	multidrug efflux		2.A.6		X
-WRS47988.1	vn10843		vn10843	RND	HAE1	392	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
-WRS48546.1	vn10843		vn10843	RND	HAE1	395	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
-WRS49354.1	vn10843		vn10843	RND	HAE1	401	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
-WRS49513.1	vn10843		vn10843	RND	HAE1	403	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
-WRS49584.1	vn10843		vn10843	RND	HAE1	405	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
-WRS50013.1	vn10843		vn10843	RND		408	multidrug efflux		2.A.6		X
-WRS50063.1	vn10843		vn10843	RND		409	multidrug efflux		2.A.6		X
-WRS50261.1	vn10843		vn10843	RND	HME	412	cobalt/zinc/cadmium ion efflux (HME subfamily)		2.A.6		X
-WRS50427.1	vn10843		vn10843	RND		414	multidrug efflux		2.A.6		X
-WRS50625.1	vn10843		vn10843	RND	HAE1	418	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
-WRS50721.1	vn10843		vn10843	RND	HAE1	420	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
-WRS50914.1	vn10843		vn10843	RND	HAE1	423	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
-WRS51168.1	vn10843		vn10843	RND	HAE1	426	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
-WRS51301.1	vn10843		vn10843	RND	HAE1	432	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
-WRS51313.1	vn10843		vn10843	RND	HAE1	434	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
-WRS47613.1	vn10843		vn10843	SSPTS	EnzymeIIABC	1219	glucose/maltose/N-acetylglucosamine		4.A		X
-WRS47615.1	vn10843		vn10843	SSPTS	EnzymeIIABC	1220	glucose/maltose/N-acetylglucosamine		4.A		X
-WRS48165.1	vn10843		vn10843	SSPTS	EnzymeIIA	1231	fructose		4.A		X
-WRS48540.1	vn10843		vn10843	SSPTS	EnzymeIIABC	1221	glucose/maltose/N-acetylglucosamine		4.A		X
-WRS48860.1	vn10843		vn10843	SSPTS	EnzymeIIABC	1222	glucose/maltose/N-acetylglucosamine		4.A		X
-WRS48864.1	vn10843		vn10843	SSPTS	EnzymeIIABC	1233	mannitol		4.A		X
-WRS49159.1	vn10843		vn10843	SSPTS	EnzymeIIABC	1223	glucose/maltose/N-acetylglucosamine		4.A		X
-WRS49223.1	vn10843		vn10843	SSPTS	EnzymeIIABC	1224	glucose		4.A		X
-WRS49257.1	vn10843		vn10843	SSPTS	EnzymeIIABC	1225	glucose/maltose/N-acetylglucosamine		4.A		X
-WRS49751.1	vn10843		vn10843	SSPTS	EnzymeIIABC	1226	glucose/maltose/N-acetylglucosamine		4.A		X
-WRS50023.1	vn10843		vn10843	SSPTS	EnzymeIIABC	1227	glucose/maltose/N-acetylglucosamine		4.A		X
-WRS50035.1	vn10843		vn10843	SSPTS	EnzymeIIABC	1228	glucose/maltose/N-acetylglucosamine		4.A		X
-WRS50626.1	vn10843		vn10843	SSPTS	EnzymeIIBC	1238	fructose		4.A		X
-WRS50628.1	vn10843		vn10843	SSPTS	EnzymeIIA	1239	mannitol/fructose		4.A		X
-WRS50907.1	vn10843		vn10843	SSPTS	EnzymeIIABC	1229	glucose/maltose/N-acetylglucosamine		4.A		X
-WRS51252.1	vn10843		vn10843	SSPTS	EnzymeIIABC	1230	glucose/maltose/N-acetylglucosamine		4.A		X
-WRS48339.1	vn10843		vn10843	SSS		188	sodium ion:proline symporter		2.A.21		X
-WRS48342.1	vn10843		vn10843	SSS		189	sodium ion:proline symporter		2.A.21		X
-WRS49025.1	vn10843		vn10843	SSS		194	sodium ion:proline symporter		2.A.21		X
-WRS49329.1	vn10843		vn10843	SSS		196	sodium ion:proline symporter		2.A.21		X
-WRS49754.1	vn10843		vn10843	SSS		199	sodium ion:panthothenate symporter		2.A.21		X
-WRS49875.1	vn10843		vn10843	SSS		202	sodium ion:proline symporter		2.A.21		X
-WRS49996.1	vn10843		vn10843	SSS		204	sodium ion:proline symporter		2.A.21		X
-WRS50573.1	vn10843		vn10843	SSS		207	sodium ion:proline symporter		2.A.21		X
-WRS50903.1	vn10843		vn10843	SSS		212	sodium ion:proline symporter		2.A.21		X
-WRS51532.1	vn10843		vn10843	SSS		217	sodium ion:proline symporter		2.A.21		X
-WRS51577.1	vn10843		vn10843	SSS		218	sodium ion:proline symporter		2.A.21		X
-WRS47631.1	vn10843		vn10843	SulP		322	sulfate		2.A.53		X
-WRS47830.1	vn10843		vn10843	SulP		323	sulfate		2.A.53		X
-WRS49948.1	vn10843		vn10843	SulP		326	sulfate		2.A.53		X
-WRS49975.1	vn10843		vn10843	SulP		327	sulfate		2.A.53		X
-WRS48600.1	vn10843		vn10843	Tat		454	protein export		2.A.64		X
-WRS48601.1	vn10843		vn10843	Tat		455	protein export		2.A.64		X
-WRS48602.1	vn10843		vn10843	Tat		456	protein export		2.A.64		X
-WRS47909.1	vn10843		vn10843	TDT		155	tellurite		2.A.16		X
-WRS51151.1	vn10843		vn10843	TDT		163	tellurite		2.A.16		X
-WRS50660.1	vn10843		vn10843	TerC		1396	tellurium ion efflux		9.A.30		X
-WRS48181.1	vn10843		vn10843	ThrE		529	unknown substrate		2.A.79		X
-WRS48834.1	vn10843		vn10843	ThrE		530	unknown substrate		2.A.79		X
-WRS48835.1	vn10843		vn10843	ThrE		531	unknown substrate		2.A.79		X
-WRS47502.1	vn10843		vn10843	TRAP-T		332	C4-dicarboxylate		2.A.56		X
-WRS47503.1	vn10843		vn10843	TRAP-T		333	C4-dicarboxylate		2.A.56		X
-WRS47504.1	vn10843		vn10843	TRAP-T		334	C4-dicarboxylate		2.A.56		X
-WRS48826.1	vn10843		vn10843	TRAP-T		338	C4-dicarboxylate		2.A.56		X
-WRS49324.1	vn10843		vn10843	TRAP-T		339	C4-dicarboxylate		2.A.56		X
-WRS49325.1	vn10843		vn10843	TRAP-T		340	C4-dicarboxylate		2.A.56		X
-WRS49326.1	vn10843		vn10843	TRAP-T		341	C4-dicarboxylate		2.A.56		X
-WRS50184.1	vn10843		vn10843	TRAP-T		345	C4-dicarboxylate		2.A.56		X
-WRS50185.1	vn10843		vn10843	TRAP-T		346	C4-dicarboxylate		2.A.56		X
-WRS50186.1	vn10843		vn10843	TRAP-T		347	C4-dicarboxylate		2.A.56		X
-WRS50239.1	vn10843		vn10843	TRAP-T		348	C4-dicarboxylate		2.A.56		X
-WRS50240.1	vn10843		vn10843	TRAP-T		349	C4-dicarboxylate		2.A.56		X
-WRS50241.1	vn10843		vn10843	TRAP-T		350	C4-dicarboxylate		2.A.56		X
-WRS50377.1	vn10843		vn10843	TRAP-T		351	C4-dicarboxylate		2.A.56		X
-WRS50378.1	vn10843		vn10843	TRAP-T		352	C4-dicarboxylate		2.A.56		X
-WRS50379.1	vn10843		vn10843	TRAP-T		353	C4-dicarboxylate		2.A.56		X
-WRS50415.1	vn10843		vn10843	TRAP-T		354	C4-dicarboxylate		2.A.56		X
-WRS50416.1	vn10843		vn10843	TRAP-T		355	C4-dicarboxylate		2.A.56		X
-WRS50417.1	vn10843		vn10843	TRAP-T		356	C4-dicarboxylate		2.A.56		X
-WRS50440.1	vn10843		vn10843	TRAP-T		357	C4-dicarboxylate		2.A.56		X
-WRS50441.1	vn10843		vn10843	TRAP-T		358	C4-dicarboxylate		2.A.56		X
-WRS50442.1	vn10843		vn10843	TRAP-T		359	C4-dicarboxylate		2.A.56		X
-WRS50770.1	vn10843		vn10843	TRAP-T		362	C4-dicarboxylate		2.A.56		X
-WRS50771.1	vn10843		vn10843	TRAP-T		363	C4-dicarboxylate		2.A.56		X
-WRS50772.1	vn10843		vn10843	TRAP-T		364	C4-dicarboxylate		2.A.56		X
-WRS50803.1	vn10843		vn10843	TRAP-T		366	C4-dicarboxylate		2.A.56		X
-WRS50804.1	vn10843		vn10843	TRAP-T		367	C4-dicarboxylate		2.A.56		X
-WRS50805.1	vn10843		vn10843	TRAP-T		368	C4-dicarboxylate		2.A.56		X
-WRS50934.1	vn10843		vn10843	TRAP-T		370	C4-dicarboxylate		2.A.56		X
-WRS50935.1	vn10843		vn10843	TRAP-T		371	C4-dicarboxylate		2.A.56		X
-WRS51067.1	vn10843		vn10843	TRAP-T		372	C4-dicarboxylate		2.A.56		X
-WRS51068.1	vn10843		vn10843	TRAP-T		373	C4-dicarboxylate		2.A.56		X
-WRS51069.1	vn10843		vn10843	TRAP-T		374	C4-dicarboxylate		2.A.56		X
-WRS51076.1	vn10843		vn10843	TRAP-T		375	C4-dicarboxylate		2.A.56		X
-WRS51077.1	vn10843		vn10843	TRAP-T		376	C4-dicarboxylate		2.A.56		X
-WRS51078.1	vn10843		vn10843	TRAP-T		377	C4-dicarboxylate		2.A.56		X
-WRS51096.1	vn10843		vn10843	TRAP-T		378	C4-dicarboxylate		2.A.56		X
-WRS51097.1	vn10843		vn10843	TRAP-T		379	C4-dicarboxylate		2.A.56		X
-WRS51098.1	vn10843		vn10843	TRAP-T		380	C4-dicarboxylate		2.A.56		X
-WRS51106.1	vn10843		vn10843	TRAP-T		381	C4-dicarboxylate		2.A.56		X
-WRS51157.1	vn10843		vn10843	TRAP-T		382	C4-dicarboxylate		2.A.56		X
-WRS51610.1	vn10843		vn10843	TRAP-T		383	C4-dicarboxylate		2.A.56		X
-WRS47745.1	vn10843		vn10843	TRIC		67	unknown substrate		1.A.62		X
-WRS48937.1	vn10843		vn10843	TRIC		68	unknown substrate		1.A.62		X
-WRS48479.1	vn10843		vn10843	Trk		274	potassium ion uptake		2.A.38		X
-WRS48538.1	vn10843		vn10843	Trk		275	potassium ion uptake		2.A.38		X
-WRS49315.1	vn10843		vn10843	Trk		278	potassium ion uptake		2.A.38		X
-WRS47320.1	vn10843		vn10843	TTT	TctC	537	tricarboxylate (TctC)		2.A.80		X
-WRS47322.1	vn10843		vn10843	TTT	TctA	538	tricarboxylate (TctA)		2.A.80		X
-WRS47684.1	vn10843		vn10843	VIC		11	potassium ion channel		1.A.1		X
-WRS48889.1	vn10843		vn10843	VIC		13	potassium ion channel		1.A.1		X
-WRS49491.1	vn10843		vn10843	VIC		14	potassium ion channel		1.A.1		X
-WRS50062.1	vn10843		vn10843	VIC		15	potassium ion channel		1.A.1		X
-WRS48122.1	vn10843		vn10843	YggT		1397	unknown substrate		9.A.4		X
+
+PN96_RS07510	vn10844		vn10844	AAE		539	aspartate:alanine antiporter		2.A.81		X
+PN96_RS00500	vn10844		vn10844	ABC	binding	572	daunorubicin		3.A.1		X
+PN96_RS00525	vn10844		vn10844	ABC	binding	574	glycine betaine		3.A.1		X
+PN96_RS00530	vn10844		vn10844	ABC	membrane	575	toluene tolerance		3.A.1		X
+PN96_RS00535	vn10844		vn10844	ABC	binding protein	576	toluene tolerance		3.A.1		X
+PN96_RS00540	vn10844		vn10844	ABC	binding	577	toluene tolerance		3.A.1		X
+PN96_RS00855	vn10844		vn10844	ABC	binding	1054	phosphonate		3.A.1		X
+PN96_RS01400	vn10844		vn10844	ABC	binding	581	daunorubicin		3.A.1		X
+PN96_RS01405	vn10844		vn10844	ABC	membrane	1515	polysaccharide export		3.A.1		X
+PN96_RS01495	vn10844		vn10844	ABC	binding	583	2-aminoethylphosphonate		3.A.1		X
+PN96_RS01500	vn10844		vn10844	ABC	membrane	584	iron(III)		3.A.1		X
+PN96_RS01505	vn10844		vn10844	ABC	binding	585	polyamine		3.A.1		X
+PN96_RS01535	vn10844		vn10844	ABC	binding	586	phosphate		3.A.1		X
+PN96_RS01540	vn10844		vn10844	ABC	binding	587	glycine betaine		3.A.1		X
+PN96_RS01545	vn10844		vn10844	ABC	membrane	588	dipeptide/oligopeptide		3.A.1		X
+PN96_RS01550	vn10844		vn10844	ABC	membrane	589	dipeptide/oligopeptide		3.A.1		X
+PN96_RS01555	vn10844		vn10844	ABC	binding protein	590	dipeptide/oligopeptide		3.A.1		X
+PN96_RS01880	vn10844		vn10844	ABC	binding	1057	heme		3.A.1		X
+PN96_RS02770	vn10844		vn10844	ABC	binding	599	heme		3.A.1		X
+PN96_RS02775	vn10844		vn10844	ABC	membrane	600	heme export		3.A.1		X
+PN96_RS02780	vn10844		vn10844	ABC	membrane	1447	heme export		3.A.1		X
+PN96_RS02945	vn10844		vn10844	ABC	binding protein	604	dipeptide/oligopeptide		3.A.1		X
+PN96_RS03135	vn10844		vn10844	ABC	binding	605	phosphate		3.A.1		X
+PN96_RS03140	vn10844		vn10844	ABC	membrane	606	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS03145	vn10844		vn10844	ABC	binding protein	607	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS03160	vn10844		vn10844	ABC	binding	608	phosphonate		3.A.1		X
+PN96_RS03165	vn10844		vn10844	ABC	membrane	609	cobalamin/Fe3+-siderophores		3.A.1		X
+PN96_RS03170	vn10844		vn10844	ABC	membrane	610	cobalamin/Fe3+-siderophores		3.A.1		X
+PN96_RS03180	vn10844		vn10844	ABC	binding	611	iron-hydroxamate		3.A.1		X
+PN96_RS03375	vn10844		vn10844	ABC	binding protein	612	oligopeptide		3.A.1		X
+PN96_RS03380	vn10844		vn10844	ABC	membrane	613	dipeptide/oligopeptide		3.A.1		X
+PN96_RS03385	vn10844		vn10844	ABC	membrane	614	dipeptide/oligopeptide		3.A.1		X
+PN96_RS03390	vn10844		vn10844	ABC	binding	615	glycine betaine		3.A.1		X
+PN96_RS03395	vn10844		vn10844	ABC	binding	616	glycine betaine		3.A.1		X
+PN96_RS03430	vn10844		vn10844	ABC	membrane	618	unknown substrate		3.A.1		X
+PN96_RS03435	vn10844		vn10844	ABC	binding	619	phosphonate		3.A.1		X
+PN96_RS03695	vn10844		vn10844	ABC	binding protein	621	dipeptide/oligopeptide		3.A.1		X
+PN96_RS03765	vn10844		vn10844	ABC	binding	181	phosphonates		3.A.1		X
+PN96_RS04740	vn10844		vn10844	ABC	binding	624	phosphonates		3.A.1		X
+PN96_RS05010	vn10844		vn10844	ABC	binding protein	626	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS05015	vn10844		vn10844	ABC	membrane	627	amino acid		3.A.1		X
+PN96_RS05020	vn10844		vn10844	ABC	membrane	628	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS05025	vn10844		vn10844	ABC	binding	629	phosphate		3.A.1		X
+PN96_RS05280	vn10844		vn10844	ABC	binding	631	glycine betaine		3.A.1		X
+PN96_RS05285	vn10844		vn10844	ABC	membrane	632	glycine betaine/L-proline		3.A.1		X
+PN96_RS05290	vn10844		vn10844	ABC	binding	633	glycine betaine		3.A.1		X
+PN96_RS05315	vn10844		vn10844	ABC	membrane	634	multidrug		3.A.1		X
+PN96_RS05320	vn10844		vn10844	ABC	membrane	635	multidrug		3.A.1		X
+PN96_RS05575	vn10844		vn10844	ABC	binding	638	phosphate		3.A.1		X
+PN96_RS05580	vn10844		vn10844	ABC	membrane	639	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS05585	vn10844		vn10844	ABC	membrane	640	amino acid		3.A.1		X
+PN96_RS05590	vn10844		vn10844	ABC	binding protein	641	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS05645	vn10844		vn10844	ABC	binding	642	lipid A		3.A.1		X
+PN96_RS05705	vn10844		vn10844	ABC	binding	643	heme		3.A.1		X
+PN96_RS05880	vn10844		vn10844	ABC	binding	644	polyamine		3.A.1		X
+PN96_RS05885	vn10844		vn10844	ABC	membrane	645	spermidine/putrescine		3.A.1		X
+PN96_RS05890	vn10844		vn10844	ABC	membrane	646	spermidine/putrescine		3.A.1		X
+PN96_RS05895	vn10844		vn10844	ABC	binding protein	647	spermidine/putrescine		3.A.1		X
+PN96_RS05900	vn10844		vn10844	ABC	binding protein	648	spermidine/putrescine		3.A.1		X
+PN96_RS05980	vn10844		vn10844	ABC	binding	649	heme		3.A.1		X
+PN96_RS06000	vn10844		vn10844	ABC	membrane	651	tungsten		3.A.1		X
+PN96_RS06005	vn10844		vn10844	ABC	binding	652	heme		3.A.1		X
+PN96_RS06190	vn10844		vn10844	ABC	membrane	654	multidrug	*	3.A.1		X
+PN96_RS06195	vn10844		vn10844	ABC	binding	655	lipid A		3.A.1		X
+PN96_RS06285	vn10844		vn10844	ABC	binding	656	sulfate		3.A.1		X
+PN96_RS06290	vn10844		vn10844	ABC	binding	657	daunorubicin		3.A.1		X
+PN96_RS06295	vn10844		vn10844	ABC	membrane	658	branched-chain amino acid		3.A.1		X
+PN96_RS06300	vn10844		vn10844	ABC	membrane	659	branched-chain amino acid		3.A.1		X
+PN96_RS06305	vn10844		vn10844	ABC	binding	660	urea		3.A.1		X
+PN96_RS06650	vn10844		vn10844	ABC	binding	662	xylose		3.A.1		X
+PN96_RS06655	vn10844		vn10844	ABC	membrane	663	sugar (ribose)		3.A.1		X
+PN96_RS06660	vn10844		vn10844	ABC	membrane	664	sugar (ribose)		3.A.1		X
+PN96_RS06665	vn10844		vn10844	ABC	ABC	665	sugar (ribose)		3.A.1		X
+PN96_RS06790	vn10844		vn10844	ABC	binding	666	iron-hydroxamate		3.A.1		X
+PN96_RS06795	vn10844		vn10844	ABC	membrane	667	cobalamin/Fe3+-siderophores		3.A.1		X
+PN96_RS06800	vn10844		vn10844	ABC	binding	668	phosphonate		3.A.1		X
+PN96_RS06890	vn10844		vn10844	ABC	binding	669	molybdate		3.A.1		X
+PN96_RS06895	vn10844		vn10844	ABC	membrane	670	Vitamin B12		3.A.1		X
+PN96_RS07430	vn10844		vn10844	ABC	binding	672	lipid A		3.A.1		X
+PN96_RS07435	vn10844		vn10844	ABC	binding	673	lipid A		3.A.1		X
+PN96_RS07540	vn10844		vn10844	ABC	membrane	674	efflux (antimicrobial peptide)		3.A.1		X
+PN96_RS07545	vn10844		vn10844	ABC	binding	675	lipoprotein		3.A.1		X
+PN96_RS07650	vn10844		vn10844	ABC	binding protein	676	spermidine/putrescine		3.A.1		X
+PN96_RS07655	vn10844		vn10844	ABC	membrane	677	unknown substrate		3.A.1		X
+PN96_RS07660	vn10844		vn10844	ABC	binding	678	sulfate		3.A.1		X
+PN96_RS07755	vn10844		vn10844	ABC	binding protein	680	dipeptide/oligopeptide		3.A.1		X
+PN96_RS07760	vn10844		vn10844	ABC	membrane	681	antimicrobial peptide uptake		3.A.1		X
+PN96_RS07765	vn10844		vn10844	ABC	membrane	682	antimicrobial peptide uptake		3.A.1		X
+PN96_RS07770	vn10844		vn10844	ABC	binding	683	phosphonate		3.A.1		X
+PN96_RS07775	vn10844		vn10844	ABC	binding	684	glycine betaine		3.A.1		X
+PN96_RS07815	vn10844		vn10844	ABC	membrane	685	unknown substrate		3.A.1		X
+PN96_RS08530	vn10844		vn10844	ABC	membrane	687	amino acid (lysine/arginine/ornithine/histidine/octopine)		3.A.1		X
+PN96_RS08535	vn10844		vn10844	ABC	membrane	688	amino acid (lysine/arginine/ornithine/histidine/octopine)		3.A.1		X
+PN96_RS08540	vn10844		vn10844	ABC	binding protein	689	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS08545	vn10844		vn10844	ABC	binding	690	phosphate		3.A.1		X
+PN96_RS08615	vn10844		vn10844	ABC	binding	691	lipid A		3.A.1		X
+PN96_RS08630	vn10844		vn10844	ABC	membrane	692	lipoprotein releasing		3.A.1		X
+PN96_RS08635	vn10844		vn10844	ABC	binding	693	lipoprotein		3.A.1		X
+PN96_RS08640	vn10844		vn10844	ABC	membrane	694	lipoprotein releasing		3.A.1		X
+PN96_RS08720	vn10844		vn10844	ABC	binding	1392	glycine betaine		3.A.1		X
+PN96_RS08755	vn10844		vn10844	ABC	membrane	696	spermidine/putrescine		3.A.1		X
+PN96_RS08760	vn10844		vn10844	ABC	membrane	697	spermidine/putrescine		3.A.1		X
+PN96_RS08765	vn10844		vn10844	ABC	binding	698	polyamine		3.A.1		X
+PN96_RS08770	vn10844		vn10844	ABC	binding protein	699	spermidine/putrescine		3.A.1		X
+PN96_RS09130	vn10844		vn10844	ABC	binding	701	polyamine		3.A.1		X
+PN96_RS09135	vn10844		vn10844	ABC	membrane	702	sugar		3.A.1		X
+PN96_RS09140	vn10844		vn10844	ABC	membrane	703	sugar		3.A.1		X
+PN96_RS09145	vn10844		vn10844	ABC	binding protein	704	sugar		3.A.1		X
+PN96_RS09365	vn10844		vn10844	ABC	binding	705	zinc		3.A.1		X
+PN96_RS09370	vn10844		vn10844	ABC	binding	706	daunorubicin		3.A.1		X
+PN96_RS09375	vn10844		vn10844	ABC	membrane	707	manganese/zinc ion		3.A.1		X
+PN96_RS10120	vn10844		vn10844	ABC	binding	709	D-methionine		3.A.1		X
+PN96_RS10125	vn10844		vn10844	ABC	membrane	710	D-methionine		3.A.1		X
+PN96_RS10130	vn10844		vn10844	ABC	binding	711	methionine		3.A.1		X
+PN96_RS10575	vn10844		vn10844	ABC	binding	316	glycine betaine		3.A.1		X
+PN96_RS10760	vn10844		vn10844	ABC	binding	716	phosphate		3.A.1		X
+PN96_RS10765	vn10844		vn10844	ABC	membrane	717	phosphate		3.A.1		X
+PN96_RS10770	vn10844		vn10844	ABC	membrane	718	phosphate		3.A.1		X
+PN96_RS10885	vn10844		vn10844	ABC	binding	721	nitrate		3.A.1		X
+PN96_RS10890	vn10844		vn10844	ABC	membrane	722	nitrate/sulfonate/taurine		3.A.1		X
+PN96_RS10920	vn10844		vn10844	ABC	binding protein	723	amino acid		3.A.1		X
+PN96_RS10950	vn10844		vn10844	ABC	binding	724	heme		3.A.1		X
+PN96_RS11280	vn10844		vn10844	ABC	binding	725	iron-hydroxamate		3.A.1		X
+PN96_RS11635	vn10844		vn10844	ABC	binding	727	methionine		3.A.1		X
+PN96_RS11880	vn10844		vn10844	ABC	binding	729	thiamine		3.A.1		X
+PN96_RS11885	vn10844		vn10844	ABC	membrane	730	iron(III)		3.A.1		X
+PN96_RS11890	vn10844		vn10844	ABC	binding	731	thiamin		3.A.1		X
+PN96_RS11955	vn10844		vn10844	ABC	binding	733	lipoprotein		3.A.1		X
+PN96_RS11960	vn10844		vn10844	ABC	membrane	734	lipoprotein releasing		3.A.1		X
+PN96_RS12365	vn10844		vn10844	ABC	membrane	737	polysaccharide export		3.A.1		X
+PN96_RS12465	vn10844		vn10844	ABC	binding	738	daunorubicin		3.A.1		X
+PN96_RS12670	vn10844		vn10844	ABC	binding	739	glycine betaine		3.A.1		X
+PN96_RS12675	vn10844		vn10844	ABC	binding	740	D-methionine		3.A.1		X
+PN96_RS12680	vn10844		vn10844	ABC	binding protein	741	dipeptide/oligopeptide		3.A.1		X
+PN96_RS12685	vn10844		vn10844	ABC	membrane	742	dipeptide/oligopeptide		3.A.1		X
+PN96_RS12690	vn10844		vn10844	ABC	membrane	743	dipeptide/oligopeptide		3.A.1		X
+PN96_RS13075	vn10844		vn10844	ABC	binding	744	lipid A		3.A.1		X
+PN96_RS13080	vn10844		vn10844	ABC	binding	745	lipid A		3.A.1		X
+PN96_RS13260	vn10844		vn10844	ABC	membrane	747	dipeptide/oligopeptide		3.A.1		X
+PN96_RS13265	vn10844		vn10844	ABC	membrane	748	dipeptide/oligopeptide		3.A.1		X
+PN96_RS13270	vn10844		vn10844	ABC	binding protein	749	dipeptide/oligopeptide		3.A.1		X
+PN96_RS13275	vn10844		vn10844	ABC	binding	750	glycine betaine		3.A.1		X
+PN96_RS13500	vn10844		vn10844	ABC	binding protein	752	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS13505	vn10844		vn10844	ABC	membrane	753	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS13510	vn10844		vn10844	ABC	binding	754	phosphate		3.A.1		X
+PN96_RS13615	vn10844		vn10844	ABC	membrane	755	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS13620	vn10844		vn10844	ABC	binding protein	756	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS14190	vn10844		vn10844	ABC	binding	757	lipoprotein		3.A.1		X
+PN96_RS14195	vn10844		vn10844	ABC	membrane	758	cell division		3.A.1		X
+PN96_RS14865	vn10844		vn10844	ABC	ABC	759	unknown substrate		3.A.1		X
+PN96_RS15185	vn10844		vn10844	ABC	binding	760	polyamine		3.A.1		X
+PN96_RS15315	vn10844		vn10844	ABC	binding	761	lipid A		3.A.1		X
+PN96_RS15325	vn10844		vn10844	ABC	binding	762	phosphonate		3.A.1		X
+PN96_RS15330	vn10844		vn10844	ABC	binding	763	iron-hydroxamate		3.A.1		X
+PN96_RS15335	vn10844		vn10844	ABC	membrane	764	cobalamin/Fe3+-siderophores		3.A.1		X
+PN96_RS15350	vn10844		vn10844	ABC	membrane	766	protease secretion	*	3.A.1		X
+PN96_RS15405	vn10844		vn10844	ABC	binding	767	phosphate		3.A.1		X
+PN96_RS15410	vn10844		vn10844	ABC	membrane	768	phosphate		3.A.1		X
+PN96_RS15415	vn10844		vn10844	ABC	membrane	769	phosphate		3.A.1		X
+PN96_RS15420	vn10844		vn10844	ABC	binding protein	770	phosphate		3.A.1		X
+PN96_RS15490	vn10844		vn10844	ABC	membrane	772	unknown substrate		3.A.1		X
+PN96_RS15605	vn10844		vn10844	ABC	binding protein	773	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS15850	vn10844		vn10844	ABC	binding	776	thiamine		3.A.1		X
+PN96_RS15930	vn10844		vn10844	ABC	binding	778	iron-hydroxamate		3.A.1		X
+PN96_RS15935	vn10844		vn10844	ABC	membrane	779	iron compound		3.A.1		X
+PN96_RS15940	vn10844		vn10844	ABC	membrane	780	iron compound		3.A.1		X
+PN96_RS15945	vn10844		vn10844	ABC	binding	781	phosphonate		3.A.1		X
+PN96_RS16180	vn10844		vn10844	ABC	binding	783	glycine betaine		3.A.1		X
+PN96_RS16185	vn10844		vn10844	ABC	membrane	784	dipeptide/oligopeptide		3.A.1		X
+PN96_RS16190	vn10844		vn10844	ABC	membrane	785	dipeptide/oligopeptide		3.A.1		X
+PN96_RS16195	vn10844		vn10844	ABC	binding protein	786	dipeptide/oligopeptide		3.A.1		X
+PN96_RS16220	vn10844		vn10844	ABC	binding	787	iron-hydroxamate		3.A.1		X
+PN96_RS16235	vn10844		vn10844	ABC	membrane	788	sugar (ribose)		3.A.1		X
+PN96_RS16240	vn10844		vn10844	ABC	ABC	789	sugar (ribose)		3.A.1		X
+PN96_RS16245	vn10844		vn10844	ABC	binding	790	ribose		3.A.1		X
+PN96_RS16290	vn10844		vn10844	ABC	membrane	791	nitrate/sulfonate/taurine		3.A.1		X
+PN96_RS16295	vn10844		vn10844	ABC	binding	792	nitrate		3.A.1		X
+PN96_RS16300	vn10844		vn10844	ABC	binding	793	glycine betaine		3.A.1		X
+PN96_RS16325	vn10844		vn10844	ABC	binding	794	lipoprotein		3.A.1		X
+PN96_RS16330	vn10844		vn10844	ABC	membrane	795	lipoprotein releasing		3.A.1		X
+PN96_RS16450	vn10844		vn10844	ABC	membrane	797	toxin secretion	*	3.A.1		X
+PN96_RS16460	vn10844		vn10844	ABC	binding protein	798	oligopeptide		3.A.1		X
+PN96_RS16500	vn10844		vn10844	ABC	binding	799	glycine betaine		3.A.1		X
+PN96_RS16505	vn10844		vn10844	ABC	binding	800	glycine betaine		3.A.1		X
+PN96_RS16530	vn10844		vn10844	ABC	binding	801	lipoprotein		3.A.1		X
+PN96_RS16535	vn10844		vn10844	ABC	membrane	802	lipoprotein releasing		3.A.1		X
+PN96_RS16580	vn10844		vn10844	ABC	binding	803	daunorubicin		3.A.1		X
+PN96_RS16905	vn10844		vn10844	ABC	binding protein	805	nitrate/sulfonate/taurine		3.A.1		X
+PN96_RS16910	vn10844		vn10844	ABC	membrane	806	nitrate/sulfonate/taurine		3.A.1		X
+PN96_RS16915	vn10844		vn10844	ABC	binding	807	glycine betaine		3.A.1		X
+PN96_RS17225	vn10844		vn10844	ABC	binding	808	leucine/valine		3.A.1		X
+PN96_RS17230	vn10844		vn10844	ABC	membrane	809	branched-chain amino acid		3.A.1		X
+PN96_RS17275	vn10844		vn10844	ABC	binding	811	lipoprotein		3.A.1		X
+PN96_RS17315	vn10844		vn10844	ABC	binding	813	2-aminoethylphosphonate		3.A.1		X
+PN96_RS17325	vn10844		vn10844	ABC	binding	814	polyamine		3.A.1		X
+PN96_RS17330	vn10844		vn10844	ABC	membrane	815	iron(III)		3.A.1		X
+PN96_RS17615	vn10844		vn10844	ABC	binding	817	polyamine		3.A.1		X
+PN96_RS17620	vn10844		vn10844	ABC	membrane	818	spermidine/putrescine		3.A.1		X
+PN96_RS17625	vn10844		vn10844	ABC	membrane	819	unknown substrate		3.A.1		X
+PN96_RS17675	vn10844		vn10844	ABC	binding protein	823	spermidine/putrescine		3.A.1		X
+PN96_RS17790	vn10844		vn10844	ABC	binding protein	824	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS18425	vn10844		vn10844	ABC	binding	828	phosphonates		3.A.1		X
+PN96_RS18695	vn10844		vn10844	ABC	binding	829	phosphonates		3.A.1		X
+PN96_RS18805	vn10844		vn10844	ABC	binding	830	iron-hydroxamate		3.A.1		X
+PN96_RS18870	vn10844		vn10844	ABC	membrane	831	toxin secretion	*	3.A.1		X
+PN96_RS18875	vn10844		vn10844	ABC	membrane	832	toxin secretion	*	3.A.1		X
+PN96_RS19160	vn10844		vn10844	ABC	binding	835	sulfate		3.A.1		X
+PN96_RS19170	vn10844		vn10844	ABC	membrane	836	branched-chain amino acid		3.A.1		X
+PN96_RS19175	vn10844		vn10844	ABC	membrane	837	branched-chain amino acid		3.A.1		X
+PN96_RS19180	vn10844		vn10844	ABC	binding	838	urea		3.A.1		X
+PN96_RS19185	vn10844		vn10844	ABC	binding	839	phosphonate		3.A.1		X
+PN96_RS19230	vn10844		vn10844	ABC	binding protein	840	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS19235	vn10844		vn10844	ABC	membrane	841	amino acid (lysine/arginine/ornithine/histidine/octopine)		3.A.1		X
+PN96_RS19240	vn10844		vn10844	ABC	membrane	842	amino acid (lysine/arginine/ornithine/histidine/octopine)		3.A.1		X
+PN96_RS19360	vn10844		vn10844	ABC	binding	843	choline		3.A.1		X
+PN96_RS19365	vn10844		vn10844	ABC	membrane	844	glycine betaine/L-proline		3.A.1		X
+PN96_RS19370	vn10844		vn10844	ABC	binding	845	glycine betaine		3.A.1		X
+PN96_RS19520	vn10844		vn10844	ABC	binding	846	mobybdenate		3.A.1		X
+PN96_RS19525	vn10844		vn10844	ABC	membrane	847	molybdate		3.A.1		X
+PN96_RS19530	vn10844		vn10844	ABC	binding	848	molybdate		3.A.1		X
+PN96_RS19795	vn10844		vn10844	ABC	binding protein	850	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS19955	vn10844		vn10844	ABC	ABC	852	sugar (ribose)		3.A.1		X
+PN96_RS19960	vn10844		vn10844	ABC	membrane	853	sugar (ribose)		3.A.1		X
+PN96_RS19965	vn10844		vn10844	ABC	binding	854	ribose		3.A.1		X
+PN96_RS20015	vn10844		vn10844	ABC	binding	856	TMAO inducer		3.A.1		X
+PN96_RS20310	vn10844		vn10844	ABC	binding protein	858	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS20315	vn10844		vn10844	ABC	membrane	859	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS20320	vn10844		vn10844	ABC	membrane	860	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS20325	vn10844		vn10844	ABC	binding	861	phosphate		3.A.1		X
+PN96_RS20330	vn10844		vn10844	ABC	binding protein	862	dipeptide/oligopeptide		3.A.1		X
+PN96_RS20335	vn10844		vn10844	ABC	membrane	863	dipeptide/oligopeptide		3.A.1		X
+PN96_RS20340	vn10844		vn10844	ABC	membrane	864	dipeptide/oligopeptide		3.A.1		X
+PN96_RS20345	vn10844		vn10844	ABC	binding	865	lipoprotein		3.A.1		X
+PN96_RS20775	vn10844		vn10844	ABC	binding	867	mobybdenate		3.A.1		X
+PN96_RS20780	vn10844		vn10844	ABC	membrane	868	molybdate		3.A.1		X
+PN96_RS20785	vn10844		vn10844	ABC	binding	869	molybdate		3.A.1		X
+PN96_RS20935	vn10844		vn10844	ABC	membrane	870	unknown substrate		3.A.1		X
+PN96_RS20940	vn10844		vn10844	ABC	binding	871	lipoprotein		3.A.1		X
+PN96_RS21160	vn10844		vn10844	ABC	binding	874	phosphate		3.A.1		X
+PN96_RS21165	vn10844		vn10844	ABC	membrane	875	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS21170	vn10844		vn10844	ABC	binding protein	876	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS21175	vn10844		vn10844	ABC	membrane	877	amino aicd (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS21305	vn10844		vn10844	ABC	binding protein	881	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS21600	vn10844		vn10844	ABC	membrane	883	amino acid (lysine/arginine/ornithine/histidine/octopine)		3.A.1		X
+PN96_RS21605	vn10844		vn10844	ABC	membrane	884	amino acid (lysine/arginine/ornithine/histidine/octopine)		3.A.1		X
+PN96_RS21610	vn10844		vn10844	ABC	binding protein	885	amino acid (glutamine/glutamate/aspartate)		3.A.1		X
+PN96_RS21615	vn10844		vn10844	ABC	binding	886	phosphonate		3.A.1		X
+PN96_RS22250	vn10844		vn10844	ABC	binding protein	889	toluene tolerance		3.A.1		X
+PN96_RS22255	vn10844		vn10844	ABC	binding	890	glycine betaine		3.A.1		X
+PN96_RS22260	vn10844		vn10844	ABC	membrane	891	toluene tolerance		3.A.1		X
+PN96_RS22720	vn10844		vn10844	ABC	binding	893	daunorubicin		3.A.1		X
+PN96_RS22855	vn10844		vn10844	ABC	binding	894	lipoprotein		3.A.1		X
+PN96_RS22860	vn10844		vn10844	ABC	membrane	895	lipoprotein releasing		3.A.1		X
+PN96_RS22865	vn10844		vn10844	ABC	membrane	896	lipoprotein releasing		3.A.1		X
+PN96_RS23095	vn10844		vn10844	ABC	binding	899	daunorubicin		3.A.1		X
+PN96_RS23100	vn10844		vn10844	ABC	membrane	900	multidrug		3.A.1		X
+PN96_RS23245	vn10844		vn10844	ABC	membrane	1460	multidrug		3.A.1		X
+PN96_RS23430	vn10844		vn10844	ABC	membrane	903	multidrug	*	3.A.1		X
+PN96_RS23635	vn10844		vn10844	ABC	membrane	904	sugar (maltose)		3.A.1		X
+PN96_RS23640	vn10844		vn10844	ABC	membrane	905	sugar		3.A.1		X
+PN96_RS23645	vn10844		vn10844	ABC	binding protein	906	sugar (maltose)		3.A.1		X
+PN96_RS24210	vn10844		vn10844	ABC	membrane	907	CydC/CydD homolog	*	3.A.1		X
+PN96_RS24340	vn10844		vn10844	ABC	binding	908	phosphonate		3.A.1		X
+PN96_RS24345	vn10844		vn10844	ABC	binding	909	molybdate		3.A.1		X
+PN96_RS02245	vn10844		vn10844	AbgT		471	aminobenzoyl-glutamate		2.A.68		X
+PN96_RS10345	vn10844		vn10844	AbgT		472	aminobenzoyl-glutamate		2.A.68		X
+PN96_RS23080	vn10844		vn10844	ACR3		387	arsenite		2.A.59		X
+PN96_RS07230	vn10844		vn10844	AEC		474	unknown substrate		2.A.69		X
+PN96_RS08075	vn10844		vn10844	AEC		475	unknown substrate		2.A.69		X
+PN96_RS18755	vn10844		vn10844	AEC		476	unknown substrate		2.A.69		X
+PN96_RS19705	vn10844		vn10844	AEC		477	unknown substrate		2.A.69		X
+PN96_RS05210	vn10844		vn10844	AGCS		228	sodium ion:alanine symporter		2.A.25		X
+PN96_RS10530	vn10844		vn10844	AGCS		229	sodium ion:alanine symporter		2.A.25		X
+PN96_RS11165	vn10844		vn10844	AGCS		230	sodium ion:alanine symporter		2.A.25		X
+PN96_RS21595	vn10844		vn10844	AGCS		231	sodium ion:alanine symporter		2.A.25		X
+PN96_RS01575	vn10844		vn10844	AI-2E		545	Autoinducer-2 export		2.A.86		X
+PN96_RS02510	vn10844		vn10844	AI-2E		546	Autoinducer-2 export		2.A.86		X
+PN96_RS15710	vn10844		vn10844	AI-2E		547	Autoinducer-2 export		2.A.86		X
+PN96_RS22205	vn10844		vn10844	AI-2E		548	Autoinducer-2 export		2.A.86		X
+PN96_RS01490	vn10844		vn10844	Amt		24	ammonium		1.A.11		X
+PN96_RS05910	vn10844		vn10844	Amt		25	ammonium		1.A.11		X
+PN96_RS16060	vn10844		vn10844	APC		237	amino acid		2.A.3		X
+PN96_RS17470	vn10844		vn10844	APC		238	ethanolamine		2.A.3		X
+PN96_RS18150	vn10844		vn10844	APC		239	amino acid		2.A.3		X
+PN96_RS21655	vn10844		vn10844	APC		240	arginine:ornithine antiporter		2.A.3		X
+PN96_RS21990	vn10844		vn10844	APC		241	amino acid		2.A.3		X
+PN96_RS22035	vn10844		vn10844	APC		242	amino acid		2.A.3		X
+PN96_RS05175	vn10844		vn10844	ArAE		540	fusaric acid efflux		2.A.85		X
+PN96_RS15685	vn10844		vn10844	ArAE		541	fusaric acid efflux		2.A.85		X
+PN96_RS19275	vn10844		vn10844	ArAE		542	fusaric acid efflux		2.A.85		X
+PN96_RS20000	vn10844		vn10844	ArAE		543	fusaric acid efflux		2.A.85		X
+PN96_RS22275	vn10844		vn10844	ArAE		544	fusaric acid efflux		2.A.85		X
+PN96_RS12335	vn10844		vn10844	ArsAB		1355	arsenite (ArsA)		3.A.4		X
+PN96_RS00660	vn10844		vn10844	BASS		235	sodium ion/		2.A.28		X
+PN96_RS04220	vn10844		vn10844	BCCT		147	glycine betaine/carnitine/choline		2.A.15		X
+PN96_RS06115	vn10844		vn10844	BCCT		148	glycine betaine/carnitine/choline		2.A.15		X
+PN96_RS15305	vn10844		vn10844	BCCT		149	glycine betaine/carnitine/choline		2.A.15		X
+PN96_RS17645	vn10844		vn10844	BCCT		150	glycine betaine/carnitine/choline		2.A.15		X
+PN96_RS21680	vn10844		vn10844	BCCT		151	glycine betaine/carnitine/choline		2.A.15		X
+PN96_RS22655	vn10844		vn10844	BCCT		152	glycine betaine/carnitine/choline		2.A.15		X
+PN96_RS23610	vn10844		vn10844	BCCT		153	glycine betaine/carnitine/choline		2.A.15		X
+PN96_RS08095	vn10844		vn10844	BenE		307	benzoate		2.A.46		X
+PN96_RS00520	vn10844		vn10844	CaCA		172	sodium ion:calcium ion antiporter		2.A.19		X
+PN96_RS14505	vn10844		vn10844	CDF		284	cation efflux		2.A.4		X
+PN96_RS18050	vn10844		vn10844	CDF		285	cation efflux		2.A.4		X
+PN96_RS22810	vn10844		vn10844	CDF		286	cation efflux		2.A.4		X
+PN96_RS01930	vn10844		vn10844	CHR		319	chromate ion		2.A.51		X
+PN96_RS06370	vn10844		vn10844	CHR		320	chromate ion		2.A.51		X
+PN96_RS06375	vn10844		vn10844	CHR		321	chromate ion		2.A.51		X
+PN96_RS18465	vn10844		vn10844	ClC		318	chloride ion channel		2.A.49		X
+PN96_RS01765	vn10844		vn10844	CNT		292	sodium ion:nucleoside symporter		2.A.41		X
+PN96_RS09245	vn10844		vn10844	CNT		293	sodium ion:nucleoside symporter		2.A.41		X
+PN96_RS17150	vn10844		vn10844	CNT		294	sodium ion:nucleoside symporter		2.A.41		X
+PN96_RS00260	vn10844		vn10844	CPA1		256	sodium ion:proton antiporter		2.A.36		X
+PN96_RS13020	vn10844		vn10844	CPA1		257	sodium ion:proton antiporter		2.A.36		X
+PN96_RS14455	vn10844		vn10844	CPA1		258	sodium ion:proton antiporter		2.A.36		X
+PN96_RS23255	vn10844		vn10844	CPA1		260	sodium ion:proton antiporter		2.A.36		X
+PN96_RS09490	vn10844		vn10844	CPA2		261	potassium/sodium ion:proton antiporter		2.A.37		X
+PN96_RS14875	vn10844		vn10844	CPA2		265	potassium/sodium ion:proton antiporter		2.A.37		X
+PN96_RS17395	vn10844		vn10844	CPA2		259	potassium/sodium ion:proton antiporter		2.A.37		X
+PN96_RS22395	vn10844		vn10844	CPA2		267	potassium/sodium ion:proton antiporter		2.A.37		X
+PN96_RS23175	vn10844		vn10844	CPA2		269	potassium/sodium ion:proton antiporter		2.A.37		X
+PN96_RS21845	vn10844		vn10844	CPA3	MnhG	448	multicomponent sodium ion:proton antiporter		2.A.63		X
+PN96_RS21850	vn10844		vn10844	CPA3	MnhF	449	multicomponent sodium ion:proton antiporter		2.A.63		X
+PN96_RS21855	vn10844		vn10844	CPA3	MnhE	450	multicomponent sodium ion:proton antiporter		2.A.63		X
+PN96_RS21860	vn10844		vn10844	CPA3	MnhD	1123	multicomponent sodium ion:proton antiporter		2.A.63		X
+PN96_RS21865	vn10844		vn10844	CPA3	MnhC	452	multicomponent sodium ion:proton antiporter		2.A.63		X
+PN96_RS21870	vn10844		vn10844	CPA3	MnhA	1125	multicomponent sodium ion:proton antiporter		2.A.63		X
+PN96_RS03935	vn10844		vn10844	DAACS		223	proton/sodium ion:glutamate/aspartate symporter		2.A.23		X
+PN96_RS06940	vn10844		vn10844	DAACS		224	proton/sodium ion:glutamate/aspartate symporter		2.A.23		X
+PN96_RS10385	vn10844		vn10844	DAACS		225	proton/sodium ion:glutamate/aspartate symporter		2.A.23		X
+PN96_RS15775	vn10844		vn10844	DAACS		226	proton/sodium ion:glutamate/aspartate symporter		2.A.23		X
+PN96_RS15855	vn10844		vn10844	DAACS		227	sodium ion:serine/threonine symporter		2.A.23		X
+PN96_RS06240	vn10844		vn10844	DASS		308	sodium ion:dicarboxylate/sulfate		2.A.47		X
+PN96_RS07405	vn10844		vn10844	DASS		309	sodium ion:dicarboxylate/sulfate		2.A.47		X
+PN96_RS11980	vn10844		vn10844	DASS		310	sodium ion:dicarboxylate/sulfate		2.A.47		X
+PN96_RS12470	vn10844		vn10844	DASS		311	sodium ion:dicarboxylate/sulfate		2.A.47		X
+PN96_RS14645	vn10844		vn10844	DASS		312	sodium ion:dicarboxylate/sulfate		2.A.47		X
+PN96_RS20210	vn10844		vn10844	DASS		313	sodium ion:dicarboxylate/sulfate		2.A.47		X
+PN96_RS14470	vn10844		vn10844	Dcu		144	C4-dicarboxylate		2.A.13		X
+PN96_RS20625	vn10844		vn10844	Dcu		145	C4-dicarboxylate		2.A.13		X
+PN96_RS18635	vn10844		vn10844	DcuC		1510	C4-dicarboxylate		2.A.61		X
+PN96_RS20115	vn10844		vn10844	DcuC		445	C4-dicarboxylate		2.A.61		X
+PN96_RS04770	vn10844		vn10844	DMT		478	drug/metabolite		2.A.7		X
+PN96_RS05105	vn10844		vn10844	DMT		479	drug/metabolite		2.A.7		X
+PN96_RS06640	vn10844		vn10844	DMT	RarD	480	chloramphenicol (RarD homolog)		2.A.7		X
+PN96_RS13060	vn10844		vn10844	DMT		481	drug/metabolite		2.A.7		X
+PN96_RS13190	vn10844		vn10844	DMT		482	drug/metabolite		2.A.7		X
+PN96_RS13935	vn10844		vn10844	DMT		483	drug/metabolite		2.A.7		X
+PN96_RS14640	vn10844		vn10844	DMT		485	drug/metabolite		2.A.7		X
+PN96_RS15675	vn10844		vn10844	DMT	DME	486	drug/metabolite		2.A.7		X
+PN96_RS16005	vn10844		vn10844	DMT	SMR	487	multidrug efflux (SMR)		2.A.7		X
+PN96_RS17340	vn10844		vn10844	DMT		488	drug/metabolite		2.A.7		X
+PN96_RS17510	vn10844		vn10844	DMT		489	drug/metabolite		2.A.7		X
+PN96_RS17750	vn10844		vn10844	DMT	DME	490	drug/metabolite		2.A.7		X
+PN96_RS18240	vn10844		vn10844	DMT		491	drug/metabolite		2.A.7		X
+PN96_RS18675	vn10844		vn10844	DMT		492	drug/metabolite		2.A.7		X
+PN96_RS19130	vn10844		vn10844	DMT	DME	493	drug/metabolite		2.A.7		X
+PN96_RS19535	vn10844		vn10844	DMT		494	drug/metabolite		2.A.7		X
+PN96_RS19550	vn10844		vn10844	DMT	DME	495	drug/metabolite		2.A.7		X
+PN96_RS19855	vn10844		vn10844	DMT		496	drug/metabolite		2.A.7		X
+PN96_RS19885	vn10844		vn10844	DMT	DME	497	drug/metabolite		2.A.7		X
+PN96_RS20195	vn10844		vn10844	DMT		498	drug/metabolite		2.A.7		X
+PN96_RS21795	vn10844		vn10844	DMT	RarD	499	chloramphenicol (RarD homolog)		2.A.7		X
+PN96_RS22815	vn10844		vn10844	DMT		500	drug/metabolite		2.A.7		X
+PN96_RS23465	vn10844		vn10844	DMT		501	drug/metabolite		2.A.7		X
+PN96_RS08620	vn10844		vn10844	DNA-T		924	unknown substrate		3.A.11		X
+PN96_RS16570	vn10844		vn10844	ESS		234	sodium ion:glutamate symporter		2.A.27		X
+PN96_RS13565	vn10844		vn10844	F-ATPase		995	protons		3.A.2		X
+PN96_RS13570	vn10844		vn10844	F-ATPase		996	protons		3.A.2		X
+PN96_RS13575	vn10844		vn10844	F-ATPase		997	protons		3.A.2		X
+PN96_RS13580	vn10844		vn10844	F-ATPase		998	protons		3.A.2		X
+PN96_RS13585	vn10844		vn10844	F-ATPase		999	protons		3.A.2		X
+PN96_RS13590	vn10844		vn10844	F-ATPase		1000	protons		3.A.2		X
+PN96_RS13595	vn10844		vn10844	F-ATPase		1001	protons		3.A.2		X
+PN96_RS13600	vn10844		vn10844	F-ATPase		1002	protons		3.A.2		X
+PN96_RS13605	vn10844		vn10844	F-ATPase		1003	protons		3.A.2		X
+PN96_RS22610	vn10844		vn10844	F-ATPase		1006	protons		3.A.2		X
+PN96_RS22615	vn10844		vn10844	F-ATPase		1007	protons		3.A.2		X
+PN96_RS22620	vn10844		vn10844	F-ATPase		1008	protons		3.A.2		X
+PN96_RS22625	vn10844		vn10844	F-ATPase		1009	protons		3.A.2		X
+PN96_RS22640	vn10844		vn10844	F-ATPase		1011	protons		3.A.2		X
+PN96_RS09350	vn10844		vn10844	FeoB		1423	ferrous ion		9.A.8		X
+PN96_RS14755	vn10844		vn10844	FeoB		1433	ferrous ion		9.A.8		X
+PN96_RS07820	vn10844		vn10844	FNT		302	formate/nitrite		2.A.44		X
+PN96_RS20605	vn10844		vn10844	FNT		303	formate/nitrite		2.A.44		X
+PN96_RS21060	vn10844		vn10844	FNT		304	formate/nitrite		2.A.44		X
+PN96_RS01470	vn10844		vn10844	GntP		532	gluconate		2.A.8		X
+PN96_RS13235	vn10844		vn10844	GntP		534	gluconate		2.A.8		X
+PN96_RS16855	vn10844		vn10844	GntP		535	gluconate		2.A.8		X
+PN96_RS19070	vn10844		vn10844	GntP		536	gluconate		2.A.8		X
+PN96_RS16280	vn10844		vn10844	GPH		174	multidrug efflux		2.A.2		X
+PN96_RS00475	vn10844		vn10844	GPTS	HPr	1367	unknown substrate		4.A		X
+PN96_RS09640	vn10844		vn10844	GPTS	HPr	1368	unknown substrate		4.A		X
+PN96_RS09645	vn10844		vn10844	GPTS	EnzymeI	1363	unknown substrate		4.A		X
+PN96_RS11080	vn10844		vn10844	GPTS	EnzymeI	1364	unknown substrate		4.A		X
+PN96_RS04285	vn10844		vn10844	HAAAP		295	serine		2.A.42		X
+PN96_RS06215	vn10844		vn10844	HAAAP		296	aromatic amino acid		2.A.42		X
+PN96_RS10995	vn10844		vn10844	HAAAP		1512	aromatic amino acid		2.A.42		X
+PN96_RS15975	vn10844		vn10844	HAAAP		298	aromatic amino acid		2.A.42		X
+PN96_RS21315	vn10844		vn10844	HAAAP		299	serine		2.A.42		X
+PN96_RS23050	vn10844		vn10844	HAAAP		301	tryptophan/tyrosine		2.A.42		X
+PN96_RS00160	vn10844		vn10844	HCC		1401	hemolysin C (HlyC) homolog		9.A.40		X
+PN96_RS01280	vn10844		vn10844	HCC		1402	heavy metal ion		9.A.40		X
+PN96_RS09185	vn10844		vn10844	HCC		1403	hemolysin C (HlyC) homolog		9.A.40		X
+PN96_RS02640	vn10844		vn10844	IIISP		1034	unknown substrate		3.A.6		X
+PN96_RS02690	vn10844		vn10844	IIISP		1038	unknown substrate		3.A.6		X
+PN96_RS02695	vn10844		vn10844	IIISP		1039	unknown substrate		3.A.6		X
+PN96_RS02700	vn10844		vn10844	IIISP		1040	unknown substrate		3.A.6		X
+PN96_RS02705	vn10844		vn10844	IIISP		1041	unknown substrate		3.A.6		X
+PN96_RS02710	vn10844		vn10844	IIISP		1042	unknown substrate		3.A.6		X
+PN96_RS00850	vn10844		vn10844	IISP		1053	signal recognition particle receptor alpha subunit (SR-alpha)		3.A.5		X
+PN96_RS01885	vn10844		vn10844	IVSP		1058	unknown substrate		3.A.7		X
+PN96_RS13120	vn10844		vn10844	IVSP		1069	unknown substrate		3.A.7		X
+PN96_RS15550	vn10844		vn10844	LctP		146	L-lactate		2.A.14		X
+PN96_RS20525	vn10844		vn10844	LIV-E	AzlC	527	branched-chain amino acid efflux (AzlC)		2.A.78		X
+PN96_RS22975	vn10844		vn10844	LIV-E	AzlC	528	branched-chain amino acid efflux (AzlC)		2.A.78		X
+PN96_RS11145	vn10844		vn10844	LIVCS		232	branched-chain amino acid		2.A.26		X
+PN96_RS17125	vn10844		vn10844	LIVCS		233	branched-chain amino acid		2.A.26		X
+PN96_RS00935	vn10844		vn10844	LysE		505	lysine efflux		2.A.75		X
+PN96_RS01990	vn10844		vn10844	MFS		84	glycerol-3-phosphate		2.A.1		X
+PN96_RS02120	vn10844		vn10844	MFS		85	Acetyl-CoA:CoA antiporter		2.A.1		X
+PN96_RS04825	vn10844		vn10844	MFS		88	sugar		2.A.1		X
+PN96_RS06335	vn10844		vn10844	MFS		91	glycerol-3-phosphate		2.A.1		X
+PN96_RS06700	vn10844		vn10844	MFS		92	multidrug efflux		2.A.1		X
+PN96_RS06715	vn10844		vn10844	MFS		93	multidrug efflux		2.A.1		X
+PN96_RS06875	vn10844		vn10844	MFS		94	multidrug efflux		2.A.1		X
+PN96_RS07590	vn10844		vn10844	MFS		95	multidrug efflux		2.A.1		X
+PN96_RS08990	vn10844		vn10844	MFS		96	multidrug efflux		2.A.1		X
+PN96_RS10545	vn10844		vn10844	MFS		103	multidrug efflux		2.A.1		X
+PN96_RS10560	vn10844		vn10844	MFS		104	multidrug efflux		2.A.1		X
+PN96_RS13625	vn10844		vn10844	MFS		106	multidrug efflux		2.A.1		X
+PN96_RS13880	vn10844		vn10844	MFS		107	multidrug efflux		2.A.1		X
+PN96_RS14145	vn10844		vn10844	MFS		108	multidrug efflux		2.A.1		X
+PN96_RS14425	vn10844		vn10844	MFS		110	multidrug efflux		2.A.1		X
+PN96_RS15495	vn10844		vn10844	MFS		111	multidrug efflux		2.A.1		X
+PN96_RS15915	vn10844		vn10844	MFS		113	multidrug efflux		2.A.1		X
+PN96_RS15955	vn10844		vn10844	MFS		114	glycerol-3-phosphate		2.A.1		X
+PN96_RS17075	vn10844		vn10844	MFS		117	multidrug efflux		2.A.1		X
+PN96_RS17560	vn10844		vn10844	MFS		118	multidrug efflux		2.A.1		X
+PN96_RS17735	vn10844		vn10844	MFS		120	multidrug efflux		2.A.1		X
+PN96_RS18115	vn10844		vn10844	MFS		121	multidrug efflux		2.A.1		X
+PN96_RS18620	vn10844		vn10844	MFS		123	metabolite (benzoate)		2.A.1		X
+PN96_RS19125	vn10844		vn10844	MFS		124	multidrug efflux		2.A.1		X
+PN96_RS19415	vn10844		vn10844	MFS		125	nitrate		2.A.1		X
+PN96_RS19690	vn10844		vn10844	MFS		126	multidrug efflux		2.A.1		X
+PN96_RS19850	vn10844		vn10844	MFS		127	multidrug efflux		2.A.1		X
+PN96_RS20095	vn10844		vn10844	MFS		128	oxalate:formate antiporter		2.A.1		X
+PN96_RS20645	vn10844		vn10844	MFS		129	sugar efflux		2.A.1		X
+PN96_RS22085	vn10844		vn10844	MFS		132	multidrug efflux		2.A.1		X
+PN96_RS22135	vn10844		vn10844	MFS		133	cyanate		2.A.1		X
+PN96_RS22375	vn10844		vn10844	MFS		136	metabolite (alpha-ketoglutarate)		2.A.1		X
+PN96_RS00470	vn10844		vn10844	MgtE		1389	magnesium ion		9.A.19		X
+PN96_RS01610	vn10844		vn10844	MgtE		1390	magnesium ion		9.A.19		X
+PN96_RS18130	vn10844		vn10844	MgtE		1395	magnesium ion		9.A.19		X
+PN96_RS01985	vn10844		vn10844	MIP		70	glycerol uptake		1.A.8		X
+PN96_RS03030	vn10844		vn10844	MIP		71	glycerol uptake		1.A.8		X
+PN96_RS01965	vn10844		vn10844	MIT		61	magnesium/cobalt ion		1.A.35		X
+PN96_RS01710	vn10844		vn10844	MOP	MATE	457	multidrug efflux		2.A.66		X
+PN96_RS04710	vn10844		vn10844	MOP	PST	458	polysaccharide export		2.A.66		X
+PN96_RS05915	vn10844		vn10844	MOP	MATE	460	multidrug efflux		2.A.66		X
+PN96_RS06095	vn10844		vn10844	MOP	MATE	461	multidrug efflux		2.A.66		X
+PN96_RS07550	vn10844		vn10844	MOP	MATE	462	multidrug efflux		2.A.66		X
+PN96_RS11035	vn10844		vn10844	MOP	MVF	463	virulence factor MviN		2.A.66		X
+PN96_RS12315	vn10844		vn10844	MOP	PST	464	polysaccharide export		2.A.66		X
+PN96_RS14250	vn10844		vn10844	MOP	MATE	465	multidrug efflux		2.A.66		X
+PN96_RS14515	vn10844		vn10844	MOP	MATE	466	multidrug efflux		2.A.66		X
+PN96_RS15235	vn10844		vn10844	MOP	PST	467	polysaccharide export		2.A.66		X
+PN96_RS16695	vn10844		vn10844	MOP	MATE	468	multidrug efflux		2.A.66		X
+PN96_RS18185	vn10844		vn10844	MOP	MATE	469	multidrug efflux		2.A.66		X
+PN96_RS20745	vn10844		vn10844	MOP	MATE	470	multidrug efflux		2.A.66		X
+PN96_RS08245	vn10844		vn10844	Mot/Exb		42	unknown substrate		1.A.30		X
+PN96_RS08250	vn10844		vn10844	Mot/Exb		43	unknown substrate		1.A.30		X
+PN96_RS10205	vn10844		vn10844	Mot/Exb		46	unknown substrate		1.A.30		X
+PN96_RS00930	vn10844		vn10844	MscS		30	small-conductance mechanosensitive ion channel		1.A.23		X
+PN96_RS03050	vn10844		vn10844	MscS		31	small-conductance mechanosensitive ion channel		1.A.23		X
+PN96_RS15340	vn10844		vn10844	MscS		32	small-conductance mechanosensitive ion channel		1.A.23		X
+PN96_RS15565	vn10844		vn10844	MscS		33	small-conductance mechanosensitive ion channel		1.A.23		X
+PN96_RS16455	vn10844		vn10844	MscS		34	small-conductance mechanosensitive ion channel		1.A.23		X
+PN96_RS19215	vn10844		vn10844	MscS		35	small-conductance mechanosensitive ion channel		1.A.23		X
+PN96_RS22240	vn10844		vn10844	MscS		36	small-conductance mechanosensitive ion channel		1.A.23		X
+PN96_RS18975	vn10844		vn10844	MSS		502	sodium ion:malonate symporter		2.A.70		X
+PN96_RS18980	vn10844		vn10844	MSS		503	sodium ion:malonate symporter		2.A.70		X
+PN96_RS00350	vn10844		vn10844	MTB		949	unknown substrate		3.A.15		X
+PN96_RS01330	vn10844		vn10844	MTB		953	unknown substrate		3.A.15		X
+PN96_RS01335	vn10844		vn10844	MTB		954	unknown substrate		3.A.15		X
+PN96_RS01345	vn10844		vn10844	MTB		956	unknown substrate		3.A.15		X
+PN96_RS12820	vn10844		vn10844	MTB		958	unknown substrate		3.A.15		X
+PN96_RS12825	vn10844		vn10844	MTB		959	unknown substrate		3.A.15		X
+PN96_RS12835	vn10844		vn10844	MTB		961	unknown substrate		3.A.15		X
+PN96_RS12840	vn10844		vn10844	MTB		962	unknown substrate		3.A.15		X
+PN96_RS12845	vn10844		vn10844	MTB		963	unknown substrate		3.A.15		X
+PN96_RS12855	vn10844		vn10844	MTB		964	unknown substrate		3.A.15		X
+PN96_RS12860	vn10844		vn10844	MTB		965	unknown substrate		3.A.15		X
+PN96_RS12875	vn10844		vn10844	MTB		968	unknown substrate		3.A.15		X
+PN96_RS06405	vn10844		vn10844	NCS1		281	cytosine/purines/uracil/thiamine/allantoin		2.A.39		X
+PN96_RS10460	vn10844		vn10844	NCS1		282	cytosine/purines/uracil/thiamine/allantoin		2.A.39		X
+PN96_RS22170	vn10844		vn10844	NCS1		283	cytosine/purines/uracil/thiamine/allantoin		2.A.39		X
+PN96_RS02475	vn10844		vn10844	NCS2		287	xanthine/uracil		2.A.40		X
+PN96_RS10290	vn10844		vn10844	NCS2		102	xanthine/uracil		2.A.40		X
+PN96_RS12755	vn10844		vn10844	NCS2		289	xanthine/uracil		2.A.40		X
+PN96_RS17715	vn10844		vn10844	NCS2		290	xanthine/uracil		2.A.40		X
+PN96_RS17800	vn10844		vn10844	NCS2		291	xanthine/uracil		2.A.40		X
+PN96_RS07530	vn10844		vn10844	NhaA		243	sodium ion:proton antiporter		2.A.33		X
+PN96_RS03465	vn10844		vn10844	NhaB		244	sodium ion:proton antiporter		2.A.34		X
+PN96_RS03215	vn10844		vn10844	NhaC		245	sodium ion:proton antiporter		2.A.35		X
+PN96_RS03265	vn10844		vn10844	NhaC		246	sodium ion:proton antiporter		2.A.35		X
+PN96_RS04845	vn10844		vn10844	NhaC		1509	sodium ion:proton antiporter		2.A.35		X
+PN96_RS05055	vn10844		vn10844	NhaC		248	sodium ion:proton antiporter		2.A.35		X
+PN96_RS07920	vn10844		vn10844	NhaC		249	sodium ion:proton antiporter		2.A.35		X
+PN96_RS10500	vn10844		vn10844	NhaC		250	sodium ion:proton antiporter		2.A.35		X
+PN96_RS18650	vn10844		vn10844	NhaC		252	sodium ion:proton antiporter		2.A.35		X
+PN96_RS19810	vn10844		vn10844	NhaC		253	sodium ion:proton antiporter		2.A.35		X
+PN96_RS19835	vn10844		vn10844	NhaC		254	sodium ion:proton antiporter		2.A.35		X
+PN96_RS16655	vn10844		vn10844	NhaD		447	sodium ion:proton antiporter		2.A.62		X
+PN96_RS00445	vn10844		vn10844	Nramp		329	manganese/iron ion		2.A.55		X
+PN96_RS02210	vn10844		vn10844	NSS		220	sodium ion:solute symporter		2.A.22		X
+PN96_RS03615	vn10844		vn10844	NSS		221	sodium ion:solute symporter		2.A.22		X
+PN96_RS07700	vn10844		vn10844	NSS		222	sodium ion:solute symporter		2.A.22		X
+PN96_RS10200	vn10844		vn10844	OOP		45	unknown substrate		1.B.6		X
+PN96_RS13530	vn10844		vn10844	Oxa1		549	60 KD inner membrane protein OxaA homolog		2.A.9		X
+PN96_RS05840	vn10844		vn10844	P-ATPase		1018	zinc/cadmium/cobalt ion		3.A.3		X
+PN96_RS08715	vn10844		vn10844	P-ATPase		1019	zinc/cadmium/cobalt ion		3.A.3		X
+PN96_RS09780	vn10844		vn10844	P-ATPase		1020	zinc/cadmium/cobalt ion		3.A.3		X
+PN96_RS21450	vn10844		vn10844	P-ATPase		1023	calcium ion/manganese ion		3.A.3		X
+PN96_RS11550	vn10844		vn10844	PiT		177	phosphate		2.A.20		X
+PN96_RS11055	vn10844		vn10844	PNaS		384	sodium ion:phosphate symporter		2.A.58		X
+PN96_RS11295	vn10844		vn10844	PNaS		140	sodium ion:phosphate symporter		2.A.58		X
+PN96_RS09505	vn10844		vn10844	POT		166	proton:dipeptide/tripeptide symporter		2.A.17		X
+PN96_RS03230	vn10844		vn10844	RhtB		552	neutral amino acid/multiple antibiotic resistance		2.A.76		X
+PN96_RS05190	vn10844		vn10844	RhtB		517	amino acid efflux		2.A.76		X
+PN96_RS06595	vn10844		vn10844	RhtB		518	amino acid efflux		2.A.76		X
+PN96_RS13925	vn10844		vn10844	RhtB		519	amino acid efflux		2.A.76		X
+PN96_RS14120	vn10844		vn10844	RhtB		520	amino acid efflux		2.A.76		X
+PN96_RS16785	vn10844		vn10844	RhtB		521	amino acid efflux		2.A.76		X
+PN96_RS17440	vn10844		vn10844	RhtB		522	amino acid efflux		2.A.76		X
+PN96_RS18165	vn10844		vn10844	RhtB		523	amino acid efflux		2.A.76		X
+PN96_RS18280	vn10844		vn10844	RhtB		524	amino acid efflux		2.A.76		X
+PN96_RS19575	vn10844		vn10844	RhtB		525	amino acid efflux		2.A.76		X
+PN96_RS22965	vn10844		vn10844	RhtB		526	amino acid efflux		2.A.76		X
+PN96_RS01595	vn10844		vn10844	RND	HAE1	389	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
+PN96_RS03840	vn10844		vn10844	RND		390	multidrug efflux		2.A.6		X
+PN96_RS05170	vn10844		vn10844	RND		391	multidrug efflux		2.A.6		X
+PN96_RS07720	vn10844		vn10844	RND	HAE1	394	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
+PN96_RS08085	vn10844		vn10844	RND	HAE1	397	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
+PN96_RS08945	vn10844		vn10844	RND	HAE1	399	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
+PN96_RS13335	vn10844		vn10844	RND	HAE1	405	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
+PN96_RS15700	vn10844		vn10844	RND		409	multidrug efflux		2.A.6		X
+PN96_RS15960	vn10844		vn10844	RND		410	multidrug efflux		2.A.6		X
+PN96_RS17595	vn10844		vn10844	RND	HAE1	416	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
+PN96_RS17660	vn10844		vn10844	RND	HAE1	418	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
+PN96_RS18370	vn10844		vn10844	RND	HAE1	424	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
+PN96_RS19680	vn10844		vn10844	RND	HAE1	427	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
+PN96_RS20715	vn10844		vn10844	RND	HAE1	430	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
+PN96_RS21210	vn10844		vn10844	RND	HAE1	432	multidrug/solvent efflux (HAE1 subfamily)		2.A.6		X
+PN96_RS22270	vn10844		vn10844	RND		436	multidrug efflux		2.A.6		X
+PN96_RS23130	vn10844		vn10844	RND	HME	438	cobalt/zinc/cadmium ion efflux (HME subfamily)		2.A.6		X
+PN96_RS00485	vn10844		vn10844	SSPTS	EnzymeIIA	1235	fructose		4.A		X
+PN96_RS03595	vn10844		vn10844	SSPTS	EnzymeIIABC	1222	glucose/maltose/N-acetylglucosamine		4.A		X
+PN96_RS03605	vn10844		vn10844	SSPTS	EnzymeIIABC	1223	glucose/maltose/N-acetylglucosamine		4.A		X
+PN96_RS06630	vn10844		vn10844	SSPTS	EnzymeIIABC	1224	glucose/maltose/N-acetylglucosamine		4.A		X
+PN96_RS09475	vn10844		vn10844	SSPTS	EnzymeIIABC	1225	glucose/maltose/N-acetylglucosamine		4.A		X
+PN96_RS09650	vn10844		vn10844	SSPTS	EnzymeIIABC	1226	glucose		4.A		X
+PN96_RS10105	vn10844		vn10844	SSPTS	EnzymeIIABC	1227	glucose/maltose/N-acetylglucosamine		4.A		X
+PN96_RS11670	vn10844		vn10844	SSPTS	EnzymeIIABC	1239	mannitol		4.A		X
+PN96_RS11690	vn10844		vn10844	SSPTS	EnzymeIIABC	1228	glucose/maltose/N-acetylglucosamine		4.A		X
+PN96_RS13365	vn10844		vn10844	SSPTS	EnzymeIIABC	1229	glucose/maltose/N-acetylglucosamine		4.A		X
+PN96_RS15845	vn10844		vn10844	SSPTS	EnzymeIIABC	1230	glucose/maltose/N-acetylglucosamine		4.A		X
+PN96_RS15905	vn10844		vn10844	SSPTS	EnzymeIIABC	1231	glucose/maltose/N-acetylglucosamine		4.A		X
+PN96_RS17920	vn10844		vn10844	SSPTS	EnzymeIIABC	1232	glucose/maltose/N-acetylglucosamine		4.A		X
+PN96_RS19715	vn10844		vn10844	SSPTS	EnzymeIIABC	1233	glucose/maltose/N-acetylglucosamine		4.A		X
+PN96_RS21195	vn10844		vn10844	SSPTS	EnzymeIIA	1241	mannitol/fructose		4.A		X
+PN96_RS21205	vn10844		vn10844	SSPTS	EnzymeIIBC	1242	fructose		4.A		X
+PN96_RS05985	vn10844		vn10844	SSS		187	sodium ion:proline symporter		2.A.21		X
+PN96_RS06615	vn10844		vn10844	SSS		190	sodium ion:panthothenate symporter		2.A.21		X
+PN96_RS09100	vn10844		vn10844	SSS		194	sodium ion:proline symporter		2.A.21		X
+PN96_RS10790	vn10844		vn10844	SSS		196	sodium ion:proline symporter		2.A.21		X
+PN96_RS14430	vn10844		vn10844	SSS		201	sodium ion:proline symporter		2.A.21		X
+PN96_RS14445	vn10844		vn10844	SSS		202	sodium ion:proline symporter		2.A.21		X
+PN96_RS16050	vn10844		vn10844	SSS		204	sodium ion:proline symporter		2.A.21		X
+PN96_RS16390	vn10844		vn10844	SSS		205	sodium ion:proline symporter		2.A.21		X
+PN96_RS16425	vn10844		vn10844	SSS		206	sodium ion:proline symporter		2.A.21		X
+PN96_RS19735	vn10844		vn10844	SSS		211	sodium ion:proline symporter		2.A.21		X
+PN96_RS21490	vn10844		vn10844	SSS		217	sodium ion:proline symporter		2.A.21		X
+PN96_RS01395	vn10844		vn10844	SulP		323	sulfate		2.A.53		X
+PN96_RS02440	vn10844		vn10844	SulP		324	sulfate		2.A.53		X
+PN96_RS03510	vn10844		vn10844	SulP		325	sulfate		2.A.53		X
+PN96_RS16160	vn10844		vn10844	SulP		327	sulfate		2.A.53		X
+PN96_RS13025	vn10844		vn10844	Tat		454	protein export		2.A.64		X
+PN96_RS13030	vn10844		vn10844	Tat		455	protein export		2.A.64		X
+PN96_RS13035	vn10844		vn10844	Tat		456	protein export		2.A.64		X
+PN96_RS02020	vn10844		vn10844	TDT		154	tellurite		2.A.16		X
+PN96_RS18460	vn10844		vn10844	TDT		163	tellurite		2.A.16		X
+PN96_RS21035	vn10844		vn10844	TerC		1399	tellurium ion efflux		9.A.30		X
+PN96_RS00405	vn10844		vn10844	ThrE		529	unknown substrate		2.A.79		X
+PN96_RS11820	vn10844		vn10844	ThrE		530	unknown substrate		2.A.79		X
+PN96_RS11825	vn10844		vn10844	ThrE		531	unknown substrate		2.A.79		X
+PN96_RS04190	vn10844		vn10844	TRAP-T		332	C4-dicarboxylate		2.A.56		X
+PN96_RS04195	vn10844		vn10844	TRAP-T		333	C4-dicarboxylate		2.A.56		X
+PN96_RS04200	vn10844		vn10844	TRAP-T		334	C4-dicarboxylate		2.A.56		X
+PN96_RS09115	vn10844		vn10844	TRAP-T		339	C4-dicarboxylate		2.A.56		X
+PN96_RS09120	vn10844		vn10844	TRAP-T		340	C4-dicarboxylate		2.A.56		X
+PN96_RS09125	vn10844		vn10844	TRAP-T		341	C4-dicarboxylate		2.A.56		X
+PN96_RS11870	vn10844		vn10844	TRAP-T		342	C4-dicarboxylate		2.A.56		X
+PN96_RS18430	vn10844		vn10844	TRAP-T		345	C4-dicarboxylate		2.A.56		X
+PN96_RS18700	vn10844		vn10844	TRAP-T		346	C4-dicarboxylate		2.A.56		X
+PN96_RS18740	vn10844		vn10844	TRAP-T		347	C4-dicarboxylate		2.A.56		X
+PN96_RS18745	vn10844		vn10844	TRAP-T		348	C4-dicarboxylate		2.A.56		X
+PN96_RS18750	vn10844		vn10844	TRAP-T		349	C4-dicarboxylate		2.A.56		X
+PN96_RS18845	vn10844		vn10844	TRAP-T		350	C4-dicarboxylate		2.A.56		X
+PN96_RS18850	vn10844		vn10844	TRAP-T		351	C4-dicarboxylate		2.A.56		X
+PN96_RS18855	vn10844		vn10844	TRAP-T		352	C4-dicarboxylate		2.A.56		X
+PN96_RS18890	vn10844		vn10844	TRAP-T		353	C4-dicarboxylate		2.A.56		X
+PN96_RS18895	vn10844		vn10844	TRAP-T		354	C4-dicarboxylate		2.A.56		X
+PN96_RS18900	vn10844		vn10844	TRAP-T		355	C4-dicarboxylate		2.A.56		X
+PN96_RS19560	vn10844		vn10844	TRAP-T		356	C4-dicarboxylate		2.A.56		X
+PN96_RS19565	vn10844		vn10844	TRAP-T		357	C4-dicarboxylate		2.A.56		X
+PN96_RS19570	vn10844		vn10844	TRAP-T		358	C4-dicarboxylate		2.A.56		X
+PN96_RS20265	vn10844		vn10844	TRAP-T		360	C4-dicarboxylate		2.A.56		X
+PN96_RS20270	vn10844		vn10844	TRAP-T		361	C4-dicarboxylate		2.A.56		X
+PN96_RS20275	vn10844		vn10844	TRAP-T		362	C4-dicarboxylate		2.A.56		X
+PN96_RS20430	vn10844		vn10844	TRAP-T		364	C4-dicarboxylate		2.A.56		X
+PN96_RS20435	vn10844		vn10844	TRAP-T		365	C4-dicarboxylate		2.A.56		X
+PN96_RS20440	vn10844		vn10844	TRAP-T		366	C4-dicarboxylate		2.A.56		X
+PN96_RS22190	vn10844		vn10844	TRAP-T		369	C4-dicarboxylate		2.A.56		X
+PN96_RS22195	vn10844		vn10844	TRAP-T		370	C4-dicarboxylate		2.A.56		X
+PN96_RS22200	vn10844		vn10844	TRAP-T		371	C4-dicarboxylate		2.A.56		X
+PN96_RS22320	vn10844		vn10844	TRAP-T		372	C4-dicarboxylate		2.A.56		X
+PN96_RS22325	vn10844		vn10844	TRAP-T		373	C4-dicarboxylate		2.A.56		X
+PN96_RS22330	vn10844		vn10844	TRAP-T		374	C4-dicarboxylate		2.A.56		X
+PN96_RS22515	vn10844		vn10844	TRAP-T		375	C4-dicarboxylate		2.A.56		X
+PN96_RS22520	vn10844		vn10844	TRAP-T		376	C4-dicarboxylate		2.A.56		X
+PN96_RS22525	vn10844		vn10844	TRAP-T		377	C4-dicarboxylate		2.A.56		X
+PN96_RS23225	vn10844		vn10844	TRAP-T		378	C4-dicarboxylate		2.A.56		X
+PN96_RS23230	vn10844		vn10844	TRAP-T		379	C4-dicarboxylate		2.A.56		X
+PN96_RS23235	vn10844		vn10844	TRAP-T		380	C4-dicarboxylate		2.A.56		X
+PN96_RS23510	vn10844		vn10844	TRAP-T		381	C4-dicarboxylate		2.A.56		X
+PN96_RS23515	vn10844		vn10844	TRAP-T		382	C4-dicarboxylate		2.A.56		X
+PN96_RS23520	vn10844		vn10844	TRAP-T		383	C4-dicarboxylate		2.A.56		X
+PN96_RS02885	vn10844		vn10844	TRIC		67	unknown substrate		1.A.62		X
+PN96_RS11285	vn10844		vn10844	TRIC		68	unknown substrate		1.A.62		X
+PN96_RS09170	vn10844		vn10844	Trk		272	potassium ion uptake		2.A.38		X
+PN96_RS13405	vn10844		vn10844	Trk		275	potassium ion uptake		2.A.38		X
+PN96_RS13705	vn10844		vn10844	Trk		276	potassium ion uptake		2.A.38		X
+PN96_RS05400	vn10844		vn10844	TTT	TctA	537	tricarboxylate (TctA)		2.A.80		X
+PN96_RS05410	vn10844		vn10844	TTT	TctC	538	tricarboxylate (TctC)		2.A.80		X
+PN96_RS03225	vn10844		vn10844	VIC		9	potassium ion channel		1.A.1		X
+PN96_RS08215	vn10844		vn10844	VIC		12	potassium ion channel		1.A.1		X
+PN96_RS11535	vn10844		vn10844	VIC		13	potassium ion channel		1.A.1		X
+PN96_RS15705	vn10844		vn10844	VIC		15	potassium ion channel		1.A.1		X
+PN96_RS00835	vn10844		vn10844	YggT		1400	unknown substrate		9.A.4		X

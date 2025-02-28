@@ -36,6 +36,7 @@ Base.@kwdef mutable struct Metabolite
     compartment::A.Maybe{String} = nothing
     formula::A.Maybe{A.MetaboliteFormula} = nothing
     charge::A.Maybe{Int} = nothing
+    molarmass::A.Maybe{Float64} = nothing
     balance::Float64 = 0.0
     annotations::A.Annotations = A.Annotations()
     notes::A.Notes = A.Notes()
