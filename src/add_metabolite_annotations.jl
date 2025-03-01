@@ -5,8 +5,7 @@ function add_metabolite_annotations!(model)
             joinpath(
                 pkgdir(@__MODULE__),
                 "data",
-                "annotations",
-                "reduced",
+                "chebi",
                 "metabolite_annotations.csv",
             ),
         ),

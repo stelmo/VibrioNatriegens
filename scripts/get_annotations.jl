@@ -115,3 +115,15 @@ end
 df
 
 CSV.write(joinpath("data", "annotations", "reduced", "metabolite_annotations.csv"), df)
+
+# reactions
+
+ec = DataFrame(CSV.File(joinpath("data", "rhea", "ec_rxns.csv")))
+@select!(ec, :ec, :rhea)
+
+@transform!(ec, :qrt = get_reaction_quartet.(:rhea))
+
+
+ec = flatten(ec, :qrt)
+@select!(ec, :ec, :qrt)
+CSV.write(joinpath("data","rhea", "ec-rxns.csv"), ec)

@@ -48,7 +48,7 @@ function extend_model!(model, dfs)
 
             append!(ms, last.(coeff_mets))
 
-            ecs = isnothing(rxn.ec) ? [""] : rxn.ec
+            ecs = isnothing(rxn.ec) ? [""] : [string(last(split(x, "/"))) for x in rxn.ec]
             name = isnothing(rxn.name) ? nothing : rxn.name
 
             # direction
@@ -74,7 +74,7 @@ function extend_model!(model, dfs)
                 dg = dg,
                 gene_association = isnothing(iso) ? nothing : [iso],
                 stoichiometry = stoichiometry,
-                annotations = Dict("REACTION" => [rxn.equation], "EC" => ecs),
+                annotations = Dict("rhea-reaction" => [rxn.equation], "EC" => ecs),
             )
         end
     end

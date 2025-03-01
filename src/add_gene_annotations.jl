@@ -7,7 +7,7 @@ function add_gene_annotations!(model)
                 pkgdir(@__MODULE__),
                 "data",
                 "annotations",
-                "reduced",
+                "ncbi",
                 "gene_annotations.csv",
             ),
         ),

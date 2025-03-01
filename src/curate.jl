@@ -105,7 +105,7 @@ function curate!(model)
     # change directions to match what is found in biocyc - manual thermodynamics leaves much to be desired
     biocyc = DataFrame(
         CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "biocyc_rxns.csv"),
+            joinpath(pkgdir(@__MODULE__), "data", "rhea", "biocyc_rxns.csv"),
         ),
     )
     @select!(biocyc, :rheaDir, :metacyc)
@@ -120,7 +120,7 @@ function curate!(model)
 
     ecocyc = DataFrame(
         CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "ecocyc_rxns.csv"),
+            joinpath(pkgdir(@__MODULE__), "data", "rhea", "ecocyc_rxns.csv"),
         ),
     )
     @select!(ecocyc, :rheaDir, :metacyc)
