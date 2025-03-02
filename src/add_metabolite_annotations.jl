@@ -26,6 +26,7 @@ function add_metabolite_annotations!(model)
             "Names" => string.(split(get(_d, "Names", ""), "#")),
             "InChI" => [get(_d, "InChI", ""),],
             "KEGG" => string.(split(get(_d, "KeGG", ""),"#")),
+            "SBO" => ["SBO_0000299",]
         )
     end
 
