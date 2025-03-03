@@ -2,8 +2,6 @@ using VibrioNatriegens
 using AbstractFBCModels
 using JSONFBCModels
 using SBMLFBCModels
-import AbstractFBCModels as A
-using RheaReactions, DataFrames, DataFramesMeta, CSV
 
 model = VibrioNatriegens.build_model()
 
