@@ -1,0 +1,332 @@
+ORF,TransporterFamily,Action,Substrate,AutoAnnotation
+WP_014231566.1,AAE,,aspartate:alanine antiporter,2.A.81
+WP_014233073.1,ABC,binding,glycine betaine,3.A.1
+WP_014232913.1,ABC,binding,phosphate,3.A.1
+WP_014232912.1,ABC,binding,glycine betaine,3.A.1
+WP_020334451.1,ABC,binding,heme,3.A.1
+WP_014232643.1,ABC,binding,heme,3.A.1
+WP_020334589.1,ABC,membrane,heme export,3.A.1
+WP_014232641.1,ABC,membrane,heme export,3.A.1
+WP_024373042.1,ABC,binding,phosphate,3.A.1
+WP_024373041.1,ABC,membrane,amino aicd (glutamine/glutamate/aspartate),3.A.1
+WP_014232571.1,ABC,binding protein,amino acid (glutamine/glutamate/aspartate),3.A.1
+WP_014232524.1,ABC,binding,glycine betaine,3.A.1
+WP_014232523.1,ABC,binding,glycine betaine,3.A.1
+WP_020336408.1,ABC,binding protein,amino acid (glutamine/glutamate/aspartate),3.A.1
+WP_020336407.1,ABC,membrane,amino acid,3.A.1
+WP_020336406.1,ABC,membrane,amino aicd (glutamine/glutamate/aspartate),3.A.1
+WP_020336404.1,ABC,binding,phosphate,3.A.1
+WP_020336361.1,ABC,binding,glycine betaine,3.A.1
+WP_020336359.1,ABC,membrane,glycine betaine/L-proline,3.A.1
+WP_014231965.1,ABC,binding,glycine betaine,3.A.1
+WP_020333316.1,ABC,binding,phosphate,3.A.1
+WP_020333315.1,ABC,membrane,amino aicd (glutamine/glutamate/aspartate),3.A.1
+WP_014231907.1,ABC,membrane,amino acid,3.A.1
+WP_020333314.1,ABC,binding protein,amino acid (glutamine/glutamate/aspartate),3.A.1
+WP_014231828.1,ABC,membrane,spermidine/putrescine,3.A.1
+WP_020333276.1,ABC,membrane,spermidine/putrescine,3.A.1
+WP_020333275.1,ABC,binding protein,spermidine/putrescine,3.A.1
+WP_014231825.1,ABC,binding protein,spermidine/putrescine,3.A.1
+WP_014231806.1,ABC,binding,heme,3.A.1
+WP_020333261.1,ABC,binding,heme,3.A.1
+WP_014231740.1,ABC,binding,sulfate,3.A.1
+WP_020333224.1,ABC,membrane,branched-chain amino acid,3.A.1
+WP_020333223.1,ABC,membrane,branched-chain amino acid,3.A.1
+WP_014231736.1,ABC,binding,urea,3.A.1
+WP_020333163.1,ABC,binding,xylose,3.A.1
+WP_020333162.1,ABC,membrane,sugar (ribose),3.A.1
+WP_020333161.1,ABC,membrane,sugar (ribose),3.A.1
+WP_020333160.1,ABC,ABC,sugar (ribose),3.A.1
+WP_020333111.1,ABC,membrane,Vitamin B12,3.A.1
+WP_020332981.1,ABC,binding protein,spermidine/putrescine,3.A.1
+WP_020332979.1,ABC,binding,sulfate,3.A.1
+WP_014231513.1,ABC,binding,glycine betaine,3.A.1
+WP_014231305.1,ABC,membrane,amino acid (lysine/arginine/ornithine/histidine/octopine),3.A.1
+WP_014231304.1,ABC,membrane,amino acid (lysine/arginine/ornithine/histidine/octopine),3.A.1
+WP_014231303.1,ABC,binding protein,amino acid (glutamine/glutamate/aspartate),3.A.1
+WP_014231302.1,ABC,binding,phosphate,3.A.1
+WP_014231267.1,ABC,binding,glycine betaine,3.A.1
+WP_014231260.1,ABC,membrane,spermidine/putrescine,3.A.1
+WP_014231259.1,ABC,membrane,spermidine/putrescine,3.A.1
+WP_014231257.1,ABC,binding protein,spermidine/putrescine,3.A.1
+WP_020336136.1,ABC,membrane,sugar,3.A.1
+WP_020336135.1,ABC,membrane,sugar,3.A.1
+WP_014231208.1,ABC,binding protein,sugar,3.A.1
+WP_014231035.1,ABC,binding,D-methionine,3.A.1
+WP_020333714.1,ABC,membrane,D-methionine,3.A.1
+WP_014231033.1,ABC,binding,methionine,3.A.1
+WP_020333650.1,ABC,binding,glycine betaine,3.A.1
+WP_020333633.1,ABC,binding,phosphate,3.A.1
+WP_020333632.1,ABC,membrane,phosphate,3.A.1
+WP_020333631.1,ABC,membrane,phosphate,3.A.1
+WP_020335949.1,ABC,binding,nitrate,3.A.1
+WP_014230894.1,ABC,membrane,nitrate/sulfonate/taurine,3.A.1
+WP_020335944.1,ABC,binding protein,amino acid,3.A.1
+WP_020335937.1,ABC,binding,heme,3.A.1
+WP_020335859.1,ABC,binding,methionine,3.A.1
+WP_020335830.1,ABC,binding,thiamine,3.A.1
+WP_020335828.1,ABC,binding,thiamin,3.A.1
+WP_014230573.1,ABC,binding,glycine betaine,3.A.1
+WP_020335711.1,ABC,binding,D-methionine,3.A.1
+WP_020336243.1,ABC,binding,glycine betaine,3.A.1
+WP_014230421.1,ABC,binding protein,amino acid (glutamine/glutamate/aspartate),3.A.1
+WP_014230420.1,ABC,membrane,amino aicd (glutamine/glutamate/aspartate),3.A.1
+WP_020333576.1,ABC,binding,phosphate,3.A.1
+WP_024372655.1,ABC,membrane,amino aicd (glutamine/glutamate/aspartate),3.A.1
+WP_020333562.1,ABC,binding protein,amino acid (glutamine/glutamate/aspartate),3.A.1
+WP_014234909.1,ABC,binding,phosphate,3.A.1
+WP_014234910.1,ABC,membrane,phosphate,3.A.1
+WP_014234911.1,ABC,membrane,phosphate,3.A.1
+WP_014234912.1,ABC,binding protein,phosphate,3.A.1
+WP_020333443.1,ABC,binding protein,amino acid (glutamine/glutamate/aspartate),3.A.1
+WP_020333480.1,ABC,binding,thiamine,3.A.1
+WP_020334987.1,ABC,binding,glycine betaine,3.A.1
+WP_014235069.1,ABC,membrane,sugar (ribose),3.A.1
+WP_014235070.1,ABC,ABC,sugar (ribose),3.A.1
+WP_020334998.1,ABC,binding,ribose,3.A.1
+WP_020335005.1,ABC,membrane,nitrate/sulfonate/taurine,3.A.1
+WP_014235081.1,ABC,binding,nitrate,3.A.1
+WP_020335006.1,ABC,binding,glycine betaine,3.A.1
+WP_020335047.1,ABC,binding,glycine betaine,3.A.1
+WP_020335048.1,ABC,binding,glycine betaine,3.A.1
+WP_020335111.1,ABC,binding protein,nitrate/sulfonate/taurine,3.A.1
+WP_020335112.1,ABC,membrane,nitrate/sulfonate/taurine,3.A.1
+WP_020335113.1,ABC,binding,glycine betaine,3.A.1
+WP_020334352.1,ABC,binding,leucine/valine,3.A.1
+WP_020334353.1,ABC,membrane,branched-chain amino acid,3.A.1
+WP_024373020.1,ABC,binding,2-aminoethylphosphonate,3.A.1
+WP_020334421.1,ABC,membrane,spermidine/putrescine,3.A.1
+WP_020334433.1,ABC,binding protein,spermidine/putrescine,3.A.1
+WP_014233674.1,ABC,binding protein,amino acid (glutamine/glutamate/aspartate),3.A.1
+WP_020333761.1,ABC,binding,sulfate,3.A.1
+WP_020333763.1,ABC,membrane,branched-chain amino acid,3.A.1
+WP_014233946.1,ABC,membrane,branched-chain amino acid,3.A.1
+WP_014233947.1,ABC,binding,urea,3.A.1
+WP_014233948.1,ABC,binding,phosphonate,3.A.1
+WP_020333773.1,ABC,binding protein,amino acid (glutamine/glutamate/aspartate),3.A.1
+WP_020333774.1,ABC,membrane,amino acid (lysine/arginine/ornithine/histidine/octopine),3.A.1
+WP_020333775.1,ABC,membrane,amino acid (lysine/arginine/ornithine/histidine/octopine),3.A.1
+WP_020333795.1,ABC,binding,choline,3.A.1
+WP_024372589.1,ABC,membrane,glycine betaine/L-proline,3.A.1
+WP_014233985.1,ABC,binding,glycine betaine,3.A.1
+WP_020333871.1,ABC,binding protein,amino acid (glutamine/glutamate/aspartate),3.A.1
+WP_020334733.1,ABC,ABC,sugar (ribose),3.A.1
+WP_020334734.1,ABC,membrane,sugar (ribose),3.A.1
+WP_020334735.1,ABC,binding,ribose,3.A.1
+WP_014234123.1,ABC,binding protein,amino acid (glutamine/glutamate/aspartate),3.A.1
+WP_014234124.1,ABC,membrane,amino aicd (glutamine/glutamate/aspartate),3.A.1
+WP_014234125.1,ABC,membrane,amino aicd (glutamine/glutamate/aspartate),3.A.1
+WP_014234126.1,ABC,binding,phosphate,3.A.1
+WP_020334931.1,ABC,binding,phosphate,3.A.1
+WP_020334932.1,ABC,membrane,amino aicd (glutamine/glutamate/aspartate),3.A.1
+WP_020334933.1,ABC,binding protein,amino acid (glutamine/glutamate/aspartate),3.A.1
+WP_020334934.1,ABC,membrane,amino aicd (glutamine/glutamate/aspartate),3.A.1
+WP_020334955.1,ABC,binding protein,amino acid (glutamine/glutamate/aspartate),3.A.1
+WP_020335984.1,ABC,membrane,amino acid (lysine/arginine/ornithine/histidine/octopine),3.A.1
+WP_020335985.1,ABC,membrane,amino acid (lysine/arginine/ornithine/histidine/octopine),3.A.1
+WP_014234360.1,ABC,binding protein,amino acid (glutamine/glutamate/aspartate),3.A.1
+WP_014234361.1,ABC,binding,phosphonate,3.A.1
+WP_020335180.1,ABC,binding,glycine betaine,3.A.1
+WP_014234862.1,ABC,membrane,sugar (maltose),3.A.1
+WP_020335420.1,ABC,membrane,sugar,3.A.1
+WP_014234864.1,ABC,binding protein,sugar (maltose),3.A.1
+WP_020334260.1,ABC,membrane,CydC/CydD homolog,3.A.1
+WP_014232776.1,AbgT,,aminobenzoyl-glutamate,2.A.68
+WP_014230991.1,AbgT,,aminobenzoyl-glutamate,2.A.68
+WP_020336373.1,AGCS,,sodium ion:alanine symporter,2.A.25
+WP_020333658.1,AGCS,,sodium ion:alanine symporter,2.A.25
+WP_014230840.1,AGCS,,sodium ion:alanine symporter,2.A.25
+WP_231113068.1,AGCS,,sodium ion:alanine symporter,2.A.25
+WP_014232922.1,Amt,,ammonium,1.A.11
+WP_020333273.1,Amt,,ammonium,1.A.11
+WP_020333513.1,APC,,amino acid,2.A.3
+WP_020334399.1,APC,,ethanolamine,2.A.3
+WP_014233759.1,APC,,amino acid,2.A.3
+WP_020335996.1,APC,,arginine:ornithine antiporter,2.A.3
+WP_020336058.1,APC,,amino acid,2.A.3
+WP_020336067.1,APC,,amino acid,2.A.3
+WP_014233048.1,BASS,,sodium ion/,2.A.28
+WP_020335534.1,BCCT,,glycine betaine/carnitine/choline,2.A.15
+WP_020333247.1,BCCT,,glycine betaine/carnitine/choline,2.A.15
+WP_031779249.1,BCCT,,glycine betaine/carnitine/choline,2.A.15
+WP_020334427.1,BCCT,,glycine betaine/carnitine/choline,2.A.15
+WP_020336001.1,BCCT,,glycine betaine/carnitine/choline,2.A.15
+WP_014234588.1,BCCT,,glycine betaine/carnitine/choline,2.A.15
+WP_014234857.1,BCCT,,glycine betaine/carnitine/choline,2.A.15
+WP_020332917.1,BenE,,benzoate,2.A.46
+WP_014233820.1,ClC,,chloride ion channel,2.A.49
+WP_014232868.1,CNT,,sodium ion:nucleoside symporter,2.A.41
+WP_014231180.1,CNT,,sodium ion:nucleoside symporter,2.A.41
+WP_020334653.1,CNT,,sodium ion:nucleoside symporter,2.A.41
+WP_024372849.1,CPA1,,sodium ion:proton antiporter,2.A.36
+WP_020336281.1,CPA1,,sodium ion:proton antiporter,2.A.36
+WP_020336216.1,CPA1,,sodium ion:proton antiporter,2.A.36
+WP_076633467.1,CPA1,,sodium ion:proton antiporter,2.A.36
+WP_020333367.1,CPA2,,potassium/sodium ion:proton antiporter,2.A.37
+WP_014233182.1,CPA2,,potassium/sodium ion:proton antiporter,2.A.37
+WP_020334384.1,CPA2,,potassium/sodium ion:proton antiporter,2.A.37
+WP_020335206.1,CPA2,,potassium/sodium ion:proton antiporter,2.A.37
+WP_020335338.1,CPA2,,potassium/sodium ion:proton antiporter,2.A.37
+WP_020336031.1,CPA3,MnhG,multicomponent sodium ion:proton antiporter,2.A.63
+WP_020336032.1,CPA3,MnhF,multicomponent sodium ion:proton antiporter,2.A.63
+WP_020336033.1,CPA3,MnhE,multicomponent sodium ion:proton antiporter,2.A.63
+WP_020336034.1,CPA3,MnhD,multicomponent sodium ion:proton antiporter,2.A.63
+WP_020336035.1,CPA3,MnhC,multicomponent sodium ion:proton antiporter,2.A.63
+WP_031779262.1,CPA3,MnhA,multicomponent sodium ion:proton antiporter,2.A.63
+WP_014232414.1,DAACS,,proton/sodium ion:glutamate/aspartate symporter,2.A.23
+WP_020333103.1,DAACS,,proton/sodium ion:glutamate/aspartate symporter,2.A.23
+WP_020333679.1,DAACS,,proton/sodium ion:glutamate/aspartate symporter,2.A.23
+WP_014234981.1,DAACS,,proton/sodium ion:glutamate/aspartate symporter,2.A.23
+WP_014234994.1,DAACS,,sodium ion:serine/threonine symporter,2.A.23
+WP_014231749.1,DASS,,sodium ion:dicarboxylate/sulfate,2.A.47
+WP_014231587.1,DASS,,sodium ion:dicarboxylate/sulfate,2.A.47
+WP_020335812.1,DASS,,sodium ion:dicarboxylate/sulfate,2.A.47
+WP_020335743.1,DASS,,sodium ion:dicarboxylate/sulfate,2.A.47
+WP_020336191.1,DASS,,sodium ion:dicarboxylate/sulfate,2.A.47
+WP_020334774.1,DASS,,sodium ion:dicarboxylate/sulfate,2.A.47
+WP_014233246.1,Dcu,,C4-dicarboxylate,2.A.13
+WP_014234181.1,Dcu,,C4-dicarboxylate,2.A.13
+WP_020334214.1,DcuC,,C4-dicarboxylate,2.A.61
+WP_020334755.1,DcuC,,C4-dicarboxylate,2.A.61
+WP_024372619.1,ESS,,sodium ion:glutamate symporter,2.A.27
+WP_014231503.1,FNT,,formate/nitrite,2.A.44
+WP_020334836.1,FNT,,formate/nitrite,2.A.44
+WP_020334914.1,FNT,,formate/nitrite,2.A.44
+WP_020333928.1,GntP,,gluconate,2.A.8
+WP_014230461.1,GntP,,gluconate,2.A.8
+WP_014233495.1,GntP,,gluconate,2.A.8
+WP_020333747.1,GntP,,gluconate,2.A.8
+WP_014232351.1,HAAAP,,serine,2.A.42
+WP_014231754.1,HAAAP,,aromatic amino acid,2.A.42
+WP_020335932.1,HAAAP,,aromatic amino acid,2.A.42
+WP_020333498.1,HAAAP,,aromatic amino acid,2.A.42
+WP_020334957.1,HAAAP,,serine,2.A.42
+WP_014234666.1,HAAAP,,tryptophan/tyrosine,2.A.42
+WP_020333435.1,LctP,,L-lactate,2.A.14
+WP_020334825.1,LIV-E,AzlC,branched-chain amino acid efflux (AzlC),2.A.78
+WP_020335308.1,LIV-E,AzlC,branched-chain amino acid efflux (AzlC),2.A.78
+WP_014230844.1,LIVCS,,branched-chain amino acid,2.A.26
+WP_024373025.1,LIVCS,,branched-chain amino acid,2.A.26
+WP_024372923.1,LysE,,lysine efflux,2.A.75
+WP_020334317.1,MFS,,glycerol-3-phosphate,2.A.1
+WP_014232799.1,MFS,,Acetyl-CoA:CoA antiporter,2.A.1
+WP_020336445.1,MFS,,sugar,2.A.1
+WP_020333218.1,MFS,,glycerol-3-phosphate,2.A.1
+WP_020333495.1,MFS,,glycerol-3-phosphate,2.A.1
+WP_020334211.1,MFS,,metabolite (benzoate),2.A.1
+WP_020333804.1,MFS,,nitrate,2.A.1
+WP_014234080.1,MFS,,oxalate:formate antiporter,2.A.1
+WP_020334840.1,MFS,,sugar efflux,2.A.1
+WP_020335202.1,MFS,,metabolite (alpha-ketoglutarate),2.A.1
+WP_020334318.1,MIP,,glycerol uptake,1.A.8
+WP_020334558.1,MIP,,glycerol uptake,1.A.8
+WP_014233903.1,MSS,,sodium ion:malonate symporter,2.A.70
+WP_014233904.1,MSS,,sodium ion:malonate symporter,2.A.70
+WP_020333204.1,NCS1,,cytosine/purines/uracil/thiamine/allantoin,2.A.39
+WP_014230969.1,NCS1,,cytosine/purines/uracil/thiamine/allantoin,2.A.39
+WP_201765968.1,NCS1,,cytosine/purines/uracil/thiamine/allantoin,2.A.39
+WP_014232730.1,NCS2,,xanthine/uracil,2.A.40
+WP_014231002.1,NCS2,,xanthine/uracil,2.A.40
+WP_014230556.1,NCS2,,xanthine/uracil,2.A.40
+WP_020334441.1,NCS2,,xanthine/uracil,2.A.40
+WP_020334077.1,NCS2,,xanthine/uracil,2.A.40
+WP_020333000.1,NhaA,,sodium ion:proton antiporter,2.A.33
+WP_014232509.1,NhaB,,sodium ion:proton antiporter,2.A.34
+WP_014232558.1,NhaC,,sodium ion:proton antiporter,2.A.35
+WP_014232548.1,NhaC,,sodium ion:proton antiporter,2.A.35
+WP_024373073.1,NhaC,,sodium ion:proton antiporter,2.A.35
+WP_014232027.1,NhaC,,sodium ion:proton antiporter,2.A.35
+WP_020332945.1,NhaC,,sodium ion:proton antiporter,2.A.35
+WP_020333664.1,NhaC,,sodium ion:proton antiporter,2.A.35
+WP_020334217.1,NhaC,,sodium ion:proton antiporter,2.A.35
+WP_020333874.1,NhaC,,sodium ion:proton antiporter,2.A.35
+WP_020333880.1,NhaC,,sodium ion:proton antiporter,2.A.35
+WP_020335070.1,NhaD,,sodium ion:proton antiporter,2.A.62
+WP_014230764.1,PiT,,phosphate,2.A.20
+WP_014230861.1,PNaS,,sodium ion:phosphate symporter,2.A.58
+WP_014230814.1,PNaS,,sodium ion:phosphate symporter,2.A.58
+WP_024373076.1,RhtB,,amino acid efflux,2.A.76
+WP_020333172.1,RhtB,,amino acid efflux,2.A.76
+WP_020333390.1,RhtB,,amino acid efflux,2.A.76
+WP_020334053.1,RhtB,,amino acid efflux,2.A.76
+WP_014233480.1,RhtB,,amino acid efflux,2.A.76
+WP_020334392.1,RhtB,,amino acid efflux,2.A.76
+WP_020334140.1,RhtB,,amino acid efflux,2.A.76
+WP_024372999.1,RhtB,,amino acid efflux,2.A.76
+WP_020333830.1,RhtB,,amino acid efflux,2.A.76
+WP_020335305.1,RhtB,,amino acid efflux,2.A.76
+WP_014233081.1,SSPTS,EnzymeIIA,fructose,4.A
+WP_020335632.1,SSPTS,EnzymeIIABC,glucose/maltose/N-acetylglucosamine,4.A
+WP_020335630.1,SSPTS,EnzymeIIABC,glucose/maltose/N-acetylglucosamine,4.A
+WP_020333167.1,SSPTS,EnzymeIIABC,glucose/maltose/N-acetylglucosamine,4.A
+WP_014231135.1,SSPTS,EnzymeIIABC,glucose/maltose/N-acetylglucosamine,4.A
+WP_014231102.1,SSPTS,EnzymeIIABC,glucose,4.A
+WP_014231038.1,SSPTS,EnzymeIIABC,glucose/maltose/N-acetylglucosamine,4.A
+WP_020335855.1,SSPTS,EnzymeIIABC,mannitol,4.A
+WP_020335853.1,SSPTS,EnzymeIIABC,glucose/maltose/N-acetylglucosamine,4.A
+WP_020336236.1,SSPTS,EnzymeIIABC,glucose/maltose/N-acetylglucosamine,4.A
+WP_020333479.1,SSPTS,EnzymeIIABC,glucose/maltose/N-acetylglucosamine,4.A
+WP_014235004.1,SSPTS,EnzymeIIABC,glucose/maltose/N-acetylglucosamine,4.A
+WP_020334100.1,SSPTS,EnzymeIIABC,glucose/maltose/N-acetylglucosamine,4.A
+WP_020333854.1,SSPTS,EnzymeIIABC,glucose/maltose/N-acetylglucosamine,4.A
+WP_020334937.1,SSPTS,EnzymeIIA,mannitol/fructose,4.A
+WP_020334938.1,SSPTS,EnzymeIIBC,fructose,4.A
+WP_020333263.1,SSS,,sodium ion:proline symporter,2.A.21
+WP_020333170.1,SSS,,sodium ion:panthothenate symporter,2.A.21
+WP_020336141.1,SSS,,sodium ion:proline symporter,2.A.21
+WP_014230906.1,SSS,,sodium ion:proline symporter,2.A.21
+WP_014233254.1,SSS,,sodium ion:proline symporter,2.A.21
+WP_014233251.1,SSS,,sodium ion:proline symporter,2.A.21
+WP_020333510.1,SSS,,sodium ion:proline symporter,2.A.21
+WP_020335025.1,SSS,,sodium ion:proline symporter,2.A.21
+WP_024372624.1,SSS,,sodium ion:proline symporter,2.A.21
+WP_020333858.1,SSS,,sodium ion:proline symporter,2.A.21
+WP_020335962.1,SSS,,sodium ion:proline symporter,2.A.21
+WP_014232940.1,SulP,,sulfate,2.A.53
+WP_020335126.1,SulP,,sulfate,2.A.53
+WP_014232500.1,SulP,,sulfate,2.A.53
+WP_020333533.1,SulP,,sulfate,2.A.53
+WP_020335537.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_014232368.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_014232367.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_014231214.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020336138.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020336137.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020335831.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020334179.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020334226.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_024372797.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_014233877.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_014233878.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_014233895.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020334254.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020334255.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020334263.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020334264.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020334265.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_049794701.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_014234027.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_014234028.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020334785.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_014234115.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_014234116.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020334809.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_014234147.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020334811.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020336103.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020336104.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_024372892.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020335191.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020335192.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020335193.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020335226.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020335227.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020335228.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020335350.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_014234712.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_014234713.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020335397.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020335398.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020335399.1,TRAP-T,,C4-dicarboxylate,2.A.56
+WP_020336344.1,TTT,TctA,tricarboxylate (TctA),2.A.80
+WP_014231940.1,TTT,TctC,tricarboxylate (TctC),2.A.80

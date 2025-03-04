@@ -203,7 +203,7 @@ function add_pts!(model, mid, iso, ss)
         "CHEBI:15903" => "CHEBI:58247", # glucose -> glucose 6 phosphate
         "CHEBI:17992" => "CHEBI:57723", # sucrose -> sucrose 6 phosphate
         "CHEBI:16899" => "CHEBI:61381", # mannitol -> D-mannitol 1-phosphate
-        "CHEBI:28645" => "CHEBI:57634", #  β-D-fructofuranose -> beta-D-fructose 6-phosphate
+        "CHEBI:28645" => "CHEBI:57634", # β-D-fructose -> beta-D-fructose 6-phosphate
     )
 
     rid = "PTS_$mid"

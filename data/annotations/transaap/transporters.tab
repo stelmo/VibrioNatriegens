@@ -1,5 +1,4 @@
-ORF GenomeID    FID TransporterFamily   TransporterSubfamily    Substrate   AutoAnnotation  IsCurated
-
+ORF	GenomeID	FID	XX	TransporterFamily	TransporterSubfamily	YY	Substrate	AutoAnnotation 	IsCurated
 PN96_RS07510	vn10844		vn10844	AAE		539	aspartate:alanine antiporter		2.A.81		X
 PN96_RS00500	vn10844		vn10844	ABC	binding	572	daunorubicin		3.A.1		X
 PN96_RS00525	vn10844		vn10844	ABC	binding	574	glycine betaine		3.A.1		X
