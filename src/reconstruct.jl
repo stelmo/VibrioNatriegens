@@ -10,14 +10,14 @@ function build_model()
         CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "metabolic_reactions.csv")),
     )
 
-    heteros = @rsubset(df, !ismissing(:Subunit))
-    @select!(heteros, :RHEA_ID, :Protein, :Stoichiometry, :Subunit, :DeltaG, :RevIndex)
+    heteros = @rsubset(df, !ismissing(:Isozyme))
+    @select!(heteros, :RHEA_ID, :Protein, :Stoichiometry, :Isozyme, :DeltaG, :RevIndex)
 
-    homos = @rsubset(df, ismissing(:Subunit))
+    homos = @rsubset(df, ismissing(:Isozyme))
     @select!(homos, :RHEA_ID, :Protein, :Stoichiometry, :DeltaG, :RevIndex)
 
     ghomos = groupby(homos, [:RHEA_ID, :Protein])
-    gheteros = groupby(heteros, [:RHEA_ID, :Subunit])
+    gheteros = groupby(heteros, [:RHEA_ID, :Isozyme])
 
     # Build model
 

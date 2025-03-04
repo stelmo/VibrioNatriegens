@@ -34,7 +34,7 @@ function gapfill!(model)
         RHEA_ID = rhea_rids,
         Protein = fill(nothing, n),
         Stoichiometry = fill(1),
-        Subunit = fill("A", n),
+        Isozyme = fill("A", n),
         DeltaG = fill(nothing, n),
         RevIndex = fill(nothing, n),
     )
