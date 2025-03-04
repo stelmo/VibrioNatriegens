@@ -103,6 +103,7 @@ function add_membrane_transporters!(model)
     # symport
     symport = @subset(df, :Type .== "Symport")
     for g in groupby(symport, [:CHEBI, :Isozyme])
+        # println(g)
         mid1, mid2 = sort(split(first(g.CHEBI), "/")) # to make rid unique
         if mid1 in A.metabolites(model) && mid2 in A.metabolites(model)
             push!(ms, mid1)
