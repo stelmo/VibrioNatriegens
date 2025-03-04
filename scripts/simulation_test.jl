@@ -7,10 +7,6 @@ import ConstraintTrees as C
 using JSONFBCModels
 
 model = VibrioNatriegens.build_model()
-
-model.reactions["EX_15903"].lower_bound = 0.0
-model.reactions["EX_47013"].lower_bound = -15.0
-
 sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 
 sol = parsimonious_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
@@ -46,7 +42,3 @@ C.pretty(
     end;
     format_label = x -> A.reaction_name(model, string(last(x))),
 )
-
-
-
-
