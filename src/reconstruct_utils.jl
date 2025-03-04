@@ -74,7 +74,11 @@ function extend_model!(model, dfs)
                 dg = dg,
                 gene_association = isnothing(iso) ? nothing : [iso],
                 stoichiometry = stoichiometry,
-                annotations = Dict("rhea-reaction" => [rxn.equation], "EC" => ecs, "SBO" => ["SBO_0000176"]),
+                annotations = Dict(
+                    "rhea-reaction" => [rxn.equation],
+                    "EC" => ecs,
+                    "SBO" => ["SBO_0000176"],
+                ),
             )
         end
     end

@@ -14,34 +14,20 @@ function add_reaction_annotations!(model)
     )
     hamap = Dict(zip(String.(hamap.Protein), hamap.Subunit))
 
-    bigg = DataFrame(
-        CSV.File(
-            joinpath(
-                pkgdir(@__MODULE__),
-                "data",
-                "rhea",
-                "bigg_rxns.csv",
-            ),
-        ),
-    )
+    bigg =
+        DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "rhea", "bigg_rxns.csv")))
     bigg = Dict(
-        String.(string(first(gdf.rhea))) =>  String.(gdf.bigg_id) for gdf in groupby(bigg, :rhea)
+        String.(string(first(gdf.rhea))) => String.(gdf.bigg_id) for
+        gdf in groupby(bigg, :rhea)
     )
 
-    kegg = DataFrame(
-        CSV.File(
-            joinpath(
-                pkgdir(@__MODULE__),
-                "data",
-                "rhea",
-                "kegg_rxns.csv",
-            ),
-        ),
-    )
+    kegg =
+        DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "rhea", "kegg_rxns.csv")))
     kegg = Dict(
-        String.(string(first(gdf.rhea))) =>  String.(gdf.kegg) for gdf in groupby(kegg, :rhea)
+        String.(string(first(gdf.rhea))) => String.(gdf.kegg) for
+        gdf in groupby(kegg, :rhea)
     )
-    
+
     eggnog = DataFrame(
         CSV.File(
             joinpath(
@@ -54,53 +40,30 @@ function add_reaction_annotations!(model)
         ),
     )
     eggnog_ec = Dict(
-        k => string.(split(v,",")) for (k, v) in zip(String.(eggnog.query), eggnog.EC) if v != "-"
+        k => string.(split(v, ",")) for
+        (k, v) in zip(String.(eggnog.query), eggnog.EC) if v != "-"
     )
     eggnog_go = Dict(
-        k => string.(split(v,",")) for (k, v) in zip(String.(eggnog.query), eggnog.GOs) if v != "-"
+        k => string.(split(v, ",")) for
+        (k, v) in zip(String.(eggnog.query), eggnog.GOs) if v != "-"
     )
 
     ko = DataFrame(
         CSV.File(
-            joinpath(
-                pkgdir(@__MODULE__),
-                "data",
-                "annotations",
-                "kegg",
-                "ko.txt",
-            ),
-            header=["Protein", "KO", "Desc"],
+            joinpath(pkgdir(@__MODULE__), "data", "annotations", "kegg", "ko.txt"),
+            header = ["Protein", "KO", "Desc"],
         ),
     )
-    ko = Dict(
-        k => v for (k, v) in zip(String.(ko.Protein), ko.Desc) if !ismissing(v)
-    )
+    ko = Dict(k => v for (k, v) in zip(String.(ko.Protein), ko.Desc) if !ismissing(v))
 
-    ec = DataFrame(
-        CSV.File(
-            joinpath(
-                pkgdir(@__MODULE__),
-                "data",
-                "rhea",
-                "ec_rxns.csv",
-            ),
-        ),
-    )
-    ec = Dict(
-        string(first(gdf.rhea)) => String.(gdf.ec) for gdf in groupby(ec, :rhea)
-    )
+    ec = DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "rhea", "ec_rxns.csv")))
+    ec = Dict(string(first(gdf.rhea)) => String.(gdf.ec) for gdf in groupby(ec, :rhea))
 
     protein_locus = DataFrame(
-        CSV.File(
-            joinpath(
-                pkgdir(@__MODULE__),
-                "data",
-                "genome",
-                "locustag_proteinid.csv",
-            ),
-        ),
+        CSV.File(joinpath(pkgdir(@__MODULE__), "data", "genome", "locustag_proteinid.csv")),
     )
-    protein_locus = Dict(zip(String.(protein_locus.ProteinID),String.(protein_locus.LocusTag)))
+    protein_locus =
+        Dict(zip(String.(protein_locus.ProteinID), String.(protein_locus.LocusTag)))
 
     for rid in A.reactions(model)
         r = model.reactions[rid]
@@ -111,7 +74,7 @@ function add_reaction_annotations!(model)
         for gid in grrs
             if haskey(hamap, gid)
                 _gid = protein_locus[gid]
-                r.annotations[_gid] = [hamap[gid],]
+                r.annotations[_gid] = [hamap[gid]]
             end
         end
         if haskey(kegg, rid)
@@ -124,15 +87,17 @@ function add_reaction_annotations!(model)
             r.annotations["rhea-ec"] = ec[rid]
         end
         if any(haskey(eggnog_ec, x) for x in grrs)
-            r.annotations["eggnog-ec"] = vcat([eggnog_ec[gid] for gid in grrs if haskey(eggnog_ec, gid)]...)
+            r.annotations["eggnog-ec"] =
+                vcat([eggnog_ec[gid] for gid in grrs if haskey(eggnog_ec, gid)]...)
         end
         if any(haskey(eggnog_go, x) for x in grrs)
-            r.annotations["eggnog-go"] = vcat([eggnog_go[gid] for gid in grrs if haskey(eggnog_go, gid)]...)
+            r.annotations["eggnog-go"] =
+                vcat([eggnog_go[gid] for gid in grrs if haskey(eggnog_go, gid)]...)
         end
         if any(haskey(ko, x) for x in grrs)
             r.annotations["kegg-ec"] = vcat([ko[gid] for gid in grrs if haskey(ko, gid)]...)
         end
-        
+
         delete!(r.annotations, "EC")
     end
 end

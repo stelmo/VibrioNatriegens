@@ -72,7 +72,7 @@ CSV.write("gene_annotations.csv", gene_df)
 names_df = DataFrame(CSV.File(joinpath("data", "chebi", "names.tsv")))
 @subset!(names_df, :LANGUAGE .== "en")
 names_dict = Dict(
-    "CHEBI:" * string(first(gdf.COMPOUND_ID)) => join(unique(gdf.NAME),"#") for
+    "CHEBI:" * string(first(gdf.COMPOUND_ID)) => join(unique(gdf.NAME), "#") for
     gdf in groupby(names_df, :COMPOUND_ID)
 )
 
@@ -89,8 +89,8 @@ chemical_dict = Dict(
 
 accession_df = DataFrame(CSV.File(joinpath("data", "chebi", "database_accession.tsv")))
 kegg_compound = Dict(
-    "CHEBI:" * string(first(gdf.COMPOUND_ID)) => join(gdf.ACCESSION_NUMBER,"#") for gdf in
-    groupby(@subset(accession_df, :TYPE .== "KEGG COMPOUND accession"), :COMPOUND_ID)
+    "CHEBI:" * string(first(gdf.COMPOUND_ID)) => join(gdf.ACCESSION_NUMBER, "#") for
+    gdf in groupby(@subset(accession_df, :TYPE .== "KEGG COMPOUND accession"), :COMPOUND_ID)
 )
 
 df = DataFrame(
@@ -126,4 +126,4 @@ ec = DataFrame(CSV.File(joinpath("data", "rhea", "ec_rxns.csv")))
 
 ec = flatten(ec, :qrt)
 @select!(ec, :ec, :qrt)
-CSV.write(joinpath("data","rhea", "ec-rxns.csv"), ec)
+CSV.write(joinpath("data", "rhea", "ec-rxns.csv"), ec)

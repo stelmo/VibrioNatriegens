@@ -36,7 +36,7 @@ function add_gene_annotations!(model)
             "ProteinID" => [genes_dict[gid]["ProteinAccession"]],
             "GeneID" => [genes_dict[gid]["GeneID"]],
             "Symbol" => [get(genes_dict[gid], "Symbol", "")],
-            "SBO" => ["SBO_0000243",],
+            "SBO" => ["SBO_0000243"],
         )
     end
 

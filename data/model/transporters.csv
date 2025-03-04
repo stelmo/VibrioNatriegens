@@ -1,4 +1,4 @@
-Type,Metabolite,CHEBI,Protein,Stoichiometry,Subunit
+Type,Metabolite,CHEBI,Protein,Stoichiometry,Isozyme
 PTS,glucose,CHEBI:15903,WP_020333346.1,1,A
 PTS,glucose,CHEBI:15903,WP_005382043.1,1,A
 PTS,glucose,CHEBI:15903,WP_020335630.1,1,A

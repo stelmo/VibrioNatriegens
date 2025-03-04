@@ -21,7 +21,6 @@ include("curate.jl")
 include("transporters.jl")
 include("specials.jl")
 include("biomass.jl")
-include("lumped_reactions.jl")
 include("finalize.jl")
 
 

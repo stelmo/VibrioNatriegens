@@ -26,9 +26,7 @@ function add_exchanges!(model)
             stoichiometry = Dict(mid * "_e" => -1),
             lower_bound = 0,
             upper_bound = 1000,
-            annotations = Dict(
-                "SBO" => ["SBO_0000284","SBO_0000627"]
-            ),
+            annotations = Dict("SBO" => ["SBO_0000284", "SBO_0000627"]),
         )
     end
 
@@ -57,9 +55,7 @@ function add_periplasm_transporters!(model)
             stoichiometry = Dict(mid * "_e" => -1, mid * "_p" => 1),
             lower_bound = -1000.0,
             upper_bound = 1000.0,
-            annotations = Dict(
-                "SBO" => ["SBO_0000284",]
-            ),
+            annotations = Dict("SBO" => ["SBO_0000284"]),
         )
     end
 
@@ -196,9 +192,7 @@ function add_abc!(model, mid, iso, ss)
             upper_bound = 1000,
             gene_association = isnothing(isoz) ? nothing : [isoz],
             transporter = true,
-            annotations = Dict(
-                "SBO" => ["SBO_0000284",]
-            ),
+            annotations = Dict("SBO" => ["SBO_0000284"]),
         )
     end
 end
@@ -232,9 +226,7 @@ function add_pts!(model, mid, iso, ss)
             upper_bound = 1000,
             gene_association = isnothing(isoz) ? nothing : [isoz],
             transporter = true,
-            annotations = Dict(
-                "SBO" => ["SBO_0000284",]
-            ),
+            annotations = Dict("SBO" => ["SBO_0000284"]),
         )
     end
 end
@@ -260,9 +252,7 @@ function add_symport!(model, mid1, mid2, iso, ss)
             upper_bound = 1000,
             gene_association = isnothing(isoz) ? nothing : [isoz],
             transporter = true,
-            annotations = Dict(
-                "SBO" => ["SBO_0000284",]
-            ),
+            annotations = Dict("SBO" => ["SBO_0000284"]),
         )
     end
 end
@@ -288,9 +278,7 @@ function add_antiport!(model, mid1, mid2, iso, ss)
             upper_bound = 1000,
             gene_association = isnothing(isoz) ? nothing : [isoz],
             transporter = true,
-            annotations = Dict(
-                "SBO" => ["SBO_0000284",]
-            ),
+            annotations = Dict("SBO" => ["SBO_0000284"]),
         )
     end
 end
@@ -311,9 +299,7 @@ function add_permease!(model, mid, iso, ss)
             upper_bound = 1000,
             gene_association = isnothing(isoz) ? nothing : [isoz],
             transporter = true,
-            annotations = Dict(
-                "SBO" => ["SBO_0000284",]
-            ),
+            annotations = Dict("SBO" => ["SBO_0000284"]),
         )
     end
 end

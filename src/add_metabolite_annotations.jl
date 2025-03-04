@@ -2,12 +2,7 @@ function add_metabolite_annotations!(model)
 
     met_df = DataFrame(
         CSV.File(
-            joinpath(
-                pkgdir(@__MODULE__),
-                "data",
-                "chebi",
-                "metabolite_annotations.csv",
-            ),
+            joinpath(pkgdir(@__MODULE__), "data", "chebi", "metabolite_annotations.csv"),
         ),
     )
 
@@ -24,9 +19,9 @@ function add_metabolite_annotations!(model)
         m.molarmass = parse(Float64, get(_d, "MolarMass", "0"))
         m.annotations = Dict(
             "Names" => string.(split(get(_d, "Names", ""), "#")),
-            "InChI" => [get(_d, "InChI", ""),],
-            "KEGG" => string.(split(get(_d, "KeGG", ""),"#")),
-            "SBO" => ["SBO_0000299",]
+            "InChI" => [get(_d, "InChI", "")],
+            "KEGG" => string.(split(get(_d, "KeGG", ""), "#")),
+            "SBO" => ["SBO_0000299"],
         )
     end
 

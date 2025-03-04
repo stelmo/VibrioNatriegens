@@ -11,9 +11,7 @@ function add_biomass!(model)
         objective_coefficient = 1.0,
         lower_bound = 0,
         upper_bound = 1000,
-        annotations = Dict(
-            "SBO" => ["SBO_0000629",]
-        )
+        annotations = Dict("SBO" => ["SBO_0000629"]),
     )
 end
 
@@ -30,8 +28,6 @@ function add_atpm!(model)
         objective_coefficient = 0.0,
         lower_bound = 8.0,
         upper_bound = 1000,
-        annotations = Dict(
-            "SBO" => ["SBO_0000630",]
-        )
+        annotations = Dict("SBO" => ["SBO_0000630"]),
     )
 end

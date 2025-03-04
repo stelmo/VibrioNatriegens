@@ -73,6 +73,24 @@ function curate!(model)
         charge = 0,
     )
 
+    # # 6-carboxyhexanoyl-[ACP] methyl ester - in biotin
+    # model.metabolites["CHEBI:82735"] = Metabolite(
+    #     name = "6-carboxyhexanoyl-[ACP] methyl ester",
+    #     formula = Dict("C" => 22.0, "H" => 37.0, "N" => 3, "O" => 11.0, "P" => 1, "S" => 1),
+    #     compartment = "Cytosol",
+    #     molarmass = 582.5814,
+    #     charge = -1,
+    # )
+
+    # # 6-carboxyhexanoyl-[ACP] - in biotin
+    # model.metabolites["CHEBI:78846"] = Metabolite(
+    #     name = "6-carboxyhexanoyl-[ACP]",
+    #     formula = Dict("C" => 21.0, "H" => 34.0, "N" => 3.0, "O" => 11.0, "P" => 1.0, "S" => 1.0),
+    #     compartment = "Cytosol",
+    #     molarmass = 567.5469,
+    #     charge = -2,
+    # )
+
     # adjust stoichiometry for Rhea 74167 (just increase ferredoxin on each side to balance charge, see https://biocyc.org/reaction?orgid=META&id=RXN-22744)
     model.reactions["74167"].stoichiometry["CHEBI:33723"] = 2.0
     model.reactions["74167"].stoichiometry["CHEBI:33722"] = -2.0
@@ -104,9 +122,7 @@ function curate!(model)
 
     # change directions to match what is found in biocyc - manual thermodynamics leaves much to be desired
     biocyc = DataFrame(
-        CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "rhea", "biocyc_rxns.csv"),
-        ),
+        CSV.File(joinpath(pkgdir(@__MODULE__), "data", "rhea", "biocyc_rxns.csv")),
     )
     @select!(biocyc, :rheaDir, :metacyc)
     for rid in A.reactions(model)
@@ -119,9 +135,7 @@ function curate!(model)
     end
 
     ecocyc = DataFrame(
-        CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "rhea", "ecocyc_rxns.csv"),
-        ),
+        CSV.File(joinpath(pkgdir(@__MODULE__), "data", "rhea", "ecocyc_rxns.csv")),
     )
     @select!(ecocyc, :rheaDir, :metacyc)
     for rid in A.reactions(model)
@@ -159,7 +173,7 @@ function curate!(model)
     rev_dir(model, "17740") # F, Y, W biosynthesis blocked, https://biocyc.org/reaction?orgid=META&id=SHIKIMATE-5-DEHYDROGENASE-RXN (rhea has both directions listed)
     rev_dir(model, "25293") # prevent loop in ethanol production
     rev_dir(model, "25290") # prevent loop in ethanol production 
-    
+
 
     # add custom reactions (needs to happen after direction setting)
     # add Glycogen synthase (ADPGlc)
@@ -194,5 +208,52 @@ function curate!(model)
         ],
     )
     add_genes!(model, ["WP_020333475.1", "WP_020332873.1"])
+
+    model.reactions["biotin_pimeloyl_acp_methyl_ester_synthase"] = Reaction(;
+        name = "Pimeloyl-[acp] methyl ester synthase",
+        stoichiometry = Dict(
+            "CHEBI:78846" => -1.0, # Malonyl-[acp] methyl ester
+            # "CHEBI:78449" => 1.0,  # Malonyl-[acp]
+            "CHEBI:15378" => -3.0, # H+
+            "CHEBI:57783" => -2.0, # NADPH
+            "CHEBI:57945" => -2.0, # NADH
+            "CHEBI:16526" => -1.0, # CO2
+            "CHEBI:58349" => 2.0, # NADP+
+            "CHEBI:15377" => 2.0, # H2O
+            "CHEBI:57540" => 2.0, # NAD+
+            "CHEBI:82735" => 1.0, # Pimeloyl-[acp] aka 6-carboxyhexanoyl-[ACP] methyl ester
+        ),
+        lower_bound = 0.0,
+        upper_bound = 1000.0,
+        gene_association = [
+            X.Isozyme(;
+                gene_product_stoichiometry = Dict(
+                    "WP_014232616.1" => 2.0, # R10115
+                    "WP_014232490.1" => 2.0, # R10115
+                    "WP_020336009.1" => 4.0, # R10116
+                    "WP_020334789.1" => 4.0, # R10116
+                    "WP_014233979.1" => 4.0, # R10116
+                    "WP_014233729.1" => 4.0, # R10116
+                    "WP_024372813.1" => 4.0, # R10116
+                    "WP_014232754.1" => 4.0, # R10117
+                ),
+            ),
+        ],
+        notes = Dict("Source" => ["Lumped reaction"]),
+    )
+    add_genes!(
+        model,
+        [
+            "WP_014232616.1",
+            "WP_014232490.1",
+            "WP_020336009.1",
+            "WP_020334789.1",
+            "WP_014233979.1",
+            "WP_014233729.1",
+            "WP_024372813.1",
+            "WP_014232754.1",
+        ],
+    )
+
 end
 

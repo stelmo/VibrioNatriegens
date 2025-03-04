@@ -13,6 +13,7 @@
                 m[kk] = get(m, kk, 0) + vv * v
             end
         end
+        m
         all(values(m) .== 0) || push!(unbal_rids, rid)
     end
 
@@ -31,6 +32,7 @@ end
         for (k, v) in s
             m += v * A.metabolite_charge(model, k)
         end
+        m
         m == 0 || push!(unbal_rids, rid)
     end
 
