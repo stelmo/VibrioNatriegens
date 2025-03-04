@@ -12,50 +12,41 @@ end
 
 df = DataFrame(Type=String[],Metabolite=String[],CHEBI=String[],Protein=String[],Stoichiometry=String[],Isozyme=String[],)
 
-type_lu = Dict(
-    "1.A.11" => "Permease",
-    "1.A.8" => "Permease",
-    "2.A.1" => "Symport",
-    "2.A.13" => "Symport",
-    "2.A.14" => "Symport",
-    "2.A.15" => "Symport",
-    "2.A.20" => "Symport",
-    "2.A.21" => "Symport",
-    "2.A.23" => "Symport",
-    "2.A.25" => "Symport",
-    "2.A.26" => "Symport",
-    "2.A.27" => "Symport",
-    "2.A.28" => "Symport",
-    "2.A.3"  => "Symport", # can also be antiport
-    "2.A.33" => "Antiport",
-    "2.A.34" => "Antiport",
-    "2.A.35" => "Antiport",
-    "2.A.36" => "Antiport",
-    "2.A.37" => "Antiport",
-    "2.A.39" => "Symport",
-    "2.A.40" => "Symport",
-    "2.A.41" => "Symport",
-    "2.A.42" => "Symport",
-    "2.A.44" => "Symport",
-    "2.A.46" => "Symport",
-    "2.A.47" => "Symport",
-    "2.A.49" => "Antiport",
-    "2.A.53" => "Symport",
-    "2.A.56" => "Symport",
-    "2.A.58" => "Symport",
-    "2.A.61" => "Symport", # can also be antiport
-    "2.A.62" => "Antiport",
-    "2.A.63" => "Antiport",
-    "2.A.68" => "Symport",
-    "2.A.70" => "Symport",
-    "2.A.75" => "Antiport",
-    "2.A.76" => "Antiport",
-    "2.A.78" => "Antiport",
-    "2.A.8" => "Symport",
-    "2.A.80" => "Symport",
-    "2.A.81" => "Antiport",
-    "3.A.1" => "ABC",
-    "4.A" => "PTS",
-)
 
-@subset(ts, :AutoAnnotation .== "4.A")
+
+gs = [
+    "WP_020333513.1"
+    "WP_014233759.1"
+    "WP_020336058.1"
+    "WP_020336067.1"
+]
+f = open("temp.txt", "w")
+for (k, kk) in [
+    ("leucine",57427),
+    ("isoleucine",58045),
+    ("valine",57762),
+    ("cysteine",35235),
+    ("alanine",57972),
+    ("serine",33384),
+    ("phenylalanine",58095),
+    ("tyrosine",58315),
+    ("glutamate",29985),
+    ("glycine",57305),
+    ("asparate",29991),
+    ("lysine",32551),
+    ("methionine",57844),
+    ("tryptophan",57912),
+    ("histidine",57595),
+    ("asparagine",58048),
+    ("arginine",32682),
+    ("threonine",57926),
+    ("glutamine",58359),
+    ("proline",60039),    
+]
+    for (i, g) in enumerate(gs)
+        c = cs[i]
+        write(f, "Symport,$k/H,CHEBI:$kk/CHEBI:15378,$g,1,$c\n")
+    end 
+end
+close(f)
+
