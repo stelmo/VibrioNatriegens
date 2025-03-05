@@ -73,24 +73,6 @@ function curate!(model)
         charge = 0,
     )
 
-    # # 6-carboxyhexanoyl-[ACP] methyl ester - in biotin
-    # model.metabolites["CHEBI:82735"] = Metabolite(
-    #     name = "6-carboxyhexanoyl-[ACP] methyl ester",
-    #     formula = Dict("C" => 22.0, "H" => 37.0, "N" => 3, "O" => 11.0, "P" => 1, "S" => 1),
-    #     compartment = "Cytosol",
-    #     molarmass = 582.5814,
-    #     charge = -1,
-    # )
-
-    # # 6-carboxyhexanoyl-[ACP] - in biotin
-    # model.metabolites["CHEBI:78846"] = Metabolite(
-    #     name = "6-carboxyhexanoyl-[ACP]",
-    #     formula = Dict("C" => 21.0, "H" => 34.0, "N" => 3.0, "O" => 11.0, "P" => 1.0, "S" => 1.0),
-    #     compartment = "Cytosol",
-    #     molarmass = 567.5469,
-    #     charge = -2,
-    # )
-
     # adjust stoichiometry for Rhea 74167 (just increase ferredoxin on each side to balance charge, see https://biocyc.org/reaction?orgid=META&id=RXN-22744)
     model.reactions["74167"].stoichiometry["CHEBI:33723"] = 2.0
     model.reactions["74167"].stoichiometry["CHEBI:33722"] = -2.0
@@ -98,6 +80,10 @@ function curate!(model)
     # modify rhea reactions to exchange D- with the beta-D isomer
     delete!(model.metabolites, "CHEBI:4167") # D-glucose
     delete!(model.metabolites, "CHEBI:61548") # D-glucopyranose 6-phosphate
+    delete!(model.metabolites, "CHEBI:75989") # alpha-D-glucosamine 6-phosphate
+    
+    model.reactions["12175"].stoichiometry["CHEBI:58725"] = model.reactions["12175"].stoichiometry["CHEBI:75989"] # alpha-D-glucosamine 6-phosphate -> D-glucosamine 6-phosphate
+    delete!(model.reactions["12175"].stoichiometry, "CHEBI:75989")
 
     model.reactions["38215"].stoichiometry["CHEBI:58247"] =
         model.reactions["38215"].stoichiometry["CHEBI:61548"] # D-glucopyranose 6-phosphate -> 	β-D-glucose 6-phosphate
@@ -119,6 +105,11 @@ function curate!(model)
         model.reactions["76650"].stoichiometry["CHEBI:195329"] # (E) 2,3-didehydroadipoyl-CoA -> 2,3-didehydroadipoyl-CoA
     delete!(model.reactions["76650"].stoichiometry, "CHEBI:195329")
     delete!(model.metabolites, "CHEBI:195329")
+
+    model.reactions["33791"].stoichiometry["CHEBI:37721"] =
+        model.reactions["33791"].stoichiometry["CHEBI:28645"] # β-D-Fructose (28645) -> D-Fructose (37721), we want it to be D-Fructose, RHEA:33791 bc sucrose hydrolase
+    delete!(model.reactions["33791"].stoichiometry, "CHEBI:28645")
+
 
     # change directions to match what is found in biocyc - manual thermodynamics leaves much to be desired
     biocyc = DataFrame(

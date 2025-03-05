@@ -32,7 +32,7 @@ CHEBI:28997,2'-deoxyinosine
 CHEBI:13705,acetoacetate
 CHEBI:47013,D-ribose
 CHEBI:16235,guanine
-CHEBI:15903,D-glucose
+CHEBI:15903,beta-D-glucose
 CHEBI:16881,indole
 CHEBI:16335,adenosine
 CHEBI:15698,2'-deoxycytidine
@@ -102,3 +102,14 @@ CHEBI:15678,(S)-allantoin
 CHEBI:16383,cis-aconitate
 CHEBI:16651,(S)-lactate
 CHEBI:57597,sn-glycerol 3-phosphate
+CHEBI:46994,D-Arabinose
+CHEBI:18333,D-arabinitol
+CHEBI:59888,4-Amino Butyric Acid
+CHEBI:58723,D-Glucosamine
+CHEBI:58375,Hydroxy-L-Proline
+CHEBI:57416,D-Alanine
+CHEBI:35247,D-Serine
+CHEBI:62346,L-Rhamnose
+CHEBI:37721,D-Fructose
+CHEBI:16763,a-Keto-Butyric Acid
+CHEBI:17272,Propionic Acid
