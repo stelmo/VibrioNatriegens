@@ -81,8 +81,9 @@ function curate!(model)
     delete!(model.metabolites, "CHEBI:4167") # D-glucose
     delete!(model.metabolites, "CHEBI:61548") # D-glucopyranose 6-phosphate
     delete!(model.metabolites, "CHEBI:75989") # alpha-D-glucosamine 6-phosphate
-    
-    model.reactions["12175"].stoichiometry["CHEBI:58725"] = model.reactions["12175"].stoichiometry["CHEBI:75989"] # alpha-D-glucosamine 6-phosphate -> D-glucosamine 6-phosphate
+
+    model.reactions["12175"].stoichiometry["CHEBI:58725"] =
+        model.reactions["12175"].stoichiometry["CHEBI:75989"] # alpha-D-glucosamine 6-phosphate -> D-glucosamine 6-phosphate
     delete!(model.reactions["12175"].stoichiometry, "CHEBI:75989")
 
     model.reactions["38215"].stoichiometry["CHEBI:58247"] =

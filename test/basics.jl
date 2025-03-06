@@ -74,6 +74,128 @@ end
         btot = v * model.metabolites[k].molarmass
     end
 
-
     @test isapprox(btot, 1.0, atol = 1e-3)
+end
+
+@testset "Deadend metabolites" begin
+    # metabolites that can only be produced or consumed
+    model = VibrioNatriegens.build_model()
+
+end
+
+@testset "Blocked reactions" begin
+    # open all exchanges, transporters, and find reactions that cannot carry flux under any circumstances
+    @everywhere begin
+        model = VibrioNatriegens.build_model()
+        ex_rids = filter(startswith("EX_"), A.reactions(model))
+        transporters =
+            [rid for rid in A.reactions(model) if model.reactions[rid].transporter]
+        for rid in [ex_rids; transporters]
+            model.reactions[rid].lower_bound = -1000
+            model.reactions[rid].upper_bound = 1000
+        end
+        model.reactions["ATPM"].lower_bound = 0.0
+    end
+
+    met_rids = setdiff(A.reactions(model), [ex_rids; transporters])
+    vs = screen(met_rids, workers = workers()) do rid
+        ct = flux_balance_constraints(model)
+        lb = optimized_values(
+            ct,
+            objective = ct.fluxes[rid].value,
+            sense = Minimal,
+            optimizer = Gurobi.Optimizer,
+        )
+        ub = optimized_values(
+            ct,
+            objective = ct.fluxes[rid].value,
+            sense = Maximal,
+            optimizer = Gurobi.Optimizer,
+        )
+        max(
+            isnothing(lb) ? 0 : abs(lb.fluxes[rid]),
+            isnothing(ub) ? 0 : abs(ub.fluxes[rid]),
+        )
+    end
+
+    met_rids[vs.==0]
+
+end
+
+@testset "Aerobic growth rates" begin
+    # based on Hoffart 2017
+    model = VibrioNatriegens.build_model()
+    model.reactions["EX_15903"].lower_bound = 0.0
+
+    aerobic_substrates = [
+        ("glucose", "EX_15903", 1.68),
+        ("galactose", "EX_28061", 0.18),
+        ("rhamnose", "EX_62346", 0.4),
+        # ("maltose", "", 1.22),
+        ("arabinose", "EX_46994", 0.83),
+        ("glycerol", "EX_17754", 0.86),
+        ("fructose", "EX_28645", 1.51),
+        ("sucrose", "EX_17992", 1.79),
+        ("nacetylglucosamine", "EX_506227", 1.74),
+        ("acetate", "EX_30089", 0.45),
+        ("malate", "EX_15589", 0.85),
+        ("fumarate", "EX_29806", 0.99),
+        ("succinate", "EX_30031", 1.0),
+        ("gluconate", "EX_18391", 1.51),
+        # ("starch", "", 0.19),
+    ]
+    gs = []
+    for (s, e, g) in aerobic_substrates
+        model.reactions[e].lower_bound = -10.0
+        sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
+        push!(gs, (s, sol.objective > 0.1))
+        model.reactions[e].lower_bound = 0.0
+    end
+    all(last.(gs))
+end
+
+@testset "Anaerobic growth" begin
+
+    model = VibrioNatriegens.build_model()
+    model.reactions["EX_15379"].lower_bound = 0.0
+    sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
+
+    @test abs(1 - sol.objective / 0.92) <= 0.2 # growth
+    @test abs(sol.fluxes["EX_30089"]) > 0.05 # acetate
+    @test abs(sol.fluxes["EX_30031"]) > 0.05 # succinate
+    @test abs(sol.fluxes["EX_15740"]) > 0.05 # formate
+    @test abs(sol.fluxes["EX_16004"]) > 0.05 # lactate
+    @test abs(sol.fluxes["EX_16236"]) > 0.05 # ethanol
+    @test abs(sol.fluxes["EX_57762"]) > 0.05 # valine
+    @test abs(sol.fluxes["EX_29985"]) > 0.05 # glutamate
+    @test abs(sol.fluxes["EX_57416"]) > 0.05 # alanine
+end
+
+@testset "Known growth supporting substrates" begin
+
+    df = DataFrame(
+        CSV.File(
+            joinpath(
+            pkgdir(@__MODULE__), 
+            "data", "experiments", "coppens_2023_biolog.csv"),
+        ),
+    )
+    dropmissing!(df)
+    @select!(df, :Substrate, :Experiment, :Chebi)
+    @transform!(df, :Exchange = "EX_".*last.(split.(:Chebi, ":")))
+    @subset!(df, :Experiment)
+
+    model = VibrioNatriegens.build_model()
+    model.reactions["EX_15903"].lower_bound = 0.0
+
+    res = Bool[]
+    for (s, ex) in zip(df.Substrate, df.Exchange)
+        println(s)
+        model.reactions[ex].lower_bound = -10.0
+        sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
+        push!(res, isnothing(sol) ? false : (sol.objective > 0.1))
+        model.reactions[ex].lower_bound = 0.0
+    end
+    @test all(res)
+
 end

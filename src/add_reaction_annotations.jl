@@ -87,7 +87,7 @@ function add_reaction_annotations!(model)
         if haskey(ec, rid)
             r.annotations["rhea-ec"] = ec[rid]
         end
-        
+
         if any(haskey(eggnog_ec, x) for x in grrs)
             r.annotations["eggnog-ec"] =
                 vcat([eggnog_ec[gid] for gid in grrs if haskey(eggnog_ec, gid)]...)
@@ -97,7 +97,7 @@ function add_reaction_annotations!(model)
             r.annotations["eggnog-go"] =
                 vcat([eggnog_go[gid] for gid in grrs if haskey(eggnog_go, gid)]...)
         end
-        
+
         if any(haskey(ko, x) for x in grrs)
             r.annotations["kegg-ec"] = vcat([ko[gid] for gid in grrs if haskey(ko, gid)]...)
         end
