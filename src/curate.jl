@@ -150,7 +150,6 @@ function curate!(model)
     # change directions manually
     bi_dir(model, "13196") # make GTP, dATP, dGTP work
     for_dir(model, "20309") # h2o2 -> o2 + h2o
-    for_dir(model, "19028") # h2o2 producer
     for_dir(model, "30778") # h2o2 producer
     for_dir(model, "15056") # prevent loop in nucleotides through 15056 <-> 31134
     for_dir(model, "31134") # prevent loop in nucleotides through 15056 <-> 31134 
@@ -239,7 +238,7 @@ function curate!(model)
                 ),
             ),
         ],
-        notes = Dict("Source" => ["Lumped reaction"]),
+        annotations = Dict("Source" => ["Lumped reaction"]),
     )
     add_genes!(
         model,

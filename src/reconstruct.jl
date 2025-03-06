@@ -43,7 +43,7 @@ function build_model()
 
     fix_noncytosolic_metabolite_annotations!(model)
     set_default_exchanges!(model)
-    name_reactions!(model)
+    name_reactions_genes!(model)
 
     # rename to conform with SBML model rules
     rename_gene_ids!(model)
