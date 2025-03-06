@@ -1,0 +1,1121 @@
+RID,Name
+10040,cysQ
+10119,gnd
+10155,carbamate kinase
+10167,eno
+10227,pdxY
+10231,acnB
+10247,fumarylacetoacetase
+10251,mazG
+10303,gap
+10383,pyrE
+10415,nudF
+10423,taurine pyruvate aminotransferase
+10491,ygfA
+10508,tkt
+10535,trpAB
+10543,folB
+10679,leuCD
+10751,can
+10803,XMP pyrophosphate phosphoribosyltransferase
+10807,allantoin racemase
+10815,astD
+10843,thrC
+10895,leuB
+10915,panC
+10935,argG
+10951,gspK
+10967,xylB
+11043,hisB
+11067,fbp
+11083,ushA
+11095,gpsA
+11099,gpsA
+11143,phosphomannomutase
+11151,bfr
+11163,ectB
+11175,metH
+11199,cobT
+11227,ddl
+11308,accACD
+11355,ackA
+11367,ppsA
+11415,folK
+11599,pyrF
+11603,cmk
+11615,gltBD
+11675,pabAB
+11683,guaA
+11695,sthA
+11711,guaB
+11727,cysH
+11740,gorA
+11771,trpD
+11803,nudC
+11816,pgi
+11827,panB
+11847,pflAB
+11923,phhB
+11963,argD
+12059,epd
+12080,fabH
+12107,thyA
+12123,glgC
+12175,nagB
+12231,asnB
+12248,murB
+12379,fucK
+12403,pncC
+12463,fumAC
+12539,prephenate dehydratase
+12559,pgl
+12608,dxs
+12644,serA
+12656,maeA
+12700,gmk
+12736,nadC
+12813,murI
+12816,murI
+12824,deoC
+12912,napAB
+12921,5 aminolevulinate synthase
+12936,fucA
+12976,adk
+13020,upp
+13065,mazG
+13076,ppx
+13104,hutU
+13124,aroK
+13164,tdh
+13188,hemC
+13196,purE
+13216,gabD
+13220,gabD
+13236,deoD
+13240,glmS
+13248,aceA
+13288,gshA
+13316,solA
+13325,tviB
+13389,glutaryl-CoA dehydrogenase
+13432,ispD
+13436,cdd
+13493,ilvC
+13512,glmU
+13520,tmk
+13556,galK
+13560,gshB
+13636,gamma glutamylputrescine synthase
+13680,rpe
+13700,rbsK
+13701,metA
+13720,ispC
+13728,glmU
+13756,gltBD
+13804,cysIJ
+13852,fucI
+13872,tyrA
+13900,pheA
+13932,speB
+13968,metC
+13980,dsdA
+13988,thrB
+13992,galT
+14080,beta alanine pyruvate transaminase
+14084,trpAB
+14105,proC
+14109,proC
+14248,mazG
+14256,spoT
+14268,hemL
+14332,serC
+14360,ribF
+14372,gph
+14468,hisB
+14548,nicotinamidase
+14632,argB
+14657,rpiA
+14668,guaD
+14720,aroGHF
+14732,fbaA
+14800,2 dehydro 3 deoxygluconokinase
+14804,pgk
+14817,maiA
+14820,maiA
+14824,araA
+14829,cysK
+14880,proB
+14908,purF
+14964,fghA
+15009,folA
+15056,purN
+15096,aspC
+15104,lysA
+15136,gdhB
+15152,pdxH
+15172,astE
+15188,astA
+15196,dgt
+15268,pdxJ
+15308,betB
+15392,cyaA
+15396,dapF
+15428,hemN
+15449,
+15452,
+15469,hisA
+15484,glyA
+15504,gltBD
+15609,prs
+15616,cysG
+15644,oadABG
+15652,
+15692,
+15756,purA
+15757,metL
+15760,thrA
+15761,metL
+15764,thrA
+15808,bioD
+15820,pdxH
+15840,mgsA
+15841,zwf
+15869,
+15892,glsB
+15904,gpmM
+15944,argE
+15988,fdhAB
+15992,hmgA
+16040,ppnP
+16072,cdd
+16112,pfkA
+16120,acs
+16128,scrK
+16172,glnA
+16192,hppD
+16197,
+16204,pabC
+16236,panE
+16252,
+16296,leuCD
+16372,ldhA
+16373,coaA
+16420,putA
+16428,fdhA
+16432,murD
+16576,serC
+16600,pyrG
+16604,aspA
+16612,apt
+16672,xdhABC
+16796,coaBC
+16812,prpB
+16828,udk
+16833,
+16848,gltA
+16856,purB
+16864,bioA
+16884,glpE
+16901,ectA
+16916,pssA
+16953,
+17032,
+17056,tal
+17092,eda
+17105,bioC
+17132,purL
+17188,guaC
+17236,fucI
+17240,ribF
+17280,edd
+17284,ectC
+17328,dapD
+17420,nagK
+17456,purD
+17473,folE
+17604,araB
+17644,speA
+17649,mdcA
+17664,sucCD
+17740,aroE
+17756,luxS
+17772,
+17788,panP
+17801,yhhY
+17808,mtnN
+17825,glk
+17848,ribD
+17908,hprA
+17924,dalD
+17941,acnB
+17976,hpt
+18040,aguA
+18052,argD
+18133,cysDN
+18160,pyk
+18164,pcaF
+18172,eda
+18184,aceB
+18248,coaE
+18256,maeB
+18260,hemF
+18304,guaA
+18324,ilvE
+18408,ald
+18440,ispE
+18448,purH
+18460,ribBA
+18476,hisG
+18588,tpiA
+18609,
+18620,pckA
+18632,nadK
+18636,carAB
+18684,murA
+18796,deoB
+18832,pdxB
+18968,hemD
+18988,menF
+19045,
+19048,
+19072,gloA
+19128,
+19132,tdk
+19172,sdaA
+19320,purK
+19364,ispA
+19384,icd
+19400,coaBC
+19436,idnK
+19456,alaA
+19484,pcaF
+19500,panP
+19516,argF
+19524,pta
+19533,
+19540,hxpB
+19544,proA
+19556,tnaA
+19600,arcA
+19628,ltaE
+19664,mtlD
+19689,rhaD
+19737,
+19804,coaD
+19820,metF
+19824,metF
+19836,purU
+19868,hemE
+19892,galU
+19912,lldD
+19952,folP
+19984,adhC
+19988,adhC
+19993,yebR
+20016,pyrBI
+20052,hisIE
+20117,rhaB
+20132,ppnN
+20224,fhs
+20249,alr
+20276,phhA
+20309,katG
+20345,trxB
+20373,prpE
+20397,metB
+20517,
+20552,
+20557,ureABC
+20572,
+20608,codA
+20715,bioF
+20739,kbl
+20775,ribE
+20783,gmk
+20959,paaK
+21019,ansA
+21023,aroC
+21036,
+21039,pcaF
+21083,metK
+21099,aroQ
+21143,
+21152,
+21191,nadE
+21199,metE
+21211,serB
+21235,hutH
+21259,aroA
+21371,
+21384,
+21435,mdh
+21451,nifDHK
+21527,leuA
+21543,trpCF
+21591,argC
+21623,fre
+21627,nfsA
+21647,glpK
+21651,pheA
+21732,trpEG
+21763,fadBJ
+21824,
+21871,ribD
+21971,aroB
+22011,metA
+22027,torAZ
+22060,bioB
+22071,ilvC
+22075,araB
+22091,relA
+22111,ilvA
+22147,acnB
+22168,galE
+22171,galE
+22195,purH
+22287,aguB
+22335,leuCD
+22371,
+22411,ispA
+22475,coaA
+22491,
+22495,hutG
+22583,mhpD
+22587,hemH
+22611,dapE
+22627,dmpG
+22631,purC
+22751,
+22815,folD
+22827,ppnP
+22831,hisIE
+22840,glsB
+22855,
+22863,nadD
+22915,alaA
+22927,
+22939,nagA
+22967,
+22991,mmsA
+22995,mmsA
+23035,purM
+23103,adk
+23104,kdsD
+23151,ackA
+23163,
+23176,acs
+23287,fni
+23291,
+23355,gabT
+23375,murC
+23427,glmM
+23447,
+23479,trpCF
+23523,
+23536,pgm
+23587,folC
+23592,
+23599,ugd
+23663,hutI
+23679,murE
+23691,
+23703,folD
+23707,ribAB
+23739,uraH
+23747,hisC
+23779,lysC
+23783,prpC
+23787,putA
+23803,
+23867,ispF
+23923,purB
+24023,argH
+24067,hemB
+24152,cysC
+24207,xsc
+24251,
+24255,apaH
+24284,asd
+24287,asd
+24295,argAH
+24299,pyrC
+24363,cysG
+24371,arcB
+24387,nadE
+24391,ppnP
+24403,pyrH
+24407,
+24411,add
+24491,ispH
+24563,cysE
+24579,ppa
+24631,nirBD
+24673,xdhABC
+24677,udk
+24796,hisHF
+24804,ilvE
+24812,ilvD
+24816,ilvE
+24828,ispH
+24885,putA
+24930,metC
+24934,metC
+25057,mhpB
+25061,hcaCDEF
+25069,hcaB
+25078,
+25097,cmk
+25101,ndk
+25107,pdxY
+25111,pdxY
+25155,aspC
+25184,speG
+25200,yigB
+25240,ndk
+25248,gloB
+25249,ilvING
+25252,ilvNMG
+25280,cpdA
+25290,adhE
+25293,yiaY
+25294,pcd
+25301,
+25427,hpt
+25591,icd
+25799,aspC
+25879,nadB
+25888,nadA
+26122,ispG
+26155,ribE
+26212,ltaE
+26304,
+26429,pyrG
+26437,trpAB
+26525,acnD
+26561,paaF
+27380,glxK
+27488,
+27626,tkt
+27641,deoD-ppnP
+27642,deoD
+27649,deoD-ppnP
+27653,udk
+27657,ilvING
+27661,deoB
+27677,ndk
+27681,ndk
+27685,ndk
+27689,ndk
+27693,ndk
+27697,ilvD
+27713,
+27717,ushA
+27721,ushA
+27741,deoD
+27745,deoD
+27753,deoD
+27761,gcvT
+27765,mazG
+27789,sucA
+27825,metY
+27829,metB
+27849,mhpA
+27861,cpdB
+27865,cpdB
+27881,cpdB
+27885,cpdB
+27889,cpdB
+27893,cpdB
+27897,cpdB
+27901,cpdB
+28029,nrdAB
+28033,nrdAB
+28037,nrdAB
+28041,nrdAB
+28042,pdh
+28049,pta
+28057,pflB
+28073,cyoE
+28165,udk
+28193,add
+28209,tdk
+28237,
+28330,yjjX
+28333,ndk
+28345,rdgB
+28357,fadE
+28361,fadE
+28365,rdgB
+28370,ppc
+28377,murF
+28389,mraY
+28406,yjjX
+28413,
+28417,
+28533,ushA
+28537,mazG
+28585,ndk
+28613,rdgB
+28659,
+28678,galM
+28786,pepABDN
+28810,ggt
+29358,ushA
+29362,ushA
+29366,ushA
+29370,ushA
+29374,ushA
+29378,ushA
+29382,ushA
+29394,mazG
+29398,mazG
+29402,mazG
+30070,betB
+30078,ppnN
+30115,
+30119,
+30123,
+30131,
+30190,pyrD
+30238,putA
+30298,pyk
+30350,ndk
+30550,paaF
+30658,tmk
+30702,gabT
+30710,
+30730,pyk
+30734,fadE
+30750,fadE
+30754,fadD
+30758,carAB
+30762,codA
+30778,pdxH
+30782,
+30786,pcd
+30790,phhA
+30794,pyk
+30798,sucA
+30802,fadBJ
+30806,pcd
+30818,ushA
+30874,rbsK
+30890,folP
+30934,metB
+30938,ushA
+30942,ndk
+30946,fadE
+31042,fadE
+31078,paaF
+31090,pcaF
+31094,pcaF
+31106,folA
+31110,hppD
+31114,pcaF
+31118,birA
+31134,purN
+31138,apt
+31142,ilvC
+31146,fadBJ
+31162,fadBJ
+31166,paaF
+31170,fadBJ
+31174,paaF
+31182,fadBJ
+31186,pcaF
+31187,fadBJ
+31194,paaF
+31198,fadBJ
+31202,paaF
+31206,pcaF
+31210,fadE
+31230,murG
+31258,ilvC
+31286,glpD
+31750,paaZ
+31758,paaZ
+31846,paaG
+32174,paaABCD
+32266,pop2
+32274,leuB
+32278,pdxA
+32290,leuCD
+32462,cobA
+32530,chbP
+32718,leuB
+33026,gnd
+33791,
+33802,hisD
+33806,hisD
+33870,
+34098,nspC
+34102,nspC
+34114,
+34118,
+34174,dapA
+34194,mhpC
+34770,gcvT
+34802,pcaF
+34854,
+35326,dapB
+35334,dapB
+35590,yigB
+36166,pncB
+36374,
+37754,prpF
+38215,zwf
+40526,sdhABCD
+40666,sdaA
+40954,doeB
+41528,fabV
+41792,fabD
+41800,fabBF
+41804,fabG
+41808,fadAZ
+41812,fabV
+41820,fabBF
+41824,fabG
+41828,fadAZ
+41832,fabV
+41836,fabBF
+41840,fabG
+41844,fadAZ
+41848,fabV
+41852,fabBF
+41856,fabG
+41860,fadAZ
+41864,fabV
+41868,fabBF
+41872,fabG
+41876,fadAZ
+41880,fabV
+41884,fabBF
+41888,fabG
+41892,fadAZ
+41896,fabV
+41900,fabBF
+41904,fabG
+41908,fadAZ
+41912,fabV
+41916,fabBF
+41920,fabG
+41924,fadAZ
+41928,fabV
+41932,
+42288,bioF
+42343,
+42427,leuCD
+42703,bioH
+43607,ispG
+45335,folB
+45700,
+45767,
+45799,phbB
+46012,mqo
+46160,ndh
+46164,wrbA
+51471,dld
+51619,nrdD
+51623,nrdD
+51627,nrdD
+51631,nrdD
+52307,doeA
+52543,ppnP
+54528,
+54644,
+54868,fabV
+54900,fabV
+54936,fabV
+61095,argE
+63204,
+64823,
+65032,hemG
+70226,ilvE
+70298,
+70430,paaI
+72070,gshA
+72078,gshB
+74167,dgcA
+76495,dgcN
+76499,dgcA
+76650,paaF
+77642,cysQ
+77643,cysQ
+ABC_15903,Transport beta-D-glucose ABC
+ABC_16199,Transport urea ABC
+ABC_17750,Transport glycine betaine ABC
+ABC_29034,Transport Fe(3+) ABC
+ABC_29985,Transport L-glutamate ABC
+ABC_29991,Transport L-aspartate ABC
+ABC_32551,Transport L-lysine ABC
+ABC_326268,Transport putrescine ABC
+ABC_32682,Transport L-arginine ABC
+ABC_33384,Transport L-serine ABC
+ABC_35235,Transport L-cysteine ABC
+ABC_40886,Transport beta-L-arabinopyranose ABC
+ABC_43474,Transport phosphate ABC
+ABC_46911,Transport L-ornithine ABC
+ABC_47013,Transport D-ribose ABC
+ABC_507393,Transport taurine ABC
+ABC_57305,Transport glycine ABC
+ABC_57427,Transport L-leucine ABC
+ABC_57595,Transport L-histidine ABC
+ABC_57762,Transport L-valine ABC
+ABC_57834,Transport spermidine ABC
+ABC_57844,Transport L-methionine ABC
+ABC_57912,Transport L-tryptophan ABC
+ABC_57926,Transport L-threonine ABC
+ABC_57972,Transport L-alanine ABC
+ABC_58045,Transport L-isoleucine ABC
+ABC_58048,Transport L-asparagine ABC
+ABC_58095,Transport L-phenylalanine ABC
+ABC_58315,Transport L-tyrosine ABC
+ABC_58359,Transport L-glutamine ABC
+ABC_60039,Transport L-proline ABC
+ABC_60344,Transport heme b ABC
+ANTI_15378_29101,Antiport H(+)::Na+
+ANTI_15378_32551,Antiport H(+)::L-lysine
+ANTI_15378_35235,Antiport H(+)::L-cysteine
+ANTI_15378_57427,Antiport H(+)::L-leucine
+ANTI_15378_57762,Antiport H(+)::L-valine
+ANTI_15378_58045,Antiport H(+)::L-isoleucine
+ANTI_15378_58340,Antiport H(+)::O-acetyl-L-serine
+ANTI_15589_29806,Antiport (S)-malate::fumarate
+ANTI_15589_29991,Antiport (S)-malate::L-aspartate
+ANTI_15589_30031,Antiport (S)-malate::succinate
+ANTI_29806_29991,Antiport fumarate::L-aspartate
+ANTI_29806_30031,Antiport fumarate::succinate
+ANTI_29991_30031,Antiport L-aspartate::succinate
+ANTI_29991_57972,Antiport L-aspartate::L-alanine
+ANTI_32682_46911,Antiport L-arginine::L-ornithine
+ANTI_57287_57288,Antiport CoA::acetyl-CoA
+ATPM,ATP Maintenance reaction
+DF_13705,Diffusion acetoacetate
+DF_15343,Diffusion acetaldehyde
+DF_15354,Diffusion choline
+DF_15361,Diffusion pyruvate
+DF_15377,Diffusion H2O
+DF_15378,Diffusion H(+)
+DF_15379,Diffusion O2
+DF_15562,Diffusion D-threo-isocitrate
+DF_15589,Diffusion (S)-malate
+DF_15677,Diffusion (R)-allantoin
+DF_15678,Diffusion (S)-allantoin
+DF_15698,Diffusion 2'-deoxycytidine
+DF_15740,Diffusion formate
+DF_15792,Diffusion malonate
+DF_15903,Diffusion beta-D-glucose
+DF_16004,Diffusion (R)-lactate
+DF_16040,Diffusion cytosine
+DF_16189,Diffusion sulfate
+DF_16199,Diffusion urea
+DF_16235,Diffusion guanine
+DF_16236,Diffusion ethanol
+DF_16301,Diffusion nitrite
+DF_16335,Diffusion adenosine
+DF_16383,Diffusion cis-aconitate
+DF_16450,Diffusion 2'-deoxyuridine
+DF_16526,Diffusion CO2
+DF_16651,Diffusion (S)-lactate
+DF_16659,Diffusion (R)-glycerate
+DF_16704,Diffusion uridine
+DF_16708,Diffusion adenine
+DF_16709,Diffusion pyridoxine
+DF_16750,Diffusion guanosine
+DF_16810,Diffusion 2-oxoglutarate
+DF_16842,Diffusion formaldehyde
+DF_16881,Diffusion indole
+DF_16899,Diffusion D-mannitol
+DF_16947,Diffusion citrate
+DF_17172,Diffusion 2'-deoxyguanosine
+DF_17256,Diffusion 2'-deoxyadenosine
+DF_17310,Diffusion pyridoxal
+DF_17368,Diffusion hypoxanthine
+DF_17378,Diffusion D-glyceraldehyde
+DF_17544,Diffusion hydrogencarbonate
+DF_17562,Diffusion cytidine
+DF_17568,Diffusion uracil
+DF_17596,Diffusion inosine
+DF_17632,Diffusion nitrate
+DF_17712,Diffusion xanthine
+DF_17748,Diffusion thymidine
+DF_17750,Diffusion glycine betaine
+DF_17754,Diffusion glycerol
+DF_17775,Diffusion urate
+DF_17790,Diffusion methanol
+DF_17821,Diffusion thymine
+DF_17992,Diffusion Sucrose
+DF_17997,Diffusion N2
+DF_18107,Diffusion xanthosine
+DF_18276,Diffusion H2
+DF_18391,Diffusion D-gluconate
+DF_28061,Diffusion alpha-D-galactose
+DF_28645,Diffusion beta-D-fructose
+DF_28938,Diffusion NH4(+)
+DF_28997,Diffusion 2'-deoxyinosine
+DF_29033,Diffusion Fe(2+)
+DF_29034,Diffusion Fe(3+)
+DF_29101,Diffusion Na+
+DF_29806,Diffusion fumarate
+DF_29985,Diffusion L-glutamate
+DF_29991,Diffusion L-aspartate
+DF_30031,Diffusion succinate
+DF_30089,Diffusion acetate
+DF_32551,Diffusion L-lysine
+DF_326268,Diffusion putrescine
+DF_32682,Diffusion L-arginine
+DF_33384,Diffusion L-serine
+DF_35235,Diffusion L-cysteine
+DF_40886,Diffusion beta-L-arabinopyranose
+DF_43474,Diffusion phosphate
+DF_46911,Diffusion L-ornithine
+DF_47013,Diffusion D-ribose
+DF_506227,Diffusion N-acetyl-D-glucosamine
+DF_507393,Diffusion taurine
+DF_57287,Diffusion CoA
+DF_57288,Diffusion acetyl-CoA
+DF_57305,Diffusion glycine
+DF_57427,Diffusion L-leucine
+DF_57595,Diffusion L-histidine
+DF_57597,Diffusion sn-glycerol 3-phosphate
+DF_57762,Diffusion L-valine
+DF_57834,Diffusion spermidine
+DF_57844,Diffusion L-methionine
+DF_57912,Diffusion L-tryptophan
+DF_57926,Diffusion L-threonine
+DF_57972,Diffusion L-alanine
+DF_58045,Diffusion L-isoleucine
+DF_58048,Diffusion L-asparagine
+DF_58095,Diffusion L-phenylalanine
+DF_58315,Diffusion L-tyrosine
+DF_58340,Diffusion O-acetyl-L-serine
+DF_58359,Diffusion L-glutamine
+DF_60039,Diffusion L-proline
+DF_60344,Diffusion heme b
+EX_13705,Exchange acetoacetate
+EX_15343,Exchange acetaldehyde
+EX_15354,Exchange choline
+EX_15361,Exchange pyruvate
+EX_15377,Exchange H2O
+EX_15378,Exchange H(+)
+EX_15379,Exchange O2
+EX_15562,Exchange D-threo-isocitrate
+EX_15589,Exchange (S)-malate
+EX_15677,Exchange (R)-allantoin
+EX_15678,Exchange (S)-allantoin
+EX_15698,Exchange 2'-deoxycytidine
+EX_15740,Exchange formate
+EX_15792,Exchange malonate
+EX_15903,Exchange beta-D-glucose
+EX_16004,Exchange (R)-lactate
+EX_16040,Exchange cytosine
+EX_16189,Exchange sulfate
+EX_16199,Exchange urea
+EX_16235,Exchange guanine
+EX_16236,Exchange ethanol
+EX_16301,Exchange nitrite
+EX_16335,Exchange adenosine
+EX_16383,Exchange cis-aconitate
+EX_16450,Exchange 2'-deoxyuridine
+EX_16526,Exchange CO2
+EX_16651,Exchange (S)-lactate
+EX_16659,Exchange (R)-glycerate
+EX_16704,Exchange uridine
+EX_16708,Exchange adenine
+EX_16709,Exchange pyridoxine
+EX_16750,Exchange guanosine
+EX_16810,Exchange 2-oxoglutarate
+EX_16842,Exchange formaldehyde
+EX_16881,Exchange indole
+EX_16899,Exchange D-mannitol
+EX_16947,Exchange citrate
+EX_17172,Exchange 2'-deoxyguanosine
+EX_17256,Exchange 2'-deoxyadenosine
+EX_17310,Exchange pyridoxal
+EX_17368,Exchange hypoxanthine
+EX_17378,Exchange D-glyceraldehyde
+EX_17544,Exchange hydrogencarbonate
+EX_17562,Exchange cytidine
+EX_17568,Exchange uracil
+EX_17596,Exchange inosine
+EX_17632,Exchange nitrate
+EX_17712,Exchange xanthine
+EX_17748,Exchange thymidine
+EX_17750,Exchange glycine betaine
+EX_17754,Exchange glycerol
+EX_17775,Exchange urate
+EX_17790,Exchange methanol
+EX_17821,Exchange thymine
+EX_17992,Exchange Sucrose
+EX_17997,Exchange N2
+EX_18107,Exchange xanthosine
+EX_18276,Exchange H2
+EX_18391,Exchange D-gluconate
+EX_28061,Exchange alpha-D-galactose
+EX_28645,Exchange beta-D-fructose
+EX_28938,Exchange NH4(+)
+EX_28997,Exchange 2'-deoxyinosine
+EX_29033,Exchange Fe(2+)
+EX_29034,Exchange Fe(3+)
+EX_29101,Exchange Na+
+EX_29806,Exchange fumarate
+EX_29985,Exchange L-glutamate
+EX_29991,Exchange L-aspartate
+EX_30031,Exchange succinate
+EX_30089,Exchange acetate
+EX_32551,Exchange L-lysine
+EX_326268,Exchange putrescine
+EX_32682,Exchange L-arginine
+EX_33384,Exchange L-serine
+EX_35235,Exchange L-cysteine
+EX_40886,Exchange beta-L-arabinopyranose
+EX_43474,Exchange phosphate
+EX_46911,Exchange L-ornithine
+EX_47013,Exchange D-ribose
+EX_506227,Exchange N-acetyl-D-glucosamine
+EX_507393,Exchange taurine
+EX_57287,Exchange CoA
+EX_57288,Exchange acetyl-CoA
+EX_57305,Exchange glycine
+EX_57427,Exchange L-leucine
+EX_57595,Exchange L-histidine
+EX_57597,Exchange sn-glycerol 3-phosphate
+EX_57762,Exchange L-valine
+EX_57834,Exchange spermidine
+EX_57844,Exchange L-methionine
+EX_57912,Exchange L-tryptophan
+EX_57926,Exchange L-threonine
+EX_57972,Exchange L-alanine
+EX_58045,Exchange L-isoleucine
+EX_58048,Exchange L-asparagine
+EX_58095,Exchange L-phenylalanine
+EX_58315,Exchange L-tyrosine
+EX_58340,Exchange O-acetyl-L-serine
+EX_58359,Exchange L-glutamine
+EX_60039,Exchange L-proline
+EX_60344,Exchange heme b
+H_ATPsynthase,F-type H+-transporting ATPase
+Na_ATPsynthase,F-type Na+-transporting ATPase
+PERM_13705,Permease acetoacetate
+PERM_15343,Permease acetaldehyde
+PERM_15361,Permease pyruvate
+PERM_15377,Permease H2O
+PERM_15379,Permease O2
+PERM_15698,Permease 2'-deoxycytidine
+PERM_16236,Permease ethanol
+PERM_16335,Permease adenosine
+PERM_16450,Permease 2'-deoxyuridine
+PERM_16526,Permease CO2
+PERM_16659,Permease (R)-glycerate
+PERM_16704,Permease uridine
+PERM_16709,Permease pyridoxine
+PERM_16750,Permease guanosine
+PERM_16842,Permease formaldehyde
+PERM_16881,Permease indole
+PERM_17172,Permease 2'-deoxyguanosine
+PERM_17256,Permease 2'-deoxyadenosine
+PERM_17310,Permease pyridoxal
+PERM_17368,Permease hypoxanthine
+PERM_17378,Permease D-glyceraldehyde
+PERM_17544,Permease hydrogencarbonate
+PERM_17562,Permease cytidine
+PERM_17596,Permease inosine
+PERM_17748,Permease thymidine
+PERM_17754,Permease glycerol
+PERM_17775,Permease urate
+PERM_17790,Permease methanol
+PERM_17821,Permease thymine
+PERM_17997,Permease N2
+PERM_18107,Permease xanthosine
+PERM_18276,Permease H2
+PERM_28061,Permease alpha-D-galactose
+PERM_28938,Permease NH4(+)
+PERM_28997,Permease 2'-deoxyinosine
+PERM_29033,Permease Fe(2+)
+PTS_15903,Transport beta-D-glucose PTS
+PTS_16899,Transport D-mannitol PTS
+PTS_17992,Transport Sucrose PTS
+PTS_28645,Transport beta-D-fructose PTS
+PTS_506227,Transport N-acetyl-D-glucosamine PTS
+SYM_15354_15378,Symport choline::H(+)
+SYM_15378_15562,Symport H(+)::D-threo-isocitrate
+SYM_15378_15589,Symport H(+)::(S)-malate
+SYM_15378_15677,Symport H(+)::(R)-allantoin
+SYM_15378_15678,Symport H(+)::(S)-allantoin
+SYM_15378_15740,Symport H(+)::formate
+SYM_15378_16004,Symport H(+)::(R)-lactate
+SYM_15378_16040,Symport H(+)::cytosine
+SYM_15378_16189,Symport H(+)::sulfate
+SYM_15378_16235,Symport H(+)::guanine
+SYM_15378_16301,Symport H(+)::nitrite
+SYM_15378_16383,Symport H(+)::cis-aconitate
+SYM_15378_16651,Symport H(+)::(S)-lactate
+SYM_15378_16708,Symport H(+)::adenine
+SYM_15378_16810,Symport H(+)::2-oxoglutarate
+SYM_15378_16947,Symport H(+)::citrate
+SYM_15378_17568,Symport H(+)::uracil
+SYM_15378_17632,Symport H(+)::nitrate
+SYM_15378_17712,Symport H(+)::xanthine
+SYM_15378_17750,Symport H(+)::glycine betaine
+SYM_15378_18391,Symport H(+)::D-gluconate
+SYM_15378_29806,Symport H(+)::fumarate
+SYM_15378_29985,Symport H(+)::L-glutamate
+SYM_15378_29991,Symport H(+)::L-aspartate
+SYM_15378_30031,Symport H(+)::succinate
+SYM_15378_30089,Symport H(+)::acetate
+SYM_15378_32551,Symport H(+)::L-lysine
+SYM_15378_32682,Symport H(+)::L-arginine
+SYM_15378_33384,Symport H(+)::L-serine
+SYM_15378_35235,Symport H(+)::L-cysteine
+SYM_15378_43474,Symport H(+)::phosphate
+SYM_15378_57305,Symport H(+)::glycine
+SYM_15378_57427,Symport H(+)::L-leucine
+SYM_15378_57595,Symport H(+)::L-histidine
+SYM_15378_57597,Symport H(+)::sn-glycerol 3-phosphate
+SYM_15378_57762,Symport H(+)::L-valine
+SYM_15378_57844,Symport H(+)::L-methionine
+SYM_15378_57912,Symport H(+)::L-tryptophan
+SYM_15378_57926,Symport H(+)::L-threonine
+SYM_15378_57972,Symport H(+)::L-alanine
+SYM_15378_58045,Symport H(+)::L-isoleucine
+SYM_15378_58048,Symport H(+)::L-asparagine
+SYM_15378_58095,Symport H(+)::L-phenylalanine
+SYM_15378_58315,Symport H(+)::L-tyrosine
+SYM_15378_58359,Symport H(+)::L-glutamine
+SYM_15378_60039,Symport H(+)::L-proline
+SYM_15589_29101,Symport (S)-malate::Na+
+SYM_15740_29101,Symport formate::Na+
+SYM_15792_29101,Symport malonate::Na+
+SYM_16189_29101,Symport sulfate::Na+
+SYM_16235_29101,Symport guanine::Na+
+SYM_16708_29101,Symport adenine::Na+
+SYM_17568_29101,Symport uracil::Na+
+SYM_17712_29101,Symport xanthine::Na+
+SYM_29101_29806,Symport Na+::fumarate
+SYM_29101_29985,Symport Na+::L-glutamate
+SYM_29101_29991,Symport Na+::L-aspartate
+SYM_29101_30031,Symport Na+::succinate
+SYM_29101_30089,Symport Na+::acetate
+SYM_29101_33384,Symport Na+::L-serine
+SYM_29101_43474,Symport Na+::phosphate
+SYM_29101_57305,Symport Na+::glycine
+SYM_29101_57427,Symport Na+::L-leucine
+SYM_29101_57762,Symport Na+::L-valine
+SYM_29101_57926,Symport Na+::L-threonine
+SYM_29101_57972,Symport Na+::L-alanine
+SYM_29101_58045,Symport Na+::L-isoleucine
+SYM_29101_60039,Symport Na+::L-proline
+biomass,Biomass reaction
+biotin_pimeloyl_acp_methyl_ester_synthase,Pimeloyl-[acp] methyl ester synthase
+cyt_bc1,Cytochrome c oxidase
+cyt_bd,Cytochrome oxidase BD-I
+cyt_bo,Cytochrome oxidase bo3
+cyt_c,Cytochrome c oxidase
+cyt_c_cbb3,"Cytochrome c oxidase, cbb3-type"
+glycogen_phosphorylase,Glycogen phosphorylase
+glycogen_synthase,Glycogen synthase (ADPGlc)
+nfn,NAD(P)+ transhydrogenase (ferredoxin)
+nqr,Na+-transporting NADH:ubiquinone oxidoreductase
+oad,oxaloacetate decarboxylase (Na(+) extruding)
+pnt,NADPH:NAD+ oxidoreductase H translocase
+rnf,H+/Na+-translocating ferredoxin:NAD+ oxidoreductase

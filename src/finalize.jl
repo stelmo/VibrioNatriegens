@@ -63,9 +63,10 @@ function name_reactions_genes!(model)
     model.genes["WP_020336055.1"].name = "POP2"
 
     df = DataFrame(
-        CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "rename_reactions.csv")),
+        CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "reaction_names.csv")),
     )
-    rid_name = Dict(df.ID .=> df.Name)
+    dropmissing!(df)
+    rid_name = Dict(df.RID .=> df.Name)
     for rid in A.reactions(model)
         haskey(rid_name, rid) && (model.reactions[rid].name = rid_name[rid])
     end
