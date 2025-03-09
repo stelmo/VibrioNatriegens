@@ -159,7 +159,8 @@ end
     end
 
     met_rids[vs.==0]
-
+    using CSV
+    CSV.write("blocked.csv", DataFrame(Blocked=met_rids[vs.==0]))
 end
 
 @testset "Aerobic growth rates" begin

@@ -7,6 +7,7 @@ using Distributed
 using DataFrames, CSV, DataFramesMeta
 
 addprocs(6, exeflags = `--project=$(Base.active_project())`)
+
 @everywhere begin
     using Gurobi, COBREXA, ConstraintTrees, AbstractFBCModels
     import ConstraintTrees as C

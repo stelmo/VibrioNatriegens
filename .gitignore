@@ -19,5 +19,6 @@ quantitative_proteome.csv
 iML1515.json
 cpds_1.json
 cpds_2.json
+blocked.csv
 
 data/chebi/*
