@@ -1119,3 +1119,6 @@ nqr,Na+-transporting NADH:ubiquinone oxidoreductase
 oad,oxaloacetate decarboxylase (Na(+) extruding)
 pnt,NADPH:NAD+ oxidoreductase H translocase
 rnf,H+/Na+-translocating ferredoxin:NAD+ oxidoreductase
+20002,aldA
+25302,nudB
+25309,dihydroneopterin-mono-phosphatase

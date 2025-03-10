@@ -27,6 +27,8 @@ function gapfill!(model)
         12921 # cofactors, make 5-aminolevulinate, actually hemL should be active, but requires tRNA reactions
         54644 # d-amino acid metabolism, connect S)-1-pyrroline-5-carboxylate to make trans-4-hydroxy-L-proline
         14277 # rhamnose metabolism degrade lactaldehyde
+        25309 # folate biosynthesis
+        20002 # folate biosynthesis
     ]
 
 
@@ -43,4 +45,3 @@ function gapfill!(model)
 
     VibrioNatriegens.extend_model!(model, dfs)
 end
-
