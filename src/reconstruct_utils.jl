@@ -51,26 +51,10 @@ function extend_model!(model, dfs)
             ecs = isnothing(rxn.ec) ? [""] : [string(last(split(x, "/"))) for x in rxn.ec]
             name = isnothing(rxn.name) ? nothing : rxn.name
 
-            # direction
-            reversibility_index_threshold = 5.0
-            rev_ind = ismissing(first(df.RevIndex)) ? nothing : first(df.RevIndex)
-            dg = ismissing(first(df.DeltaG)) ? nothing : first(df.DeltaG)
-
-            if isnothing(rev_ind) || (abs(rev_ind) <= reversibility_index_threshold)
-                lb = -1000
-                ub = 1000
-            elseif dg < 0 # forward
-                lb = 0
-                ub = 1000
-            elseif dg > 0 # reverse
-                lb = -1000
-                ub = 0
-            end
-
             model.reactions[string(rid)] = Reaction(;
                 name = name,
-                lower_bound = lb,
-                upper_bound = ub,
+                lower_bound = -1000.0, # reversible by default, equilibrator causes more problems than it fixes
+                upper_bound = 1000.0,
                 dg = dg,
                 gene_association = isnothing(iso) ? nothing : [iso],
                 stoichiometry = stoichiometry,
