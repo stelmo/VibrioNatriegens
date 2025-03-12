@@ -1,14 +1,14 @@
 
 function gapfill!(model)
-
+    #! NB MUST BE THE REFERENCE RHEA REACTION
     rhea_rids = [
         54528 # aldehydo-D-ribose 5-phosphate <-> D-ribose 5-phosphate
-        19048 # pyruvate to citramalate, c5 branched dibasic metabolism
-        15652 # Spontaneous
-        28237 # Spontaneous
-        22491 # formaldehyde detox
-        21371 # urate to 5-hydroxyisourate
-        17032 # s-allantoin to allantoate
+        19045 # pyruvate to citramalate, c5 branched dibasic metabolism
+        15649 # Spontaneous
+        28234 # Spontaneous
+        22488 # formaldehyde detox
+        21368 # urate to 5-hydroxyisourate
+        17029 # s-allantoin to allantoate
         63204 # release acp octadecanoate
         41932 # release acp hexadecanoate
         30123 # release acp tetradecanoate
@@ -21,14 +21,14 @@ function gapfill!(model)
         19533 # arginine & proline metabolism
         16953 # arginine & proline metabolism
         19737 # arginine & proline metabolism
-        28237 # Spontaneous
+        28234 # Spontaneous
         13389 # tryptophan metabolism
         21384 # phenylalanine metabolism
         12921 # cofactors, make 5-aminolevulinate, actually hemL should be active, but requires tRNA reactions
         54644 # d-amino acid metabolism, connect S)-1-pyrroline-5-carboxylate to make trans-4-hydroxy-L-proline
         14277 # rhamnose metabolism degrade lactaldehyde
     ]
-
+    get_reactions(rhea_rids)
 
     n = length(rhea_rids)
     df = DataFrame(
@@ -36,11 +36,9 @@ function gapfill!(model)
         Protein = fill(nothing, n),
         Stoichiometry = fill(1),
         Isozyme = fill("A", n),
-        DeltaG = fill(nothing, n),
-        RevIndex = fill(nothing, n),
     )
     dfs = groupby(df, :RHEA_ID)
 
-    VibrioNatriegens.extend_model!(model, dfs)
+    extend_model!(model, dfs)
 end
 

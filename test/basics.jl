@@ -91,18 +91,18 @@ end
         end
         model.reactions["ATPM"].lower_bound = 0.0
         model.reactions["temp_reaction"] = VibrioNatriegens.Reaction(
-            stoichiometry=Dict(),
+            stoichiometry = Dict(),
             lower_bound = -1000.0,
             upper_bound = 1000.0,
         )
     end
 
     mids = filter(!occursin("_"), A.metabolites(model))
-        
+
     vs = screen(mids, workers = workers()) do mid
         model.reactions["temp_reaction"].stoichiometry = Dict(mid => -1.0)
-        ct = flux_balance_constraints(model) 
-    
+        ct = flux_balance_constraints(model)
+
         lb = optimized_values(
             ct,
             objective = ct.fluxes.temp_reaction.value,
@@ -160,7 +160,7 @@ end
 
     met_rids[vs.==0]
     using CSV
-    CSV.write("blocked.csv", DataFrame(Blocked=met_rids[vs.==0]))
+    CSV.write("blocked.csv", DataFrame(Blocked = met_rids[vs.==0]))
 end
 
 @testset "Aerobic growth rates" begin
@@ -216,14 +216,12 @@ end
 
     df = DataFrame(
         CSV.File(
-            joinpath(
-            pkgdir(@__MODULE__), 
-            "data", "experiments", "coppens_2023_biolog.csv"),
+            joinpath(pkgdir(@__MODULE__), "data", "experiments", "coppens_2023_biolog.csv"),
         ),
     )
     dropmissing!(df)
     @select!(df, :Substrate, :Experiment, :Chebi)
-    @transform!(df, :Exchange = "EX_".*last.(split.(:Chebi, ":")))
+    @transform!(df, :Exchange = "EX_" .* last.(split.(:Chebi, ":")))
     @subset!(df, :Experiment)
 
     model = VibrioNatriegens.build_model()

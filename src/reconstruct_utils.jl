@@ -19,7 +19,7 @@ Add metabolic reactions to the model.
 function extend_model!(model, dfs)
 
     gs = String[]
-    ms = RheaReactions.RheaMetabolite[]
+    ms = String[]
 
     for df in dfs
 
@@ -35,31 +35,21 @@ function extend_model!(model, dfs)
         end
 
         if haskey(model.reactions, string(rid)) # isozyme
-
             push!(model.reactions[string(rid)].gene_association, iso)
 
         else # first time seeing this reaction
 
-            rxn = get_reaction(rid)
-
-            coeff_mets = get_reaction_metabolites(rid)
-            stoichiometry = Dict(string(v.accession) => s for (s, v) in coeff_mets)
-
-            append!(ms, last.(coeff_mets))
-
-            ecs = isnothing(rxn.ec) ? [""] : [string(last(split(x, "/"))) for x in rxn.ec]
-            name = isnothing(rxn.name) ? nothing : rxn.name
+            rxn = get_reaction(rid; verbose = false)
+            stoichiometry = rxn.stoichiometry
+            append!(ms, collect(keys(stoichiometry)))
 
             model.reactions[string(rid)] = Reaction(;
-                name = name,
                 lower_bound = -1000.0, # reversible by default, equilibrator causes more problems than it fixes
                 upper_bound = 1000.0,
-                dg = dg,
                 gene_association = isnothing(iso) ? nothing : [iso],
                 stoichiometry = stoichiometry,
                 annotations = Dict(
                     "rhea-reaction" => [rxn.equation],
-                    "EC" => ecs,
                     "SBO" => ["SBO_0000176"],
                 ),
             )
@@ -68,29 +58,24 @@ function extend_model!(model, dfs)
 
     add_genes!(model, gs)
     add_metabolites!(model, ms)
-
 end
 
 function add_genes!(model, gs)
-
-    # add genes
     for g in unique(gs)
         haskey(model.genes, g) || begin
             model.genes[g] = Gene(;)
         end
     end
-
 end
 
 function add_metabolites!(model, ms)
-    # ms :: RheaReactions.RheaMetabolite[]
-
     for m in ms
-        haskey(model.metabolites, m.accession) || begin
-            model.metabolites[m.accession] = Metabolite(;
-                name = m.name,
-                formula = parse_formula(m.formula),
-                charge = m.charge,
+        haskey(model.metabolites, m) || begin
+            met = get_metabolite(m)
+            model.metabolites[m] = Metabolite(;
+                name = met.name,
+                formula = parse_formula(met.formula),
+                charge = met.charge,
                 compartment = "Cytosol",
             )
         end

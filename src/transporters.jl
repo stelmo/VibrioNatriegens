@@ -9,11 +9,12 @@ function add_exchanges!(model)
     df = DataFrame(
         CSV.File(
             joinpath(pkgdir(@__MODULE__), "data", "model", "exchange_metabolites.csv"),
+            types = [String, String]
         ),
     )
 
     # by default, exchanges can only export metabolites
-    for mid in String.(df.CHEBI)
+    for mid in df.CHEBI
 
         nm = A.metabolite_name(model, mid)
 
@@ -38,11 +39,12 @@ function add_periplasm_transporters!(model)
     df = DataFrame(
         CSV.File(
             joinpath(pkgdir(@__MODULE__), "data", "model", "exchange_metabolites.csv"),
+            types = [String, String]
         ),
     )
 
     # bidirectional by default
-    for mid in String.(df.CHEBI)
+    for mid in df.CHEBI
 
         nm = A.metabolite_name(model, mid)
 
@@ -177,11 +179,11 @@ function add_abc!(model, mid, iso, ss)
         isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
     else
         st = Dict(
-            "CHEBI:30616" => -1, # atp
-            "CHEBI:15377" => -1, # water
-            "CHEBI:43474" => 1, # pi
-            "CHEBI:456216" => 1, # adp
-            "CHEBI:15378" => 1,  # h+ 
+            "30616" => -1, # atp
+            "15377" => -1, # water
+            "43474" => 1, # pi
+            "456216" => 1, # adp
+            "15378" => 1,  # h+ 
             mid * "_p" => -1.0,
         )
         st[mid] = get(st, mid, 0) + 1.0 # handle the case when phosphate is transported
@@ -200,11 +202,11 @@ end
 
 function add_pts!(model, mid, iso, ss)
     lu_phospho = Dict(
-        "CHEBI:506227" => "CHEBI:57513", # n-acetyl-glucosamine -> N-acetyl-D-glucosamine 6-phosphate
-        "CHEBI:15903" => "CHEBI:58247", # glucose -> glucose 6 phosphate
-        "CHEBI:17992" => "CHEBI:57723", # sucrose -> sucrose 6 phosphate
-        "CHEBI:16899" => "CHEBI:61381", # mannitol -> D-mannitol 1-phosphate
-        "CHEBI:28645" => "CHEBI:57634", # β-D-fructose -> beta-D-fructose 6-phosphate
+        "506227" => "57513", # n-acetyl-glucosamine -> N-acetyl-D-glucosamine 6-phosphate
+        "15903" => "58247", # glucose -> glucose 6 phosphate
+        "17992" => "57723", # sucrose -> sucrose 6 phosphate
+        "16899" => "61381", # mannitol -> D-mannitol 1-phosphate
+        "28645" => "57634", # β-D-fructose -> beta-D-fructose 6-phosphate
     )
 
     rid = "PTS_$mid"
@@ -217,8 +219,8 @@ function add_pts!(model, mid, iso, ss)
         model.reactions[rid] = Reaction(
             name = "Transport $(A.metabolite_name(model, String(mid))) PTS",
             stoichiometry = Dict(
-                "CHEBI:58702" => -1.0, # pep
-                "CHEBI:15361" => 1.0, # pyr
+                "58702" => -1.0, # pep
+                "15361" => 1.0, # pyr
                 mid * "_p" => -1.0,
                 lu_phospho[mid] => 1.0, # cytosol phospho metabolite
             ),

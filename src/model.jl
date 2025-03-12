@@ -15,7 +15,6 @@ Base.@kwdef mutable struct Reaction
     stoichiometry::Dict{String,Float64} = Dict()
     objective_coefficient::Float64 = 0.0
     gene_association::A.Maybe{Vector{X.Isozyme}} = nothing
-    dg::A.Maybe{Float64} = nothing
     annotations::A.Annotations = A.Annotations()
     notes::A.Notes = A.Notes()
     transporter::Bool = false

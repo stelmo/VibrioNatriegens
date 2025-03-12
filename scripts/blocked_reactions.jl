@@ -9,7 +9,7 @@ using JSON
 
 model = VibrioNatriegens.build_model()
 
-flux_balance_analysis(model,optimizer=Gurobi.Optimizer)
+flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 
 ex_rids = filter(startswith("EX_"), A.reactions(model))
 transporters = [rid for rid in A.reactions(model) if model.reactions[rid].transporter]

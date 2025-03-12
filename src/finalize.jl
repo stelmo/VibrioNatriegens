@@ -2,18 +2,18 @@
 
 function set_default_exchanges!(model)
 
-    default_carbon_source = "CHEBI:15903" # glucose
+    default_carbon_source = "15903" # glucose
 
     substrates = [
-        "CHEBI:15903" # glucose
-        "CHEBI:16189" # so4
-        "CHEBI:15379" # o2
-        "CHEBI:28938" # nh4(+)
-        "CHEBI:43474" # pi
+        "15903" # glucose
+        "16189" # so4
+        "15379" # o2
+        "28938" # nh4(+)
+        "43474" # pi
     ]
 
     bidirs = [
-        "CHEBI:15377", # H2O
+        "15377", # H2O
     ]
 
     for mid in [substrates; bidirs]
@@ -97,8 +97,7 @@ function rename_gene_ids!(model) # from protein id to locus tag
     end
 end
 
-metabolite_renamer(s) =
-    occursin("CHEBI:", s) ? replace(s, "CHEBI:" => "") : replace(s, ":" => "_") # fallback just replaces :
+metabolite_renamer(s) = occursin("", s) ? replace(s, "" => "") : replace(s, ":" => "_") # fallback just replaces :
 
 function rename_metabolite_ids!(model) # from protein id to locus tag
     ks = collect(keys(model.metabolites))
@@ -124,7 +123,7 @@ end
 function rename_reaction_ids!(model) # from protein id to locus tag
     ks = collect(keys(model.reactions))
     for k in ks
-        if occursin("CHEBI:", k) # not all rids have chebi in them, and they get deleted later on if this control is true
+        if occursin("", k) # not all rids have chebi in them, and they get deleted later on if this control is true
             r = deepcopy(model.reactions[k])
             model.reactions[metabolite_renamer(k)] = r
             delete!(model.reactions, k)
