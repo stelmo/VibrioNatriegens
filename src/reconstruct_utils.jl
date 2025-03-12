@@ -11,7 +11,6 @@ function parse_formula(x::Union{Nothing,String})
     return res
 end
 
-
 """
 $(TYPEDSIGNATURES)
 
