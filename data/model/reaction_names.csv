@@ -323,7 +323,7 @@ RID,Name
 20345,trxB
 20373,prpE
 20397,metB
-20517,
+20517,wbpP
 20549,
 20557,ureABC
 20569,
@@ -1119,3 +1119,11 @@ nqr,Na+-transporting NADH:ubiquinone oxidoreductase
 oad,oxaloacetate decarboxylase (Na(+) extruding)
 pnt,NADPH:NAD+ oxidoreductase H translocase
 rnf,H+/Na+-translocating ferredoxin:NAD+ oxidoreductase
+20002,aldA
+25302,nudB
+25309,dihydroneopterin-mono-phosphatase
+33710,pduX
+11492,cobD
+21899,cobD
+21624,FMN reductase
+27345,bluB
