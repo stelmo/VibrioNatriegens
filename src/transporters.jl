@@ -154,11 +154,13 @@ function add_membrane_transporters!(model)
     all_exchange_metabolites =
         DataFrame(
             CSV.File(
-                joinpath(pkgdir(@__MODULE__), "data", "model", "exchange_metabolites.csv"),
+                joinpath(
+                    pkgdir(@__MODULE__), 
+                "data", "model", "exchange_metabolites.csv"),
             ),
         ).CHEBI
     # note: Pi, Na, and H will not get a permease here, due to them being involved in the other porters
-    missing_transporters = setdiff(all_exchange_metabolites, unique(ms))
+    missing_transporters = setdiff(string.(all_exchange_metabolites), unique(ms))
     for mid in missing_transporters
         if mid in A.metabolites(model)
             add_permease!(model, mid, nothing, [1.0])

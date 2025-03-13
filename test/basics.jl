@@ -69,8 +69,6 @@ end
     biomass = model.reactions["biomass"].stoichiometry
     btot = 0.0
     for (k, v) in biomass
-        # have to exclude atp from this calculation, since it is not part of the biomass
-        k in ["30616", "15377", "43474", "456216", "15378"] && continue
         btot = v * model.metabolites[k].molarmass
     end
 

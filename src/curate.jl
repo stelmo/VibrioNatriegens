@@ -28,9 +28,6 @@ function curate!(model)
     delete!(model.reactions, "19289") # sucrose
     delete!(model.reactions, "27814") # Na+ 
 
-    # adjust the formula of [thioredoxin]-dithiol: S1C3N1H5O1 -> S2C6N2H10O2
-    # model.metabolites["29950"].formula = Dict("S" => 2, "C" => 6, "N" => 2, "H" => 10, "O" => 2)
-
     # glycogen
     id = "glycogen"
     model.metabolites[id] = Metabolite(
