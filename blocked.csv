@@ -1,60 +1,60 @@
 Blocked
 10227 # done pyridoxal
-10415 # we added a gap but not sure if it works now ?
+10415 # done we added a gap but not sure if it works now ?
 10543 # done folate biosynthesis
 10915 # done coA pathway
 11143 # done deleted
-11163 # in progress
-11199
-11227
-11675
-11827
-12059
-12248
-12379
+11163 # done norspermidine
+11199 # done vitamin b12
+11227 # done UDP-N-acetylmuramoyl-pentapeptide biosynthesis
+11675 # done folate biosynthesis
+11827 # done folate biosynthesis 
+12059 # done pyridoxal
+12248 # done UDP-N-acetylmuramoyl-pentapeptide biosynthesis
+12379 # done l-fucose
 12608
 12736
-12936
+12936 # done l-fucose
 13104
 13316
-13325
+13325 # done UDP-N-acetylmuramoyl-pentapeptide biosynthesis
 13389
 13432
-13512
+13512 # done UDP-N-acetylmuramoyl-pentapeptide biosynthesis
 13668
 13720
-13728
+13728 # done UDP-N-acetylmuramoyl-pentapeptide biosynthesis
 14268
 14372
-14548
+14548 # done nicotinamidase
 14800
 14964
-15152
+15152 # done pyridoxal
 15196
-15268
+15268 # done pyridoxal
 15308
 15428
 15616
 15652
-15692
+15692 # done norspermidine
 15808
-15820
+15820 # done pyridoxal
 15840
 15992
-16204
+16204 # done folate biosynthesis
 16236 # done coA pathway
 16373 # done coA pathway
-16432
-16576
+16432 # done UDP-N-acetylmuramoyl-pentapeptide biosynthesis
+16576 # done pyridoxal
 16796 # done coA pathway
 16864
 16884
 16916
 17032
 17105
-17236
+17236 # done l-fucose 
 17240
-17420
+17420 # (done) N-acetyl-D-glucosamine/chitin degradation is linked to 32530 (valid blocked reaction) 
 17473 # done folate biosynthesis
 17756
 17772
@@ -67,8 +67,8 @@ Blocked
 18440
 18460
 18632
-18684
-18832
+18684 # done UDP-N-acetylmuramoyl-pentapeptide biosynthesis
+18832 # done pyridoxal
 18988
 19072
 19364
@@ -79,7 +79,7 @@ Blocked
 19984
 19988
 19993
-20517
+20517 # done UDP-N-acetylmuramoyl-pentapeptide biosynthesis
 20552
 20715
 20775
@@ -102,12 +102,12 @@ Blocked
 23103
 23104
 23287
-23375
-23427
+23375 # done UDP-N-acetylmuramoyl-pentapeptide biosynthesis
+23427 # done UDP-N-acetylmuramoyl-pentapeptide biosynthesis 
 23587 # done folate biosynthesis
 23599
 23663
-23679
+23679 # done UDP-N-acetylmuramoyl-pentapeptide biosynthesis 
 23707
 23803
 23867
@@ -118,7 +118,7 @@ Blocked
 24828
 24930
 25097
-25107
+25107 # done pyridoxal
 25111
 25184
 25200
@@ -144,8 +144,8 @@ Blocked
 28345
 28357
 28361
-28377
-28389
+28377 # done UDP-N-acetylmuramoyl-pentapeptide biosynthesis
+28389 # done UDP-N-acetylmuramoyl-pentapeptide biosynthesis --> deleted
 28406
 28613
 28659
@@ -163,7 +163,7 @@ Blocked
 30754
 30758
 30762
-30778
+30778 # done pyridoxal
 30782
 30798
 30818
@@ -175,7 +175,7 @@ Blocked
 31078
 31090
 31094
-31106
+31106 # done folate biosynthesis
 31110
 31114
 31118
@@ -193,26 +193,26 @@ Blocked
 31202
 31206
 31210
-31230
+31230 # done UDP-N-acetylmuramoyl-pentapeptide biosynthesis --> deleted
 31286
 31750
 31758
 31846
 32174
-32278
+32278 # done pyridoxal
 32462
-32530
+32530 # (done) NN'-diacetylchitobiose/chitin degradation is a valid blocked reaction
 33870
-34102
-34118
+34102 # done norspermidine
+34118 # done norspermidine
 34802
 34854
-36166
+36166 # done nicotinamidase
 36374
 40666
 42288
 43607
-45335
+45335 # done folate biosynthesis
 45700
 64823
 70226
