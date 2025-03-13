@@ -21,12 +21,19 @@ function add_reaction_annotations!(model)
         gdf in groupby(bigg, :rhea)
     )
 
-    kegg =
-        DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "rhea", "kegg_rxns.csv")))
+    kegg = DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "rhea", "kegg_rxns.csv")))
+    kegg_met = DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "metabolic_reactions.csv")))
     kegg = Dict(
         String.(string(first(gdf.rhea))) => String.(gdf.kegg) for
         gdf in groupby(kegg, :rhea)
     )
+    for (k, v) in zip(string.(kegg_met.RHEA_ID),kegg_met.KEGG_ID)
+        if haskey(kegg, k)
+            v in kegg[k] || push!(kegg[k], v) 
+        else
+            kegg[k] = [v,]
+        end
+    end
 
     eggnog = DataFrame(
         CSV.File(
