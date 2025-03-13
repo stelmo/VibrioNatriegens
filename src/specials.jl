@@ -84,10 +84,10 @@ function add_electron_transport_chain!(model)
         name = "Cytochrome c oxidase",
         stoichiometry = Dict(
             "24646" => -1.0, # a ubiquinol
-            "RHEA_COMP:14399" => -2.0, # Fe(III)-[cytochrome c]
+            "29034" => -2.0, # Fe(III)-[cytochrome c]
             "15378_p" => 2.0,  # h+ out
             "132124" => 1.0, # a ubiquinone
-            "RHEA_COMP:10350" => 2.0, # Fe(II)-[cytochrome c]
+            "29033" => 2.0, # Fe(II)-[cytochrome c]
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
@@ -109,9 +109,9 @@ function add_electron_transport_chain!(model)
         name = "Cytochrome c oxidase",
         stoichiometry = Dict(
             "15379" => -1, # o2
-            "RHEA_COMP:10350" => -4.0, # Fe(II)-[cytochrome c]
+            "29033" => -4.0, # Fe(II)-[cytochrome c]
             "15378" => -8.0, # H+
-            "RHEA_COMP:14399" => 4.0, # Fe(III)-[cytochrome c]
+            "29034" => 4.0, # Fe(III)-[cytochrome c]
             "15377" => 2.0, # h2o
             "15378_p" => 4.0, # H+
         ),
@@ -143,9 +143,9 @@ function add_electron_transport_chain!(model)
         name = "Cytochrome c oxidase, cbb3-type",
         stoichiometry = Dict(
             "15379" => -1, # o2
-            "RHEA_COMP:10350" => -4.0, # Fe(II)-[cytochrome c]
+            "29033" => -4.0, # Fe(II)-[cytochrome c]
             "15378" => -8.0, # H+
-            "RHEA_COMP:14399" => 4.0, # Fe(III)-[cytochrome c]
+            "29034" => 4.0, # Fe(III)-[cytochrome c]
             "15377" => 2.0, # h2o
             "15378_p" => 4.0, # H+
         ),

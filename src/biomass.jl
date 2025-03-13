@@ -19,11 +19,11 @@ function add_atpm!(model)
     model.reactions["ATPM"] = Reaction(
         name = "ATP Maintenance reaction",
         stoichiometry = Dict(
-            "CHEBI:30616" => -1, # atp
-            "CHEBI:15377" => -1, # water
-            "CHEBI:43474" => 1, # pi
-            "CHEBI:456216" => 1, # adp
-            "CHEBI:15378" => 1,  # h+
+            "30616" => -1, # atp
+            "15377" => -1, # water
+            "43474" => 1, # pi
+            "456216" => 1, # adp
+            "15378" => 1,  # h+
         ),
         objective_coefficient = 0.0,
         lower_bound = 8.0,

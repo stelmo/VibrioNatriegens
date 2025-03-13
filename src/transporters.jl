@@ -194,7 +194,6 @@ function add_abc!(model, mid, iso, ss)
             lower_bound = 0,
             upper_bound = 1000,
             gene_association = isnothing(isoz) ? nothing : [isoz],
-            transporter = true,
             annotations = Dict("SBO" => ["SBO_0000284"]),
         )
     end
@@ -228,7 +227,6 @@ function add_pts!(model, mid, iso, ss)
             lower_bound = 0,
             upper_bound = 1000,
             gene_association = isnothing(isoz) ? nothing : [isoz],
-            transporter = true,
             annotations = Dict("SBO" => ["SBO_0000284"]),
         )
     end
@@ -254,7 +252,6 @@ function add_symport!(model, mid1, mid2, iso, ss)
             lower_bound = 0,
             upper_bound = 1000,
             gene_association = isnothing(isoz) ? nothing : [isoz],
-            transporter = true,
             annotations = Dict("SBO" => ["SBO_0000284"]),
         )
     end
@@ -280,7 +277,6 @@ function add_antiport!(model, mid1, mid2, iso, ss)
             lower_bound = 0,
             upper_bound = 1000,
             gene_association = isnothing(isoz) ? nothing : [isoz],
-            transporter = true,
             annotations = Dict("SBO" => ["SBO_0000284"]),
         )
     end
@@ -301,7 +297,6 @@ function add_permease!(model, mid, iso, ss)
             lower_bound = -1000,
             upper_bound = 1000,
             gene_association = isnothing(isoz) ? nothing : [isoz],
-            transporter = true,
             annotations = Dict("SBO" => ["SBO_0000284"]),
         )
     end

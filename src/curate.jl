@@ -24,23 +24,9 @@ end
 
 function curate!(model)
 
-    # add these metabolites manually
-
-    id = "29101" # Na+ this is needed since the salt reactions only get added in the transporter section
-    model.metabolites[id] = Metabolite(
-        name = "Na+",
-        formula = Dict("Na" => 1),
-        compartment = "Cytosol",
-        charge = 1,
-    )
-
-    id = "17992" # sucrose
-    model.metabolites[id] = Metabolite(
-        name = "Sucrose",
-        formula = Dict("C" => 12, "H" => 22, "O" => 11),
-        compartment = "Cytosol",
-        charge = 0,
-    )
+    # delete reactions added to load specific metabolites in gapfill
+    delete!(model.reactions, "19289") # sucrose
+    delete!(model.reactions, "27814") # Na+ 
 
     # adjust the formula of [thioredoxin]-dithiol: S1C3N1H5O1 -> S2C6N2H10O2
     # model.metabolites["29950"].formula = Dict("S" => 2, "C" => 6, "N" => 2, "H" => 10, "O" => 2)
@@ -51,7 +37,6 @@ function curate!(model)
         name = "Glycogen",
         formula = Dict("C" => 6.0, "H" => 10.0, "O" => 5.0),
         compartment = "Cytosol",
-        molarmass = 162.1406,
         charge = 0,
     )
 
@@ -90,7 +75,6 @@ function curate!(model)
     delete!(model.reactions["33791"].stoichiometry, "28645")
 
     # change directions to match what is found in biocyc - manual thermodynamics leaves much to be desired
-    model_rxn_df = DataFrame(rxn = A.reactions(model)) # must be the reference reactions!
 
     metacyc = DataFrame(CSV.File(joinpath(
         pkgdir(@__MODULE__), 

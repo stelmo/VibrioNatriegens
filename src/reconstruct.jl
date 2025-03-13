@@ -32,24 +32,20 @@ function build_model()
     # # these are all manually added reactions
     add_exchanges!(model)
     add_periplasm_transporters!(model)
-    # add_membrane_transporters!(model)
-    # add_electron_transport_chain!(model)
-    # add_salt_transducers!(model)
-    # add_atpm!(model)
-    # add_biomass!(model)
+    add_membrane_transporters!(model)
+    add_electron_transport_chain!(model)
+    add_salt_transducers!(model)
+    add_atpm!(model)
+    add_biomass!(model)
 
-    # add_gene_annotations!(model)
-    # add_metabolite_annotations!(model)
-    # add_reaction_annotations!(model)
+    add_gene_annotations!(model)
+    add_metabolite_annotations!(model)
+    add_reaction_annotations!(model)
 
-    # fix_noncytosolic_metabolite_annotations!(model)
-    # set_default_exchanges!(model)
-    # name_reactions_genes!(model)
-
-    # # rename to conform with SBML model rules
-    # rename_gene_ids!(model)
-    # rename_metabolite_ids!(model)
-    # rename_reaction_ids!(model)
+    set_default_exchanges!(model)
+    name_reactions!(model)
+    name_genes!(model)
+    replace_proteinaccession_with_locustag!(model)
 
     model
 end

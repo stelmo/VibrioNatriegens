@@ -50,7 +50,6 @@ function extend_model!(model, dfs)
                 stoichiometry = stoichiometry,
                 annotations = Dict(
                     "rhea-reaction" => [rxn.equation],
-                    "SBO" => ["SBO_0000176"],
                 ),
             )
         end

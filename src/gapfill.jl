@@ -27,6 +27,8 @@ function gapfill!(model)
         12921 # cofactors, make 5-aminolevulinate, actually hemL should be active, but requires tRNA reactions
         54644 # d-amino acid metabolism, connect S)-1-pyrroline-5-carboxylate to make trans-4-hydroxy-L-proline
         14277 # rhamnose metabolism degrade lactaldehyde
+        19289 # this is a reaction of convenience to get sucrose loaded into the metabolite list, it gets deleted in curation
+        27814 # this is a reaction of convenience to get Na+ loaded into the metabolite list, it gets deleted in curation
     ]
     get_reactions(rhea_rids)
 

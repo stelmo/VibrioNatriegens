@@ -17,7 +17,6 @@ Base.@kwdef mutable struct Reaction
     gene_association::A.Maybe{Vector{X.Isozyme}} = nothing
     annotations::A.Annotations = A.Annotations()
     notes::A.Notes = A.Notes()
-    transporter::Bool = false
 end
 
 Base.show(io::Base.IO, ::MIME"text/plain", x::Reaction) = A.pretty_print_kwdef(io, x)
@@ -35,7 +34,6 @@ Base.@kwdef mutable struct Metabolite
     compartment::A.Maybe{String} = nothing
     formula::A.Maybe{A.MetaboliteFormula} = nothing
     charge::A.Maybe{Int} = nothing
-    molarmass::A.Maybe{Float64} = nothing
     balance::Float64 = 0.0
     annotations::A.Annotations = A.Annotations()
     notes::A.Notes = A.Notes()
@@ -46,16 +44,11 @@ Base.show(io::Base.IO, ::MIME"text/plain", x::Metabolite) = A.pretty_print_kwdef
 """
 $(TYPEDEF)
 
-Gene with an additional molar mass field.
-
 # Fields
 $(TYPEDFIELDS)
 """
 Base.@kwdef mutable struct Gene
     name::A.Maybe{String} = nothing
-    symbol::A.Maybe{String} = nothing
-    molarmass::A.Maybe{Float64} = nothing
-    sequence::A.Maybe{String} = nothing
     annotations::A.Annotations = A.Annotations()
     notes::A.Notes = A.Notes()
 end

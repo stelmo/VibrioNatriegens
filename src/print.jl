@@ -4,14 +4,8 @@ function print_reactions(model::Model, rids::Vector{String}, file_name)
         rid = String[],
         Name = String[],
         Stoichiometry = String[],
-        dG = Float64[],
         EC = String[],
     )
-
-    _dg(rid) = begin
-        x = model.reactions[rid].dg
-        isnothing(x) ? missing : x
-    end
 
     _stoichiometry(rid) = begin
 
@@ -41,8 +35,8 @@ function print_reactions(model::Model, rids::Vector{String}, file_name)
     end
 
     _ec(rid) = begin
-        haskey(model.reactions[rid].annotations, "EC") || return ""
-        ecs = model.reactions[rid].annotations["EC"]
+        haskey(model.reactions[rid].annotations, "rhea-ec") || return ""
+        ecs = model.reactions[rid].annotations["rhea-ec"]
         isnothing(ecs) && return ""
         join(last.(split.(ecs, "/")), "/")
     end
@@ -61,7 +55,7 @@ function print_reactions(model::Model, rids::Vector{String}, file_name)
         # println(rid)
         push!(
             df,
-            (rid, _name(rid), _stoichiometry(rid), _dg(rid), _ec(rid));
+            (rid, _name(rid), _stoichiometry(rid), _ec(rid));
             promote = true,
         )
     end

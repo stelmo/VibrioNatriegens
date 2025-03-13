@@ -59,12 +59,6 @@ function add_reaction_annotations!(model)
     ec = DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "rhea", "ec_rxns.csv")))
     ec = Dict(string(first(gdf.rhea)) => String.(gdf.ec) for gdf in groupby(ec, :rhea))
 
-    protein_locus = DataFrame(
-        CSV.File(joinpath(pkgdir(@__MODULE__), "data", "genome", "locustag_proteinid.csv")),
-    )
-    protein_locus =
-        Dict(zip(String.(protein_locus.ProteinID), String.(protein_locus.LocusTag)))
-
     for rid in A.reactions(model)
         r = model.reactions[rid]
         grrs = A.reaction_gene_association_dnf(model, rid)
@@ -73,8 +67,7 @@ function add_reaction_annotations!(model)
 
         for gid in grrs
             if haskey(hamap, gid)
-                _gid = protein_locus[gid]
-                r.annotations[_gid] = [hamap[gid]]
+                r.annotations[gid] = [hamap[gid]]
             end
         end
         if haskey(kegg, rid)
@@ -102,6 +95,7 @@ function add_reaction_annotations!(model)
             r.annotations["kegg-ec"] = vcat([ko[gid] for gid in grrs if haskey(ko, gid)]...)
         end
 
-        delete!(r.annotations, "EC")
+        r.annotations["SBO"] = ["SBO_0000176",]
+
     end
 end
