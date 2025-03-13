@@ -29,6 +29,14 @@ function gapfill!(model)
         14277 # rhamnose metabolism degrade lactaldehyde
         19289 # this is a reaction of convenience to get sucrose loaded into the metabolite list, it gets deleted in curation
         27814 # this is a reaction of convenience to get Na+ loaded into the metabolite list, it gets deleted in curation
+        25309 # folate biosynthesis
+        20002 # folate biosynthesis
+        21624 # adenosylcobalamin biosynthesis
+        27345 # adenosylcobalamin biosynthesis
+        33710 # adenosylcobalamin biosynthesis
+        11492 # adenosylcobalamin biosynthesis
+        20533 # pyridoxal 5'-phosphate biosynthesis
+        #25135 # pyridoxal 5'-phosphate biosynthesis
     ]
     get_reactions(rhea_rids)
 
