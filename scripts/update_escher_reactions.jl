@@ -7,7 +7,6 @@ model = VibrioNatriegens.build_model()
 rids = filter(x -> isdigit(first(x)), A.reactions(model))
 qts = get_quartets(rids)
 lu = Dict(rr => r for (r, v) in qts for rr in v)
-    
 
 escher_maps = [
     "amino_acids.json"
