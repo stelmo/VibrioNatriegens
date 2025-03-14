@@ -10,6 +10,7 @@ function set_default_exchanges!(model)
         "15379" # o2
         "28938" # nh4(+)
         "43474" # pi
+        "29033" # fe(2+)
     ]
 
     bidirs = [

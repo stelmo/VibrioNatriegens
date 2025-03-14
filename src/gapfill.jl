@@ -36,6 +36,7 @@ function gapfill!(model)
         11492 # adenosylcobalamin biosynthesis
         20533 # pyridoxal 5'-phosphate biosynthesis
         #25135 # pyridoxal 5'-phosphate biosynthesis
+        11500 # KDO lipopolysaccharide biosynthesis
     ]
     get_reactions(rhea_rids)
 
