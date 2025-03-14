@@ -69,7 +69,7 @@ end
     biomass = model.reactions["biomass"].stoichiometry
     btot = 0.0
     for (k, v) in biomass
-        btot = v * model.metabolites[k].molarmass
+        btot = v * parse(Float64, first(model.metabolites[k].annotations["molarmass"]))
     end
 
     @test isapprox(btot, 1.0, atol = 1e-3)

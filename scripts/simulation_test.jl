@@ -7,9 +7,13 @@ import ConstraintTrees as C
 using JSONFBCModels
 
 model = VibrioNatriegens.build_model()
+
 sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 
 sol = parsimonious_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
+
+# sol = loopless_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
+
 open("vnat_fluxes.json", "w") do io
     JSON.print(io, sol.fluxes)
 end
@@ -21,9 +25,6 @@ C.pretty(
     format_label = x -> A.reaction_name(model, string(last(x))),
 )
 
-
-# sol = loopless_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
-
 C.pretty(
     C.ifilter_leaves(sol.fluxes) do ix, x
         abs(x) > 1e-6 && begin
@@ -32,8 +33,8 @@ C.pretty(
                 k in keys(A.reaction_stoichiometry(model, string(last(ix))))
             ]
             # any(in.(mets, Ref(["NADH"])))
-            any(in.(mets, Ref(["(6S)-5-methyl-5,6,7,8-tetrahydrofolate"])))
-            
+            # any(in.(mets, Ref(["H(+)"])))
+            any(in.(mets, Ref(["Na(+)"])))
         end
     end;
     format_label = x -> A.reaction_name(model, string(last(x))),
