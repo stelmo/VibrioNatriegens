@@ -15,7 +15,7 @@ function add_gene_annotations!(model)
     gene_df.SBO = fill("SBO_0000243", length(gene_df.proteinaccession))
     genes_dict = Dict(
         string(first(gdf.proteinaccession)) => Dict(
-            k => [String(string(v)),] for
+            k => [String(string(v))] for
             (k, v) in zip(labels(gdf), gdf[1, :]) if !ismissing(v)
         ) for gdf in groupby(gene_df, :proteinaccession)
     )

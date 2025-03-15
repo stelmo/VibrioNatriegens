@@ -21,17 +21,20 @@ function add_reaction_annotations!(model)
         gdf in groupby(bigg, :rhea)
     )
 
-    kegg = DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "rhea", "kegg_rxns.csv")))
-    kegg_met = DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "metabolic_reactions.csv")))
+    kegg =
+        DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "rhea", "kegg_rxns.csv")))
+    kegg_met = DataFrame(
+        CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "metabolic_reactions.csv")),
+    )
     kegg = Dict(
         String.(string(first(gdf.rhea))) => String.(gdf.kegg) for
         gdf in groupby(kegg, :rhea)
     )
-    for (k, v) in zip(string.(kegg_met.RHEA_ID),kegg_met.KEGG_ID)
+    for (k, v) in zip(string.(kegg_met.RHEA_ID), kegg_met.KEGG_ID)
         if haskey(kegg, k)
-            v in kegg[k] || push!(kegg[k], v) 
+            v in kegg[k] || push!(kegg[k], v)
         else
-            kegg[k] = [v,]
+            kegg[k] = [v]
         end
     end
 
@@ -66,6 +69,8 @@ function add_reaction_annotations!(model)
     ec = DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "rhea", "ec_rxns.csv")))
     ec = Dict(string(first(gdf.rhea)) => String.(gdf.ec) for gdf in groupby(ec, :rhea))
 
+    qts = Dict(k => [vs...] for (k, vs) in get_quartets([rid for rid in A.reactions(model) if isdigit(first(rid))]))
+
     for rid in A.reactions(model)
         r = model.reactions[rid]
         grrs = A.reaction_gene_association_dnf(model, rid)
@@ -77,32 +82,35 @@ function add_reaction_annotations!(model)
                 r.annotations[gid] = [hamap[gid]]
             end
         end
+        if isdigit(first(rid))
+            r.annotations["rhea.reaction"] = qts[rid]
+        end
         if haskey(kegg, rid)
-            r.annotations["kegg-reaction"] = kegg[rid]
+            r.annotations["kegg.reaction"] = kegg[rid]
         end
         if haskey(bigg, rid)
-            r.annotations["bigg-reaction"] = bigg[rid]
+            r.annotations["bigg.reaction"] = bigg[rid]
         end
 
         if haskey(ec, rid)
-            r.annotations["rhea-ec"] = ec[rid]
+            r.annotations["rhea.ec"] = ec[rid]
         end
 
         if any(haskey(eggnog_ec, x) for x in grrs)
-            r.annotations["eggnog-ec"] =
+            r.annotations["eggnog.ec"] =
                 vcat([eggnog_ec[gid] for gid in grrs if haskey(eggnog_ec, gid)]...)
         end
 
         if any(haskey(eggnog_go, x) for x in grrs)
-            r.annotations["eggnog-go"] =
+            r.annotations["eggnog.go"] =
                 vcat([eggnog_go[gid] for gid in grrs if haskey(eggnog_go, gid)]...)
         end
 
         if any(haskey(ko, x) for x in grrs)
-            r.annotations["kegg-ec"] = vcat([ko[gid] for gid in grrs if haskey(ko, gid)]...)
+            r.annotations["kegg.ec"] = vcat([ko[gid] for gid in grrs if haskey(ko, gid)]...)
         end
 
-        r.annotations["SBO"] = ["SBO_0000176",]
+        r.annotations["SBO"] = ["SBO_0000176"]
 
     end
 end

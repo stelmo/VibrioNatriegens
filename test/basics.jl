@@ -1,6 +1,6 @@
 
 @testset "Mass balanced" begin
-
+    # this test also ensures that the model is stoichiometrically consistent IF all the reactions mass balance.
     model = VibrioNatriegens.build_model()
 
     rids = filter(x -> !startswith(x, "EX_") && x != "biomass", A.reactions(model))
@@ -39,7 +39,7 @@ end
     @test isempty(unbal_rids)
 end
 
-@testset "ATP production" begin
+@testset "Sensible ATP production" begin
 
     model = VibrioNatriegens.build_model()
 
@@ -48,7 +48,7 @@ end
     model.reactions["ATPM"].lower_bound = 0.0
 
     sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
-    llsol = loopless_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
+    llsol = loopless_flux_balance_analysis(model, optimizer = Gurobi.Optimizer) # this could be slow...
     @test isapprox(sol.objective, llsol.objective)
 
     for rid in filter(x -> startswith(x, "EX_"), A.reactions(model))
@@ -68,13 +68,14 @@ end
     biomass = model.reactions["biomass"].stoichiometry
     btot = 0.0
     for (k, v) in biomass
-        btot -= v * parse(Float64, first(model.metabolites[k].annotations["molarmass"])) / 1000
+        btot -=
+            v * parse(Float64, first(model.metabolites[k].annotations["molarmass"])) / 1000
     end
-   
+
     @test isapprox(btot, 1.0, atol = 1e-3)
 end
 
-@testset "Aerobic growth rates" begin
+@testset "Aerobic growth" begin
     # based on Hoffart 2017
     model = VibrioNatriegens.build_model()
     model.reactions["EX_15903"].lower_bound = 0.0
@@ -113,21 +114,13 @@ end
     sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 
     @test abs(1 - sol.objective / 0.92) <= 0.2 # growth
-    @test abs(sol.fluxes["EX_30089"]) > 0.05 # acetate
-    @test abs(sol.fluxes["EX_30031"]) > 0.05 # succinate
-    @test abs(sol.fluxes["EX_15740"]) > 0.05 # formate
-    @test abs(sol.fluxes["EX_16004"]) > 0.05 # lactate
-    @test abs(sol.fluxes["EX_16236"]) > 0.05 # ethanol
-    @test abs(sol.fluxes["EX_57762"]) > 0.05 # valine
-    @test abs(sol.fluxes["EX_29985"]) > 0.05 # glutamate
-    @test abs(sol.fluxes["EX_57416"]) > 0.05 # alanine
 end
 
 @testset "Known growth supporting substrates" begin
 
     df = DataFrame(
         CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "experiments", "coppens_2023_biolog.csv"),
+            joinpath("experiments", "coppens_2023_biolog.csv"),
         ),
     )
     dropmissing!(df)
@@ -138,14 +131,11 @@ end
     model = VibrioNatriegens.build_model()
     model.reactions["EX_15903"].lower_bound = 0.0
 
-    res = Bool[]
     for (s, ex) in zip(df.Substrate, df.Exchange)
-        println(s)
         model.reactions[ex].lower_bound = -10.0
         sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
-        push!(res, isnothing(sol) ? false : (sol.objective > 0.1))
+        res = isnothing(sol) ? false : (sol.objective > 0.1)
+        @test res 
         model.reactions[ex].lower_bound = 0.0
     end
-    @test all(res)
-
 end

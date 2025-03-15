@@ -73,27 +73,31 @@ function curate!(model)
 
     # change directions to match what is found in biocyc - manual thermodynamics leaves much to be desired
 
-    metacyc = DataFrame(CSV.File(joinpath(
-        pkgdir(@__MODULE__), 
-        "data",
-        "rhea",
-        "biocyc_rxns.csv",
-    ), drop = [3]))
+    metacyc = DataFrame(
+        CSV.File(
+            joinpath(pkgdir(@__MODULE__), "data", "rhea", "biocyc_rxns.csv"),
+            drop = [3],
+        ),
+    )
     @rename!(metacyc, :metacyc = :rheaDir)
 
-    ecocyc = DataFrame(CSV.File(joinpath(
-        pkgdir(@__MODULE__), 
-        "data",
-        "rhea",
-        "ecocyc_rxns.csv",
-    ), drop = [3]))
+    ecocyc = DataFrame(
+        CSV.File(
+            joinpath(pkgdir(@__MODULE__), "data", "rhea", "ecocyc_rxns.csv"),
+            drop = [3],
+        ),
+    )
     @rename!(ecocyc, :ecocyc = :rheaDir)
 
-    j = outerjoin(metacyc, ecocyc, on=:rhea)
-    @rtransform!(j, :consensus = ismissing(:ecocyc) ? :metacyc : :ecocyc, :rhea = string(:rhea))
+    j = outerjoin(metacyc, ecocyc, on = :rhea)
+    @rtransform!(
+        j,
+        :consensus = ismissing(:ecocyc) ? :metacyc : :ecocyc,
+        :rhea = string(:rhea)
+    )
     @subset!(j, in.(:rhea, Ref(A.reactions(model))))
 
-    for (rid, consensus) in zip(j.rhea, j.consensus) 
+    for (rid, consensus) in zip(j.rhea, j.consensus)
         lb, ub = rhea_rxn_dir(rid, consensus)
         model.reactions[rid].lower_bound = lb
         model.reactions[rid].upper_bound = ub

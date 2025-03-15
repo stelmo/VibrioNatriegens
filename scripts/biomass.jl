@@ -61,7 +61,7 @@ begin
     molar_masses["61429"] = 503.1493 # dGTP
     molar_masses["61481"] = 463.1252 # dCTP
     molar_masses["37568"] = 478.1365 # dTTP
-    
+
     molar_masses["30616"] = 503.14946 # ATP
     molar_masses["37565"] = 519.14886 # GTP
     molar_masses["37563"] = 479.12468 # CTP
@@ -89,7 +89,7 @@ begin
     molar_masses["58315"] = 181.1894 # tyrosine
 
     molar_masses["glycogen"] = 162.1406 # C6H10O5
-  
+
     molar_masses["30807"] = 227.364 # tetradecanoic acid
     molar_masses["7896"] = 255.4161 # hexadecanoic acid
     molar_masses["25629"] = 283.47 # octadecanoic acid
@@ -97,7 +97,7 @@ begin
     molar_masses["peptidoglycan"] = 1916.20990
 
     molar_masses["kdo_lps"] = 2232.67080
-    
+
     # soluble pool
     molar_masses["60530"] = 836.838 # Fe(II)-heme o
     molar_masses["57692"] = 782.5259 # FAD
@@ -122,7 +122,12 @@ end
 
 for (k, _) in model.reactions["biomass"].stoichiometry
     haskey(molar_masses, k) || continue
-    println(k, ": ", molar_masses[k] -  parse(Float64, first(model.metabolites[k].annotations["molarmass"])))
+    println(
+        k,
+        ": ",
+        molar_masses[k] -
+        parse(Float64, first(model.metabolites[k].annotations["molarmass"])),
+    )
 end
 
 # DNA
@@ -176,7 +181,9 @@ end
 # RNA (assume protein and RNA are directly correlated)
 rna_lookup = Dict('A' => "ATP", 'U' => "UTP", 'G' => "GTP", 'C' => "CTP")
 rna_bases = Dict()
-FASTAReader(open(joinpath("data", "annotations", "genome", "transcriptome.fasta"))) do reader
+FASTAReader(
+    open(joinpath("data", "annotations", "genome", "transcriptome.fasta")),
+) do reader
     for record in reader
         desc = description(record)
         if occursin("protein_id=", desc)
@@ -245,12 +252,12 @@ solubles = Dict( # molar fractions
 
 tot_sol = sum(values(solubles))
 for (k, v) in solubles
-    solubles[k] = v/tot_sol * molar_masses[k]
+    solubles[k] = v / tot_sol * molar_masses[k]
 end
 
 tot_sol = sum(values(solubles))
 for (k, v) in solubles
-    biomass[k] = get(biomass, k, 0) - soluble_pool * (v/tot_sol) * 1000 / molar_masses[k]
+    biomass[k] = get(biomass, k, 0) - soluble_pool * (v / tot_sol) * 1000 / molar_masses[k]
 end
 
 # required atp for growth

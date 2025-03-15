@@ -36,7 +36,7 @@ for (emid, em) in ems
         if occursin("-", rxn["bigg_id"])
             rxn["bigg_id"] = replace(rxn["bigg_id"], "-" => "_")
         end
-        
+
         if rxn["bigg_id"] ∉ A.reactions(model)
             @warn("$(rxn["bigg_id"]) not found in the model!")
             continue

@@ -1,11 +1,6 @@
 
 function print_reactions(model::Model, rids::Vector{String}, file_name)
-    df = DataFrame(
-        rid = String[],
-        Name = String[],
-        Stoichiometry = String[],
-        EC = String[],
-    )
+    df = DataFrame(rid = String[], Name = String[], Stoichiometry = String[], EC = String[])
 
     _stoichiometry(rid) = begin
 
@@ -53,11 +48,7 @@ function print_reactions(model::Model, rids::Vector{String}, file_name)
 
     for rid in rids
         # println(rid)
-        push!(
-            df,
-            (rid, _name(rid), _stoichiometry(rid), _ec(rid));
-            promote = true,
-        )
+        push!(df, (rid, _name(rid), _stoichiometry(rid), _ec(rid)); promote = true)
     end
 
     df

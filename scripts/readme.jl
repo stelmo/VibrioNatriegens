@@ -4,8 +4,27 @@ using AbstractFBCModels
 using JSONFBCModels
 using SBMLFBCModels
 import AbstractFBCModels as A
+using Distributed
 
 model = VibrioNatriegens.build_model()
+
+# write the model to the main directory in standardized formats
+m = convert(JSONFBCModels.JSONFBCModel, model)
+AbstractFBCModels.save(m, "vibrio_natriegens.json")
+
+m = convert(SBMLFBCModels.SBMLFBCModel, model)
+AbstractFBCModels.save(m, "vibrio_natriegens.sbml")
+
+# if nprocs() == 1
+#     addprocs(6, exeflags = `--project=$(Base.active_project())`)
+# end
+
+# @everywhere begin
+#     using Gurobi, COBREXA, ConstraintTrees, AbstractFBCModels
+#     import ConstraintTrees as C
+#     import AbstractFBCModels as A
+#     using VibrioNatriegens
+# end
 
 rids = A.reactions(model)
 
@@ -20,28 +39,38 @@ transport_rxns = [
 exchange_rxns = filter(startswith("EX_"), rids)
 metabolic_rxns = setdiff(rids, [transport_rxns; exchange_rxns])
 
-metabolic_rxn_grrs = [rid for rid in metabolic_rxns if !isnothing(A.reaction_gene_association_dnf(model, rid))] 
-transport_rxn_grrs = [rid for rid in transport_rxns if !isnothing(A.reaction_gene_association_dnf(model, rid))]
+metabolic_rxn_grrs = [
+    rid for rid in metabolic_rxns if !isnothing(A.reaction_gene_association_dnf(model, rid))
+]
+transport_rxn_grrs = [
+    rid for rid in transport_rxns if !isnothing(A.reaction_gene_association_dnf(model, rid))
+]
 
 blocked_rxns = []
 
-mids = A.metabolites(model)
-
 deadend_metabolites = []
+
+sbo_reactions = [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "SBO")]
+bigg_reactions = [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "bigg.reaction")]
+kegg_reactions = [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "kegg.reaction")]
+rhea_reactions = [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "rhea.reaction")]
+ec_code = [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "ec-code")]
+
+mids = A.metabolites(model)
 
 gids = A.genes(model)
 
 readme = """
-# Vibrio natriegens
+# Genome-scale metabolic model of _Vibrio natriegens_
 
-This package builds a genome-scale metabolic model of the halophilic bacterium Vibrio natriegens. 
+This package builds a fully manually reconstructed genome-scale metabolic model of the halophilic bacterium _Vibrio natriegens_. 
 The model is composed of $(A.n_reactions(model)) reactions, $(A.n_metabolites(model)) metabolites, and $(A.n_genes(model)) genes. 
 The model focusses on the primary metabolism the organism, and includes enzyme and ribosomal constraints. 
 
 ## Model characterization
 At a glance, the model consists of:
 
-| Attribute | Value |
+| Attribute | Number |
 |-----------|-------|
 | Metabolic reactions | $(length(metabolic_rxns)) |
 | Transport reactions | $(length(transport_rxns)) |
@@ -53,24 +82,23 @@ At a glance, the model consists of:
 
 The model has the following reaction cross-references (available under the `annotations` field):
 
-| Attribute | Value |
+| Attribute | Number (fraction %) |
 |-----------|-------|
-| Metabolic reactions | $(length(metabolic_rxns)) |
-|-----------|-------|
-| kegg.reaction | ? |
-| metacyc.reaction | ? |
+| *Metabolic reactions* | *$(length(metabolic_rxns))* |
+| kegg.reaction | $(length(kegg_reactions)) ($( round(Int, length(kegg_reactions) / length(metabolic_rxns) * 100))%) |
+| metacyc.reaction |  |
 | ecocyc.reaction | ? |
 | reactome.reaction | ? |
-| rhea.reaction | ? |
-| bigg.reaction | ? |
-| ec.code | ? |
+| rhea.reaction | $(length(rhea_reactions)) ($( round(Int, length(rhea_reactions) / length(metabolic_rxns) * 100))%) |
+| bigg.reaction | $(length(bigg_reactions)) ($( round(Int, length(bigg_reactions) / length(metabolic_rxns) * 100))%) |
+| ec.code |  |
+| SBO | $(length(sbo_reactions)) ($( round(Int, length(sbo_reactions) / length(metabolic_rxns) * 100)) %) |
 
 The model has the following metabolite cross-references (available under the `annotations` field):
 
-| Attribute | Value |
+| Attribute | Number (fraction %) |
 |-----------|-------|
-| Total metabolites | $(length(mids)) |
-|-----------|-------|
+| *Total metabolites* | *$(length(mids))* |
 | chebi.metabolite | ? |
 | kegg.compound | ? |
 | inchi | ? |
@@ -78,15 +106,16 @@ The model has the following metabolite cross-references (available under the `an
 | smiles | ? |
 | formula | ? |
 | molarmass | ? |
+| SBO | ? |
 
 
 The model has the following gene cross-references (available under the `annotations` field):
 
-| Attribute | Value |
+| Attribute | Number (fraction %) |
 |-----------|-------|
-| Total genes | $(length(gids)) |
-|-----------|-------|
+| *Total genes* | $(length(gids)) |
 |  | ? |
+| SBO | ? |
 
 
 ## Build instructions
@@ -108,6 +137,8 @@ using VibrioNatriegens
 model = VibrioNatriegens.build_model()
 ```
 This model works well with the COBREXA package, and it can be used to simulate FBA, ec-FBA, and sRBA models.
+
+Note: this readme is automatically built using the script `scripts/readme.jl`.
 """
 
 open("readme.md", "w") do io

@@ -48,9 +48,7 @@ function extend_model!(model, dfs)
                 upper_bound = 1000.0,
                 gene_association = isnothing(iso) ? nothing : [iso],
                 stoichiometry = stoichiometry,
-                annotations = Dict(
-                    "rhea-reaction" => [rxn.equation],
-                ),
+                annotations = Dict("rhea-reaction-description" => [rxn.equation]),
             )
         end
     end

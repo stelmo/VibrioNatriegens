@@ -9,7 +9,7 @@ function add_exchanges!(model)
     df = DataFrame(
         CSV.File(
             joinpath(pkgdir(@__MODULE__), "data", "model", "exchange_metabolites.csv"),
-            types = [String, String]
+            types = [String, String],
         ),
     )
 
@@ -39,7 +39,7 @@ function add_periplasm_transporters!(model)
     df = DataFrame(
         CSV.File(
             joinpath(pkgdir(@__MODULE__), "data", "model", "exchange_metabolites.csv"),
-            types = [String, String]
+            types = [String, String],
         ),
     )
 
@@ -154,9 +154,7 @@ function add_membrane_transporters!(model)
     all_exchange_metabolites =
         DataFrame(
             CSV.File(
-                joinpath(
-                    pkgdir(@__MODULE__), 
-                "data", "model", "exchange_metabolites.csv"),
+                joinpath(pkgdir(@__MODULE__), "data", "model", "exchange_metabolites.csv"),
             ),
         ).CHEBI
     # note: Pi, Na, and H will not get a permease here, due to them being involved in the other porters
@@ -250,7 +248,7 @@ function add_symport!(model, mid1, mid2, iso, ss)
         ub = 1000.0
     else
         lb = -1000.0
-        ub = 1000.0 
+        ub = 1000.0
     end
     rid = "SYM_$(mid1)_$mid2"
     isoz =
@@ -282,7 +280,7 @@ function add_antiport!(model, mid1, mid2, iso, ss)
         ub = 1000.0
     else
         lb = -1000.0
-        ub = 1000.0  
+        ub = 1000.0
     end
     rid = "ANTI_$(mid1)_$mid2"
     isoz =
