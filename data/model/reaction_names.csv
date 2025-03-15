@@ -211,7 +211,7 @@ RID,Name
 16793,coaBC
 16809,prpB
 16825,udk
-16833,
+16833,glutasyn
 16845,gltA
 16853,purB
 16861,bioA
@@ -359,7 +359,7 @@ RID,Name
 21648,pheA
 21732,trpEG
 21760,fadBJ
-21824,
+21824,aspC
 21868,ribD
 21968,aroB
 22008,metA
@@ -551,7 +551,7 @@ RID,Name
 28386,mraY
 28406,yjjX
 28410,
-28414,
+28414,puuB
 28530,ushA
 28534,mazG
 28582,ndk
@@ -1146,3 +1146,9 @@ rnf,H+/Na+-translocating ferredoxin:NAD+ oxidoreductase
 28438,lpxM
 14053,kdsA
 23448,kdsB
+24869,LACC1
+61296,mtnA
+61300,ald2
+19025,nadB
+30043,aspox
+31507,pyrdox

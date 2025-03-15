@@ -232,24 +232,18 @@ function add_pts!(model, mid, iso, ss)
     end
 end
 
-
-both_sym_anti = [
-    "32551" # L-lysine
-    "35235" # L-cysteine
-    "57427" # L-leucine
-    "57762" # L-valine
-    "58045" # L-isoleucine
-    "29101" # Na(+)
-]
-
-function add_symport!(model, mid1, mid2, iso, ss)
-    if mid1 in both_sym_anti || mid2 in both_sym_anti
-        lb = 0.0 # somehow cheating with Na loops
-        ub = 1000.0
+function add_symport!(model, mid1, mid2, iso, ss, dir=:bidir)
+    if dir == :forward
+        lb = 0.0
+        ub = 1000.0    
+    elseif dir == :reverse
+        lb = -1000.0
+        ub = 0.0    
     else
         lb = -1000.0
-        ub = 1000.0
+        ub = 1000.0    
     end
+
     rid = "SYM_$(mid1)_$mid2"
     isoz =
         isnothing(iso) ? nothing :
@@ -274,14 +268,19 @@ function add_symport!(model, mid1, mid2, iso, ss)
     end
 end
 
-function add_antiport!(model, mid1, mid2, iso, ss)
-    if mid1 == "29101" || mid2 == "29101"
-        lb = 0.0 # somehow cheating with Na loops
-        ub = 1000.0
+function add_antiport!(model, mid1, mid2, iso, ss, dir=:bidir)
+
+    if dir == :forward
+        lb = 0.0
+        ub = 1000.0    
+    elseif dir == :reverse
+        lb = -1000.0
+        ub = 0.0    
     else
         lb = -1000.0
-        ub = 1000.0
+        ub = 1000.0    
     end
+
     rid = "ANTI_$(mid1)_$mid2"
     isoz =
         isnothing(iso) ? nothing :

@@ -161,5 +161,37 @@ function curate!(model)
     )
     add_genes!(model, ["WP_020333475.1", "WP_020332873.1"])
 
+    model.reactions["polyphosphate_kinase2"] = Reaction(
+        name = "ppk2",
+        stoichiometry = Dict(
+            "456216" => 1.0, # adp
+            "30616" => -1.0, # atp
+            "33019" => -1.0, # diphospate
+            "18036" => 1.0 # triphosphate
+        ),
+        objective_coefficient = 0.0,
+        lower_bound = 0,
+        upper_bound = 1000,
+        gene_association = [
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333630.1" .=> 4.0)),
+        ],
+    )
+    model.reactions["polyphosphate_kinase1"] = Reaction(
+        name = "ppk1",
+        stoichiometry = Dict(
+            "456216" => 1.0, # adp
+            "30616" => -1.0, # atp
+            "43474" => -1.0, # phosphate 
+            "33019" => 1.0, # diphospate
+        ),
+        objective_coefficient = 0.0,
+        lower_bound = 0,
+        upper_bound = 1000,
+        gene_association = [
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333630.1" .=> 4.0)),
+        ],
+    )
+    add_genes!(model, ["WP_020333630.1",])
+
 end
 

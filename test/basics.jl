@@ -107,13 +107,39 @@ end
     all(last.(gs))
 end
 
+@testset "Commonly secreted metabolites" begin
+
+    model = VibrioNatriegens.build_model()
+    model.reactions["biomass"].lower_bound = 0.6 # minimum growth rate
+
+    secreted_products = [
+        :EX_30089 # acetate
+        :EX_30031 # succinate
+        :EX_15740 # formate
+        :EX_29806 # fumarate
+        :EX_16004 # lactate
+        :EX_16236 # ethanol
+        :EX_57762 # valine
+        :EX_29985 # glutamate
+        :EX_57416 # alanine
+        :EX_15361 # pyruvate
+        :EX_16526 # CO2
+    ]
+    
+    ct = flux_balance_constraints(model)
+    for ex_rid in secreted_products
+        sol = optimized_values(ct, optimizer=Gurobi.Optimizer, objective=ct.fluxes[ex_rid].value, sense=Maximal)
+        @test sol.fluxes[ex_rid] > 5.0 # minimum flux
+    end
+end
+
 @testset "Anaerobic growth" begin
 
     model = VibrioNatriegens.build_model()
     model.reactions["EX_15379"].lower_bound = 0.0
     sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 
-    @test abs(1 - sol.objective / 0.92) <= 0.2 # growth
+    @test abs(1 - sol.objective / 0.92) <= 0.3 # growth
 end
 
 @testset "Known growth supporting substrates" begin

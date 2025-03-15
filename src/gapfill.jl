@@ -35,9 +35,12 @@ function gapfill!(model)
         33710 # adenosylcobalamin biosynthesis
         11492 # adenosylcobalamin biosynthesis
         20533 # pyridoxal 5'-phosphate biosynthesis
-        #25135 # pyridoxal 5'-phosphate biosynthesis
         11500 # KDO lipopolysaccharide biosynthesis
         10712 # phenylalanine degradation
+        61296 # 5'-deoxyadenosine degradation
+        61300 # 5'-deoxyadenosine degradation
+        30043 # anaerobic nad biosynthesis
+        31507 # anaerobic pyridoxal biosynthesis
     ]
     get_reactions(rhea_rids)
 

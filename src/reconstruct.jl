@@ -47,5 +47,6 @@ function build_model()
     name_genes!(model)
     replace_proteinaccession_with_locustag!(model)
 
+    haskey(model.reactions, "PERM_29101") && delete!(model.reactions, "PERM_29101")
     model
 end
