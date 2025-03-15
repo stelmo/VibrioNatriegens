@@ -27,11 +27,16 @@ model.reactions["biomass"].lower_bound = 0.6 # minimum growth rate
 o2_ex = :EX_15379
 
 ct = flux_balance_constraints(model)
-sol = optimized_values(ct, optimizer=Gurobi.Optimizer, objective=ct.fluxes[o2_ex].value, sense=Maximal)
+sol = optimized_values(
+    ct,
+    optimizer = Gurobi.Optimizer,
+    objective = ct.fluxes[o2_ex].value,
+    sense = Maximal,
+)
 sol.fluxes[o2_ex]
 
-# sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
-# sol = parsimonious_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
+sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
+sol = parsimonious_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 
 # sol = loopless_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 
@@ -59,8 +64,8 @@ C.pretty(
             # any(in.(mets, Ref(["O2"])))
             any(in.(mets, Ref(["H2O2"])))
             # any(in.(mets, Ref(["oxaloacetate"])))
-            
-            
+
+
 
         end
     end;

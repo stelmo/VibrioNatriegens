@@ -50,11 +50,22 @@ blocked_rxns = []
 
 deadend_metabolites = []
 
-sbo_reactions = [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "SBO")]
-bigg_reactions = [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "bigg.reaction")]
-kegg_reactions = [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "kegg.reaction")]
-rhea_reactions = [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "rhea.reaction")]
-ec_code = [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "ec-code")]
+sbo_reactions =
+    [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "SBO")]
+bigg_reactions = [
+    rid for
+    rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "bigg.reaction")
+]
+kegg_reactions = [
+    rid for
+    rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "kegg.reaction")
+]
+rhea_reactions = [
+    rid for
+    rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "rhea.reaction")
+]
+ec_code =
+    [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "ec-code")]
 
 mids = A.metabolites(model)
 

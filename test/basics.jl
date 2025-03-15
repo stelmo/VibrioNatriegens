@@ -125,10 +125,15 @@ end
         :EX_15361 # pyruvate
         :EX_16526 # CO2
     ]
-    
+
     ct = flux_balance_constraints(model)
     for ex_rid in secreted_products
-        sol = optimized_values(ct, optimizer=Gurobi.Optimizer, objective=ct.fluxes[ex_rid].value, sense=Maximal)
+        sol = optimized_values(
+            ct,
+            optimizer = Gurobi.Optimizer,
+            objective = ct.fluxes[ex_rid].value,
+            sense = Maximal,
+        )
         @test sol.fluxes[ex_rid] > 5.0 # minimum flux
     end
 end
@@ -139,19 +144,15 @@ end
     model.reactions["EX_15379"].lower_bound = 0.0
     sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 
-    @test abs(1 - sol.objective / 0.92) <= 0.3 # growth
+    @test abs(1 - sol.objective / 0.92) <= 0.3 # growth rel to measured value
 end
 
 @testset "Known growth supporting substrates" begin
 
-    df = DataFrame(
-        CSV.File(
-            joinpath("experiments", "coppens_2023_biolog.csv"),
-        ),
-    )
+    df = DataFrame(CSV.File(joinpath("experiments", "coppens_2023_biolog.csv")))
     dropmissing!(df)
     @select!(df, :Substrate, :Experiment, :Chebi)
-    @transform!(df, :Exchange = "EX_" .* last.(split.(:Chebi, ":")))
+    @transform!(df, :Exchange = "EX_" .* string.(:Chebi))
     @subset!(df, :Experiment)
 
     model = VibrioNatriegens.build_model()
@@ -161,7 +162,8 @@ end
         model.reactions[ex].lower_bound = -10.0
         sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
         res = isnothing(sol) ? false : (sol.objective > 0.1)
-        @test res 
+        res || @warn(s)
+        @test res
         model.reactions[ex].lower_bound = 0.0
     end
 end

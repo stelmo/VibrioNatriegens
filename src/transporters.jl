@@ -232,16 +232,16 @@ function add_pts!(model, mid, iso, ss)
     end
 end
 
-function add_symport!(model, mid1, mid2, iso, ss, dir=:bidir)
+function add_symport!(model, mid1, mid2, iso, ss, dir = :bidir)
     if dir == :forward
         lb = 0.0
-        ub = 1000.0    
+        ub = 1000.0
     elseif dir == :reverse
         lb = -1000.0
-        ub = 0.0    
+        ub = 0.0
     else
         lb = -1000.0
-        ub = 1000.0    
+        ub = 1000.0
     end
 
     rid = "SYM_$(mid1)_$mid2"
@@ -268,17 +268,17 @@ function add_symport!(model, mid1, mid2, iso, ss, dir=:bidir)
     end
 end
 
-function add_antiport!(model, mid1, mid2, iso, ss, dir=:bidir)
+function add_antiport!(model, mid1, mid2, iso, ss, dir = :bidir)
 
     if dir == :forward
         lb = 0.0
-        ub = 1000.0    
+        ub = 1000.0
     elseif dir == :reverse
         lb = -1000.0
-        ub = 0.0    
+        ub = 0.0
     else
         lb = -1000.0
-        ub = 1000.0    
+        ub = 1000.0
     end
 
     rid = "ANTI_$(mid1)_$mid2"

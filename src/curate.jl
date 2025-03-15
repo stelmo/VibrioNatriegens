@@ -167,7 +167,8 @@ function curate!(model)
             "456216" => 1.0, # adp
             "30616" => -1.0, # atp
             "33019" => -1.0, # diphospate
-            "18036" => 1.0 # triphosphate
+            "18036" => 1.0, # triphosphate
+            "15378" => 1.0, # h+
         ),
         objective_coefficient = 0.0,
         lower_bound = 0,
@@ -191,7 +192,7 @@ function curate!(model)
             X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333630.1" .=> 4.0)),
         ],
     )
-    add_genes!(model, ["WP_020333630.1",])
+    add_genes!(model, ["WP_020333630.1"])
 
 end
 
