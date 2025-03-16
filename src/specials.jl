@@ -229,7 +229,7 @@ function add_electron_transport_chain!(model)
             "58349" => 1.0, # NADP+
             "15378_p" => 1.0, # H+
         ),
-        lower_bound = 0.0,
+        lower_bound = -1000.0,
         upper_bound = 1000.0,
         gene_association = [
             X.Isozyme(;
