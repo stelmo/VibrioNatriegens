@@ -9,8 +9,8 @@ VibrioNatriegens.print_reactions(model)
 VibrioNatriegens.print_metabolites(model)
 
 m = convert(JSONFBCModels.JSONFBCModel, model)
-AbstractFBCModels.save(m, "vnat.json")
+AbstractFBCModels.save(m, "vibrio_natriegens.json")
 
 m = convert(SBMLFBCModels.SBMLFBCModel, model)
-AbstractFBCModels.save(m, "vnat.sbml")
+AbstractFBCModels.save(m, "vibrio_natriegens.sbml")
 

@@ -24,7 +24,7 @@ end
 
 em = ems["amino_acids.json"]
 em[2]["reactions"]["159"]
-
+ems["nucleotides.json"]
 
 for (emid, em) in ems
     emm = em[2]

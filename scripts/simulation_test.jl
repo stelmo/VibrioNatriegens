@@ -8,33 +8,6 @@ using JSONFBCModels
 
 model = VibrioNatriegens.build_model()
 
-# model.reactions["temp"] = VibrioNatriegens.Reaction(
-#     stoichiometry = Dict(
-#         "29991" => -1,
-#     ),
-#     lower_bound = -1000.0,
-#     upper_bound = 1000.0
-# )
-# model.reactions["temp2"] = VibrioNatriegens.Reaction(
-#     stoichiometry = Dict(
-#         "17319" => -1,
-#     ),
-#     lower_bound = -1000.0,
-#     upper_bound = 1000.0
-# )
-
-model.reactions["biomass"].lower_bound = 0.6 # minimum growth rate
-o2_ex = :EX_15379
-
-ct = flux_balance_constraints(model)
-sol = optimized_values(
-    ct,
-    optimizer = Gurobi.Optimizer,
-    objective = ct.fluxes[o2_ex].value,
-    sense = Maximal,
-)
-sol.fluxes[o2_ex]
-
 sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 sol = parsimonious_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 

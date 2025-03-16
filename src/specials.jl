@@ -4,7 +4,7 @@ function add_electron_transport_chain!(model)
     gs = String[]
     ms = String[]
 
-    model.reactions["nfn"] = Reaction(; # this is speculative
+    model.reactions["nfn"] = Reaction(; # this is speculative - block 
         name = "NAD(P)+ transhydrogenase (ferredoxin)",
         stoichiometry = Dict(
             "33738" => -2.0, # Reduced ferredoxin
@@ -15,8 +15,8 @@ function add_electron_transport_chain!(model)
             "57540" => 1.0, # NAD
             "57783" => 2.0, # NADPH
         ),
-        lower_bound = -1000.0,
-        upper_bound = 1000.0,
+        lower_bound = 0.0,
+        upper_bound = 0.0,
         gene_association = [
             X.Isozyme(; gene_product_stoichiometry = Dict("WP_020336371.1" => 1.0)),
         ], # nfnB, missing nfnA...
@@ -320,7 +320,7 @@ function add_salt_transducers!(model)
             "29101_p" => 2.0, # Na+
             "16526" => 1.0, # CO2
         ),
-        lower_bound = 0.0,
+        lower_bound = -1000.0,
         upper_bound = 1000.0,
         gene_association = [
             X.Isozyme(;
@@ -389,7 +389,7 @@ function add_salt_transducers!(model)
             "29101_p" => 1.0, # Na+
             "57945" => 1.0,  # nadh
         ),
-        lower_bound = 0.0,
+        lower_bound = -1000.0,
         upper_bound = 1000.0,
         gene_association = [
             X.Isozyme(;

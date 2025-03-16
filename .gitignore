@@ -15,10 +15,9 @@ metabolites-model.csv
 vnat.json
 followup.txt
 vnat_fluxes.json
+vnat_masses.json
 quantitative_proteome.csv
 iML1515.json
-cpds_1.json
-cpds_2.json
 blocked.csv
 
 data/chebi/*

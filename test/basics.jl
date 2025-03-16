@@ -99,8 +99,9 @@ end
     ]
     gs = []
     for (s, e, g) in aerobic_substrates
-        model.reactions[e].lower_bound = -10.0
+        model.reactions[e].lower_bound = -20.0
         sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
+        # println(s, ": ", g, " vs ", sol.objective)
         push!(gs, (s, sol.objective > 0.1))
         model.reactions[e].lower_bound = 0.0
     end
