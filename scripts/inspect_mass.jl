@@ -9,7 +9,7 @@ df = DataFrame(CSV.File("quantitative_proteome.csv"))
 
 mf = @combine(
         @groupby(
-        @subset(df, :Condition .== "Glucose"),
+        @subset(df, :Condition .== "Ribose"),
         :Protein,
     ),
     :mf = mean(:MassFraction) * 1000.0,

@@ -120,15 +120,15 @@ begin
     molar_masses["58349"] = 740.3812 # NADP(+)
 end
 
-for (k, _) in model.reactions["biomass"].stoichiometry
-    haskey(molar_masses, k) || continue
-    println(
-        k,
-        ": ",
-        molar_masses[k] -
-        parse(Float64, first(model.metabolites[k].annotations["molarmass"])),
-    )
-end
+# for (k, _) in model.reactions["biomass"].stoichiometry
+#     haskey(molar_masses, k) || continue
+#     println(
+#         k,
+#         ": ",
+#         molar_masses[k] -
+#         parse(Float64, first(model.metabolites[k].annotations["molarmass"])),
+#     )
+# end
 
 # DNA
 dna_lookup = Dict('A' => "dATP", 'T' => "dTTP", 'G' => "dGTP", 'C' => "dCTP")
@@ -227,41 +227,41 @@ biomass["61388"] = -peptidoglycan * 1000 / molar_masses["peptidoglycan"]
 
 biomass["58540"] = -lipopolysaccharide * 1000 / molar_masses["kdo_lps"]
 
-# add vitamins here at a very small fraction
-solubles = Dict( # molar fractions
-    "29985" => 10.0, # glutamate
-    "57925" => 2.0, # glutathione
-    "32966" => 2.0, # fructose bisphosphate
-    "30616" => 1.0, # atp
-    "57705" => 1.0, # UDP-N-acetyl-alpha-D-glucosamine
-    "57540" => 0.3, # NAD+
-    "58885" => 0.3, # udp glucose
-    # "58297" => 0.3, # glutathione disulfide - need a way to synthesize this anaerobically
-    "58223" => 0.2, # UDP
-    "57287" => 0.1, # coa
-    "57692" => 0.01, # FAD
-    "57783" => 0.01, # NADPH
-    "57945" => 0.01, # NADH
-    "58349" => 0.01, # nadph+
-    "58210" => 0.01, # FMN
-    "57986" => 0.001, # riboflavin
-    "62501" => 0.001, # folate
-    "597326" => 0.001, # pyridoxal 5 phosphate
-    "60530" => 0.001, # heme o    
-)
+# # add vitamins here at a very small fraction
+# solubles = Dict( # molar fractions
+#     "29985" => 10.0, # glutamate
+#     # "57925" => 2.0, # glutathione
+#     "32966" => 2.0, # fructose bisphosphate
+#     "30616" => 1.0, # atp
+#     "57705" => 1.0, # UDP-N-acetyl-alpha-D-glucosamine
+#     "57540" => 0.3, # NAD+
+#     "58885" => 0.3, # udp glucose
+#     # "58297" => 0.3, # glutathione disulfide - need a way to synthesize this anaerobically
+#     "58223" => 0.2, # UDP
+#     "57287" => 0.1, # coa
+#     "57692" => 0.01, # FAD
+#     "57783" => 0.01, # NADPH
+#     "57945" => 0.01, # NADH
+#     "58349" => 0.01, # nadph+
+#     "58210" => 0.01, # FMN
+#     "57986" => 0.001, # riboflavin
+#     "62501" => 0.001, # folate
+#     "597326" => 0.001, # pyridoxal 5 phosphate
+#     "60530" => 0.001, # heme o    
+# )
 
-tot_sol = sum(values(solubles))
-for (k, v) in solubles
-    solubles[k] = v / tot_sol * molar_masses[k]
-end
+# tot_sol = sum(values(solubles))
+# for (k, v) in solubles
+#     solubles[k] = v / tot_sol * molar_masses[k]
+# end
 
-tot_sol = sum(values(solubles))
-for (k, v) in solubles
-    biomass[k] = get(biomass, k, 0) - soluble_pool * (v / tot_sol) * 1000 / molar_masses[k]
-end
+# tot_sol = sum(values(solubles))
+# for (k, v) in solubles
+#     biomass[k] = get(biomass, k, 0) - soluble_pool * (v / tot_sol) * 1000 / molar_masses[k]
+# end
 
 # required atp for growth
-atp_req = 75.0
+atp_req = 150.0
 
 biomass["30616"] = biomass["30616"] - atp_req # atp
 biomass["15377"] = -atp_req # water

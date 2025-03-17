@@ -26,7 +26,7 @@ function add_atpm!(model)
             "15378" => 1,  # h+
         ),
         objective_coefficient = 0.0,
-        lower_bound = 8.0,
+        lower_bound = 15.0,
         upper_bound = 1000,
         annotations = Dict("SBO" => ["SBO_0000630"]),
     )
