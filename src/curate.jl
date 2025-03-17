@@ -130,7 +130,13 @@ function curate!(model)
     rev_dir(model, "19125") # serine biosyn natural dir + loop prevention
     for_dir(model, "18793") # loop prev
     for_dir(model, "29391") # loop prev
-
+    for_dir(model, "23352") # glutamate synthesis, loop prev 
+    for_dir(model, "32263") # 4 aminobut degrad, loop prev 
+    rev_dir(model, "30799") # loop prev
+    rev_dir(model, "16197") # loop prev
+    for_dir(model, "13213") # loop prev
+    for_dir(model, "13217") # loop prev
+    
     # add custom reactions (needs to happen after direction setting)
 
     model.reactions["glycogen_synthase"] = Reaction(
