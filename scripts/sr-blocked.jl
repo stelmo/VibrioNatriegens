@@ -9,7 +9,8 @@ using JSON
 
 model = VibrioNatriegens.build_model()
 flux_balance_analysis(model,optimizer=Gurobi.Optimizer)
-sol = flux_balance_analysis(model,optimizer=Gurobi.Optimizer)
+
+#sol = flux_balance_analysis(model,optimizer=Gurobi.Optimizer)
 
 ###
 ex_rids = filter(startswith("EX_"), A.reactions(model))
@@ -28,20 +29,23 @@ model.reactions["biomass"].stoichiometry["57920"] = -0.05 # norspermidine
 model.reactions["biomass"].stoichiometry["57834"] = -0.05 # spermidine
 model.reactions["biomass"].stoichiometry["18408"] = -0.05 # adenosylcobalamin
 model.reactions["biomass"].stoichiometry["58437"] = -0.05 # deamido-nad
-model.reactions["biomass"].stoichiometry["61386"] = -0.5 # d-alanine (UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-gamma...)
-model.reactions["biomass"].stoichiometry["67138"] = -0.5 # d-alanine (UDP-2-acetamido-2-deoxy-alpha-D-glucuronate)
-model.reactions["biomass"].stoichiometry["65040"] = -0.5 # d-alanine (UDP-N-acetyl-alpha-D-galactosamine)
+model.reactions["biomass"].stoichiometry["61386"] = -0.05 # d-alanine (UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-gamma...)
+model.reactions["biomass"].stoichiometry["67138"] = -0.05 # d-alanine (UDP-2-acetamido-2-deoxy-alpha-D-glucuronate)
+model.reactions["biomass"].stoichiometry["65040"] = -0.05 # d-alanine (UDP-N-acetyl-alpha-D-galactosamine)
 model.reactions["biomass"].stoichiometry["57451"] = -0.05 # 7,8-dihydrofolate
 model.reactions["biomass"].stoichiometry["85130"] = -0.05 # 7,8-dihydroxanthopterin
 model.reactions["biomass"].stoichiometry["62501"] = -0.05 # folate
+model.reactions["biomass"].stoichiometry["60530"] = -0.5 # ferroheme o
 
 model.reactions["EX_17154"].lower_bound = -1000.0 # set lb to -1000 to actually get nicotinamidase in
 model.reactions["EX_58537"].lower_bound = -1000.0 # set lb to -1000 to actually get cob(II)yrinate a,c diamide in
 model.reactions["EX_57761"].lower_bound = -1000.0 # set lb to -1000 to actually get pyridoxamine in
 model.reactions["EX_2181"].lower_bound = -1000.0 # set lb to -1000 to actually get l-fucose in
+model.reactions["EX_60344"].lower_bound = -1000.0 # set lb to -1000 to actually get heme in
+
 
 model.reactions["sink_reaction1"] = VibrioNatriegens.Reaction( # need this
-   stoichiometry = Dict("57642" => -1.0),
+   stoichiometry = Dict("57309" => -1.0),
    lower_bound = 0.0,
    upper_bound = 1000.0,
 )
@@ -52,7 +56,7 @@ model.reactions["sink_reaction1"] = VibrioNatriegens.Reaction( # need this
 #   upper_bound = 1000.0,
 #)
 
-#rid = "12379" # rhea id from blocked.csv 
+rid = "14265" # rhea id from blocked.csv 
 rid = "sink_reaction1" # either rid with acutal id or the sink
 ct = flux_balance_constraints(model)
 sol1 = optimized_values(
