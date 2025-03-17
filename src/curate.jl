@@ -126,6 +126,10 @@ function curate!(model)
     for_dir(model, "24793") # histidine biosynthesis blocked, https://biocyc.org/reaction?orgid=META&id=GLUTAMIDOTRANS-RXN (incorrect ref in rhea wrt direction)    
     rev_dir(model, "17737") # F, Y, W biosynthesis blocked, https://biocyc.org/reaction?orgid=META&id=SHIKIMATE-5-DEHYDROGENASE-RXN (rhea has both directions listed)
     rev_dir(model, "25290") # prevent loop in ethanol production 
+    rev_dir(model, "22852") # serine biosyn natural dir + loop prevention
+    rev_dir(model, "19125") # serine biosyn natural dir + loop prevention
+    for_dir(model, "18793") # loop prev
+    for_dir(model, "29391") # loop prev
 
     # add custom reactions (needs to happen after direction setting)
 

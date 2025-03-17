@@ -4,9 +4,11 @@ using COBREXA, Gurobi
 using JSON
 using ConstraintTrees
 import ConstraintTrees as C
-using JSONFBCModels
+using JSONFBCModels, JSON
 
 model = VibrioNatriegens.build_model()
+model.reactions["EX_15903"].lower_bound = 0.0 # glucose
+model.reactions["EX_29985"].lower_bound = -15.0 # glucose
 
 sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 sol = parsimonious_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
