@@ -136,6 +136,8 @@ function curate!(model)
     rev_dir(model, "16197") # loop prev
     for_dir(model, "13213") # loop prev
     for_dir(model, "13217") # loop prev
+    rev_dir(model, "15869") # d alanine syn only + loop prev
+    rev_dir(model, "15133") # glut biosyn
     
     # add custom reactions (needs to happen after direction setting)
 
