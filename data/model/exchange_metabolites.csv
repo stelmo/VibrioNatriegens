@@ -24,7 +24,6 @@ CHEBI,Name
 18276,H2
 17368,hypoxanthine
 16810,2-oxoglutarate
-17750,glycine betaine
 16236,ethanol
 17562,cytidine
 16040,cytosine
@@ -123,3 +122,5 @@ CHEBI,Name
 57761,pyridoxamine
 2181,l-fucose
 29033,Fe(2+)
+57433,sarcosine
+57499,2-oxoadipate

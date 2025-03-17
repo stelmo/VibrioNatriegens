@@ -41,6 +41,9 @@ function gapfill!(model)
         61300 # 5'-deoxyadenosine degradation
         30043 # anaerobic nad biosynthesis
         31507 # anaerobic pyridoxal biosynthesis
+        21708 # S-adenosyl-L-homocysteine to L-homocysteine
+        21948 # l-glutamate biosynthesis
+        16957 # GMP 
     ]
     get_reactions(rhea_rids)
 

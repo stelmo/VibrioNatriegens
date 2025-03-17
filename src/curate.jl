@@ -117,8 +117,6 @@ function curate!(model)
     for_dir(model, "41864") # prevent loop in lipids through 54936 <-> 41864 
     for_dir(model, "54900") # prevent loop in lipids through 54900 <-> 41912
     for_dir(model, "41912") # prevent loop in lipids through 54900 <-> 41912 
-    for_dir(model, "15305") # prevent loop in lipids through 15308 <-> 30070
-    for_dir(model, "30067") # prevent loop in lipids through 15308 <-> 30070 
     for_dir(model, "38215") # prevent loop in carbohydrates through 38215 <-> 38215 
     rev_dir(model, "11612") # prevent loop + metacyc GLUTAMATESYN-RXN
     for_dir(model, "11692") # https://www.uniprot.org/uniprotkb/P27306/entry
@@ -139,6 +137,8 @@ function curate!(model)
     # rev_dir(model, "15869") # d alanine syn only + loop prev
     # rev_dir(model, "15133") # glut biosyn
     
+    bi_dir(model, "24360") # produce siroheme
+
     # add custom reactions (needs to happen after direction setting)
 
     model.reactions["glycogen_synthase"] = Reaction(
