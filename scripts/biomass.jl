@@ -120,16 +120,6 @@ begin
     molar_masses["58349"] = 740.3812 # NADP(+)
 end
 
-# for (k, _) in model.reactions["biomass"].stoichiometry
-#     haskey(molar_masses, k) || continue
-#     println(
-#         k,
-#         ": ",
-#         molar_masses[k] -
-#         parse(Float64, first(model.metabolites[k].annotations["molarmass"])),
-#     )
-# end
-
 # DNA
 dna_lookup = Dict('A' => "dATP", 'T' => "dTTP", 'G' => "dGTP", 'C' => "dCTP")
 dna_bases = Dict()
@@ -261,7 +251,7 @@ biomass["58540"] = -lipopolysaccharide * 1000 / molar_masses["kdo_lps"]
 # end
 
 # required atp for growth
-atp_req = 150.0
+atp_req = 175.0 # this is very high - maybe because of large ribosome fraction?
 
 biomass["30616"] = biomass["30616"] - atp_req # atp
 biomass["15377"] = -atp_req # water
