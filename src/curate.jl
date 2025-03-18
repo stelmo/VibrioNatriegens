@@ -138,6 +138,7 @@ function curate!(model)
     # rev_dir(model, "15133") # glut biosyn
     
     bi_dir(model, "24360") # produce siroheme
+    bi_dir(model, "22488") # produce S-(hydroxymethyl)glutathione
 
     # add custom reactions (needs to happen after direction setting)
 

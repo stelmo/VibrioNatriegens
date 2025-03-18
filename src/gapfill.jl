@@ -43,7 +43,11 @@ function gapfill!(model)
         31507 # anaerobic pyridoxal biosynthesis
         21708 # S-adenosyl-L-homocysteine to L-homocysteine
         21948 # l-glutamate biosynthesis
-        16957 # GMP 
+        16957 # GMP
+        21612 # pyruvate pathway
+        35095 # choline degradation III to make trimethylamine
+        20217 # trimethylamine degradation
+        54828 # trimethylamine degradation
     ]
     get_reactions(rhea_rids)
 

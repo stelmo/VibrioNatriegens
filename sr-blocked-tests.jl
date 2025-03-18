@@ -37,6 +37,11 @@ model.reactions["biomass"].stoichiometry["85130"] = -0.05 # 7,8-dihydroxanthopte
 model.reactions["biomass"].stoichiometry["62501"] = -0.05 # folate
 model.reactions["biomass"].stoichiometry["60530"] = -0.5 # ferroheme o
 model.reactions["biomass"].stoichiometry["58351"] = -0.5 # sirohydrochlorin
+model.reactions["biomass"].stoichiometry["62414"] = -0.5 # biotinyl-5'-AMP, biotin pathway
+model.reactions["biomass"].stoichiometry["64479"] = -0.5 # O-(pantetheine-4'-phosphoryl)-L-serine residue, biotin pathway
+model.reactions["biomass"].stoichiometry["17790"] = -0.5 # methanol, biotin pathway
+model.reactions["biomass"].stoichiometry["16490"] = -0.5 # S-adenosyl-4-methylsulfanyl-2-oxobutanoate, biotin pathway
+model.reactions["biomass"].stoichiometry["59338"] = -0.5 # methylamine
 
 model.reactions["EX_17154"].lower_bound = -1000.0 # set lb to -1000 to actually get nicotinamidase in
 model.reactions["EX_58537"].lower_bound = -1000.0 # set lb to -1000 to actually get cob(II)yrinate a,c diamide in
@@ -46,32 +51,39 @@ model.reactions["EX_2181"].lower_bound = -1000.0  # set lb to -1000 to actually 
 model.reactions["EX_60344"].lower_bound = -1000.0 # set lb to -1000 to actually get heme in
 model.reactions["EX_57433"].lower_bound = -1000.0 # set lb to -1000 to actually get sarcosine in
 model.reactions["EX_57499"].lower_bound = -1000.0 # set lb to -1000 to actually get oxoadipate in
+model.reactions["EX_58033"].lower_bound = -1000.0 # set lb to -1000 to actually get 2-phosphoglycolate in
+model.reactions["EX_17742"].lower_bound = -1000.0 # set lb to -1000 to actually get 4-hydroxy-2-oxoglutarate in
+model.reactions["EX_18391"].lower_bound = -1000.0 # set lb to -1000 to actually get d-gluconate in
+model.reactions["EX_13941"].lower_bound = -1000.0 # set lb to -1000 to actually get carbamate in
+model.reactions["EX_82735"].lower_bound = -1000.0 # set lb to -1000 to actually get pimeloyl-pantetheine-4-phosphorylserine methyl ester residue in, biotin pathway
+model.reactions["EX_57360"].lower_bound = -1000.0 # set lb to -1000 to actually get 6-carboxyhexanoyl-CoA in, biotin pathway
+model.reactions["EX_15354"].lower_bound = -1000.0 # set lb to -1000 to actually get choline in
 
 model.reactions["sink_reaction1"] = VibrioNatriegens.Reaction( # need this
-   stoichiometry = Dict("13665" => -1.0),
+   stoichiometry = Dict("59338" => -1.0),
    lower_bound = 0.0,
    upper_bound = 1000.0,
 )
 
-#model.reactions["sink_reaction2"] = VibrioNatriegens.Reaction( # need this
-#   stoichiometry = Dict("57856" => -1.0),
-#   lower_bound = 0.0,
-#   upper_bound = 1000.0,
-#)
+model.reactions["sink_reaction2"] = VibrioNatriegens.Reaction( # need this
+   stoichiometry = Dict("59338" => -1.0),
+   lower_bound = 0.0,
+   upper_bound = 1000.0,
+)
 
-#model.reactions["sink_reaction3"] = VibrioNatriegens.Reaction( # need this
-#   stoichiometry = Dict("59789" => -1.0),
-#   lower_bound = 0.0,
-#   upper_bound = 1000.0,
-#)
+model.reactions["sink_reaction3"] = VibrioNatriegens.Reaction( # need this
+   stoichiometry = Dict("64479" => -1.0),
+   lower_bound = 0.0,
+   upper_bound = 1000.0,
+)
 
-#model.reactions["sink_reaction2"] = VibrioNatriegens.Reaction( # need this
+#model.reactions["sink_reaction4"] = VibrioNatriegens.Reaction( # need this
 #   stoichiometry = Dict("43474" => -1.0),
 #   lower_bound = 0.0,
 #   upper_bound = 1000.0,
 #)
 
-rid = "16957" # rhea id from blocked.csv 
+rid = "20217" # rhea id from blocked.csv 
 rid = "sink_reaction1" # either rid with acutal id or the sink
 ct = flux_balance_constraints(model)
 sol1 = optimized_values(
@@ -89,7 +101,7 @@ sol2 = optimized_values(
 lb = sol1.fluxes[rid]
 ub = sol2.fluxes[rid]
 
-ct *= :parsimony^C.Constraint(
+ ct *= :parsimony^C.Constraint(
     sum(C.squared(x.value) for x in values(ct.fluxes)),
     nothing
 )
