@@ -79,18 +79,6 @@ Symport,malate/Na,15589/29101,WP_020335812.1,1,C
 Symport,malate/Na,15589/29101,WP_020335743.1,1,D
 Symport,malate/Na,15589/29101,WP_020336191.1,1,E
 Symport,malate/Na,15589/29101,WP_020334774.1,1,F
-Symport,fumarate/Na,29806/29101,WP_014231749.1,1,A
-Symport,fumarate/Na,29806/29101,WP_014231587.1,1,B
-Symport,fumarate/Na,29806/29101,WP_020335812.1,1,C
-Symport,fumarate/Na,29806/29101,WP_020335743.1,1,D
-Symport,fumarate/Na,29806/29101,WP_020336191.1,1,E
-Symport,fumarate/Na,29806/29101,WP_020334774.1,1,F
-Symport,succinate/Na,30031/29101,WP_014231749.1,1,A
-Symport,succinate/Na,30031/29101,WP_014231587.1,1,B
-Symport,succinate/Na,30031/29101,WP_020335812.1,1,C
-Symport,succinate/Na,30031/29101,WP_020335743.1,1,D
-Symport,succinate/Na,30031/29101,WP_020336191.1,1,E
-Symport,succinate/Na,30031/29101,WP_020334774.1,1,F
 Symport,malonate/Na,15792/29101,WP_014233903.1,1,A
 Symport,malonate/Na,15792/29101,WP_014233904.1,1,A
 Symport,Na/Pi,29101/43474,WP_014230861.1,1,A
@@ -107,8 +95,6 @@ Antiport,malate-succinate,15589/30031,WP_014233246.1,1,A
 Antiport,malate-succinate,15589/30031,WP_014234181.1,1,B
 Antiport,malate-fumarate,15589/29806,WP_014233246.1,1,A
 Antiport,malate-fumarate,15589/29806,WP_014234181.1,1,B
-Antiport,succinate-fumarate,30031/29806,WP_014233246.1,1,A
-Antiport,succinate-fumarate,30031/29806,WP_014234181.1,1,B
 Antiport,leucine/H,57427/15378,WP_020334825.1,1,A
 Antiport,leucine/H,57427/15378,WP_020335308.1,1,B
 Antiport,isoleucine/H,58045/15378,WP_020334825.1,1,A
