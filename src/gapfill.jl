@@ -48,6 +48,7 @@ function gapfill!(model)
         35095 # choline degradation III to make trimethylamine
         20217 # trimethylamine degradation
         54828 # trimethylamine degradation
+        13541 # tetrathionate oxidation
     ]
     get_reactions(rhea_rids)
 
