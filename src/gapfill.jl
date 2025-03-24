@@ -49,6 +49,9 @@ function gapfill!(model)
         20217 # trimethylamine degradation
         54828 # trimethylamine degradation
         13541 # tetrathionate oxidation
+        28334 # nucleotide diphosphatase (dATP to dAMP)
+        34935 # ATP adenylyltransferase
+        23412 # N-acetylputrescine acetylhydrolase
     ]
     get_reactions(rhea_rids)
 

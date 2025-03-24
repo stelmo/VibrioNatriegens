@@ -55,6 +55,9 @@ model.reactions["biomass"].stoichiometry["58140"] = -0.5 # tetrahydropteroyltri-
 model.reactions["biomass"].stoichiometry["16723"] = -0.5 # 4-methylsulfanyl-2-oxobutanoate
 model.reactions["biomass"].stoichiometry["58591"] = -0.5 # S-sulfanyl-L-cysteine
 model.reactions["biomass"].stoichiometry["57702"] = -0.5 # N-acetyl-L-phenylalanine
+model.reactions["biomass"].stoichiometry["29780"] = -0.5 # isochorismate
+model.reactions["biomass"].stoichiometry["58052"] = -0.5 # UDP-alpha-D-glucuronate
+model.reactions["biomass"].stoichiometry["57690"] = -0.5 # cis-4-hydroxy-D-proline
 
 model.reactions["EX_17154"].lower_bound = -1000.0 # set lb to -1000 to actually get nicotinamidase in
 model.reactions["EX_58537"].lower_bound = -1000.0 # set lb to -1000 to actually get cob(II)yrinate a,c diamide in
@@ -81,6 +84,14 @@ model.reactions["EX_58140"].lower_bound = -1000.0 # set lb to -1000 to actually 
 model.reactions["EX_58772"].lower_bound = -1000.0 # set lb to -1000 to actually get L-methionine (S)-S-oxide in
 model.reactions["EX_35491"].lower_bound = -1000.0 # set lb to -1000 to actually get L-cystine in
 model.reactions["EX_47928"].lower_bound = -1000.0 # set lb to -1000 to actually get (2E)-3-(3-hydroxyphenyl)prop-2-enoate in
+model.reactions["EX_17158"].lower_bound = -1000.0 # set lb to -1000 to actually get methylglyoxal in
+model.reactions["EX_36218"].lower_bound = -1000.0 # set lb to -1000 to actually get beta-lactose in
+model.reactions["EX_58375"].lower_bound = -1000.0 # set lb to -1000 to actually get trans-4-hydroxy-L-proline in
+model.reactions["EX_58000"].lower_bound = -1000.0 # set lb to -1000 to actually get D-glutamine in
+model.reactions["EX_58585"].lower_bound = -1000.0 # set lb to -1000 to actually get L-allo-threonine in
+model.reactions["EX_60873"].lower_bound = -1000.0 # set lb to -1000 to actually get 2'3'-cyclophospho-UMP in
+model.reactions["EX_60877"].lower_bound = -1000.0 # set lb to -1000 to actually get 2'3'-cyclophospho-CMP in
+model.reactions["EX_60879"].lower_bound = -1000.0 # set lb to -1000 to actually get 2'3'-cyclophospho-AMP in
 
 # exchange -1000,0   biomass 0,1000
 "57262"
@@ -93,13 +104,13 @@ function add_temp_exchange!(model, mid; lb = -1000, ub = 1000)
 end
 
 model.reactions["sink_reaction1"] = VibrioNatriegens.Reaction( # need this
-   stoichiometry = Dict("63257" => -1.0),
+   stoichiometry = Dict("60880" => -1.0),
    lower_bound = 0.0,
    upper_bound = 1000.0,
 )
 
 model.reactions["sink_reaction2"] = VibrioNatriegens.Reaction( # need this
-   stoichiometry = Dict("57702" => -1.0),
+   stoichiometry = Dict("456216" => -1.0),
    lower_bound = 0.0,
    upper_bound = 1000.0,
 )
@@ -116,7 +127,7 @@ model.reactions["sink_reaction2"] = VibrioNatriegens.Reaction( # need this
 #   upper_bound = 1000.0,
 #)
 
-rid = "34851" # rhea id from blocked.csv 
+rid = "27886" # rhea id from blocked.csv 
 rid = "sink_reaction1" # either rid with acutal id or the sink
 ct = flux_balance_constraints(model)
 sol1 = optimized_values(
