@@ -45,19 +45,25 @@ model.reactions["biomass"].stoichiometry["29083"] = -0.05 # N-methyl-L-glutamate
 model.reactions["biomass"].stoichiometry["26833"] = -0.05 # sulfur
 model.reactions["biomass"].stoichiometry["18022"] = -0.05 # thiocyanate
 model.reactions["biomass"].stoichiometry["194156"] = -0.05 # adenosine 2',5'-bisphosphate
-model.reactions["biomass"].stoichiometry["57262"] = -0.5 # a-1-2-diacyl-sn-glycero-3-phospho-L-serine
-model.reactions["biomass"].stoichiometry["58332"] = -0.5 # a CDP-1,2-diacyl-sn-glycerol
-model.reactions["biomass"].stoichiometry["15934"] = -0.5 # 5-amino-6-(D-ribitylamino)uracil
-model.reactions["biomass"].stoichiometry["78845"] = -0.5 # malonyl-pantetheine-4-phosphorylserine methyl ester residue
-model.reactions["biomass"].stoichiometry["29484"] = -0.5 # (S)-4,5-dihydroxypentane-2,3-dione
-model.reactions["biomass"].stoichiometry["58207"] = -0.5 # 5-methyltetrahydropteroyltri-L-glutamate
-model.reactions["biomass"].stoichiometry["58140"] = -0.5 # tetrahydropteroyltri-L-glutamate
-model.reactions["biomass"].stoichiometry["16723"] = -0.5 # 4-methylsulfanyl-2-oxobutanoate
-model.reactions["biomass"].stoichiometry["58591"] = -0.5 # S-sulfanyl-L-cysteine
-model.reactions["biomass"].stoichiometry["57702"] = -0.5 # N-acetyl-L-phenylalanine
-model.reactions["biomass"].stoichiometry["29780"] = -0.5 # isochorismate
-model.reactions["biomass"].stoichiometry["58052"] = -0.5 # UDP-alpha-D-glucuronate
-model.reactions["biomass"].stoichiometry["57690"] = -0.5 # cis-4-hydroxy-D-proline
+model.reactions["biomass"].stoichiometry["57262"] = -0.05 # a-1-2-diacyl-sn-glycero-3-phospho-L-serine
+model.reactions["biomass"].stoichiometry["58332"] = -0.05 # a CDP-1,2-diacyl-sn-glycerol
+model.reactions["biomass"].stoichiometry["15934"] = -0.05 # 5-amino-6-(D-ribitylamino)uracil
+model.reactions["biomass"].stoichiometry["78845"] = -0.05 # malonyl-pantetheine-4-phosphorylserine methyl ester residue
+model.reactions["biomass"].stoichiometry["29484"] = -0.05 # (S)-4,5-dihydroxypentane-2,3-dione
+model.reactions["biomass"].stoichiometry["58207"] = -0.05 # 5-methyltetrahydropteroyltri-L-glutamate
+model.reactions["biomass"].stoichiometry["58140"] = -0.05 # tetrahydropteroyltri-L-glutamate
+model.reactions["biomass"].stoichiometry["16723"] = -0.05 # 4-methylsulfanyl-2-oxobutanoate
+model.reactions["biomass"].stoichiometry["58591"] = -0.05 # S-sulfanyl-L-cysteine
+model.reactions["biomass"].stoichiometry["57702"] = -0.05 # N-acetyl-L-phenylalanine
+model.reactions["biomass"].stoichiometry["29780"] = -0.05 # isochorismate
+model.reactions["biomass"].stoichiometry["58052"] = -0.05 # UDP-alpha-D-glucuronate
+model.reactions["biomass"].stoichiometry["57690"] = -0.05 # cis-4-hydroxy-D-proline
+model.reactions["biomass"].stoichiometry["61194"] = -0.05 # dIMP
+model.reactions["biomass"].stoichiometry["18262"] = -0.05 # dodecanoate
+model.reactions["biomass"].stoichiometry["25646"] = -0.05 # octanoate
+model.reactions["biomass"].stoichiometry["62423"] = -0.05 # (2-hydroxyphenyl)acetate
+model.reactions["biomass"].stoichiometry["76565"] = -0.05 # 2-aminoprop-2-enoate
+model.reactions["biomass"].stoichiometry["189750"] = -0.05 # ophthalmate
 
 model.reactions["EX_17154"].lower_bound = -1000.0 # set lb to -1000 to actually get nicotinamidase in
 model.reactions["EX_58537"].lower_bound = -1000.0 # set lb to -1000 to actually get cob(II)yrinate a,c diamide in
@@ -92,6 +98,17 @@ model.reactions["EX_58585"].lower_bound = -1000.0 # set lb to -1000 to actually 
 model.reactions["EX_60873"].lower_bound = -1000.0 # set lb to -1000 to actually get 2'3'-cyclophospho-UMP in
 model.reactions["EX_60877"].lower_bound = -1000.0 # set lb to -1000 to actually get 2'3'-cyclophospho-CMP in
 model.reactions["EX_60879"].lower_bound = -1000.0 # set lb to -1000 to actually get 2'3'-cyclophospho-AMP in
+model.reactions["EX_62286"].lower_bound = -1000.0 # set lb to -1000 to actually get dIDP in
+model.reactions["EX_61314"].lower_bound = -1000.0 # set lb to -1000 to actually get XTP in
+model.reactions["EX_61402"].lower_bound = -1000.0 # set lb to -1000 to actually get ITP in
+model.reactions["EX_27689"].lower_bound = -1000.0 # set lb to -1000 to actually get decanoate in
+model.reactions["EX_27551"].lower_bound = -1000.0 # set lb to -1000 to actually get 5-methylcytosine in
+model.reactions["EX_16808"].lower_bound = -1000.0 # set lb to -1000 to actually get 2-dehydro-D-gluconate in
+model.reactions["EX_90761"].lower_bound = -1000.0 # set lb to -1000 to actually get 2-deoxy-D-ribose in
+model.reactions["EX_2030"].lower_bound = -1000.0 # set lb to -1000 to actually get 5-amino-4-imidazolecarboxyamide in
+model.reactions["EX_17754"].lower_bound = -1000.0 # set lb to -1000 to actually get glycerol in
+model.reactions["EX_73709"].lower_bound = -1000.0 # set lb to -1000 to actually get (2S)-hydroxybutanoate in
+model.reactions["EX_29101"].lower_bound = -1000.0 # set lb to -1000 to actually get Na+ in
 
 # exchange -1000,0   biomass 0,1000
 "57262"
@@ -104,13 +121,13 @@ function add_temp_exchange!(model, mid; lb = -1000, ub = 1000)
 end
 
 model.reactions["sink_reaction1"] = VibrioNatriegens.Reaction( # need this
-   stoichiometry = Dict("60880" => -1.0),
+   stoichiometry = Dict("189750" => -1.0),
    lower_bound = 0.0,
    upper_bound = 1000.0,
 )
 
 model.reactions["sink_reaction2"] = VibrioNatriegens.Reaction( # need this
-   stoichiometry = Dict("456216" => -1.0),
+   stoichiometry = Dict("33019" => -1.0),
    lower_bound = 0.0,
    upper_bound = 1000.0,
 )
@@ -127,7 +144,7 @@ model.reactions["sink_reaction2"] = VibrioNatriegens.Reaction( # need this
 #   upper_bound = 1000.0,
 #)
 
-rid = "27886" # rhea id from blocked.csv 
+rid = "72075" # rhea id from blocked.csv 
 rid = "sink_reaction1" # either rid with acutal id or the sink
 ct = flux_balance_constraints(model)
 sol1 = optimized_values(

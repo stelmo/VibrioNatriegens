@@ -52,6 +52,9 @@ function gapfill!(model)
         28334 # nucleotide diphosphatase (dATP to dAMP)
         34935 # ATP adenylyltransferase
         23412 # N-acetylputrescine acetylhydrolase
+        35215 # XDP to XMP
+        82027 # L-cysteine degradation
+        28278 # cysteine sulfinate desulfinase
     ]
     get_reactions(rhea_rids)
 
