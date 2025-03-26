@@ -41,6 +41,20 @@ function gapfill!(model)
         61300 # 5'-deoxyadenosine degradation
         30043 # anaerobic nad biosynthesis
         31507 # anaerobic pyridoxal biosynthesis
+        21708 # S-adenosyl-L-homocysteine to L-homocysteine
+        21948 # l-glutamate biosynthesis
+        16957 # GMP
+        21612 # pyruvate pathway
+        35095 # choline degradation III to make trimethylamine
+        20217 # trimethylamine degradation
+        54828 # trimethylamine degradation
+        13541 # tetrathionate oxidation
+        28334 # nucleotide diphosphatase (dATP to dAMP)
+        34935 # ATP adenylyltransferase
+        23412 # N-acetylputrescine acetylhydrolase
+        35215 # XDP to XMP
+        82027 # L-cysteine degradation
+        28278 # cysteine sulfinate desulfinase
     ]
     get_reactions(rhea_rids)
 
