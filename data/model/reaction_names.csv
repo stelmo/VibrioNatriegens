@@ -1,1167 +1,725 @@
-RID,Name
-10040,cysQ
-10116,gnd
-10152,carbamate kinase
-10164,eno
-10224,pdxY
-10228,acnB
-10244,fumarylacetoacetase
-10248,mazG
-10300,gap
-10380,pyrE
-10412,nudF
-10420,taurine pyruvate aminotransferase
-10488,ygfA
-10508,tkt
-10532,trpAB
-10540,folB
-10676,leuCD
-10748,can
-10800,XMP pyrophosphate phosphoribosyltransferase
+rhea,name
+32459,S-adenosyl-L-methionine:uroporphyrinogen-III C-methyltransferase
+17737,shikimate:NADP+ 3-oxidoreductase
+18457,"D-ribulose 5-phosphate formate-lyase (L-3,4-dihydroxybutan-2-one 4-phosphate-forming)"
+15889,L-glutamine amidohydrolase
+27846,"(2E)-3-(3-hydroxyphenyl)prop-2-enoate,NADH:oxygen oxidoreductase (2-hydroxylating)"
+18049,N2-acetyl-L-ornithine:2-oxoglutarate aminotransferase
+11600,ATP:CMP phosphotransferase
+17417,ATP:N-acetyl-D-glucosamine 6-phosphotransferase
+10508,sedoheptulose-7-phosphate:D-glyceraldehyde-3-phosphate glycolaldehydetransferase
+31255,(S)-2-acetolactate methylmutase
+10164,2-phospho-D-glycerate hydro-lyase (phosphoenolpyruvate-forming)
+27690,ATP:dGDP phosphotransferase
+28438,tetradecanoyl-[acyl-carrier protein]:dodecanoyl-KDO2-lipid IV(A) O-tetradecanoyltransferase
+18629,ATP:NAD+ 2'-phosphotransferase
+13233,guanosine:phosphate alpha-D-ribosyltransferase
+10488,5-formyltetrahydrofolate cyclo-ligase (ADP-forming)
+21896,adenosylcobyric acid:(R)-1-aminopropan-2-yl phosphate ligase
+10224,ATP:pyridoxal 5'-phosphotransferase
+13801,hydrogen-sulfide:NADP+ oxidoreductase
+18445,"IMP 1,2-hydrolase (decyclizing)"
+17601,ATP:D-ribulose 5-phosphotransferase
+10116,6-phospho-D-gluconate:NADP+ 2-oxidoreductase (decarboxylating)
+16189,"4-hydroxyphenylpyruvate:oxygen oxidoreductase (hydroxylating,decarboxylating)"
+35587,riboflavin-5-phosphate phosphohydrolase
+24152,ATP:adenylylsulfate 3'-phosphotransferase
+13701,acetyl-CoA:L-homoserine O-acetyltransferase
+11412,"ATP:6-hydroxymethyl-7,8-dihydropterin 6'-diphosphotransferase"
+23288,acetaldehyde:NAD+ oxidoreductase (CoA-acetylating)
+27642,nicotinate D-ribonucleoside:orthophosphate ribosyltransferase
+20956,phenylacetate:CoA ligase
+54868,butyryl-[acp]:NAD+ trans-2-oxidoreductase
+46012,(S)-malate:FAD oxidoreductase
+11612,L-glutamate:NADP+ oxidoreductase (deaminating)
+20700,"UDP-2,3-bis(3-hydroxytetradecanoyl)glucosamine:2,3-bis-(3-hydroxytetradecanoyl)-alpha-D-glucosaminyl-1-phosphate 2,3-bis(3-hydroxytetradecanoyl)-glucosaminyltransferase"
+41844,(3R)-3-hydroxyoctanoyl-[acyl-carrier-protein] hydro-lyase
+27894,cytidine 3'-phosphate phosphohydrolase
+17921,D-arabinitol:NAD 4-oxidoreductase
+31747,"3-oxo-5,6-dehydrosuberyl-CoA semialdehyde:NADP+ oxidoreductase"
+30707,putrescine:pyruvate aminotransferase
+25245,(R)-S-lactoylglutathione hydrolase
+10152,ATP:carbamate phosphotransferase
+64820,2-phenylacetamide amidohydrolase
+15901,"D-phosphoglycerate 2,3-phosphomutase"
+13237,L-glutamine:D-fructose-6-phosphate isomerase (deaminating)
+24360,S-adenosyl-L-methionine:uroporphyrin-III C-methyltransferase
+23032,2-(formamido)-N1-(5-phosphoribosyl)acetamidine cyclo-ligase (ADP-forming)
+30295,GTP:pyruvate 2-O-phosphotransferase
+28442,dodecanoyl-[acyl-carrier protein]:KDO2-lipid-IVA O-dodecanoyltransferase
+11308,acetyl-CoA:carbon-dioxide ligase (ADP-forming)
+23476,1-(2-carboxyphenylamino)-1-deoxy-D-ribulose-5-phosphate carboxy-lyase(cyclizing)
+18229,glycolate:NAD+ oxidoreductase
+41868,decanoyl-[acyl-carrier protein]:malonyl-[acyl-carrier-protein] C-acyltransferase (decarboxylating)
+25249,pyruvate:2-oxobutanoate acetaldehydetransferase (decarboxylating)
+72067,L-glutamate:2-aminobutanoate gamma-ligase (ADP-forming)
+27650,GTP:uridine 5'-phosphotransferase
+13433,deoxycytidine aminohydrolase
+11816,beta-D-glucose 6-phosphate ketol-isomerase
+17129,5'-phosphoribosylformylglycinamide:L-glutamine amido-ligase (ADP-forming)
+41876,(3R)-3-hydroxydodecanoyl-[acyl-carrier-protein] hydro-lyase
+31179,(S)-3-hydroxydodecanoyl-CoA:NAD+ oxidoreductase
+14961,S-formylglutathione hydrolase
+30779,D-gluconate:(acceptor) 2-oxidoreductase
+27826,O4-succinyl-L-homoserine:hydrogen sulfide S-(3-amino-3-carboxypropyl)transferase
+17905,D-glycerate:NAD+ 2-oxidoreductase
+31171,(S)-3-hydroxytetradecanoyl-CoA hydro-lyase
+13161,L-threonine:NAD+ oxidoreductase
+23352,4-aminobutanoate:2-oxoglutarate aminotransferase
+24408,adenosine aminohydrolase
+13897,chorismate pyruvatemutase
+54936,decanoyl-[acp]:NAD+ trans-2-oxidoreductase
+20569,L-arginine amidinohydrolase
+10912,(R)-pantoate:beta-alanine ligase (AMP-forming)
+12973,ATP:AMP phosphotransferase
+17649,acetyl-[acyl-carrier-protein]: malonate S-[acyl-carrier-protein]transferase
+20736,acetyl-CoA:glycine C-acetyltransferase
+22624,4-hydroxy-2-oxopentanoate pyruvate-lyase (acetaldehyde-forming)
+31143,(S)-hydroxyhexanoyl-CoA:NAD+ oxidoreductase
+12460,(S)-malate hydro-lyase (fumarate-forming)
+70295,3-sulfino-L-alanine:2-oxoglutarate aminotransferase
+14329,3-phosphoserine:2-oxoglutarate aminotransferase
+41860,(3R)-3-hydroxydecanoyl-[acyl-carrier-protein] hydro-lyase
+41912,hexadecanoyl-[acp]:NAD+ trans-2-oxidoreductase
+17801,acetyl-CoA:L-phenylalanine N-acetyltransferase
+20309,hydrogen-peroxide:hydrogen-peroxide oxidoreductase
+11364,"ATP:pyruvate,water phosphotransferase"
+29355,2'-deoxyuridine 5'-monophosphate phosphohydrolase
+20117,ATP:L-xylulose 1-phosphotransferase
+15393,"LL-2,6-diaminoheptanedioate 2-epimerase"
+20712,pimeloyl-CoA:L-alanine C-carboxyhexanoyltransferase (decarboxylating)
+13553,ATP:alpha-D-galactose 1-phosphotransferase
+20129,AMP phosphoribohydrolase
+30751,palmitate:CoA ligase (AMP-forming)
+30791,dGTP:pyruvate 2-O-phosphotransferase
+16069,cytidine aminohydrolase
+16197,(S)-3-hydroxybutanoyl-CoA:NADP+ oxidoreductase
+19105,4-aminobutanal:NAD+ 1-oxidoreductase
+28026,2'-deoxyuridine 5'-diphosphate:oxidized-thioredoxin 2'-oxidoreductase
+19661,D-mannitol-1-phosphate:NAD+ 5-oxidoreductase
+12536,L-arogenate hydro-lyase (decarboxylating L-phenylalanine-forming)
+25054,"(2E)-3-(2,3-dihydroxyphenyl)prop-2-enoate:oxygen 1,2-oxidoreductase (decyclizing)"
+23448,CTP:3-deoxy-D-manno-octulosonate cytidylyltransferase
+15641,oxaloacetate carboxy-lyase (pyruvate-forming)
+24404,(S)-3-hydroxy-3-methylglutaryl-CoA acetoacetate-lyase (acetyl-CoA-forming)
+28034,2'-deoxyadenosine 5'-diphosphate:oxidized-thioredoxin 2'-oxidoreductase
+25298,acetaldehyde:NADP+ oxidoreductase
+31203,hexanoyl-CoA:acetyl-CoA C-acyltransferase
+17805,S-adenosyl-L-homocysteine homocysteinylribohydrolase
+41888,(3R)-3-hydroxytetradecanoyl-[acyl-carrier-protein]:NADP+ oxidoreductase
+30787,"L-phenylalanine,tetrahydrobiopterin:oxygen oxidoreductase (4-hydroxylating)"
+16249,alpha-D-glucose 6-phosphate ketol-isomerase
+31183,decanoyl-CoA:acetyl-CoA C-acyltransferase
+29375,adenosine 5'-monophosphate phosphohydrolase
+61092,N-acetyl-L-citrulline amidohydrolase
+22144,isocitrate hydro-lyase (cis-aconitate-forming)
+16597,UTP:ammonia ligase (ADP-forming)
+29391,GTP diphosphohydrolase (diphosphate-forming)
+28582,ATP:dUDP phosphotransferase
+22824,deoxyuridine:orthophosphate 2-deoxy-D-ribosyltransferase
+14629,ATP:N-acetyl-L-glutamate 5-phosphotransferase
+41856,(3R)-3-hydroxydecanoyl-[acyl-carrier-protein]:NADP+ oxidoreductase
+13929,agmatine amidinohydrolase
+16913,CDP-diacylglycerol:L-serine 3-phosphatidyltransferase
+14109,trans-4-hydroxy-L-proline:NADP+ 5-oxidoreductase
+22580,4-hydroxy-2-oxopentanoate hydro-lyase (2-oxopent-4-enoate-forming)
+45332,"7,8-dihydroneopterin:oxygen oxidoreductase"
+22924,dCMP aminohydrolase
+27822,O-acetyl-L-homoserine:hydrogen sulfide S-(3-amino-3-carboxypropyl)transferase
+31195,(S)-hydroxyoctanoyl-CoA:NAD+ oxidoreductase
+11824,"5,10-methylenetetrahydrofolate:3-methyl-2-oxobutanoate hydroxymethyltransferase"
+31159,(S)-3-hydroxyhexadecanoyl-CoA:NAD+ oxidoreductase
+15753,IMP:L-aspartate ligase (GDP-forming)
+12733,nicotinate-nucleotide:pyrophosphate phosphoribosyltransferase (carboxylating)
+27377,ATP:(R)-glycerate 2-phosphotransferase
+72075,gamma-L-glutamyl-L-2-aminobutyrate:glycine ligase (ADP-forming)
+13509,UTP:N-acetyl-alpha-D-glucosamine-1-phosphate uridylyltransferase
+14821,L-arabinose aldose-ketose-isomerase
+12556,"6-phospho-D-glucono-1,5-lactone lactonohydrolase"
+25588,isocitrate:NADP+ oxidoreductase
+22284,N-carbamoylputrescine amidohydrolase
+30935,nicotinate D-ribonucleotide phosphohydrolase
+13325,UDP-N-acetyl-D-glucosamine:NAD+ 6-oxidoreductase
+13849,D-arabinose aldose-ketose-isomerase
+19497,L-aspartate 1-carboxy-lyase (beta-alanine-forming)
+16233,(R)-pantoate:NADP+ 2-oxidoreductase
+14357,ATP:riboflavin 5'-phosphotransferase
+18829,4-phospho-D-erythronate:NAD+ 2-oxidoreductase
+27886,"2',3'-cyclic AMP 3'-nucleotidohydrolase"
+22608,"N-succinyl-LL-2,6-diaminoheptanedioate amidohydrolase"
+23100,ATP:dAMP phosphotransferase
+23536,"alpha-D-glucose 1,6-phosphomutase"
+52304,ectoine aminohydrolase
+23920,1-(5'-phosphoribosyl)-5-amino-4-(N-succinocarboxamide)-imidazole AMP-lyase
+23660,4-imidazolone-5-propanoate amidohydrolase
+30943,octanoyl-CoA:electron-transfer flavoprotein 2-oxidoreductase
+41528,octanoyl-[acp]:NAD+ trans-2-oxidoreductase
+17053,sedoheptulose-7-phosphate:D-glyceraldehyde-3-phosphate glyceronetransferase
+30931,O-acetyl-L-homoserine succinate-lyase (adding cysteine)
+17237,ATP:FMN adenylyltransferase
+17785,L-glutamate 1-carboxy-lyase (4-aminobutanoate-forming)
+25209,UDP-3-O-[(3R)-3-hydroxymyristoyl]-N-acetylglucosamine amidohydrolase
+10248,dUTP nucleotidohydrolase
+15093,L-tyrosine:2-oxoglutarate aminotransferase
+20249,alanine racemase
+30759,5-methylcytosine aminohydrolase
+77643,"adenosine-3',5'-bisphosphate 3'-phosphohydrolase"
+19513,carbamoyl-phosphate:L-ornithine carbamoyltransferase
+40663,L-serine hydro-lyase
+11080,thymidylate 5'-phosphohydrolase
+17233,L-fucose aldose-ketose-isomerase
+21824,L-cysteine:2-oxoglutarate aminotransferase
+31755,2-oxepin-2(3H)-ylideneacetyl-CoA hydrolyase
+21432,(S)-malate:NAD+ oxidoreductase
+22628,1-(5-phosphoribosyl)-5-amino-4-carboxyimidazole:L-aspartate ligase (ADP-forming)
+30731,"butanoyl-CoA:electron-transfer flavoprotein 2,3-oxidoreductase"
+30799,(S)-3-hydroxybutanoyl-CoA:NAD+ oxidoreductase
+23744,5-amino-2-oxopentanoate:2-oxoglutarate aminotransferase
+23676,"UDP-N-acetylmuramoyl-L-alanyl-D-glutamate:(L)-meso-2,6-diaminoheptanedioate gamma-ligase (ADP-forming)"
+19821,5-methyltetrahydrofolate:NAD+ oxidoreductase
+51628,UTP:formate 2'-oxidoreductase
+42424,2-methylmaleate hydratase
+28354,"decanoyl-CoA:electron-transfer flavoprotein 2,3-oxidoreductase"
+24488,isopentenyl-diphosphate:ferredoxin oxidoreductase
+13985,ATP:L-homoserine O-phosphotransferase
+32287,"(2R,3S)-3-isopropylmalate hydro-lyase (2-isopropylmaleate-forming)"
+18633,"HCO3-:L-glutamine amido-ligase (ADP-forming, carbamate-phosphorylating)"
+20049,"1-(5-phospho-D-ribosyl)-AMP 1,6-hydrolase"
+20780,ATP:GMP phosphotransferase
+25181,acetyl-CoA:putrescine N-acetyltransferase
+33867,(S)-ureidoglycine:glyoxylate aminotransferase
+19521,acetyl-CoA:phosphate acetyltransferase
+14245,ATP diphosphohydrolase (diphosphate-forming)
+13285,L-glutamate:L-cysteine gamma-ligase (ADP-forming)
+12641,3-phospho-D-glycerate:NAD+ 2-oxidoreductase
+31135,1-(5'-phosphoribosyl)-5-amino-4-imidazolecarboxamide:pyrophosphate phosphoribosyltransferase
+15941,N2-acetyl-L-ornithine amidohydrolase
+27890,uridine 3'-monophosphate phosphohydrolase
+31087,octanoyl-CoA:acetyl-CoA C-acyltransferase
+16169,L-glutamate:ammonia ligase (ADP-forming)
+26558,(S)-3-hydroxybutanoyl-CoA hydro-lyase
+41820,butyryl-[acyl-carrier protein]:malonyl-[acyl-carrier-protein] C-acyltransferase (decarboxylating)
+27742,deoxyadenosine:orthophosphate ribosyltransferase
+24384,deamido-NAD+:L-glutamine amido-ligase (AMP-forming)
+15757,L-homoserine:NAD+ oxidoreductase
+10748,carbonate hydro-lyase (carbon-dioxide-forming)
+22812,"5,10-methylenetetrahydrofolate:NADP+ oxidoreductase"
+25277,"adenosine 3',5'-phosphate 5'-nucleotidohydrolase"
+11596,orotidine-5'-phosphate carboxy-lyase (UMP-forming)
+24020,2-(Nomega-L-arginino)succinate arginine-lyase (fumarate-forming)
+14081,"(1S,2R)-1-C-(indol-3-yl)glycerol 3-phosphate D-glyceraldehyde-3-phosphate-lyase"
 10804,allantoin racemase
-10812,astD
-10840,thrC
-10892,leuB
-10912,panC
-10932,argG
-10948,gspK
-10964,xylB
-11040,hisB
-11064,fbp
-11080,ushA
-11092,gpsA
-11096,gpsA
-11140,phosphomannomutase
-11148,bfr
-11160,ectB
-11172,metH
-11196,cobT
-11224,ddl
-11308,accACD
-11352,ackA
-11364,ppsA
-11412,folK
-11596,pyrF
-11600,cmk
-11612,gltBD
-11672,pabAB
-11680,guaA
-11692,sthA
-11708,guaB
-11724,cysH
-11740,gorA
-11768,trpD
-11800,nudC
-11816,pgi
-11824,panB
-11844,pflAB
-11920,phhB
-11960,argD
-12056,epd
-12080,fabH
-12104,thyA
-12120,glgC
-12172,nagB
-12228,asnB
-12248,murB
-12376,fucK
-12400,pncC
-12460,fumAC
-12536,prephenate dehydratase
-12556,pgl
-12605,dxs
-12641,serA
-12653,maeA
-12697,gmk
-12733,nadC
-12813,murI
-12813,murI
-12821,deoC
-12909,napAB
-12921,5 aminolevulinate synthase
-12933,fucA
-12973,adk
-13017,upp
-13065,mazG
-13073,ppx
-13101,hutU
-13121,aroK
-13161,tdh
-13185,hemC
-13193,purE
-13213,gabD
-13217,gabD
-13233,deoD
-13237,glmS
-13245,aceA
-13285,gshA
-13313,solA
-13325,tviB
-13389,glutaryl-CoA dehydrogenase
-13429,ispD
-13433,cdd
-13493,ilvC
-13509,glmU
-13517,tmk
-13553,galK
-13557,gshB
-13633,gamma glutamylputrescine synthase
-13677,rpe
-13697,rbsK
-13701,metA
-13717,ispC
-13725,glmU
-13753,gltBD
-13801,cysIJ
-13849,fucI
-13869,tyrA
-13897,pheA
-13929,speB
-13965,metC
-13977,dsdA
-13985,thrB
-13989,galT
-14077,beta alanine pyruvate transaminase
-14081,trpAB
-14105,proC
-14109,proC
-14245,mazG
-14253,spoT
-14265,hemL
-14329,serC
-14357,ribF
-14369,gph
-14465,hisB
-14545,nicotinamidase
-14629,argB
-14657,rpiA
-14665,guaD
-14717,aroGHF
-14729,fbaA
-14797,2 dehydro 3 deoxygluconokinase
-14801,pgk
-14817,maiA
-14817,maiA
-14821,araA
-14829,cysK
-14877,proB
-14905,purF
-14961,fghA
-15009,folA
-15053,purN
-15093,aspC
-15101,lysA
-15133,gdhB
-15149,pdxH
-15169,astE
-15185,astA
-15193,dgt
-15265,pdxJ
-15305,betB
-15389,cyaA
-15393,dapF
-15425,hemN
-15449,
-15449,
-15469,hisA
-15481,glyA
-15501,gltBD
-15609,prs
-15613,cysG
-15641,oadABG
-15649,
-15689,
-15753,purA
-15757,metL
-15757,thrA
-15761,metL
-15761,thrA
-15805,bioD
-15817,pdxH
-15837,mgsA
-15841,zwf
-15869,
-15889,glsB
-15901,gpmM
-15941,argE
-15985,fdhAB
-15989,hmgA
-16037,ppnP
-16069,cdd
-16109,pfkA
-16117,acs
-16125,scrK
-16169,glnA
-16189,hppD
-16197,
-16201,pabC
-16233,panE
-16249,pge
-16293,leuCD
-16369,ldhA
-16373,coaA
-16417,putA
-16425,fdhA
-16429,murD
-16573,serC
-16597,pyrG
-16601,aspA
-16609,apt
-16669,xdhABC
-16793,coaBC
-16809,prpB
-16825,udk
-16833,glutasyn
-16845,gltA
-16853,purB
-16861,bioA
-16881,glpE
-16901,ectA
-16913,pssA
-16953,
-17029,
-17053,tal
-17089,eda
-17105,bioC
-17129,purL
-17185,guaC
-17233,fucI
-17237,ribF
-17277,edd
-17281,ectC
-17325,dapD
-17417,nagK
-17453,purD
-17473,folE
-17601,araB
-17641,speA
-17649,mdcA
-17661,sucCD
-17737,aroE
-17753,luxS
-17769,
-17785,panP
-17801,yhhY
-17805,mtnN
-17825,glk
-17845,ribD
-17905,hprA
-17921,dalD
-17941,acnB
-17973,hpt
-18037,aguA
-18049,argD
-18133,cysDN
-18157,pyk
-18161,pcaF
-18169,eda
-18181,aceB
-18245,coaE
-18253,maeB
-18257,hemF
-18301,guaA
-18321,ilvE
-18405,ald
-18437,ispE
-18445,purH
-18457,ribBA
-18473,hisG
-18585,tpiA
-18609,
-18617,pckA
-18629,nadK
-18633,carAB
-18681,murA
-18793,deoB
-18829,pdxB
-18965,hemD
-18985,menF
-19045,
-19045,
-19069,gloA
-19125,
-19129,tdk
-19169,sdaA
-19317,purK
-19361,ispA
-19381,icd
-19397,coaBC
-19433,idnK
-19453,alaA
-19481,pcaF
-19497,panP
-19513,argF
-19521,pta
-19533,
-19537,hxpB
-19541,proA
-19553,tnaA
-19597,arcA
-19625,ltaE
-19661,mtlD
-19689,rhaD
-19737,
-19801,coaD
-19817,metF
-19821,metF
-19833,purU
-19865,hemE
-19889,galU
-19909,lldD
-19949,folP
-19981,adhC
-19985,adhC
-19993,yebR
-20013,pyrBI
-20049,hisIE
-20117,rhaB
-20129,ppnN
-20221,fhs
-20249,alr
-20273,phhA
-20309,katG
-20345,trxB
-20373,prpE
-20397,metB
-20517,wbpP
-20549,
-20557,ureABC
-20569,
-20605,codA
-20712,bioF
-20736,kbl
-20772,ribE
-20780,gmk
-20956,paaK
-21016,ansA
-21020,aroC
-21036,
-21036,pcaF
-21080,metK
-21096,aroQ
-21140,
-21152,
-21188,nadE
-21196,metE
-21208,serB
-21232,hutH
-21256,aroA
-21368,
-21384,
-21432,mdh
-21448,nifDHK
-21524,leuA
-21540,trpCF
-21588,argC
-21620,fre
-21624,nfsA
-21644,glpK
-21648,pheA
-21732,trpEG
-21760,fadBJ
-21824,aspC
-21868,ribD
-21968,aroB
-22008,metA
-22024,torAZ
-22060,bioB
-22068,ilvC
-22072,araB
-22088,relA
-22108,ilvA
-22144,acnB
-22168,galE
-22168,galE
-22192,purH
-22284,aguB
-22332,leuCD
-22368,araD
-22408,ispA
-22472,coaA
-22488,
-22492,hutG
-22580,mhpD
-22584,hemH
-22608,dapE
-22624,dmpG
-22628,purC
-22748,
-22812,folD
-22824,ppnP
-22828,hisIE
-22840,glsB
-22852,spt
-22860,nadD
-22912,alaA
-22924,
-22936,nagA
-22964,
-22988,mmsA
-22992,mmsA
-23032,purM
-23100,adk
-23104,kdsD
-23148,ackA
-23160,
-23176,acs
-23284,fni
-23288,mhpf
-23352,gabT
-23372,murC
-23424,glmM
-23444,
-23476,trpCF
-23520,propionate coa transferase
-23536,pgm
-23584,folC
-23592,
-23596,ugd
-23660,hutI
-23676,murE
-23688,
-23700,folD
-23704,ribAB
-23736,uraH
-23744,hisC
-23776,lysC
-23780,prpC
-23784,putA
-23800,
-23864,ispF
-23920,purB
-24020,argH
-24064,hemB
-24152,cysC
-24204,xsc
-24248,
-24252,apaH
-24284,asd
-24284,asd
-24292,argAH
-24296,pyrC
-24360,cysG
-24368,arcB
-24384,nadE
-24388,ppnP
-24400,pyrH
-24404,
-24408,add
-24488,ispH
-24560,cysE
-24576,ppa
-24628,nirBD
-24670,xdhABC
-24674,udk
-24793,hisHF
-24801,ilvE
-24809,ilvD
-24813,ilvE
-24825,ispH
-24882,putA
-24927,metC
-24931,metC
-25054,mhpB
-25058,hcaCDEF
-25066,hcaB
-25078,
-25094,cmk
-25098,ndk
-25104,pdxY
-25108,pdxY
-25152,aspC
-25181,speG
-25197,yigB
-25237,ndk
-25245,gloB
-25249,ilvING
-25249,ilvNMG
-25277,cpdA
-25290,adhE
-25290,yiaY
-25294,pcd
-25298,aldB
-25424,hpt
-25588,icd
-25796,aspC
-25876,nadB
-25888,nadA
-26119,ispG
-26152,ribE
-26209,ltaE
-26301,
-26426,pyrG
-26434,trpAB
-26522,acnD
-26558,paaF
-27377,glxK
-27485,
-27626,tkt
-27638,deoD-ppnP
-27642,deoD
-27646,deoD-ppnP
-27650,udk
-27654,ilvING
-27658,deoB
-27674,ndk
-27678,ndk
-27682,ndk
-27686,ndk
-27690,ndk
-27694,ilvD
-27710,
-27714,ushA
-27718,ushA
-27738,deoD
-27742,deoD
-27750,deoD
-27758,gcvT
-27762,mazG
-27786,sucA
-27822,metY
-27826,metB
-27846,mhpA
-27858,cpdB
-27862,cpdB
-27878,cpdB
-27882,cpdB
-27886,cpdB
-27890,cpdB
-27894,cpdB
-27898,cpdB
-28026,nrdAB
-28030,nrdAB
-28034,nrdAB
-28038,nrdAB
-28042,pdh
-28046,pta
-28054,pflB
-28070,cyoE
-28162,udk
-28190,add
-28206,tdk
-28234,
-28330,yjjX
-28330,ndk
-28342,rdgB
-28354,fadE
-28358,fadE
-28362,rdgB
-28370,ppc
-28374,murF
-28386,mraY
-28406,yjjX
-28410,
-28414,puuB
-28530,ushA
-28534,mazG
-28582,ndk
-28610,rdgB
-28659,
-28675,galM
-28783,pepABDN
-28807,ggt
-29355,ushA
-29359,ushA
-29363,ushA
-29367,ushA
-29371,ushA
-29375,ushA
-29379,ushA
-29391,mazG
-29395,mazG
-29399,mazG
-30067,betB
-30075,ppnN
-30115,
-30119,
-30123,
-30131,
-30187,pyrD
-30235,putA
-30295,pyk
-30347,ndk
-30547,paaF
-30655,tmk
-30699,gabT
-30707,
-30727,pyk
-30731,fadE
-30747,fadE
-30751,fadD
-30755,carAB
-30759,codA
-30775,pdxH
-30779,
-30783,pcd
-30787,phhA
-30791,pyk
-30795,sucA
-30799,fadBJ
-30803,pcd
-30815,ushA
-30871,rbsK
-30887,folP
-30931,metB
-30935,ushA
-30939,ndk
-30943,fadE
-31039,fadE
-31075,paaF
-31087,pcaF
-31091,pcaF
-31103,folA
-31107,hppD
-31111,pcaF
-31115,birA
-31131,purN
-31135,apt
-31139,ilvC
-31143,fadBJ
-31159,fadBJ
-31163,paaF
-31167,fadBJ
-31171,paaF
-31179,fadBJ
-31183,pcaF
-31187,fadBJ
-31191,paaF
-31195,fadBJ
-31199,paaF
-31203,pcaF
-31207,fadE
-31227,murG
-31255,ilvC
-31283,glpD
-31747,paaZ
-31755,paaZ
-31843,paaG
-32171,paaABCD
-32263,pop2
-32271,leuB
-32275,pdxA
-32287,leuCD
-32459,cobA
-32527,chbP
-32715,leuB
-33023,gnd
-33791,
-33799,hisD
-33803,hisD
-33867,
-34095,nspC
-34099,nspC
-34111,
-34115,
-34171,dapA
-34191,mhpC
-34767,gcvT
-34799,pcaF
-34851,
-35323,dapB
-35331,dapB
-35587,yigB
-36163,pncB
-36371,
-37751,prpF
-38215,zwf
-40523,sdhABCD
-40663,sdaA
-40951,doeB
-41528,fabV
-41792,fabD
-41800,fabBF
-41804,fabG
-41808,fadAZ
-41812,fabV
-41820,fabBF
-41824,fabG
-41828,fadAZ
-41832,fabV
-41836,fabBF
-41840,fabG
-41844,fadAZ
-41848,fabV
-41852,fabBF
-41856,fabG
-41860,fadAZ
-41864,fabV
-41868,fabBF
-41872,fabG
-41876,fadAZ
-41880,fabV
-41884,fabBF
-41888,fabG
-41892,fadAZ
-41896,fabV
-41900,fabBF
-41904,fabG
-41908,fadAZ
-41912,fabV
-41916,fabBF
-41920,fabG
-41924,fadAZ
-41928,fabV
-41932,
-42288,bioF
-42340,
-42424,leuCD
-42700,bioH
-43604,ispG
-45332,folB
-45700,
-45764,
-45796,phbB
-46012,mqo
-46160,ndh
-46164,wrbA
-51468,dld
-51616,nrdD
-51620,nrdD
-51624,nrdD
-51628,nrdD
-52304,doeA
-52540,ppnP
-54528,
-54644,
-54868,fabV
-54900,fabV
-54936,fabV
-61092,argE
-63204,
-64820,
-65032,hemG
-70223,ilvE
-70295,
-70427,paaI
-72067,gshA
-72075,gshB
-74167,dgcA
-76495,dgcN
-76499,dgcA
-76647,paaF
-77639,cysQ
-77643,cysQ
-ABC_15903,Transport beta-D-glucose ABC
-ABC_16199,Transport urea ABC
-ABC_17750,Transport glycine betaine ABC
-ABC_29034,Transport Fe(3+) ABC
-ABC_29985,Transport L-glutamate ABC
-ABC_29991,Transport L-aspartate ABC
-ABC_32551,Transport L-lysine ABC
-ABC_326268,Transport putrescine ABC
-ABC_32682,Transport L-arginine ABC
-ABC_33384,Transport L-serine ABC
-ABC_35235,Transport L-cysteine ABC
-ABC_40886,Transport beta-L-arabinopyranose ABC
-ABC_43474,Transport phosphate ABC
-ABC_46911,Transport L-ornithine ABC
-ABC_47013,Transport D-ribose ABC
-ABC_507393,Transport taurine ABC
-ABC_57305,Transport glycine ABC
-ABC_57427,Transport L-leucine ABC
-ABC_57595,Transport L-histidine ABC
-ABC_57762,Transport L-valine ABC
-ABC_57834,Transport spermidine ABC
-ABC_57844,Transport L-methionine ABC
-ABC_57912,Transport L-tryptophan ABC
-ABC_57926,Transport L-threonine ABC
-ABC_57972,Transport L-alanine ABC
-ABC_58045,Transport L-isoleucine ABC
-ABC_58048,Transport L-asparagine ABC
-ABC_58095,Transport L-phenylalanine ABC
-ABC_58315,Transport L-tyrosine ABC
-ABC_58359,Transport L-glutamine ABC
-ABC_60039,Transport L-proline ABC
-ABC_60344,Transport heme b ABC
-ANTI_15378_29101,Antiport H(+)::Na+
-ANTI_15378_32551,Antiport H(+)::L-lysine
-ANTI_15378_35235,Antiport H(+)::L-cysteine
-ANTI_15378_57427,Antiport H(+)::L-leucine
-ANTI_15378_57762,Antiport H(+)::L-valine
-ANTI_15378_58045,Antiport H(+)::L-isoleucine
-ANTI_15378_58340,Antiport H(+)::O-acetyl-L-serine
-ANTI_15589_29806,Antiport (S)-malate::fumarate
-ANTI_15589_29991,Antiport (S)-malate::L-aspartate
-ANTI_15589_30031,Antiport (S)-malate::succinate
-ANTI_29806_29991,Antiport fumarate::L-aspartate
-ANTI_29806_30031,Antiport fumarate::succinate
-ANTI_29991_30031,Antiport L-aspartate::succinate
-ANTI_29991_57972,Antiport L-aspartate::L-alanine
-ANTI_32682_46911,Antiport L-arginine::L-ornithine
-ANTI_57287_57288,Antiport CoA::acetyl-CoA
-ATPM,ATP Maintenance reaction
-DF_13705,Diffusion acetoacetate
-DF_15343,Diffusion acetaldehyde
-DF_15354,Diffusion choline
-DF_15361,Diffusion pyruvate
-DF_15377,Diffusion H2O
-DF_15378,Diffusion H(+)
-DF_15379,Diffusion O2
-DF_15562,Diffusion D-threo-isocitrate
-DF_15589,Diffusion (S)-malate
-DF_15677,Diffusion (R)-allantoin
-DF_15678,Diffusion (S)-allantoin
-DF_15698,Diffusion 2'-deoxycytidine
-DF_15740,Diffusion formate
-DF_15792,Diffusion malonate
-DF_15903,Diffusion beta-D-glucose
-DF_16004,Diffusion (R)-lactate
-DF_16040,Diffusion cytosine
-DF_16189,Diffusion sulfate
-DF_16199,Diffusion urea
-DF_16235,Diffusion guanine
-DF_16236,Diffusion ethanol
-DF_16301,Diffusion nitrite
-DF_16335,Diffusion adenosine
-DF_16383,Diffusion cis-aconitate
-DF_16450,Diffusion 2'-deoxyuridine
-DF_16526,Diffusion CO2
-DF_16651,Diffusion (S)-lactate
-DF_16659,Diffusion (R)-glycerate
-DF_16704,Diffusion uridine
-DF_16708,Diffusion adenine
-DF_16709,Diffusion pyridoxine
-DF_16750,Diffusion guanosine
-DF_16810,Diffusion 2-oxoglutarate
-DF_16842,Diffusion formaldehyde
-DF_16881,Diffusion indole
-DF_16899,Diffusion D-mannitol
-DF_16947,Diffusion citrate
-DF_17172,Diffusion 2'-deoxyguanosine
-DF_17256,Diffusion 2'-deoxyadenosine
-DF_17310,Diffusion pyridoxal
-DF_17368,Diffusion hypoxanthine
-DF_17378,Diffusion D-glyceraldehyde
-DF_17544,Diffusion hydrogencarbonate
-DF_17562,Diffusion cytidine
-DF_17568,Diffusion uracil
-DF_17596,Diffusion inosine
-DF_17632,Diffusion nitrate
-DF_17712,Diffusion xanthine
-DF_17748,Diffusion thymidine
-DF_17750,Diffusion glycine betaine
-DF_17754,Diffusion glycerol
-DF_17775,Diffusion urate
-DF_17790,Diffusion methanol
-DF_17821,Diffusion thymine
-DF_17992,Diffusion Sucrose
-DF_17997,Diffusion N2
-DF_18107,Diffusion xanthosine
-DF_18276,Diffusion H2
-DF_18391,Diffusion D-gluconate
-DF_28061,Diffusion alpha-D-galactose
-DF_28645,Diffusion beta-D-fructose
-DF_28938,Diffusion NH4(+)
-DF_28997,Diffusion 2'-deoxyinosine
-DF_29033,Diffusion Fe(2+)
-DF_29034,Diffusion Fe(3+)
-DF_29101,Diffusion Na+
-DF_29806,Diffusion fumarate
-DF_29985,Diffusion L-glutamate
-DF_29991,Diffusion L-aspartate
-DF_30031,Diffusion succinate
-DF_30089,Diffusion acetate
-DF_32551,Diffusion L-lysine
-DF_326268,Diffusion putrescine
-DF_32682,Diffusion L-arginine
-DF_33384,Diffusion L-serine
-DF_35235,Diffusion L-cysteine
-DF_40886,Diffusion beta-L-arabinopyranose
-DF_43474,Diffusion phosphate
-DF_46911,Diffusion L-ornithine
-DF_47013,Diffusion D-ribose
-DF_506227,Diffusion N-acetyl-D-glucosamine
-DF_507393,Diffusion taurine
-DF_57287,Diffusion CoA
-DF_57288,Diffusion acetyl-CoA
-DF_57305,Diffusion glycine
-DF_57427,Diffusion L-leucine
-DF_57595,Diffusion L-histidine
-DF_57597,Diffusion sn-glycerol 3-phosphate
-DF_57762,Diffusion L-valine
-DF_57834,Diffusion spermidine
-DF_57844,Diffusion L-methionine
-DF_57912,Diffusion L-tryptophan
-DF_57926,Diffusion L-threonine
-DF_57972,Diffusion L-alanine
-DF_58045,Diffusion L-isoleucine
-DF_58048,Diffusion L-asparagine
-DF_58095,Diffusion L-phenylalanine
-DF_58315,Diffusion L-tyrosine
-DF_58340,Diffusion O-acetyl-L-serine
-DF_58359,Diffusion L-glutamine
-DF_60039,Diffusion L-proline
-DF_60344,Diffusion heme b
-EX_13705,Exchange acetoacetate
-EX_15343,Exchange acetaldehyde
-EX_15354,Exchange choline
-EX_15361,Exchange pyruvate
-EX_15377,Exchange H2O
-EX_15378,Exchange H(+)
-EX_15379,Exchange O2
-EX_15562,Exchange D-threo-isocitrate
-EX_15589,Exchange (S)-malate
-EX_15677,Exchange (R)-allantoin
-EX_15678,Exchange (S)-allantoin
-EX_15698,Exchange 2'-deoxycytidine
-EX_15740,Exchange formate
-EX_15792,Exchange malonate
-EX_15903,Exchange beta-D-glucose
-EX_16004,Exchange (R)-lactate
-EX_16040,Exchange cytosine
-EX_16189,Exchange sulfate
-EX_16199,Exchange urea
-EX_16235,Exchange guanine
-EX_16236,Exchange ethanol
-EX_16301,Exchange nitrite
-EX_16335,Exchange adenosine
-EX_16383,Exchange cis-aconitate
-EX_16450,Exchange 2'-deoxyuridine
-EX_16526,Exchange CO2
-EX_16651,Exchange (S)-lactate
-EX_16659,Exchange (R)-glycerate
-EX_16704,Exchange uridine
-EX_16708,Exchange adenine
-EX_16709,Exchange pyridoxine
-EX_16750,Exchange guanosine
-EX_16810,Exchange 2-oxoglutarate
-EX_16842,Exchange formaldehyde
-EX_16881,Exchange indole
-EX_16899,Exchange D-mannitol
-EX_16947,Exchange citrate
-EX_17172,Exchange 2'-deoxyguanosine
-EX_17256,Exchange 2'-deoxyadenosine
-EX_17310,Exchange pyridoxal
-EX_17368,Exchange hypoxanthine
-EX_17378,Exchange D-glyceraldehyde
-EX_17544,Exchange hydrogencarbonate
-EX_17562,Exchange cytidine
-EX_17568,Exchange uracil
-EX_17596,Exchange inosine
-EX_17632,Exchange nitrate
-EX_17712,Exchange xanthine
-EX_17748,Exchange thymidine
-EX_17750,Exchange glycine betaine
-EX_17754,Exchange glycerol
-EX_17775,Exchange urate
-EX_17790,Exchange methanol
-EX_17821,Exchange thymine
-EX_17992,Exchange Sucrose
-EX_17997,Exchange N2
-EX_18107,Exchange xanthosine
-EX_18276,Exchange H2
-EX_18391,Exchange D-gluconate
-EX_28061,Exchange alpha-D-galactose
-EX_28645,Exchange beta-D-fructose
-EX_28938,Exchange NH4(+)
-EX_28997,Exchange 2'-deoxyinosine
-EX_29033,Exchange Fe(2+)
-EX_29034,Exchange Fe(3+)
-EX_29101,Exchange Na+
-EX_29806,Exchange fumarate
-EX_29985,Exchange L-glutamate
-EX_29991,Exchange L-aspartate
-EX_30031,Exchange succinate
-EX_30089,Exchange acetate
-EX_32551,Exchange L-lysine
-EX_326268,Exchange putrescine
-EX_32682,Exchange L-arginine
-EX_33384,Exchange L-serine
-EX_35235,Exchange L-cysteine
-EX_40886,Exchange beta-L-arabinopyranose
-EX_43474,Exchange phosphate
-EX_46911,Exchange L-ornithine
-EX_47013,Exchange D-ribose
-EX_506227,Exchange N-acetyl-D-glucosamine
-EX_507393,Exchange taurine
-EX_57287,Exchange CoA
-EX_57288,Exchange acetyl-CoA
-EX_57305,Exchange glycine
-EX_57427,Exchange L-leucine
-EX_57595,Exchange L-histidine
-EX_57597,Exchange sn-glycerol 3-phosphate
-EX_57762,Exchange L-valine
-EX_57834,Exchange spermidine
-EX_57844,Exchange L-methionine
-EX_57912,Exchange L-tryptophan
-EX_57926,Exchange L-threonine
-EX_57972,Exchange L-alanine
-EX_58045,Exchange L-isoleucine
-EX_58048,Exchange L-asparagine
-EX_58095,Exchange L-phenylalanine
-EX_58315,Exchange L-tyrosine
-EX_58340,Exchange O-acetyl-L-serine
-EX_58359,Exchange L-glutamine
-EX_60039,Exchange L-proline
-EX_60344,Exchange heme b
-H_ATPsynthase,F-type H+-transporting ATPase
-Na_ATPsynthase,F-type Na+-transporting ATPase
-PERM_13705,Permease acetoacetate
-PERM_15343,Permease acetaldehyde
-PERM_15361,Permease pyruvate
-PERM_15377,Permease H2O
-PERM_15379,Permease O2
-PERM_15698,Permease 2'-deoxycytidine
-PERM_16236,Permease ethanol
-PERM_16335,Permease adenosine
-PERM_16450,Permease 2'-deoxyuridine
-PERM_16526,Permease CO2
-PERM_16659,Permease (R)-glycerate
-PERM_16704,Permease uridine
-PERM_16709,Permease pyridoxine
-PERM_16750,Permease guanosine
-PERM_16842,Permease formaldehyde
-PERM_16881,Permease indole
-PERM_17172,Permease 2'-deoxyguanosine
-PERM_17256,Permease 2'-deoxyadenosine
-PERM_17310,Permease pyridoxal
-PERM_17368,Permease hypoxanthine
-PERM_17378,Permease D-glyceraldehyde
-PERM_17544,Permease hydrogencarbonate
-PERM_17562,Permease cytidine
-PERM_17596,Permease inosine
-PERM_17748,Permease thymidine
-PERM_17754,Permease glycerol
-PERM_17775,Permease urate
-PERM_17790,Permease methanol
-PERM_17821,Permease thymine
-PERM_17997,Permease N2
-PERM_18107,Permease xanthosine
-PERM_18276,Permease H2
-PERM_28061,Permease alpha-D-galactose
-PERM_28938,Permease NH4(+)
-PERM_28997,Permease 2'-deoxyinosine
-PERM_29033,Permease Fe(2+)
-PTS_15903,Transport beta-D-glucose PTS
-PTS_16899,Transport D-mannitol PTS
-PTS_17992,Transport Sucrose PTS
-PTS_28645,Transport beta-D-fructose PTS
-PTS_506227,Transport N-acetyl-D-glucosamine PTS
-SYM_15354_15378,Symport choline::H(+)
-SYM_15378_15562,Symport H(+)::D-threo-isocitrate
-SYM_15378_15589,Symport H(+)::(S)-malate
-SYM_15378_15677,Symport H(+)::(R)-allantoin
-SYM_15378_15678,Symport H(+)::(S)-allantoin
-SYM_15378_15740,Symport H(+)::formate
-SYM_15378_16004,Symport H(+)::(R)-lactate
-SYM_15378_16040,Symport H(+)::cytosine
-SYM_15378_16189,Symport H(+)::sulfate
-SYM_15378_16235,Symport H(+)::guanine
-SYM_15378_16301,Symport H(+)::nitrite
-SYM_15378_16383,Symport H(+)::cis-aconitate
-SYM_15378_16651,Symport H(+)::(S)-lactate
-SYM_15378_16708,Symport H(+)::adenine
-SYM_15378_16810,Symport H(+)::2-oxoglutarate
-SYM_15378_16947,Symport H(+)::citrate
-SYM_15378_17568,Symport H(+)::uracil
-SYM_15378_17632,Symport H(+)::nitrate
-SYM_15378_17712,Symport H(+)::xanthine
-SYM_15378_17750,Symport H(+)::glycine betaine
-SYM_15378_18391,Symport H(+)::D-gluconate
-SYM_15378_29806,Symport H(+)::fumarate
-SYM_15378_29985,Symport H(+)::L-glutamate
-SYM_15378_29991,Symport H(+)::L-aspartate
-SYM_15378_30031,Symport H(+)::succinate
-SYM_15378_30089,Symport H(+)::acetate
-SYM_15378_32551,Symport H(+)::L-lysine
-SYM_15378_32682,Symport H(+)::L-arginine
-SYM_15378_33384,Symport H(+)::L-serine
-SYM_15378_35235,Symport H(+)::L-cysteine
-SYM_15378_43474,Symport H(+)::phosphate
-SYM_15378_57305,Symport H(+)::glycine
-SYM_15378_57427,Symport H(+)::L-leucine
-SYM_15378_57595,Symport H(+)::L-histidine
-SYM_15378_57597,Symport H(+)::sn-glycerol 3-phosphate
-SYM_15378_57762,Symport H(+)::L-valine
-SYM_15378_57844,Symport H(+)::L-methionine
-SYM_15378_57912,Symport H(+)::L-tryptophan
-SYM_15378_57926,Symport H(+)::L-threonine
-SYM_15378_57972,Symport H(+)::L-alanine
-SYM_15378_58045,Symport H(+)::L-isoleucine
-SYM_15378_58048,Symport H(+)::L-asparagine
-SYM_15378_58095,Symport H(+)::L-phenylalanine
-SYM_15378_58315,Symport H(+)::L-tyrosine
-SYM_15378_58359,Symport H(+)::L-glutamine
-SYM_15378_60039,Symport H(+)::L-proline
-SYM_15589_29101,Symport (S)-malate::Na+
-SYM_15740_29101,Symport formate::Na+
-SYM_15792_29101,Symport malonate::Na+
-SYM_16189_29101,Symport sulfate::Na+
-SYM_16235_29101,Symport guanine::Na+
-SYM_16708_29101,Symport adenine::Na+
-SYM_17568_29101,Symport uracil::Na+
-SYM_17712_29101,Symport xanthine::Na+
-SYM_29101_29806,Symport Na+::fumarate
-SYM_29101_29985,Symport Na+::L-glutamate
-SYM_29101_29991,Symport Na+::L-aspartate
-SYM_29101_30031,Symport Na+::succinate
-SYM_29101_30089,Symport Na+::acetate
-SYM_29101_33384,Symport Na+::L-serine
-SYM_29101_43474,Symport Na+::phosphate
-SYM_29101_57305,Symport Na+::glycine
-SYM_29101_57427,Symport Na+::L-leucine
-SYM_29101_57762,Symport Na+::L-valine
-SYM_29101_57926,Symport Na+::L-threonine
-SYM_29101_57972,Symport Na+::L-alanine
-SYM_29101_58045,Symport Na+::L-isoleucine
-SYM_29101_60039,Symport Na+::L-proline
-biomass,Biomass reaction
-biotin_pimeloyl_acp_methyl_ester_synthase,Pimeloyl-[acp] methyl ester synthase
-cyt_bc1,Cytochrome c oxidase
-cyt_bd,Cytochrome oxidase BD-I
-cyt_bo,Cytochrome oxidase bo3
-cyt_c,Cytochrome c oxidase
-cyt_c_cbb3,"Cytochrome c oxidase, cbb3-type"
-glycogen_phosphorylase,Glycogen phosphorylase
-glycogen_synthase,Glycogen synthase (ADPGlc)
-nfn,NAD(P)+ transhydrogenase (ferredoxin)
-nqr,Na+-transporting NADH:ubiquinone oxidoreductase
-oad,oxaloacetate decarboxylase (Na(+) extruding)
-pnt,NADPH:NAD+ oxidoreductase H translocase
-rnf,H+/Na+-translocating ferredoxin:NAD+ oxidoreductase
-20001,aldA
-25302,nudB
-25306,dihydroneopterin-mono-phosphatase
-33707,pduX
-11492,cobD
-21896,cobD
-21624,FMN reductase
-27345,bluB
-27551,uppS
-28094,bcrC
-28386,mraY
-31227,murG
-41892,fabA
-41892,fabZ
-13925,lpxA
-25209,lpxC
-17817,lpxD
-25213,lpxH
-22668,lpxB
-20700,lpxK
-28066,kdtA
-28062,kdtA
-28442,lpxL
-28442,lpxL
-28438,lpxM
-14053,kdsA
-23448,kdsB
-24869,LACC1
-61296,mtnA
-61300,ald2
-19025,nadB
-30043,aspox
-31507,pyrdox
-21948,formamide amidohydrolase
-16957,cGMP-PDE
-21612,rspA
-35095,cutC
-20217,trimethylamine-oxide aldolase
-54828,ophA1
-13541,tetH
-10048,metY
-23800,megL
-22636,nudG
-34935,ATP adenylyltransferase
-23412,N-acetylputrescine acetylhydrolase
-28278,csdA
+27682,ATP:dTDP phosphotransferase
+24204,"acetyl-phosphate:sulfite S-acetyltransferase (acyl-phosphate hydrolysing, 2-oxoethyl-forming)"
+23596,UDP-glucose:NAD+ 6-oxidoreductase
+18965,hydroxymethylbilane hydro-lyase(cyclizing)
+24576,diphosphate phosphohydrolase
+15989,(R)-mevalonate:NADP+ oxidoreductase (CoA acylating)
+12056,D-erythrose 4-phosphate:NAD+ oxidoreductase
+11680,xanthosine-5'-phosphate:L-glutamine amido-ligase (AMP-forming)
+10812,N-succinyl-L-glutamate 5-semialdehyde:NAD+ oxidoreductase
+23800,L-methionine methanethiol-lyase (deaminating2-oxobutanoate-forming)
+17769,"choline,reduced-ferredoxin:oxygen oxidoreductase"
+70223,2-aminobutanoate:2-oxoglutarate aminotransferase
+25152,L-phenylalanine:2-oxoglutarate aminotransferase
+13677,D-ribulose-5-phosphate 3-epimerase
+18617,ATP:oxaloacetate carboxy-lyase (transphosphorylatingphosphoenolpyruvate-forming)
+10532,L-serine hydro-lyase [adding 1-C-(indol-3-yl)glycerol 3-phosphate L-tryptophan and glyceraldehyde-3-phosphate-forming]
+20345,NADPH:oxidized-thioredoxin oxidoreductase
+23864,2-phospho-4-(cytidine 5'-diphospho)-2-C-methyl-D-erythritol CMP-lyase (cyclizing)
+19597,L-arginine iminohydrolase
+21868,"2,5-diamino-6-hydroxy-4-(5-phosphoribosylamino)-pyrimidine 2-aminohydrolase"
+12909,ferrocytochrome:nitrate oxidoreductase
+28406,xanthosine 5'-triphosphate phosphohydrolase
+28094,undecaprenyl-diphosphate phosphohydrolase
+16037,thymidine:phosphate deoxy-alpha-D-ribosyltransferase
+22712,GTP:adenosylcobinamide-phosphate guanylyltransferase
+10540,"7,8-dihydroneopterin glycolaldehyde-lyase [6-(hydroxymethyl)-7,8-dihydropterin-forming]"
+25237,ATP:CDP phosphotransferase
+12104,"5,10-methylenetetrahydrofolate:dUMP C-methyltransferase"
+22368,L-ribulose-5-phosphate 4-epimerase
+30815,nicotinamide ribonucleotide phosphohydrolase
+17973,IMP:diphosphate phospho-D-ribosyltransferase
+25213,"UDP-2,3-bis[(3R)-3-hydroxymyristoyl]-alpha-D-glucosamine 2,3-bis[(3R)-3-hydroxymyristoyl]-beta-D-glucosaminyl 1-phosphate phosphohydrolase"
+13493,"(R)-2,3-dihydroxy-3-methylpentanoate:NADP+ oxidoreductase (isomerizing)"
+19125,L-serine:glyoxylate aminotransferase
+22060,dethiobiotin:sulfur sulfurtransferase
+16201,4-amino-4-deoxychorismate pyruvate-lyase
+27862,guanosine 3'-phosphate phosphohydrolase
+24064,5-aminolevulinate hydro-lyase (adding 5-aminolevulinate and cyclizing porphobilinogen-forming)
+38215,beta-D-glucose-6-phosphate:NAD+ 1-oxidoreductase
+52540,cytidine:orthophosphate alpha-D-ribosyltransferase
+26426,UTP:L-glutamine amido-ligase (ADP-forming)
+22168,UDP-glucose 4-epimerase
+13065,ATP phosphohydrolase
+26434,L-serine hydro-lyase (adding indole L-tryptophan-forming)
+21620,FMNH2:NAD+ oxidoreductase
+22988,"3-oxopropanoate:NADP+ oxidoreductase (decarboxylating, CoA-acetylating)"
+18181,"acetyl-CoA:glyoxylate C-acetyltransferase (thioester-hydrolysing, carboxymethyl-forming)"
+30655,ATP:dUMP phosphotransferase
+31199,(S)-hydroxyoctanoyl-CoA hydro-lyase
+23704,"GTP 7,8-8,9-dihydrolase (diphosphate-forming)"
+31187,"(2S,3S)-3-hydroxy-2-methylbutanoyl-CoA:NAD+ oxidoreductase"
+11708,IMP:NAD+ oxidoreductase
+21188,deamido-NAD+:ammonia ligase (AMP-forming)
+18793,"D-ribose 1,5-phosphomutase"
+31091,lauroyl-CoA:acetyl-CoA C-acyltransferase
+15425,coproporphyrinogen-III:S-adenosyl-L-methionine oxidoreductase(decarboxylating)
+28330,ITP phosphohydrolase
+30699,beta-alanine:2-oxoglutarate aminotransferase
+12400,nicotinamide-D-ribonucleotide amidohydrolase
+26209,L-allo-threonine acetaldehyde-lyase (glycine-forming)
+41884,dodecanoyl-[acyl-carrier-protein]:malonyl-[acyl-carrier-protein] C-acyltransferase (decarboxylating)
+12228,L-aspartate:L-glutamine amido-ligase (AMP-forming)
+15389,"ATP diphosphate-lyase (cyclizing 3',5'-cyclic-AMP-forming)"
+14077,L-alanine:3-oxopropanoate aminotransferase
+30347,ATP:IDP phosphotransferase
+25302,"7,8-dihydroneopterin 3'-triphosphate diphosphohydrolase"
+42700,pimeloyl-[acyl-carrier protein]-methyl-ester hydrolase
+24793,5-[(5-phospho-1-deoxy-D-ribulos-1-ylamino)methylideneamino]-1-(5-phospho-beta-D-ribosyl)imidazole-4-carboxamide D-erythro-1-(imidazol-4-yl)glycerol 3-phosphate-lyase (L-glutamine-hydrolysing 5-amino-1-(5-phospho-beta-D-ribosyl)imidazole-4-carboxamide-forming)
+21644,ATP:glycerol 3-phosphotransferase
+24284,L-aspartate-4-semialdehyde:NADP+ oxidoreductase (phosphorylating)
+19069,(R)-S-lactoylglutathione methylglyoxal-lyase (isomerizing)
+18437,ATP:4-(cytidine 5'-diphospho)-2-C-methyl-D-erythritol 2-phosphotransferase
+28807,glutathione gamma-glutamylaminopeptidase
+22992,"3-oxopropanoate:NAD+ oxidoreductase (decarboxylating, CoA-acetylating)"
+15009,dihydrofolate:NAD+ oxidoreductase
+14717,"phosphoenolpyruvate:D-erythrose-4-phosphate C-(1-carboxyvinyl)transferase (phosphate hydrolysing, 2-carboxy-2-oxoethyl-forming)"
+32527,"N,N'-diacetylchitobiose:phosphate N-acetyl-D-glucosaminyltransferase"
+41904,(3R)-3-hydroxypalmitoyl-[acyl-carrier-protein]:NADP+ oxidoreductase
+41812,butyryl-[acp]:NAD+ trans-2-oxidoreductase
+41828,(3R)-3-hydroxyhexanoyl-[acyl-carrier-protein] hydro-lyase
+16369,(R)-lactate:NAD+ oxidoreductase
+28362,2'-deoxyguanosine 5'-triphosphate diphosphohydrolase
+15193,dGTP triphosphohydrolase
+77639,3'-phospho-5'-adenylyl sulfate 3'-phosphohydrolase
+40951,"N2-acetyl-L-2,4-diaminobutanoate amidohydrolase"
+15985,formate:NAD+ oxidoreductase
+16373,ATP:pantothenate 4'-phosphotransferase
+41892,(3R)-3-hydroxytetradecanoyl-[acyl-carrier-protein] hydro-lyase
+31191,(S)-hydroxydecanoyl-CoA hydro-lyase
+28030,2'-deoxyguanosine 5'-diphosphate:oxidized-thioredoxin 2'-oxidoreductase
+27878,"2',3'-cyclic UMP 3'-nucleotidohydrolase"
+28530,xanthosine 5'-phosphate phosphohydrolase
+17661,succinate:CoA ligase (ADP-forming)
+23592,glycerol:NADP+ oxidoreductase
+28374,"UDP-N-acetylmuramoyl-L-alanyl-D-glutamyl-meso-2,6-diaminoheptanedioate:D-alanyl-D-alanine ligase (ADP-forming)"
+46160,NADH:menaquinone oxidoreductase
+10048,O-acetyl-L-homoserine:methanethiol 3-amino-3-carboxypropyltransferase
+25108,ATP:pyridoxine 5'-phosphotransferase
+41836,hexanoyl-[acyl-carrier protein]:malonyl-[acyl-carrier-protein] C-acyltransferase (decarboxylating)
+10228,citrate hydro-lyase (cis-aconitate-forming)
+27686,ATP:GDP phosphotransferase
+11096,sn-glycerol-3-phosphate:NADP+ 2-oxidoreductase
+33803,L-histidinal:NAD+ oxidoreductase
+24296,(S)-dihydroorotate amidohydrolase
+28070,"(2E,6E)-farnesyl-diphosphate:protoheme IX farnesyltranstransferase"
+12653,(S)-malate:NAD+ oxidoreductase (decarboxylating)
+30803,4-aminobutyraldehyde:NAD+ oxidoreductase
+27710,ATP:guanosine 5'-phosphotransferase
+41852,octanoyl-[acyl-carrier protein]:malonyl-[acyl-carrier-protein] C-acyltransferase (decarboxylating)
+22852,L-serine:pyruvate aminotransferase
+21540,N-(5-phospho-beta-D-ribosyl)anthranilate ketol-isomerase
+24813,L-valine:2-oxoglutarate aminotransferase
+23688,adenine aminohydrolase
+27674,ATP:dADP phosphotransferase
+27750,deoxyinosine:orthophosphate ribosyltransferase
+17753,"S-(5-deoxy-D-ribos-5-yl)-L-homocysteine homocysteine-lyase [(4S)-4,5-dihydroxypentan-2,3-dione-forming]"
+31115,biotin:CoA ligase (AMP-forming)
+23444,(S)-lactate:NAD+ oxidoreductase
+76499,N-acetyl-glutamate racemase
+24560,acetyl-CoA:L-serine O-acetyltransferase
+16861,S-adenosyl-L-methionine:8-amino-7-oxononanoate aminotransferase
+23104,D-arabinose-5-phosphate aldose-ketose-isomerase
+28054,propanoyl-CoA:formate C-propanoyltransferase
+34171,"L-aspartate-4-semialdehyde hydro-lyase [adding pyruvate and cyclizing (2S,4S)-4-hydroxy-2,3,4,5-tetrahydrodipicolinate-forming]"
+29363,2'-deoxycytidine 5'-monophosphate phosphohydrolase
+15101,"meso-2,6-diaminoheptanedioate carboxy-lyase (L-lysine-forming)"
+11352,ATP:acetate phosphotransferase
+40523,succinate:quinone oxidoreductase
+20445,L-arogenate:2-oxoglutarate aminotransferase
+24248,L-alanine:glyoxylate aminotransferase
+36163,"5-phospho-alpha-D-ribose 1-diphosphate:nicotinate ligase (ADP, diphosphate-forming)"
+18157,ATP:pyruvate 2-O-phosphotransferase
+14253,"guanosine-3',5'-bis(diphosphate) 3'-diphosphohydrolase"
+24368,L-ornithine ammonia-lyase (cyclizing L-proline-forming)
+10948,ATP:D-glucosamine 6-phosphotransferase
+18257,coproporphyrinogen:oxygen oxidoreductase (decarboxylating)
+16793,N-[(R)-4'-phosphopantothenoyl]-L-cysteine carboxy-lyase
+31163,(S)-3-hydroxyhexadecanoyl-CoA hydro-lyase
+35331,"2,3,4,5-tetrahydrodipicolinate:NADP+ 4-oxidoreductase"
+13217,succinate-semialdehyde:NAD+ oxidoreductase
+27786,2-oxoglutarate:NAD+ 2-oxidoreductase (CoA-succinylating)
+13121,ATP:shikimate 3-phosphotransferase
+43604,(E)-4-hydroxy-3-methylbut-2-en-1-yl-diphosphate:oxidized flavodoxin oxidoreductase
+22668,"UDP-2,3-bis(3-hydroxytetradecanoyl)glucosamine:2,3-bis-(3-hydroxytetradecanoyl)-alpha-D-glucosaminyl-1-phosphate 2,3-bis(3-hydroxytetradecanoyl)-glucosaminyltransferase"
+22068,"2,3-dihydroxy-3-methylbutanoate:NADP+ oxidoreductase (isomerizing)"
+14369,2-phosphoglycolate phosphohydrolase
+13193,5-carboxyamino-1-(5-phospho-D-ribosyl)imidazole carboxymutase
+10244,4-fumarylacetoacetate fumarylhydrolase
+22072,ATP:L-ribulose 5-phosphotransferase
+14905,5-phosphoribosylamine:diphosphate phospho-alpha-D-ribosyltransferase (glutamate-amidating)
+21152,trans-4-hydroxy-L-proline 2-epimerase
+22748,4-hydroxy-4-methyl-2-oxoglutarate pyruvate-lyase (pyruvate-forming)
+31107,"phenylpyruvate:oxygen oxidoreductase (hydroxylating,decarboxylating)"
+14105,trans-4-hydroxy-L-proline:NAD+ 5-oxidoreductase
+24931,L-cysteine hydrogen-sulfide-lyase (deaminating pyruvate-forming)
+11092,sn-glycerol-3-phosphate:NAD+ 2-oxidoreductase
+16609,AMP:diphosphate phospho-D-ribosyltransferase
+21624,FMNH2:NADP+ oxidoreductase
+18301,xanthosine-5'-phosphate:ammonia ligase (AMP-forming)
+31843,"2-(1,2-epoxy-1,2-dihydrophenyl)acetyl-CoA isomerase"
+24388,uridine:phosphate alpha-D-ribosyltransferase
+16429,UDP-N-acetylmuramoyl-L-alanine:D-glutamate ligase (ADP-forming)
+13925,(R)-3-hydroxytetradecanoly-[acyl-carrier-protein]:UDP-N-acetyl-glucosamine 3-O-(3-hydroxytetradecanoyl)transferase
+30755,ATP:carbamate phosphotransferase
+27658,"2-deoxy-D-ribose 1-phosphate 1,5-phosphomutase"
+22936,N-acetyl-D-glucosamine-6-phosphate amidohydrolase
+17817,(3R)-3-hydroxymyristoyl-[acyl-carrier protein]:UDP-3-O-[(3R)-3-hydroxymyristoyl]-alpha-D-glucosamine N-acetyltransferase
+41880,dodecanoyl-[acp]:NAD+ trans-2-oxidoreductase
+36371,2-hydroxybutyrate:NAD+ oxidoreductase
+19889,UTP:alpha-D-glucose-1-phosphate uridylyltransferase
+18161,myristoyl-CoA:acetylCoA C-myristoyltransferase
+45796,(R)-3-hydroxybutanoyl-CoA:NADP+ oxidoreductase
+20273,"L-phenylalanine,tetrahydrobiopterin:oxygen oxidoreductase(4-hydroxylating)"
+21036,acetyl-CoA:acetyl-CoA C-acetyltransferase
+13697,ATP:D-ribose 5-phosphotransferase
+16881,thiosulfate:cyanide sulfurtranserase
+31111,butanoyl-CoA:acetyl-CoA C-butanoyltransferase
+31103,dihydrofolate:NADP+ oxidoreductase
+30871,ATP:2-deoxy-D-ribose 5-phosphotransferase
+28190,deoxyadenosine aminohydrolase
+14797,ATP:2-dehydro-3-deoxy-D-gluconate 6-phosphotransferase
+13717,1-deoxy-D-xylulose-5-phosphate isomeroreductase
+19537,D-mannitol-1-phosphate phosphohydrolase
+21140,ATP:inosine 5'-phosphotransferase
+32275,4-(phosphonooxy)threonine:NAD oxidoreductase
+14265,"(S)-4-amino-5-oxopentanoate 4,5-aminomutase"
+19833,10-formyltetrahydrofolate amidohydrolase
+19993,L-methionine:oxidized-thioredoxin S-oxidoreductase
+22912,L-valine:pyruvate aminotransferase
+41792,malonyl-CoA:[acyl-carrier-protein] S-malonyltransferase
+13665,"GTP diphosphate-lyase (cyclizing 3',5'-cyclic-GMP-forming)"
+34095,carboxyspermidine carboxy-lyase (spermidine-forming)
+17277,6-phospho-D-gluconate hydro-lyase (2-dehydro-3-deoxy-6-phospho-D-gluconate-forming)
+21196,5-methyltetrahydropteroyltri-L-glutamate:L-homocysteine S-methyltransferase
+18985,chorismate hydroxymutase
+26522,"(2S,3S)-2-hydroxybutane-1,2,3-tricarboxylate hydro-lyase (2-methyl-trans-aconitate forming)"
+20221,formate:tetrahydrofolate ligase (ADP-forming)
+41832,hexanoyl-[acp]:NAD+ trans-2-oxidoreductase
+28042,pyruvate:NAD+ 2-oxidoreductase (CoA-acetylating)
+28046,propanoyl-CoA:phosphate propanoyltransferase
+12813,glutamate racemase
+20549,thiosulfate:ferricytochrome-c oxidoreductase
+15501,L-glutamate:NADP+ oxidoreductase (transaminating)
+16125,ATP:D-fructose 6-phosphotransferase
+13017,UMP:diphosphate phospho-alpha-D-ribosyltransferase
+19453,L-alanine:2-oxoglutarate aminotransferase
+18473,1-(5-phospho-D-ribosyl)-ATP:diphosphate phospho-alpha-D-ribosyl-transferase
+19381,oxalosuccinate carboxy-lyase (2-oxoglutarate-forming)
+15805,"7,8-diaminononanoate:carbon-dioxide cyclo-ligase"
+12697,ATP:dGMP phosphotransferase
+28358,"tetradecanoyl-CoA:electron-transfer flavoprotein 2,3-oxidoreductase"
+14729,"beta-D-fructose-1,6-bisphosphate D-glyceraldehyde-3-phosphate-lyase (glycerone-phosphate-forming)"
+30075,cytidine-5'-monophosphate phosphoribohydrolase
+27646,inosine:phosphate alpha-D-ribosyltransferase
+27626,sedoheptulose-7-phosphate:D-glyceraldehyde-3-phosphate glycolaldehydetransferase
+19317,5-amino-1-(5-phospho-D-ribosyl)imidazole:carbon-dioxide ligase (ADP-forming)
+14829,"O3-acetyl-L-serine:thiosulfate 2-amino-2-carboxyethyltransferase (reducing, L-cysteine-forming)"
+29379,2'-deoxyguanosine 5'-monophosphate phosphohydrolase
+22008,succinyl-CoA:L-homoserine O-succinyltransferase
+19865,uroporphyrinogen-III carboxy-lyase
+20373,ATP:propanoate adenylyltransferase
+18585,D-glyceraldehyde-3-phosphate aldose-ketose-isomerase
+17185,inosine-5'-phosphate:NADP+ oxidoreductase (aminating)
+20605,cytosine aminohydrolase
+28206,ATP:deoxyuridine 5'-phosphotransferase
+27678,ATP:dCDP phosphotransferase
+31207,"hexanoyl-CoA:electron-transfer flavoprotein 2,3-oxidoreductase"
+41804,(3R)-3-hydroxybutanoyl-[acyl-carrier protein]:NADP+ oxidoreductase
+30775,pyridoxamine:oxygen oxidoreductase (deaminating)
+12605,1-deoxy-D-xylulose-5-phosphate pyruvate-lyase (carboxylating)
+20557,urea amidohydrolase
+14089,glycine:2-oxoglutarate aminotransferase
+76647,(3S)-3-hydroxyacyl-CoA hydro-lyase
+28038,2'-deoxycytidine diphosphate:oxidized-thioredoxin 2'-oxidoreductase
+21360,ATP:nicotinamide-nucleotide adenylyltransferase
+22332,(R)-2-methylmalate hydro-lyase (2-methylmaleate-forming)
+15149,pyridoxine 5'-phosphate:oxygen oxidoreductase
+22024,trimethylamine:cytochrome c oxidoreductase
+11672,chorismate:L-glutamine aminotransferase
+27738,deoxyguanosine:orthophosphate ribosyltransferase
+11740,glutathione:NADP+ oxidoreductase
+15449,"homogentisate:oxygen 1,2-oxidoreductase (decyclizing)"
+25876,L-aspartate:oxygen oxidoreductase
+10380,orotidine-5'-phosphate:diphosphate phospho-alpha-D-ribosyl-transferase
+23780,"propanoyl-CoA:oxaloacetate C-propanoyltransferase (thioester-hydrolysing, 1-carboxyethyl-forming)"
+14817,4-maleylacetoacetate cis-trans-isomerase
+12080,acetyl-CoA:malonyl-[acyl-carrier protein] C-acetyltransferase (decarboxylating)
+13753,L-glutamate:NAD+ oxidoreductase (transaminating)
+11844,acetyl-CoA:formate C-acetyltransferase
+15185,succinyl-CoA:L-arginine N2-succinyltransferase
+11768,N-(5-phospho-D-ribosyl)anthranilate:pyrophosphate phosphoribosyl-transferase
+31075,(S)-3-hydroxydodecanoyl-CoA hydro-lyase
+26152,5-amino-6-(D-ribitylamino)uracil butanedionetransferase
+11960,"N-succinyl-L-2,6-diaminoheptanedioate:2-oxoglutarate amino-transferase"
+19981,S-(hydroxymethyl)glutathione dehydrogenase
+33791,sucrose 6-phosphate fructohydrolase
+17105,S-adenosyl-L-methionine:malonyl-[acyl-carrier protein] O-methyltransferase
+18245,ATP:dephospho-CoA 3'-phosphotransferase
+11528,"ATP:cob(I)yrinic acid-a,c-diamide Cobeta-adenosyltransferase"
+16853,"N6-(1,2-dicarboxyethyl)AMP AMP-lyase (fumarate-forming)"
+23700,"5,10-methenyltetrahydrofolate 5-hydrolase (decyclizing)"
+21588,N-acetyl-L-glutamate-5-semialdehyde:NADP+ 5-oxidoreductase (phosphrylating)
+30187,(S)-dihydroorotate:quinone oxidoreductase
+34111,carboxyspermidine:NADP+ oxidoreductase
+33023,6-phospho-D-gluconate:NAD+ 2-oxidoreductase (decarboxylating)
+11160,"L-2,4-diaminobutyrate:2-oxoglutarate 4-aminotransferase"
+15837,"L-glutamate:methylamine 1,3-dicarboxypropyltransferase (N-methyl-L-glutamate-forming)"
+32715,"(2R,3S)-3-methylmalate:NAD+ oxidoreductase"
+15469,N-(5'-phospho-D-ribosylformimino)-5-amino-1- (5''-phospho-D-ribosyl)-4-imidazolecarboxamide ketol-isomerase
+11148,Fe(II):oxygen oxidoreductase
+19169,L-serine ammonia-lyase
+27694,"(R)-2,3-dihydroxy-3-methylpentanoate hydro-lyase"
+29395,uridine triphosphate pyrophosphohydrolase
+27654,pyruvate:2-oxobutanoate acetaldehydetransferase (decarboxylating)
+11040,D-erythro-1-(imidazol-4-yl)glycerol 3-phosphate hydro-lyase
+27882,"2',3'-cyclic CMP 3'-nucleotidohydrolase"
+23560,adenosylcobinamide-GDP:alpha-ribazole adenosylcobinamide-phosphotransferase
+23284,isopentenyl-diphosphate Delta3-Delta2-isomerase
+34099,carboxynorspermidine carboxy-lyase (norspermidine-forming)
+12933,L-fuculose-1-phosphate lactaldehyde-lyase
+17845,5-amino-6-(5-phosphoribitylamino)uracil:NADP+ 1'-oxidoreductase
+22964,L-ornithine carboxy-lyase (putrescine-forming)
+51468,(R)-lactate:NAD+ oxidoreductase
+17089,2-dehydro-3-deoxy-6-phospho-D-gluconate D-glyceraldehyde-3-phosphate-lyase (pyruvate-forming)
+25888,glycerone phosphate:iminosuccinate alkyltransferase (cyclizing)
+24400,ATP:UMP phosphotransferase
+21760,(R)-3-hydroxybutanoyl-CoA:NADP+ oxidoreductase
+30795,2-oxoadipate dehydrogenase complex
+41872,(3R)-3-hydroxydodecanoyl-[acyl-carrier-protein]:NADP+ oxidoreductase
+22584,protoheme ferro-lyase (protoporphyrin-forming)
+17473,formamidopyrimidine nucleoside triphosphate amidohydrolase
+16601,L-aspartate ammonia-lyase (fumarate-forming)
+13633,glutamate putrescine ligase
+24801,L-isoleucine:2-oxoglutarate aminotransferase
+34191,"(2Z,4E,7E)-2-hydroxy-6-oxonona-2,4,7-triene-1,9-dioate fumarylhydrolase"
+17325,"succinyl-CoA:2,3,4,5-tetrahydropyridine-2,6-dicarboxylate N-succinyltransferase"
+13213,succinate-semialdehyde:NADP+ oxidoreductase
+14545,nicotinamide amidohydrolase
+41808,(3R)-3-hydroxybutanoyl-[acyl-carrier-protein] hydro-lyase
+28342,2'-deoxyinosine-5'-triphosphate pyrophosphohydrolase
+28370,phosphate:oxaloacetate carboxy-lyase (adding phosphatephosphoenolpyruvate-forming)
+25290,primary_alcohol:NAD+ oxidoreductase
+19909,(S)-lactate:ferricytochrome-c 2-oxidoreductase
+41896,tetradecanoyl-[acp]:NAD+ trans-2-oxidoreductase
+31167,(S)-3-hydroxytetradecanoyl-CoA:NAD+ oxidoreductase
+13965,L-cystathionine L-homocysteine-lyase (deaminating pyruvate-forming)
+21648,prephenate hydro-lyase (decarboxylating phenylpyruvate-forming)
+10800,XMP:pyrophosphate phosphoribosyltransferase
+11724,"adenosine 3',5'-bisphosphate,sulfite:oxidized-thioredoxin oxidoreductase (3'-phosphoadenosine-5'-phosphosulfate -forming)"
+28783,L-cysteinylglycine dipeptidase
+24628,ammonia:NAD+ oxidoreductase
+20013,carbamoyl-phosphate:L-aspartate carbamoyltransferase
+18133,ATP:selenate adenylyltransferase
+27551,"(2E,6E)-farnesyl-diphosphate:isopentenyl-diphosphate cistransferase (adding 8 isopentenyl units)"
+21448,reduced ferredoxin:dinitrogen oxidoreductase (ATP-hydrolysing)
+24882,(S)-1-pyrroline-5-carboxylate:NADP+ oxidoreductase
+25197,5-amino-6-(5-phospho-D-ribitylamino)uracil phosphohydrolase
+15265,pyridoxine 5'-phosphate synthase
+27718,inosine 5'-monophosphate phosphohydrolase
+54900,hexadecanoyl-[acp]:NAD+ trans-2-oxidoreductase
+16809,"(2S,3R)-3-hydroxybutane-1,2,3-tricarboxylate pyruvate-lyase (succinate-forming)"
+16109,ATP:D-fructose-6-phosphate 1-phosphotransferase
+11172,5-methyltetrahydrofolate:L-homocysteine S-methyltransferase
+29371,2'-deoxyadenosine 5'-monophosphate phosphohydrolase
+23736,5-hydroxyisourate amidohydrolase
+27762,CTP diphosphohydrolase (diphosphate-forming)
+30939,ATP:dIDP phosphotransferase
+23784,L-proline:quinone oxidoreductase
+24869,S-methyl-5'-thioadenosine:phosphate S-methyl-5-thio-alpha-D-ribosyl-transferase
+21080,ATP:L-methionine S-adenosyltransferase
+25104,ATP:pyridoxal 5'-phosphotransferase
+13557,gamma-L-glutamyl-L-cysteine:glycine ligase (ADP-forming)
+45764,L-aspartate-4-semialdehyde:NAD+ oxidoreductase
+21020,5-O-(1-carboxyvinyl)-3-phosphoshikimate phosphate-lyase (chorismate-forming)
+51624,GTP:formate 2'-oxidoreductase
+34851,(S)-3-hydroxyacyl-CoA:NAD+ oxidoreductase
+22860,ATP:nicotinamide-nucleotide adenylyltransferase
+17641,L-arginine carboxy-lyase (agmatine-forming)
+15841,beta-D-glucose-6-phosphate:NAD+ 1-oxidoreductase
+26301,"5-hydroxy-2-oxo-4-ureido-2,5-dihydro-1H-imidazole-5-carboxylate carboxy-lyase [(S)-allantoin-forming]"
+12120,ATP:alpha-D-glucose-1-phosphate adenylyltransferase
+11920,4a-hydroxytetrahydrobiopterin hydro-lyase
+22472,ATP:pantothenate 4'-phosphotransferase
+17825,ATP:beta-D-glucose 6-phosphotransferase
+16117,acetoacetate:CoA ligase (AMP-forming)
+13977,D-serine ammonia-lyase
+11224,D-alanine:D-alanine ligase (ADP-forming)
+24927,L-cystine thiocysteine-lyase (deaminating pyruvate-forming)
+19985,S-(hydroxymethyl)glutathione dehydrogenase
+46164,NADH:menaquinone oxidoreductase
+28410,4-(gamma-L-glutamylamino)butanal:NADP+ oxidoreductase
+41800,acyl-[acyl-carrier-protein]:malonyl-[acyl-carrier-protein] C-acyltransferase (decarboxylating)
+13185,porphobilinogen:(4-[2-carboxyethyl]-3-[carboxymethyl]pyrrol-2-yl)methyltransferase (hydrolysing)
+25094,ATP:dCMP phosphotransferase
+16901,"acetyl-CoA:L-2,4-diaminobutanoate N4-acetyltransferase"
+12376,ATP:L-fuculose 1-phosphotransferase
+12821,2-deoxy-D-ribose-5-phosphate acetaldehyde-lyase (D-glyceraldehyde-3-phosphate-forming)
+19541,L-glutamate-5-semialdehyde:NADP+ 5-oxidoreductase (phosphorylating)
+28675,D-galactose 1-epimerase
+29359,uridine 5'-monophosphate phosphohydrolase
+12248,UDP-N-acetylmuramate:NADP+ oxidoreductase
+19433,ATP:D-gluconate 6-phosphotransferase
+16669,xanthine:NAD+ oxidoreductase
+24252,"P1,P4-bis(5'-adenosyl)-tetraphosphate nucleotidebisphosphohydrolase"
+22192,10-formyltetrahydrofolate:5'-phosphoribosyl-5-amino-4-imidazolecarboxamide formyltransferase
+24825,dimethylallyl diphosphate:ferredoxin oxidoreductase
+19801,ATP:pantetheine-4'-phosphate adenylyltransferase
+42340,4-(gamma-L-glutamylamino)butanal:NAD+ oxidoreductase
+51620,CTP:formate 2'-oxidoreductase
+19625,L-threonine acetaldehyde-lyase (glycine-forming)
+41848,octanoyl-[acp]:NAD+ trans-2-oxidoreductase
+13869,prephenate:NAD+ oxidoreductase(decarboxylating)
+23148,ATP:propanoate phosphotransferase
+13101,"4,5-dihydro-4-oxo-5-imidazolepropanoate hydro-lyase"
+13989,UDP-glucose:alpha-D-galactose-1-phosphate uridylyltransferase
+21256,phosphoenolpyruvate:3-phosphoshikimate 5-O-(1-carboxyvinyl)-transferase
+22636,dCTP nucleotidohydrolase
+25294,"3alpha,7alpha-dihydroxy-5beta-cholestan-26-al:NAD+ oxidoreductase"
+16825,ATP:uridine 5'-phosphotransferase
+17453,5-phospho-D-ribosylamine:glycine ligase (ADP-forming)
+13245,isocitrate glyoxylate-lyase (succinate-forming)
+30887,"6-(hydroxymethyl)-7,8-dihydropterin:4-aminobenzoate 2-amino-4-hydroxydihydropteridine-6-methenyltransferase"
+19481,succinyl-CoA:acetyl-CoA C-acyltransferase
+19949,"(7,8-dihydropterin-6-yl)methyl diphosphate:4-aminobenzoate 2-amino-4-hydroxy-7,8-dihydropteridine-6-methenyltransferase"
+25066,"(2E)-3-(cis-5,6-dihydroxycyclohexa-1,3-dien-1-yl)prop-2-enoate:NAD+ oxidoreductase"
+23424,"D-glucosamine 1-phosphate 1,6-phosphomutase"
+11800,NAD+ phosphohydrolase
+20397,O-phosphorylhomoserine:selenocysteine Se-(3-amino-3-carboxypropyl)transferase
+16425,formaldehyde:NAD+ oxidoreductase
+24670,hypoxanthine:NAD+ oxidoreductase
+32271,"(2R,3S)-3-isopropylmalate:NAD+ oxidoreductase"
+15609,ATP:D-ribose-5-phosphate diphosphotransferase
+27758,glycine:NAD+ 2-oxidoreductase (tetrahydrofolate-methylene-adding)
+14657,D-ribose-5-phosphate aldose-ketose-isomerase
+10040,"adenosine-3',5'-bisphosphate 3'-phosphohydrolase"
+19129,ATP:thymidine 5'-phosphotransferase
+28386,"UDP-N-acetylmuramoyl-L-alanyl-gamma-D-glutamyl-meso-2,6-diaminopimeloyl-D-alanyl-D-alanine:undecaprenyl-phosphate phospho-N-acetylmuramoyl-pentapeptide-transferase"
+29399,inosine 5'-triphosphate pyrophosphohydrolase
+14053,"phosphoenolpyruvate:D-arabinose-5-phosphate C-(1-carboxyvinyl)transferase (phosphate-hydrolysing, 2-carboxy-2-oxoethyl-forming)"
+13517,ATP:dTMP phosphotransferase
+21732,chorismate pyruvate-lyase (amino-accepting anthranilate-forming)
+11064,"beta-D-fructose 1,6-bisphosphate 1-phosphohydrolase"
+15481,"5,10-methylenetetrahydrofolate:glycine hydroxymethyltransferase"
+18037,agmatine iminohydrolase
+25098,ATP:UDP phosphotransferase
+27485,allantoate amidinohydrolase (decarboxylating)
+41900,tetradecanoyl-[acyl-carrier protein]:malonyl-[acyl-carrier-protein] C-acyltransferase (decarboxylating)
+10420,taurine:pyruvate aminotransferase
+15689,"L-2,4-diaminobutanoate carboxy-lyase"
+30727,dATP:pyruvate 2-O-phosphotransferase
+22828,phosphoribosyl-ATP pyrophosphohydrolase
+13313,sarcosine:oxygen oxidoreductase (demethylating)
+17281,ectoine hydro-lyase
+28162,GTP:cytidine 5'-phosphotransferase
+19025,L-aspartic acid:oxygen oxidoreductase (deaminating)
+21524,"acetyl-CoA:3-methyl-2-oxobutanoate C-acetyltransferase (thioester-hydrolysing, carboxymethyl-forming)"
+15053,10-formyltetrahydrofolate:5'-phosphoribosylglycinamide formyltransferase
+34799,"2,3-didehydroadipoyl-CoA:acetyl-CoA C-didehydroadipoyltransferase (double bond migration)"
+23520,acetyl-CoA:propanoate CoA-transferase
+12172,D-glucosamine-6-phosphate aminohydrolase (ketol isomerizing)
+23160,L-rhamnose ketol-isomerase
+30747,"palmitoyl-CoA:electron-transfer flavoprotein 2,3-oxidoreductase"
+28066,CMP-3-deoxy-D-manno-oct-2-ulosonate:lipid IVA 3-deoxy-D-manno-oct-2-ulosonate transferase
+19397,(R)-4'-phosphopantothenate:L-cysteine ligase
+10964,ATP:D-xylulose 5-phosphotransferase
+10676,3-isopropylmalate hydro-lyase
+14877,ATP:L-glutamate 5-phosphotransferase
+14465,L-histidinol-phosphate phosphohydrolase
+51616,ATP:formate 2'-oxidoreductase
+27714,guanosine 5'-monophosphate phosphohydrolase
+30547,(S)-hydroxyhexanoyl-CoA hydro-lyase
+17941,"(2S,3R)-3-hydroxybutane-1,2,3-tricarboxylate hydro-lyase"
+10412,ADP-ribose ribophosphohydrolase
+33799,L-histidinol:NAD+ oxidoreductase
+32263,4-aminobutanoate:pyruvate aminotransferase
+18405,L-alanine:NAD+ oxidoreductase (deaminating)
+24292,acetyl-CoA:L-glutamate N-acetyltransferase
+19689,L-xylulose 1-phosphate glycolaldehyde-lyase (glycerone-phosphate-forming)
+27858,"2',3'-cyclic GMP 3'-nucleotidohydrolase"
+65032,protoporphyrinogen IX:quinone oxidoreductase
+22088,ATP:GTP 3'-diphosphotransferase
+18977,sn-glycerol-3-phosphate:(acceptor) 2-oxidoreductase
+16573,O-phospho-4-hydroxy-L-threonine:2-oxoglutarate aminotransferase
+41824,(3R)-3-hydroxyhexanoyl-[acyl-carrier-protein]:NADP+ oxidoreductase
+15169,N-succinyl-L-glutamate amidohydrolase
+30783,D-glyceraldehyde:NAD+ oxidoreductase
+22108,L-threonine ammonia-lyase (2-oxobutanoate-forming)
+21096,3-dehydroquinate hydro-lyase
+10932,L-citrulline:L-aspartate ligase (AMP-forming)
+14801,ATP:3-phospho-D-glycerate 1-phosphotransferase
+13073,guanosine 3'-diphosphate 5'-triphosphate 5'-phosphohydrolase
+31227,"UDP-N-acetyl-D-glucosamine:undecaprenyl-diphospho-N-acetylmuramoyl-L-alanyl-gamma-D-glutamyl-meso-2,6-diaminopimeloyl-D-alanyl-D-alanine 4-beta-N-acetylglucosaminlytransferase"
+24674,ATP:cytidine 5'-phosphotransferase
+23372,UDP-N-acetylmuramate:L-alanine ligase (ADP-forming)
+15613,S-adenosyl-L-methionine:uroporphyrin-III C-methyltransferase
+10892,"(2R,3S)-3-isopropylmalate:NAD+ oxidoreductase"
+28610,XTP pyrophosphohydrolase
+16845,acetyl-CoA:oxaloacetate C-acetyltransferase (thioester-hydrolysing)
+27638,xanthosine:orthophosphate ribosyltransferase
+15817,pyridoxamine-5'-phosphate:oxygen oxidoreductase (deaminating)
+41908,(3R)-3-hydroxypalmitoyl-[acyl-carrier-protein] hydro-lyase
+18253,(S)-malate:NADP+ oxidoreductase(oxaloacetate-decarboxylating)
+22840,D-glutamine amidohydrolase
+28062,CMP-3-deoxy-D-manno-oct-2-ulosonate:(KDO)-lipid IVA 3-deoxy-D-manno-oct-2-ulosonate transferase
+11196,nicotinate-nucleotide:dimethylbenzimidazole phospho-D-ribosyltransferase
+19553,L-tryptophan indole-lyase (deaminating pyruvate-forming)
+18321,L-leucine:2-oxoglutarate aminotransferase
+24809,"(R)-2,3-dihydroxy-3-methylbutanoate hydro-lyase"
+10300,D-glyceraldehyde-3-phosphate:NAD+ oxidoreductase (phosphorylating)
+27898,adenosine 3'-phosphate phosphohydrolase
+32171,"phenylacetyl-CoA:oxygen oxidoreductase (1,2-epoxidizing)"
+28659,lactose galactohydrolase
+21016,L-asparagine amidohydrolase
+19361,geranyl-diphosphate:isopentenyl-diphosphate geranyltrans-transferase
+20517,UDP-N-acetyl-D-glucosamine 4-epimerase
+18169,4-hydroxy-2-oxoglutarate glyoxylate-lyase (pyruvate-forming)
+34767,S-aminomethyldihydrolipoylprotein:(6S)-tetrahydrofolate aminomethyltransferase (ammonia-forming)
+10840,O-phospho-L-homoserine phosphate-lyase (adding waterL-threonine-forming)
+21208,O-phospho-L-serine phosphohydrolase
+22408,dimethylallyl-diphosphate:isopentenyl-diphosphate dimethylallyltranstransferase
+23776,ATP:L-aspartate 4-phosphotransferase
+41928,octadecanoyl-[acp]:NAD+ trans-2-oxidoreductase
+21232,L-histidine ammonia-lyase (urocanate-forming)
+16417,(S)-1-pyrroline-5-carboxylate:NAD+ oxidoreductase
+25424,GMP:diphosphate 5-phospho-alpha-D-ribosyltransferase
+26119,(E)-4-hydroxy-3-methylbut-2-en-1-yl-diphosphate:oxidized ferredoxin oxidoreductase (hydrating)
+14157,triphosphate phosphohydrolase
+15869,D-alanine:2-oxoglutarate aminotransferase
+31039,"lauroyl-CoA:electron-transfer flavoprotein 2,3-oxidoreductase"
+14665,guanine aminohydrolase
+11692,NADPH:NAD+ oxidoreductase
+28534,dTTP diphosphohydrolase
+18681,phosphoenolpyruvate:UDP-N-acetyl-D-glucosamine 1-carboxyvinyl-transferase
+34115,carboxynorspermidine:NADP+ oxidoreductase
+16293,2-isopropylmalate hydro-lyase
+29367,cytidine-5'-monophosphate phosphohydrolase
+15133,L-glutamate:NAD+ oxidoreductase (deaminating)
+41864,decanoyl-[acp]:NAD+ trans-2-oxidoreductase
+15033,pyridoxine:oxygen oxidoreductase (deaminating)
+22492,N-formimino-L-glutamate formiminohydrolase
+35323,"2,3,4,5-tetrahydrodipicolinate:NAD+ 4-oxidoreductase"
+25058,"trans-cinnamate,NADH:oxygen oxidoreductase (2,3-hydroxylating)"
+21968,2-dehydro-3-deoxy-D-arabino-heptonate 7-phosphate phosphate-lyase (cyclyzing)
+30235,L-glutamate gamma-semialdehyde:NAD+ oxidoreductase
+20772,"6,7-dimethyl-8-(1-D-ribityl)lumazine:6,7-dimethyl-8-(1-D-ribityl)lumazine 2,3-butanediyltransferase"
+13429,CTP: 2-C-methyl-D-erythritol 4-phosphate cytidylyltransferase
+12084,D-mannitol:NAD+ 2-oxidoreductase
+31139,"(R)-2,3-dihydroxy-3-methylbutanoate:NADP+ oxidoreductase (isomerizing)"
+23176,acetyl adenylate:CoA acetyltransferase
+23584,"7,8-dihydropteroate:L-glutamate ligase (ADP-forming)"
+15761,L-homoserine:NADP+ oxidoreductase
+13725,acetyl-CoA:D-glucosamine-1-phosphate N-acetyltransferase
+16833,glutathione:hydrogen-peroxide oxidoreductase
+42288,pimeloyl-[acyl-carrier protein]:L-alanine C-pimeloyltransferase (decarboxylating)

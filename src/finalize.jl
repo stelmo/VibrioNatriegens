@@ -37,7 +37,7 @@ function name_genes!(model)
     gene_name_lu = Dict(
         CSV.File(
             joinpath(
-                # pkgdir(@__MODULE__), 
+                pkgdir(@__MODULE__), 
                 "data", "annotations", "genome", "gene_names.csv")))
     for gid in A.genes(model)
         if haskey(gene_name_lu, gid) 
@@ -51,7 +51,7 @@ function name_reactions!(model)
         CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "reaction_names.csv")),
     )
     dropmissing!(df)
-    rid_name = Dict(df.RID .=> df.Name)
+    rid_name = Dict(string.(df.rhea) .=> df.name)
     for rid in A.reactions(model)
         haskey(rid_name, rid) && (model.reactions[rid].name = rid_name[rid])
     end
