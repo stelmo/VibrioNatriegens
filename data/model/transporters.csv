@@ -267,12 +267,6 @@ ABC,spermidine,57834,WP_020333277.1,1,A
 ABC,taurine,507393,WP_020335005.1,1,A
 ABC,taurine,507393,WP_014235081.1,1,A
 ABC,taurine,507393,WP_020335006.1,1,A
-ABC,glycine betaine,17750,WP_020336361.1,1,A
-ABC,glycine betaine,17750,WP_020336359.1,1,A
-ABC,glycine betaine,17750,WP_014231965.1,1,A
-ABC,glycine betaine,17750,WP_020333795.1,1,B
-ABC,glycine betaine,17750,WP_024372589.1,1,B
-ABC,glycine betaine,17750,WP_014233985.1,1,B
 ABC,L-arabinose,40886,WP_014235069.1,1,A
 ABC,L-arabinose,40886,WP_014235070.1,1,A
 ABC,L-arabinose,40886,WP_020334998.1,1,A
@@ -326,13 +320,6 @@ Symport,choline/H,15354/15378,WP_020334427.1,1,A
 Symport,choline/H,15354/15378,WP_020336001.1,1,A
 Symport,choline/H,15354/15378,WP_014234588.1,1,A
 Symport,choline/H,15354/15378,WP_014234857.1,1,A
-Symport,glycine-betaine/H,17750/15378,WP_020335534.1,1,A
-Symport,glycine-betaine/H,17750/15378,WP_020333247.1,1,A
-Symport,glycine-betaine/H,17750/15378,WP_031779249.1,1,A
-Symport,glycine-betaine/H,17750/15378,WP_020334427.1,1,A
-Symport,glycine-betaine/H,17750/15378,WP_020336001.1,1,A
-Symport,glycine-betaine/H,17750/15378,WP_014234588.1,1,A
-Symport,glycine-betaine/H,17750/15378,WP_014234857.1,1,A
 Symport,formate/H,15740/15378,WP_014231503.1,5,A
 Symport,formate/H,15740/15378,WP_020334914.1,5,B
 Symport,formate/H,15740/15378,WP_020334836.1,1,C

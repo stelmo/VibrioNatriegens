@@ -34,7 +34,7 @@ C.pretty(
                 A.metabolite_name(model, k) for
                 k in keys(A.reaction_stoichiometry(model, string(last(ix))))
             ]
-            any(in.(mets, Ref(["NADH","NAD(+)"])))
+            any(in.(mets, Ref(["NADH", "NAD(+)"])))
             # any(in.(mets, Ref(["H(+)"])))
             # any(in.(mets, Ref(["Na(+)"])))
             # any(in.(mets, Ref(["O2"])))

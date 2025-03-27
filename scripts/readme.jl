@@ -7,6 +7,8 @@ import AbstractFBCModels as A
 using Distributed
 
 model = VibrioNatriegens.build_model()
+VibrioNatriegens.print_reactions(model)
+VibrioNatriegens.print_metabolites(model)
 
 # write the model to the main directory in standardized formats
 m = convert(JSONFBCModels.JSONFBCModel, model)

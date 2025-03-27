@@ -8,16 +8,16 @@ model = VibrioNatriegens.build_model()
 df = DataFrame(CSV.File("quantitative_proteome.csv"))
 
 mf = @combine(
-        @groupby(
-        @subset(df, :Condition .== "Ribose"),
-        :Protein,
-    ),
+    @groupby(@subset(df, :Condition .== "Ribose"), :Protein,),
     :mf = mean(:MassFraction) * 1000.0,
 )
 mf = Dict(zip(mf.Protein, mf.mf))
-lu = Dict(gid => get(mf, first(model.genes[gid].annotations["proteinaccession"]), 0.0) for gid in A.genes(model))
+lu = Dict(
+    gid => get(mf, first(model.genes[gid].annotations["proteinaccession"]), 0.0) for
+    gid in A.genes(model)
+)
 
-d = Dict{String, Float64}()
+d = Dict{String,Float64}()
 for rid in A.reactions(model)
     isnothing(A.reaction_gene_association_dnf(model, rid)) && continue
     t = 0.0

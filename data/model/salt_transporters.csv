@@ -122,3 +122,16 @@ Antiport,acetylserine/H,58340/15378,WP_024372999.1,1,H
 Antiport,acetylserine/H,58340/15378,WP_020333830.1,1,I
 Antiport,acetylserine/H,58340/15378,WP_020335305.1,1,J
 Antiport,lysine/H,32551/15378,WP_024372923.1,1,A
+Symport,glycine-betaine/H,17750/15378,WP_020335534.1,1,A
+Symport,glycine-betaine/H,17750/15378,WP_020333247.1,1,A
+Symport,glycine-betaine/H,17750/15378,WP_031779249.1,1,A
+Symport,glycine-betaine/H,17750/15378,WP_020334427.1,1,A
+Symport,glycine-betaine/H,17750/15378,WP_020336001.1,1,A
+Symport,glycine-betaine/H,17750/15378,WP_014234588.1,1,A
+Symport,glycine-betaine/H,17750/15378,WP_014234857.1,1,A
+ABC,glycine betaine,17750,WP_020336361.1,1,A
+ABC,glycine betaine,17750,WP_020336359.1,1,A
+ABC,glycine betaine,17750,WP_014231965.1,1,A
+ABC,glycine betaine,17750,WP_020333795.1,1,B
+ABC,glycine betaine,17750,WP_024372589.1,1,B
+ABC,glycine betaine,17750,WP_014233985.1,1,B

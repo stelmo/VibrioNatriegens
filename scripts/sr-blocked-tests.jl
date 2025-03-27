@@ -8,7 +8,7 @@ using JSONFBCModels
 using JSON
 
 model = VibrioNatriegens.build_model()
-flux_balance_analysis(model,optimizer=Gurobi.Optimizer)
+flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 
 #sol = flux_balance_analysis(model,optimizer=Gurobi.Optimizer)
 
@@ -114,22 +114,22 @@ model.reactions["EX_29101"].lower_bound = -1000.0 # set lb to -1000 to actually 
 "57262"
 function add_temp_exchange!(model, mid; lb = -1000, ub = 1000)
     model.reactions["SINK_"*mid] = VibrioNatriegens.Reaction(
-    stoichiometry = Dict(mid => -1.0),
-    lower_bound = lb,
-    upper_bound = ub,
- ) 
+        stoichiometry = Dict(mid => -1.0),
+        lower_bound = lb,
+        upper_bound = ub,
+    )
 end
 
 model.reactions["sink_reaction1"] = VibrioNatriegens.Reaction( # need this
-   stoichiometry = Dict("189750" => -1.0),
-   lower_bound = 0.0,
-   upper_bound = 1000.0,
+    stoichiometry = Dict("189750" => -1.0),
+    lower_bound = 0.0,
+    upper_bound = 1000.0,
 )
 
 model.reactions["sink_reaction2"] = VibrioNatriegens.Reaction( # need this
-   stoichiometry = Dict("33019" => -1.0),
-   lower_bound = 0.0,
-   upper_bound = 1000.0,
+    stoichiometry = Dict("33019" => -1.0),
+    lower_bound = 0.0,
+    upper_bound = 1000.0,
 )
 
 #model.reactions["sink_reaction3"] = VibrioNatriegens.Reaction( # need this
@@ -162,16 +162,10 @@ sol2 = optimized_values(
 lb = sol1.fluxes[rid]
 ub = sol2.fluxes[rid]
 
-ct *= :parsimony^C.Constraint(
-    sum(C.squared(x.value) for x in values(ct.fluxes)),
-    nothing
-)
+ct *= :parsimony^C.Constraint(sum(C.squared(x.value) for x in values(ct.fluxes)), nothing)
 
 ubct = deepcopy(ct)
-ubct *= :ub^C.Constraint(
-    ubct.fluxes[Symbol(rid)].value,
-    C.EqualTo(ub),
-)
+ubct *= :ub^C.Constraint(ubct.fluxes[Symbol(rid)].value, C.EqualTo(ub))
 sol2 = optimized_values(
     ubct,
     objective = ct.parsimony.value,

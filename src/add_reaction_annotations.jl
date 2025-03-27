@@ -69,7 +69,23 @@ function add_reaction_annotations!(model)
     ec = DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "rhea", "ec_rxns.csv")))
     ec = Dict(string(first(gdf.rhea)) => String.(gdf.ec) for gdf in groupby(ec, :rhea))
 
-    # qts = Dict(k => [vs...] for (k, vs) in get_quartets([rid for rid in A.reactions(model) if isdigit(first(rid))]))
+    qts = Dict(
+        k => [vs...] for (k, vs) in
+        get_quartets([rid for rid in A.reactions(model) if isdigit(first(rid))])
+    )
+
+    metacyc = Dict(
+        CSV.File(
+            joinpath(
+                # pkgdir(@__MODULE__), 
+                "data",
+                "rhea",
+                "biocyc_rxns.csv",
+            ),
+            drop = [2],
+            types = [String, String, String],
+        ),
+    )
 
     for rid in A.reactions(model)
         r = model.reactions[rid]
@@ -83,7 +99,10 @@ function add_reaction_annotations!(model)
             end
         end
         if isdigit(first(rid))
-            # r.annotations["rhea.reaction"] = qts[rid]
+            r.annotations["rhea.reaction"] = qts[rid]
+        end
+        if isdigit(first(rid)) && haskey(metacyc, rid)
+            r.annotations["metacyc.reaction"] = [metacyc[rid]]
         end
         if haskey(kegg, rid)
             r.annotations["kegg.reaction"] = kegg[rid]

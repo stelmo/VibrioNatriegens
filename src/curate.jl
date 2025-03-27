@@ -136,7 +136,7 @@ function curate!(model)
     # for_dir(model, "13217") # loop prev
     # rev_dir(model, "15869") # d alanine syn only + loop prev
     # rev_dir(model, "15133") # glut biosyn
-    
+
     bi_dir(model, "24360") # produce siroheme
     bi_dir(model, "22488") # produce S-(hydroxymethyl)glutathione
 
