@@ -21,6 +21,8 @@ At a glance, the model consists of:
 | Transport reactions with GRRs | 88 |
 | Blocked reactions | 95 |
 
+## Cross references
+
 The model has the following reaction cross-references (available under the `annotations` field):
 
 | Attribute | Number (fraction %) |
@@ -60,13 +62,21 @@ The model has the following gene cross-references (available under the `annotati
 | NCBI accession | 939 (100 %) |
 | SBO | 939 (100 %) |
 
+## Visualization
+In the `maps` directory, [Escher compatible maps](https://escher.github.io/#/) of all the major subsystems of _V. natriegens_ may be found. 
+Every metabolic reaction in the model is accounted for in these maps, facilitating a visual inspection of flux solutions etc.
+
 ## Build instructions
 
 For convenience, an SBML and JSON formatted model is available in the main directory of the repo.
+
 If you would like to build the model from scratch (recommended, since some useful data gets lost converting to the commonly used model formats), then you must first install `VibrioNatriegens` like any Julia package.
 ```julia
 ] add VibrioNatriegens
 ```
+Note, the Rhea reactions used in the model are downloaded, and cached, from `https://www.rhea-db.org/` the first time the model is built, so it might take a few minutes at first.
+Thereafter the building process should take less than 10 seconds.
+
 Basic tests (MEMOTE-like) can be run by testing the package just like any other Julia package. 
 These tests also run with CI every time the model is changed.
 ```julia
