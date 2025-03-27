@@ -1,6 +1,6 @@
 module VibrioNatriegens
 
-using RheaReactions, CSV, DataFrames, DataFramesMeta, ReadableRegex
+using RheaReactions, CSV, DataFrames, DataFramesMeta
 using AbstractFBCModels
 import AbstractFBCModels as A
 import COBREXA as X

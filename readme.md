@@ -19,8 +19,7 @@ At a glance, the model consists of:
 | Exchange reactions | 153 |
 | Metabolic reactions with GRRs | 752 |
 | Transport reactions with GRRs | 88 |
-| Blocked reactions | 0 |
-| Deadend metabolites | 0 |
+| Blocked reactions | 95 |
 
 The model has the following reaction cross-references (available under the `annotations` field):
 
@@ -31,6 +30,7 @@ The model has the following reaction cross-references (available under the `anno
 | kegg.reaction | 776 (97%) |
 | metacyc.reaction |  718 (89%) |
 | reactome.reaction | 212 (26%) |
+| seed.reaction | 770 (96%) |
 | eggnog.go | 432 (54%) |
 | bigg.reaction | 562 (70%) |
 | ec | 786 (97%) |
@@ -85,7 +85,7 @@ This model works well with the [COBREXA package](https://github.com/COBREXA/COBR
 
 ## Acknowledgements
 
-`DifferentiableMetabolism.jl` was developed at Institute for Quantitative and
+`VibrioNatriegens` was developed at Institute for Quantitative and
 Theoretical Biology at Heinrich Heine University Düsseldorf
 ([qtb.hhu.de](https://www.qtb.hhu.de/en/)).
 

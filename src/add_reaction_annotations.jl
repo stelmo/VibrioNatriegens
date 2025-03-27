@@ -98,11 +98,12 @@ function add_reaction_annotations!(model)
         ),
     )
     
-    kegg_ec_regex = @compile exactly(1, "[EC:")*
-        between(1,3, DIGIT)*exactly(1, ".")*
-        between(1,3, DIGIT)*exactly(1, ".")*
-        between(1,3, DIGIT)*exactly(1, ".")*
-        between(1,3, DIGIT)*exactly(1, "]")
+    # kegg_ec_regex = @compile exactly(1, "[EC:")*
+    #     between(1,3, DIGIT)*exactly(1, ".")*
+    #     between(1,3, DIGIT)*exactly(1, ".")*
+    #     between(1,3, DIGIT)*exactly(1, ".")*
+    #     between(1,3, DIGIT)*exactly(1, "]")
+    kegg_ec_regex = r"(?:\[EC:){1}(?:\d){1,3}(?:\.){1}(?:\d){1,3}(?:\.){1}(?:\d){1,3}(?:\.){1}(?:\d){1,3}(?:\]){1}"
 
     for rid in A.reactions(model)
         r = model.reactions[rid]

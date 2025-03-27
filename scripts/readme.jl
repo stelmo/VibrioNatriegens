@@ -17,16 +17,18 @@ AbstractFBCModels.save(m, "vibrio_natriegens.json")
 m = convert(SBMLFBCModels.SBMLFBCModel, model)
 AbstractFBCModels.save(m, "vibrio_natriegens.sbml")
 
-# if nprocs() == 1
-#     addprocs(6, exeflags = `--project=$(Base.active_project())`)
-# end
+if nprocs() == 1
+    addprocs(7, exeflags = `--project=$(Base.active_project())`)
+end
 
-# @everywhere begin
-#     using Gurobi, COBREXA, ConstraintTrees, AbstractFBCModels
-#     import ConstraintTrees as C
-#     import AbstractFBCModels as A
-#     using VibrioNatriegens
-# end
+@everywhere begin
+    using Gurobi, COBREXA, ConstraintTrees, AbstractFBCModels
+    import ConstraintTrees as C
+    import AbstractFBCModels as A
+    using VibrioNatriegens
+end
+
+include(joinpath("characterization_functions.jl"))
 
 # reactions
 rids = A.reactions(model)
@@ -49,9 +51,7 @@ transport_rxn_grrs = [
     rid for rid in transport_rxns if !isnothing(A.reaction_gene_association_dnf(model, rid))
 ]
 
-blocked_rxns = []
-
-deadend_metabolites = []
+count_blocked_rxns = blocked_reactions()
 
 sbo_reactions =
     [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "SBO")]
@@ -166,8 +166,7 @@ At a glance, the model consists of:
 | Exchange reactions | $(length(exchange_rxns)) |
 | Metabolic reactions with GRRs | $(length(metabolic_rxn_grrs)) |
 | Transport reactions with GRRs | $(length(transport_rxn_grrs)) |
-| Blocked reactions | $(length(blocked_rxns)) |
-| Deadend metabolites | $(length(deadend_metabolites)) |
+| Blocked reactions | $(count_blocked_rxns) |
 
 The model has the following reaction cross-references (available under the `annotations` field):
 
@@ -178,6 +177,7 @@ The model has the following reaction cross-references (available under the `anno
 | kegg.reaction | $(length(kegg_reactions)) ($( round(Int, length(kegg_reactions) / length(metabolic_rxns) * 100))%) |
 | metacyc.reaction |  $(length(metacyc_reactions)) ($( round(Int, length(metacyc_reactions) / length(metabolic_rxns) * 100))%) |
 | reactome.reaction | $(length(reactome_reactions)) ($( round(Int, length(reactome_reactions) / length(metabolic_rxns) * 100))%) |
+| seed.reaction | $(length(seed_reactions)) ($( round(Int, length(seed_reactions) / length(metabolic_rxns) * 100))%) |
 | eggnog.go | $(length(go_reactions)) ($( round(Int, length(go_reactions) / length(metabolic_rxns) * 100))%) |
 | bigg.reaction | $(length(bigg_reactions)) ($( round(Int, length(bigg_reactions) / length(metabolic_rxns) * 100))%) |
 | ec | $(length(ec_reactions)) ($( round(Int, length(kegg_reactions) / length(metabolic_rxns) * 100))%) |
@@ -232,7 +232,7 @@ This model works well with the [COBREXA package](https://github.com/COBREXA/COBR
 
 ## Acknowledgements
 
-`DifferentiableMetabolism.jl` was developed at Institute for Quantitative and
+`VibrioNatriegens` was developed at Institute for Quantitative and
 Theoretical Biology at Heinrich Heine University Düsseldorf
 ([qtb.hhu.de](https://www.qtb.hhu.de/en/)).
 

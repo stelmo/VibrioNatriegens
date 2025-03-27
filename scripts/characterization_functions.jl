@@ -1,20 +1,18 @@
 
 function blocked_reactions()
-    # open all exchanges, transporters, and find reactions that cannot carry flux under any circumstances
+    # open all exchanges find reactions that cannot carry flux under any circumstances
     @everywhere begin
         model = VibrioNatriegens.build_model()
-        ex_rids = filter(startswith("EX_"), A.reactions(model))
-        transporters =
-            [rid for rid in A.reactions(model) if model.reactions[rid].transporter]
-        for rid in [ex_rids; transporters]
+        exchange_rids = filter(startswith("EX_"), A.reactions(model))
+        for rid in exchange_rids
             model.reactions[rid].lower_bound = -1000
             model.reactions[rid].upper_bound = 1000
         end
         model.reactions["ATPM"].lower_bound = 0.0
     end
 
-    met_rids = setdiff(A.reactions(model), [ex_rids; transporters])
-    vs = screen(met_rids, workers = workers()) do rid
+    non_exchange_rids = setdiff(A.reactions(model), exchange_rids)
+    vs = screen(non_exchange_rids, workers = workers()) do rid
         ct = flux_balance_constraints(model)
         lb = optimized_values(
             ct,
@@ -34,49 +32,16 @@ function blocked_reactions()
         )
     end
 
-    met_rids[vs.==0]
+    length(non_exchange_rids[vs .== 0])
 end
 
 function deadend_metabolites()
-    # open all exchanges, transporters, and find metabolites that can only be produced or consumed
-    @everywhere begin
-        model = VibrioNatriegens.build_model()
-        ex_rids = filter(startswith("EX_"), A.reactions(model))
-        transporters =
-            [rid for rid in A.reactions(model) if model.reactions[rid].transporter]
-        for rid in [ex_rids; transporters]
-            model.reactions[rid].lower_bound = -1000
-            model.reactions[rid].upper_bound = 1000
-        end
-        model.reactions["ATPM"].lower_bound = 0.0
-        model.reactions["temp_reaction"] = VibrioNatriegens.Reaction(
-            stoichiometry = Dict(),
-            lower_bound = -1000.0,
-            upper_bound = 1000.0,
-        )
-    end
+    #=
+    A dead-end metabolite (DEM) is defined as a metabolite that is produced by
+    the known metabolic reactions of an organism and has no reactions consuming
+    it, or that is consumed by the metabolic reactions of an organism and has no
+    known reactions producing it, and in both cases has no identified
+    transporter
+    =#
 
-    mids = filter(!occursin("_"), A.metabolites(model))
-
-    vs = screen(mids, workers = workers()) do mid
-        model.reactions["temp_reaction"].stoichiometry = Dict(mid => -1.0)
-        ct = flux_balance_constraints(model)
-
-        lb = optimized_values(
-            ct,
-            objective = ct.fluxes.temp_reaction.value,
-            sense = Minimal,
-            optimizer = Gurobi.Optimizer,
-        )
-        ub = optimized_values(
-            ct,
-            objective = ct.fluxes.temp_reaction.value,
-            sense = Maximal,
-            optimizer = Gurobi.Optimizer,
-        )
-        (
-            isnothing(lb) ? 0 : abs(lb.fluxes.temp_reaction),
-            isnothing(ub) ? 0 : abs(ub.fluxes.temp_reaction),
-        )
-    end
 end
