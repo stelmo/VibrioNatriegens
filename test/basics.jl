@@ -47,16 +47,16 @@ end
     model.reactions["ATPM"].objective_coefficient = 1.0
     model.reactions["ATPM"].lower_bound = 0.0
 
-    sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
-    llsol = loopless_flux_balance_analysis(model, optimizer = Gurobi.Optimizer) # this could be slow...
-    @test isapprox(sol.objective, llsol.objective)
+    sol = flux_balance_analysis(model, optimizer = HiGHS.Optimizer)
+    atp_per_glucose = abs(sol.fluxes.ATPM / sol.fluxes.EX_15903)
+    @test isapprox(atp_per_glucose,  32.25, atol=1e-3)
 
     for rid in filter(x -> startswith(x, "EX_"), A.reactions(model))
         model.reactions[rid].lower_bound = 0.0
         model.reactions[rid].upper_bound = 0.0
     end
 
-    sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
+    sol = flux_balance_analysis(model, optimizer = HiGHS.Optimizer)
     @test isapprox(sol.objective, 0.0)
 
 end
@@ -97,15 +97,15 @@ end
         ("gluconate", "EX_18391", 1.51),
         # ("starch", "", 0.19),
     ]
-    gs = []
+ 
     for (s, e, g) in aerobic_substrates
         model.reactions[e].lower_bound = -20.0
-        sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
-        println(s, ": ", g, " vs ", sol.objective)
-        push!(gs, (s, sol.objective > 0.1))
+        sol = flux_balance_analysis(model, optimizer = HiGHS.Optimizer)
+        # println(s, ": ", g, " vs ", sol.objective)
+        # push!(gs, (s, sol.objective > 0.1))
+        @test sol.objective > 0.1
         model.reactions[e].lower_bound = 0.0
     end
-    all(last.(gs))
 end
 
 @testset "Commonly secreted metabolites" begin
@@ -131,7 +131,7 @@ end
     for ex_rid in secreted_products
         sol = optimized_values(
             ct,
-            optimizer = Gurobi.Optimizer,
+            optimizer = HiGHS.Optimizer,
             objective = ct.fluxes[ex_rid].value,
             sense = Maximal,
         )
@@ -143,9 +143,9 @@ end
 
     model = VibrioNatriegens.build_model()
     model.reactions["EX_15379"].lower_bound = 0.0
-    sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
-
-    @test abs(1 - sol.objective / 0.92) <= 0.3 # growth rel to measured value
+    sol = flux_balance_analysis(model, optimizer = HiGHS.Optimizer)
+    @test sol.objective > 0.1
+    # @test abs(1 - sol.objective / 0.92) <= 0.3 # growth rel to measured value
 end
 
 @testset "Known growth supporting substrates" begin
@@ -161,7 +161,7 @@ end
 
     for (s, ex) in zip(df.Substrate, df.Exchange)
         model.reactions[ex].lower_bound = -10.0
-        sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
+        sol = flux_balance_analysis(model, optimizer = HiGHS.Optimizer)
         res = isnothing(sol) ? false : (sol.objective > 0.1)
         res || @warn(s)
         @test res

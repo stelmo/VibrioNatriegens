@@ -1,7 +1,7 @@
 using Test, VibrioNatriegens
 using AbstractFBCModels
 import AbstractFBCModels as A
-using Gurobi, COBREXA, ConstraintTrees
+using HiGHS, COBREXA, ConstraintTrees
 import ConstraintTrees as C
 using DataFrames, CSV, DataFramesMeta
 
