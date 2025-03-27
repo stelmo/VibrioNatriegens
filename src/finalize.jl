@@ -34,8 +34,16 @@ end
 
 function name_genes!(model)
     # special cases
-    model.genes["WP_269465656.1"].name = "ligK"
-    model.genes["WP_020336055.1"].name = "POP2"
+    gene_name_lu = Dict(
+        CSV.File(
+            joinpath(
+                # pkgdir(@__MODULE__), 
+                "data", "annotations", "genome", "gene_names.csv")))
+    for gid in A.genes(model)
+        if haskey(gene_name_lu, gid) 
+            model.genes[gid].name = gene_name_lu[gid]
+        end
+    end
 end
 
 function name_reactions!(model)

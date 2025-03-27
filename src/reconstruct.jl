@@ -44,8 +44,8 @@ function build_model()
 
     set_default_exchanges!(model)
     name_reactions!(model)
-    name_genes!(model)
     replace_proteinaccession_with_locustag!(model)
+    name_genes!(model)
 
     anti_h_na = model.reactions["ANTI_15378_29101"].stoichiometry
     # 1 Na /  2 H stoich 2.A.33 

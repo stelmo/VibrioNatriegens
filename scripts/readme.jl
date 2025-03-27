@@ -240,6 +240,9 @@ The reactions, metabolites, and genes of `model` can be accessed like any field,
 
 This model works well with the [COBREXA package](https://github.com/COBREXA/COBREXA.jl), and it can be used to simulate FBA, ec-FBA, and sRBA models.
 
+## Known issues
+TBD
+
 ## Acknowledgements
 
 `VibrioNatriegens` was developed at Institute for Quantitative and

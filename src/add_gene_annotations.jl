@@ -30,7 +30,6 @@ function add_gene_annotations!(model)
     # add annotation info
     for gid in A.genes(model)
         g = model.genes[gid]
-        g.name = first(genes_dict[gid]["name"])
         g.annotations = genes_dict[gid]
     end
 
