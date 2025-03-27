@@ -77,7 +77,7 @@ function add_reaction_annotations!(model)
     metacyc = Dict(
         CSV.File(
             joinpath(
-                # pkgdir(@__MODULE__), 
+                pkgdir(@__MODULE__), 
                 "data",
                 "rhea",
                 "biocyc_rxns.csv",

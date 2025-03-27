@@ -74,8 +74,8 @@ mids = A.metabolites(model)
 gids = A.genes(model)
 
 readme = """
-[ci-img]: https://github.com/stelmo/VibrioNatriegens.jl/workflows/CI/badge.svg
-[ci-url]: https://github.com/stelmo/VibrioNatriegens.jl/actions/workflows/ci.yml
+[ci-img]: https://github.com/stelmo/VibrioNatriegens/workflows/CI/badge.svg
+[ci-url]: https://github.com/stelmo/VibrioNatriegens/actions/workflows/ci.yml
 
 # Genome-scale metabolic model of _Vibrio natriegens_
 
