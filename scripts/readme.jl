@@ -74,7 +74,12 @@ mids = A.metabolites(model)
 gids = A.genes(model)
 
 readme = """
+[ci-img]: https://github.com/stelmo/VibrioNatriegens.jl/workflows/CI/badge.svg
+[ci-url]: https://github.com/stelmo/VibrioNatriegens.jl/actions/workflows/ci.yml
+
 # Genome-scale metabolic model of _Vibrio natriegens_
+
+[![CI status][ci-img]][ci-url]
 
 This package builds a fully manually reconstructed genome-scale metabolic model of the halophilic bacterium _Vibrio natriegens_. 
 The model is composed of $(A.n_reactions(model)) reactions, $(A.n_metabolites(model)) metabolites, and $(A.n_genes(model)) genes. 
@@ -150,6 +155,14 @@ using VibrioNatriegens
 model = VibrioNatriegens.build_model()
 ```
 This model works well with the COBREXA package, and it can be used to simulate FBA, ec-FBA, and sRBA models.
+
+#### Acknowledgements
+
+`DifferentiableMetabolism.jl` was developed at Institute for Quantitative and
+Theoretical Biology at Heinrich Heine University Düsseldorf
+([qtb.hhu.de](https://www.qtb.hhu.de/en/)).
+
+<img src="scripts/assets/hhu.svg" alt="HHU logo" height="64px" style="height:64px; width:auto">   <img src="scripts/assets/qtb.svg" alt="QTB logo" height="64px" style="height:64px; width:auto"> 
 
 Note: this readme is automatically built using the script `scripts/readme.jl`.
 """
