@@ -51,7 +51,7 @@ end
 
 function replace_proteinaccession_with_locustag!(model)
     lu = Dict(
-        first(model.genes[g].annotations["proteinaccession"]) =>
+        first(model.genes[g].annotations["protein.accession"]) =>
             first(model.genes[g].annotations["locustag"]) for g in A.genes(model)
     )
     # in genes

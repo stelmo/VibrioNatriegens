@@ -49,7 +49,7 @@ end
 
     sol = flux_balance_analysis(model, optimizer = HiGHS.Optimizer)
     atp_per_glucose = abs(sol.fluxes.ATPM / sol.fluxes.EX_15903)
-    @test isapprox(atp_per_glucose,  32.25, atol=1e-3)
+    @test isapprox(atp_per_glucose, 32.25, atol = 1e-3)
 
     for rid in filter(x -> startswith(x, "EX_"), A.reactions(model))
         model.reactions[rid].lower_bound = 0.0
@@ -97,7 +97,7 @@ end
         ("gluconate", "EX_18391", 1.51),
         # ("starch", "", 0.19),
     ]
- 
+
     for (s, e, g) in aerobic_substrates
         model.reactions[e].lower_bound = -20.0
         sol = flux_balance_analysis(model, optimizer = HiGHS.Optimizer)

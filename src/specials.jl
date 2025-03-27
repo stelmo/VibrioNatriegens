@@ -21,11 +21,11 @@ function add_electron_transport_chain!(model)
             X.Isozyme(; gene_product_stoichiometry = Dict("WP_020336371.1" => 1.0)),
         ], # nfnB, missing nfnA...
         annotations = Dict(
-            "KEGG_REACTION" => [
+            "rhea-reaction-description" => [
                 "2 reduced [2Fe-2S]-[ferredoxin] + NADH + 2 NADP(+) + H(+) = 2 oxidized [2Fe-2S]-[ferredoxin] + NAD(+) + 2 NADPH",
             ],
-            "EC" => ["1.6.1.4"],
-            "RHEA" => ["RHEA:47000"],
+            "rhea.ec" => ["1.6.1.4"],
+            "rhea.reaction" => ["47000"],
         ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "nfn")...)
@@ -72,9 +72,10 @@ function add_electron_transport_chain!(model)
             ),
         ],
         annotations = Dict(
-            "KEGG_REACTION" =>
+            "rhea-reaction-description" =>
                 ["ATP + H2O + 4 H(+)(in) = ADP + phosphate + 5 H(+)(out)"],
-            "EC" => ["7.1.2.2"],
+            "rhea.ec" => ["7.1.2.2"],
+            "rhea.reaction" => ["57720"],
         ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "H_ATPsynthase")...)
@@ -100,7 +101,7 @@ function add_electron_transport_chain!(model)
                 ),
             ),
         ],
-        annotations = Dict("EC" => ["7.1.1.8"], "RHEA" => ["RHEA:11484"]),
+        annotations = Dict("rhea.ec" => ["7.1.1.8"], "rhea.reaction" => ["11484"]),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "cyt_bc1")...)
     append!(ms, keys(A.reaction_stoichiometry(model, "cyt_bc1")))
@@ -134,7 +135,7 @@ function add_electron_transport_chain!(model)
                 ),
             ),
         ],
-        annotations = Dict("EC" => ["7.1.1.9"], "RHEA" => ["RHEA:11436"]),
+        annotations = Dict("rhea.ec" => ["7.1.1.9"], "rhea.reaction" => ["11436"]),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "cyt_c")...)
     append!(ms, keys(A.reaction_stoichiometry(model, "cyt_c")))
@@ -161,7 +162,7 @@ function add_electron_transport_chain!(model)
                 ),
             ),
         ],
-        annotations = Dict("RHEA" => ["RHEA:11436"], "EC" => ["7.1.1.9"]),
+        annotations = Dict("rhea.reaction" => ["11436"], "rhea.ec" => ["7.1.1.9"]),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "cyt_c_cbb3")...)
     append!(ms, keys(A.reaction_stoichiometry(model, "cyt_c_cbb3")))
@@ -187,7 +188,7 @@ function add_electron_transport_chain!(model)
                 ),
             ),
         ],
-        annotations = Dict("RHEA" => ["RHEA:40527"], "EC" => ["7.1.1.7"]),
+        annotations = Dict("rhea.reaction" => ["40527"], "rhea.ec" => ["7.1.1.7"]),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "cyt_bd")...)
     append!(ms, keys(A.reaction_stoichiometry(model, "cyt_bd")))
@@ -214,7 +215,7 @@ function add_electron_transport_chain!(model)
                 ),
             ),
         ],
-        annotations = Dict("EC" => ["7.1.1.3"], "RHEA" => ["RHEA:30251"]),
+        annotations = Dict("rhea.ec" => ["7.1.1.3"], "rhea.reaction" => ["30251"]),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "cyt_bo")...)
     append!(ms, keys(A.reaction_stoichiometry(model, "cyt_bo")))
@@ -240,11 +241,10 @@ function add_electron_transport_chain!(model)
             ),
         ],
         annotations = Dict(
-            "KEGG_REACTION" =>
+            "rhea-reaction-description" =>
                 ["NAD(+) + NADPH + H(+)(in) = NADH + NADP(+) + H(+)(out)"],
-            "EC" => ["7.1.1.1"],
-            "EXPASY" => ["https://enzyme.expasy.org/EC/7.1.1.1"],
-            "RHEA" => ["RHEA:47992"],
+            "rhea.ec" => ["7.1.1.1"],
+            "rhea.reaction" => ["47992"],
         ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "pnt")...)
@@ -301,10 +301,10 @@ function add_salt_transducers!(model)
             ),
         ],
         annotations = Dict(
-            "KEGG_REACTION" =>
+            "rhea-reaction-description" =>
                 ["4 Na(+)(out) + ADP + phosphate + H(+) = 4 Na(+)(in) + ATP + H2O"],
-            "EC" => ["7.2.2.1"],
-            "RHEA" => ["RHEA:58156"],
+            "rhea.ec" => ["7.2.2.1"],
+            "rhea.reaction" => ["58156"],
         ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "Na_ATPsynthase")...)
@@ -332,9 +332,10 @@ function add_salt_transducers!(model)
             ),
         ],
         annotations = Dict(
-            "KEGG_REACTION" =>
+            "rhea-reaction-description" =>
                 ["oxaloacetate + 2 Na(+)(in) + H(+) = pyruvate + 2 Na(+)(out) + CO2"],
-            "EC" => ["7.2.4.2"],
+            "rhea.ec" => ["7.2.4.2"],
+            "rhea.reaction" => ["57724",],
         ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "oad")...)
@@ -367,12 +368,11 @@ function add_salt_transducers!(model)
             ),
         ],
         annotations = Dict(
-            "KEGG_REACTION" => [
+            "rhea-reaction-description" => [
                 "a ubiquinone + n Na(+)(in) + NADH + H(+) = a ubiquinol + n Na(+)(out) + NAD(+)",
             ],
-            "EC" => ["7.2.1.1"],
-            "RHEA" => ["RHEA:47748"],
-            "EXPASY" => ["https://enzyme.expasy.org/EC/7.2.1.1"],
+            "rhea.ec" => ["7.2.1.1"],
+            "rhea.reaction" => ["47748"],
         ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "nqr")...)
@@ -414,11 +414,11 @@ function add_salt_transducers!(model)
             ),
         ],
         annotations = Dict(
-            "KEGG_REACTION" => [
+            "rhea-reaction-description" => [
                 "2 reduced [2Fe-2S]-[ferredoxin] + Na(+)(in) + NAD(+) + H(+) = 2 oxidized [2Fe-2S]-[ferredoxin] + Na(+)(out) + NADH",
             ],
-            "EC" => ["7.1.1.11", "7.2.1.2"],
-            "EXPASY" => ["https://enzyme.expasy.org/EC/7.2.1.2"],
+            "rhea.ec" => ["7.2.1.2"],
+            "rhea.reaction" => ["46800",],
         ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "rnf")...)

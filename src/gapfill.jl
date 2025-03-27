@@ -32,7 +32,7 @@ function gapfill!(model)
         25306 # folate biosynthesis
         20001 # folate biosynthesis
         27345 # adenosylcobalamin biosynthesis
-        33710 # adenosylcobalamin biosynthesis
+        33707 # adenosylcobalamin biosynthesis
         11492 # adenosylcobalamin biosynthesis
         20533 # pyridoxal 5'-phosphate biosynthesis
         11500 # KDO lipopolysaccharide biosynthesis

@@ -1,9 +1,9 @@
-[ci-img]: https://github.com/stelmo/VibrioNatriegens.jl/workflows/CI/badge.svg
-[ci-url]: https://github.com/stelmo/VibrioNatriegens.jl/actions/workflows/ci.yml
+[ci-img]: https://github.com/stelmo/VibrioNatriegens/workflows/CI/badge.svg
+[ci-url]: https://github.com/stelmo/VibrioNatriegens/actions/workflows/ci.yml
 
 # Genome-scale metabolic model of _Vibrio natriegens_
 
-[![CI status][ci-img]][ci-url]
+Test suite: [![CI status][ci-img]][ci-url]
 
 This package builds a fully manually reconstructed genome-scale metabolic model of the halophilic bacterium _Vibrio natriegens_. 
 The model is composed of 1283 reactions, 950 metabolites, and 939 genes. 
@@ -15,7 +15,7 @@ At a glance, the model consists of:
 | Attribute | Number |
 |-----------|-------|
 | Metabolic reactions | 803 |
-| Transport reactions | 327 |
+| Transport reactions | 174 |
 | Exchange reactions | 153 |
 | Metabolic reactions with GRRs | 752 |
 | Transport reactions with GRRs | 88 |
@@ -27,40 +27,41 @@ The model has the following reaction cross-references (available under the `anno
 | Attribute | Number (fraction %) |
 |-----------|-------|
 | *Metabolic reactions* | *803* |
-| kegg.reaction | 736 (92%) |
-| metacyc.reaction |  |
-| ecocyc.reaction | ? |
-| reactome.reaction | ? |
-| rhea.reaction | 736 (92%) |
-| bigg.reaction | 539 (67%) |
-| ec.code |  |
-| SBO | 754 (94 %) |
+| rhea.reaction | 801 (100%) |
+| kegg.reaction | 776 (97%) |
+| metacyc.reaction |  718 (89%) |
+| reactome.reaction | 212 (26%) |
+| eggnog.go | 432 (54%) |
+| bigg.reaction | 562 (70%) |
+| ec | 786 (97%) |
+| SBO | 803 (100 %) |
+
+ec = `eggnog.ec` or `rhea.ec` or `kegg.ec`
 
 The model has the following metabolite cross-references (available under the `annotations` field):
 
 | Attribute | Number (fraction %) |
 |-----------|-------|
 | *Total metabolites* | *950* |
-| chebi.metabolite | ? |
-| kegg.compound | ? |
-| inchi | ? |
-| inchikey | ? |
-| smiles | ? |
-| formula | ? |
-| molarmass | ? |
-| SBO | ? |
-
+| chebi.metabolite | 950 (100 %) |
+| kegg.compound | 334 (35 %) |
+| inchi | 899 (95 %) |
+| inchikey | 899 (95 %) |
+| smiles | 899 (95 %) |
+| formula | 950 (100 %) |
+| charge | 950 (100 %) |
+| SBO | 950 (100 %) |
 
 The model has the following gene cross-references (available under the `annotations` field):
 
 | Attribute | Number (fraction %) |
 |-----------|-------|
 | *Total genes* | 939 |
-|  | ? |
-| SBO | ? |
-
+| NCBI accession | 939 (100 %) |
+| SBO | 939 (100 %) |
 
 ## Build instructions
+
 For convenience, an SBML and JSON formatted model is available in the main directory of the repo.
 If you would like to build the model from scratch (recommended, since some useful data gets lost converting to the commonly used model formats), then you must first install `VibrioNatriegens` like any Julia package.
 ```julia
@@ -78,9 +79,11 @@ using VibrioNatriegens
 
 model = VibrioNatriegens.build_model()
 ```
-This model works well with the COBREXA package, and it can be used to simulate FBA, ec-FBA, and sRBA models.
+The reactions, metabolites, and genes of `model` can be accessed like any field, e.g. `model.reactions`.
 
-#### Acknowledgements
+This model works well with the [COBREXA package](https://github.com/COBREXA/COBREXA.jl), and it can be used to simulate FBA, ec-FBA, and sRBA models.
+
+## Acknowledgements
 
 `DifferentiableMetabolism.jl` was developed at Institute for Quantitative and
 Theoretical Biology at Heinrich Heine University Düsseldorf

@@ -28,6 +28,7 @@ AbstractFBCModels.save(m, "vibrio_natriegens.sbml")
 #     using VibrioNatriegens
 # end
 
+# reactions
 rids = A.reactions(model)
 
 transport_rxns = [
@@ -36,10 +37,10 @@ transport_rxns = [
     filter(startswith("ANTI_"), rids)
     filter(startswith("ABC_"), rids)
     filter(startswith("PTS_"), rids)
-    filter(startswith("DF_"), rids)
 ]
 exchange_rxns = filter(startswith("EX_"), rids)
-metabolic_rxns = setdiff(rids, [transport_rxns; exchange_rxns])
+diffusion_rxns = filter(startswith("DF_"), rids)
+metabolic_rxns = setdiff(rids, [transport_rxns; exchange_rxns; diffusion_rxns])
 
 metabolic_rxn_grrs = [
     rid for rid in metabolic_rxns if !isnothing(A.reaction_gene_association_dnf(model, rid))
@@ -54,24 +55,94 @@ deadend_metabolites = []
 
 sbo_reactions =
     [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "SBO")]
+
 bigg_reactions = [
     rid for
     rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "bigg.reaction")
 ]
+
 kegg_reactions = [
     rid for
     rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "kegg.reaction")
 ]
+
 rhea_reactions = [
     rid for
     rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "rhea.reaction")
 ]
-ec_code =
-    [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "ec-code")]
 
+setdiff(A.reactions(model), rhea_reactions)
+
+ec_reactions = [
+    rid for
+    rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "eggnog.ec") ||
+    haskey(model.reactions[rid].annotations, "rhea.ec") ||
+    haskey(model.reactions[rid].annotations, "kegg.ec")
+]
+
+go_reactions = [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "eggnog.go")]
+
+metacyc_reactions = [
+    rid for rid in metabolic_rxns if
+    haskey(model.reactions[rid].annotations, "metacyc.reaction")
+]
+
+reactome_reactions = [
+    rid for rid in metabolic_rxns if
+    haskey(model.reactions[rid].annotations, "reactome.reaction")
+]
+
+seed_reactions = [
+    rid for rid in metabolic_rxns if
+    haskey(model.reactions[rid].annotations, "seed.reaction")
+]
+
+# metabolites
 mids = A.metabolites(model)
 
+formula_metabolites =
+    [mid for mid in A.metabolites(model) if !isnothing(A.metabolite_formula(model, mid))]
+
+charge_metabolites =
+    [mid for mid in A.metabolites(model) if !isnothing(A.metabolite_charge(model, mid))]
+
+    sbo_metabolites = [
+    mid for mid in A.metabolites(model) if haskey(model.metabolites[mid].annotations, "SBO")
+]
+
+inchi_metabolites = [
+    mid for
+    mid in A.metabolites(model) if haskey(model.metabolites[mid].annotations, "inchi")
+]
+
+inchikey_metabolites = [
+    mid for mid in A.metabolites(model) if
+    haskey(model.metabolites[mid].annotations, "inchikey")
+]
+
+smiles_metabolites = [
+    mid for
+    mid in A.metabolites(model) if haskey(model.metabolites[mid].annotations, "smiles")
+]
+
+chebi_metabolites = [
+    mid for
+    mid in A.metabolites(model) if haskey(model.metabolites[mid].annotations, "chebi")
+]
+
+kegg_metabolites = [
+    mid for mid in A.metabolites(model) if
+    haskey(model.metabolites[mid].annotations, "kegg.compound")
+]
+
+# genes
 gids = A.genes(model)
+
+sbo_genes = [gid for gid in A.genes(model) if haskey(model.genes[gid].annotations, "SBO")]
+ncbi_genes = [
+    gid for
+    gid in A.genes(model) if haskey(model.genes[gid].annotations, "protein.accession")
+]
 
 readme = """
 [ci-img]: https://github.com/stelmo/VibrioNatriegens/workflows/CI/badge.svg
@@ -79,7 +150,7 @@ readme = """
 
 # Genome-scale metabolic model of _Vibrio natriegens_
 
-[![CI status][ci-img]][ci-url]
+Test suite: [![CI status][ci-img]][ci-url]
 
 This package builds a fully manually reconstructed genome-scale metabolic model of the halophilic bacterium _Vibrio natriegens_. 
 The model is composed of $(A.n_reactions(model)) reactions, $(A.n_metabolites(model)) metabolites, and $(A.n_genes(model)) genes. 
@@ -103,40 +174,41 @@ The model has the following reaction cross-references (available under the `anno
 | Attribute | Number (fraction %) |
 |-----------|-------|
 | *Metabolic reactions* | *$(length(metabolic_rxns))* |
-| kegg.reaction | $(length(kegg_reactions)) ($( round(Int, length(kegg_reactions) / length(metabolic_rxns) * 100))%) |
-| metacyc.reaction |  |
-| ecocyc.reaction | ? |
-| reactome.reaction | ? |
 | rhea.reaction | $(length(rhea_reactions)) ($( round(Int, length(rhea_reactions) / length(metabolic_rxns) * 100))%) |
+| kegg.reaction | $(length(kegg_reactions)) ($( round(Int, length(kegg_reactions) / length(metabolic_rxns) * 100))%) |
+| metacyc.reaction |  $(length(metacyc_reactions)) ($( round(Int, length(metacyc_reactions) / length(metabolic_rxns) * 100))%) |
+| reactome.reaction | $(length(reactome_reactions)) ($( round(Int, length(reactome_reactions) / length(metabolic_rxns) * 100))%) |
+| eggnog.go | $(length(go_reactions)) ($( round(Int, length(go_reactions) / length(metabolic_rxns) * 100))%) |
 | bigg.reaction | $(length(bigg_reactions)) ($( round(Int, length(bigg_reactions) / length(metabolic_rxns) * 100))%) |
-| ec.code |  |
+| ec | $(length(ec_reactions)) ($( round(Int, length(kegg_reactions) / length(metabolic_rxns) * 100))%) |
 | SBO | $(length(sbo_reactions)) ($( round(Int, length(sbo_reactions) / length(metabolic_rxns) * 100)) %) |
+
+ec = `eggnog.ec` or `rhea.ec` or `kegg.ec`
 
 The model has the following metabolite cross-references (available under the `annotations` field):
 
 | Attribute | Number (fraction %) |
 |-----------|-------|
 | *Total metabolites* | *$(length(mids))* |
-| chebi.metabolite | ? |
-| kegg.compound | ? |
-| inchi | ? |
-| inchikey | ? |
-| smiles | ? |
-| formula | ? |
-| molarmass | ? |
-| SBO | ? |
-
+| chebi.metabolite | $(length(chebi_metabolites)) ($( round(Int, length(chebi_metabolites) / length(mids) * 100)) %) |
+| kegg.compound | $(length(kegg_metabolites)) ($( round(Int, length(kegg_metabolites) / length(mids) * 100)) %) |
+| inchi | $(length(inchi_metabolites)) ($( round(Int, length(inchi_metabolites) / length(mids) * 100)) %) |
+| inchikey | $(length(inchikey_metabolites)) ($( round(Int, length(inchikey_metabolites) / length(mids) * 100)) %) |
+| smiles | $(length(smiles_metabolites)) ($( round(Int, length(smiles_metabolites) / length(mids) * 100)) %) |
+| formula | $(length(formula_metabolites)) ($( round(Int, length(formula_metabolites) / length(mids) * 100)) %) |
+| charge | $(length(charge_metabolites)) ($( round(Int, length(charge_metabolites) / length(mids) * 100)) %) |
+| SBO | $(length(sbo_metabolites)) ($( round(Int, length(sbo_metabolites) / length(mids) * 100)) %) |
 
 The model has the following gene cross-references (available under the `annotations` field):
 
 | Attribute | Number (fraction %) |
 |-----------|-------|
 | *Total genes* | $(length(gids)) |
-|  | ? |
-| SBO | ? |
-
+| NCBI accession | $(length(ncbi_genes)) ($( round(Int, length(ncbi_genes) / length(gids) * 100)) %) |
+| SBO | $(length(sbo_genes)) ($( round(Int, length(sbo_genes) / length(gids) * 100)) %) |
 
 ## Build instructions
+
 For convenience, an SBML and JSON formatted model is available in the main directory of the repo.
 If you would like to build the model from scratch (recommended, since some useful data gets lost converting to the commonly used model formats), then you must first install `VibrioNatriegens` like any Julia package.
 ```julia
@@ -154,9 +226,11 @@ using VibrioNatriegens
 
 model = VibrioNatriegens.build_model()
 ```
-This model works well with the COBREXA package, and it can be used to simulate FBA, ec-FBA, and sRBA models.
+The reactions, metabolites, and genes of `model` can be accessed like any field, e.g. `model.reactions`.
 
-#### Acknowledgements
+This model works well with the [COBREXA package](https://github.com/COBREXA/COBREXA.jl), and it can be used to simulate FBA, ec-FBA, and sRBA models.
+
+## Acknowledgements
 
 `DifferentiableMetabolism.jl` was developed at Institute for Quantitative and
 Theoretical Biology at Heinrich Heine University Düsseldorf

@@ -5,18 +5,26 @@ function add_metabolite_annotations!(model)
             joinpath(pkgdir(@__MODULE__), "data", "chebi", "metabolite_annotations.csv"),
         ),
     )
-
+    renamer(k) = begin
+        if k == "kegg"
+            return "kegg.compound"
+        else
+            return k
+        end
+    end
     met_dict = Dict(
         string(first(gdf.chebi)) => Dict(
-            k => [String(string(v))] for
+            renamer(k) => [String(string(v))] for
             (k, v) in zip(labels(gdf), gdf[1, :]) if !ismissing(v)
         ) for gdf in groupby(met_df, :chebi)
     )
+
     for (k, v) in met_dict
         if haskey(v, "names")
             met_dict[k]["names"] = string.(split(first(v["names"]), "#"))
         end
     end
+
     for _mid in A.metabolites(model)
 
         mid = join(first(split(_mid, "_"))) # this is the basic mid
@@ -33,6 +41,14 @@ function add_metabolite_annotations!(model)
             isnothing(m.inchi) || (mm["inchi"] = [m.inchi])
         end
 
+        # chebi is the default name space, ensure it is added
+        if haskey(mm, "chebi")
+            if mid ∉ mm["chebi"]
+                push!(mm["chebi"], mid)
+            end
+        else
+            mm["chebi"] = [mid]
+        end
         mm["SBO"] = ["SBO_0000299"]
     end
 
@@ -46,5 +62,6 @@ function add_metabolite_annotations!(model)
         "kegg" => ["C00182"],
         "molarmass" => ["162.1406"],
         "SBO" => ["SBO_0000299"],
+        "chebi" => ["28087"],
     )
 end

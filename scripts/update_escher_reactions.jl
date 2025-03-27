@@ -19,7 +19,8 @@ for em in escher_maps
     ems[em] = JSON.parsefile(joinpath("maps", em))
 end
 
-renamer(rid, model, annofield) = join(get(model.reactions[rid].annotations, annofield, [""]), " + ")
+renamer(rid, model, annofield) =
+    join(get(model.reactions[rid].annotations, annofield, [""]), " + ")
 
 em = ems["amino_acids.json"]
 em[2]["reactions"]["159"]
@@ -28,15 +29,15 @@ ems["nucleotides.json"]
 for (emid, em) in ems
     emm = em[2]
     for rxn in values(emm["reactions"])
-        
+
         if rxn["bigg_id"] ∉ A.reactions(model)
             @warn("$(rxn["bigg_id"]) not found in the model!")
             continue
         end
-        
+
         # rename reaction 
         rxn["name"] = renamer(rid, model, "rhea.ec")
-        
+
         # set bounds
         lb, ub = model.reactions[rxn["bigg_id"]].lower_bound,
         model.reactions[rxn["bigg_id"]].upper_bound

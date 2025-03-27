@@ -156,6 +156,10 @@ function curate!(model)
         gene_association = [
             X.Isozyme(; gene_product_stoichiometry = Dict("WP_020332873.1" .=> 1.0)),
         ],
+        annotations = Dict(
+            "rhea.reaction" => ["18549"],
+            "rhea.ec" => ["2.4.1.11"],
+        ),
     )
 
     model.reactions["glycogen_phosphorylase"] = Reaction(
@@ -171,6 +175,10 @@ function curate!(model)
         gene_association = [
             X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333475.1" .=> 1.0)),
         ],
+        annotations = Dict(
+            "rhea.reaction" => ["41732"],
+            "rhea.ec" => ["2.4.1.1"],
+        ),
     )
     add_genes!(model, ["WP_020333475.1", "WP_020332873.1"])
 
@@ -189,6 +197,10 @@ function curate!(model)
         gene_association = [
             X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333630.1" .=> 4.0)),
         ],
+        annotations = Dict(
+            "rhea.reaction" => ["19573"],
+            "rhea.ec" => ["2.7.4.1"],
+        ),
     )
     model.reactions["polyphosphate_kinase1"] = Reaction(
         name = "ppk1",
@@ -204,6 +216,10 @@ function curate!(model)
         gene_association = [
             X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333630.1" .=> 4.0)),
         ],
+        annotations = Dict(
+            "rhea.reaction" => ["19573"],
+            "rhea.ec" => ["2.7.4.1"],
+        ),
     )
     add_genes!(model, ["WP_020333630.1"])
 
