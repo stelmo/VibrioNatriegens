@@ -53,7 +53,8 @@ C.pretty(
 )
 
 #####################
-model = convert(A.CanonicalModel.Model, load_model("iML1515.json"))
+using JSONFBCModels, AbstractFBCModels, COBREXA
+model = convert(A.CanonicalModel.Model, COBREXA.load_model("iML1515.json"))
 model.reactions["EX_glc__D_e"].lower_bound = -22.0
 sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 sol = parsimonious_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
@@ -68,3 +69,5 @@ C.pretty(
     end;
     format_label = x -> A.reaction_name(model, string(last(x))),
 )
+
+############################
