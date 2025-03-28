@@ -149,13 +149,15 @@ readme = """
 [ci-img]: https://github.com/stelmo/VibrioNatriegens/workflows/CI/badge.svg
 [ci-url]: https://github.com/stelmo/VibrioNatriegens/actions/workflows/ci.yml
 
-# Genome-scale metabolic model of _Vibrio natriegens_
+# A genome-scale metabolic model of _Vibrio natriegens_
 
-This package builds a fully manually reconstructed genome-scale metabolic model of the halophilic bacterium _Vibrio natriegens_. 
+This package builds a fully manually reconstructed genome-scale metabolic model of the halophilic bacterium\\ 
+_Vibrio natriegens_\\ 
 The model is composed of $(A.n_reactions(model)) reactions, $(A.n_metabolites(model)) metabolites, and $(A.n_genes(model)) genes. 
 The model focusses on the primary metabolism the organism, and includes enzyme and ribosomal constraints. 
 
-A MEMOTE-like test suite is implemented in the `test` directory, and runs with CI. Its current status is: [![CI status][ci-img]][ci-url]
+A MEMOTE-like test suite is implemented in the `test` directory, and runs with CI.\
+Its current status is: [![CI status][ci-img]][ci-url]\
 The primary name spaces for the model reactions and metabolites are Rhea and Chebi. 
 
 ## Model characterization

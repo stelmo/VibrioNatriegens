@@ -84,7 +84,7 @@ end
         ("glucose", "EX_15903", 1.68),
         ("galactose", "EX_28061", 0.18),
         ("rhamnose", "EX_62346", 0.4),
-        ("maltose", "", 1.22),
+        ("maltose", "EX_15903", 1.22), #! this is glucose, maltose is not a metabolite yet TODO
         ("arabinose", "EX_46994", 0.83),
         ("glycerol", "EX_17754", 0.86),
         ("fructose", "EX_28645", 1.51),
