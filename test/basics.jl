@@ -84,7 +84,7 @@ end
         ("glucose", "EX_15903", 1.68),
         ("galactose", "EX_28061", 0.18),
         ("rhamnose", "EX_62346", 0.4),
-        ("maltose", "EX_15903", 1.22), #! this is glucose, maltose is not a metabolite yet TODO
+        ("maltose", "EX_15740", 1.22), #! this is formate, maltose is not a metabolite yet TODO
         ("arabinose", "EX_46994", 0.83),
         ("glycerol", "EX_17754", 0.86),
         ("fructose", "EX_28645", 1.51),
@@ -95,7 +95,7 @@ end
         ("fumarate", "EX_29806", 0.99),
         ("succinate", "EX_30031", 1.0),
         ("gluconate", "EX_18391", 1.51),
-        ("starch", "EX_15903", 0.19), #! this is glucose, starch is not a metabolite yet TODO
+        ("starch", "EX_15740", 0.19), #! this is formate, starch is not a metabolite yet TODO
     ]
 
     for (s, e, g) in aerobic_substrates

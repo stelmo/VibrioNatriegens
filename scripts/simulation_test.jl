@@ -7,8 +7,8 @@ import ConstraintTrees as C
 using JSONFBCModels, JSON
 
 model = VibrioNatriegens.build_model()
-model.reactions["EX_15903"].lower_bound = 0.0 # glucose
-model.reactions["EX_15740"].lower_bound = -35.0 # formate # doesn't work
+# model.reactions["EX_15903"].lower_bound = 0.0 # glucose
+# model.reactions["EX_15740"].lower_bound = -35.0 # formate # doesn't work
 # model.reactions["EX_57305"].lower_bound = -35.0 # glycine
 # model.reactions["EX_28938"].upper_bound = 1000.0 # nh4
 
