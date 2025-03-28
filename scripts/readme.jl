@@ -151,14 +151,20 @@ readme = """
 
 # A genome-scale metabolic model of _Vibrio natriegens_
 
-This package builds a fully manually reconstructed genome-scale metabolic model of the halophilic bacterium\\ 
-_Vibrio natriegens_\\ 
-The model is composed of $(A.n_reactions(model)) reactions, $(A.n_metabolites(model)) metabolites, and $(A.n_genes(model)) genes. 
-The model focusses on the primary metabolism the organism, and includes enzyme and ribosomal constraints. 
+This package builds a fully manually reconstructed genome-scale metabolic model of the halophilic bacterium:
 
-A MEMOTE-like test suite is implemented in the `test` directory, and runs with CI.\
-Its current status is: [![CI status][ci-img]][ci-url]\
-The primary name spaces for the model reactions and metabolites are Rhea and Chebi. 
+<p align="center">
+<i> 
+Vibrio natriegens
+</i>
+</p> 
+
+The model is composed of $(A.n_reactions(model)) reactions, $(A.n_metabolites(model)) metabolites, and $(A.n_genes(model)) genes. 
+It focusses on the primary metabolism the organism, and includes enzyme and ribosomal constraints. 
+
+A MEMOTE-like test suite is implemented in the `test` directory, and runs with CI. 
+Its current status is: [![CI status][ci-img]][ci-url]. 
+The primary name spaces for the model reactions and metabolites are [Rhea](https://www.rhea-db.org/) and [ChEBI](https://www.ebi.ac.uk/chebi/). 
 
 ## Model characterization
 At a glance, the model consists of:
@@ -245,8 +251,8 @@ The reactions, metabolites, and genes of `model` can be accessed like any field,
 This model works well with the [COBREXA package](https://github.com/COBREXA/COBREXA.jl), and it can be used to simulate FBA, ec-FBA, and sRBA models.
 
 ## Known issues
-Known issues in the model are marked as broken tests, mainly tested in the file `issues.jl` in the test directory.
-Exceptions to this include substrate utilization tests (still listed as broken tests):
+Known issues in the model are marked as broken tests, mainly tested in the file `test/issues.jl` in the test directory.
+Exceptions to this include substrate utilization tests (also listed as broken tests, but found in `test/basics.jl`):
 - Formate
 - Maltose
 - Starch
