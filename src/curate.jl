@@ -156,10 +156,7 @@ function curate!(model)
         gene_association = [
             X.Isozyme(; gene_product_stoichiometry = Dict("WP_020332873.1" .=> 1.0)),
         ],
-        annotations = Dict(
-            "rhea.reaction" => ["18549"],
-            "rhea.ec" => ["2.4.1.11"],
-        ),
+        annotations = Dict("rhea.reaction" => ["18549"], "rhea.ec" => ["2.4.1.11"]),
     )
 
     model.reactions["glycogen_phosphorylase"] = Reaction(
@@ -175,15 +172,12 @@ function curate!(model)
         gene_association = [
             X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333475.1" .=> 1.0)),
         ],
-        annotations = Dict(
-            "rhea.reaction" => ["41732"],
-            "rhea.ec" => ["2.4.1.1"],
-        ),
+        annotations = Dict("rhea.reaction" => ["41732"], "rhea.ec" => ["2.4.1.1"]),
     )
     add_genes!(model, ["WP_020333475.1", "WP_020332873.1"])
 
     model.reactions["polyphosphate_kinase2"] = Reaction(
-        name = "ppk2",
+        name = "polyphosphate kinase II",
         stoichiometry = Dict(
             "456216" => 1.0, # adp
             "30616" => -1.0, # atp
@@ -197,13 +191,10 @@ function curate!(model)
         gene_association = [
             X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333630.1" .=> 4.0)),
         ],
-        annotations = Dict(
-            "rhea.reaction" => ["19573"],
-            "rhea.ec" => ["2.7.4.1"],
-        ),
+        annotations = Dict("rhea.reaction" => ["19573"], "rhea.ec" => ["2.7.4.1"]),
     )
     model.reactions["polyphosphate_kinase1"] = Reaction(
-        name = "ppk1",
+        name = "polyphosphate kinase I",
         stoichiometry = Dict(
             "456216" => 1.0, # adp
             "30616" => -1.0, # atp
@@ -216,10 +207,7 @@ function curate!(model)
         gene_association = [
             X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333630.1" .=> 4.0)),
         ],
-        annotations = Dict(
-            "rhea.reaction" => ["19573"],
-            "rhea.ec" => ["2.7.4.1"],
-        ),
+        annotations = Dict("rhea.reaction" => ["19573"], "rhea.ec" => ["2.7.4.1"]),
     )
     add_genes!(model, ["WP_020333630.1"])
 

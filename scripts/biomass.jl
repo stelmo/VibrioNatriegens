@@ -2,7 +2,32 @@ using JSON
 using DataFrames, DataFramesMeta, CSV
 using FASTX, Statistics
 
+
 biomass = Dict()
+
+atp_req = 175.0 # this is very high - maybe because of large ribosome fraction?
+
+mass_fractions = Dict(
+    # Long 2017 data g/g
+    "protein" => 0.458,
+    "rna" => 0.286,
+    "lipid" => 0.075,
+    "glycogen" => 0.034,
+    # e coli g/g
+    "peptidoglycan" => 0.025,
+    "dna" => 0.031,
+    "lipopolysaccharide" => 0.034,
+)
+
+# add solubles
+total = sum(values(mass_fractions))
+mass_fractions["soluble_pool"] = 1.0 - total # overestimate
+
+# normalize
+total = sum(values(mass_fractions))
+for (k, v) in mass_fractions
+    mass_fractions[k] = v / total
+end
 
 chebi_lookup = Dict(
     "glycogen" => "glycogen",
@@ -39,86 +64,62 @@ chebi_lookup = Dict(
     "octa" => "25629", # octadecanoic acid   
 )
 
-# Long 2017 data g/g
-protein = 0.458
-rna = 0.286
-lipid = 0.075
-glycogen = 0.034
-
-# e coli g/g
-peptidoglycan = 0.025
-dna = 0.031
-lipopolysaccharide = 0.034
-
-total = protein + rna + lipid + glycogen + dna + peptidoglycan + lipopolysaccharide
-
-soluble_pool = 1.0 - total # overestimate
-
 # collate all molar masses
-molar_masses = Dict() # g/mol
-begin
-    molar_masses["61404"] = 487.1499 # dATP
-    molar_masses["61429"] = 503.1493 # dGTP
-    molar_masses["61481"] = 463.1252 # dCTP
-    molar_masses["37568"] = 478.1365 # dTTP
-
-    molar_masses["30616"] = 503.14946 # ATP
-    molar_masses["37565"] = 519.14886 # GTP
-    molar_masses["37563"] = 479.12468 # CTP
-    molar_masses["46398"] = 480.1094 # UTP
-
-    molar_masses["32551"] = 147.19558 # # lysine
-    molar_masses["58045"] = 131.1729 # isoleucine
-    molar_masses["57427"] = 131.1729 # leucine
-    molar_masses["57844"] = 149.2124 # methionine
-    molar_masses["58095"] = 165.1891 # phenylalanine
-    molar_masses["57926"] = 119.1197  # threonine
-    molar_masses["57912"] = 204.2262 # tryptophan
-    molar_masses["57762"] = 117.1469 # valine
-    molar_masses["32682"] = 175.20906 # arginine
-    molar_masses["57595"] = 155.1552 # histidine
-    molar_masses["57972"] = 89.0935 # alanine
-    molar_masses["58048"] = 132.1184 # asparagine
-    molar_masses["29991"] = 132.09478 # aspartate
-    molar_masses["35235"] = 121.159 # cysteine
-    molar_masses["29985"] = 147.1299 # glutamate
-    molar_masses["58359"] = 146.1451 # glutamine
-    molar_masses["57305"] = 75.0669 # glycine
-    molar_masses["60039"] = 115.131 # proline
-    molar_masses["33384"] = 105.093 # serine
-    molar_masses["58315"] = 181.1894 # tyrosine
-
-    molar_masses["glycogen"] = 162.1406 # C6H10O5
-
-    molar_masses["30807"] = 227.364 # tetradecanoic acid
-    molar_masses["7896"] = 255.4161 # hexadecanoic acid
-    molar_masses["25629"] = 283.47 # octadecanoic acid
-
-    molar_masses["peptidoglycan"] = 1916.20990
-
-    molar_masses["kdo_lps"] = 2232.67080
-
-    # soluble pool
-    molar_masses["60530"] = 836.838 # Fe(II)-heme o
-    molar_masses["57692"] = 782.5259 # FAD
-    molar_masses["57705"] = 605.3378 # UDP-N-acetyl-alpha-D-glucosamine
-    molar_masses["57540"] = 662.4172 # NAD(+)
-    molar_masses["58885"] = 564.2859 # UDP-alpha-D-glucose
-    molar_masses["57287"] = 763.502 # CoA
-    molar_masses["57925"] = 306.31 # glutathione
-    molar_masses["57945"] = 663.4251 # NADH
-    molar_masses["58223"] = 401.1374 # UDP
-    molar_masses["29985"] = 146.12136 # L-glutamate
-    molar_masses["32966"] = 336.08392 # beta-D-fructose 1,6-bisphosphate
-    molar_masses["30616"] = 503.14946 # ATP
-    molar_masses["57783"] = 741.3891 # NADPH
-    molar_masses["57986"] = 375.356 # riboflavin
-    molar_masses["597326"] = 245.126 # pyridoxal 5'-phosphate
-    molar_masses["62501"] = 439.3816 # folate
-    molar_masses["58297"] = 610.615 # glutathione disulfide
-    molar_masses["58210"] = 453.325 # FMN
-    molar_masses["58349"] = 740.3812 # NADP(+)
-end
+molar_masses = Dict( # g/mol
+    "61404" => 487.1499, # dATP
+    "61429" => 503.1493, # dGTP
+    "61481" => 463.1252, # dCTP
+    "37568" => 478.1365, # dTTP
+    "30616" => 503.14946, # ATP
+    "37565" => 519.14886, # GTP
+    "37563" => 479.12468, # CTP
+    "46398" => 480.1094, # UTP
+    "32551" => 147.19558, # # lysine
+    "58045" => 131.1729, # isoleucine
+    "57427" => 131.1729, # leucine
+    "57844" => 149.2124, # methionine
+    "58095" => 165.1891, # phenylalanine
+    "57926" => 119.1197,  # threonine
+    "57912" => 204.2262, # tryptophan
+    "57762" => 117.1469, # valine
+    "32682" => 175.20906, # arginine
+    "57595" => 155.1552, # histidine
+    "57972" => 89.0935, # alanine
+    "58048" => 132.1184, # asparagine
+    "29991" => 132.09478, # aspartate
+    "35235" => 121.159, # cysteine
+    "29985" => 147.1299, # glutamate
+    "58359" => 146.1451, # glutamine
+    "57305" => 75.0669, # glycine
+    "60039" => 115.131, # proline
+    "33384" => 105.093, # serine
+    "58315" => 181.1894, # tyrosine
+    "glycogen" => 162.1406, # C6H10O5
+    "30807" => 227.364, # tetradecanoic acid
+    "peptidoglycan" => 1916.20990,
+    "kdo_lps" => 2232.67080,
+    "7896" => 255.4161, # hexadecanoic acid
+    "597326" => 245.126, # pyridoxal 5'-phosphate
+    "25629" => 283.47, # octadecanoic acid
+    "60530" => 836.838, # Fe(II)-heme o
+    "57692" => 782.5259, # FAD
+    "57705" => 605.3378, # UDP-N-acetyl-alpha-D-glucosamine
+    "57540" => 662.4172, # NAD(+)
+    "58885" => 564.2859, # UDP-alpha-D-glucose
+    "57287" => 763.502, # CoA
+    "57925" => 306.31, # glutathione
+    "57945" => 663.4251, # NADH
+    "58223" => 401.1374, # UDP
+    "29985" => 146.12136, # L-glutamate
+    "32966" => 336.08392, # beta-D-fructose 1,6-bisphosphate
+    "30616" => 503.14946, # ATP
+    "57783" => 741.3891, # NADPH
+    "57986" => 375.356, # riboflavin
+    "62501" => 439.3816, # folate
+    "58297" => 610.615, # glutathione disulfide
+    "58210" => 453.325, # FMN
+    "58349" => 740.3812, # NADP(+)
+)
 
 # DNA
 dna_lookup = Dict('A' => "dATP", 'T' => "dTTP", 'G' => "dGTP", 'C' => "dCTP")
@@ -136,7 +137,7 @@ for (k, v) in dna_bases
 end
 for (k, v) in dna_bases
     ch = chebi_lookup[dna_lookup[k]]
-    biomass[ch] = -v * dna / molar_masses[ch] * 1000
+    biomass[ch] = -v * mass_fractions["dna"] / molar_masses[ch] * 1000
 end
 
 # proteome
@@ -165,7 +166,7 @@ for (k, v) in protein_bases
 end
 for (k, v) in protein_bases
     ch = chebi_lookup[string(k)]
-    biomass[ch] = -v * protein / molar_masses[ch] * 1000
+    biomass[ch] = -v * mass_fractions["protein"] / molar_masses[ch] * 1000
 end
 
 # RNA (assume protein and RNA are directly correlated)
@@ -193,7 +194,7 @@ rna_bases['U'] = rna_bases['T']
 delete!(rna_bases, 'T')
 for (k, v) in rna_bases
     ch = chebi_lookup[rna_lookup[k]]
-    biomass[ch] = -v * rna / molar_masses[ch] * 1000
+    biomass[ch] = -v * mass_fractions["rna"] / molar_masses[ch] * 1000
 end
 
 # lipids umol/FA
@@ -207,15 +208,15 @@ fa_c18_0 = 91
 fa = Dict("tetra" => fa_c14_0, "hexa" => fa_c16_0 + fa_c16_1, "octa" => fa_c18_0 + fa_c18_1)
 
 for (k, v) in fa
-    biomass[chebi_lookup[k]] = -v * lipid * 0.001 # to mmol/gDW
+    biomass[chebi_lookup[k]] = -v * mass_fractions["lipid"] * 0.001 # to mmol/gDW
 end
 
 # glycogen
-biomass["glycogen"] = -glycogen * 1000 / molar_masses["glycogen"]
+biomass["glycogen"] = -mass_fractions["glycogen"] * 1000 / molar_masses["glycogen"]
 
-biomass["61388"] = -peptidoglycan * 1000 / molar_masses["peptidoglycan"]
+biomass["61388"] = -mass_fractions["peptidoglycan"] * 1000 / molar_masses["peptidoglycan"]
 
-biomass["58540"] = -lipopolysaccharide * 1000 / molar_masses["kdo_lps"]
+biomass["58540"] = -mass_fractions["lipopolysaccharide"] * 1000 / molar_masses["kdo_lps"]
 
 # add vitamins here at a very small fraction
 solubles = Dict( # molar fractions
@@ -247,20 +248,19 @@ end
 
 tot_sol = sum(values(solubles))
 for (k, v) in solubles
-    biomass[k] = get(biomass, k, 0) - soluble_pool * (v / tot_sol) * 1000 / molar_masses[k]
+    biomass[k] =
+        get(biomass, k, 0) -
+        mass_fractions["soluble_pool"] * (v / tot_sol) * 1000 / molar_masses[k]
 end
 
-# required atp for growth
-atp_req = 175.0 # this is very high - maybe because of large ribosome fraction?
-
+# required atp for growth hydrolysis equation
 biomass["30616"] = biomass["30616"] - atp_req # atp
 biomass["15377"] = -atp_req # water
 biomass["43474"] = atp_req # pi
 biomass["456216"] = atp_req # adp
 biomass["15378"] = atp_req # h+
 
-biomass
-
 open(joinpath("data", "model", "biomass.json"), "w") do io
     JSON.print(io, biomass)
 end
+

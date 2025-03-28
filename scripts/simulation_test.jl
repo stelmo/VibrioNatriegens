@@ -8,10 +8,11 @@ using JSONFBCModels, JSON
 
 model = VibrioNatriegens.build_model()
 model.reactions["EX_15903"].lower_bound = 0.0 # glucose
-model.reactions["EX_57972"].lower_bound = -35.0 # glucose
+model.reactions["EX_15740"].lower_bound = -35.0 # formate # doesn't work
+# model.reactions["EX_57305"].lower_bound = -35.0 # glycine
+# model.reactions["EX_28938"].upper_bound = 1000.0 # nh4
 
-sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
-
+# sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 sol = parsimonious_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 
 # sol = loopless_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)

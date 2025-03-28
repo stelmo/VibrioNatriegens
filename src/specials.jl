@@ -335,7 +335,7 @@ function add_salt_transducers!(model)
             "rhea-reaction-description" =>
                 ["oxaloacetate + 2 Na(+)(in) + H(+) = pyruvate + 2 Na(+)(out) + CO2"],
             "rhea.ec" => ["7.2.4.2"],
-            "rhea.reaction" => ["57724",],
+            "rhea.reaction" => ["57724"],
         ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "oad")...)
@@ -418,7 +418,7 @@ function add_salt_transducers!(model)
                 "2 reduced [2Fe-2S]-[ferredoxin] + Na(+)(in) + NAD(+) + H(+) = 2 oxidized [2Fe-2S]-[ferredoxin] + Na(+)(out) + NADH",
             ],
             "rhea.ec" => ["7.2.1.2"],
-            "rhea.reaction" => ["46800",],
+            "rhea.reaction" => ["46800"],
         ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "rnf")...)

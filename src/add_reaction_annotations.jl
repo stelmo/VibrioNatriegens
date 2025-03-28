@@ -91,19 +91,18 @@ function add_reaction_annotations!(model)
 
     seed = Dict(
         CSV.File(
-            joinpath(
-                pkgdir(@__MODULE__), 
-                "data", "rhea", "seed_rxns.csv"),
+            joinpath(pkgdir(@__MODULE__), "data", "rhea", "seed_rxns.csv"),
             types = [String, String],
         ),
     )
-    
+
     # kegg_ec_regex = @compile exactly(1, "[EC:")*
     #     between(1,3, DIGIT)*exactly(1, ".")*
     #     between(1,3, DIGIT)*exactly(1, ".")*
     #     between(1,3, DIGIT)*exactly(1, ".")*
     #     between(1,3, DIGIT)*exactly(1, "]")
-    kegg_ec_regex = r"(?:\[EC:){1}(?:\d){1,3}(?:\.){1}(?:\d){1,3}(?:\.){1}(?:\d){1,3}(?:\.){1}(?:\d){1,3}(?:\]){1}"
+    kegg_ec_regex =
+        r"(?:\[EC:){1}(?:\d){1,3}(?:\.){1}(?:\d){1,3}(?:\.){1}(?:\d){1,3}(?:\.){1}(?:\d){1,3}(?:\]){1}"
 
     for rid in A.reactions(model)
         r = model.reactions[rid]
@@ -122,23 +121,26 @@ function add_reaction_annotations!(model)
                 r.annotations["eggnog.ec"] =
                     vcat([eggnog_ec[gid] for gid in grrs if haskey(eggnog_ec, gid)]...)
             end
-    
+
             if any(haskey(eggnog_go, x) for x in grrs)
                 r.annotations["eggnog.go"] =
                     vcat([eggnog_go[gid] for gid in grrs if haskey(eggnog_go, gid)]...)
             end
-    
+
             if any(haskey(ko, x) for x in grrs)
                 _ecs = vcat([ko[gid] for gid in grrs if haskey(ko, gid)]...)
-                ecs = [replace(m.match,"[EC:"=>"","]"=>"") for ec in _ecs for m in eachmatch(kegg_ec_regex,ec)]
+                ecs = [
+                    replace(m.match, "[EC:" => "", "]" => "") for ec in _ecs for
+                    m in eachmatch(kegg_ec_regex, ec)
+                ]
                 r.annotations["kegg.ec"] = ecs
             end
         end
-        
+
         if isdigit(first(rid))
             r.annotations["rhea.reaction"] = qts[rid]
         end
-        
+
         if isdigit(first(rid)) && haskey(reactome, rid)
             r.annotations["reactome.reaction"] = [reactome[rid]]
         end
@@ -150,7 +152,7 @@ function add_reaction_annotations!(model)
         if haskey(kegg, rid)
             r.annotations["kegg.reaction"] = kegg[rid]
         end
-        
+
         if haskey(bigg, rid)
             r.annotations["bigg.reaction"] = bigg[rid]
         end
@@ -159,7 +161,10 @@ function add_reaction_annotations!(model)
             r.annotations["rhea.ec"] = ec[rid]
         end
 
-        kegg_and_metacyc = [get(r.annotations, "kegg.reaction", String[]);get(r.annotations, "metacyc.reaction", String[])]
+        kegg_and_metacyc = [
+            get(r.annotations, "kegg.reaction", String[])
+            get(r.annotations, "metacyc.reaction", String[])
+        ]
         seed_annos = String[]
         for km in kegg_and_metacyc
             haskey(seed, km) && push!(seed_annos, seed[km])

@@ -51,7 +51,7 @@ transport_rxn_grrs = [
     rid for rid in transport_rxns if !isnothing(A.reaction_gene_association_dnf(model, rid))
 ]
 
-count_blocked_rxns = blocked_reactions()
+blocked_rxns = blocked_reactions()
 
 sbo_reactions =
     [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "SBO")]
@@ -80,7 +80,8 @@ ec_reactions = [
     haskey(model.reactions[rid].annotations, "kegg.ec")
 ]
 
-go_reactions = [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "eggnog.go")]
+go_reactions =
+    [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "eggnog.go")]
 
 metacyc_reactions = [
     rid for rid in metabolic_rxns if
@@ -93,8 +94,8 @@ reactome_reactions = [
 ]
 
 seed_reactions = [
-    rid for rid in metabolic_rxns if
-    haskey(model.reactions[rid].annotations, "seed.reaction")
+    rid for
+    rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "seed.reaction")
 ]
 
 # metabolites
@@ -106,7 +107,7 @@ formula_metabolites =
 charge_metabolites =
     [mid for mid in A.metabolites(model) if !isnothing(A.metabolite_charge(model, mid))]
 
-    sbo_metabolites = [
+sbo_metabolites = [
     mid for mid in A.metabolites(model) if haskey(model.metabolites[mid].annotations, "SBO")
 ]
 
@@ -167,7 +168,7 @@ At a glance, the model consists of:
 | Exchange reactions | $(length(exchange_rxns)) |
 | Metabolic reactions with GRRs | $(length(metabolic_rxn_grrs)) |
 | Transport reactions with GRRs | $(length(transport_rxn_grrs)) |
-| Blocked reactions | $(count_blocked_rxns) |
+| Blocked reactions | $(length(blocked_rxns)) |
 
 ## Cross references
 
@@ -242,7 +243,12 @@ The reactions, metabolites, and genes of `model` can be accessed like any field,
 This model works well with the [COBREXA package](https://github.com/COBREXA/COBREXA.jl), and it can be used to simulate FBA, ec-FBA, and sRBA models.
 
 ## Known issues
-TBD
+Known issues in the model are marked as broken tests, mainly tested in the file `issues.jl` in the test directory.
+Exceptions to this include substrate utilization tests (still listed as broken tests):
+- Formate
+- Maltose
+- Starch
+These issues will be fixed in due course.
 
 ## Acknowledgements
 

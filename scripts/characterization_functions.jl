@@ -9,10 +9,22 @@ function blocked_reactions()
             model.reactions[rid].upper_bound = 1000
         end
         model.reactions["ATPM"].lower_bound = 0.0
+
     end
 
-    non_exchange_rids = setdiff(A.reactions(model), exchange_rids)
-    vs = screen(non_exchange_rids, workers = workers()) do rid
+    rids = A.reactions(model)
+    transport_rxns = [
+        filter(startswith("PERM_"), rids)
+        filter(startswith("SYM_"), rids)
+        filter(startswith("ANTI_"), rids)
+        filter(startswith("ABC_"), rids)
+        filter(startswith("PTS_"), rids)
+        filter(startswith("DF_"), rids)
+    ]
+
+    metabolic_reactions = setdiff(A.reactions(model), [exchange_rids; transport_rxns])
+
+    vs = screen(metabolic_reactions, workers = workers()) do rid
         ct = flux_balance_constraints(model)
         lb = optimized_values(
             ct,
@@ -32,7 +44,7 @@ function blocked_reactions()
         )
     end
 
-    length(non_exchange_rids[vs .== 0])
+    metabolic_reactions[vs.==0]
 end
 
 function deadend_metabolites()

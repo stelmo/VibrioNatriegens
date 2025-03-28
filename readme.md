@@ -3,11 +3,12 @@
 
 # Genome-scale metabolic model of _Vibrio natriegens_
 
-Test suite: [![CI status][ci-img]][ci-url]
-
 This package builds a fully manually reconstructed genome-scale metabolic model of the halophilic bacterium _Vibrio natriegens_. 
 The model is composed of 1283 reactions, 950 metabolites, and 939 genes. 
 The model focusses on the primary metabolism the organism, and includes enzyme and ribosomal constraints. 
+
+A MEMOTE-like test suite is implemented in the `test` directory, and runs with CI. Its current status is: [![CI status][ci-img]][ci-url]
+The primary name spaces for the model reactions and metabolites are Rhea and Chebi. 
 
 ## Model characterization
 At a glance, the model consists of:
@@ -19,7 +20,7 @@ At a glance, the model consists of:
 | Exchange reactions | 153 |
 | Metabolic reactions with GRRs | 752 |
 | Transport reactions with GRRs | 88 |
-| Blocked reactions | 95 |
+| Blocked reactions | 70 |
 
 ## Cross references
 
@@ -92,6 +93,14 @@ model = VibrioNatriegens.build_model()
 The reactions, metabolites, and genes of `model` can be accessed like any field, e.g. `model.reactions`.
 
 This model works well with the [COBREXA package](https://github.com/COBREXA/COBREXA.jl), and it can be used to simulate FBA, ec-FBA, and sRBA models.
+
+## Known issues
+Known issues in the model are marked as broken tests, mainly tested in the file `issues.jl` in the test directory.
+Exceptions to this include substrate utilization tests (still listed as broken tests):
+- Formate
+- Maltose
+- Starch
+These issues will be fixed in due course.
 
 ## Acknowledgements
 

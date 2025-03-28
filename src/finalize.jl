@@ -8,13 +8,13 @@ function set_default_exchanges!(model)
         "15903" # glucose
         "16189" # so4
         "15379" # o2
-        "28938" # nh4(+)
         "43474" # pi
         "29033" # fe(2+)
     ]
 
     bidirs = [
-        "15377", # H2O
+        "28938" # nh4(+)
+        "15377" # H2O
     ]
 
     for mid in [substrates; bidirs]
@@ -37,10 +37,16 @@ function name_genes!(model)
     gene_name_lu = Dict(
         CSV.File(
             joinpath(
-                pkgdir(@__MODULE__), 
-                "data", "annotations", "genome", "gene_names.csv")))
+                pkgdir(@__MODULE__),
+                "data",
+                "annotations",
+                "genome",
+                "gene_names.csv",
+            ),
+        ),
+    )
     for gid in A.genes(model)
-        if haskey(gene_name_lu, gid) 
+        if haskey(gene_name_lu, gid)
             model.genes[gid].name = gene_name_lu[gid]
         end
     end

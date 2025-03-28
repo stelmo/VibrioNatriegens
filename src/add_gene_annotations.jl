@@ -1,13 +1,15 @@
 
 function add_gene_annotations!(model)
     gene_df = DataFrame(
-        CSV.File(joinpath(
-            pkgdir(@__MODULE__),
-            "data",
-            "annotations",
-            "genome",
-            "gene_annotations.csv",
-        )),
+        CSV.File(
+            joinpath(
+                pkgdir(@__MODULE__),
+                "data",
+                "annotations",
+                "genome",
+                "gene_annotations.csv",
+            ),
+        ),
     )
     rename_key(k) = begin
         if k == "proteinaccession"
