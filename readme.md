@@ -11,7 +11,7 @@ Vibrio natriegens
 </i>
 </p> 
 
-The model is composed of 1283 reactions, 950 metabolites, and 939 genes. 
+The model is composed of 1388 reactions, 1020 metabolites, and 939 genes. 
 It focusses on the primary metabolism the organism, and includes enzyme and ribosomal constraints. 
 
 A MEMOTE-like test suite is implemented in the `test` directory, and runs with CI. 
@@ -24,11 +24,11 @@ At a glance, the model consists of:
 | Attribute | Number |
 |-----------|-------|
 | Metabolic reactions | 803 |
-| Transport reactions | 174 |
-| Exchange reactions | 153 |
+| Transport reactions | 209 |
+| Exchange reactions | 188 |
 | Metabolic reactions with GRRs | 752 |
 | Transport reactions with GRRs | 88 |
-| Blocked reactions | 70 |
+| Blocked reactions | 24 |
 
 ## Cross references
 
@@ -53,15 +53,15 @@ The model has the following metabolite cross-references (available under the `an
 
 | Attribute | Number (fraction %) |
 |-----------|-------|
-| *Total metabolites* | *950* |
-| chebi.metabolite | 950 (100 %) |
-| kegg.compound | 334 (35 %) |
-| inchi | 899 (95 %) |
-| inchikey | 899 (95 %) |
-| smiles | 899 (95 %) |
-| formula | 950 (100 %) |
-| charge | 950 (100 %) |
-| SBO | 950 (100 %) |
+| *Total metabolites* | *1020* |
+| chebi.metabolite | 1020 (100 %) |
+| kegg.compound | 348 (34 %) |
+| inchi | 961 (94 %) |
+| inchikey | 961 (94 %) |
+| smiles | 961 (94 %) |
+| formula | 1020 (100 %) |
+| charge | 1020 (100 %) |
+| SBO | 1020 (100 %) |
 
 The model has the following gene cross-references (available under the `annotations` field):
 
@@ -108,6 +108,7 @@ Exceptions to this include substrate utilization tests (also listed as broken te
 - Formate
 - Maltose
 - Starch
+
 These issues will be fixed in due course.
 
 ## Acknowledgements

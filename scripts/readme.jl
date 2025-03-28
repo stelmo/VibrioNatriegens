@@ -256,6 +256,7 @@ Exceptions to this include substrate utilization tests (also listed as broken te
 - Formate
 - Maltose
 - Starch
+
 These issues will be fixed in due course.
 
 ## Acknowledgements
