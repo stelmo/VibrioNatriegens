@@ -5,7 +5,9 @@ using HiGHS, COBREXA, ConstraintTrees
 import ConstraintTrees as C
 using DataFrames, CSV, DataFramesMeta
 
+full_model = VibrioNatriegens.build_model() # load model once, slows
+
 @testset "Vibrio natriegens metabolic model" begin
-    include("basics.jl")
+    include("memote.jl")
     include("issues.jl")
 end

@@ -47,18 +47,6 @@ function build_model()
     replace_proteinaccession_with_locustag!(model)
     name_genes!(model)
 
-    anti_h_na = model.reactions["ANTI_15378_29101"].stoichiometry
-    # 1 Na /  2 H stoich 2.A.33 
-    # anti_h_na["15378_p"] = 2 * anti_h_na["15378_p"]
-    # anti_h_na["15378"] = 2 * anti_h_na["15378"]
-
-    # but also have 2 Na / 3 H in 2.A.34...
-    anti_h_na["15378_p"] = 3 * anti_h_na["15378_p"]
-    anti_h_na["15378"] = 3 * anti_h_na["15378"]
-    anti_h_na["29101_p"] = 2 * anti_h_na["29101_p"]
-    anti_h_na["29101"] = 2 * anti_h_na["29101"]
-
-
-    haskey(model.reactions, "PERM_29101") && delete!(model.reactions, "PERM_29101")
+    haskey(model.reactions, "PERM_29101") && delete!(model.reactions, "PERM_29101") # house keeping for Na+
     model
 end

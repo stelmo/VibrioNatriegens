@@ -7,15 +7,13 @@ This package builds a fully manually reconstructed genome-scale metabolic model 
 
 <p align="center">
 <i> 
-Vibrio natriegens
+Vibrio natriegens [![CI status][ci-img]][ci-url] 
 </i>
 </p> 
 
-The model is composed of 1388 reactions, 1020 metabolites, and 939 genes. 
+The model is composed of 1389 reactions, 1020 metabolites, and 939 genes. 
 It focusses on the primary metabolism the organism, and includes enzyme and ribosomal constraints. 
-
 A MEMOTE-like test suite is implemented in the `test` directory, and runs with CI. 
-Its current status is: [![CI status][ci-img]][ci-url]. 
 The primary name spaces for the model reactions and metabolites are [Rhea](https://www.rhea-db.org/) and [ChEBI](https://www.ebi.ac.uk/chebi/). 
 
 ## Model characterization
@@ -23,12 +21,12 @@ At a glance, the model consists of:
 
 | Attribute | Number |
 |-----------|-------|
-| Metabolic reactions | 803 |
-| Transport reactions | 209 |
+| Metabolic reactions | 802 |
+| Transport reactions | 211 |
 | Exchange reactions | 188 |
-| Metabolic reactions with GRRs | 752 |
-| Transport reactions with GRRs | 88 |
-| Blocked reactions | 24 |
+| Metabolic reactions with GRRs | 751 |
+| Transport reactions with GRRs | 90 |
+| Blocked reactions | 52 |
 
 ## Cross references
 
@@ -36,16 +34,16 @@ The model has the following reaction cross-references (available under the `anno
 
 | Attribute | Number (fraction %) |
 |-----------|-------|
-| *Metabolic reactions* | *803* |
-| rhea.reaction | 801 (100%) |
+| *Metabolic reactions* | *802* |
+| rhea.reaction | 800 (100%) |
 | kegg.reaction | 776 (97%) |
-| metacyc.reaction |  718 (89%) |
+| metacyc.reaction |  718 (90%) |
 | reactome.reaction | 212 (26%) |
 | seed.reaction | 770 (96%) |
-| eggnog.go | 432 (54%) |
+| eggnog.go | 433 (54%) |
 | bigg.reaction | 562 (70%) |
-| ec | 786 (97%) |
-| SBO | 803 (100 %) |
+| ec | 785 (97%) |
+| SBO | 802 (100 %) |
 
 ec = `eggnog.ec` or `rhea.ec` or `kegg.ec`
 

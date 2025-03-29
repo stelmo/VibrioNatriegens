@@ -5,23 +5,22 @@ using FASTX, Statistics
 
 biomass = Dict()
 
-atp_req = 175.0 # this is very high - maybe because of large ribosome fraction?
-
 mass_fractions = Dict(
     # Long 2017 data g/g
     "protein" => 0.458,
     "rna" => 0.286,
     "lipid" => 0.075,
     "glycogen" => 0.034,
+
     # e coli g/g
-    "peptidoglycan" => 0.025,
-    "dna" => 0.031,
-    "lipopolysaccharide" => 0.034,
+    # "peptidoglycan" => 0.025,
+    # "dna" => 0.031,
+    # "lipopolysaccharide" => 0.034,
 )
 
 # add solubles
-total = sum(values(mass_fractions))
-mass_fractions["soluble_pool"] = 1.0 - total # overestimate
+# total = sum(values(mass_fractions))
+# mass_fractions["soluble_pool"] = 1.0 - total # overestimate
 
 # normalize
 total = sum(values(mass_fractions))
@@ -135,9 +134,12 @@ dna_total = sum(values(dna_bases))
 for (k, v) in dna_bases
     dna_bases[k] = v / dna_total
 end
-for (k, v) in dna_bases
-    ch = chebi_lookup[dna_lookup[k]]
-    biomass[ch] = -v * mass_fractions["dna"] / molar_masses[ch] * 1000
+
+if haskey(mass_fractions, "dna")
+    for (k, v) in dna_bases
+        ch = chebi_lookup[dna_lookup[k]]
+        biomass[ch] = -v * mass_fractions["dna"] / molar_masses[ch] * 1000
+    end
 end
 
 # proteome
@@ -214,9 +216,15 @@ end
 # glycogen
 biomass["glycogen"] = -mass_fractions["glycogen"] * 1000 / molar_masses["glycogen"]
 
-biomass["61388"] = -mass_fractions["peptidoglycan"] * 1000 / molar_masses["peptidoglycan"]
+if haskey(mass_fractions, "peptidoglycan")
+    biomass["61388"] =
+        -mass_fractions["peptidoglycan"] * 1000 / molar_masses["peptidoglycan"]
+end
 
-biomass["58540"] = -mass_fractions["lipopolysaccharide"] * 1000 / molar_masses["kdo_lps"]
+if haskey(mass_fractions, "lipopolysaccharide")
+    biomass["58540"] =
+        -mass_fractions["lipopolysaccharide"] * 1000 / molar_masses["kdo_lps"]
+end
 
 # add vitamins here at a very small fraction
 solubles = Dict( # molar fractions
@@ -246,19 +254,14 @@ for (k, v) in solubles
     solubles[k] = v / tot_sol * molar_masses[k]
 end
 
-tot_sol = sum(values(solubles))
-for (k, v) in solubles
-    biomass[k] =
-        get(biomass, k, 0) -
-        mass_fractions["soluble_pool"] * (v / tot_sol) * 1000 / molar_masses[k]
+if haskey(mass_fractions, "soluble_pool")
+    tot_sol = sum(values(solubles))
+    for (k, v) in solubles
+        biomass[k] =
+            get(biomass, k, 0) -
+            mass_fractions["soluble_pool"] * (v / tot_sol) * 1000 / molar_masses[k]
+    end
 end
-
-# required atp for growth hydrolysis equation
-biomass["30616"] = biomass["30616"] - atp_req # atp
-biomass["15377"] = -atp_req # water
-biomass["43474"] = atp_req # pi
-biomass["456216"] = atp_req # adp
-biomass["15378"] = atp_req # h+
 
 open(joinpath("data", "model", "biomass.json"), "w") do io
     JSON.print(io, biomass)

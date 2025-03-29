@@ -95,9 +95,9 @@ function add_electron_transport_chain!(model)
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_014230785.1" => 1.0,
-                    "WP_014230784.1" => 1.0,
-                    "WP_014230783.1" => 1.0,
+                    "WP_014230785.1" => 1.0, # petC
+                    "WP_014230784.1" => 1.0, # petB
+                    "WP_014230783.1" => 1.0, # petA
                 ),
             ),
         ],
@@ -121,17 +121,21 @@ function add_electron_transport_chain!(model)
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_020333285.1" => 1.0,
-                    "WP_020333287.1" => 1.0,
-                    "WP_020333286.1" => 1.0,
-                    "WP_014231840.1" => 1.0,
+                    "WP_020335300.1" => 1.0, # coxC
+                    "WP_020335301.1" => 1.0, # coxA
+                    "WP_020335302.1" => 1.0, # coxB
+                    "WP_049794707.1" => 1.0, # coxG
+                    "WP_020335297.1" => 1.0, # cox15
                 ),
             ),
-            X.Isozyme(;
+            X.Isozyme(; # Cytochrome c oxidase, cbb3-type
                 gene_product_stoichiometry = Dict(
-                    "WP_020335300.1" => 1.0,
-                    "WP_020335301.1" => 1.0,
-                    "WP_020335302.1" => 1.0,
+                    "WP_020333287.1" => 1.0, # ccoN
+                    "WP_020333286.1" => 1.0, # ccoO
+                    "WP_014231840.1" => 1.0, # ccoQ
+                    "WP_020333285.1" => 1.0, # ccoP
+                    "WP_020333284.1" => 1.0, # ccoI
+                    "WP_014231836.1" => 1.0, # ccoS
                 ),
             ),
         ],
@@ -140,34 +144,7 @@ function add_electron_transport_chain!(model)
     append!(gs, A.reaction_gene_association_dnf(model, "cyt_c")...)
     append!(ms, keys(A.reaction_stoichiometry(model, "cyt_c")))
 
-    model.reactions["cyt_c_cbb3"] = Reaction(;
-        name = "Cytochrome c oxidase, cbb3-type",
-        stoichiometry = Dict(
-            "15379" => -1, # o2
-            "29033" => -4.0, # Fe(II)-[cytochrome c]
-            "15378" => -8.0, # H+
-            "29034" => 4.0, # Fe(III)-[cytochrome c]
-            "15377" => 2.0, # h2o
-            "15378_p" => 4.0, # H+
-        ),
-        lower_bound = 0.0,
-        upper_bound = 1000.0,
-        gene_association = [
-            X.Isozyme(;
-                gene_product_stoichiometry = Dict(
-                    "WP_020333285.1" => 1.0,
-                    "WP_020333287.1" => 1.0,
-                    "WP_020333286.1" => 1.0,
-                    "WP_014231840.1" => 1.0,
-                ),
-            ),
-        ],
-        annotations = Dict("rhea.reaction" => ["11436"], "rhea.ec" => ["7.1.1.9"]),
-    )
-    append!(gs, A.reaction_gene_association_dnf(model, "cyt_c_cbb3")...)
-    append!(ms, keys(A.reaction_stoichiometry(model, "cyt_c_cbb3")))
-
-    model.reactions["cyt_bd"] = Reaction(;
+    model.reactions["cyt_bd"] = Reaction(; # does not pump protons https://doi.org/10.1016/j.bbabio.2011.06.016
         name = "Cytochrome oxidase BD-I",
         stoichiometry = Dict(
             "15377" => 2.0, # h2o
@@ -185,6 +162,8 @@ function add_electron_transport_chain!(model)
                     "WP_000270284.1" => 1.0, # cydX
                     "WP_020332892.1" => 1.0, # cydA
                     "WP_014231356.1" => 1.0, # cydB
+                    "WP_020333014.1" => 1.0, # cydD
+                    "WP_020333013.1" => 1.0, # cydC
                 ),
             ),
         ],
@@ -193,7 +172,7 @@ function add_electron_transport_chain!(model)
     append!(gs, A.reaction_gene_association_dnf(model, "cyt_bd")...)
     append!(ms, keys(A.reaction_stoichiometry(model, "cyt_bd")))
 
-    model.reactions["cyt_bo"] = Reaction(;
+    model.reactions["cyt_bo"] = Reaction(; # https://www.pnas.org/doi/10.1073/pnas.2106750118
         name = "Cytochrome oxidase bo3",
         stoichiometry = Dict(
             "24646" => -2.0, # a ubiquinol
@@ -212,6 +191,7 @@ function add_electron_transport_chain!(model)
                     "WP_014234376.1" => 1.0, # cyoB
                     "WP_014234375.1" => 1.0, # cyoC
                     "WP_014234374.1" => 1.0, # cyoD
+                    "WP_014234638.1" => 1.0, # cyoE
                 ),
             ),
         ],
@@ -231,7 +211,7 @@ function add_electron_transport_chain!(model)
             "15378_p" => 1.0, # H+
         ),
         lower_bound = -1000.0,
-        upper_bound = 1000.0,
+        upper_bound = 0.0, # https://doi.org/10.1016/j.jmb.2005.07.022
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
@@ -325,9 +305,9 @@ function add_salt_transducers!(model)
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_020333958.1" => 1.0,
-                    "WP_020333959.1" => 1.0,
-                    "WP_014232970.1" => 1.0,
+                    "WP_020333958.1" => 1.0, # oadB
+                    "WP_020333959.1" => 1.0, # oadA
+                    "WP_014232970.1" => 1.0, # oadG
                 ),
             ),
         ],
@@ -394,22 +374,23 @@ function add_salt_transducers!(model)
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_014232537.1" => 1.0,
-                    "WP_014232538.1" => 1.0,
-                    "WP_020335672.1" => 1.0,
-                    "WP_020335673.1" => 1.0,
-                    "WP_020335675.1" => 1.0,
-                    "WP_020335674.1" => 1.0,
+                    "WP_014232537.1" => 1.0, # rnfA
+                    "WP_014232538.1" => 1.0, # rnfB
+                    "WP_020335672.1" => 1.0, # rnfC
+                    "WP_020335673.1" => 1.0, # rnfD
+                    "WP_020335675.1" => 1.0, # rnfE
+                    "WP_020335674.1" => 1.0, # rnfG
                 ),
             ),
-            X.Isozyme(;
+            X.Isozyme(; # these are not well annotated
                 gene_product_stoichiometry = Dict(
                     "WP_014234038.1" => 1.0,
                     "WP_020333836.1" => 1.0,
                     "WP_020333837.1" => 1.0,
                     "WP_020333838.1" => 1.0,
-                    "WP_020333840.1" => 1.0,
                     "WP_020333839.1" => 1.0,
+                    "WP_020333840.1" => 1.0,
+                    "WP_020333841.1" => 1.0,
                 ),
             ),
         ],
@@ -424,8 +405,73 @@ function add_salt_transducers!(model)
     append!(gs, A.reaction_gene_association_dnf(model, "rnf")...)
     append!(ms, keys(A.reaction_stoichiometry(model, "rnf")))
 
+    # block most of the transporters, unsure about stoichiometry and they cause loops
+    model.reactions["ANTI_15378_29101_NhaA"] = Reaction(
+        name = "Antiporter Na/H (NhaA)",
+        stoichiometry = Dict(
+            "15378" => -2.0, # H+
+            "29101_p" => -1.0, # Na+
+            "29101" => 1.0, # Na+
+            "15378_p" => 2.0, # H+
+        ),
+        objective_coefficient = 0.0,
+        lower_bound = 0,
+        upper_bound = 0,
+        gene_association = [
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333000.1" .=> 12.0)),
+        ],
+    )
+    append!(gs, A.reaction_gene_association_dnf(model, "ANTI_15378_29101_NhaA")...)
+    append!(ms, keys(A.reaction_stoichiometry(model, "ANTI_15378_29101_NhaA")))
+
+    model.reactions["ANTI_15378_29101_NhaB"] = Reaction(
+        name = "Antiporter Na/H (NhaB)",
+        stoichiometry = Dict(
+            "15378" => -3.0, # H+
+            "29101_p" => -2.0, # Na+
+            "29101" => 2.0, # Na+
+            "15378_p" => 3.0, # H+
+        ),
+        objective_coefficient = 0.0,
+        lower_bound = 0,
+        upper_bound = 0,
+        gene_association = [
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_014232509.1" .=> 12.0)),
+        ],
+    )
+    append!(gs, A.reaction_gene_association_dnf(model, "ANTI_15378_29101_NhaB")...)
+    append!(ms, keys(A.reaction_stoichiometry(model, "ANTI_15378_29101_NhaB")))
+
+    model.reactions["ANTI_15378_29101_NhaC"] = Reaction( # stoichiometry is unknown
+        name = "Antiporter Na/H (NhaC)",
+        stoichiometry = Dict(
+            "15378" => -1.0, # H+
+            "29101_p" => -1.0, # Na+
+            "29101" => 1.0, # Na+
+            "15378_p" => 1.0, # H+
+        ),
+        objective_coefficient = 0.0,
+        lower_bound = -1000,
+        upper_bound = 1000,
+        gene_association = [
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_014232558.1" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_014232548.1" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_024373073.1" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_014232027.1" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020332945.1" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333664.1" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333874.1" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020334217.1" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333880.1" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020335070.1" .=> 12.0)),
+        ],
+    )
+    append!(gs, A.reaction_gene_association_dnf(model, "ANTI_15378_29101_NhaC")...)
+    append!(ms, keys(A.reaction_stoichiometry(model, "ANTI_15378_29101_NhaC")))
+
     add_genes!(model, gs)
     # no need to add metabolites, because they should all already be in the model
     @assert all(in.(ms, Ref(A.metabolites(model))))
+
 end
 

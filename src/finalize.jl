@@ -19,7 +19,7 @@ function set_default_exchanges!(model)
 
     for mid in [substrates; bidirs]
         if mid == default_carbon_source
-            lb, ub = (-22.0, 0.0)
+            lb, ub = (-25.0, 0.0)
         elseif mid in substrates
             lb, ub = (-1000.0, 0.0)
         elseif mid in bidirs

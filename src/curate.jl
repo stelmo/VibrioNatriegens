@@ -124,21 +124,13 @@ function curate!(model)
     for_dir(model, "24793") # histidine biosynthesis blocked, https://biocyc.org/reaction?orgid=META&id=GLUTAMIDOTRANS-RXN (incorrect ref in rhea wrt direction)    
     rev_dir(model, "17737") # F, Y, W biosynthesis blocked, https://biocyc.org/reaction?orgid=META&id=SHIKIMATE-5-DEHYDROGENASE-RXN (rhea has both directions listed)
     rev_dir(model, "25290") # prevent loop in ethanol production 
-    # rev_dir(model, "22852") # serine biosyn natural dir + loop prevention
-    # rev_dir(model, "19125") # serine biosyn natural dir + loop prevention
-    # for_dir(model, "18793") # loop prev
-    # for_dir(model, "29391") # loop prev
-    # for_dir(model, "23352") # glutamate synthesis, loop prev 
-    # for_dir(model, "32263") # 4 aminobut degrad, loop prev 
-    # rev_dir(model, "30799") # loop prev
-    # rev_dir(model, "16197") # loop prev
-    # for_dir(model, "13213") # loop prev
-    # for_dir(model, "13217") # loop prev
-    # rev_dir(model, "15869") # d alanine syn only + loop prev
-    # rev_dir(model, "15133") # glut biosyn
-
     bi_dir(model, "24360") # produce siroheme
     bi_dir(model, "22488") # produce S-(hydroxymethyl)glutathione
+    for_dir(model, "13245") # glyoxylate natural direction
+    for_dir(model, "11844") # pfl goes forward 
+    rev_dir(model, "21824") # aspartate biosyn + glu degrad are reverse
+    for_dir(model, "51468") # physiological direction https://www.uniprot.org/uniprotkb/P06149/entry
+    bi_dir(model, "40523") # fumarate (rev) + succinate dehydrogenase (for)
 
     # add custom reactions (needs to happen after direction setting)
 
