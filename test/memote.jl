@@ -1,6 +1,9 @@
 
-@testset "Mass balanced" begin
-    # this test also ensures that the model is stoichiometrically consistent IF all the reactions mass balance.
+@testset "Mass balance" begin
+    #=
+    Check that each reaction is mass balanced.
+    Note, this test also ensures that the model is stoichiometrically consistent since full mass balance implies stoichiometric consistency.
+    =#
     model = deepcopy(full_model)
 
     rids = filter(x -> !startswith(x, "EX_") && x != "biomass", A.reactions(model))
@@ -20,8 +23,10 @@
     @test isempty(unbal_rids)
 end
 
-@testset "Charge balanced" begin
-
+@testset "Charge balance" begin
+    #=
+    Check that each reaction is charge balanced.
+    =#
     model = deepcopy(full_model)
 
     rids = filter(x -> !startswith(x, "EX_") && x != "biomass", A.reactions(model))
@@ -39,8 +44,10 @@ end
     @test isempty(unbal_rids)
 end
 
-@testset "Sensible ATP production" begin
-
+@testset "ATP yield" begin
+    #=
+    Ensure the ATP yield per carbon source is reasonable.
+    =#
     model = deepcopy(full_model)
 
     model.reactions["biomass"].objective_coefficient = 0.0
@@ -89,6 +96,18 @@ end
     # @info("Anaerobic: $(sol.objective / sol.fluxes[rid])")
     @test isapprox(sol.objective / sol.fluxes.EX_15903, -3.0, atol = 1e-3)
 
+end
+
+@testset "ATP production" begin
+    #=
+    Ensure the ATP cannot be produced when the exchanges are closed.
+    =#
+    model = deepcopy(full_model)
+
+    model.reactions["biomass"].objective_coefficient = 0.0
+    model.reactions["ATPM"].objective_coefficient = 1.0
+    model.reactions["ATPM"].lower_bound = 0.0
+
     # test that the model cannot produce ATP with closed exchanges
     for rid in filter(x -> startswith(x, "EX_"), A.reactions(model))
         model.reactions[rid].lower_bound = 0.0
@@ -96,11 +115,12 @@ end
     end
     sol = flux_balance_analysis(model, optimizer = HiGHS.Optimizer)
     @test isapprox(sol.objective, 0.0)
-
 end
 
 @testset "Biomass consistency" begin
-
+    #=
+    Ensure biomass sums to 1 gram.
+    =#
     model = deepcopy(full_model)
 
     biomass = model.reactions["biomass"].stoichiometry
@@ -114,7 +134,9 @@ end
 end
 
 @testset "Aerobic growth" begin
-    # based on Hoffart 2017
+    #=
+    Check if vibrio can be grow on carbon sources from Hoffart 2017
+    =#
     model = deepcopy(full_model)
     model.reactions["EX_15903"].lower_bound = 0.0
 
@@ -149,7 +171,9 @@ end
 end
 
 @testset "Commonly secreted metabolites" begin
-
+    #=
+    Check if vibrio can secrete known products.
+    =#
     model = deepcopy(full_model)
     model.reactions["biomass"].lower_bound = 0.6 # minimum growth rate
 
@@ -180,6 +204,9 @@ end
 end
 
 @testset "Anaerobic growth" begin
+    #=
+    Check if vibrio can grow anaerobically
+    =#
     model = deepcopy(full_model)
     model.reactions["EX_15379"].lower_bound = 0.0 # o2
     model.reactions["EX_15903"].lower_bound = -37.0 # glc (measured)
@@ -188,7 +215,9 @@ end
 end
 
 @testset "Known growth supporting substrates" begin
-
+    #=
+    Check if vibrio can be grow on carbon sources from Coppens 2023
+    =#
     df = DataFrame(CSV.File(joinpath("experiments", "coppens_2023_biolog.csv")))
     dropmissing!(df)
     @select!(df, :Substrate, :Experiment, :Chebi)
@@ -213,6 +242,9 @@ end
 end
 
 @testset "Growth rate tests" begin
+    #=
+    Check that vibrio's predicted growth rates are close to experimentally measured values when constraining the substrates and products.
+    =#
     measurements = Dict(
         "alanine" => Dict(
             "biomass" => ("biomass", 0.91),

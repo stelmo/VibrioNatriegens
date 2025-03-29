@@ -21,7 +21,7 @@ The RefSeq annotated genome was used to map genes to reactions can be downloaded
 ## Model characterization
 At a glance, the model consists of:
 
-| Attribute | Number |
+| Attribute | Value |
 |-----------|-------|
 | Metabolic reactions | 802 |
 | Transport reactions | 211 |

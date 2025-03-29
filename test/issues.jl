@@ -1,5 +1,7 @@
 @testset "Known blocked reactions" begin
-
+    #=
+    These are known blocked reactions that could not be resolved - gaps in knowledge
+    =#
     blocked_reactions = [
         "10412"
         "14265"
