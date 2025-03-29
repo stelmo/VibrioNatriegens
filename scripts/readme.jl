@@ -155,14 +155,16 @@ This package builds a fully manually reconstructed genome-scale metabolic model 
 
 <p align="center">
 <i> 
-Vibrio natriegens [![CI status][ci-img]][ci-url] 
-</i>
+Vibrio natriegens  
+</i> [![CI status][ci-img]][ci-url]
 </p> 
 
 The model is composed of $(A.n_reactions(model)) reactions, $(A.n_metabolites(model)) metabolites, and $(A.n_genes(model)) genes. 
-It focusses on the primary metabolism the organism, and includes enzyme and ribosomal constraints. 
+It focusses on the primary metabolism of _V. natriegens_, and includes data to facilitate the construction of enzyme and ribosomal constraints. 
 A MEMOTE-like test suite is implemented in the `test` directory, and runs with CI. 
-The primary name spaces for the model reactions and metabolites are [Rhea](https://www.rhea-db.org/) and [ChEBI](https://www.ebi.ac.uk/chebi/). 
+The primary name spaces for the model reactions and metabolites are [Rhea](https://www.rhea-db.org/) and [ChEBI](https://www.ebi.ac.uk/chebi/).
+The RefSeq annotated genome was used to map genes to reactions can be downloaded from the NCBI accession [GCF_001456255.1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_001456255.1/
+)
 
 ## Model characterization
 At a glance, the model consists of:
