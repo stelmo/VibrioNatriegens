@@ -8,7 +8,7 @@ This package builds a fully manually reconstructed genome-scale metabolic model 
 <p align="center">
 <i> 
 Vibrio natriegens  
-</i> [![CI status][ci-img]][ci-url]
+</i> 
 </p> 
 
 The model is composed of 1389 reactions, 1020 metabolites, and 939 genes. 
@@ -29,6 +29,7 @@ At a glance, the model consists of:
 | Metabolic reactions with GRRs | 751 |
 | Transport reactions with GRRs | 90 |
 | Blocked reactions | 52 |
+| Test suite | [![CI status][ci-img]][ci-url] |
 
 ## Cross references
 

@@ -156,7 +156,7 @@ This package builds a fully manually reconstructed genome-scale metabolic model 
 <p align="center">
 <i> 
 Vibrio natriegens  
-</i> [![CI status][ci-img]][ci-url]
+</i> 
 </p> 
 
 The model is composed of $(A.n_reactions(model)) reactions, $(A.n_metabolites(model)) metabolites, and $(A.n_genes(model)) genes. 
@@ -177,6 +177,7 @@ At a glance, the model consists of:
 | Metabolic reactions with GRRs | $(length(metabolic_rxn_grrs)) |
 | Transport reactions with GRRs | $(length(transport_rxn_grrs)) |
 | Blocked reactions | $(length(blocked_rxns)) |
+| Test suite | [![CI status][ci-img]][ci-url] |
 
 ## Cross references
 
