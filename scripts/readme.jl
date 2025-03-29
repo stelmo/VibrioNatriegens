@@ -42,7 +42,8 @@ transport_rxns = [
 ]
 exchange_rxns = filter(startswith("EX_"), rids)
 diffusion_rxns = filter(startswith("DF_"), rids)
-metabolic_rxns = setdiff(rids, [transport_rxns; exchange_rxns; diffusion_rxns])
+biomass_rxns = ["biomass", "ATPM"]
+metabolic_rxns = setdiff(rids, [transport_rxns; exchange_rxns; diffusion_rxns; biomass_rxns])
 
 metabolic_rxn_grrs = [
     rid for rid in metabolic_rxns if !isnothing(A.reaction_gene_association_dnf(model, rid))
@@ -196,7 +197,8 @@ The model has the following reaction cross-references (available under the `anno
 | ec | $(length(ec_reactions)) ($( round(Int, length(kegg_reactions) / length(metabolic_rxns) * 100))%) |
 | SBO | $(length(sbo_reactions)) ($( round(Int, length(sbo_reactions) / length(metabolic_rxns) * 100)) %) |
 
-ec = `eggnog.ec` or `rhea.ec` or `kegg.ec`
+Note: ec = `eggnog.ec` or `rhea.ec` or `kegg.ec`.
+
 
 The model has the following metabolite cross-references (available under the `annotations` field):
 

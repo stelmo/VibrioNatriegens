@@ -15,7 +15,7 @@ The model is composed of 1389 reactions, 1020 metabolites, and 939 genes.
 It focusses on the primary metabolism of _V. natriegens_, and includes data to facilitate the construction of enzyme and ribosomal constraints. 
 A MEMOTE-like test suite is implemented in the `test` directory, and runs with CI. 
 The primary name spaces for the model reactions and metabolites are [Rhea](https://www.rhea-db.org/) and [ChEBI](https://www.ebi.ac.uk/chebi/).
-The RefSeq annotated genome was used to map genes to reactions can be downloaded from the NCBI accession [GCF_001456255.1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_001456255.1/
+The RefSeq annotated genome maps genes to reactions, and can be downloaded with the NCBI accession [GCF_001456255.1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_001456255.1/
 )
 
 ## Model characterization
@@ -23,7 +23,7 @@ At a glance, the model consists of:
 
 | Attribute | Value |
 |-----------|-------|
-| Metabolic reactions | 802 |
+| Metabolic reactions | 800 |
 | Transport reactions | 211 |
 | Exchange reactions | 188 |
 | Metabolic reactions with GRRs | 751 |
@@ -37,7 +37,7 @@ The model has the following reaction cross-references (available under the `anno
 
 | Attribute | Number (fraction %) |
 |-----------|-------|
-| *Metabolic reactions* | *802* |
+| *Metabolic reactions* | *800* |
 | rhea.reaction | 800 (100%) |
 | kegg.reaction | 776 (97%) |
 | metacyc.reaction |  718 (90%) |
@@ -46,9 +46,10 @@ The model has the following reaction cross-references (available under the `anno
 | eggnog.go | 433 (54%) |
 | bigg.reaction | 562 (70%) |
 | ec | 785 (97%) |
-| SBO | 802 (100 %) |
+| SBO | 800 (100 %) |
 
-ec = `eggnog.ec` or `rhea.ec` or `kegg.ec`
+Note: ec = `eggnog.ec` or `rhea.ec` or `kegg.ec`.
+
 
 The model has the following metabolite cross-references (available under the `annotations` field):
 
