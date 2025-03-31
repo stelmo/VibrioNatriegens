@@ -16,10 +16,10 @@ block_rxns(model, rids) = begin
     end
 end
 
-model = VibrioNatriegens.build_model()
-model.reactions["EX_15379"].lower_bound = 0.0 #
-model.reactions["EX_15379"].upper_bound = 0.0 #
-model.reactions["EX_15903"].lower_bound = -35.0 #
+# model = VibrioNatriegens.build_model()
+# model.reactions["EX_15379"].lower_bound = 0.0 #
+# model.reactions["EX_15379"].upper_bound = 0.0 #
+# model.reactions["EX_15903"].lower_bound = -35.0 #
 
 # ct.fluxes.EX_15903.bound = C.Between(-10.0, 1000)
 # ct.fluxes.EX_15379.bound = C.EqualTo(0.0)    
@@ -34,8 +34,15 @@ model.reactions["EX_15903"].lower_bound = -35.0 #
 #     19125
 #     22852
 # ])
+# sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 
-sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
+model = VibrioNatriegens.build_model()
+model.reactions["EX_15903"].lower_bound = 0.0 # set glucose to 0
+model.reactions["biomass"].objective_coefficient = 0.0
+model.reactions["ATPM"].objective_coefficient = 1.0
+model.reactions["ATPM"].lower_bound = 0.0
+model.reactions["EX_57972"].lower_bound = -40.0
+
 sol = parsimonious_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 
 open("vnat_fluxes.json", "w") do io

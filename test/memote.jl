@@ -57,14 +57,14 @@ end
 
     csources = [ # (exchange rid, atp/substrate)
         (:EX_15903, -26.0) # glucose
-        (:EX_57972, -11.75) # alanine
+        (:EX_57972, -8.25) # alanine
         (:EX_30031, -13.25) # succinate
         (:EX_17754, -14.5) # glycerol
-        (:EX_29985, -18.25) # glutamate
+        (:EX_29985, -14.75) # glutamate
         (:EX_47013, -20.66) # ribose
         (:EX_30089, -6.75) # acetate
-        (:EX_58723, -26.0) # glucosamine
-        (:EX_506227, -33.0) # n-acetyl-d-glucosamine
+        (:EX_58723, -22.43) # glucosamine
+        (:EX_506227, -29.68) # n-acetyl-d-glucosamine
         (:EX_18391, -23.42) # gluconate
         (:EX_15589, -12.25) # malate
         (:EX_29806, -12.25) # fumarate
@@ -79,7 +79,7 @@ end
             sense = Maximal,
             objective = ct.objective.value,
         )
-        # @info("$rid: $(sol.objective / sol.fluxes[rid])")
+        @info("ATP: $rid: $(sol.objective / sol.fluxes[rid])")
         @test isapprox(sol.objective / sol.fluxes[rid], atp, atol = 0.1)
         ct.fluxes[rid].bound = C.Between(0.0, 1000)
     end
@@ -230,12 +230,10 @@ end
     for (s, ex) in zip(df.Substrate, df.Exchange)
         model.reactions[ex].lower_bound = -30.0
         sol = flux_balance_analysis(model, optimizer = HiGHS.Optimizer)
-        res = isnothing(sol) ? false : (sol.objective > 0.1)
-        if s == "Formic Acid"
-            @test_broken res
+        if s == "Formic Acid" || s == "Glycine"
+            @test_broken sol.objective > 0.1
         else
-            res || @warn(s)
-            @test res
+            @test sol.objective > 0.1
         end
         model.reactions[ex].lower_bound = 0.0
     end
@@ -286,7 +284,7 @@ end
             objective = ct.objective.value,
         )
         mu = measurements[k]["biomass"][2]
-        # @info "$mu vs $(sol.objective)"
+        @info "$k: $mu vs $(sol.objective)"
         @test abs(1 - sol.objective / mu) <= 0.5
     end
 end

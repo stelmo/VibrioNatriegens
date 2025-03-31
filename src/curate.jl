@@ -131,6 +131,21 @@ function curate!(model)
     rev_dir(model, "21824") # aspartate biosyn + glu degrad are reverse
     for_dir(model, "51468") # physiological direction https://www.uniprot.org/uniprotkb/P06149/entry
     bi_dir(model, "40523") # fumarate (rev) + succinate dehydrogenase (for)
+    for_dir(model, "16197") # beta oxidation direction
+    for_dir(model, "30799") # beta oxidation direction
+    for_dir(model, "45796") # beta oxidation direction
+    for_dir(model, "19105") # kegg direction
+    for_dir(model, "30803") # kegg direction
+    for_dir(model, "24882") # kegg direction
+    for_dir(model, "16417") # kegg direction
+    for_dir(model, "18405") # degradation reaction (metacyc + kegg)
+    for_dir(model, "11612") # https://biocyc.org/reaction?orgid=META&id=GLUTAMATESYN-RXN
+    for_dir(model, "30931") # kegg direction
+    for_dir(model, "27822") # https://biocyc.org/pathway?orgid=META&id=PWY-5344
+    for_dir(model, "30699") # beta-alanine loop prevention
+    rev_dir(model, "14077") # beta-alanine loop prevention
+    for_dir(model, "12813") # D-glutamate biosynthesis (mostly loop prevention when alanine carbon source)
+    for_dir(model, "15869") # D-glutamate biosynthesis (mostly loop prevention when alanine carbon source)
 
     # add custom reactions (needs to happen after direction setting)
 

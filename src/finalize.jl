@@ -10,10 +10,10 @@ function set_default_exchanges!(model)
         "15379" # o2
         "43474" # pi
         "29033" # fe(2+)
+        "28938" # nh4(+)
     ]
 
     bidirs = [
-        "28938" # nh4(+)
         "15377" # H2O
     ]
 
