@@ -63,7 +63,7 @@ function name_reactions!(model)
 end
 
 function shortname_reactions!(model)
-    shortlu = Dict(CSV.File(joinpath("data", "model", "reaction_shortnames.csv")))
+    shortlu = Dict(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "reaction_shortnames.csv")))
     for (k, v) in shortlu
         model.reactions[k].annotations["shortname"] = [v,]
     end
