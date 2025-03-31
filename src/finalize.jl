@@ -39,8 +39,7 @@ function name_genes!(model)
             joinpath(
                 pkgdir(@__MODULE__),
                 "data",
-                "annotations",
-                "genome",
+                "model",
                 "gene_names.csv",
             ),
         ),
@@ -60,6 +59,13 @@ function name_reactions!(model)
     rid_name = Dict(string.(df.rhea) .=> df.name)
     for rid in A.reactions(model)
         haskey(rid_name, rid) && (model.reactions[rid].name = rid_name[rid])
+    end
+end
+
+function shortname_reactions!(model)
+    shortlu = Dict(CSV.File(joinpath("data", "model", "reaction_shortnames.csv")))
+    for (k, v) in shortlu
+        model.reactions[k].annotations["shortname"] = [v,]
     end
 end
 

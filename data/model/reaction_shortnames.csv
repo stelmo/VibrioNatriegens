@@ -1,0 +1,842 @@
+Reaction,Name
+10040,cys
+10048,met
+10116,pgd
+10152,arc
+10164,eno
+10224,pdx
+10228,acn
+10244,faH
+10248,maz
+10300,gapdh
+10380,pyr
+10412,nud
+10420,tpa
+10488,mthfs
+10508,tk
+10532,trp
+10540,fol
+10676,leu
+10748,cyn
+10800,gpt
+10804,hpx
+10812,ast
+10840,thr
+10892,leu
+10912,pan
+10932,arg
+10948,gsp
+10964,xyl
+11040,his
+11064,fbp
+11080,ush
+11092,gps
+11096,gps
+11148,bfr
+11160,doe
+11172,met
+11196,cob
+11224,dld
+11308,ac
+11352,ack
+11364,psx
+11412,fol
+11528,cob
+11596,pyr
+11600,cmk
+11612,glt
+11672,pab
+11680,gua
+11692,sth
+11708,impdh
+11724,cys
+11740,gsr
+11768,trp
+11800,nud
+11816,gpi
+11824,pan
+11844,pfl
+11920,pcb
+11960,arg
+12056,epd
+12080,fab
+12084,dal
+12104,thy
+12120,glC
+12172,nag
+12228,asn
+12248,mur
+12376,fuc
+12400,pnc
+12460,fum
+12536,phe
+12556,pgl
+12605,dxs
+12641,ser
+12653,mae
+12697,gmk
+12733,nad
+12813,mur
+12821,deo
+12909,nap
+12933,fuc
+12973,adk
+13017,upx
+13065,maz
+13073,gpA
+13101,hut
+13121,aro
+13161,tdh
+13185,hem
+13193,pur
+13213,gab
+13217,gab
+13233,deo
+13237,glm
+13245,icl
+13285,gsh
+13313,sox
+13325,wbp
+13429,isp
+13433,cdx
+13493,ilv
+13509,glm
+13517,tmk
+13553,gal
+13557,gsh
+13633,puA
+13665,cya
+13677,rpe
+13697,rbs
+13701,met
+13717,dxr
+13725,glm
+13753,glt
+13801,cys
+13849,fuc
+13869,tyr
+13897,phe
+13925,lpx
+13929,spe
+13965,met
+13977,dsA
+13985,thr
+13989,gal
+14053,kds
+14077,ap
+14081,trp
+14089,agx
+14105,pro
+14109,pro
+14157,ygi
+14245,maz
+14253,spo
+14265,hem
+14329,ser
+14357,rib
+14369,gph
+14465,his
+14545,pnc
+14629,arg
+14657,rpi
+14665,gua
+14717,aro
+14729,fba
+14797,kdg
+14801,pgk
+14817,mai
+14821,arA
+14829,cys
+14877,pro
+14905,pur
+14961,frm
+15009,dhf
+15033,pdx
+15053,pur
+15093,tyr
+15101,lys
+15133,gdh
+15149,pdx
+15169,ast
+15185,ast
+15193,dgt
+15265,pdx
+15389,cya
+15393,dap
+15425,hem
+15449,hgd
+15469,his
+15481,gly
+15501,glt
+15609,prS
+15613,sir
+15641,adx
+15689,ect
+15753,pur
+15757,met
+15761,thr
+15805,bio
+15817,pdx
+15837,mgs
+15841,zwf
+15869,dat
+15889,gls
+15901,gpm
+15941,arg
+15985,fdo
+15989,hmgcr
+16037,pnP
+16069,cdx
+16109,pfk
+16117,acS
+16125,scr
+16169,gln
+16189,hpd
+16197,paH
+16201,pab
+16233,pan
+16249,hpm
+16293,leu
+16369,ldh
+16373,coa
+16417,put
+16425,fdh
+16429,mur
+16573,ser
+16597,pyr
+16601,asp
+16609,apr
+16669,xdh
+16793,coa
+16809,prB
+16825,udk
+16833,gpx
+16845,cs
+16853,pur
+16861,bio
+16881,glp
+16901,ect
+16913,psA
+17053,tal
+17089,eda
+17105,bio
+17129,pfa
+17185,gua
+17233,fuc
+17237,rib
+17277,ed
+17281,ect
+17325,dap
+17417,nag
+17453,pur
+17473,fol
+17601,arB
+17641,spe
+17649,mdc
+17661,suc
+17737,aro
+17753,lux
+17769,ahd
+17785,pan
+17801,atx
+17805,mtn
+17817,lpx
+17825,glk
+17845,rib
+17905,hpr
+17921,dal
+17941,acn
+17973,hpr
+18037,agu
+18049,arg
+18133,cys
+18157,pkx
+18161,paJ
+18169,eda
+18181,ace
+18229,hpr
+18245,coa
+18253,mae
+18257,cpo
+18301,gua
+18321,ilv
+18405,ald
+18437,isp
+18445,pur
+18457,rib
+18473,his
+18585,tpi
+18617,pck
+18629,pnK
+18633,car
+18681,mur
+18793,deo
+18829,pdx
+18965,hem
+18977,glp
+18985,men
+19025,nad
+19069,glo
+19105,amB
+19125,agx
+19129,tdk
+19169,sda
+19317,pur
+19361,isp
+19381,icd
+19397,coa
+19433,idn
+19453,alA
+19481,paJ
+19497,pan
+19513,otc
+19521,pta
+19537,hxp
+19541,pro
+19553,tna
+19597,arc
+19625,lta
+19661,mtl
+19689,rha
+19801,coa
+19821,met
+19833,pur
+19865,hem
+19889,gal
+19909,ldD
+19949,fol
+19981,frm
+19985,frm
+19993,msr
+20013,pyr
+20049,his
+20117,rha
+20129,pnn
+20221,fhs
+20249,alr
+20273,pha
+20309,kat
+20345,trx
+20373,prE
+20397,met
+20445,tyr
+20517,wbp
+20549,tsd
+20557,ure
+20569,roc
+20605,cod
+20700,lpx
+20712,bio
+20736,kbl
+20772,rib
+20780,gmk
+20956,abp
+21016,ans
+21020,aro
+21036,paj
+21080,met
+21096,aro
+21140,gsk
+21152,lhp
+21188,nad
+21196,met
+21208,ser
+21232,hut
+21256,aro
+21360,nad
+21432,mdh
+21448,nif
+21524,leu
+21540,trpcf
+21588,arg
+21620,fre
+21624,nfs
+21644,glp
+21648,phe
+21732,trp
+21760,fad
+21824,asp
+21868,rib
+21896,cbi
+21968,aro
+22008,met
+22024,tor
+22060,bio
+22068,ilv
+22072,arB
+22088,rel
+22108,ilv
+22144,acn
+22168,gal
+22192,pur
+22284,agu
+22332,leu
+22368,arD
+22408,isp
+22472,coa
+22492,hut
+22580,mhp
+22584,hem
+22608,dap
+22624,mhp
+22628,pur
+22636,maz
+22668,lpx
+22712,cob
+22748,lig
+22812,fol
+22824,pnP
+22828,his
+22840,gls
+22852,agx
+22860,nad
+22912,ala
+22924,comeb
+22936,nag
+22964,plx
+22988,msA
+22992,msA
+23032,pur
+23100,adk
+23104,kds
+23148,ack
+23160,rha
+23176,acs
+23256,cob
+23284,idx
+23288,mhp
+23352,gab
+23372,mur
+23424,glm
+23444,ldh
+23448,kds
+23476,trpcf
+23520,pct
+23536,pgm
+23560,cob
+23584,fol
+23592,yah
+23596,ugd
+23660,hut
+23676,mur
+23688,ade
+23700,fol
+23704,rib
+23736,ura
+23744,his
+23776,lys
+23780,prC
+23784,put
+23800,cangl
+23864,isp
+23920,pur
+24020,arg
+24064,hem
+24152,cys
+24204,xsc
+24248,agx
+24252,apH
+24284,asd
+24292,arg
+24296,pyr
+24360,sir
+24368,arc
+24384,nad
+24388,pnP
+24400,pyr
+24404,hmgcl
+24408,adx
+24488,isp
+24560,cys
+24576,pax
+24628,nir
+24670,xdh
+24674,udk
+24793,his
+24801,ilv
+24809,ilv
+24813,ilv
+24825,isp
+24869,pge
+24882,put
+24927,met
+24931,pat
+25054,mhp
+25058,hca
+25066,hca
+25094,cmk
+25098,ndk
+25104,pdx
+25108,pdx
+25152,tyr
+25181,spe
+25197,yig
+25209,lpx
+25213,lpx
+25237,ndk
+25245,glo
+25249,ilv
+25277,cpd
+25290,adh
+25294,amB
+25298,ald
+25302,nud
+25424,hpr
+25588,icd
+25796,tyr
+25876,nad
+25888,nad
+26119,gcp
+26152,rib
+26209,lta
+26301,hpx
+26426,pyr
+26434,trp
+26522,acn
+26558,paF
+27377,glx
+27485,alC
+27551,upS
+27626,tkx
+27638,deo
+27642,deo
+27646,deo
+27650,udk
+27654,ilv
+27658,deo
+27674,ndk
+27678,ndk
+27682,ndk
+27686,ndk
+27690,ndk
+27694,ilv
+27710,gsk
+27714,ush
+27718,ush
+27738,deo
+27742,deo
+27750,deo
+27758,gld
+27762,maz
+27786,dld
+27822,met
+27826,met
+27846,mhp
+27858,cpd
+27862,cpd
+27878,cpd
+27882,cpd
+27886,cpd
+27890,cpd
+27894,cpd
+27898,cpd
+28026,nrd
+28030,nrd
+28034,nrd
+28038,nrd
+28042,bckdh
+28046,pta
+28054,pfl
+28062,kdt
+28066,kdt
+28070,cyo
+28094,bcr
+28162,udk
+28190,adx
+28206,tdk
+28330,ndk
+28342,rdg
+28354,fad
+28358,fad
+28362,rdg
+28370,pcx
+28374,mur
+28386,mra
+28406,yjX
+28410,puC
+28414,puB
+28438,lpx
+28442,lpx
+28530,ush
+28534,maz
+28582,ndk
+28610,rdg
+28659,lac
+28675,gal
+28783,car
+28807,gtx
+29355,ush
+29359,ush
+29363,ush
+29367,ush
+29371,ush
+29375,ush
+29379,ush
+29391,maz
+29395,maz
+29399,maz
+30075,pnN
+30187,dho
+30235,put
+30295,pkx
+30347,ndk
+30367,cob
+30547,paF
+30655,tmk
+30699,gab
+30707,spu
+30727,pk
+30731,fad
+30747,fad
+30751,axx
+30755,car
+30759,cod
+30775,pdx
+30779,gxx
+30783,amB
+30787,phA
+30791,pkx
+30795,dxx
+30799,fad
+30803,amB
+30815,ush
+30871,rbs
+30887,fol
+30931,met
+30935,ush
+30939,ndk
+30943,fad
+31039,fad
+31075,paF
+31087,paJ
+31091,paJ
+31103,dhf
+31107,hpd
+31111,paJ
+31115,bir
+31131,pur
+31135,apr
+31139,ilv
+31143,fad
+31159,fad
+31163,paF
+31167,fad
+31171,paF
+31179,fad
+31183,paJ
+31187,fad
+31191,paF
+31195,fad
+31199,paF
+31203,paJ
+31207,fad
+31227,mur
+31255,ilv
+31747,paZ
+31755,paZ
+31843,paG
+32171,pax
+32263,amt
+32271,leu
+32275,pdx
+32287,leu
+32459,hem
+32527,chb
+32715,leu
+33023,pgd
+33791,inv
+33799,his
+33803,his
+33867,puc
+34095,nsp
+34099,nsp
+34111,cansdh
+34115,cansdh
+34171,dap
+34191,mhp
+34767,gcv
+34799,paJ
+34851,paH
+35323,dap
+35331,dap
+35587,yig
+36163,pnc
+36371,ldh
+37751,prF
+38215,zwf
+40523,sdh
+40663,sal
+40951,doe
+41528,fab
+41792,fab
+41800,fab
+41804,fab
+41808,fab
+41812,fab
+41820,fab
+41824,fab
+41828,fab
+41832,fab
+41836,fab
+41840,fab
+41844,fab
+41848,fab
+41852,fab
+41856,fab
+41860,fab
+41864,fab
+41868,fab
+41872,fab
+41876,fab
+41880,fab
+41884,fab
+41888,fab
+41892,fab
+41896,fab
+41900,fab
+41904,fab
+41908,fab
+41912,fab
+41916,fab
+41920,fab
+41924,fab
+41928,fab
+42288,bio
+42340,puC
+42424,leu
+42700,bio
+43604,gcp
+45332,fol
+45764,doe
+45796,phb
+46012,mqo
+46160,ndh
+46164,wrb
+51468,dld
+51616,nrd
+51620,nrd
+51624,nrd
+51628,nrd
+52304,doe
+52540,pnP
+54868,fab
+54900,fab
+54936,fab
+61092,arg
+64820,ami
+65032,hem
+70223,ilv
+70295,asp
+70427,paI
+72067,gsh
+72075,gsh
+76495,dgc
+76499,ycj
+76647,paF
+77639,cys
+77643,cys
+ABC_15903,Transport beta-D-glucose ABC
+ABC_16199,Transport urea ABC
+ABC_29033,Transport Fe(2+) ABC
+ABC_29034,Transport Fe(3+) ABC
+ABC_29985,Transport L-glutamate ABC
+ABC_29991,Transport L-aspartate ABC
+ABC_32551,Transport L-lysine ABC
+ABC_326268,Transport putrescine ABC
+ABC_32682,Transport L-arginine ABC
+ABC_33384,Transport L-serine ABC
+ABC_35235,Transport L-cysteine ABC
+ABC_40886,Transport beta-L-arabinopyranose ABC
+ABC_43474,Transport phosphate ABC
+ABC_46911,Transport L-ornithine ABC
+ABC_47013,Transport D-ribose ABC
+ABC_507393,Transport taurine ABC
+ABC_57305,Transport glycine ABC
+ABC_57427,Transport L-leucine ABC
+ABC_57595,Transport L-histidine ABC
+ABC_57762,Transport L-valine ABC
+ABC_57834,Transport spermidine ABC
+ABC_57844,Transport L-methionine ABC
+ABC_57912,Transport L-tryptophan ABC
+ABC_57926,Transport L-threonine ABC
+ABC_57972,Transport L-alanine ABC
+ABC_58045,Transport L-isoleucine ABC
+ABC_58048,Transport L-asparagine ABC
+ABC_58095,Transport L-phenylalanine ABC
+ABC_58315,Transport L-tyrosine ABC
+ABC_58359,Transport L-glutamine ABC
+ABC_60039,Transport L-proline ABC
+ABC_60344,Transport heme b ABC
+ANTI_15378_29101_NhaA,Antiporter Na/H (NhaA)
+ANTI_15378_29101_NhaB,Antiporter Na/H (NhaB)
+ANTI_15378_29101_NhaC,Antiporter Na/H (NhaC)
+ANTI_29806_30031,Antiport fumarate::succinate
+ANTI_57287_57288,Antiport CoA::acetyl-CoA
+H_ATPsynthase,atps
+Na_ATPsynthase,atps
+PERM_17754,Permease glycerol
+PERM_17997,Permease N2
+PERM_28938,Permease NH4(+)
+PTS_15903,Transport beta-D-glucose PTS
+PTS_16899,Transport D-mannitol PTS
+PTS_17992,Transport sucrose PTS
+PTS_28645,Transport beta-D-fructose PTS
+PTS_506227,Transport N-acetyl-D-glucosamine PTS
+SYM_15354_15378,Symport choline::H(+)
+SYM_15378_15562,Symport H(+)::D-threo-isocitrate
+SYM_15378_15589,Symport H(+)::(S)-malate
+SYM_15378_15677,Symport H(+)::(R)-allantoin
+SYM_15378_15678,Symport H(+)::(S)-allantoin
+SYM_15378_15740,Symport H(+)::formate
+SYM_15378_16004,Symport H(+)::(R)-lactate
+SYM_15378_16040,Symport H(+)::cytosine
+SYM_15378_16189,Symport H(+)::sulfate
+SYM_15378_16235,Symport H(+)::guanine
+SYM_15378_16301,Symport H(+)::nitrite
+SYM_15378_16383,Symport H(+)::cis-aconitate
+SYM_15378_16651,Symport H(+)::(S)-lactate
+SYM_15378_16708,Symport H(+)::adenine
+SYM_15378_16810,Symport H(+)::2-oxoglutarate
+SYM_15378_16947,Symport H(+)::citrate
+SYM_15378_17568,Symport H(+)::uracil
+SYM_15378_17632,Symport H(+)::nitrate
+SYM_15378_17712,Symport H(+)::xanthine
+SYM_15378_18391,Symport H(+)::D-gluconate
+SYM_15378_29806,Symport H(+)::fumarate
+SYM_15378_29985,Symport H(+)::L-glutamate
+SYM_15378_29991,Symport H(+)::L-aspartate
+SYM_15378_30031,Symport H(+)::succinate
+SYM_15378_30089,Symport H(+)::acetate
+SYM_15378_32551,Symport H(+)::L-lysine
+SYM_15378_32682,Symport H(+)::L-arginine
+SYM_15378_33384,Symport H(+)::L-serine
+SYM_15378_35235,Symport H(+)::L-cysteine
+SYM_15378_43474,Symport H(+)::phosphate
+SYM_15378_57305,Symport H(+)::glycine
+SYM_15378_57427,Symport H(+)::L-leucine
+SYM_15378_57595,Symport H(+)::L-histidine
+SYM_15378_57597,Symport H(+)::sn-glycerol 3-phosphate
+SYM_15378_57762,Symport H(+)::L-valine
+SYM_15378_57844,Symport H(+)::L-methionine
+SYM_15378_57912,Symport H(+)::L-tryptophan
+SYM_15378_57926,Symport H(+)::L-threonine
+SYM_15378_57972,Symport H(+)::L-alanine
+SYM_15378_58045,Symport H(+)::L-isoleucine
+SYM_15378_58048,Symport H(+)::L-asparagine
+SYM_15378_58095,Symport H(+)::L-phenylalanine
+SYM_15378_58315,Symport H(+)::L-tyrosine
+SYM_15378_58359,Symport H(+)::L-glutamine
+SYM_15378_60039,Symport H(+)::L-proline
+cyt_bc1,cyt_bc1
+cyt_bd,cyd
+cyt_bo,cyo
+cyt_c,cox
+glycogen_phosphorylase,pyg
+glycogen_synthase,glA
+nfn,nfB
+nqr,nqr
+oad,oad
+pnt,pnt
+polyphosphate_kinase1,pk1
+polyphosphate_kinase2,pk2
+rnf,rnf

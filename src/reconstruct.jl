@@ -46,6 +46,7 @@ function build_model()
     name_reactions!(model)
     replace_proteinaccession_with_locustag!(model)
     name_genes!(model)
+    shortname_reactions!(model)
 
     haskey(model.reactions, "PERM_29101") && delete!(model.reactions, "PERM_29101") # house keeping for Na+
     model
