@@ -44,15 +44,11 @@ mus = Dict(
     "succinate" => 1.074,
 )
 
-
 model = VibrioNatriegens.build_model()
 model.reactions["EX_15903"].lower_bound = 0.0 # set glucose to 0
 model.reactions["biomass"].objective_coefficient = 0.0
 model.reactions["ATPM"].objective_coefficient = 1.0
 model.reactions["ATPM"].lower_bound = 0.0
-# model.reactions["cyt_c"].lower_bound = 0.0 # glucose
-# model.reactions["cyt_c"].upper_bound = 0.0 # glucose
-
 
 df = DataFrame(maxatp = Float64[], mu = Float64[], id=String[])
 for k in keys(measurements)

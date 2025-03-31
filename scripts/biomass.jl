@@ -13,14 +13,14 @@ mass_fractions = Dict(
     "glycogen" => 0.034,
 
     # e coli g/g
-    # "peptidoglycan" => 0.025,
-    # "dna" => 0.031,
-    # "lipopolysaccharide" => 0.034,
+    "peptidoglycan" => 0.025,
+    "dna" => 0.031,
+    "lipopolysaccharide" => 0.034,
 )
 
 # add solubles
-# total = sum(values(mass_fractions))
-# mass_fractions["soluble_pool"] = 1.0 - total # overestimate
+total = sum(values(mass_fractions))
+mass_fractions["soluble_pool"] = 1.0 - total # overestimate
 
 # normalize
 total = sum(values(mass_fractions))
@@ -229,7 +229,7 @@ end
 # add vitamins here at a very small fraction
 solubles = Dict( # molar fractions
     "29985" => 10.0, # glutamate
-    # "57925" => 2.0, # glutathione
+    "57925" => 2.0, # glutathione
     "32966" => 2.0, # fructose bisphosphate
     "30616" => 1.0, # atp
     "57705" => 1.0, # UDP-N-acetyl-alpha-D-glucosamine
