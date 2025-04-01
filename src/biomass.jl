@@ -7,7 +7,7 @@ function add_biomass!(model)
     biomass = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "model", "biomass.json"))
 
     # required atp for growth hydrolysis equation
-    atp_req = 110.5380339572664
+    atp_req = 107.12233636319985
     # atp_req = 0.0
     
     biomass["30616"] = biomass["30616"] - atp_req # atp
@@ -38,7 +38,7 @@ function add_atpm!(model)
             "15378" => 1,  # h+
         ),
         objective_coefficient = 0.0,
-        lower_bound = 71.43699059080485,
+        lower_bound = 78.08160739169334,
         # lower_bound = 0.0,
         upper_bound = 1000,
         annotations = Dict("SBO" => ["SBO_0000630"]),

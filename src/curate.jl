@@ -146,6 +146,7 @@ function curate!(model)
     rev_dir(model, "14077") # beta-alanine loop prevention
     for_dir(model, "12813") # D-glutamate biosynthesis (mostly loop prevention when alanine carbon source)
     for_dir(model, "15869") # D-glutamate biosynthesis (mostly loop prevention when alanine carbon source)
+    bi_dir(model, "28370") # deltaG is very close to zero, https://biocyc.org/reaction?orgid=META&id=PEPCARBOX-RXN
 
     # add custom reactions (needs to happen after direction setting)
 

@@ -290,7 +290,7 @@ function add_salt_transducers!(model)
     append!(gs, A.reaction_gene_association_dnf(model, "Na_ATPsynthase")...)
     append!(ms, keys(A.reaction_stoichiometry(model, "Na_ATPsynthase")))
 
-    model.reactions["oad"] = Reaction(;
+    model.reactions["oad"] = Reaction(; 
         name = "oxaloacetate decarboxylase (Na(+) extruding)",
         stoichiometry = Dict(
             "16452" => -1.0, # oxaloacetate
@@ -300,7 +300,7 @@ function add_salt_transducers!(model)
             "29101_p" => 2.0, # Na+
             "16526" => 1.0, # CO2
         ),
-        lower_bound = -1000.0,
+        lower_bound = 0.0, # the delta D for oac <-> pyr + co2 is -32 kJ/mol, hence this is likely pumping Na
         upper_bound = 1000.0,
         gene_association = [
             X.Isozyme(;

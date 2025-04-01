@@ -44,7 +44,6 @@ model.reactions["ATPM"].lower_bound = 0.0
 model.reactions["EX_57972"].lower_bound = -40.0
 
 sol = parsimonious_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
-
 open("vnat_fluxes.json", "w") do io
     JSON.print(io, sol.fluxes)
 end
