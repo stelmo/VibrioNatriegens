@@ -238,7 +238,9 @@ Note, the Rhea reactions used in the model are downloaded, and cached, from `htt
 Thereafter the building process should take less than 10 seconds.
 
 Basic tests (MEMOTE-like) can be run by testing the package just like any other Julia package. 
-These tests also run with CI every time the model is changed.
+These including mass, charge and stoichiometric consistency checks. 
+Additionally, metabolite utilization, secretion, growth rates, and ATP yields are checked against measured values.
+These tests run with CI every time the model is changed, but can be manually triggered with:
 ```julia
 
 ] test VibrioNatriegens
@@ -257,8 +259,16 @@ This model works well with the [COBREXA package](https://github.com/COBREXA/COBR
 Known issues in the model are marked as broken tests, mainly tested in the file `test/issues.jl` in the test directory.
 Exceptions to this include substrate utilization tests (also listed as broken tests, but found in `test/basics.jl`):
 - Formate
+- Glycine
 - Maltose
 - Starch
+
+Currently the model does not simulate anaerobic growth accurately, as the ATP yield is only 3 ATP/glucose. 
+This results in a low growth rate cf. experimental measurements. 
+It is likely that an unknown anaerobic energy generating mechanism exists, but this is not captured in the model currently.
+
+Additionally, the GAM and NGAM are set using experimental measurements, but they are relatively high cf. other metabolic reconstructions (110, 71 respectively).
+It is unclear if these are correct estimates, or not. Unfortunately most other models do not measure these values, but rather use default values supplied by some reconstruction tool.
 
 These issues will be fixed in due course.
 

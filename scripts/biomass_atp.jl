@@ -3,6 +3,13 @@ import ConstraintTrees as C
 import AbstractFBCModels as A
 using CairoMakie
 
+#=
+Predict appropriate GAM & NGAM values using the techniques in https://www.nature.com/articles/nbt.3956
+
+Importantly, before running the code below, set the GAM and NGAM to zero in the model build scripts!
+This can be found in `src/biomass.jl`.
+=#
+
 print_solution(sol) = C.pretty(
     C.ifilter_leaves(sol.fluxes) do ix, x
         abs(x) > 1e-6 && startswith(string(last(ix)), "EX_")
