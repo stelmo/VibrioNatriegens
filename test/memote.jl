@@ -57,17 +57,17 @@ end
 
     csources = [ # (exchange rid, atp/substrate)
         (:EX_15903, -26.0) # glucose
-        (:EX_57972, -8.56) # alanine
-        (:EX_30031, -13.75) # succinate
-        (:EX_17754, -15.0) # glycerol
-        (:EX_29985, -15.56) # glutamate
+        (:EX_57972, -8.06) # alanine
+        (:EX_30031, -13.25) # succinate
+        (:EX_17754, -14.5) # glycerol
+        (:EX_29985, -14.75) # glutamate
         (:EX_47013, -20.66) # ribose
         (:EX_30089, -6.75) # acetate
-        (:EX_58723, -22.56) # glucosamine
-        (:EX_506227, -29.81) # n-acetyl-d-glucosamine
+        (:EX_58723, -22.4) # glucosamine
+        (:EX_506227, -29.7) # n-acetyl-d-glucosamine
         (:EX_18391, -23.42) # gluconate
-        (:EX_15589, -12.75) # malate
-        (:EX_29806, -12.75) # fumarate
+        (:EX_15589, -12.25) # malate
+        (:EX_29806, -12.25) # fumarate
         (:EX_40886, -20.67) # L-arabinose
     ]
     ct = flux_balance_constraints(model)
