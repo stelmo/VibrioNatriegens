@@ -19,8 +19,8 @@ mass_fractions = Dict(
 )
 
 # add solubles
-# total = sum(values(mass_fractions))
-# mass_fractions["soluble_pool"] = 1.0 - total # overestimate
+total = sum(values(mass_fractions))
+mass_fractions["soluble_pool"] = 1.0 - total # overestimate
 
 # normalize
 total = sum(values(mass_fractions))

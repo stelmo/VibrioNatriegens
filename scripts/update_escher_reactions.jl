@@ -8,10 +8,10 @@ rids = filter(x -> isdigit(first(x)), A.reactions(model))
 escher_maps = [
     "amino_acids.json"
     "carbohydrate_metabolism.json"
-    "cofactors_etc.json"
+    "cofactor_etc_final.json"
     "energy_metabolism.json"
     "lipids.json"
-    "nucleotides.json"
+    "nucleotides_final.json"
 ]
 
 ems = Dict()
@@ -36,7 +36,7 @@ for (emid, em) in ems
         end
 
         # rename reaction 
-        rxn["name"] = renamer(rid, model, "rhea.ec")
+        rxn["name"] = renamer(rxn["bigg_id"], model, "shortname")
 
         # set bounds
         lb, ub = model.reactions[rxn["bigg_id"]].lower_bound,
