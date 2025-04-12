@@ -1,7 +1,7 @@
 using GLM, DataFrames, COBREXA, Gurobi, AbstractFBCModels, VibrioNatriegens, ConstraintTrees
 import ConstraintTrees as C
 import AbstractFBCModels as A
-using CairoMakie
+using CairoMakie, AlgebraOfGraphics
 
 #=
 Predict appropriate GAM & NGAM values using the techniques in https://www.nature.com/articles/nbt.3956
@@ -78,11 +78,6 @@ df
 a, b = coef(ols)
 
 
-fig = Figure()
-ax = Axis(fig[1, 1], xlabel = "Growth rate [1/h]", ylabel = "Max ATP flux [mmol/gDW/h]")
-ablines!(ax, [a], [b])
-scatter!(ax, df.mu, df.maxatp)
-for r in eachrow(df)
-    text!(ax, r.mu, r.maxatp, text=r.id)
-end
-fig
+draw(
+    data(df) * mapping(:mu, :maxatp) * (visual(Scatter) + linear())
+)

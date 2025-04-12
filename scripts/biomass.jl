@@ -17,10 +17,12 @@ mass_fractions = Dict(
     "dna" => 0.031,
     "lipopolysaccharide" => 0.034,
 )
+biomass_file_name = "core_biomass"
 
 # add solubles
-total = sum(values(mass_fractions))
-mass_fractions["soluble_pool"] = 1.0 - total # overestimate
+# biomass_file_name = "biomass"
+# total = sum(values(mass_fractions))
+# mass_fractions["soluble_pool"] = 1.0 - total # overestimate
 
 # normalize
 total = sum(values(mass_fractions))
@@ -263,7 +265,7 @@ if haskey(mass_fractions, "soluble_pool")
     end
 end
 
-open(joinpath("data", "model", "biomass.json"), "w") do io
+open(joinpath("data", "model", "$biomass_file_name.json"), "w") do io
     JSON.print(io, biomass)
 end
 

@@ -6,7 +6,7 @@
     =#
     model = deepcopy(full_model)
 
-    rids = filter(x -> !startswith(x, "EX_") && x != "biomass", A.reactions(model))
+    rids = filter(x -> !startswith(x, "EX_") && x != "biomass" && x != "core_biomass", A.reactions(model))
     unbal_rids = String[]
     for rid in rids
         s = A.reaction_stoichiometry(model, rid)
@@ -29,7 +29,7 @@ end
     =#
     model = deepcopy(full_model)
 
-    rids = filter(x -> !startswith(x, "EX_") && x != "biomass", A.reactions(model))
+    rids = filter(x -> !startswith(x, "EX_") && x != "biomass" && x != "core_biomass", A.reactions(model))
     unbal_rids = String[]
     for rid in rids
         s = A.reaction_stoichiometry(model, rid)
