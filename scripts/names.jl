@@ -2,35 +2,32 @@ using VibrioNatriegens
 import AbstractFBCModels as A
 using CSV, DataFrames, DataFramesMeta
 
-df = DataFrame(CSV.File(joinpath("data", "annotations", "metanetx", "reac_xref.tsv"), missingstring = ["EMPTY",]))
-dropmissing!(df)
 
-df = @combine(
-    groupby(df, :meta),
-    :xrefs = unique(:ref),
-)
+model = VibrioNatriegens.build_model()
 
-bigg = @rtransform(@rsubset(df, startswith(:xrefs, "bigg.reaction")), :xrefs = last(split(:xrefs, ":")))
-seed  = @rtransform(@rsubset(df, startswith(:xrefs, "seed.reaction")), :xrefs = last(split(:xrefs, ":")))
-metacyc = @rtransform(@rsubset(df, startswith(:xrefs, "metacyc.reaction")), :xrefs = last(split(:xrefs, ":")))
-kegg = @rtransform(@rsubset(df, startswith(:xrefs, "kegg.reaction")), :xrefs = last(split(:xrefs, ":")))
-sabio = @rtransform(@rsubset(df, startswith(:xrefs, "sabiork.reaction")), :xrefs = last(split(:xrefs, ":")))
+df = DataFrame(CSV.File(joinpath("heckman.csv"),))
+rids = df.react_id
 
+bigg = JSON.parsefile(joinpath("data", "annotations", "rhea", "bigg.json"))
 
-rhea = @rtransform(@rsubset(df, startswith(:xrefs, "rhea")), :xrefs = last(split(:xrefs, ":")))
-d = Dict(r.xrefs => r.meta for r in eachrow(rhea))
+preferred_name = Dict()
+for rid in collect(keys(model.reactions))
+    avail = get(bigg, rid, [])
+    ns = intersect(avail, rids)
+    isempty(ns) && continue
+    preferred_name[rid] = first(ns)
+end
+preferred_name
 
-b = Dict()
-for r in eachrow(seed)
-    push!(get!(b, r.meta, []), r.xrefs)
+shortlu = Dict(CSV.File())
+for (k, v) in preferred_name
+shortlu[k] = v
 end
 
-nb = Dict()
-for (k, v) in d
-    haskey(b, v) || continue
-    nb[k] = b[v]
-end
+df = DataFrame(Reaction=collect(keys(shortlu)), Name=collect(values(shortlu)))
 
-open(joinpath("data", "annotations", "rhea", "seed.json"), "w") do io
-    JSON.print(io, nb)
-end
+CSV.write(joinpath( "data", "model", "reaction_shortnames.csv"), df)
+
+
+
+
