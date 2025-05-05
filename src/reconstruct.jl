@@ -44,7 +44,6 @@ function build_model()
 
     set_default_exchanges!(model)
     name_reactions!(model)
-    replace_proteinaccession_with_locustag!(model)
     name_genes!(model)
     shortname_reactions!(model)
 

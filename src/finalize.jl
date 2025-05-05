@@ -68,28 +68,3 @@ function shortname_reactions!(model)
         model.reactions[k].annotations["shortname"] = [v,]
     end
 end
-
-function replace_proteinaccession_with_locustag!(model)
-    lu = Dict(
-        first(model.genes[g].annotations["protein.accession"]) =>
-            first(model.genes[g].annotations["locustag"]) for g in A.genes(model)
-    )
-    # in genes
-    for (k, v) in lu
-        g = deepcopy(model.genes[k])
-        model.genes[v] = g
-        delete!(model.genes, k)
-    end
-
-    # in reactions
-    for k in keys(model.reactions)
-        isnothing(model.reactions[k].gene_association) && continue
-        for grr in model.reactions[k].gene_association
-            kks = collect(keys(grr.gene_product_stoichiometry))
-            for kk in kks
-                grr.gene_product_stoichiometry[lu[kk]] = grr.gene_product_stoichiometry[kk]
-                delete!(grr.gene_product_stoichiometry, kk)
-            end
-        end
-    end
-end

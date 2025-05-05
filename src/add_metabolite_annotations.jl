@@ -2,7 +2,7 @@ function add_metabolite_annotations!(model)
 
     met_df = DataFrame(
         CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "chebi", "metabolite_annotations.csv"),
+            joinpath(pkgdir(@__MODULE__), "data", "annotations", "chebi", "metabolite_annotations.csv"),
         ),
     )
     renamer(k) = begin

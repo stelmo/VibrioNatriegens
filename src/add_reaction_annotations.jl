@@ -1,80 +1,22 @@
 
 function add_reaction_annotations!(model)
+    # pkgdir(@__MODULE__)
+    hamap = JSON.parsefile(joinpath("data", "annotations", "hamap", "hamap.json"))
+    kegg = JSON.parsefile(joinpath("data", "annotations", "kegg", "kegg.json"))
+    eggnog_go = JSON.parsefile(joinpath("data", "annotations", "eggnog", "eggnog_go.json"))
+    eggnog_ec = JSON.parsefile(joinpath("data", "annotations", "eggnog", "eggnog_ec.json"))
+    ko = JSON.parsefile(joinpath("data", "annotations", "kegg", "ko.json"))
+    
+    ec = JSON.parsefile(joinpath("data", "annotations", "rhea", "ec.json"))
+    
 
-    hamap = DataFrame(
-        CSV.File(
-            joinpath(
-                pkgdir(@__MODULE__),
-                "data",
-                "annotations",
-                "hamap",
-                "hamap_subunits.csv",
-            ),
-        ),
-    )
-    hamap = Dict(zip(String.(hamap.Protein), hamap.Subunit))
-
-    bigg =
-        DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "rhea", "bigg_rxns.csv")))
-    bigg = Dict(
-        String.(string(first(gdf.rhea))) => String.(gdf.bigg_id) for
-        gdf in groupby(bigg, :rhea)
-    )
-
-    kegg =
-        DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "rhea", "kegg_rxns.csv")))
-    kegg_met = DataFrame(
-        CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "metabolic_reactions.csv")),
-    )
-    kegg = Dict(
-        String.(string(first(gdf.rhea))) => String.(gdf.kegg) for
-        gdf in groupby(kegg, :rhea)
-    )
-    for (k, v) in zip(string.(kegg_met.RHEA_ID), kegg_met.KEGG_ID)
-        if haskey(kegg, k)
-            v in kegg[k] || push!(kegg[k], v)
-        else
-            kegg[k] = [v]
-        end
+    open(joinpath("data", "annotations", "rhea", "ec.json"), "w") do io
+        JSON.print(io, ec)
     end
 
-    eggnog = DataFrame(
-        CSV.File(
-            joinpath(
-                pkgdir(@__MODULE__),
-                "data",
-                "annotations",
-                "eggnog",
-                "out.emapper.annotations",
-            ),
-        ),
-    )
-    eggnog_ec = Dict(
-        k => string.(split(v, ",")) for
-        (k, v) in zip(String.(eggnog.query), eggnog.EC) if v != "-"
-    )
-    eggnog_go = Dict(
-        k => string.(split(v, ",")) for
-        (k, v) in zip(String.(eggnog.query), eggnog.GOs) if v != "-"
-    )
-
-    reactome = Dict(
-        CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "rhea", "reactome_rxns.csv"),
-            types = [String, String],
-        ),
-    )
-
-    ko = DataFrame(
-        CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "annotations", "kegg", "ko.txt"),
-            header = ["Protein", "KO", "Desc"],
-        ),
-    )
-    ko = Dict(k => v for (k, v) in zip(String.(ko.Protein), ko.Desc) if !ismissing(v))
-
-    ec = DataFrame(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "rhea", "ec_rxns.csv")))
+    ec = DataFrame(CSV.File(joinpath("data", "annotations", "rhea", "ec_rxns.csv")))
     ec = Dict(string(first(gdf.rhea)) => String.(gdf.ec) for gdf in groupby(ec, :rhea))
+
 
     qts = Dict(
         k => [vs...] for (k, vs) in
@@ -83,7 +25,7 @@ function add_reaction_annotations!(model)
 
     metacyc = Dict(
         CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "rhea", "biocyc_rxns.csv"),
+            joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "biocyc_rxns.csv"),
             drop = [2],
             types = [String, String, String],
         ),
@@ -91,7 +33,7 @@ function add_reaction_annotations!(model)
 
     seed = Dict(
         CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "rhea", "seed_rxns.csv"),
+            joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "seed_rxns.csv"),
             types = [String, String],
         ),
     )

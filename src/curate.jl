@@ -75,7 +75,7 @@ function curate!(model)
 
     metacyc = DataFrame(
         CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "rhea", "biocyc_rxns.csv"),
+            joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "biocyc_rxns.csv"),
             drop = [3],
         ),
     )
@@ -83,7 +83,7 @@ function curate!(model)
 
     ecocyc = DataFrame(
         CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "rhea", "ecocyc_rxns.csv"),
+            joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "ecocyc_rxns.csv"),
             drop = [3],
         ),
     )
@@ -162,7 +162,7 @@ function curate!(model)
         lower_bound = 0,
         upper_bound = 1000,
         gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020332873.1" .=> 1.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS08405" .=> 1.0)),
         ],
         annotations = Dict("rhea.reaction" => ["18549"], "rhea.ec" => ["2.4.1.11"]),
     )
@@ -178,11 +178,11 @@ function curate!(model)
         lower_bound = 0,
         upper_bound = 1000,
         gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333475.1" .=> 1.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS15820" .=> 1.0)),
         ],
         annotations = Dict("rhea.reaction" => ["41732"], "rhea.ec" => ["2.4.1.1"]),
     )
-    add_genes!(model, ["WP_020333475.1", "WP_020332873.1"])
+    add_genes!(model, ["PN96_RS15820", "PN96_RS08405"])
 
     model.reactions["polyphosphate_kinase2"] = Reaction(
         name = "polyphosphate kinase II",
@@ -197,7 +197,7 @@ function curate!(model)
         lower_bound = 0,
         upper_bound = 1000,
         gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333630.1" .=> 4.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS10775" .=> 4.0)),
         ],
         annotations = Dict("rhea.reaction" => ["19573"], "rhea.ec" => ["2.7.4.1"]),
     )
@@ -213,11 +213,11 @@ function curate!(model)
         lower_bound = 0,
         upper_bound = 1000,
         gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333630.1" .=> 4.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS10775" .=> 4.0)),
         ],
         annotations = Dict("rhea.reaction" => ["19573"], "rhea.ec" => ["2.7.4.1"]),
     )
-    add_genes!(model, ["WP_020333630.1"])
+    add_genes!(model, ["PN96_RS10775"])
 
 end
 

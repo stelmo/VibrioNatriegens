@@ -18,7 +18,7 @@ function add_electron_transport_chain!(model)
         lower_bound = 0.0,
         upper_bound = 0.0,
         gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020336371.1" => 1.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS05215" => 1.0)),
         ], # nfnB, missing nfnA...
         annotations = Dict(
             "rhea-reaction-description" => [
@@ -46,28 +46,28 @@ function add_electron_transport_chain!(model)
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_020333565.1" => 1.0,
-                    "WP_014233411.1" => 1.0,
-                    "WP_014233417.1" => 1.0,
-                    "WP_014233414.1" => 3.0,
-                    "WP_014233413.1" => 1.0,
-                    "WP_014233416.1" => 2.0,
-                    "WP_002540812.1" => 10.0,
-                    "WP_014233412.1" => 1.0,
-                    "WP_014233418.1" => 1.0,
+                    "PN96_RS13585" => 1.0,
+                    "PN96_RS13605" => 1.0,
+                    "PN96_RS13570" => 1.0,
+                    "PN96_RS13590" => 3.0,
+                    "PN96_RS13595" => 1.0,
+                    "PN96_RS13580" => 2.0,
+                    "PN96_RS13575" => 10.0,
+                    "PN96_RS13600" => 1.0,
+                    "PN96_RS13565" => 1.0,
                 ),
             ),
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_020333565.1" => 1.0,
-                    "WP_020335248.1" => 1.0,
-                    "WP_020335246.1" => 1.0,
-                    "WP_020335243.1" => 3.0,
-                    "WP_020335242.1" => 1.0,
-                    "WP_020335244.1" => 2.0,
-                    "WP_014234581.1" => 10.0,
-                    "WP_020335249.1" => 3.0,
-                    "WP_020335247.1" => 1.0,
+                    "PN96_RS13585" => 1.0,
+                    "PN96_RS22635" => 1.0,
+                    "PN96_RS22625" => 1.0,
+                    "PN96_RS22610" => 3.0,
+                    "PN96_RS22605" => 1.0,
+                    "PN96_RS22615" => 2.0,
+                    "PN96_RS22620" => 10.0,
+                    "PN96_RS22640" => 3.0,
+                    "PN96_RS22630" => 1.0,
                 ),
             ),
         ],
@@ -95,9 +95,9 @@ function add_electron_transport_chain!(model)
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_014230785.1" => 1.0, # petC
-                    "WP_014230784.1" => 1.0, # petB
-                    "WP_014230783.1" => 1.0, # petA
+                    "PN96_RS11440" => 1.0, # petC
+                    "PN96_RS11445" => 1.0, # petB
+                    "PN96_RS11450" => 1.0, # petA
                 ),
             ),
         ],
@@ -121,21 +121,21 @@ function add_electron_transport_chain!(model)
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_020335300.1" => 1.0, # coxC
-                    "WP_020335301.1" => 1.0, # coxA
-                    "WP_020335302.1" => 1.0, # coxB
-                    "WP_049794707.1" => 1.0, # coxG
-                    "WP_020335297.1" => 1.0, # cox15
+                    "PN96_RS22940" => 1.0, # coxC
+                    "PN96_RS22950" => 1.0, # coxA
+                    "PN96_RS22955" => 1.0, # coxB
+                    "PN96_RS22945" => 1.0, # coxG
+                    "PN96_RS22920" => 1.0, # cox15
                 ),
             ),
             X.Isozyme(; # Cytochrome c oxidase, cbb3-type
                 gene_product_stoichiometry = Dict(
-                    "WP_020333287.1" => 1.0, # ccoN
-                    "WP_020333286.1" => 1.0, # ccoO
-                    "WP_014231840.1" => 1.0, # ccoQ
-                    "WP_020333285.1" => 1.0, # ccoP
-                    "WP_020333284.1" => 1.0, # ccoI
-                    "WP_014231836.1" => 1.0, # ccoS
+                    "PN96_RS05815" => 1.0, # ccoN
+                    "PN96_RS05820" => 1.0, # ccoO
+                    "PN96_RS05825" => 1.0, # ccoQ
+                    "PN96_RS05830" => 1.0, # ccoP
+                    "PN96_RS05840" => 1.0, # ccoI
+                    "PN96_RS05845" => 1.0, # ccoS
                 ),
             ),
         ],
@@ -159,11 +159,11 @@ function add_electron_transport_chain!(model)
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_000270284.1" => 1.0, # cydX
-                    "WP_020332892.1" => 1.0, # cydA
-                    "WP_014231356.1" => 1.0, # cydB
-                    "WP_020333014.1" => 1.0, # cydD
-                    "WP_020333013.1" => 1.0, # cydC
+                    "PN96_RS08265" => 1.0, # cydX
+                    "PN96_RS08270" => 1.0, # cydA
+                    "PN96_RS08275" => 1.0, # cydB
+                    "PN96_RS07430" => 1.0, # cydD
+                    "PN96_RS07435" => 1.0, # cydC
                 ),
             ),
         ],
@@ -187,11 +187,11 @@ function add_electron_transport_chain!(model)
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_024372973.1" => 1.0, # cyoA
-                    "WP_014234376.1" => 1.0, # cyoB
-                    "WP_014234375.1" => 1.0, # cyoC
-                    "WP_014234374.1" => 1.0, # cyoD
-                    "WP_014234638.1" => 1.0, # cyoE
+                    "PN96_RS21725" => 1.0, # cyoA
+                    "PN96_RS21720" => 1.0, # cyoB
+                    "PN96_RS21715" => 1.0, # cyoC
+                    "PN96_RS21710" => 1.0, # cyoD
+                    "PN96_RS22915" => 1.0, # cyoE
                 ),
             ),
         ],
@@ -215,8 +215,8 @@ function add_electron_transport_chain!(model)
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_020334871.1" => 2.0, # pntA
-                    "WP_014234219.1" => 2.0, # pntB
+                    "PN96_RS20820" => 2.0, # pntA
+                    "PN96_RS20825" => 2.0, # pntB
                 ),
             ),
         ],
@@ -255,28 +255,28 @@ function add_salt_transducers!(model)
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_020333565.1" => 1.0,
-                    "WP_014233411.1" => 1.0,
-                    "WP_014233417.1" => 1.0,
-                    "WP_014233414.1" => 3.0,
-                    "WP_014233413.1" => 1.0,
-                    "WP_014233416.1" => 2.0,
-                    "WP_002540812.1" => 10.0,
-                    "WP_014233412.1" => 1.0,
-                    "WP_014233418.1" => 1.0,
+                    "PN96_RS13585" => 1.0,
+                    "PN96_RS13605" => 1.0,
+                    "PN96_RS13570" => 1.0,
+                    "PN96_RS13590" => 3.0,
+                    "PN96_RS13595" => 1.0,
+                    "PN96_RS13580" => 2.0,
+                    "PN96_RS13575" => 10.0,
+                    "PN96_RS13600" => 1.0,
+                    "PN96_RS13565" => 1.0,
                 ),
             ),
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_020333565.1" => 1.0,
-                    "WP_020335248.1" => 1.0,
-                    "WP_020335246.1" => 1.0,
-                    "WP_020335243.1" => 3.0,
-                    "WP_020335242.1" => 1.0,
-                    "WP_020335244.1" => 2.0,
-                    "WP_014234581.1" => 10.0,
-                    "WP_020335249.1" => 3.0,
-                    "WP_020335247.1" => 1.0,
+                    "PN96_RS13585" => 1.0,
+                    "PN96_RS22635" => 1.0,
+                    "PN96_RS22625" => 1.0,
+                    "PN96_RS22610" => 3.0,
+                    "PN96_RS22605" => 1.0,
+                    "PN96_RS22615" => 2.0,
+                    "PN96_RS22620" => 10.0,
+                    "PN96_RS22640" => 3.0,
+                    "PN96_RS22630" => 1.0,
                 ),
             ),
         ],
@@ -305,9 +305,9 @@ function add_salt_transducers!(model)
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_020333958.1" => 1.0, # oadB
-                    "WP_020333959.1" => 1.0, # oadA
-                    "WP_014232970.1" => 1.0, # oadG
+                    "PN96_RS01245" => 1.0, # oadB
+                    "PN96_RS01240" => 1.0, # oadA
+                    "PN96_RS01235" => 1.0, # oadG
                 ),
             ),
         ],
@@ -338,12 +338,12 @@ function add_salt_transducers!(model)
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_014232794.1" => 1.0,
-                    "WP_014232793.1" => 1.0,
-                    "WP_020335166.1" => 1.0,
-                    "WP_014232791.1" => 1.0,
-                    "WP_014232790.1" => 1.0,
-                    "WP_014232789.1" => 1.0,
+                    "PN96_RS02145" => 1.0,
+                    "PN96_RS02150" => 1.0,
+                    "PN96_RS02155" => 1.0,
+                    "PN96_RS02160" => 1.0,
+                    "PN96_RS02165" => 1.0,
+                    "PN96_RS02170" => 1.0,
                 ),
             ),
         ],
@@ -374,23 +374,23 @@ function add_salt_transducers!(model)
         gene_association = [
             X.Isozyme(;
                 gene_product_stoichiometry = Dict(
-                    "WP_014232537.1" => 1.0, # rnfA
-                    "WP_014232538.1" => 1.0, # rnfB
-                    "WP_020335672.1" => 1.0, # rnfC
-                    "WP_020335673.1" => 1.0, # rnfD
-                    "WP_020335675.1" => 1.0, # rnfE
-                    "WP_020335674.1" => 1.0, # rnfG
+                    "PN96_RS03320" => 1.0, # rnfA
+                    "PN96_RS03315" => 1.0, # rnfB
+                    "PN96_RS03310" => 1.0, # rnfC
+                    "PN96_RS03305" => 1.0, # rnfD
+                    "PN96_RS03295" => 1.0, # rnfE
+                    "PN96_RS03300" => 1.0, # rnfG
                 ),
             ),
             X.Isozyme(; # these are not well annotated
                 gene_product_stoichiometry = Dict(
-                    "WP_014234038.1" => 1.0,
-                    "WP_020333836.1" => 1.0,
-                    "WP_020333837.1" => 1.0,
-                    "WP_020333838.1" => 1.0,
-                    "WP_020333839.1" => 1.0,
-                    "WP_020333840.1" => 1.0,
-                    "WP_020333841.1" => 1.0,
+                    "PN96_RS19620" => 1.0,
+                    "PN96_RS19625" => 1.0,
+                    "PN96_RS19630" => 1.0,
+                    "PN96_RS19635" => 1.0,
+                    "PN96_RS19640" => 1.0,
+                    "PN96_RS19645" => 1.0,
+                    "PN96_RS19650" => 1.0,
                 ),
             ),
         ],
@@ -418,7 +418,7 @@ function add_salt_transducers!(model)
         lower_bound = 0,
         upper_bound = 0,
         gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333000.1" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS07530" .=> 12.0)),
         ],
     )
     append!(gs, A.reaction_gene_association_dnf(model, "ANTI_15378_29101_NhaA")...)
@@ -436,7 +436,7 @@ function add_salt_transducers!(model)
         lower_bound = 0,
         upper_bound = 0,
         gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_014232509.1" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS03465" .=> 12.0)),
         ],
     )
     append!(gs, A.reaction_gene_association_dnf(model, "ANTI_15378_29101_NhaB")...)
@@ -454,16 +454,16 @@ function add_salt_transducers!(model)
         lower_bound = -1000,
         upper_bound = 1000,
         gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_014232558.1" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_014232548.1" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_024373073.1" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_014232027.1" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020332945.1" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333664.1" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333874.1" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020334217.1" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020333880.1" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("WP_020335070.1" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS03215" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS03265" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS04845" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS05055" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS07920" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS10500" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS19810" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS18650" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS19835" .=> 12.0)),
+            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS16655" .=> 12.0)),
         ],
     )
     append!(gs, A.reaction_gene_association_dnf(model, "ANTI_15378_29101_NhaC")...)
