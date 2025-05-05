@@ -2,7 +2,7 @@ using VibrioNatriegens
 import AbstractFBCModels as A
 using CSV, DataFrames, DataFramesMeta
 
-df = DataFrame(CSV.File(joinpath("data", "metanetx", "reac_xref.tsv"), missingstring = ["EMPTY",]))
+df = DataFrame(CSV.File(joinpath("data", "annotations", "metanetx", "reac_xref.tsv"), missingstring = ["EMPTY",]))
 dropmissing!(df)
 
 df = @combine(
@@ -15,13 +15,22 @@ seed  = @rtransform(@rsubset(df, startswith(:xrefs, "seed.reaction")), :xrefs = 
 metacyc = @rtransform(@rsubset(df, startswith(:xrefs, "metacyc.reaction")), :xrefs = last(split(:xrefs, ":")))
 kegg = @rtransform(@rsubset(df, startswith(:xrefs, "kegg.reaction")), :xrefs = last(split(:xrefs, ":")))
 sabio = @rtransform(@rsubset(df, startswith(:xrefs, "sabiork.reaction")), :xrefs = last(split(:xrefs, ":")))
+
+
 rhea = @rtransform(@rsubset(df, startswith(:xrefs, "rhea")), :xrefs = last(split(:xrefs, ":")))
+d = Dict(r.xrefs => r.meta for r in eachrow(rhea))
 
-model = VibrioNatriegens.build_model()
-model.reactions["13237"].annotations
+b = Dict()
+for r in eachrow(seed)
+    push!(get!(b, r.meta, []), r.xrefs)
+end
 
-rhea_metanet = Dict()
-for (rid, rxn) in model.reactions
-    a = rxn.annotations
-    # rhea_metanet[rid] = 
+nb = Dict()
+for (k, v) in d
+    haskey(b, v) || continue
+    nb[k] = b[v]
+end
+
+open(joinpath("data", "annotations", "rhea", "seed.json"), "w") do io
+    JSON.print(io, nb)
 end

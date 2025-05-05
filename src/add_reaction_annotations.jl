@@ -1,50 +1,26 @@
 
 function add_reaction_annotations!(model)
-    # pkgdir(@__MODULE__)
-    hamap = JSON.parsefile(joinpath("data", "annotations", "hamap", "hamap.json"))
-    kegg = JSON.parsefile(joinpath("data", "annotations", "kegg", "kegg.json"))
-    eggnog_go = JSON.parsefile(joinpath("data", "annotations", "eggnog", "eggnog_go.json"))
-    eggnog_ec = JSON.parsefile(joinpath("data", "annotations", "eggnog", "eggnog_ec.json"))
-    ko = JSON.parsefile(joinpath("data", "annotations", "kegg", "ko.json"))
+    # these are mappings from proteins to annotations (used to justify why a grr is what it is)
+    hamap = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "annotations", "hamap", "hamap.json"))
+    eggnog_go = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "annotations", "eggnog", "eggnog_go.json"))
+    eggnog_ec = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "annotations", "eggnog", "eggnog_ec.json"))
+    ko = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "annotations", "kegg", "ko.json"))
     
-    ec = JSON.parsefile(joinpath("data", "annotations", "rhea", "ec.json"))
-    
+    # these are reaction cross references
+    ec = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "ec.json"))
+    kegg = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "kegg.json"))
+    bigg = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "bigg.json"))
+    metacyc = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "metacyc.json"))
+    seed = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "seed.json"))
+    reactome = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "reactome.json"))
+    metanetx = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "metanetx.json"))
+    sabiork = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "sabiork.json"))
 
-    open(joinpath("data", "annotations", "rhea", "ec.json"), "w") do io
-        JSON.print(io, ec)
-    end
-
-    ec = DataFrame(CSV.File(joinpath("data", "annotations", "rhea", "ec_rxns.csv")))
-    ec = Dict(string(first(gdf.rhea)) => String.(gdf.ec) for gdf in groupby(ec, :rhea))
-
-
+    # this needs to get downloaded, since it depends on the current state of the model
     qts = Dict(
         k => [vs...] for (k, vs) in
         get_quartets([rid for rid in A.reactions(model) if isdigit(first(rid))])
     )
-
-    metacyc = Dict(
-        CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "biocyc_rxns.csv"),
-            drop = [2],
-            types = [String, String, String],
-        ),
-    )
-
-    seed = Dict(
-        CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "seed_rxns.csv"),
-            types = [String, String],
-        ),
-    )
-
-    # kegg_ec_regex = @compile exactly(1, "[EC:")*
-    #     between(1,3, DIGIT)*exactly(1, ".")*
-    #     between(1,3, DIGIT)*exactly(1, ".")*
-    #     between(1,3, DIGIT)*exactly(1, ".")*
-    #     between(1,3, DIGIT)*exactly(1, "]")
-    kegg_ec_regex =
-        r"(?:\[EC:){1}(?:\d){1,3}(?:\.){1}(?:\d){1,3}(?:\.){1}(?:\d){1,3}(?:\.){1}(?:\d){1,3}(?:\]){1}"
 
     for rid in A.reactions(model)
         r = model.reactions[rid]
@@ -70,17 +46,20 @@ function add_reaction_annotations!(model)
             end
 
             if any(haskey(ko, x) for x in grrs)
-                _ecs = vcat([ko[gid] for gid in grrs if haskey(ko, gid)]...)
-                ecs = [
-                    replace(m.match, "[EC:" => "", "]" => "") for ec in _ecs for
-                    m in eachmatch(kegg_ec_regex, ec)
-                ]
-                r.annotations["kegg.ec"] = ecs
+                r.annotations["kegg.ec"] = vcat([ko[gid] for gid in grrs if haskey(ko, gid)]...)
             end
         end
 
         if isdigit(first(rid))
             r.annotations["rhea.reaction"] = qts[rid]
+        end
+
+        if isdigit(first(rid)) && haskey(metanetx, rid)
+            r.annotations["metanetx.reaction"] = metanetx[rid]
+        end
+
+        if isdigit(first(rid)) && haskey(sabiork, rid)
+            r.annotations["sabiork.reaction"] = sabiork[rid]
         end
 
         if isdigit(first(rid)) && haskey(reactome, rid)
