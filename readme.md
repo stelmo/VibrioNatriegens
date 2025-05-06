@@ -11,7 +11,7 @@ Vibrio natriegens
 </i> 
 </p> 
 
-The model is composed of 1390 reactions, 1020 metabolites, and 940 genes. 
+The model is composed of 1390 reactions, 1020 metabolites, and 951 genes. 
 It focusses on the primary metabolism of _V. natriegens_, and includes data to facilitate the construction of enzyme and ribosomal constraints. 
 A MEMOTE-like test suite is implemented in the `test` directory, and runs with CI. 
 The primary name spaces for the model reactions and metabolites are [Rhea](https://www.rhea-db.org/) and [ChEBI](https://www.ebi.ac.uk/chebi/).
@@ -23,7 +23,7 @@ At a glance, the model consists of:
 
 | Attribute | Value |
 |-----------|-------|
-| Metabolic reactions | 802 |
+| Metabolic reactions | 800 |
 | Transport reactions | 211 |
 | Exchange reactions | 188 |
 | Metabolic reactions with GRRs | 751 |
@@ -37,16 +37,16 @@ The model has the following reaction cross-references (available under the `anno
 
 | Attribute | Number (fraction %) |
 |-----------|-------|
-| *Metabolic reactions* | *802* |
+| *Metabolic reactions* | *800* |
 | rhea.reaction | 800 (100%) |
 | kegg.reaction | 776 (97%) |
 | metacyc.reaction |  718 (90%) |
 | reactome.reaction | 212 (26%) |
 | seed.reaction | 663 (83%) |
-| eggnog.go | 434 (54%) |
+| eggnog.go | 435 (54%) |
 | bigg.reaction | 602 (75%) |
 | ec | 774 (97%) |
-| SBO | 802 (100 %) |
+| SBO | 800 (100 %) |
 
 Note: ec = `eggnog.ec` or `rhea.ec` or `kegg.ec`.
 
@@ -69,9 +69,9 @@ The model has the following gene cross-references (available under the `annotati
 
 | Attribute | Number (fraction %) |
 |-----------|-------|
-| *Total genes* | 940 |
-| NCBI accession | 940 (100 %) |
-| SBO | 940 (100 %) |
+| *Total genes* | 951 |
+| NCBI accession | 951 (100 %) |
+| SBO | 951 (100 %) |
 
 ## Visualization
 In the `maps` directory, [Escher compatible maps](https://escher.github.io/#/) of all the major subsystems of _V. natriegens_ may be found. 

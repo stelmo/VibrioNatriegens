@@ -42,7 +42,7 @@ transport_rxns = [
 ]
 exchange_rxns = filter(startswith("EX_"), rids)
 diffusion_rxns = filter(startswith("DF_"), rids)
-biomass_rxns = ["biomass", "ATPM"]
+biomass_rxns = ["BIOMASS", "BIOMASS_core", "ATPM"]
 metabolic_rxns = setdiff(rids, [transport_rxns; exchange_rxns; diffusion_rxns; biomass_rxns])
 
 metabolic_rxn_grrs = [
