@@ -33,15 +33,12 @@ function set_default_exchanges!(model)
 end
 
 function name_genes!(model)
-    # special cases
-    gene_name_lu = Dict(
-        CSV.File(
-            joinpath(
-                pkgdir(@__MODULE__),
-                "data",
-                "model",
-                "gene_names.csv",
-            ),
+    gene_name_lu = JSON.parsefile(
+        joinpath(
+            pkgdir(@__MODULE__),
+            "data",
+            "model",
+            "gene_names.json",
         ),
     )
     for gid in A.genes(model)
