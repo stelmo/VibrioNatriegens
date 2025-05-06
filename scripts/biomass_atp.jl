@@ -18,25 +18,25 @@ print_solution(sol) = C.pretty(
 )
 
 measurements = Dict(
-    "alanine" => Dict("acetate" => ("EX_30089", 4.5), "alanine" => ("EX_57972", -40.03), "biomass" => ("biomass", 0.916)),
-    "ribose" => Dict("ribose" => ("EX_47013", -16.1), "biomass" => ("biomass", 0.871)),
+    "alanine" => Dict("acetate" => ("EX_30089", 4.5), "alanine" => ("EX_57972", -40.03), "BIOMASS" => ("BIOMASS", 0.916)),
+    "ribose" => Dict("ribose" => ("EX_47013", -16.1), "BIOMASS" => ("BIOMASS", 0.871)),
     "glucose" => Dict(
         "glucose" => ("EX_15903", -25.0),
         "acetate" => ("EX_30089", 14.1),
         "succinate" => ("EX_30031", 0.18),
-        "biomass" => ("biomass", 1.696)
+        "BIOMASS" => ("BIOMASS", 1.696)
     ),
-    "glutamate" => Dict("glutamate" => ("EX_29985", -15.3), "biomass" => ("biomass", 0.576)),
-    "glycerol" => Dict("glycerol" => ("EX_17754", -16.5), "biomass" => ("biomass", 0.634)),
-    "succinate" => Dict("succinate" => ("EX_30031", -28.3), "fumarate" => ("EX_29806", 0.48), "biomass" => ("biomass", 1.074)),
-    "acetate" => Dict("acetate" => ("EX_30089", -26.6), "biomass" => ("biomass", 0.424)),
+    "glutamate" => Dict("glutamate" => ("EX_29985", -15.3), "BIOMASS" => ("BIOMASS", 0.576)),
+    "glycerol" => Dict("glycerol" => ("EX_17754", -16.5), "BIOMASS" => ("BIOMASS", 0.634)),
+    "succinate" => Dict("succinate" => ("EX_30031", -28.3), "fumarate" => ("EX_29806", 0.48), "BIOMASS" => ("BIOMASS", 1.074)),
+    "acetate" => Dict("acetate" => ("EX_30089", -26.6), "BIOMASS" => ("BIOMASS", 0.424)),
     "salt" => Dict(
         "glucose" => ("EX_15903", -10.766),
         "acetate" => ("EX_30089", 8.83),
         "succinate" => ("EX_30031", 0.22),
-        "biomass" => ("biomass", 0.595)
+        "BIOMASS" => ("BIOMASS", 0.595)
     ),
-    "iptg" => Dict("glucose" => ("EX_15903", -27.16), "acetate" => ("EX_30089", 19.52), "biomass" => ("biomass", 1.897)),
+    "iptg" => Dict("glucose" => ("EX_15903", -27.16), "acetate" => ("EX_30089", 19.52), "BIOMASS" => ("BIOMASS", 1.897)),
 )
 
 mus = Dict(
@@ -53,7 +53,7 @@ mus = Dict(
 
 model = VibrioNatriegens.build_model()
 model.reactions["EX_15903"].lower_bound = 0.0 # set glucose to 0
-model.reactions["biomass"].objective_coefficient = 0.0
+model.reactions["BIOMASS"].objective_coefficient = 0.0
 model.reactions["ATPM"].objective_coefficient = 1.0
 model.reactions["ATPM"].lower_bound = 0.0
 
@@ -81,3 +81,5 @@ a, b = coef(ols)
 draw(
     data(df) * mapping(:mu, :maxatp) * (visual(Scatter) + linear())
 )
+using CSV
+CSV.write("atp_fit.csv", df)

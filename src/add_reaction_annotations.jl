@@ -58,6 +58,10 @@ function add_reaction_annotations!(model)
             r.annotations["metanetx.reaction"] = metanetx[rid]
         end
 
+        if isdigit(first(rid)) && haskey(seed, rid)
+            r.annotations["seed.reaction"] = seed[rid]
+        end
+
         if isdigit(first(rid)) && haskey(sabiork, rid)
             r.annotations["sabiork.reaction"] = sabiork[rid]
         end
@@ -80,18 +84,6 @@ function add_reaction_annotations!(model)
 
         if haskey(ec, rid)
             r.annotations["rhea.ec"] = ec[rid]
-        end
-
-        kegg_and_metacyc = [
-            get(r.annotations, "kegg.reaction", String[])
-            get(r.annotations, "metacyc.reaction", String[])
-        ]
-        seed_annos = String[]
-        for km in kegg_and_metacyc
-            haskey(seed, km) && push!(seed_annos, seed[km])
-        end
-        if !isempty(seed_annos)
-            r.annotations["seed.reaction"] = unique(seed_annos)
         end
 
         r.annotations["SBO"] = ["SBO_0000176"]

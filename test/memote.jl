@@ -6,7 +6,7 @@
     =#
     model = deepcopy(full_model)
 
-    rids = filter(x -> !startswith(x, "EX_") && x != "biomass" && x != "core_biomass", A.reactions(model))
+    rids = filter(x -> !startswith(x, "EX_") && x != "BIOMASS" && x != "BIOMASS_core", A.reactions(model))
     unbal_rids = String[]
     for rid in rids
         s = A.reaction_stoichiometry(model, rid)
@@ -29,7 +29,7 @@ end
     =#
     model = deepcopy(full_model)
 
-    rids = filter(x -> !startswith(x, "EX_") && x != "biomass" && x != "core_biomass", A.reactions(model))
+    rids = filter(x -> !startswith(x, "EX_") && x != "BIOMASS" && x != "BIOMASS_core", A.reactions(model))
     unbal_rids = String[]
     for rid in rids
         s = A.reaction_stoichiometry(model, rid)
@@ -50,7 +50,7 @@ end
     =#
     model = deepcopy(full_model)
 
-    model.reactions["biomass"].objective_coefficient = 0.0
+    model.reactions["BIOMASS"].objective_coefficient = 0.0
     model.reactions["ATPM"].objective_coefficient = 1.0
     model.reactions["ATPM"].lower_bound = 0.0
     model.reactions["EX_15903"].lower_bound = 0.0 # glucose
@@ -104,7 +104,7 @@ end
     =#
     model = deepcopy(full_model)
 
-    model.reactions["biomass"].objective_coefficient = 0.0
+    model.reactions["BIOMASS"].objective_coefficient = 0.0
     model.reactions["ATPM"].objective_coefficient = 1.0
     model.reactions["ATPM"].lower_bound = 0.0
 
@@ -123,13 +123,21 @@ end
     =#
     model = deepcopy(full_model)
 
-    biomass = model.reactions["biomass"].stoichiometry
+    biomass = model.reactions["BIOMASS"].stoichiometry
     btot = 0.0
     for (k, v) in biomass
         btot -=
             v * parse(Float64, first(model.metabolites[k].annotations["molarmass"])) / 1000
     end
+    @test isapprox(btot, 1.0, atol = 1e-3)
 
+    # test the core (reduced) one too
+    biomass = model.reactions["BIOMASS_core"].stoichiometry
+    btot = 0.0
+    for (k, v) in biomass
+        btot -=
+            v * parse(Float64, first(model.metabolites[k].annotations["molarmass"])) / 1000
+    end
     @test isapprox(btot, 1.0, atol = 1e-3)
 end
 
@@ -175,7 +183,7 @@ end
     Check if vibrio can secrete known products.
     =#
     model = deepcopy(full_model)
-    model.reactions["biomass"].lower_bound = 0.6 # minimum growth rate
+    model.reactions["BIOMASS"].lower_bound = 0.6 # minimum growth rate
 
     secreted_products = [
         :EX_30089 # acetate
@@ -245,24 +253,24 @@ end
     =#
     measurements = Dict(
         "alanine" => Dict(
-            "biomass" => ("biomass", 0.91),
+            "BIOMASS" => ("BIOMASS", 0.91),
             "acetate" => ("EX_30089", 4.5),
             "alanine" => ("EX_57972", -40.03),
         ),
         "ribose" =>
-            Dict("biomass" => ("biomass", 0.87), "ribose" => ("EX_47013", -16.1)),
+            Dict("BIOMASS" => ("BIOMASS", 0.87), "ribose" => ("EX_47013", -16.1)),
         "glucose" => Dict(
-            "biomass" => ("biomass", 1.7),
+            "BIOMASS" => ("BIOMASS", 1.7),
             "glucose" => ("EX_15903", -25.0),
             "acetate" => ("EX_30089", 14.1),
             "succinate" => ("EX_30031", 0.18),
         ),
         "glutamate" =>
-            Dict("biomass" => ("biomass", 0.58), "glutamate" => ("EX_29985", -15.3)),
+            Dict("BIOMASS" => ("BIOMASS", 0.58), "glutamate" => ("EX_29985", -15.3)),
         "glycerol" =>
-            Dict("biomass" => ("biomass", 0.62), "glycerol" => ("EX_17754", -16.5)),
+            Dict("BIOMASS" => ("BIOMASS", 0.62), "glycerol" => ("EX_17754", -16.5)),
         "succinate" => Dict(
-            "biomass" => ("biomass", 1.07),
+            "BIOMASS" => ("BIOMASS", 1.07),
             "succinate" => ("EX_30031", -28.3),
             "fumarate" => ("EX_29806", 0.48),
         ),
@@ -274,7 +282,7 @@ end
     for k in keys(measurements)
         ct = flux_balance_constraints(model)
         for (kk, vv) in measurements[k]
-            kk == "biomass" && continue
+            kk == "BIOMASS" && continue
             ct.fluxes[Symbol(vv[1])].bound = C.Between(vv[2], vv[2])
         end
         sol = optimized_values(
@@ -283,7 +291,7 @@ end
             sense = Maximal,
             objective = ct.objective.value,
         )
-        mu = measurements[k]["biomass"][2]
+        mu = measurements[k]["BIOMASS"][2]
         @info "$k: $mu vs $(sol.objective)"
         @test abs(1 - sol.objective / mu) <= 0.5
     end

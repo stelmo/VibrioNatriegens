@@ -23,7 +23,7 @@ At a glance, the model consists of:
 
 | Attribute | Value |
 |-----------|-------|
-| Metabolic reactions | 801 |
+| Metabolic reactions | 802 |
 | Transport reactions | 211 |
 | Exchange reactions | 188 |
 | Metabolic reactions with GRRs | 751 |
@@ -37,16 +37,16 @@ The model has the following reaction cross-references (available under the `anno
 
 | Attribute | Number (fraction %) |
 |-----------|-------|
-| *Metabolic reactions* | *801* |
+| *Metabolic reactions* | *802* |
 | rhea.reaction | 800 (100%) |
 | kegg.reaction | 776 (97%) |
 | metacyc.reaction |  718 (90%) |
 | reactome.reaction | 212 (26%) |
-| seed.reaction | 0 (0%) |
+| seed.reaction | 663 (83%) |
 | eggnog.go | 434 (54%) |
 | bigg.reaction | 602 (75%) |
 | ec | 774 (97%) |
-| SBO | 801 (100 %) |
+| SBO | 802 (100 %) |
 
 Note: ec = `eggnog.ec` or `rhea.ec` or `kegg.ec`.
 

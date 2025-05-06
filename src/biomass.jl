@@ -5,14 +5,14 @@ Add a biomass function
 """
 function add_biomass!(model)
     add_biomass!(model, "")
-    add_biomass!(model, "core_")
+    add_biomass!(model, "_core")
 end
 
-function add_biomass!(model, prefix)
-    biomass = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "model", prefix*"biomass.json"))
+function add_biomass!(model, suffix)
+    biomass = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "model", "biomass"*suffix*".json"))
 
     # required atp for growth hydrolysis equation
-    atp_req = 107.12233636319985
+    atp_req = 109.8
     # atp_req = 0.0
     
     biomass["30616"] = biomass["30616"] - atp_req # atp
@@ -21,10 +21,10 @@ function add_biomass!(model, prefix)
     biomass["456216"] = atp_req # adp
     biomass["15378"] = atp_req # h+
 
-    model.reactions[prefix*"biomass"] = Reaction(
+    model.reactions["BIOMASS"*suffix] = Reaction(
         name = "Biomass reaction",
         stoichiometry = Dict(keys(biomass) .=> float.(values(biomass))),
-        objective_coefficient = prefix == "" ? 1.0 : 0.0,
+        objective_coefficient = suffix == "" ? 1.0 : 0.0,
         lower_bound = 0,
         upper_bound = 1000,
         annotations = Dict("SBO" => ["SBO_0000629"]),
@@ -42,7 +42,7 @@ function add_atpm!(model)
             "15378" => 1,  # h+
         ),
         objective_coefficient = 0.0,
-        lower_bound = 70.55073040554224,
+        lower_bound = 70.5,
         # lower_bound = 0.0,
         upper_bound = 1000,
         annotations = Dict("SBO" => ["SBO_0000630"]),
