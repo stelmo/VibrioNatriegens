@@ -3,7 +3,6 @@ function gapfill!(model)
     #! NB MUST BE THE REFERENCE RHEA REACTION
     rhea_rids = [
         54528 # aldehydo-D-ribose 5-phosphate <-> D-ribose 5-phosphate
-        19045 # pyruvate to citramalate, c5 branched dibasic metabolism
         15649 # Spontaneous
         28234 # Spontaneous
         22488 # formaldehyde detox
@@ -15,7 +14,6 @@ function gapfill!(model)
         30119 # release acp dodecanoate
         30115 # release acp decanoate
         30131 # release acp octanoate
-        19045 # pyruvate to citramalate in valine, leucine, isoleucine biosynthesis
         25078 # Spontaneous
         18609 # arginine biosynthesis
         19533 # arginine & proline metabolism
