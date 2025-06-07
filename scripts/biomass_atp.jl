@@ -21,8 +21,8 @@ measurements = Dict(
     "alanine" => Dict("acetate" => ("EX_30089", 4.5), "alanine" => ("EX_57972", -40.03), "BIOMASS" => ("BIOMASS", 0.916)),
     "ribose" => Dict("ribose" => ("EX_47013", -16.1), "BIOMASS" => ("BIOMASS", 0.871)),
     "glucose" => Dict(
-        "glucose" => ("EX_15903", -25.0),
-        "acetate" => ("EX_30089", 14.1),
+        "glucose" => ("EX_15903", -21.34), # use mfa fluxes here
+        "acetate" => ("EX_30089", 14.77),
         "succinate" => ("EX_30031", 0.18),
         "BIOMASS" => ("BIOMASS", 1.696)
     ),
