@@ -6,7 +6,7 @@ model = VibrioNatriegens.build_model()
 rids = filter(x -> isdigit(first(x)), A.reactions(model))
 
 escher_maps = [
-    "amino_acids.json"
+    "amino_acids_final.json"
     "carbohydrate_metabolism.json"
     "cofactor_etc_final.json"
     "energy_metabolism.json"
@@ -21,10 +21,6 @@ end
 
 renamer(rid, model, annofield) =
     join(get(model.reactions[rid].annotations, annofield, [""]), " + ")
-
-em = ems["amino_acids.json"]
-em[2]["reactions"]["159"]
-ems["nucleotides.json"]
 
 for (emid, em) in ems
     emm = em[2]
