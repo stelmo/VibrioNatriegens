@@ -19,7 +19,7 @@ print_solution(sol) = C.pretty(
 
 # split the difference between 13C MFA and actual measurements
 measurements = Dict(
-    "alanine" => Dict("acetate" => ("EX_30089", 6.3), "alanine" => ("EX_57972", -35.03), "BIOMASS" => ("BIOMASS_core", 0.95)),
+    "alanine" => Dict("acetate" => ("EX_30089", 6.3), "alanine" => ("EX_57972", -30.03), "BIOMASS" => ("BIOMASS_core", 0.95)),
     "ribose" => Dict("ribose" => ("EX_47013", -16.1), "BIOMASS" => ("BIOMASS_core", 0.871)),
     "glucose" => Dict(
         "glucose" => ("EX_15903", -21.34),
@@ -70,7 +70,8 @@ df
 a, b = coef(ols)
 
 draw(
-    data(df) * mapping(:mu, :maxatp) * (visual(Scatter) + linear())
+    data(df) * mapping(:mu, :maxatp) * (visual(Scatter) + linear()) +
+    data(df) * mapping(:mu, :maxatp, text = :id => verbatim) * visual(Annotation)  
 )
 
 using CSV
