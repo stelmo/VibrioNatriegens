@@ -51,6 +51,7 @@ model.reactions["ATPM"].lower_bound = 0.0
 df = DataFrame(maxatp = Float64[], mu = Float64[], id=String[])
 for k in keys(measurements)
     ct = flux_balance_constraints(model)
+
     for (kk, vv) in measurements[k]
         ct.fluxes[Symbol(vv[1])].bound = C.EqualTo(vv[2])
     end
@@ -68,10 +69,11 @@ ols = lm(@formula(maxatp ~ mu), df)
 df
 a, b = coef(ols)
 
-
 draw(
     data(df) * mapping(:mu, :maxatp) * (visual(Scatter) + linear())
 )
 
-# using CSV
-# CSV.write("atp_fit.csv", df)
+using CSV
+CSV.write("atp_fit.csv", df)
+
+
