@@ -153,6 +153,7 @@ function curate!(model)
     for_dir(model, "23148") # propanoate degradation
     rev_dir(model, "28046") # propanoate degradation
     for_dir(model, "23520") # propanoate degradation
+    for_dir(model, "29391") # uses triphosphate as substrate only
 
     # add custom reactions (needs to happen after direction setting)
     model.reactions["glycogen_synthase"] = Reaction(
