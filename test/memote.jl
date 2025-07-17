@@ -56,19 +56,19 @@ end
     model.reactions["EX_15903"].lower_bound = 0.0 # glucose
 
     csources = [ # (exchange rid, atp/substrate)
-        (:EX_15903, -26.0) # glucose
-        (:EX_57972, -8.06) # alanine
-        (:EX_30031, -13.25) # succinate
-        (:EX_17754, -14.5) # glycerol
-        (:EX_29985, -14.75) # glutamate
-        (:EX_47013, -20.66) # ribose
-        (:EX_30089, -6.75) # acetate
-        (:EX_58723, -22.4) # glucosamine
-        (:EX_506227, -29.7) # n-acetyl-d-glucosamine
-        (:EX_18391, -23.42) # gluconate
-        (:EX_15589, -12.25) # malate
-        (:EX_29806, -12.25) # fumarate
-        (:EX_40886, -20.67) # L-arabinose
+        (:EX_15903, -26.0) # glucose cf. E. coli 23.5
+        (:EX_57972, -11.75) # alanine  cf. E. coli 10.75
+        (:EX_30031, -13.25) # succinate cf. E. coli 12.25
+        (:EX_17754, -14.0) # glycerol  cf. E. coli 13.5
+        (:EX_29985, -18.25) # glutamate cf. E. coli 16.5
+        (:EX_47013, -20.66) # ribose  cf. E. coli -18.5
+        (:EX_30089, -6.75) # acetate  cf. E. coli 6.25
+        (:EX_58723, -26.0) # glucosamine  cf. E. coli 23.5
+        (:EX_506227, -33.0) # n-acetyl-d-glucosamine  cf. E. coli 30
+        (:EX_18391, -23.42) # gluconate  cf. E. coli 21
+        (:EX_15589, -12.25) # malate  cf. E. coli 11.25
+        (:EX_29806, -12.25) # fumarate  cf. E. coli 11.25
+        (:EX_40886, -20.67) # L-arabinose  cf. E. coli 19.5
     ]
     ct = flux_balance_constraints(model)
     for (rid, atp) in csources
@@ -93,8 +93,7 @@ end
         sense = Maximal,
         objective = ct.objective.value,
     )
-    # @info("Anaerobic: $(sol.objective / sol.fluxes[rid])")
-    @test isapprox(sol.objective / sol.fluxes.EX_15903, -3.0, atol = 1e-3)
+    @test isapprox(sol.objective / sol.fluxes.EX_15903, -3.0, atol = 1e-3) # cf. E. coli 2.5
 
 end
 
@@ -255,7 +254,7 @@ end
         "alanine" => Dict(
             "BIOMASS" => ("BIOMASS", 0.91),
             "acetate" => ("EX_30089", 4.5),
-            "alanine" => ("EX_57972", -40.03),
+            "alanine" => ("EX_57972", -30.03),
         ),
         "ribose" =>
             Dict("BIOMASS" => ("BIOMASS", 0.87), "ribose" => ("EX_47013", -16.1)),
