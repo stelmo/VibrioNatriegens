@@ -237,7 +237,7 @@ end
     for (s, ex) in zip(df.Substrate, df.Exchange)
         model.reactions[ex].lower_bound = -30.0
         sol = flux_balance_analysis(model, optimizer = HiGHS.Optimizer)
-        if s == "Formic Acid" || s == "Glycine"
+        if s == "Formic Acid"
             @test_broken sol.objective > 0.1
         else
             @test sol.objective > 0.1
