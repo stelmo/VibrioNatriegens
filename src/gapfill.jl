@@ -53,6 +53,10 @@ function gapfill!(model)
         35215 # XDP to XMP
         82027 # L-cysteine degradation
         28278 # cysteine sulfinate desulfinase
+        26454 # acryloyl-coA
+        26518 # 3-hydroxypropanoyl-coA
+        20888 # 3-hydroxypropanoyl-CoA
+        13357 # 3-hydroxypropanoate
     ]
     get_reactions(rhea_rids)
 
