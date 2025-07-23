@@ -11,7 +11,7 @@ Vibrio natriegens
 </i> 
 </p> 
 
-The model is composed of 1388 reactions, 1020 metabolites, and 951 genes. 
+The model is composed of 1395 reactions, 1027 metabolites, and 951 genes. 
 It focusses on the primary metabolism of _V. natriegens_, and includes data to facilitate the construction of enzyme and ribosomal constraints. 
 A MEMOTE-like test suite is implemented in the `test` directory, and runs with CI. 
 The primary name spaces for the model reactions and metabolites are [Rhea](https://www.rhea-db.org/) and [ChEBI](https://www.ebi.ac.uk/chebi/).
@@ -23,12 +23,12 @@ At a glance, the model consists of:
 
 | Attribute | Value |
 |-----------|-------|
-| Metabolic reactions | 798 |
-| Transport reactions | 211 |
-| Exchange reactions | 188 |
+| Metabolic reactions | 802 |
+| Transport reactions | 212 |
+| Exchange reactions | 189 |
 | Metabolic reactions with GRRs | 750 |
 | Transport reactions with GRRs | 90 |
-| Blocked reactions | 27 |
+| Blocked reactions | 31 |
 | Test suite | [![CI status][ci-img]][ci-url] |
 
 ## Cross references
@@ -37,16 +37,16 @@ The model has the following reaction cross-references (available under the `anno
 
 | Attribute | Number (fraction %) |
 |-----------|-------|
-| *Metabolic reactions* | *798* |
-| rhea.reaction | 798 (100%) |
-| kegg.reaction | 774 (97%) |
-| metacyc.reaction |  716 (90%) |
+| *Metabolic reactions* | *802* |
+| rhea.reaction | 802 (100%) |
+| kegg.reaction | 777 (97%) |
+| metacyc.reaction |  719 (90%) |
 | reactome.reaction | 211 (26%) |
-| seed.reaction | 661 (83%) |
+| seed.reaction | 665 (83%) |
 | eggnog.go | 434 (54%) |
-| bigg.reaction | 601 (75%) |
-| ec | 772 (97%) |
-| SBO | 798 (100 %) |
+| bigg.reaction | 604 (75%) |
+| ec | 776 (97%) |
+| SBO | 802 (100 %) |
 
 Note: ec = `eggnog.ec` or `rhea.ec` or `kegg.ec`.
 
@@ -55,15 +55,15 @@ The model has the following metabolite cross-references (available under the `an
 
 | Attribute | Number (fraction %) |
 |-----------|-------|
-| *Total metabolites* | *1020* |
-| chebi.metabolite | 1020 (100 %) |
-| kegg.compound | 348 (34 %) |
-| inchi | 961 (94 %) |
-| inchikey | 961 (94 %) |
-| smiles | 961 (94 %) |
-| formula | 1020 (100 %) |
-| charge | 1020 (100 %) |
-| SBO | 1020 (100 %) |
+| *Total metabolites* | *1027* |
+| chebi.metabolite | 1027 (100 %) |
+| kegg.compound | 350 (34 %) |
+| inchi | 968 (94 %) |
+| inchikey | 968 (94 %) |
+| smiles | 968 (94 %) |
+| formula | 1027 (100 %) |
+| charge | 1027 (100 %) |
+| SBO | 1027 (100 %) |
 
 The model has the following gene cross-references (available under the `annotations` field):
 
