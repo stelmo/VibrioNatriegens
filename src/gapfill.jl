@@ -1,0 +1,70 @@
+
+function gapfill!(model)
+    #! NB MUST BE THE REFERENCE RHEA REACTION
+    rhea_rids = [
+        54528 # aldehydo-D-ribose 5-phosphate <-> D-ribose 5-phosphate
+        15649 # Spontaneous
+        28234 # Spontaneous
+        22488 # formaldehyde detox
+        21368 # urate to 5-hydroxyisourate
+        17029 # s-allantoin to allantoate
+        63204 # release acp octadecanoate
+        41932 # release acp hexadecanoate
+        30123 # release acp tetradecanoate
+        30119 # release acp dodecanoate
+        30115 # release acp decanoate
+        30131 # release acp octanoate
+        25078 # Spontaneous
+        18609 # arginine biosynthesis
+        19533 # arginine & proline metabolism
+        16953 # arginine & proline metabolism
+        19737 # arginine & proline metabolism
+        28234 # Spontaneous
+        13389 # tryptophan metabolism
+        21384 # phenylalanine metabolism
+        12921 # cofactors, make 5-aminolevulinate, actually hemL should be active, but requires tRNA reactions
+        54644 # d-amino acid metabolism, connect S)-1-pyrroline-5-carboxylate to make trans-4-hydroxy-L-proline
+        14277 # rhamnose metabolism degrade lactaldehyde
+        19289 # this is a reaction of convenience to get sucrose loaded into the metabolite list, it gets deleted in curation
+        27814 # this is a reaction of convenience to get Na+ loaded into the metabolite list, it gets deleted in curation
+        25306 # folate biosynthesis
+        20001 # folate biosynthesis
+        27345 # adenosylcobalamin biosynthesis
+        33707 # adenosylcobalamin biosynthesis
+        11492 # adenosylcobalamin biosynthesis
+        20533 # pyridoxal 5'-phosphate biosynthesis
+        11500 # KDO lipopolysaccharide biosynthesis
+        10712 # phenylalanine degradation
+        61296 # 5'-deoxyadenosine degradation
+        61300 # 5'-deoxyadenosine degradation
+        30043 # anaerobic nad biosynthesis
+        31507 # anaerobic pyridoxal biosynthesis
+        21708 # S-adenosyl-L-homocysteine to L-homocysteine
+        21948 # l-glutamate biosynthesis
+        16957 # GMP
+        21612 # pyruvate pathway
+        35095 # choline degradation III to make trimethylamine
+        20217 # trimethylamine degradation
+        54828 # trimethylamine degradation
+        13541 # tetrathionate oxidation
+        28334 # nucleotide diphosphatase (dATP to dAMP)
+        34935 # ATP adenylyltransferase
+        23412 # N-acetylputrescine acetylhydrolase
+        35215 # XDP to XMP
+        82027 # L-cysteine degradation
+        28278 # cysteine sulfinate desulfinase
+    ]
+    get_reactions(rhea_rids)
+
+    n = length(rhea_rids)
+    df = DataFrame(
+        RHEA_ID = rhea_rids,
+        Protein = fill(nothing, n),
+        Stoichiometry = fill(1),
+        Isozyme = fill("A", n),
+    )
+    dfs = groupby(df, :RHEA_ID)
+
+    extend_model!(model, dfs)
+end
+

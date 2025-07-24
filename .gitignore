@@ -1,0 +1,23 @@
+# vscode settings
+.vscode
+
+# Julia Pkg files
+Manifest.toml
+
+# data files 
+*.fasta
+*.docx
+*.pdf
+
+vnat.sbml
+reactions-model.csv
+metabolites-model.csv
+vnat.json
+followup.txt
+vnat_fluxes.json
+vnat_masses.json
+quantitative_proteome.csv
+iML1515.json
+blocked.csv
+
+data/chebi/*

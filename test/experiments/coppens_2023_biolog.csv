@@ -1,0 +1,173 @@
+Substrate,ID,Experiment,Prediction,PredictionNoTransporter,Chebi
+L-Arabinose,cpd00224,true,true,true,
+N-Acetyl-D-Glucosamine,cpd00122,true,true,false,506227
+D-Arabinose,cpd00185,true,true,true,46994
+D-Arabitol,cpd01307,true,true,true,18333
+4-Amino Butyric Acid,cpd00281,true,true,true,59888
+Butyric Acid,cpd00211,true,true,true,
+D-Glucosamine,cpd00276,true,true,false,58723
+4-Hydroxy Benzoic Acid,cpd00136,true,false,false,
+4-Hydroxy Butyric Acid,cpd00728,true,true,true,
+5-Keto-D-Gluconic Acid,cpd00781,true,false,false,
+Malonic Acid,cpd00308,true,true,true,
+Oxalomalic Acid,cpd01363,true,false,false,
+L-Arginine,cpd00051,true,true,true,32682
+Glycine,cpd00033,true,true,true,57305
+L-Histidine,cpd00119,true,false,false,57595
+Hydroxy-L-Proline,cpd00851,true,false,false,58375
+L-Ornithine,cpd00064,true,true,true,46911
+Putrescine,cpd00118,true,false,false,326268
+Dihydroxy Acetone,cpd00157,true,false,false,
+L-Pyroglutamic Acid,cpd01293,true,false,true,
+Succinic Acid,cpd00036,true,true,true,30031
+D-Galactose,cpd00108,true,true,true,
+L-Aspartic Acid,cpd00041,true,true,true,29991
+L-Proline,cpd00129,true,false,false,60039
+D-Alanine,cpd00117,true,true,true,57416
+D-Trehalose,cpd00794,true,true,false,
+D-Serine,cpd00550,true,false,true,35247
+Glycerol,cpd00100,true,true,true,17754
+D-Gluconic Acid,cpd00222,true,false,true,18391
+"D,L-2-Glycerol-Phosphate",cpd01908,true,false,true,
+L-Lactic Acid,cpd00159,true,true,true,16651
+Formic Acid,cpd00047,true,true,true,15740
+D-Mannitol,cpd00314,true,true,true,16899
+L-Glutamic Acid,cpd00023,true,true,true,29985
+"D,L-Malic Acid",cpd00130,true,true,true,15589
+D-Ribose,cpd00105,true,false,true,47013
+L-Rhamnose,cpd00396,true,true,true,62346
+D-Fructose,cpd00082,true,true,true,37721
+Acetic Acid,cpd00029,true,true,true,30089
+D-Glucose,cpd00027,true,true,true,
+Maltose,cpd00179,true,true,true,
+Thymidine,cpd00184,true,false,false,17748
+L-Asparagine,cpd00132,true,false,false,58048
+a-Keto-Butyric Acid,cpd00094,true,true,true,16763
+Sucrose,cpd00076,true,true,true,17992
+Uridine,cpd00249,true,false,true,16704
+L-Glutamine,cpd00053,true,true,true,58359
+3-Hydroxy Butyric Acid,cpd00797,true,false,false,
+b-Methyl-D-Glucoside,cpd15584,true,false,true,
+Inosine,cpd00246,true,false,true,17596
+L-Serine,cpd00054,true,true,true,33384
+L-Threonine,cpd00161,true,false,true,57926
+L-Alanine,cpd00035,true,true,true,57972
+L-Alanyl-Glycine,cpd11585,true,false,true,
+Methyl Pyruvate,cpd24420,true,false,false,
+D-Malic Acid,cpd00386,true,false,false,
+L-Malic Acid,cpd00130,true,true,true,15589
+Pyruvic Acid,cpd00020,true,false,true,15361
+2-Deoxy Adenosine,cpd00438,true,false,true,17256
+Adenosine,cpd00182,true,false,true,16335
+Glycyl-L-Aspartic Acid,cpd11589,true,false,true,
+Citric Acid,cpd00137,true,true,true,16947
+Fumaric Acid,cpd00106,true,true,true,29806
+Propionic Acid,cpd00141,true,false,true,17272
+Adonitol,cpd00366,false,false,false,
+m-Inositol,cpd00121,false,false,false,
+D-Threonine,cpd00611,false,false,false,
+Mucic Acid,cpd00652,false,false,false,
+Glycolic Acid,cpd00139,false,false,true,29805
+Glyoxylic Acid,cpd00040,false,false,true,16452
+Tricarballylic Acid,cpd16654,false,false,false,
+Acetoacetic Acid,cpd00142,false,false,true,13705
+N-Acetyl-D-Mannosamine,cpd00492,false,false,false,
+p-Hydroxy Phenyl Acetic Acid,cpd00489,false,false,false,
+m-Hydroxy Phenyl Acetic Acid,cpd03320,false,false,false,
+Tyramine,cpd00374,false,false,false,
+D-Psicose,cpd03884,false,false,false,
+Glucuronamide,cpd26269,false,false,false,
+L-Galactonic Acid-1-4-Lactone,cpd00820,false,false,false,
+D-Galacturonic Acid,cpd00280,false,false,false,
+Phenylethyl-amine,cpd03161,false,false,false,
+2-Aminoethanol,cpd00162,false,true,true,
+Chondroitin Sulfate C,cpd26720,false,false,false,
+a-cyclodextrin,cpd24451,false,false,false,
+Gelatin,cpd11697,false,false,false,
+Glycogen,cpd00155,false,false,false,
+Inulin,cpd11602,false,false,false,
+Mannan,cpd11685,false,false,false,
+D-Xylose,cpd00154,false,false,false,
+L-Fucose,cpd00751,false,false,false,2181
+D-Saccharic Acid,cpd00571,false,false,false,
+D-Mannose,cpd00138,false,false,false,
+Dulcitol,cpd01171,false,false,false,
+D-Sorbitol,cpd00588,false,false,false,
+D-Glucuronic Acid,cpd00164,false,false,false,
+D-Glucose-6-Phosphate,cpd00079,false,false,true,
+D-Galactonic Acid-1-5-Lactone,cpd01734,false,false,false,
+D-Melibiose,cpd03198,false,false,false,
+D-Aspartic Acid,cpd00320,false,false,false,
+D-Glucosaminic Acid,cpd02351,false,false,false,
+"1,2-Propanediol",cpd00453,false,false,false,
+alpha-Keto-Glutaric Acid,cpd00024,false,false,true,16810
+beta-Methyl-D-Galactoside,cpd02274,false,false,false,
+alpha-D-Lactose,cpd00208,false,false,false,
+Lactulose,cpd04349,false,false,false,
+m-Tartaric Acid,cpd00432,false,false,false,
+D-Glucose-1-Phosphate,cpd00089,false,false,true,58601
+D-Fructose-6-Phosphate,cpd00072,false,false,true,57634
+a-Hydroxy Glutaric Acid-g-Lactone,cpd23862,false,false,false,
+N-Acetyl-D-Galactosamine,cpd00832,false,false,false,
+N-Acetyl-Neuraminic Acid,cpd00232,false,false,false,
+beta-D-Allose,cpd01055,false,false,false,
+Amygdalin,cpd01356,false,false,false,
+L-Arabitol,cpd00417,false,false,false,
+2-Deoxy-D-Ribose,cpd01242,false,false,true,
+i-Erythritol,cpd00392,false,false,false,
+D-Fucose,cpd00750,false,false,false,
+3-0-beta-D-Galacto-pyranosyl-D-Arabinose,cpd24453,false,false,false,
+L-Glucose,cpd24421,false,false,false,
+Lactitol,cpd09457,false,false,false,
+D-Melezitose,cpd05161,false,false,false,
+Maltitol,cpd37280,false,false,false,
+alpha-Methyl-D-Glucoside,cpd15584,false,false,true,
+beta-Methyl-D-Galactoside,cpd11603,false,false,false,
+3-Methyl-Glucose,cpd26351,false,false,false,
+beta-Methyl-D-Glucuronic Acid,cpd24423,false,false,false,
+alpha-Methyl-D-Mannoside,cpd24424,false,false,false,
+beta-Methyl-D-Xyloside,cpd24425,false,false,false,
+Palatinose,cpd01200,false,false,false,
+D-Raffinose,cpd00382,false,false,false,
+Salicin,cpd01030,false,false,false,
+Sedoheptulosan,cpd24426,false,false,false,
+L-Sorbose,cpd00212,false,false,false,
+Stachyose,cpd01133,false,false,false,
+D-Tagatose,cpd00589,false,false,false,
+Turanose,cpd20885,false,false,false,
+Xylitol,cpd00306,false,false,false,
+N-Acetyl-D-Glucosaminitol,cpd24427,false,false,false,
+d-Amino Valeric Acid,cpd00339,false,false,false,
+Capric Acid,cpd01107,false,false,false,27689
+Caproic Acid,cpd01113,false,false,false,
+Citraconic Acid,cpd01502,false,false,false,30719
+Citramalic Acid,cpd00607,false,false,false,
+2-Hydroxy Benzoic Acid,cpd00599,false,false,false,
+4-Hydroxy Butyric Acid,cpd00728,false,true,true,
+a-Keto-Valeric Acid,cpd03737,false,false,false,
+Itaconic Acid,cpd00380,false,false,false,
+D-Lactic Acid Methyl Ester,cpd24428,false,false,false,
+Melibionic Acid,cpd24454,false,false,false,
+Oxalic Acid,cpd00180,false,false,false,
+"D-Ribono-1,4-Lactone",cpd23861,false,false,false,
+Sebacic Acid,cpd05192,false,false,false,
+Sorbic Acid,cpd16648,false,false,false,
+Succinamic Acid,cpd25518,false,false,false,
+D-Tartaric Acid,cpd19018,false,false,false,
+L-Tartaric Acid,cpd00666,false,false,false,
+Acetamide,cpd03734,false,false,false,
+L-Alaninamide,cpd23030,false,false,false,
+N-Acetyl-L-Glutamic Acid,cpd00477,false,false,false,44337
+L-Homoserine,cpd00227,false,false,true,57476
+L-Isoleucine,cpd00322,false,false,false,58045
+L-Leucine,cpd00107,false,false,false,57427
+L-Lysine,cpd00039,false,false,false,32551
+L-Methionine,cpd00060,false,false,false,57844
+L-Phenylalanine,cpd00066,false,false,false,58095
+L-Valine,cpd00156,false,false,false,57762
+"D,L-Carnitine",cpd00266,false,false,false,
+Sec-Butylamine,cpd24429,false,false,false,
+"D,L-Octopamine",cpd02599,false,false,false,
+"2,3-Butanediol",cpd01947,false,false,false,
+"2,3-Butanedione",cpd00551,false,false,false,
+"3-Hydroxy 2-Butanone,cpd00361",cpd00361,false,false,false,
