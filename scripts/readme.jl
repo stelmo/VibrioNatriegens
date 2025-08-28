@@ -1,4 +1,5 @@
 # build the readme
+using Accessors
 using VibrioNatriegens
 using AbstractFBCModels
 using JSONFBCModels
@@ -12,10 +13,12 @@ VibrioNatriegens.print_metabolites(model)
 
 # write the model to the main directory in standardized formats
 m = convert(JSONFBCModels.JSONFBCModel, model)
-AbstractFBCModels.save(m, "vibrio_natriegens.json")
+A.save(m, "vibrio_natriegens.json")
 
 m = convert(SBMLFBCModels.SBMLFBCModel, model)
-AbstractFBCModels.save(m, "vibrio_natriegens.xml")
+@reset m.sbml.id = "vibrio_natriegens_1391"
+@reset m.sbml.name = "Vibrio Natriegens 1391 GEM"
+A.save(m, "vibrio_natriegens.xml")
 
 if nprocs() == 1
     addprocs(7, exeflags = `--project=$(Base.active_project())`)
