@@ -15,7 +15,7 @@ m = convert(JSONFBCModels.JSONFBCModel, model)
 AbstractFBCModels.save(m, "vibrio_natriegens.json")
 
 m = convert(SBMLFBCModels.SBMLFBCModel, model)
-AbstractFBCModels.save(m, "vibrio_natriegens.sbml")
+AbstractFBCModels.save(m, "vibrio_natriegens.xml")
 
 if nprocs() == 1
     addprocs(7, exeflags = `--project=$(Base.active_project())`)
