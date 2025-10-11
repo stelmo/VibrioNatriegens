@@ -1,52 +1,38 @@
 using VibrioNatriegens
 import AbstractFBCModels as A
 using COBREXA, Gurobi
-using JSON
 using ConstraintTrees
 import ConstraintTrees as C
-using JSONFBCModels, JSON
-
-block_rxn(model, rid) = begin
-    model.reactions[rid].lower_bound = 0.0
-    model.reactions[rid].upper_bound = 0.0
-end
-block_rxns(model, rids) = begin
-    for rid in rids
-        block_rxn(model, string(rid))
-    end
-end
-
-# model = VibrioNatriegens.build_model()
-# model.reactions["EX_15379"].lower_bound = 0.0 #
-# model.reactions["EX_15379"].upper_bound = 0.0 #
-# model.reactions["EX_15903"].lower_bound = -35.0 #
-
-# ct.fluxes.EX_15903.bound = C.Between(-10.0, 1000)
-# ct.fluxes.EX_15379.bound = C.EqualTo(0.0)    
-
-# # these are involved in loops...
-# block_rxns(model, [
-#     23148
-#     28046
-#     28046
-#     30699
-#     30699
-#     19125
-#     22852
-# ])
-# sol = flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
+using JSON
 
 model = VibrioNatriegens.build_model()
-model.reactions["EX_15903"].lower_bound = 0.0 # set glucose to 0
-model.reactions["biomass"].objective_coefficient = 0.0
-model.reactions["ATPM"].objective_coefficient = 1.0
-model.reactions["ATPM"].lower_bound = 0.0
-model.reactions["EX_57972"].lower_bound = -40.0
+# model.reactions["EX_15903"].lower_bound = 0.0 # set glucose to 0
+# model.reactions["biomass"].objective_coefficient = 0.0
+# model.reactions["ATPM"].objective_coefficient = 1.0
+# model.reactions["ATPM"].lower_bound = 0.0
+# model.reactions["EX_57972"].lower_bound = -40.0
 
-sol = parsimonious_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
+
+psol = parsimonious_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
 open("vnat_fluxes.json", "w") do io
-    JSON.print(io, sol.fluxes)
+    JSON.print(io, Dict(string(k) => v for (k, v) in psol.fluxes))
 end
+
+llsol = loopless_flux_balance_analysis(model, optimizer = Gurobi.Optimizer)
+open("vnat_loopless_fluxes.json", "w") do io
+    JSON.print(io, Dict(string(k) => v for (k, v) in llsol.fluxes))
+end
+
+dsol = Dict()
+for rid in keys(model.reactions)
+    d = abs(psol.fluxes[Symbol(rid)] - llsol.fluxes[Symbol(rid)])
+    # d < 0.1 && continue
+    dsol[rid] = d
+end
+open("vnat_diffs.json", "w") do io
+    JSON.print(io, dsol)
+end
+
 
 C.pretty(
     C.ifilter_leaves(sol.fluxes) do ix, x

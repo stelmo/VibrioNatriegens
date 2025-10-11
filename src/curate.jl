@@ -15,7 +15,7 @@ rev_dir(model, rid) = begin
 end
 
 rhea_rxn_dir(rid, consensus) = begin
-    idx = consensus - parse(Int, rid)
+    idx = consensus - rid
     idx == 0 && return (-1000, 1000)
     idx == 1 && return (0, 1000)
     idx == 2 && return (-1000, 0)
@@ -24,7 +24,7 @@ end
 
 function curate!(model)
 
-    # delete reactions added to load specific metabolites in gapfill
+    # delete reactions added to load specific metabolites in manual gap fill
     delete!(model.reactions, "19289") # sucrose
     delete!(model.reactions, "27814") # Na+ 
 
@@ -71,36 +71,25 @@ function curate!(model)
         model.reactions["33791"].stoichiometry["28645"] # β-D-Fructose (28645) -> D-Fructose (37721), we want it to be D-Fructose, RHEA:33791 bc sucrose hydrolase
     delete!(model.reactions["33791"].stoichiometry, "28645")
 
-    # change directions to match what is found in biocyc - manual thermodynamics leaves much to be desired
-
-    metacyc = DataFrame(
-        CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "biocyc_rxns.csv"),
-            drop = [3],
-        ),
+    # change directions to match what is found in biocyc - manual thermodynamics leaves much to be desired  
+    metacyc = CSV.File(
+        joinpath(pkgdir(@__MODULE__), "data", "annotations", "directions_metacyc.csv"),
+        drop = [3],
     )
-    @rename!(metacyc, :metacyc = :rheaDir)
 
-    ecocyc = DataFrame(
-        CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "annotations", "rhea", "ecocyc_rxns.csv"),
-            drop = [3],
-        ),
+    ecocyc = CSV.File(
+        joinpath(pkgdir(@__MODULE__), "data", "annotations", "directions_ecocyc.csv"),
+        drop = [3],
     )
-    @rename!(ecocyc, :ecocyc = :rheaDir)
 
-    j = outerjoin(metacyc, ecocyc, on = :rhea)
-    @rtransform!(
-        j,
-        :consensus = ismissing(:ecocyc) ? :metacyc : :ecocyc,
-        :rhea = string(:rhea)
-    )
-    @subset!(j, in.(:rhea, Ref(A.reactions(model))))
-
-    for (rid, consensus) in zip(j.rhea, j.consensus)
-        lb, ub = rhea_rxn_dir(rid, consensus)
-        model.reactions[rid].lower_bound = lb
-        model.reactions[rid].upper_bound = ub
+    for row in vcat(metacyc, ecocyc) # ecocyc happens last, so it is the deciding vote if metacyc and ecocyc disagree
+        rid = row.Rhea
+        consensus = row.RheaDir
+        if haskey(model.reactions, string(rid))
+            lb, ub = rhea_rxn_dir(rid, consensus)
+            model.reactions[string(rid)].lower_bound = lb
+            model.reactions[string(rid)].upper_bound = ub
+        end
     end
 
     # change directions manually
@@ -118,7 +107,8 @@ function curate!(model)
     for_dir(model, "54900") # prevent loop in lipids through 54900 <-> 41912
     for_dir(model, "41912") # prevent loop in lipids through 54900 <-> 41912 
     for_dir(model, "38215") # prevent loop in carbohydrates through 38215 <-> 38215 
-    rev_dir(model, "11612") # prevent loop + metacyc GLUTAMATESYN-RXN
+    rev_dir(model, "11612") # prevent loop, assume this can only be used for biosynthesis https://metacyc.org/reaction?orgid=META&id=GLUTDEHYD-RXN
+    for_dir(model, "15133") # prevent loop with 11612 - assume only degradation
     for_dir(model, "11692") # https://www.uniprot.org/uniprotkb/P27306/entry
     for_dir(model, "27758") # https://biocyc.org/reaction?orgid=ECOLI&id=GCVMULTI-RXN
     for_dir(model, "24793") # histidine biosynthesis blocked, https://biocyc.org/reaction?orgid=META&id=GLUTAMIDOTRANS-RXN (incorrect ref in rhea wrt direction)    
@@ -139,7 +129,6 @@ function curate!(model)
     for_dir(model, "24882") # kegg direction
     for_dir(model, "16417") # kegg direction
     for_dir(model, "18405") # degradation reaction (metacyc + kegg)
-    for_dir(model, "11612") # https://biocyc.org/reaction?orgid=META&id=GLUTAMATESYN-RXN
     for_dir(model, "30931") # kegg direction
     for_dir(model, "27822") # https://biocyc.org/pathway?orgid=META&id=PWY-5344
     for_dir(model, "30699") # beta-alanine loop prevention
@@ -162,31 +151,31 @@ function curate!(model)
         stoichiometry = Dict(
             "57498" => -1.0, # ADP-alpha-D-glucose
             "456216" => 1.0, # adp
-            "glycogen" => 1.0, # 
+            "glycogen" => 1.0, # glycogen
             "15378" => 1.0, # h+
         ),
         objective_coefficient = 0.0,
         lower_bound = 0,
         upper_bound = 1000,
-        gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS08405" .=> 1.0)),
-        ],
+        gene_association = Dict(
+            "A" => Isozyme(; gene_product_stoichiometry = Dict("PN96_RS08405" .=> 1.0)),
+        ),
         annotations = Dict("rhea.reaction" => ["18549"], "rhea.ec" => ["2.4.1.11"]),
     )
 
     model.reactions["glycogen_phosphorylase"] = Reaction(
         name = "Glycogen phosphorylase",
         stoichiometry = Dict(
-            "glycogen" => -1.0,
+            "glycogen" => -1.0, # glycogen
             "58601" => 1.0, # alpha-D-glucose 1-phosphate
             "43474" => -1.0, # phosphate 
         ),
         objective_coefficient = 0.0,
         lower_bound = 0,
         upper_bound = 1000,
-        gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS15820" .=> 1.0)),
-        ],
+        gene_association = Dict(
+            "A" => Isozyme(; gene_product_stoichiometry = Dict("PN96_RS15820" .=> 1.0)),
+        ),
         annotations = Dict("rhea.reaction" => ["41732"], "rhea.ec" => ["2.4.1.1"]),
     )
     add_genes!(model, ["PN96_RS15820", "PN96_RS08405"])
@@ -203,11 +192,12 @@ function curate!(model)
         objective_coefficient = 0.0,
         lower_bound = 0,
         upper_bound = 1000,
-        gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS10775" .=> 4.0)),
-        ],
+        gene_association = Dict(
+            "A" => Isozyme(; gene_product_stoichiometry = Dict("PN96_RS10775" .=> 4.0)),
+        ),
         annotations = Dict("rhea.reaction" => ["19573"], "rhea.ec" => ["2.7.4.1"]),
     )
+
     model.reactions["polyphosphate_kinase1"] = Reaction(
         name = "polyphosphate kinase I",
         stoichiometry = Dict(
@@ -219,9 +209,9 @@ function curate!(model)
         objective_coefficient = 0.0,
         lower_bound = 0,
         upper_bound = 1000,
-        gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS10775" .=> 4.0)),
-        ],
+        gene_association = Dict(
+            "A" => Isozyme(; gene_product_stoichiometry = Dict("PN96_RS10775" .=> 4.0)),
+        ),
         annotations = Dict("rhea.reaction" => ["19573"], "rhea.ec" => ["2.7.4.1"]),
     )
     add_genes!(model, ["PN96_RS10775"])

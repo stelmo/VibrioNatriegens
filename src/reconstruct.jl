@@ -2,34 +2,39 @@
 """
 $(TYPEDSIGNATURES)
 
-Build the model.
+Build the genome-scale metabolic model of Vibrio natriegens from scratch. This
+is usually time intensive, so it is recommended to build the model once, and
+then serialize it for quick access.
 """
 function build_model()
-    #! NB MUST BE THE REFERENCE RHEA REACTION
-    df = DataFrame(
-        CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "metabolic_reactions.csv")),
-    )
-    get_reactions(unique(df.RHEA_ID)) # per-cache everything
+    #=
+    It is very important that every reaction listed in metabolic_reactions.csv
+    is the reference RHEA reaction. This typically corresponds to the smallest
+    number in the RHEA quartet.
+    
+    =#
 
-    heteros = @rsubset(df, !ismissing(:Isozyme))
-    @select!(heteros, :RHEA_ID, :Protein, :Stoichiometry, :Isozyme)
+    # add reactions with genetic evidence
+    core_rows = CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "reactions_metabolic.csv"))
 
-    homos = @rsubset(df, ismissing(:Isozyme))
-    @select!(homos, :RHEA_ID, :Protein, :Stoichiometry)
+    # add gap filled reactions    
+    gap_rows = CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "reactions_gaps.csv"))
 
-    ghomos = groupby(homos, [:RHEA_ID, :Protein])
-    gheteros = groupby(heteros, [:RHEA_ID, :Isozyme])
+    # per-cache everything
+    get_reactions(core_rows.Rhea)
+    get_reactions(gap_rows.Rhea)
 
     # Build model
+    # model = Model()
 
     model = Model()
 
-    extend_model!(model, ghomos)
-    extend_model!(model, gheteros)
-    gapfill!(model)
-    curate!(model) # needs to happen here, as metabolites get added that are necessary later
+    for row in [core_rows; gap_rows]
+        extend_model!(model, row)
+    end
 
-    # # these are all manually added reactions
+    # curate the model further
+    curate!(model) # needs to happen here, as metabolites get added that are necessary later
     add_exchanges!(model)
     add_periplasm_transporters!(model)
     add_membrane_transporters!(model)
@@ -42,11 +47,18 @@ function build_model()
     add_metabolite_annotations!(model)
     add_reaction_annotations!(model)
 
-    set_default_exchanges!(model)
-    name_reactions!(model)
     name_genes!(model)
-    shortname_reactions!(model)
+    name_reactions!(model)
+    acronym_reactions!(model)
 
+    set_default_exchanges!(model)
+    switch_off_salt_transporters!(model)
+    deactivate_antiports!(model)
     haskey(model.reactions, "PERM_29101") && delete!(model.reactions, "PERM_29101") # house keeping for Na+
+
+    check_gene_names(model)
+    check_reaction_acronyms(model)
+    check_rhea_ref(model)
+
     model
 end

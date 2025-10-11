@@ -1,9 +1,14 @@
 
+Base.@kwdef mutable struct Isozyme
+    gene_product_stoichiometry::Dict{String,Int}
+    kcat_forward::A.Maybe{Float64} = nothing
+    kcat_reverse::A.Maybe{Float64} = nothing
+end
+
 """
 $(TYPEDEF)
 
-Reaction field adapted to enzyme constrained models. 
-`gene_association` contains `COBREXA.Isozyme`s.
+Reaction field adapted to enzyme constrained models. `gene_association` contains `Isozyme`s.
 
 # Fields
 $(TYPEDFIELDS)
@@ -14,7 +19,7 @@ Base.@kwdef mutable struct Reaction
     upper_bound::Float64 = Inf
     stoichiometry::Dict{String,Float64} = Dict()
     objective_coefficient::Float64 = 0.0
-    gene_association::A.Maybe{Vector{X.Isozyme}} = nothing
+    gene_association::A.Maybe{Dict{String,Isozyme}} = nothing
     annotations::A.Annotations = A.Annotations()
     notes::A.Notes = A.Notes()
 end
@@ -148,7 +153,7 @@ A.objective(m::Model) =
 A.reaction_gene_association_dnf(m::Model, id::String) = begin
     grrs = m.reactions[id].gene_association
     isnothing(grrs) && return nothing
-    [collect(keys(iso.gene_product_stoichiometry)) for iso in grrs]
+    [collect(keys(iso.gene_product_stoichiometry)) for iso in values(grrs)]
 end
 
 A.reaction_gene_products_available(m::Model, id::String, fn::Function) =

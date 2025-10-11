@@ -1,33 +1,29 @@
-"""
-$(TYPEDSIGNATURES)
 
-Add a biomass function
-"""
 function add_biomass!(model)
-    add_biomass!(model, "")
-    add_biomass!(model, "_core")
-end
 
-function add_biomass!(model, suffix)
-    biomass = JSON.parsefile(joinpath(pkgdir(@__MODULE__), "data", "model", "biomass"*suffix*".json"))
+    rows = CSV.File(
+        joinpath(pkgdir(@__MODULE__), "data", "model", "biomass.csv");
+        types = [String, Float64],
+    )
+    biomass = Dict(rows.Metabolite .=> rows.Coefficient)
 
     # required atp for growth hydrolysis equation
     atp_req = 71.06
     # atp_req = 0.0
-    
+
     biomass["30616"] = biomass["30616"] - atp_req # atp
     biomass["15377"] = -atp_req # water
     biomass["43474"] = atp_req # pi
     biomass["456216"] = atp_req # adp
     biomass["15378"] = atp_req # h+
 
-    model.reactions["BIOMASS"*suffix] = Reaction(
+    model.reactions["BIOMASS"] = Reaction(
         name = "Biomass reaction",
-        stoichiometry = Dict(keys(biomass) .=> float.(values(biomass))),
-        objective_coefficient = suffix == "" ? 1.0 : 0.0,
+        stoichiometry = biomass,
+        objective_coefficient = 1.0,
         lower_bound = 0,
         upper_bound = 1000,
-        annotations = Dict("SBO" => ["SBO_0000629"]),
+        annotations = Dict("SBO" => ["SBO_0000629"], "acronym" => ["BIOMASS", "biomass"]),
     )
 end
 
@@ -45,6 +41,6 @@ function add_atpm!(model)
         lower_bound = 83.22,
         # lower_bound = 0.0,
         upper_bound = 1000,
-        annotations = Dict("SBO" => ["SBO_0000630"]),
+        annotations = Dict("SBO" => ["SBO_0000630"], "acronym" => ["ATPM", "atpm"]),
     )
 end

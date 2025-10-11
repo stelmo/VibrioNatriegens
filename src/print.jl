@@ -1,6 +1,5 @@
 
-function print_reactions(model::Model, rids::Vector{String}, file_name)
-    df = DataFrame(rid = String[], Name = String[], Stoichiometry = String[], EC = String[])
+function print_reactions(model::Model, rids::Vector{String})
 
     _stoichiometry(rid) = begin
 
@@ -46,38 +45,41 @@ function print_reactions(model::Model, rids::Vector{String}, file_name)
         isnothing(nm) ? "" : nm
     end
 
-    for rid in rids
-        # println(rid)
-        push!(df, (rid, _name(rid), _stoichiometry(rid), _ec(rid)); promote = true)
+    open("vnat_rxns.tsv", "w") do io
+        write(io, join(["ID", "Name", "Reaction", "EC"], "\t"), "\n")
+        for rid in rids
+            write(io, join([rid, _name(rid), _stoichiometry(rid), _ec(rid)], "\t"), "\n")
+        end
     end
-
-    df
-
-    CSV.write(file_name, df)
 end
 
-print_reactions(model::Model) =
-    print_reactions(model, A.reactions(model), "reactions-model.csv")
+print_reactions(model::Model) = print_reactions(model, A.reactions(model))
 
 function print_metabolites(model)
 
+    getx(x) = isnothing(x) ? "" : x
+
     mids = A.metabolites(model)
-    charges = Union{Missing,Int}[]
-    formulas = Union{Missing,String}[]
-    names = Union{Missing,String}[]
 
-    getx(x) = isnothing(x) ? missing : x
-
-    for mid in mids
-        push!(charges, getx(A.metabolite_charge(model, mid)))
-        push!(names, getx(A.metabolite_name(model, mid)))
-
-        f = A.metabolite_formula(model, mid)
-
-        push!(formulas, isnothing(f) ? missing : join(k * string(v) for (k, v) in f))
+    open("vnat_mets.csv", "w") do io
+        write(io, join(["ID", "Name", "Charge", "Formula"], "\t"), "\n")
+        for mid in mids
+            f = A.metabolite_formula(model, mid)
+            f = isnothing(f) ? "" : join(k * string(v) for (k, v) in f)
+            write(
+                io,
+                join(
+                    [
+                        mid,
+                        getx(A.metabolite_name(model, mid)),
+                        getx(A.metabolite_charge(model, mid)),
+                        f,
+                    ],
+                    "\t",
+                ),
+                "\n",
+            )
+        end
     end
-
-    df = DataFrame(Metabolite = mids, Name = names, Charge = charges, Formula = formulas)
-    CSV.write("metabolites-model.csv", df)
 end
 

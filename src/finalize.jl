@@ -1,4 +1,36 @@
 
+function switch_off_salt_transporters!(model)
+    # these reactions cause loops with the H+ transporters
+    keep_rxns = [
+        "Na_ATPsynthase"
+        "oad"
+        "nqr"
+        "rnf"
+        "ANTI_15378_29101_NhaC"
+    ]
+    for (r, rxn) in model.reactions
+        r in keep_rxns && continue
+        mets = rxn.stoichiometry
+        if "29101" in collect(keys(mets))
+            rxn.lower_bound = 0
+            rxn.upper_bound = 0
+        end
+    end
+end
+
+function deactivate_antiports!(model)
+    #= 
+    If both a symport and an antiport reaction exists for the same metabolites,
+    then futile cycles are formed.
+    Deactivate all antiporters when a corresponding symport is found
+    =#
+    symps = [join(split(rid,"_")[2:end], "_") for rid in keys(model.reactions) if startswith(rid, "SYM")]
+    antis = [join(split(rid,"_")[2:end], "_") for rid in keys(model.reactions) if startswith(rid, "ANTI")]
+    for rid in intersect(symps, antis)
+        model.reactions["ANTI_$rid"].lower_bound = 0
+        model.reactions["ANTI_$rid"].upper_bound = 0
+    end
+end
 
 function set_default_exchanges!(model)
 
@@ -19,7 +51,7 @@ function set_default_exchanges!(model)
 
     for mid in [substrates; bidirs]
         if mid == default_carbon_source
-            lb, ub = (-25.0, 0.0)
+            lb, ub = (-21.0, 0.0)
         elseif mid in substrates
             lb, ub = (-1000.0, 0.0)
         elseif mid in bidirs
@@ -32,36 +64,30 @@ function set_default_exchanges!(model)
 
 end
 
-function name_genes!(model)
-    gene_name_lu = JSON.parsefile(
-        joinpath(
-            pkgdir(@__MODULE__),
-            "data",
-            "model",
-            "gene_names.json",
-        ),
-    )
-    for gid in A.genes(model)
-        if haskey(gene_name_lu, gid)
-            model.genes[gid].name = gene_name_lu[gid]
+function check_gene_names(model)
+    # must have all gene names assigned
+    for (k, v) in model.genes
+        isnothing(v.name) && @warn("$k missing gene name")
+    end
+end
+
+function check_reaction_acronyms(model)
+    # must have all acronyms assigned
+    for (k, v) in model.reactions
+        occursin("_", k) && continue
+        isnothing(get(v.annotations, "acronym", nothing)) &&
+            @warn("$k missing reaction acronym")
+    end
+end
+
+function check_rhea_ref(model)
+    # model has all 4 rhea reaction ids && id is the reference one
+    for (k, v) in model.reactions
+        if isdigit(first(k))
+            length(v.annotations["rhea.reaction"]) != 4 &&
+                @warn("$k does not have all the Rhea references")
+            first(sort(v.annotations["rhea.reaction"])) != k &&
+                @warn("$k is not the reference rhea reaction")
         end
-    end
-end
-
-function name_reactions!(model)
-    df = DataFrame(
-        CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "reaction_names.csv")),
-    )
-    dropmissing!(df)
-    rid_name = Dict(string.(df.rhea) .=> df.name)
-    for rid in A.reactions(model)
-        haskey(rid_name, rid) && (model.reactions[rid].name = rid_name[rid])
-    end
-end
-
-function shortname_reactions!(model)
-    shortlu = Dict(CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "reaction_shortnames.csv")))
-    for (k, v) in shortlu
-        model.reactions[k].annotations["shortname"] = [v,]
     end
 end
