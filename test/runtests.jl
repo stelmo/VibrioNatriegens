@@ -3,9 +3,9 @@ using AbstractFBCModels
 import AbstractFBCModels as A
 using HiGHS, COBREXA, ConstraintTrees
 import ConstraintTrees as C
-using DataFrames, CSV, DataFramesMeta
+using CSV
 
-full_model = VibrioNatriegens.build_model() # load model once, slows
+full_model = VibrioNatriegens.build_model() # load model once
 
 @testset "Vibrio natriegens metabolic model" begin
     include("memote.jl")

@@ -14,20 +14,20 @@ model.reactions["EX_glc__D_e"].lower_bound = 0.0 # glucose
 csources = [ # (exchange rid, atp/substrate)
     (:EX_glc__D_e,) # glucose
     (:EX_ala__L_e, -) # alanine
-    (:EX_succ_e, ) # succinate
-    (:EX_glyc_e, ) # glycerol
-    (:EX_glu__L_e, ) # glutamate
-    (:EX_rib__D_e, ) # ribose
-    (:EX_ac_e, ) # acetate
-    (:EX_gam_e, ) # glucosamine
-    (:EX_acgam_e, ) # n-acetyl-d-glucosamine
-    (:EX_glcn_e, ) # gluconate
-    (:EX_mal__L_e, ) # malate
-    (:EX_fum_e, ) # fumarate
-    (:EX_arab__L_e, ) # L-arabinose
+    (:EX_succ_e,) # succinate
+    (:EX_glyc_e,) # glycerol
+    (:EX_glu__L_e,) # glutamate
+    (:EX_rib__D_e,) # ribose
+    (:EX_ac_e,) # acetate
+    (:EX_gam_e,) # glucosamine
+    (:EX_acgam_e,) # n-acetyl-d-glucosamine
+    (:EX_glcn_e,) # gluconate
+    (:EX_mal__L_e,) # malate
+    (:EX_fum_e,) # fumarate
+    (:EX_arab__L_e,) # L-arabinose
 ]
 ct = flux_balance_constraints(model)
-for (rid, ) in csources
+for (rid,) in csources
     ct.fluxes[rid].bound = C.Between(-10.0, 1000)
     sol = optimized_values(
         ct,

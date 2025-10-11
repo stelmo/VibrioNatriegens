@@ -5,16 +5,15 @@ $(TYPEDSIGNATURES)
 Add exchange reactions for basic metabolites
 """
 function add_exchanges!(model)
-
-    df = DataFrame(
-        CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "model", "exchange_metabolites.csv"),
-            types = [String, String],
-        ),
-    )
+    # pkgdir(@__MODULE__)
 
     # by default, exchanges can only export metabolites
-    for mid in df.CHEBI
+    for row in CSV.File(
+        joinpath(pkgdir(@__MODULE__), "data", "model", "exchanges.csv"),
+        types = [String, String],
+    )
+        mid = row.Chebi
+        nm = row.Name
 
         nm = A.metabolite_name(model, mid)
 
@@ -30,21 +29,19 @@ function add_exchanges!(model)
             annotations = Dict("SBO" => ["SBO_0000284", "SBO_0000627"]),
         )
     end
-
 end
 
 function add_periplasm_transporters!(model)
 
-    # all extracellular move with diffusion into periplasm
-    df = DataFrame(
-        CSV.File(
-            joinpath(pkgdir(@__MODULE__), "data", "model", "exchange_metabolites.csv"),
-            types = [String, String],
-        ),
-    )
+    # all extracellular metabolites move with diffusion into periplasm
+    # pkgdir(@__MODULE__), 
 
     # bidirectional by default
-    for mid in df.CHEBI
+    for row in CSV.File(
+        joinpath(pkgdir(@__MODULE__), "data", "model", "exchanges.csv"),
+        types = [String, String],
+    )
+        mid = row.Chebi
 
         nm = A.metabolite_name(model, mid)
 
@@ -65,141 +62,102 @@ end
 
 function add_membrane_transporters!(model)
 
-    df = DataFrame(
-        CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "transporters.csv")),
+    # pkgdir(@__MODULE__), 
+    acronym = Dict(
+        "Permease" => "PERM",
+        "ABC" => "ABC",
+        "Symport" => "SYM",
+        "Antiport" => "ANTI",
+        "PTS" => "PTS",
     )
-
     gs = String[]
     ms = String[]
 
-    # abc transporters
-    abcs = @subset(df, :Type .== "ABC")
-    for g in groupby(abcs, [:CHEBI, :Isozyme])
-        mid = first(g.CHEBI)
-        if mid in A.metabolites(model)
-            push!(ms, mid)
-            iso = string.(g.Protein)
-            ss = parse.(Float64, string.(g.Stoichiometry))
-            append!(gs, iso)
-            add_abc!(model, mid, iso, ss)
-        else
-            @warn "$mid not in model (ABC)"
-        end
-    end
+    for row in CSV.File(joinpath(pkgdir(@__MODULE__), "data", "model", "transporters.csv"))
+        type = row.Type
+        protein = String(row.Protein)
+        push!(gs, protein)
+        stoich = row.Stoichiometry
+        iso = String(row.Isozyme)
 
-    # PTS transporters
-    pts = @subset(df, :Type .== "PTS")
-    for g in groupby(pts, [:CHEBI, :Isozyme])
-        mid = first(g.CHEBI)
-        if mid in A.metabolites(model)
-            push!(ms, mid)
-            iso = string.(g.Protein)
-            append!(gs, iso)
-            ss = parse.(Float64, string.(g.Stoichiometry))
-            add_pts!(model, mid, iso, ss)
-        else
-            @warn "$mid not in model (PTS)"
-        end
-    end
+        mids = String.(sort(split(row.Chebi, "/"))) # order metabolites
+        @assert all(haskey(model.metabolites, mid) for mid in mids) "Metabolite(s) $mids not in model"
+        urid = acronym[type] * "_" * join(mids, "_") # unique id for reaction given type and metabolites transported
 
-    # symport
-    symport = @subset(df, :Type .== "Symport")
-    for g in groupby(symport, [:CHEBI, :Isozyme])
-        # println(g)
-        mid1, mid2 = sort(split(first(g.CHEBI), "/")) # to make rid unique
-        if mid1 in A.metabolites(model) && mid2 in A.metabolites(model)
-            push!(ms, mid1)
-            push!(ms, mid2)
-            iso = string.(g.Protein)
-            append!(gs, iso)
-            ss = parse.(Float64, string.(g.Stoichiometry))
-            add_symport!(model, mid1, mid2, iso, ss)
-        else
-            @warn "$mid1 or $mid2 not in model (symport)"
-        end
-    end
+        if haskey(model.reactions, urid) # extend the gene reaction rule
 
-    # antiport
-    antiport = @subset(df, :Type .== "Antiport")
-    for g in groupby(antiport, [:CHEBI, :Isozyme])
-        mid1, mid2 = sort(split(first(g.CHEBI), "/")) # to make rid unique
-        if mid1 in A.metabolites(model) && mid2 in A.metabolites(model)
-            push!(ms, mid1)
-            push!(ms, mid2)
-            iso = string.(g.Protein)
-            append!(gs, iso)
-            ss = parse.(Float64, string.(g.Stoichiometry))
-            add_antiport!(model, mid1, mid2, iso, ss)
-        else
-            @warn "$mid1 or $mid2 not in model (antiport)"
-        end
-    end
+            isos = model.reactions[urid].gene_association
+            if haskey(isos, iso) # add to complex
+                isos[iso].gene_product_stoichiometry[protein] = stoich
+            else # new isozyme
+                isos[iso] = Isozyme(Dict(protein => stoich), nothing, nothing)
+            end
 
-    # permease (the default as well)
-    permease = @subset(df, :Type .== "Permease")
-    for g in groupby(permease, [:CHEBI, :Isozyme])
-        mid = first(g.CHEBI)
-        if mid in A.metabolites(model)
-            push!(ms, mid)
-            iso = string.(g.Protein)
-            append!(gs, iso)
-            ss = parse.(Float64, string.(g.Stoichiometry))
-            add_permease!(model, mid, iso, ss)
-        else
-            @warn "$mid not in model (permease)"
+        else # add a new transporter reaction
+
+            if type == "Permease"
+                add_permease!(model, urid, first(mids))
+            elseif type == "ABC"
+                add_abc!(model, urid, first(mids))
+            elseif type == "Symport"
+                add_symport!(model, urid, mids...)
+            elseif type == "Antiport"
+                add_antiport!(model, urid, mids...)
+            elseif type == "PTS"
+                add_pts!(model, urid, first(mids))
+            else
+                @warn "Unknown transporter type encountered"
+            end
+
+            # add a new gene reaction rule to transport reaction
+            model.reactions[urid].gene_association =
+                Dict(iso => Isozyme(Dict(protein => stoich), nothing, nothing))
         end
+
+        # push to list of metabolites that have a transporter added
+        append!(ms, mids)
     end
 
     # add default permeases - only reactions that did not get another transporter
-    all_exchange_metabolites =
-        DataFrame(
-            CSV.File(
-                joinpath(pkgdir(@__MODULE__), "data", "model", "exchange_metabolites.csv"),
-            ),
-        ).CHEBI
+    all_exchange_metabolites = CSV.File(
+        joinpath(pkgdir(@__MODULE__), "data", "model", "exchanges.csv"),
+        types = [String, String],
+    ).Chebi
     # note: Pi, Na, and H will not get a permease here, due to them being involved in the other porters
+
     missing_transporters = setdiff(string.(all_exchange_metabolites), unique(ms))
+
     for mid in missing_transporters
         if mid in A.metabolites(model)
-            add_permease!(model, mid, nothing, [1.0])
+            add_permease!(model, "PERM_$mid", mid) # these reactions won't have a gene reaction rule, since they are fallbacks
         end
     end
 
     add_genes!(model, gs)
-    # no need to add metabolites, because they should all already be in the model
-    @assert all(in.(ms, Ref(A.metabolites(model))))
 end
 
-function add_abc!(model, mid, iso, ss)
-    rid = "ABC_$mid"
-    isoz =
-        isnothing(iso) ? nothing :
-        X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
-    if haskey(model.reactions, rid)
-        isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
-    else
-        st = Dict(
-            "30616" => -1, # atp
-            "15377" => -1, # water
-            "43474" => 1, # pi
-            "456216" => 1, # adp
-            "15378" => 1,  # h+ 
-            mid * "_p" => -1.0,
-        )
-        st[mid] = get(st, mid, 0) + 1.0 # handle the case when phosphate is transported
-        model.reactions[rid] = Reaction(
-            name = "Transport $(A.metabolite_name(model, String(mid))) ABC",
-            stoichiometry = st,
-            objective_coefficient = 0.0,
-            lower_bound = 0,
-            upper_bound = 1000,
-            gene_association = isnothing(isoz) ? nothing : [isoz],
-            annotations = Dict("SBO" => ["SBO_0000284"]),
-        )
-    end
+function add_abc!(model, rid, mid)
+    st = Dict(
+        "30616" => -1, # atp
+        "15377" => -1, # water
+        "43474" => 1, # pi
+        "456216" => 1, # adp
+        "15378" => 1,  # h+ 
+        mid * "_p" => -1.0,
+    )
+    st[mid] = get(st, mid, 0) + 1.0 # handle the case when phosphate is transported
+    model.reactions[rid] = Reaction(
+        name = "Transport $(A.metabolite_name(model, String(mid))) ABC",
+        stoichiometry = st,
+        objective_coefficient = 0.0,
+        lower_bound = 0,
+        upper_bound = 1000,
+        gene_association = nothing,
+        annotations = Dict("SBO" => ["SBO_0000284"]),
+    )
 end
 
-function add_pts!(model, mid, iso, ss)
+function add_pts!(model, rid, mid)
     lu_phospho = Dict(
         "506227" => "57513", # n-acetyl-glucosamine -> N-acetyl-D-glucosamine 6-phosphate
         "15903" => "58247", # glucose -> glucose 6 phosphate
@@ -207,120 +165,64 @@ function add_pts!(model, mid, iso, ss)
         "16899" => "61381", # mannitol -> D-mannitol 1-phosphate
         "28645" => "57634", # β-D-fructose -> beta-D-fructose 6-phosphate
     )
-
-    rid = "PTS_$mid"
-    isoz =
-        isnothing(iso) ? nothing :
-        X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
-    if haskey(model.reactions, rid)
-        isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
-    else
-        model.reactions[rid] = Reaction(
-            name = "Transport $(A.metabolite_name(model, String(mid))) PTS",
-            stoichiometry = Dict(
-                "58702" => -1.0, # pep
-                "15361" => 1.0, # pyr
-                mid * "_p" => -1.0,
-                lu_phospho[mid] => 1.0, # cytosol phospho metabolite
-            ),
-            objective_coefficient = 0.0,
-            lower_bound = 0,
-            upper_bound = 1000,
-            gene_association = isnothing(isoz) ? nothing : [isoz],
-            annotations = Dict("SBO" => ["SBO_0000284"]),
-        )
-    end
+    model.reactions[rid] = Reaction(
+        name = "Transport $(A.metabolite_name(model, String(mid))) PTS",
+        stoichiometry = Dict(
+            "58702" => -1.0, # pep
+            "15361" => 1.0, # pyr
+            mid * "_p" => -1.0,
+            lu_phospho[mid] => 1.0, # cytosol phospho metabolite
+        ),
+        objective_coefficient = 0.0,
+        lower_bound = 0,
+        upper_bound = 1000,
+        gene_association = nothing,
+        annotations = Dict("SBO" => ["SBO_0000284"]),
+    )
 end
 
-function add_symport!(model, mid1, mid2, iso, ss, dir = :bidir)
-    if dir == :forward
-        lb = 0.0
-        ub = 1000.0
-    elseif dir == :reverse
-        lb = -1000.0
-        ub = 0.0
-    else
-        lb = -1000.0
-        ub = 1000.0
-    end
-
-    rid = "SYM_$(mid1)_$mid2"
-    isoz =
-        isnothing(iso) ? nothing :
-        X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
-    if haskey(model.reactions, rid)
-        isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
-    else
-        model.reactions[rid] = Reaction(
-            name = "Symport $(A.metabolite_name(model, String(mid1)))::$(A.metabolite_name(model, String(mid2)))",
-            stoichiometry = Dict(
-                mid1 * "_p" => -1.0,
-                mid1 => 1.0,
-                mid2 * "_p" => -1.0,
-                mid2 => 1.0,
-            ),
-            objective_coefficient = 0.0,
-            lower_bound = lb,
-            upper_bound = ub,
-            gene_association = isnothing(isoz) ? nothing : [isoz],
-            annotations = Dict("SBO" => ["SBO_0000284"]),
-        )
-    end
+function add_symport!(model, rid, mid1, mid2)
+    model.reactions[rid] = Reaction(
+        name = "Symport $(A.metabolite_name(model, String(mid1)))::$(A.metabolite_name(model, String(mid2)))",
+        stoichiometry = Dict(
+            mid1 * "_p" => -1.0,
+            mid1 => 1.0,
+            mid2 * "_p" => -1.0,
+            mid2 => 1.0,
+        ),
+        objective_coefficient = 0.0,
+        lower_bound = -1000,
+        upper_bound = 1000,
+        gene_association = nothing,
+        annotations = Dict("SBO" => ["SBO_0000284"]),
+    )
 end
 
-function add_antiport!(model, mid1, mid2, iso, ss, dir = :bidir)
-
-    if dir == :forward
-        lb = 0.0
-        ub = 1000.0
-    elseif dir == :reverse
-        lb = -1000.0
-        ub = 0.0
-    else
-        lb = -1000.0
-        ub = 1000.0
-    end
-
-    rid = "ANTI_$(mid1)_$mid2"
-    isoz =
-        isnothing(iso) ? nothing :
-        X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
-    if haskey(model.reactions, rid)
-        isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
-    else
-        model.reactions[rid] = Reaction(
-            name = "Antiport $(A.metabolite_name(model, String(mid1)))::$(A.metabolite_name(model, String(mid2)))",
-            stoichiometry = Dict(
-                mid1 * "_p" => 1.0,
-                mid1 => -1.0,
-                mid2 * "_p" => -1.0,
-                mid2 => 1.0,
-            ),
-            objective_coefficient = 0.0,
-            lower_bound = lb,
-            upper_bound = ub,
-            gene_association = isnothing(isoz) ? nothing : [isoz],
-            annotations = Dict("SBO" => ["SBO_0000284"]),
-        )
-    end
+function add_antiport!(model, rid, mid1, mid2)
+    model.reactions[rid] = Reaction(
+        name = "Antiport $(A.metabolite_name(model, String(mid1)))::$(A.metabolite_name(model, String(mid2)))",
+        stoichiometry = Dict(
+            mid1 * "_p" => 1.0,
+            mid1 => -1.0,
+            mid2 * "_p" => -1.0,
+            mid2 => 1.0,
+        ),
+        objective_coefficient = 0.0,
+        lower_bound = -1000,
+        upper_bound = 1000,
+        gene_association = nothing,
+        annotations = Dict("SBO" => ["SBO_0000284"]),
+    )
 end
 
-function add_permease!(model, mid, iso, ss)
-    rid = "PERM_$mid"
-    isoz =
-        isnothing(iso) ? nothing :
-        X.Isozyme(; gene_product_stoichiometry = Dict(iso .=> ss))
-    if haskey(model.reactions, rid)
-        isnothing(isoz) || push!(model.reactions[rid].gene_association, isoz)
-    else
-        model.reactions[rid] = Reaction(
-            name = "Permease $(A.metabolite_name(model, String(mid)))",
-            stoichiometry = Dict(mid * "_p" => -1.0, mid => 1.0),
-            objective_coefficient = 0.0,
-            lower_bound = -1000,
-            upper_bound = 1000,
-            gene_association = isnothing(isoz) ? nothing : [isoz],
-            annotations = Dict("SBO" => ["SBO_0000284"]),
-        )
-    end
+function add_permease!(model, rid, mid)
+    model.reactions[rid] = Reaction(
+        name = "Permease $(A.metabolite_name(model, String(mid)))",
+        stoichiometry = Dict(mid * "_p" => -1.0, mid => 1.0),
+        objective_coefficient = 0.0,
+        lower_bound = -1000,
+        upper_bound = 1000,
+        gene_association = nothing,
+        annotations = Dict("SBO" => ["SBO_0000284"]),
+    )
 end

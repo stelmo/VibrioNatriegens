@@ -4,7 +4,7 @@ using AbstractFBCModels
 import AbstractFBCModels as A
 
 model = VibrioNatriegens.build_model()
-prefixes = ["EX_","BIOMASS", "ATPM", "DF_","SYM_","ANTI_","PERM_","ABC_", "PTS"]
+prefixes = ["EX_", "BIOMASS", "ATPM", "DF_", "SYM_", "ANTI_", "PERM_", "ABC_", "PTS"]
 metabolic_rxns = filter(x -> !any(startswith.(x, prefixes)), A.reactions(model))
 
 
@@ -15,7 +15,7 @@ map_files = [
     "energy.json",
     "lipids map.json",
     "lipids.json",
-    "nucleotides.json"
+    "nucleotides.json",
 ]
 map_bigg_ids = Set{String}()
 for file in map_files

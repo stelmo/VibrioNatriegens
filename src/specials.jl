@@ -17,9 +17,9 @@ function add_electron_transport_chain!(model)
         ),
         lower_bound = 0.0,
         upper_bound = 0.0,
-        gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS05215" => 1.0)),
-        ], # nfnB, missing nfnA...
+        gene_association = Dict(
+            "A" => Isozyme(; gene_product_stoichiometry = Dict("PN96_RS05215" => 1.0)),
+        ), # nfnB, missing nfnA...
         annotations = Dict(
             "rhea-reaction-description" => [
                 "2 reduced [2Fe-2S]-[ferredoxin] + NADH + 2 NADP(+) + H(+) = 2 oxidized [2Fe-2S]-[ferredoxin] + NAD(+) + 2 NADPH",
@@ -43,8 +43,8 @@ function add_electron_transport_chain!(model)
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
-        gene_association = [
-            X.Isozyme(;
+        gene_association = Dict(
+            "A" => Isozyme(;
                 gene_product_stoichiometry = Dict(
                     "PN96_RS13585" => 1.0,
                     "PN96_RS13605" => 1.0,
@@ -57,7 +57,7 @@ function add_electron_transport_chain!(model)
                     "PN96_RS13565" => 1.0,
                 ),
             ),
-            X.Isozyme(;
+            "B" => Isozyme(;
                 gene_product_stoichiometry = Dict(
                     "PN96_RS13585" => 1.0,
                     "PN96_RS22635" => 1.0,
@@ -70,7 +70,7 @@ function add_electron_transport_chain!(model)
                     "PN96_RS22630" => 1.0,
                 ),
             ),
-        ],
+        ),
         annotations = Dict(
             "rhea-reaction-description" =>
                 ["ATP + H2O + 4 H(+)(in) = ADP + phosphate + 5 H(+)(out)"],
@@ -92,15 +92,15 @@ function add_electron_transport_chain!(model)
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
-        gene_association = [
-            X.Isozyme(;
+        gene_association = Dict(
+            "A" => Isozyme(;
                 gene_product_stoichiometry = Dict(
                     "PN96_RS11440" => 1.0, # petC
                     "PN96_RS11445" => 1.0, # petB
                     "PN96_RS11450" => 1.0, # petA
                 ),
             ),
-        ],
+        ),
         annotations = Dict("rhea.ec" => ["7.1.1.8"], "rhea.reaction" => ["11484"]),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "cyt_bc1")...)
@@ -118,8 +118,8 @@ function add_electron_transport_chain!(model)
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
-        gene_association = [
-            X.Isozyme(;
+        gene_association = Dict(
+            "A" => Isozyme(;
                 gene_product_stoichiometry = Dict(
                     "PN96_RS22940" => 1.0, # coxC
                     "PN96_RS22950" => 1.0, # coxA
@@ -128,7 +128,7 @@ function add_electron_transport_chain!(model)
                     "PN96_RS22920" => 1.0, # cox15
                 ),
             ),
-            X.Isozyme(; # Cytochrome c oxidase, cbb3-type
+            "B" => Isozyme(; # Cytochrome c oxidase, cbb3-type
                 gene_product_stoichiometry = Dict(
                     "PN96_RS05815" => 1.0, # ccoN
                     "PN96_RS05820" => 1.0, # ccoO
@@ -138,7 +138,7 @@ function add_electron_transport_chain!(model)
                     "PN96_RS05845" => 1.0, # ccoS
                 ),
             ),
-        ],
+        ),
         annotations = Dict("rhea.ec" => ["7.1.1.9"], "rhea.reaction" => ["11436"]),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "cyt_c")...)
@@ -156,8 +156,8 @@ function add_electron_transport_chain!(model)
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
-        gene_association = [
-            X.Isozyme(;
+        gene_association = Dict(
+            "A" => Isozyme(;
                 gene_product_stoichiometry = Dict(
                     "PN96_RS08265" => 1.0, # cydX
                     "PN96_RS08270" => 1.0, # cydA
@@ -166,7 +166,7 @@ function add_electron_transport_chain!(model)
                     "PN96_RS07435" => 1.0, # cydC
                 ),
             ),
-        ],
+        ),
         annotations = Dict("rhea.reaction" => ["40527"], "rhea.ec" => ["7.1.1.7"]),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "cyt_bd")...)
@@ -184,8 +184,8 @@ function add_electron_transport_chain!(model)
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
-        gene_association = [
-            X.Isozyme(;
+        gene_association = Dict(
+            "A" => Isozyme(;
                 gene_product_stoichiometry = Dict(
                     "PN96_RS21725" => 1.0, # cyoA
                     "PN96_RS21720" => 1.0, # cyoB
@@ -194,7 +194,7 @@ function add_electron_transport_chain!(model)
                     "PN96_RS22915" => 1.0, # cyoE
                 ),
             ),
-        ],
+        ),
         annotations = Dict("rhea.ec" => ["7.1.1.3"], "rhea.reaction" => ["30251"]),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "cyt_bo")...)
@@ -212,14 +212,14 @@ function add_electron_transport_chain!(model)
         ),
         lower_bound = -1000.0,
         upper_bound = 0.0, # https://doi.org/10.1016/j.jmb.2005.07.022
-        gene_association = [
-            X.Isozyme(;
+        gene_association = Dict(
+            "A" => Isozyme(;
                 gene_product_stoichiometry = Dict(
                     "PN96_RS20820" => 2.0, # pntA
                     "PN96_RS20825" => 2.0, # pntB
                 ),
             ),
-        ],
+        ),
         annotations = Dict(
             "rhea-reaction-description" =>
                 ["NAD(+) + NADPH + H(+)(in) = NADH + NADP(+) + H(+)(out)"],
@@ -252,8 +252,8 @@ function add_salt_transducers!(model)
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
-        gene_association = [
-            X.Isozyme(;
+        gene_association = Dict(
+            "A" => Isozyme(;
                 gene_product_stoichiometry = Dict(
                     "PN96_RS13585" => 1.0,
                     "PN96_RS13605" => 1.0,
@@ -266,7 +266,7 @@ function add_salt_transducers!(model)
                     "PN96_RS13565" => 1.0,
                 ),
             ),
-            X.Isozyme(;
+            "B" => Isozyme(;
                 gene_product_stoichiometry = Dict(
                     "PN96_RS13585" => 1.0,
                     "PN96_RS22635" => 1.0,
@@ -279,7 +279,7 @@ function add_salt_transducers!(model)
                     "PN96_RS22630" => 1.0,
                 ),
             ),
-        ],
+        ),
         annotations = Dict(
             "rhea-reaction-description" =>
                 ["4 Na(+)(out) + ADP + phosphate + H(+) = 4 Na(+)(in) + ATP + H2O"],
@@ -290,7 +290,7 @@ function add_salt_transducers!(model)
     append!(gs, A.reaction_gene_association_dnf(model, "Na_ATPsynthase")...)
     append!(ms, keys(A.reaction_stoichiometry(model, "Na_ATPsynthase")))
 
-    model.reactions["oad"] = Reaction(; 
+    model.reactions["oad"] = Reaction(;
         name = "oxaloacetate decarboxylase (Na(+) extruding)",
         stoichiometry = Dict(
             "16452" => -1.0, # oxaloacetate
@@ -302,15 +302,15 @@ function add_salt_transducers!(model)
         ),
         lower_bound = -1000.0, # the delta D for oac <-> pyr + co2 is -32 kJ/mol, hence this is likely pumping Na
         upper_bound = 1000.0,
-        gene_association = [
-            X.Isozyme(;
+        gene_association = Dict(
+            "A" => Isozyme(;
                 gene_product_stoichiometry = Dict(
                     "PN96_RS01245" => 1.0, # oadB
                     "PN96_RS01240" => 1.0, # oadA
                     "PN96_RS01235" => 1.0, # oadG
                 ),
             ),
-        ],
+        ),
         annotations = Dict(
             "rhea-reaction-description" =>
                 ["oxaloacetate + 2 Na(+)(in) + H(+) = pyruvate + 2 Na(+)(out) + CO2"],
@@ -335,8 +335,8 @@ function add_salt_transducers!(model)
         ),
         lower_bound = 0.0,
         upper_bound = 1000.0,
-        gene_association = [
-            X.Isozyme(;
+        gene_association = Dict(
+            "A" => Isozyme(;
                 gene_product_stoichiometry = Dict(
                     "PN96_RS02145" => 1.0,
                     "PN96_RS02150" => 1.0,
@@ -346,7 +346,7 @@ function add_salt_transducers!(model)
                     "PN96_RS02170" => 1.0,
                 ),
             ),
-        ],
+        ),
         annotations = Dict(
             "rhea-reaction-description" => [
                 "a ubiquinone + n Na(+)(in) + NADH + H(+) = a ubiquinol + n Na(+)(out) + NAD(+)",
@@ -371,8 +371,8 @@ function add_salt_transducers!(model)
         ),
         lower_bound = -1000.0,
         upper_bound = 1000.0,
-        gene_association = [
-            X.Isozyme(;
+        gene_association = Dict(
+            "A" => Isozyme(;
                 gene_product_stoichiometry = Dict(
                     "PN96_RS03320" => 1.0, # rnfA
                     "PN96_RS03315" => 1.0, # rnfB
@@ -382,7 +382,7 @@ function add_salt_transducers!(model)
                     "PN96_RS03300" => 1.0, # rnfG
                 ),
             ),
-            X.Isozyme(; # these are not well annotated
+            "B" => Isozyme(; # these are not well annotated
                 gene_product_stoichiometry = Dict(
                     "PN96_RS19620" => 1.0,
                     "PN96_RS19625" => 1.0,
@@ -393,7 +393,7 @@ function add_salt_transducers!(model)
                     "PN96_RS19650" => 1.0,
                 ),
             ),
-        ],
+        ),
         annotations = Dict(
             "rhea-reaction-description" => [
                 "2 reduced [2Fe-2S]-[ferredoxin] + Na(+)(in) + NAD(+) + H(+) = 2 oxidized [2Fe-2S]-[ferredoxin] + Na(+)(out) + NADH",
@@ -417,9 +417,10 @@ function add_salt_transducers!(model)
         objective_coefficient = 0.0,
         lower_bound = 0,
         upper_bound = 0,
-        gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS07530" .=> 12.0)),
-        ],
+        gene_association = Dict(
+            "A" =>
+                Isozyme(; gene_product_stoichiometry = Dict("PN96_RS07530" .=> 12.0)),
+        ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "ANTI_15378_29101_NhaA")...)
     append!(ms, keys(A.reaction_stoichiometry(model, "ANTI_15378_29101_NhaA")))
@@ -435,9 +436,10 @@ function add_salt_transducers!(model)
         objective_coefficient = 0.0,
         lower_bound = 0,
         upper_bound = 0,
-        gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS03465" .=> 12.0)),
-        ],
+        gene_association = Dict(
+            "A" =>
+                Isozyme(; gene_product_stoichiometry = Dict("PN96_RS03465" .=> 12.0)),
+        ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "ANTI_15378_29101_NhaB")...)
     append!(ms, keys(A.reaction_stoichiometry(model, "ANTI_15378_29101_NhaB")))
@@ -453,18 +455,28 @@ function add_salt_transducers!(model)
         objective_coefficient = 0.0,
         lower_bound = -1000,
         upper_bound = 1000,
-        gene_association = [
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS03215" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS03265" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS04845" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS05055" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS07920" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS10500" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS19810" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS18650" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS19835" .=> 12.0)),
-            X.Isozyme(; gene_product_stoichiometry = Dict("PN96_RS16655" .=> 12.0)),
-        ],
+        gene_association = Dict(
+            "A" =>
+                Isozyme(; gene_product_stoichiometry = Dict("PN96_RS03215" .=> 12.0)),
+            "B" =>
+                Isozyme(; gene_product_stoichiometry = Dict("PN96_RS03265" .=> 12.0)),
+            "C" =>
+                Isozyme(; gene_product_stoichiometry = Dict("PN96_RS04845" .=> 12.0)),
+            "D" =>
+                Isozyme(; gene_product_stoichiometry = Dict("PN96_RS05055" .=> 12.0)),
+            "E" =>
+                Isozyme(; gene_product_stoichiometry = Dict("PN96_RS07920" .=> 12.0)),
+            "F" =>
+                Isozyme(; gene_product_stoichiometry = Dict("PN96_RS10500" .=> 12.0)),
+            "G" =>
+                Isozyme(; gene_product_stoichiometry = Dict("PN96_RS19810" .=> 12.0)),
+            "H" =>
+                Isozyme(; gene_product_stoichiometry = Dict("PN96_RS18650" .=> 12.0)),
+            "I" =>
+                Isozyme(; gene_product_stoichiometry = Dict("PN96_RS19835" .=> 12.0)),
+            "J" =>
+                Isozyme(; gene_product_stoichiometry = Dict("PN96_RS16655" .=> 12.0)),
+        ),
     )
     append!(gs, A.reaction_gene_association_dnf(model, "ANTI_15378_29101_NhaC")...)
     append!(ms, keys(A.reaction_stoichiometry(model, "ANTI_15378_29101_NhaC")))
@@ -472,6 +484,5 @@ function add_salt_transducers!(model)
     add_genes!(model, gs)
     # no need to add metabolites, because they should all already be in the model
     @assert all(in.(ms, Ref(A.metabolites(model))))
-
 end
 

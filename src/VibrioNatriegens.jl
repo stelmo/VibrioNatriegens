@@ -1,22 +1,18 @@
 module VibrioNatriegens
 
-using RheaReactions, CSV, DataFrames, DataFramesMeta
-using AbstractFBCModels
-import AbstractFBCModels as A
-import COBREXA as X
+using RheaReactions, CSV # load reactions
+import AbstractFBCModels as A # model type
+import SparseArrays as S # model accessors
 using DocStringExtensions
-import SparseArrays as S
-using JSON
 
 include("reconstruct_utils.jl")
 include("model.jl")
-include("add_gene_annotations.jl")
-include("add_metabolite_annotations.jl")
-include("add_reaction_annotations.jl")
-include("print.jl")
+include("gene_annotations.jl")
+include("metabolite_annotations.jl")
+include("reaction_annotations.jl")
+include("print.jl") # useful for troubleshooting
 
 include("reconstruct.jl")
-include("gapfill.jl")
 include("curate.jl")
 include("transporters.jl")
 include("specials.jl")

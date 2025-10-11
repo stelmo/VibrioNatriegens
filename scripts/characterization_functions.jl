@@ -44,7 +44,7 @@ function blocked_reactions()
         )
     end
 
-    metabolic_reactions[vs.==0]
+    metabolic_reactions[vs .== 0]
 end
 
 function deadend_metabolites()
