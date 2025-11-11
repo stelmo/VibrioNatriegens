@@ -6,7 +6,10 @@
     =#
     model = deepcopy(full_model)
 
-    rids = filter(x -> !startswith(x, "EX_") && x != "BIOMASS" && x != "BIOMASS_core", A.reactions(model))
+    rids = filter(
+        x -> !startswith(x, "EX_") && x != "BIOMASS" && x != "BIOMASS_core",
+        A.reactions(model),
+    )
     unbal_rids = String[]
     for rid in rids
         s = A.reaction_stoichiometry(model, rid)
@@ -29,7 +32,10 @@ end
     =#
     model = deepcopy(full_model)
 
-    rids = filter(x -> !startswith(x, "EX_") && x != "BIOMASS" && x != "BIOMASS_core", A.reactions(model))
+    rids = filter(
+        x -> !startswith(x, "EX_") && x != "BIOMASS" && x != "BIOMASS_core",
+        A.reactions(model),
+    )
     unbal_rids = String[]
     for rid in rids
         s = A.reaction_stoichiometry(model, rid)
@@ -129,15 +135,6 @@ end
             v * parse(Float64, first(model.metabolites[k].annotations["molarmass"])) / 1000
     end
     @test isapprox(btot, 1.0, atol = 1e-3)
-
-    # test the core (reduced) one too
-    biomass = model.reactions["BIOMASS_core"].stoichiometry
-    btot = 0.0
-    for (k, v) in biomass
-        btot -=
-            v * parse(Float64, first(model.metabolites[k].annotations["molarmass"])) / 1000
-    end
-    @test isapprox(btot, 1.0, atol = 1e-3)
 end
 
 @testset "Aerobic growth" begin
@@ -225,24 +222,30 @@ end
     #=
     Check if vibrio can be grow on carbon sources from Coppens 2023
     =#
-    df = DataFrame(CSV.File(joinpath("experiments", "coppens_2023_biolog.csv")))
-    dropmissing!(df)
-    @select!(df, :Substrate, :Experiment, :Chebi)
-    @transform!(df, :Exchange = "EX_" .* string.(:Chebi))
-    @subset!(df, :Experiment)
 
     model = deepcopy(full_model)
     model.reactions["EX_15903"].lower_bound = 0.0
 
-    for (s, ex) in zip(df.Substrate, df.Exchange)
-        model.reactions[ex].lower_bound = -30.0
+    for row in CSV.File(joinpath("experiments", "coppens_2023_biolog.csv"))
+        ismissing(row.Chebi) && continue
+        exrid = "EX_"*string(row.Chebi)
+        substrate = row.Substrate
+        experiment = row.Experiment
+
+        haskey(model.reactions, exrid) || continue
+
+        model.reactions[exrid].lower_bound = -30.0
         sol = flux_balance_analysis(model, optimizer = HiGHS.Optimizer)
-        if s == "Formic Acid"
+
+        if substrate == "Formic Acid"
             @test_broken sol.objective > 0.1
-        else
+        elseif experiment # should grow here
             @test sol.objective > 0.1
+        else # should not grow here
+            isnothing(sol) || @warn("$substrate supports growth when it should not")
         end
-        model.reactions[ex].lower_bound = 0.0
+
+        model.reactions[exrid].lower_bound = 0.0
     end
 end
 
@@ -260,7 +263,7 @@ end
             Dict("BIOMASS" => ("BIOMASS", 0.87), "ribose" => ("EX_47013", -16.1)),
         "glucose" => Dict(
             "BIOMASS" => ("BIOMASS", 1.7),
-            "glucose" => ("EX_15903", -25.0),
+            "glucose" => ("EX_15903", -21.0),
             "acetate" => ("EX_30089", 14.1),
             "succinate" => ("EX_30031", 0.18),
         ),

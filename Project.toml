@@ -1,40 +1,25 @@
 name = "VibrioNatriegens"
 uuid = "77bc8a8b-a793-4fc4-98ef-9bd1d8b8270c"
+version = "0.2.0"
 authors = ["St. Elmo Wilken <stelmozors@gmail.com>"]
-version = "0.1.0"
 
 [deps]
 AbstractFBCModels = "5a4f3dfa-1789-40f8-8221-69268c29937c"
-Accessors = "7d9f7c33-5ae7-4f3b-8dc6-eff91059b697"
-COBREXA = "babc4406-5200-4a30-9033-bf5ae714c842"
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
-ConstraintTrees = "5515826b-29c3-47a5-8849-8513ac836620"
-DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
-DataFramesMeta = "1313f7d8-7da2-5740-9ea0-a2ca25f37964"
 DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
-HiGHS = "87dc4568-4c63-4d18-b0c0-bb2238e4078b"
-JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
-JSONFBCModels = "475c1105-d6ed-49c1-9b32-c11adca6d3e8"
 RheaReactions = "e7041bdd-cbf6-4fda-a9ae-fa15d3238eb4"
-SBMLFBCModels = "3e8f9d1a-ffc1-486d-82d6-6c7276635980"
 SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 
 [compat]
-Accessors = "0.1.42"
 ConstraintTrees = "1"
-HiGHS = "1.15.0"
-JSON = "0.21"
-JSONFBCModels = "1.0.1"
-RheaReactions = "0.7"
-SBMLFBCModels = "1.1.1"
+RheaReactions = "0.8.3"
 SparseArrays = "1"
 
 [extras]
+COBREXA = "babc4406-5200-4a30-9033-bf5ae714c842"
 ConstraintTrees = "5515826b-29c3-47a5-8849-8513ac836620"
-Gurobi = "2e9cd046-0924-5485-92f1-d5272153d98b"
-JSONFBCModels = "475c1105-d6ed-49c1-9b32-c11adca6d3e8"
-SBMLFBCModels = "3e8f9d1a-ffc1-486d-82d6-6c7276635980"
+HiGHS = "87dc4568-4c63-4d18-b0c0-bb2238e4078b"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
-test = ["Gurobi", "Test", "ConstraintTrees"]
+test = ["Test", "ConstraintTrees", "HiGHS", "COBREXA"]

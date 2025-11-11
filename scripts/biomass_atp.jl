@@ -17,27 +17,46 @@ print_solution(sol) = C.pretty(
     format_label = x -> A.reaction_name(model, string(last(x))),
 )
 
-# split the difference between 13C MFA and actual measurements
+# Only use 13C MFA measurements
 measurements = Dict(
-    "alanine" => Dict("acetate" => ("EX_30089", 6.3), "alanine" => ("EX_57972", -30.03), "BIOMASS" => ("BIOMASS_core", 0.95)),
-    "ribose" => Dict("ribose" => ("EX_47013", -16.1), "BIOMASS" => ("BIOMASS_core", 0.871)),
+    "alanine" => Dict(
+        "acetate" => ("EX_30089", 6.3),
+        "alanine" => ("EX_57972", -30.03),
+        "BIOMASS" => ("BIOMASS_core", 0.95),
+    ),
+    "ribose" =>
+        Dict("ribose" => ("EX_47013", -16.1), "BIOMASS" => ("BIOMASS_core", 0.871)),
     "glucose" => Dict(
         "glucose" => ("EX_15903", -21.34),
         "acetate" => ("EX_30089", 15.5),
         "succinate" => ("EX_30031", 0.19),
-        "BIOMASS" => ("BIOMASS_core", 1.696)
+        "BIOMASS" => ("BIOMASS_core", 1.696),
     ),
-    "glutamate" => Dict("glutamate" => ("EX_29985", -14.9), "BIOMASS" => ("BIOMASS_core", 0.576)),
-    "glycerol" => Dict("glycerol" => ("EX_17754", -13.5), "BIOMASS" => ("BIOMASS_core", 0.634), "glutamate" => ("EX_29985", 0.27)),
-    "succinate" => Dict("succinate" => ("EX_30031", -23.64), "fumarate" => ("EX_29806", 0.52), "BIOMASS" => ("BIOMASS_core", 1.074)),
-    "acetate" => Dict("acetate" => ("EX_30089", -26.6), "BIOMASS" => ("BIOMASS_core", 0.424)),
+    "glutamate" =>
+        Dict("glutamate" => ("EX_29985", -14.9), "BIOMASS" => ("BIOMASS_core", 0.576)),
+    "glycerol" => Dict(
+        "glycerol" => ("EX_17754", -13.5),
+        "BIOMASS" => ("BIOMASS_core", 0.634),
+        "glutamate" => ("EX_29985", 0.27),
+    ),
+    "succinate" => Dict(
+        "succinate" => ("EX_30031", -23.64),
+        "fumarate" => ("EX_29806", 0.52),
+        "BIOMASS" => ("BIOMASS_core", 1.074),
+    ),
+    "acetate" =>
+        Dict("acetate" => ("EX_30089", -26.6), "BIOMASS" => ("BIOMASS_core", 0.424)),
     "salt" => Dict(
         "glucose" => ("EX_15903", -10.766),
         "acetate" => ("EX_30089", 8.83),
         "succinate" => ("EX_30031", 0.22),
-        "BIOMASS" => ("BIOMASS_core", 0.595)
+        "BIOMASS" => ("BIOMASS_core", 0.595),
     ),
-    "iptg" => Dict("glucose" => ("EX_15903", -27.16), "acetate" => ("EX_30089", 19.52), "BIOMASS" => ("BIOMASS_core", 1.897)),
+    "iptg" => Dict(
+        "glucose" => ("EX_15903", -27.16),
+        "acetate" => ("EX_30089", 19.52),
+        "BIOMASS" => ("BIOMASS_core", 1.897),
+    ),
 )
 
 mus = Dict(k => v["BIOMASS"][2] for (k, v) in measurements)
@@ -48,7 +67,7 @@ model.reactions["BIOMASS"].objective_coefficient = 0.0
 model.reactions["ATPM"].objective_coefficient = 1.0
 model.reactions["ATPM"].lower_bound = 0.0
 
-df = DataFrame(maxatp = Float64[], mu = Float64[], id=String[])
+df = DataFrame(maxatp = Float64[], mu = Float64[], id = String[])
 for k in keys(measurements)
     ct = flux_balance_constraints(model)
 
@@ -71,7 +90,7 @@ a, b = coef(ols)
 
 draw(
     data(df) * mapping(:mu, :maxatp) * (visual(Scatter) + linear()) +
-    data(df) * mapping(:mu, :maxatp, text = :id => verbatim) * visual(Annotation)  
+    data(df) * mapping(:mu, :maxatp, text = :id => verbatim) * visual(Annotation),
 )
 
 using CSV

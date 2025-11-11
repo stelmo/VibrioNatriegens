@@ -19,19 +19,20 @@ for em in escher_maps
     ems[em] = JSON.parsefile(joinpath("maps", em))
 end
 
-renamer(rid, model, annofield) = join(get(model.reactions[rid].annotations, annofield, [""]), " + ")
+renamer(rid, model, annofield) =
+    join(get(model.reactions[rid].annotations, annofield, [""]), " + ")
 
 for (emid, em) in ems
     emm = em[2]
     for rxn in values(emm["reactions"])
 
         if rxn["bigg_id"] ∉ A.reactions(model)
-            @warn("$(rxn["bigg_id"]) not found in the model!")
+            @warn("$(rxn["bigg_id"]) not found in the model from map $emid")
             continue
         end
 
         # rename reaction 
-        rxn["name"] = renamer(rxn["bigg_id"], model, "shortname")
+        rxn["name"] = renamer(rxn["bigg_id"], model, "acronym")
 
         # set bounds
         lb, ub = model.reactions[rxn["bigg_id"]].lower_bound,

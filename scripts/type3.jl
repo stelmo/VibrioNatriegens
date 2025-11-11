@@ -22,20 +22,18 @@ m = flux_balance_constraints(model)
 
 fva = Dict()
 for rid in A.reactions(model)
-    ub =
-        optimized_values(
-            m,
-            optimizer = Gurobi.Optimizer,
-            objective = m.fluxes[Symbol(rid)].value,
-            sense = COBREXA.Maximal,
-        ).objective
-    lb =
-        optimized_values(
-            m,
-            optimizer = Gurobi.Optimizer,
-            objective = m.fluxes[Symbol(rid)].value,
-            sense = COBREXA.Minimal,
-        ).objective
+    ub = optimized_values(
+        m,
+        optimizer = Gurobi.Optimizer,
+        objective = m.fluxes[Symbol(rid)].value,
+        sense = COBREXA.Maximal,
+    ).objective
+    lb = optimized_values(
+        m,
+        optimizer = Gurobi.Optimizer,
+        objective = m.fluxes[Symbol(rid)].value,
+        sense = COBREXA.Minimal,
+    ).objective
     fva[rid] = (lb, ub)
 end
 fva

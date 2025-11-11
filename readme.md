@@ -11,7 +11,7 @@ Vibrio natriegens
 </i> 
 </p> 
 
-The model is composed of 1391 reactions, 1022 metabolites, and 951 genes. 
+The model is composed of 1421 reactions, 1022 metabolites, and 995 genes. 
 It focusses on the primary metabolism of _V. natriegens_, and includes data to facilitate the construction of enzyme and ribosomal constraints. 
 A MEMOTE-like test suite is implemented in the `test` directory, and runs with CI. 
 The primary name spaces for the model reactions and metabolites are [Rhea](https://www.rhea-db.org/) and [ChEBI](https://www.ebi.ac.uk/chebi/).
@@ -23,12 +23,12 @@ At a glance, the model consists of:
 
 | Attribute | Value |
 |-----------|-------|
-| Metabolic reactions | 798 |
-| Transport reactions | 212 |
+| Metabolic reactions | 799 |
+| Transport reactions | 242 |
 | Exchange reactions | 189 |
 | Metabolic reactions with GRRs | 750 |
-| Transport reactions with GRRs | 90 |
-| Blocked reactions | 27 |
+| Transport reactions with GRRs | 122 |
+| Blocked reactions | 36 |
 | Test suite | [![CI status][ci-img]][ci-url] |
 
 ## Cross references
@@ -37,16 +37,15 @@ The model has the following reaction cross-references (available under the `anno
 
 | Attribute | Number (fraction %) |
 |-----------|-------|
-| *Metabolic reactions* | *798* |
-| rhea.reaction | 798 (100%) |
+| *Metabolic reactions* | *799* |
+| rhea.reaction | 799 (100%) |
 | kegg.reaction | 774 (97%) |
 | metacyc.reaction |  716 (90%) |
 | reactome.reaction | 211 (26%) |
 | seed.reaction | 661 (83%) |
-| eggnog.go | 434 (54%) |
 | bigg.reaction | 601 (75%) |
-| ec | 772 (97%) |
-| SBO | 798 (100 %) |
+| ec | 771 (97%) |
+| SBO | 799 (100 %) |
 
 Note: ec = `eggnog.ec` or `rhea.ec` or `kegg.ec`.
 
@@ -57,7 +56,7 @@ The model has the following metabolite cross-references (available under the `an
 |-----------|-------|
 | *Total metabolites* | *1022* |
 | chebi.metabolite | 1022 (100 %) |
-| kegg.compound | 348 (34 %) |
+| kegg.compound | 349 (34 %) |
 | inchi | 963 (94 %) |
 | inchikey | 963 (94 %) |
 | smiles | 963 (94 %) |
@@ -69,9 +68,9 @@ The model has the following gene cross-references (available under the `annotati
 
 | Attribute | Number (fraction %) |
 |-----------|-------|
-| *Total genes* | 951 |
-| NCBI accession | 951 (100 %) |
-| SBO | 951 (100 %) |
+| *Total genes* | 995 |
+| NCBI accession | 995 (100 %) |
+| SBO | 995 (100 %) |
 
 ## Visualization
 In the `maps` directory, [Escher compatible maps](https://escher.github.io/#/) of all the major subsystems of _V. natriegens_ may be found. 

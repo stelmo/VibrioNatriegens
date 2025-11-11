@@ -8,16 +8,15 @@ import AbstractFBCModels as A
 using Distributed
 
 model = VibrioNatriegens.build_model()
-VibrioNatriegens.print_reactions(model)
-VibrioNatriegens.print_metabolites(model)
+
 
 # write the model to the main directory in standardized formats
 m = convert(JSONFBCModels.JSONFBCModel, model)
 A.save(m, "vibrio_natriegens.json")
 
 m = convert(SBMLFBCModels.SBMLFBCModel, model)
-@reset m.sbml.id = "vibrio_natriegens_1391"
-@reset m.sbml.name = "Vibrio Natriegens 1391 GEM"
+@reset m.sbml.id = "vibrio_natriegens"
+@reset m.sbml.name = "Vibrio Natriegens GEM"
 A.save(m, "vibrio_natriegens.xml")
 
 if nprocs() == 1
@@ -46,7 +45,8 @@ transport_rxns = [
 exchange_rxns = filter(startswith("EX_"), rids)
 diffusion_rxns = filter(startswith("DF_"), rids)
 biomass_rxns = ["BIOMASS", "BIOMASS_core", "ATPM"]
-metabolic_rxns = setdiff(rids, [transport_rxns; exchange_rxns; diffusion_rxns; biomass_rxns])
+metabolic_rxns =
+    setdiff(rids, [transport_rxns; exchange_rxns; diffusion_rxns; biomass_rxns])
 
 metabolic_rxn_grrs = [
     rid for rid in metabolic_rxns if !isnothing(A.reaction_gene_association_dnf(model, rid))
@@ -62,12 +62,12 @@ sbo_reactions =
 
 bigg_reactions = [
     rid for
-    rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "bigg.reaction")
+    rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "bigg")
 ]
 
 kegg_reactions = [
     rid for
-    rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "kegg.reaction")
+    rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "kegg")
 ]
 
 rhea_reactions = [
@@ -80,26 +80,22 @@ setdiff(A.reactions(model), rhea_reactions)
 ec_reactions = [
     rid for
     rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "eggnog.ec") ||
-    haskey(model.reactions[rid].annotations, "rhea.ec") ||
-    haskey(model.reactions[rid].annotations, "kegg.ec")
+    haskey(model.reactions[rid].annotations, "ec")
 ]
-
-go_reactions =
-    [rid for rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "eggnog.go")]
 
 metacyc_reactions = [
     rid for rid in metabolic_rxns if
-    haskey(model.reactions[rid].annotations, "metacyc.reaction")
+    haskey(model.reactions[rid].annotations, "metacyc")
 ]
 
 reactome_reactions = [
     rid for rid in metabolic_rxns if
-    haskey(model.reactions[rid].annotations, "reactome.reaction")
+    haskey(model.reactions[rid].annotations, "reactome")
 ]
 
 seed_reactions = [
     rid for
-    rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "seed.reaction")
+    rid in metabolic_rxns if haskey(model.reactions[rid].annotations, "seed")
 ]
 
 # metabolites
@@ -137,7 +133,7 @@ chebi_metabolites = [
 
 kegg_metabolites = [
     mid for mid in A.metabolites(model) if
-    haskey(model.metabolites[mid].annotations, "kegg.compound")
+    haskey(model.metabolites[mid].annotations, "kegg")
 ]
 
 # genes
@@ -146,7 +142,7 @@ gids = A.genes(model)
 sbo_genes = [gid for gid in A.genes(model) if haskey(model.genes[gid].annotations, "SBO")]
 ncbi_genes = [
     gid for
-    gid in A.genes(model) if haskey(model.genes[gid].annotations, "protein.accession")
+    gid in A.genes(model) if haskey(model.genes[gid].annotations, "GeneID")
 ]
 
 readme = """
@@ -195,7 +191,6 @@ The model has the following reaction cross-references (available under the `anno
 | metacyc.reaction |  $(length(metacyc_reactions)) ($( round(Int, length(metacyc_reactions) / length(metabolic_rxns) * 100))%) |
 | reactome.reaction | $(length(reactome_reactions)) ($( round(Int, length(reactome_reactions) / length(metabolic_rxns) * 100))%) |
 | seed.reaction | $(length(seed_reactions)) ($( round(Int, length(seed_reactions) / length(metabolic_rxns) * 100))%) |
-| eggnog.go | $(length(go_reactions)) ($( round(Int, length(go_reactions) / length(metabolic_rxns) * 100))%) |
 | bigg.reaction | $(length(bigg_reactions)) ($( round(Int, length(bigg_reactions) / length(metabolic_rxns) * 100))%) |
 | ec | $(length(ec_reactions)) ($( round(Int, length(kegg_reactions) / length(metabolic_rxns) * 100))%) |
 | SBO | $(length(sbo_reactions)) ($( round(Int, length(sbo_reactions) / length(metabolic_rxns) * 100)) %) |
