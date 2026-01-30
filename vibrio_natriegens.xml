@@ -28925,8 +28925,8 @@
                   <rdf:li rdf:resource="http://identifiers.org/metanetx/MNXR151023"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/23563"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/23561"/>
-                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/23562"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/23560"/>
+                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/23562"/>
                 </rdf:Bag>
               </bqbiol:is>
             </rdf:Description>
@@ -31517,8 +31517,8 @@
                   <rdf:li rdf:resource="http://identifiers.org/metanetx/MNXR102209"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/22967"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/22965"/>
-                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/22964"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/22966"/>
+                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/22964"/>
                   <rdf:li rdf:resource="http://identifiers.org/metacyc/ORNDECARBOX-RXN"/>
                   <rdf:li rdf:resource="http://identifiers.org/sabiork/1050"/>
                   <rdf:li rdf:resource="http://identifiers.org/eggnog.ec/4.1.1.17"/>
@@ -34428,8 +34428,8 @@
               <bqbiol:is>
                 <rdf:Bag>
                   <rdf:li rdf:resource="http://identifiers.org/metacyc/KDO-8PPHOSPHAT-RXN"/>
-                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/11500"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/11501"/>
+                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/11500"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/11502"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/11503"/>
                   <rdf:li rdf:resource="http://identifiers.org/acronym/KDOPP"/>
@@ -34710,8 +34710,8 @@
                   <rdf:li rdf:resource="http://identifiers.org/rhea-reaction-description/UMP + H2O = uridine + phosphate"/>
                   <rdf:li rdf:resource="http://identifiers.org/metanetx/MNXR188529"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/29362"/>
-                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/29360"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/29361"/>
+                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/29360"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/29359"/>
                   <rdf:li rdf:resource="http://identifiers.org/metacyc/RXN-14025"/>
                   <rdf:li rdf:resource="http://identifiers.org/sabiork/210"/>
@@ -40105,8 +40105,8 @@
                   <rdf:li rdf:resource="http://identifiers.org/metanetx/MNXR190452"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/27900"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/27901"/>
-                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/27898"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/27899"/>
+                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/27898"/>
                   <rdf:li rdf:resource="http://identifiers.org/metacyc/RXN-14126"/>
                   <rdf:li rdf:resource="http://identifiers.org/sabiork/305"/>
                   <rdf:li rdf:resource="http://identifiers.org/eggnog.ec/3.1.3.6"/>
@@ -43146,8 +43146,8 @@
                   <rdf:li rdf:resource="http://identifiers.org/PN96_RS20950/Monomer. {ECO:0000256|HAMAP-Rule:MF_01838}."/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea-reaction-description/(2E)-hexadecenoyl-[ACP] + NADPH + H(+) = hexadecanoyl-[ACP] + NADP(+)"/>
                   <rdf:li rdf:resource="http://identifiers.org/metanetx/MNXR168085"/>
-                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/41914"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/41913"/>
+                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/41914"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/41912"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/41915"/>
                 </rdf:Bag>
@@ -46809,8 +46809,8 @@
                   <rdf:li rdf:resource="http://identifiers.org/rhea-reaction-description/(3R)-hydroxydodecanoyl-[ACP] = (2E)-dodecenoyl-[ACP] + H2O"/>
                   <rdf:li rdf:resource="http://identifiers.org/metanetx/MNXR168076"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/41879"/>
-                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/41877"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/41876"/>
+                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/41877"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/41878"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -55676,8 +55676,8 @@
                   <rdf:li rdf:resource="http://identifiers.org/SBO/SBO_0000176"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea-reaction-description/beta-D-fructose 1,6-bisphosphate + H2O = beta-D-fructose 6-phosphate + phosphate"/>
                   <rdf:li rdf:resource="http://identifiers.org/metanetx/MNXR147046"/>
-                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/11064"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/11065"/>
+                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/11064"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/11066"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/11067"/>
                   <rdf:li rdf:resource="http://identifiers.org/metacyc/F16BDEPHOS-RXN"/>
@@ -60954,8 +60954,6 @@
                   <rdf:li rdf:resource="http://identifiers.org/eggnog.ec/1.2.4.1"/>
                   <rdf:li rdf:resource="http://identifiers.org/eggnog.ec/1.8.1.4"/>
                   <rdf:li rdf:resource="http://identifiers.org/eggnog.ec/2.3.1.12"/>
-                  <rdf:li rdf:resource="http://identifiers.org/eggnog.ec/2.3.1.12"/>
-                  <rdf:li rdf:resource="http://identifiers.org/eggnog.ec/1.2.4.4"/>
                   <rdf:li rdf:resource="http://identifiers.org/kegg/R00209"/>
                   <rdf:li rdf:resource="http://identifiers.org/seed/rxn00154"/>
                   <rdf:li rdf:resource="http://identifiers.org/seed/rxn20656"/>
@@ -60987,10 +60985,6 @@
               <fbc:geneProductRef fbc:geneProduct="G_PN96_RS01365"/>
               <fbc:geneProductRef fbc:geneProduct="G_PN96_RS01375"/>
               <fbc:geneProductRef fbc:geneProduct="G_PN96_RS01370"/>
-            </fbc:and>
-            <fbc:and>
-              <fbc:geneProductRef fbc:geneProduct="G_PN96_RS21420"/>
-              <fbc:geneProductRef fbc:geneProduct="G_PN96_RS21415"/>
             </fbc:and>
           </fbc:or>
         </fbc:geneProductAssociation>
@@ -63998,8 +63992,8 @@
                   <rdf:li rdf:resource="http://identifiers.org/SBO/SBO_0000176"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea-reaction-description/carboxynorspermidine + NADP(+) + H2O = L-aspartate 4-semialdehyde + propane-1,3-diamine + NADPH + H(+)"/>
                   <rdf:li rdf:resource="http://identifiers.org/metanetx/MNXR112525"/>
-                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/34116"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/34115"/>
+                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/34116"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/34117"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/34118"/>
                   <rdf:li rdf:resource="http://identifiers.org/metacyc/RXN-11565"/>
@@ -67526,8 +67520,8 @@
                   <rdf:li rdf:resource="http://identifiers.org/SBO/SBO_0000176"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea-reaction-description/formaldehyde + NAD(+) + H2O = formate + NADH + 2 H(+)"/>
                   <rdf:li rdf:resource="http://identifiers.org/metanetx/MNXR95732"/>
-                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/16425"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/16426"/>
+                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/16425"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/16427"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/16428"/>
                   <rdf:li rdf:resource="http://identifiers.org/metacyc/FORMALDEHYDE-DEHYDROGENASE-RXN"/>
@@ -69359,8 +69353,8 @@
                   <rdf:li rdf:resource="http://identifiers.org/ec/1.14.13.238"/>
                   <rdf:li rdf:resource="http://identifiers.org/metanetx/MNXR117794"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/54831"/>
-                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/54830"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/54828"/>
+                  <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/54830"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/54829"/>
                 </rdf:Bag>
               </bqbiol:is>
@@ -73535,33 +73529,6 @@
                   <rdf:li rdf:resource="http://identifiers.org/End/185924"/>
                   <rdf:li rdf:resource="http://identifiers.org/ProteinName/aromatic amino acid transporter"/>
                   <rdf:li rdf:resource="http://identifiers.org/ProteinAccession/WP_020333498.1"/>
-                  <rdf:li rdf:resource="http://identifiers.org/GeneType/protein-coding"/>
-                  <rdf:li rdf:resource="http://identifiers.org/Accession/NZ_CP009978.1"/>
-                  <rdf:li rdf:resource="http://identifiers.org/Orientation/plus"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </fbc:geneProduct>
-      <fbc:geneProduct metaid="G_PN96_RS21415" fbc:id="G_PN96_RS21415" fbc:name="pdhA" fbc:label="PN96_RS21415">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#G_PN96_RS21415">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/Begin/1413122"/>
-                  <rdf:li rdf:resource="http://identifiers.org/Chromosome/2"/>
-                  <rdf:li rdf:resource="http://identifiers.org/LocusTag/PN96_RS21415"/>
-                  <rdf:li rdf:resource="http://identifiers.org/MolarMass/73.62980993999996"/>
-                  <rdf:li rdf:resource="http://identifiers.org/GeneID/70915347"/>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO/SBO_0000243"/>
-                  <rdf:li rdf:resource="http://identifiers.org/Name/pyruvate dehydrogenase (acetyl-transferring) E1 component subunit alpha"/>
-                  <rdf:li rdf:resource="http://identifiers.org/ProteinLength/668"/>
-                  <rdf:li rdf:resource="http://identifiers.org/End/1415128"/>
-                  <rdf:li rdf:resource="http://identifiers.org/ProteinName/pyruvate dehydrogenase (acetyl-transferring) E1 component subunit alpha"/>
-                  <rdf:li rdf:resource="http://identifiers.org/ProteinAccession/WP_020334975.1"/>
-                  <rdf:li rdf:resource="http://identifiers.org/Symbol/pdhA"/>
                   <rdf:li rdf:resource="http://identifiers.org/GeneType/protein-coding"/>
                   <rdf:li rdf:resource="http://identifiers.org/Accession/NZ_CP009978.1"/>
                   <rdf:li rdf:resource="http://identifiers.org/Orientation/plus"/>
@@ -83794,32 +83761,6 @@
                   <rdf:li rdf:resource="http://identifiers.org/End/1400706"/>
                   <rdf:li rdf:resource="http://identifiers.org/ProteinName/alpha-ketoacid dehydrogenase subunit beta"/>
                   <rdf:li rdf:resource="http://identifiers.org/ProteinAccession/WP_014234327.1"/>
-                  <rdf:li rdf:resource="http://identifiers.org/GeneType/protein-coding"/>
-                  <rdf:li rdf:resource="http://identifiers.org/Accession/NZ_CP009978.1"/>
-                  <rdf:li rdf:resource="http://identifiers.org/Orientation/plus"/>
-                </rdf:Bag>
-              </bqbiol:is>
-            </rdf:Description>
-          </rdf:RDF>
-        </annotation>
-      </fbc:geneProduct>
-      <fbc:geneProduct metaid="G_PN96_RS21420" fbc:id="G_PN96_RS21420" fbc:name="aceF" fbc:label="PN96_RS21420">
-        <annotation>
-          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:vCard4="http://www.w3.org/2006/vcard/ns#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
-            <rdf:Description rdf:about="#G_PN96_RS21420">
-              <bqbiol:is>
-                <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/Begin/1415142"/>
-                  <rdf:li rdf:resource="http://identifiers.org/Chromosome/2"/>
-                  <rdf:li rdf:resource="http://identifiers.org/LocusTag/PN96_RS21420"/>
-                  <rdf:li rdf:resource="http://identifiers.org/MolarMass/47.620743639999965"/>
-                  <rdf:li rdf:resource="http://identifiers.org/GeneID/70915348"/>
-                  <rdf:li rdf:resource="http://identifiers.org/SBO/SBO_0000243"/>
-                  <rdf:li rdf:resource="http://identifiers.org/ProteinLength/437"/>
-                  <rdf:li rdf:resource="http://identifiers.org/Name/dihydrolipoamide acetyltransferase family protein"/>
-                  <rdf:li rdf:resource="http://identifiers.org/End/1416455"/>
-                  <rdf:li rdf:resource="http://identifiers.org/ProteinName/dihydrolipoamide acetyltransferase family protein"/>
-                  <rdf:li rdf:resource="http://identifiers.org/ProteinAccession/WP_020334977.1"/>
                   <rdf:li rdf:resource="http://identifiers.org/GeneType/protein-coding"/>
                   <rdf:li rdf:resource="http://identifiers.org/Accession/NZ_CP009978.1"/>
                   <rdf:li rdf:resource="http://identifiers.org/Orientation/plus"/>
