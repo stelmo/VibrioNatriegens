@@ -39494,7 +39494,7 @@
                     "SBO_0000176"
                 ],
                 "rhea-reaction-description": [
-                    "3-methyl-2-oxobutanoate + (6R)-5,10-methylene-5,6,7,8-tetrahydrofolate + H2O = 2-dehydropantoate + (6S)-5,6,7,8-tetrahydrofolate"
+                    "(6R)-5,10-methylene-5,6,7,8-tetrahydrofolate + 3-methyl-2-oxobutanoate + H2O = 2-dehydropantoate + (6S)-5,6,7,8-tetrahydrofolate"
                 ],
                 "metanetx": [
                     "MNXR188445"
@@ -50590,16 +50590,16 @@
             "lower_bound": 0.0,
             "id": "17277",
             "notes": {},
-            "gene_reaction_rule": "(PN96_RS13245)",
+            "gene_reaction_rule": "(PN96_RS13640) | (PN96_RS13245)",
             "annotation": {
-                "acronym": [
-                    "EDD"
-                ],
                 "bigg": [
                     "EDD",
                     "EDD_m",
                     "R_EDD",
                     "R_EDD_m"
+                ],
+                "acronym": [
+                    "EDD"
                 ],
                 "SBO": [
                     "SBO_0000176"
@@ -50620,7 +50620,11 @@
                     "PGLUCONDEHYDRAT-RXN"
                 ],
                 "eggnog.ec": [
+                    "4.2.1.9",
                     "4.2.1.12"
+                ],
+                "PN96_RS13640": [
+                    "Homodimer. {ECO:0000256|HAMAP-Rule:MF_00012}."
                 ],
                 "kegg": [
                     "R02036"
@@ -56311,7 +56315,7 @@
                     "SBO_0000176"
                 ],
                 "rhea-reaction-description": [
-                    "AMP + H2O = adenine + D-ribose 5-phosphate"
+                    "AMP + H2O = D-ribose 5-phosphate + adenine"
                 ],
                 "metanetx": [
                     "MNXR190676"
@@ -69811,7 +69815,7 @@
             "lower_bound": 0.0,
             "id": "27758",
             "notes": {},
-            "gene_reaction_rule": "(PN96_RS21230) | (PN96_RS01375) | (PN96_RS21250) | (PN96_RS22095)",
+            "gene_reaction_rule": "(PN96_RS21250 & PN96_RS22095 & PN96_RS01375 & PN96_RS21230)",
             "annotation": {
                 "bigg": [
                     "GLYCL",
@@ -69849,10 +69853,10 @@
                     "The glycine cleavage system is composed of four proteins: P,T, L and H. {ECO:0000256|HAMAP-Rule:MF_00711}."
                 ],
                 "eggnog.ec": [
-                    "2.1.2.10",
-                    "1.8.1.4",
                     "1.4.4.2",
-                    "1.8.1.4"
+                    "1.8.1.4",
+                    "1.8.1.4",
+                    "2.1.2.10"
                 ],
                 "kegg": [
                     "R01221"
@@ -78957,7 +78961,7 @@
                     "SBO_0000176"
                 ],
                 "rhea-reaction-description": [
-                    "nicotinate + 5-phospho-alpha-D-ribose 1-diphosphate + ATP + H2O = nicotinate beta-D-ribonucleotide + ADP + phosphate + diphosphate"
+                    "5-phospho-alpha-D-ribose 1-diphosphate + nicotinate + ATP + H2O = nicotinate beta-D-ribonucleotide + ADP + phosphate + diphosphate"
                 ],
                 "metanetx": [
                     "MNXR188489"

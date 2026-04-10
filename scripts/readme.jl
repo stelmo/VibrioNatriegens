@@ -11,12 +11,12 @@ model = VibrioNatriegens.build_model()
 
 # write the model to the main directory in standardized formats
 m = convert(JSONFBCModels.JSONFBCModel, model)
-A.save(m, "vibrio_natriegens.json")
+A.save(m, "..\\vibrio_natriegens.json")
 
 m = convert(SBMLFBCModels.SBMLFBCModel, model)
 @reset m.sbml.id = "vibrio_natriegens"
 @reset m.sbml.name = "Vibrio Natriegens GEM"
-A.save(m, "vibrio_natriegens.xml")
+A.save(m, "..\\vibrio_natriegens.xml")
 
 if nprocs() == 1
     addprocs(7, exeflags = `--project=$(Base.active_project())`)

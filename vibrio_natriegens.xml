@@ -31808,11 +31808,11 @@
             <rdf:Description rdf:about="#R_17277">
               <bqbiol:is>
                 <rdf:Bag>
-                  <rdf:li rdf:resource="http://identifiers.org/acronym/EDD"/>
                   <rdf:li rdf:resource="http://identifiers.org/bigg/EDD"/>
                   <rdf:li rdf:resource="http://identifiers.org/bigg/EDD_m"/>
                   <rdf:li rdf:resource="http://identifiers.org/bigg/R_EDD"/>
                   <rdf:li rdf:resource="http://identifiers.org/bigg/R_EDD_m"/>
+                  <rdf:li rdf:resource="http://identifiers.org/acronym/EDD"/>
                   <rdf:li rdf:resource="http://identifiers.org/SBO/SBO_0000176"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea-reaction-description/6-phospho-D-gluconate = 2-dehydro-3-deoxy-6-phospho-D-gluconate + H2O"/>
                   <rdf:li rdf:resource="http://identifiers.org/metanetx/MNXR97898"/>
@@ -31821,7 +31821,9 @@
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/17277"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/17279"/>
                   <rdf:li rdf:resource="http://identifiers.org/metacyc/PGLUCONDEHYDRAT-RXN"/>
+                  <rdf:li rdf:resource="http://identifiers.org/eggnog.ec/4.2.1.9"/>
                   <rdf:li rdf:resource="http://identifiers.org/eggnog.ec/4.2.1.12"/>
+                  <rdf:li rdf:resource="http://identifiers.org/PN96_RS13640/Homodimer. {ECO:0000256|HAMAP-Rule:MF_00012}."/>
                   <rdf:li rdf:resource="http://identifiers.org/kegg/R02036"/>
                   <rdf:li rdf:resource="http://identifiers.org/seed/rxn01477"/>
                   <rdf:li rdf:resource="http://identifiers.org/ec/4.2.1.12"/>
@@ -31838,7 +31840,10 @@
           <speciesReference species="M_57569" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:geneProductRef fbc:geneProduct="G_PN96_RS13245"/>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS13640"/>
+            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS13245"/>
+          </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_15841" id="R_15841" name="beta-D-glucose-6-phosphate:NAD+ 1-oxidoreductase" reversible="true" fbc:lowerFluxBound="bound_value_1" fbc:upperFluxBound="bound_value_5">
@@ -56005,10 +56010,10 @@
                   <rdf:li rdf:resource="http://identifiers.org/metacyc/GCVMULTI-RXN"/>
                   <rdf:li rdf:resource="http://identifiers.org/sabiork/1451"/>
                   <rdf:li rdf:resource="http://identifiers.org/PN96_RS21250/The glycine cleavage system is composed of four proteins: P,T, L and H. {ECO:0000256|HAMAP-Rule:MF_00711}."/>
-                  <rdf:li rdf:resource="http://identifiers.org/eggnog.ec/2.1.2.10"/>
-                  <rdf:li rdf:resource="http://identifiers.org/eggnog.ec/1.8.1.4"/>
                   <rdf:li rdf:resource="http://identifiers.org/eggnog.ec/1.4.4.2"/>
                   <rdf:li rdf:resource="http://identifiers.org/eggnog.ec/1.8.1.4"/>
+                  <rdf:li rdf:resource="http://identifiers.org/eggnog.ec/1.8.1.4"/>
+                  <rdf:li rdf:resource="http://identifiers.org/eggnog.ec/2.1.2.10"/>
                   <rdf:li rdf:resource="http://identifiers.org/kegg/R01221"/>
                   <rdf:li rdf:resource="http://identifiers.org/seed/rxn00908"/>
                   <rdf:li rdf:resource="http://identifiers.org/seed/rxn19763"/>
@@ -56032,12 +56037,12 @@
           <speciesReference species="M_57945" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:or>
-            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS21230"/>
-            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS01375"/>
+          <fbc:and>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS21250"/>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS22095"/>
-          </fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS01375"/>
+            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS21230"/>
+          </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_41880" id="R_41880" name="dodecanoyl-[acp]:NAD+ trans-2-oxidoreductase" reversible="true" fbc:lowerFluxBound="bound_value_2" fbc:upperFluxBound="bound_value_5">
@@ -60563,7 +60568,7 @@
                   <rdf:li rdf:resource="http://identifiers.org/bigg/NAMNPP"/>
                   <rdf:li rdf:resource="http://identifiers.org/bigg/R_NAMNPP"/>
                   <rdf:li rdf:resource="http://identifiers.org/SBO/SBO_0000176"/>
-                  <rdf:li rdf:resource="http://identifiers.org/rhea-reaction-description/nicotinate + 5-phospho-alpha-D-ribose 1-diphosphate + ATP + H2O = nicotinate beta-D-ribonucleotide + ADP + phosphate + diphosphate"/>
+                  <rdf:li rdf:resource="http://identifiers.org/rhea-reaction-description/5-phospho-alpha-D-ribose 1-diphosphate + nicotinate + ATP + H2O = nicotinate beta-D-ribonucleotide + ADP + phosphate + diphosphate"/>
                   <rdf:li rdf:resource="http://identifiers.org/metanetx/MNXR188489"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/36163"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/36166"/>
@@ -63252,7 +63257,7 @@
                   <rdf:li rdf:resource="http://identifiers.org/bigg/AMPN"/>
                   <rdf:li rdf:resource="http://identifiers.org/bigg/R_AMPN"/>
                   <rdf:li rdf:resource="http://identifiers.org/SBO/SBO_0000176"/>
-                  <rdf:li rdf:resource="http://identifiers.org/rhea-reaction-description/AMP + H2O = adenine + D-ribose 5-phosphate"/>
+                  <rdf:li rdf:resource="http://identifiers.org/rhea-reaction-description/AMP + H2O = D-ribose 5-phosphate + adenine"/>
                   <rdf:li rdf:resource="http://identifiers.org/metanetx/MNXR190676"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/20131"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/20130"/>
@@ -69668,7 +69673,7 @@
                   <rdf:li rdf:resource="http://identifiers.org/bigg/R_MTMOHT"/>
                   <rdf:li rdf:resource="http://identifiers.org/acronym/MOHMT"/>
                   <rdf:li rdf:resource="http://identifiers.org/SBO/SBO_0000176"/>
-                  <rdf:li rdf:resource="http://identifiers.org/rhea-reaction-description/3-methyl-2-oxobutanoate + (6R)-5,10-methylene-5,6,7,8-tetrahydrofolate + H2O = 2-dehydropantoate + (6S)-5,6,7,8-tetrahydrofolate"/>
+                  <rdf:li rdf:resource="http://identifiers.org/rhea-reaction-description/(6R)-5,10-methylene-5,6,7,8-tetrahydrofolate + 3-methyl-2-oxobutanoate + H2O = 2-dehydropantoate + (6S)-5,6,7,8-tetrahydrofolate"/>
                   <rdf:li rdf:resource="http://identifiers.org/metanetx/MNXR188445"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/11824"/>
                   <rdf:li rdf:resource="http://identifiers.org/rhea.reaction/11827"/>
