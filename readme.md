@@ -106,6 +106,10 @@ The reactions, metabolites, and genes of `model` can be accessed like any field,
 This model works well with the [COBREXA package](https://github.com/COBREXA/COBREXA.jl), and it can be used to simulate FBA, ec-FBA, and sRBA models.
 
 ## Known issues
+Note: there seems to be an issue with Rhea where the SPARQL database does not allow batch downloads of reaction quartets anymore.
+This causes some reaction annotation issues, but there is already error handling built into the build scripts.
+Please file an issue if you cannot reconstruct the model from scratch in Julia.
+
 Known issues in the model are marked as broken tests, mainly tested in the file `test/issues.jl` in the test directory.
 
 Currently the model does not simulate anaerobic growth accurately, as the ATP yield is only 3 ATP/glucose. 

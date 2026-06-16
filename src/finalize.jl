@@ -84,10 +84,8 @@ function check_rhea_ref(model)
     # model has all 4 rhea reaction ids && id is the reference one
     for (k, v) in model.reactions
         if isdigit(first(k))
-            length(v.annotations["rhea.reaction"]) != 4 &&
-                @warn("$k does not have all the Rhea references")
-            first(sort(v.annotations["rhea.reaction"])) != k &&
-                @warn("$k is not the reference rhea reaction")
+            length(v.annotations["rhea.reaction"]) != 4 && (@warn("Rhea reaction $k does not have all the Rhea references. Skipping other Rhea quartet checks."); break)
+            first(sort(v.annotations["rhea.reaction"])) != k && @warn("$k is not the reference rhea reaction")
         end
     end
 end

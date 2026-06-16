@@ -39505,10 +39505,10 @@
           <speciesReference species="M_78468" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          <fbc:or>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS20950"/>
-          </fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_22408" id="R_22408" name="dimethylallyl-diphosphate:isopentenyl-diphosphate dimethylallyltranstransferase" reversible="true" fbc:lowerFluxBound="bound_value_1" fbc:upperFluxBound="bound_value_5">
@@ -40536,10 +40536,10 @@
           <speciesReference species="M_78495" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          <fbc:or>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS20950"/>
-          </fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_14253" id="R_14253" name="guanosine-3&apos;,5&apos;-bis(diphosphate) 3&apos;-diphosphohydrolase" reversible="true" fbc:lowerFluxBound="bound_value_1" fbc:upperFluxBound="bound_value_5">
@@ -41093,10 +41093,10 @@
           <speciesReference species="M_78459" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          <fbc:or>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS20950"/>
-          </fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_13161" id="R_13161" name="L-threonine:NAD+ oxidoreductase" reversible="true" fbc:lowerFluxBound="bound_value_1" fbc:upperFluxBound="bound_value_5">
@@ -43170,10 +43170,10 @@
           <speciesReference species="M_78483" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          <fbc:or>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS20950"/>
-          </fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_16809" id="R_16809" name="(2S,3R)-3-hydroxybutane-1,2,3-tricarboxylate pyruvate-lyase (succinate-forming)" reversible="true" fbc:lowerFluxBound="bound_value_2" fbc:upperFluxBound="bound_value_5">
@@ -45361,10 +45361,10 @@
           <speciesReference species="M_78463" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          <fbc:or>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS20950"/>
-          </fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_EX_58351" id="R_EX_58351" name="Exchange sirohydrochlorin" reversible="true" fbc:lowerFluxBound="bound_value_1" fbc:upperFluxBound="bound_value_5">
@@ -48310,10 +48310,10 @@
           <speciesReference species="M_78463" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          <fbc:or>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS20950"/>
-          </fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_SYM_15378_17712" id="R_SYM_15378_17712" name="Symport H(+)::xanthine" reversible="true" fbc:lowerFluxBound="bound_value_2" fbc:upperFluxBound="bound_value_5">
@@ -51392,10 +51392,10 @@
           <speciesReference species="M_78454" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:and>
+          <fbc:or>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS20950"/>
-          </fbc:and>
+          </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_14717" id="R_14717" name="phosphoenolpyruvate:D-erythrose-4-phosphate C-(1-carboxyvinyl)transferase (phosphate hydrolysing, 2-carboxy-2-oxoethyl-forming)" reversible="true" fbc:lowerFluxBound="bound_value_2" fbc:upperFluxBound="bound_value_5">
@@ -51716,10 +51716,10 @@
           <speciesReference species="M_78454" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:and>
+          <fbc:or>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS20950"/>
-          </fbc:and>
+          </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_24368" id="R_24368" name="L-ornithine ammonia-lyase (cyclizing L-proline-forming)" reversible="true" fbc:lowerFluxBound="bound_value_1" fbc:upperFluxBound="bound_value_5">
@@ -52799,10 +52799,10 @@
           <speciesReference species="M_78477" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          <fbc:or>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS20950"/>
-          </fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_14077" id="R_14077" name="L-alanine:3-oxopropanoate aminotransferase" reversible="true" fbc:lowerFluxBound="bound_value_2" fbc:upperFluxBound="bound_value_1">
@@ -56081,10 +56081,10 @@
           <speciesReference species="M_65264" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          <fbc:or>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS20950"/>
-          </fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_32275" id="R_32275" name="4-(phosphonooxy)threonine:NAD oxidoreductase" reversible="true" fbc:lowerFluxBound="bound_value_1" fbc:upperFluxBound="bound_value_5">
@@ -59520,10 +59520,10 @@
           <speciesReference species="M_78468" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          <fbc:or>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS20950"/>
-          </fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_25078" id="R_25078" name="spontaneous reaction" reversible="true" fbc:lowerFluxBound="bound_value_1" fbc:upperFluxBound="bound_value_5">
@@ -69805,10 +69805,10 @@
           <speciesReference species="M_78483" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
-          <fbc:and>
-            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          <fbc:or>
             <fbc:geneProductRef fbc:geneProduct="G_PN96_RS20950"/>
-          </fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_PN96_RS07515"/>
+          </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
       <reaction metaid="R_21432" id="R_21432" name="(S)-malate:NAD+ oxidoreductase" reversible="true" fbc:lowerFluxBound="bound_value_2" fbc:upperFluxBound="bound_value_5">

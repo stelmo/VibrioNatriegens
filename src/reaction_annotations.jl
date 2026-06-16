@@ -46,16 +46,20 @@ function add_reaction_annotations!(model)
         )
     end
 
-    qts = Dict( # TODO consider caching
-        k => [vs...] for (k, vs) in
-        get_quartets([rid for rid in A.reactions(model) if isdigit(first(rid))])
-    )
+    qts = Dict{String, Vector{String}}()
+    try
+        for (k, vs) in get_quartets([rid for rid in A.reactions(model) if isdigit(first(rid))])
+            qts[k] = [vs...] 
+        end
+    catch
+        @warn "Fetching reaction quartets from Rhea failed... Skipping these annotations."
+    end
 
     for rid in A.reactions(model)
         r = model.reactions[rid]
         # assign reaction annos
         if isdigit(first(rid))
-            r.annotations["rhea.reaction"] = qts[rid]
+            r.annotations["rhea.reaction"] = get(qts, rid, String[])
         end
         r.annotations["SBO"] = ["SBO_0000176"]
 

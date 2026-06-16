@@ -1,6 +1,6 @@
 name = "VibrioNatriegens"
 uuid = "77bc8a8b-a793-4fc4-98ef-9bd1d8b8270c"
-version = "0.3.0"
+version = "0.3.1"
 authors = ["St. Elmo Wilken <stelmozors@gmail.com>"]
 
 [deps]
